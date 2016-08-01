@@ -1,0 +1,2732 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02DD605FD5B64D5583FCD27F13F8862C /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C200A1CE276A567CDEC3D65EC64602A2 /* UIImageView+AFNetworking.m */; };
+		053DABFA92D9BFF453AC6EDEDC8984F6 /* NSAttributeDescription+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 151F47796F6A868EFFB7F1291F28E503 /* NSAttributeDescription+MagicalDataImport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0627EC150C177700387C9E0C44C5D20E /* MagicalRecord+ShorthandMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E389453F08F18DC6E425C4B69E360837 /* MagicalRecord+ShorthandMethods.m */; };
+		09CD5E8011F9FF90817B4CEA30CCAF79 /* NSManagedObject+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B2CC9707CF3242E103F2C1E3B58CDD /* NSManagedObject+MagicalDataImport.m */; };
+		09E64866A37EAC1852E7FA08CF2BBB07 /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C25F9B288978429F3A70972F2DFB1C2 /* NSAttributeDescription+MagicalDataImport.m */; };
+		09E6DECD5AB594104764C6F81EB71537 /* MagicalRecordInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F741BB0B6ED147D0B37282DC8430C77 /* MagicalRecordInternal.m */; };
+		0E3EA64E5F45DC28DC0777F66DBB1D14 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BEF271A3EDB1D6AB2CFCEECD8C3EEBC /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F22351DA1A3D702C2E6CDD83E490D5F /* MagicalRecord+ShorthandMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = CA57F160EF67D1BCD6105B56F57107DD /* MagicalRecord+ShorthandMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13A69E9B380214C8C762E34CD6B3951F /* NSString+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D5A4BB54BC0EA13C1418FCF582E954B /* NSString+MagicalDataImport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		154D3E16CA472D06C8337D6F16306720 /* Pods-Abstract-BDesignworksTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B0092259653C232A98BDB9B0DDE13C4 /* Pods-Abstract-BDesignworksTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B70526E73DC55D17637134D7E31126E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D87EC6C33083BB0179608F1E8656C19 /* Foundation.framework */; };
+		1ED25AA526192FB5F23E548CD087A9D3 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8647B5B42B79B786E94591AAE95571E6 /* AFSecurityPolicy.m */; };
+		1FBE4F1EF412E7D1439C5C723B0617F1 /* NSManagedObject+MagicalRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C3FBC6C80848AD3AFD67BAE1E83A68F /* NSManagedObject+MagicalRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		233BC55087C727070FEF93DD88E8EE92 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F66E6A15ADC71AA02AB2FB0E11350E /* UIWebView+AFNetworking.m */; };
+		26619A95FEEF44DD9364917675A895C4 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 448721B1B4CF90AC868EFAAC02E5B022 /* AFHTTPSessionManager.m */; };
+		269BFA01D6EC6E4F4844B4DF8A4D6282 /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C417B36C543C8C0E00CBD0B0394B143D /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27DB4644CB311586956D4E69D03EDECD /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCBA8ABD5C0C3C2CA2031BB817E481E /* AFNetworking-dummy.m */; };
+		2A77F38FE22978DCED7F724F8C554723 /* NSString+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 239FE61D19330FBF1B7BDE6D099740EF /* NSString+MagicalDataImport.m */; };
+		2C43A191D8DD208D26DA0C162330063C /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38D322E662273B79C1D7FF2C95411BF3 /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		301F8AD823893477E2B9E9CBC31F1D9B /* NSManagedObjectModel+MagicalRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = D861CED4CC156F4967654E333815B460 /* NSManagedObjectModel+MagicalRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3174D49C6CD7F435FF97E52DED12B0D5 /* NSRelationshipDescription+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 1404AD6DD754E2E19E18BEFEF584258D /* NSRelationshipDescription+MagicalDataImport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32B280B6F88E5359B67CEDBF1FC04CE0 /* MagicalRecord+Actions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B554A8F0F215FD06314EC16564A0E6E /* MagicalRecord+Actions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3521DD81CBF7A37B5C82C98B2B699A1E /* MagicalRecordLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = B2870E13D94C3BC111EC43D3F341FC29 /* MagicalRecordLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		365281511F621FEBD2F16C5FBA3EA929 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F698563AA00EE29D9179EACA71B15A4C /* SystemConfiguration.framework */; };
+		36BEEF5338EF31B0955DC632E0482747 /* NSManagedObject+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 3822F5A724A04A9F09D1C4762E671AB0 /* NSManagedObject+MagicalRecord.m */; };
+		3BFEC1F842226F4A2EA83742A489AF04 /* NSManagedObjectContext+MagicalObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E20950DFBBA1E9FCC53DC37C4BE2645 /* NSManagedObjectContext+MagicalObserving.m */; };
+		3DD7C1ADF1DA17264B11B3FCA93CDD9A /* MagicalRecord+iCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F67BF68A9DF908EEE41A4C9AC75F80B /* MagicalRecord+iCloud.m */; };
+		3ED8349E833A40310AAAC4A3EE153AA1 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F56AF6CE66D2609485DDA017933634DE /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EE596D04B1944834C61A012E557AAFC /* NSManagedObjectContext+MagicalSaves.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBC927D1775BD138869D3ED0BE525AF /* NSManagedObjectContext+MagicalSaves.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F5DC541B71A33F6D5AA5012C7630425 /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FFB63EDC2A1A3F2DF49C072C6B4087 /* MagicalRecord+Setup.m */; };
+		4067EFCF5E3EB39EF30B61D4ED7CABD8 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 698A07BD75999AEF956BE52E4F791F04 /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		438151B3D667A8B3D478F37E744BACF3 /* NSManagedObjectContext+MagicalThreading.m in Sources */ = {isa = PBXBuildFile; fileRef = EC775F7240566ACDC1A736DAAF3758C8 /* NSManagedObjectContext+MagicalThreading.m */; };
+		443D2C1F02661304D60280AFD87EDE94 /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EA0FAC59DE58534809A107EEF15E9D8 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44FBD4BED7EC0F0835002425D78154C4 /* MagicalRecord+Options.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CA328B909846D442B9E28E4BE5885C /* MagicalRecord+Options.m */; };
+		48A65F1B523A66A65C3D463DD26641CD /* NSEntityDescription+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC90F4D1DC2F852F8B3A588EFD2541F /* NSEntityDescription+MagicalDataImport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49063CFE2BE637CB9319D1F794D3B752 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFC83E63DF367994DAC36E2DF630F1D /* NSPersistentStoreCoordinator+MagicalRecord.m */; };
+		4A27AF124FDE86F3837132A325C915B5 /* Pods-Abstract-BDesignworks-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F118D1E65763C4402D351913219387F /* Pods-Abstract-BDesignworks-dummy.m */; };
+		565DBB9129441D06C3D401E5DF8F1456 /* NSRelationshipDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = B931DDE14BAD7813E8D8AC7572B82BA4 /* NSRelationshipDescription+MagicalDataImport.m */; };
+		5C648FA64F4E630D1FDD4093AE3DFE9B /* NSManagedObjectContext+MagicalObserving.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D0D9C6E4E00ACC67F4C102A77FB57D6 /* NSManagedObjectContext+MagicalObserving.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F939E2D4FAF2FDBFD375C9EF51AB4AC /* MagicalRecord+ErrorHandling.h in Headers */ = {isa = PBXBuildFile; fileRef = 102D02311D2B89BAD2B340D219FEE7AE /* MagicalRecord+ErrorHandling.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63CD7049BB090C4451B710D904FA59DB /* MagicalRecord+iCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A1138ACA24EB8C46AAEAD57888F5BFA /* MagicalRecord+iCloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		655FA93CBD17F3CF67806F7C48EE7473 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E46666FC893434DDD4304C662620FA /* MobileCoreServices.framework */; };
+		6A1A3ACAF8EE608ACAAF41A784F1FF38 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 09F90F85022AD86E35FDD02E55F36968 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A34C7BA2F239663810E50AAC868E031 /* NSNumber+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = A8F7DDDB7C7D0A6CA056F157FA4895CA /* NSNumber+MagicalDataImport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C4C9F2048F19A2EAA348F55FB1B4E86 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = ECF85F8B34FE2C6482BE594F7EEAF354 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D96A2EC3B206F63D2764478B0201144 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C51710AFAF694AD0E912EB5823BD995D /* MagicalImportFunctions.m */; };
+		6FED892127561AFCEC7D866B4C73ECAD /* MagicalRecord-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E40F168907A358CB6485DBCF8B6C2980 /* MagicalRecord-dummy.m */; };
+		7089F36838F4B800F0B3FCE6BCEE780A /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B03A912CB01E84ACCFF945C8F9B78E7 /* UIRefreshControl+AFNetworking.m */; };
+		70B778EC8E66F741693DB5A4621258C8 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 655694FD56A02D6290F9266096F22016 /* UIActivityIndicatorView+AFNetworking.m */; };
+		70E28306682DABE48428ED82476AF5D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D87EC6C33083BB0179608F1E8656C19 /* Foundation.framework */; };
+		793840ADC4B76F038EA45CBAB9C00411 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3852E65F2949EFA2E7E9712FF7C15C98 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		796974B2B7F09A6545FB3599CAE17327 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 8892F601099226880E0457303417A06F /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E0AEE24FBFF0AE843F142BD9077D7EA /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 070CC2DD8DD454A00D819A76B59EE635 /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		813F360497C515D67049CA30039E867E /* NSManagedObjectContext+MagicalChainSave.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B118AEC4D8F00AB4BB17484A40E3D /* NSManagedObjectContext+MagicalChainSave.m */; };
+		855CBA47CAB145C27E7A80357D9EC66B /* NSManagedObjectContext+MagicalChainSave.h in Headers */ = {isa = PBXBuildFile; fileRef = 19C5C4F442950AAC81D095E5CDA71585 /* NSManagedObjectContext+MagicalChainSave.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		873A2565A8F13A37DC1F948FAE3A0C6B /* MagicalImportFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B8BA3CECAFC98BA3EB31005BA93AEBD /* MagicalImportFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8902464F0A59CB0157031F524F2FD0A3 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = B95075BACEC4D06EE1BB9B40A11B6C25 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D23EBA94DCF794E06DCECD085A98328 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D87EC6C33083BB0179608F1E8656C19 /* Foundation.framework */; };
+		8DBC6776623D7F14151F2EBF0FA514AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E9399DC208975BF8E59FB45A9520C0 /* CoreGraphics.framework */; };
+		8E3F3AAC4A8F18933F6096C746985C03 /* Pods-Abstract-BDesignworks-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 803BD29A4B2AE941DC9A4A40C39CD472 /* Pods-Abstract-BDesignworks-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F0CE9C8293AB633C27761F997F6C4DC /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7958FE199A7C6DF34372203269864E19 /* AFURLResponseSerialization.m */; };
+		9164FADF1ABBE01AB6E91BB165EF5667 /* MagicalRecord+Setup.h in Headers */ = {isa = PBXBuildFile; fileRef = DE9447BF9435F3A29E41DBA8455CAAD3 /* MagicalRecord+Setup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		921F9023DEE0379E9CBF31386853299B /* NSPersistentStore+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0722EA88737055DAA50427E9FD9C3CF5 /* NSPersistentStore+MagicalRecord.m */; };
+		99C73C815185BC9E8DFD1EAFB2D87EA4 /* NSManagedObject+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 574C8DAEEA5F9D394499418CF11B6E21 /* NSManagedObject+MagicalDataImport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B6F3E97E7435489C43BE1CC0F361CB5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75098F5398CEE255EA49A9B693796AFA /* Security.framework */; };
+		9CBC32F7EFE35EBB5975CBB5095C3707 /* NSManagedObject+MagicalRequests.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B298755A8E511AF9567D616E9CBEC99 /* NSManagedObject+MagicalRequests.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A067F11C3901BD12215ED09A6F4BAA99 /* Pods-Abstract-BDesignworksTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BE48A5B96213AC72CC1AA6C21FEB2A /* Pods-Abstract-BDesignworksTests-dummy.m */; };
+		A4DA1E9955B1D43A2F1DAA06B5310698 /* NSManagedObject+MagicalFinders.h in Headers */ = {isa = PBXBuildFile; fileRef = B130F6020F9899F68A6870C2CCA0DAD2 /* NSManagedObject+MagicalFinders.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7016A80A063A737D3A89B2A56D54045 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C23B68BB0CB4384633C27AACCAB07CE /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A87F37C7D248D101FCD5135A1151DAFE /* Pods-Abstract-BDesignworksUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 976D9DC0D8C572DFA319E38F7393B984 /* Pods-Abstract-BDesignworksUITests-dummy.m */; };
+		A8917F4F856B9BF67E9BB7F740F33E02 /* MagicalRecordInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = FB563D458A523B15DB8171B585776968 /* MagicalRecordInternal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B34EE327725D3D8A0C0620EB0FAEDBFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D87EC6C33083BB0179608F1E8656C19 /* Foundation.framework */; };
+		B5819073A6906DA0255B81D9F7C399BF /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 80B9FE904FAF720D30E335E3A1AF3E55 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8E051AE222124F3922022CD3BDD7C38 /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE36506E5367F16E34D2C436E660BE9 /* NSEntityDescription+MagicalDataImport.m */; };
+		BC21786E21AA8A53C2AE66DD3D7C526E /* NSObject+MagicalDataImport.h in Headers */ = {isa = PBXBuildFile; fileRef = 16C74D1126029AA29849243C35805C7B /* NSObject+MagicalDataImport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC2269123C081796A6C63EFE69C7FA89 /* Pods-Abstract-BDesignworksUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C61DA482F8DAB662483EA5B06DD245A /* Pods-Abstract-BDesignworksUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD35C7AD6DD983685586E62A51A1636B /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 468814AFA4BFA44BA041E9D6B5F24024 /* AFImageDownloader.m */; };
+		BE3A4DCFF55EBC8C83DD61586D12C53D /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 1606FEF34FC380C68C29033CCC88C620 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFF1E51E20B43595BC26047BFE775139 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D87EC6C33083BB0179608F1E8656C19 /* Foundation.framework */; };
+		C1F35A8F2C9F043CD2793B591BB8EA48 /* NSManagedObject+MagicalFinders.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CE9781746E880045700C68F2BFDCA5 /* NSManagedObject+MagicalFinders.m */; };
+		C3F7EB6381967C765C617DD8A4F7FC44 /* MagicalRecordDeprecationMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A78E7DE42BD16375932EBC88223B9D8D /* MagicalRecordDeprecationMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C57FFEC01297CAAF01AD798435A0BFE0 /* MagicalRecord+ErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FFEAB13FABC66D47CC68C6E53DEABF /* MagicalRecord+ErrorHandling.m */; };
+		CA1FC0E3273FF68DA837600721ECB68A /* NSManagedObjectModel+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 51CA4F753A7C741F3BFCE1C72E20515B /* NSManagedObjectModel+MagicalRecord.m */; };
+		CB353CD52B7F352D1915DE7955430FCF /* MagicalRecord-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E3D51667F4AB589B16696A154C001011 /* MagicalRecord-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBE52A7343DAD44D55002BC0245B29AA /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D14FBD8B15B150D25C6A21B6DEDFE7D1 /* AFNetworkReachabilityManager.m */; };
+		D0DBE6E6961116F542077FE5FC2B26BB /* NSPersistentStoreCoordinator+MagicalRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 925D581755E3267C091429A0574C0822 /* NSPersistentStoreCoordinator+MagicalRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D56C1A690A12F062DDF9FFAF0BD8828F /* NSPersistentStore+MagicalRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = F541F67AF174872488AA4AA5584F1065 /* NSPersistentStore+MagicalRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7054D617BEDE19E4799E46FB7789769 /* MagicalRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 2568FACDFF18AC0D61489A6E99A627C1 /* MagicalRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D70B5FD4563A492F941324224447056F /* MagicalRecordXcode7CompatibilityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F1866FA9BE5ED5C285CE37291B43F7D /* MagicalRecordXcode7CompatibilityMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB52E3ED7904BA42F3D27F55E11345E0 /* NSManagedObject+MagicalRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = D68D034F5F7888DA15A66EEC35C8474B /* NSManagedObject+MagicalRequests.m */; };
+		DB872C5121AA79D578F353483C0EE236 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2874FCB70858B2CFD5C6663192A30D5F /* AFNetworkActivityIndicatorManager.m */; };
+		DC3CB82B45D21EF61A5EBB84CD7D5D90 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 95A0AE21DB9CD3B61FD227C15CC7F8B1 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCD812B08A7235B3A271E5A48B8D76FA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 643F24EF5133EA12FB762D18B1FC7AB4 /* CoreData.framework */; };
+		E2D710D57A111023E2247B32A6369355 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E242518782E384A0E9DA7CFC47E1CBD6 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3A97FC13E0B19F080172C7CA01167E7 /* NSManagedObject+MagicalAggregation.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7F6F03FD675D33A7FBBED723F2510A /* NSManagedObject+MagicalAggregation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3E1503CD0D2E6F273E77E976B68B060 /* NSManagedObjectContext+MagicalThreading.h in Headers */ = {isa = PBXBuildFile; fileRef = A01FDD092D0766012671A0922FE1395D /* NSManagedObjectContext+MagicalThreading.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E481F01CD542237FE777C7886D611E19 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 87541CFCCB71A98F178F404C9C3DE195 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4FF1388561CEA6536DD601C59E0E2D8 /* NSManagedObjectContext+MagicalSaves.m in Sources */ = {isa = PBXBuildFile; fileRef = 4110A7BF6D73F34FAB5F0DEF1145CA26 /* NSManagedObjectContext+MagicalSaves.m */; };
+		E5BFD28822640534E062B93949DE373D /* NSManagedObjectContext+MagicalRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = FC5F7277EA06311331A97B3159A21398 /* NSManagedObjectContext+MagicalRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F073E3199AB1263A0D73EB16465A676D /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B335DBA19107D45CB1BE89D5D174A9 /* AFURLRequestSerialization.m */; };
+		F09211BC390EC440EC8E15ACF457A26E /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A37D10D9EA831B8C84AB93BE8A4B7152 /* UIProgressView+AFNetworking.m */; };
+		F1F8D1CD51E348CBDA66CE9FF0F75B52 /* NSObject+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CE79517C6F0291ACAF65B5A9A5EBFB /* NSObject+MagicalDataImport.m */; };
+		F293B10B4B186E02970888FA95A2919E /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F4DDC4C138BAA33BC526A0A0EE1C1C9 /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2A269484A8280B1DDC7D4D45432156F /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 92975659836F97E22674B2D07C65335C /* AFAutoPurgingImageCache.m */; };
+		F3086DFFAA5BBA34A0A5AA264BCD64A5 /* NSManagedObject+MagicalAggregation.m in Sources */ = {isa = PBXBuildFile; fileRef = EB61793FA4C557296FF09BEC57BA04FE /* NSManagedObject+MagicalAggregation.m */; };
+		F3FD71DF03D266FF20AE82A7D5D679CF /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2DA8CE427B6FBA8C551D298B795BEF /* UIButton+AFNetworking.m */; };
+		F7B7200B1DD5F3AA6EF4FB8A7E4D5675 /* NSNumber+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = B71F81FE80857F7AD00F3B7755D5C6BC /* NSNumber+MagicalDataImport.m */; };
+		F8FDE00AA639609A248ABB2022049BB3 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC969CF9F376F2491C5004B700512FF2 /* AFURLSessionManager.m */; };
+		F9C327FAA4DCAFB43A38C93D96E139F6 /* MagicalRecord+Options.h in Headers */ = {isa = PBXBuildFile; fileRef = 81EAF6F74D1A55325BEDA85B1F44D3FB /* MagicalRecord+Options.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FED654D996F54BAA458DC0A4E86EBA11 /* NSManagedObjectContext+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 3632EF29729FEA33BFA571760AF61192 /* NSManagedObjectContext+MagicalRecord.m */; };
+		FEF32063C461B20B65DB2A06A30BB6F7 /* MagicalRecord+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = A641C49C1A1F1D33F1278D970110AEB1 /* MagicalRecord+Actions.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0EF1DE8988A0564C1BD323F56E72B403 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD47E339A26F876F910CD9E671989350;
+			remoteInfo = MagicalRecord;
+		};
+		24EF32BF21F2AD4ABA9506CE5217D091 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD47E339A26F876F910CD9E671989350;
+			remoteInfo = MagicalRecord;
+		};
+		26080A32BE051B74F8C9190CA8E1D4B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD47E339A26F876F910CD9E671989350;
+			remoteInfo = MagicalRecord;
+		};
+		49395353C998342325009382A15BC030 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB6D9DD106D1A7484C107C2C69F9624B;
+			remoteInfo = AFNetworking;
+		};
+		4E28EC93C606E4C434985FE3E64008A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB6D9DD106D1A7484C107C2C69F9624B;
+			remoteInfo = AFNetworking;
+		};
+		C1B615DB549412C9C034B3F1CDEA5403 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB6D9DD106D1A7484C107C2C69F9624B;
+			remoteInfo = AFNetworking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		070CC2DD8DD454A00D819A76B59EE635 /* AFImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFImageDownloader.h; path = "UIKit+AFNetworking/AFImageDownloader.h"; sourceTree = "<group>"; };
+		0722EA88737055DAA50427E9FD9C3CF5 /* NSPersistentStore+MagicalRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSPersistentStore+MagicalRecord.m"; path = "MagicalRecord/Categories/NSPersistentStore+MagicalRecord.m"; sourceTree = "<group>"; };
+		09F90F85022AD86E35FDD02E55F36968 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		0BFDBAAE801CD54E34A7432354EA83F0 /* Pods-Abstract-BDesignworks-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Abstract-BDesignworks-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0C61DA482F8DAB662483EA5B06DD245A /* Pods-Abstract-BDesignworksUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Abstract-BDesignworksUITests-umbrella.h"; sourceTree = "<group>"; };
+		0D0B913DFF62189D3B996D1B69496541 /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
+		0D0D9C6E4E00ACC67F4C102A77FB57D6 /* NSManagedObjectContext+MagicalObserving.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+MagicalObserving.h"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalObserving.h"; sourceTree = "<group>"; };
+		0DBC927D1775BD138869D3ED0BE525AF /* NSManagedObjectContext+MagicalSaves.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+MagicalSaves.h"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalSaves.h"; sourceTree = "<group>"; };
+		0E177353D5184709A7D11953D954A610 /* Pods-Abstract-BDesignworksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0E3EDFD4711C254D7EE7A40514B71FB5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		102D02311D2B89BAD2B340D219FEE7AE /* MagicalRecord+ErrorHandling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MagicalRecord+ErrorHandling.h"; path = "MagicalRecord/Core/MagicalRecord+ErrorHandling.h"; sourceTree = "<group>"; };
+		1404AD6DD754E2E19E18BEFEF584258D /* NSRelationshipDescription+MagicalDataImport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSRelationshipDescription+MagicalDataImport.h"; path = "MagicalRecord/Categories/DataImport/NSRelationshipDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
+		151F47796F6A868EFFB7F1291F28E503 /* NSAttributeDescription+MagicalDataImport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSAttributeDescription+MagicalDataImport.h"; path = "MagicalRecord/Categories/DataImport/NSAttributeDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
+		1606FEF34FC380C68C29033CCC88C620 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		16C74D1126029AA29849243C35805C7B /* NSObject+MagicalDataImport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+MagicalDataImport.h"; path = "MagicalRecord/Categories/DataImport/NSObject+MagicalDataImport.h"; sourceTree = "<group>"; };
+		19B2CC9707CF3242E103F2C1E3B58CDD /* NSManagedObject+MagicalDataImport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+MagicalDataImport.m"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalDataImport.m"; sourceTree = "<group>"; };
+		19C5C4F442950AAC81D095E5CDA71585 /* NSManagedObjectContext+MagicalChainSave.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+MagicalChainSave.h"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalChainSave.h"; sourceTree = "<group>"; };
+		1B1E972B5AD72F0099A398914EF5E7AF /* MagicalRecord.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MagicalRecord.xcconfig; sourceTree = "<group>"; };
+		1C3FBC6C80848AD3AFD67BAE1E83A68F /* NSManagedObject+MagicalRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+MagicalRecord.h"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalRecord.h"; sourceTree = "<group>"; };
+		1F0EBF8A34168D259E8013CEE853F3D1 /* Pods-Abstract-BDesignworksUITests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksUITests.debug staging.xcconfig"; sourceTree = "<group>"; };
+		1F6DA14A8EF16186D0125C4FD361192C /* Pods-Abstract-BDesignworksUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Abstract-BDesignworksUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		239FE61D19330FBF1B7BDE6D099740EF /* NSString+MagicalDataImport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+MagicalDataImport.m"; path = "MagicalRecord/Categories/DataImport/NSString+MagicalDataImport.m"; sourceTree = "<group>"; };
+		2568FACDFF18AC0D61489A6E99A627C1 /* MagicalRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MagicalRecord.h; path = MagicalRecord/MagicalRecord.h; sourceTree = "<group>"; };
+		26B61A6A76CAFC8EB0CA2C1D770A8E6B /* Pods-Abstract-BDesignworks-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Abstract-BDesignworks-frameworks.sh"; sourceTree = "<group>"; };
+		27EE995B0316A05D53CF036A3B323CAF /* Pods-Abstract-BDesignworksUITests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksUITests.appstore debug.xcconfig"; sourceTree = "<group>"; };
+		2874FCB70858B2CFD5C6663192A30D5F /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
+		2B03A912CB01E84ACCFF945C8F9B78E7 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		2B8BA3CECAFC98BA3EB31005BA93AEBD /* MagicalImportFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MagicalImportFunctions.h; path = MagicalRecord/Categories/DataImport/MagicalImportFunctions.h; sourceTree = "<group>"; };
+		2BF7BDC5892B5CF68FC1F02FAFAF4135 /* Pods-Abstract-BDesignworksTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksTests.test.xcconfig"; sourceTree = "<group>"; };
+		2F4DDC4C138BAA33BC526A0A0EE1C1C9 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		2F67BF68A9DF908EEE41A4C9AC75F80B /* MagicalRecord+iCloud.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MagicalRecord+iCloud.m"; path = "MagicalRecord/Core/MagicalRecord+iCloud.m"; sourceTree = "<group>"; };
+		30F66E6A15ADC71AA02AB2FB0E11350E /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		338BDF6CA7B7AC4B76F8043C29F73DF1 /* Pods-Abstract-BDesignworks-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Abstract-BDesignworks-acknowledgements.plist"; sourceTree = "<group>"; };
+		3632EF29729FEA33BFA571760AF61192 /* NSManagedObjectContext+MagicalRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+MagicalRecord.m"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalRecord.m"; sourceTree = "<group>"; };
+		3756A09D121008B2FDE05566079F14F8 /* Pods-Abstract-BDesignworksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksTests.release.xcconfig"; sourceTree = "<group>"; };
+		37CE79517C6F0291ACAF65B5A9A5EBFB /* NSObject+MagicalDataImport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MagicalDataImport.m"; path = "MagicalRecord/Categories/DataImport/NSObject+MagicalDataImport.m"; sourceTree = "<group>"; };
+		3822F5A724A04A9F09D1C4762E671AB0 /* NSManagedObject+MagicalRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+MagicalRecord.m"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalRecord.m"; sourceTree = "<group>"; };
+		3852E65F2949EFA2E7E9712FF7C15C98 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		38D322E662273B79C1D7FF2C95411BF3 /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
+		3A4E4CEDF3600665C35E027606433570 /* Pods-Abstract-BDesignworksTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Abstract-BDesignworksTests-resources.sh"; sourceTree = "<group>"; };
+		3B298755A8E511AF9567D616E9CBEC99 /* NSManagedObject+MagicalRequests.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+MagicalRequests.h"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalRequests.h"; sourceTree = "<group>"; };
+		3C25F9B288978429F3A70972F2DFB1C2 /* NSAttributeDescription+MagicalDataImport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributeDescription+MagicalDataImport.m"; path = "MagicalRecord/Categories/DataImport/NSAttributeDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
+		40AADCAC03F59A1BED948671C4E9F896 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4110A7BF6D73F34FAB5F0DEF1145CA26 /* NSManagedObjectContext+MagicalSaves.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+MagicalSaves.m"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalSaves.m"; sourceTree = "<group>"; };
+		4292653F6C543CC976BACB29B24DB1D9 /* Pods-Abstract-BDesignworks.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworks.debug staging.xcconfig"; sourceTree = "<group>"; };
+		448721B1B4CF90AC868EFAAC02E5B022 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		468814AFA4BFA44BA041E9D6B5F24024 /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
+		47AB13A5DB15798A16984E58A1303B3D /* Pods-Abstract-BDesignworks.test staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworks.test staging.xcconfig"; sourceTree = "<group>"; };
+		47E9D3575A696E0E893A8126791298CE /* Pods-Abstract-BDesignworksTests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksTests.release staging.xcconfig"; sourceTree = "<group>"; };
+		4A574CEAA5AAF788DFD54CA79044172E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
+		4BEF271A3EDB1D6AB2CFCEECD8C3EEBC /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		4C3B118AEC4D8F00AB4BB17484A40E3D /* NSManagedObjectContext+MagicalChainSave.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+MagicalChainSave.m"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalChainSave.m"; sourceTree = "<group>"; };
+		4D5A4BB54BC0EA13C1418FCF582E954B /* NSString+MagicalDataImport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+MagicalDataImport.h"; path = "MagicalRecord/Categories/DataImport/NSString+MagicalDataImport.h"; sourceTree = "<group>"; };
+		4D87EC6C33083BB0179608F1E8656C19 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4F118D1E65763C4402D351913219387F /* Pods-Abstract-BDesignworks-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Abstract-BDesignworks-dummy.m"; sourceTree = "<group>"; };
+		51CA4F753A7C741F3BFCE1C72E20515B /* NSManagedObjectModel+MagicalRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectModel+MagicalRecord.m"; path = "MagicalRecord/Categories/NSManagedObjectModel+MagicalRecord.m"; sourceTree = "<group>"; };
+		53AE7A2A69BB28192741BBBF2205B9C5 /* Pods-Abstract-BDesignworksTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Abstract-BDesignworksTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		55AFDC1EFB535F33FC0A83DAB2AC77EA /* MagicalRecord.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MagicalRecord.modulemap; sourceTree = "<group>"; };
+		574C8DAEEA5F9D394499418CF11B6E21 /* NSManagedObject+MagicalDataImport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+MagicalDataImport.h"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalDataImport.h"; sourceTree = "<group>"; };
+		59FFEAB13FABC66D47CC68C6E53DEABF /* MagicalRecord+ErrorHandling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MagicalRecord+ErrorHandling.m"; path = "MagicalRecord/Core/MagicalRecord+ErrorHandling.m"; sourceTree = "<group>"; };
+		5A1138ACA24EB8C46AAEAD57888F5BFA /* MagicalRecord+iCloud.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MagicalRecord+iCloud.h"; path = "MagicalRecord/Core/MagicalRecord+iCloud.h"; sourceTree = "<group>"; };
+		5BEED988FE30FDBA90E225AE6E2F5F49 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F1866FA9BE5ED5C285CE37291B43F7D /* MagicalRecordXcode7CompatibilityMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MagicalRecordXcode7CompatibilityMacros.h; path = MagicalRecord/Core/MagicalRecordXcode7CompatibilityMacros.h; sourceTree = "<group>"; };
+		5FCBA8ABD5C0C3C2CA2031BB817E481E /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		643F24EF5133EA12FB762D18B1FC7AB4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		655694FD56A02D6290F9266096F22016 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		698A07BD75999AEF956BE52E4F791F04 /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
+		71CE9781746E880045700C68F2BFDCA5 /* NSManagedObject+MagicalFinders.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+MagicalFinders.m"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalFinders.m"; sourceTree = "<group>"; };
+		75098F5398CEE255EA49A9B693796AFA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		7958FE199A7C6DF34372203269864E19 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		7C23B68BB0CB4384633C27AACCAB07CE /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		7E037CCA3B068BEFD928F1F2269CDE9C /* Pods-Abstract-BDesignworks-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Abstract-BDesignworks-resources.sh"; sourceTree = "<group>"; };
+		7E20950DFBBA1E9FCC53DC37C4BE2645 /* NSManagedObjectContext+MagicalObserving.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+MagicalObserving.m"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalObserving.m"; sourceTree = "<group>"; };
+		7EA0FAC59DE58534809A107EEF15E9D8 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
+		7F8D9A1D100819A0D8B2F1BE4F9C0ADD /* Pods-Abstract-BDesignworksTests.test staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksTests.test staging.xcconfig"; sourceTree = "<group>"; };
+		8029387CDAD3604934847CCE6E674566 /* MagicalRecord-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord-prefix.pch"; sourceTree = "<group>"; };
+		803BD29A4B2AE941DC9A4A40C39CD472 /* Pods-Abstract-BDesignworks-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Abstract-BDesignworks-umbrella.h"; sourceTree = "<group>"; };
+		80B9FE904FAF720D30E335E3A1AF3E55 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		819D9EBCA260DA0438667DBFF26A1511 /* Pods-Abstract-BDesignworksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksTests.debug.xcconfig"; sourceTree = "<group>"; };
+		81EAF6F74D1A55325BEDA85B1F44D3FB /* MagicalRecord+Options.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MagicalRecord+Options.h"; path = "MagicalRecord/Core/MagicalRecord+Options.h"; sourceTree = "<group>"; };
+		8353538CC9D637024621DA761506E484 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
+		8647B5B42B79B786E94591AAE95571E6 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		87541CFCCB71A98F178F404C9C3DE195 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		875644AF23C776469924778381E695D2 /* Pods-Abstract-BDesignworksUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksUITests.release staging.xcconfig"; sourceTree = "<group>"; };
+		8892F601099226880E0457303417A06F /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		8B0092259653C232A98BDB9B0DDE13C4 /* Pods-Abstract-BDesignworksTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Abstract-BDesignworksTests-umbrella.h"; sourceTree = "<group>"; };
+		8B20FF96EAC3C42BC0A923A72217EF3D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C6C607A65E47BE574A852520DAEAF67 /* Pods-Abstract-BDesignworksTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Abstract-BDesignworksTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8CCFF73060C1CB3EA6437B84B04E4C75 /* MagicalRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MagicalRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E2C48556BF2AB992F1BB848B37B7DC1 /* Pods-Abstract-BDesignworksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		90E13485F830F553032D6EE90F310427 /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AFNetworking.modulemap; sourceTree = "<group>"; };
+		91488F86111D0C6382AE3554A212850D /* Pods_Abstract_BDesignworksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		925D581755E3267C091429A0574C0822 /* NSPersistentStoreCoordinator+MagicalRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSPersistentStoreCoordinator+MagicalRecord.h"; path = "MagicalRecord/Categories/NSPersistentStoreCoordinator+MagicalRecord.h"; sourceTree = "<group>"; };
+		92975659836F97E22674B2D07C65335C /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAutoPurgingImageCache.m; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95A0AE21DB9CD3B61FD227C15CC7F8B1 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		976D9DC0D8C572DFA319E38F7393B984 /* Pods-Abstract-BDesignworksUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Abstract-BDesignworksUITests-dummy.m"; sourceTree = "<group>"; };
+		9B554A8F0F215FD06314EC16564A0E6E /* MagicalRecord+Actions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MagicalRecord+Actions.h"; path = "MagicalRecord/Core/MagicalRecord+Actions.h"; sourceTree = "<group>"; };
+		9D22B78AF0EE6257C1B5CAF08338642C /* Pods-Abstract-BDesignworks.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworks.release staging.xcconfig"; sourceTree = "<group>"; };
+		9DFACC219B4803C66C469636B7E9FC65 /* Pods-Abstract-BDesignworksUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Abstract-BDesignworksUITests.modulemap"; sourceTree = "<group>"; };
+		9F741BB0B6ED147D0B37282DC8430C77 /* MagicalRecordInternal.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MagicalRecordInternal.m; path = MagicalRecord/Core/MagicalRecordInternal.m; sourceTree = "<group>"; };
+		9FAC87E8432271CB616032271D211263 /* Pods-Abstract-BDesignworksTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksTests.appstore.xcconfig"; sourceTree = "<group>"; };
+		A01FDD092D0766012671A0922FE1395D /* NSManagedObjectContext+MagicalThreading.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+MagicalThreading.h"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalThreading.h"; sourceTree = "<group>"; };
+		A17E16F7356D9E6BA9CD8C1B5B634003 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A33A001CAB6AE6ED00133210C657E770 /* Pods-Abstract-BDesignworks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworks.debug.xcconfig"; sourceTree = "<group>"; };
+		A37D10D9EA831B8C84AB93BE8A4B7152 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		A641C49C1A1F1D33F1278D970110AEB1 /* MagicalRecord+Actions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MagicalRecord+Actions.m"; path = "MagicalRecord/Core/MagicalRecord+Actions.m"; sourceTree = "<group>"; };
+		A6E9399DC208975BF8E59FB45A9520C0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		A78E7DE42BD16375932EBC88223B9D8D /* MagicalRecordDeprecationMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MagicalRecordDeprecationMacros.h; path = MagicalRecord/Core/MagicalRecordDeprecationMacros.h; sourceTree = "<group>"; };
+		A8B7266A5A8A4E01AAF43E91008B04E4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		A8F7DDDB7C7D0A6CA056F157FA4895CA /* NSNumber+MagicalDataImport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNumber+MagicalDataImport.h"; path = "MagicalRecord/Categories/DataImport/NSNumber+MagicalDataImport.h"; sourceTree = "<group>"; };
+		A8FFB63EDC2A1A3F2DF49C072C6B4087 /* MagicalRecord+Setup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MagicalRecord+Setup.m"; path = "MagicalRecord/Core/MagicalRecord+Setup.m"; sourceTree = "<group>"; };
+		B130F6020F9899F68A6870C2CCA0DAD2 /* NSManagedObject+MagicalFinders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+MagicalFinders.h"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalFinders.h"; sourceTree = "<group>"; };
+		B2870E13D94C3BC111EC43D3F341FC29 /* MagicalRecordLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MagicalRecordLogging.h; path = MagicalRecord/Core/MagicalRecordLogging.h; sourceTree = "<group>"; };
+		B477B02342FC0EE5C4352DF9DAB454C7 /* Pods-Abstract-BDesignworksUITests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksUITests.appstore.xcconfig"; sourceTree = "<group>"; };
+		B71F81FE80857F7AD00F3B7755D5C6BC /* NSNumber+MagicalDataImport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+MagicalDataImport.m"; path = "MagicalRecord/Categories/DataImport/NSNumber+MagicalDataImport.m"; sourceTree = "<group>"; };
+		B85C7825423BCC01DA4B8EE5FA93180C /* Pods-Abstract-BDesignworks.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworks.test.xcconfig"; sourceTree = "<group>"; };
+		B8CA328B909846D442B9E28E4BE5885C /* MagicalRecord+Options.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MagicalRecord+Options.m"; path = "MagicalRecord/Core/MagicalRecord+Options.m"; sourceTree = "<group>"; };
+		B931DDE14BAD7813E8D8AC7572B82BA4 /* NSRelationshipDescription+MagicalDataImport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSRelationshipDescription+MagicalDataImport.m"; path = "MagicalRecord/Categories/DataImport/NSRelationshipDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
+		B95075BACEC4D06EE1BB9B40A11B6C25 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		BE7412EFE0D50FB92769654C59DC628F /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		BF7F6F03FD675D33A7FBBED723F2510A /* NSManagedObject+MagicalAggregation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+MagicalAggregation.h"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalAggregation.h"; sourceTree = "<group>"; };
+		C200A1CE276A567CDEC3D65EC64602A2 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		C417B36C543C8C0E00CBD0B0394B143D /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
+		C51710AFAF694AD0E912EB5823BD995D /* MagicalImportFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MagicalImportFunctions.m; path = MagicalRecord/Categories/DataImport/MagicalImportFunctions.m; sourceTree = "<group>"; };
+		C6B335DBA19107D45CB1BE89D5D174A9 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		C9DBDE9DED04FC29AEC51AC2B463A8E7 /* Pods-Abstract-BDesignworks.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworks.appstore debug.xcconfig"; sourceTree = "<group>"; };
+		CA57F160EF67D1BCD6105B56F57107DD /* MagicalRecord+ShorthandMethods.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MagicalRecord+ShorthandMethods.h"; path = "MagicalRecord/Core/MagicalRecord+ShorthandMethods.h"; sourceTree = "<group>"; };
+		D14FBD8B15B150D25C6A21B6DEDFE7D1 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		D68D034F5F7888DA15A66EEC35C8474B /* NSManagedObject+MagicalRequests.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+MagicalRequests.m"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalRequests.m"; sourceTree = "<group>"; };
+		D7BE48A5B96213AC72CC1AA6C21FEB2A /* Pods-Abstract-BDesignworksTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Abstract-BDesignworksTests-dummy.m"; sourceTree = "<group>"; };
+		D861CED4CC156F4967654E333815B460 /* NSManagedObjectModel+MagicalRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectModel+MagicalRecord.h"; path = "MagicalRecord/Categories/NSManagedObjectModel+MagicalRecord.h"; sourceTree = "<group>"; };
+		DAE9A85C2F6403CE4EFE2314228CFA5D /* Pods-Abstract-BDesignworksUITests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksUITests.test.xcconfig"; sourceTree = "<group>"; };
+		DCC90F4D1DC2F852F8B3A588EFD2541F /* NSEntityDescription+MagicalDataImport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSEntityDescription+MagicalDataImport.h"; path = "MagicalRecord/Categories/DataImport/NSEntityDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
+		DE9447BF9435F3A29E41DBA8455CAAD3 /* MagicalRecord+Setup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MagicalRecord+Setup.h"; path = "MagicalRecord/Core/MagicalRecord+Setup.h"; sourceTree = "<group>"; };
+		DFE435B235A22038FB9E4C170BF3E25B /* Pods-Abstract-BDesignworksTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksTests.debug staging.xcconfig"; sourceTree = "<group>"; };
+		DFFC83E63DF367994DAC36E2DF630F1D /* NSPersistentStoreCoordinator+MagicalRecord.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSPersistentStoreCoordinator+MagicalRecord.m"; path = "MagicalRecord/Categories/NSPersistentStoreCoordinator+MagicalRecord.m"; sourceTree = "<group>"; };
+		E0E46666FC893434DDD4304C662620FA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		E242518782E384A0E9DA7CFC47E1CBD6 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		E360FCD2B908A1644213171357067E57 /* Pods-Abstract-BDesignworks.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Abstract-BDesignworks.modulemap"; sourceTree = "<group>"; };
+		E389453F08F18DC6E425C4B69E360837 /* MagicalRecord+ShorthandMethods.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MagicalRecord+ShorthandMethods.m"; path = "MagicalRecord/Core/MagicalRecord+ShorthandMethods.m"; sourceTree = "<group>"; };
+		E3D51667F4AB589B16696A154C001011 /* MagicalRecord-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord-umbrella.h"; sourceTree = "<group>"; };
+		E40F168907A358CB6485DBCF8B6C2980 /* MagicalRecord-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord-dummy.m"; sourceTree = "<group>"; };
+		E44BDAFB092AAC2912793C22FBF035E3 /* Pods-Abstract-BDesignworksUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Abstract-BDesignworksUITests-resources.sh"; sourceTree = "<group>"; };
+		E5DF0D429E754206AD97AA5C80AF0012 /* Pods-Abstract-BDesignworksUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Abstract-BDesignworksUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E72789903310BC411AF269C9BCA902FB /* Pods-Abstract-BDesignworks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworks.release.xcconfig"; sourceTree = "<group>"; };
+		E9DCD39A5F66EBABD9DDA2FE5B0FFD20 /* Pods-Abstract-BDesignworksUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Abstract-BDesignworksUITests-frameworks.sh"; sourceTree = "<group>"; };
+		EB61793FA4C557296FF09BEC57BA04FE /* NSManagedObject+MagicalAggregation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+MagicalAggregation.m"; path = "MagicalRecord/Categories/NSManagedObject/NSManagedObject+MagicalAggregation.m"; sourceTree = "<group>"; };
+		EC775F7240566ACDC1A736DAAF3758C8 /* NSManagedObjectContext+MagicalThreading.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+MagicalThreading.m"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalThreading.m"; sourceTree = "<group>"; };
+		ECF85F8B34FE2C6482BE594F7EEAF354 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		EEDFF62C37C48F74F245AAAF6DF5CB14 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF384ACB77491138BC548AA68E3D36C2 /* Pods-Abstract-BDesignworks.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworks.appstore.xcconfig"; sourceTree = "<group>"; };
+		EF997E353581BC14AB984D2BF1756E61 /* Pods_Abstract_BDesignworksTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F03179F74A4F1611D64BB260ED496ED0 /* Pods_Abstract_BDesignworks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F466E8CC7A571A9F61803E7606977803 /* Pods-Abstract-BDesignworksTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Abstract-BDesignworksTests.modulemap"; sourceTree = "<group>"; };
+		F541F67AF174872488AA4AA5584F1065 /* NSPersistentStore+MagicalRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSPersistentStore+MagicalRecord.h"; path = "MagicalRecord/Categories/NSPersistentStore+MagicalRecord.h"; sourceTree = "<group>"; };
+		F56AF6CE66D2609485DDA017933634DE /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		F698563AA00EE29D9179EACA71B15A4C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		F787751E7735B6721C3CF8DC3819B66D /* Pods-Abstract-BDesignworksUITests.test staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Abstract-BDesignworksUITests.test staging.xcconfig"; sourceTree = "<group>"; };
+		FA30745BCD45BA213E0859B683A27235 /* Pods-Abstract-BDesignworksTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Abstract-BDesignworksTests-frameworks.sh"; sourceTree = "<group>"; };
+		FB563D458A523B15DB8171B585776968 /* MagicalRecordInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MagicalRecordInternal.h; path = MagicalRecord/Core/MagicalRecordInternal.h; sourceTree = "<group>"; };
+		FC5F7277EA06311331A97B3159A21398 /* NSManagedObjectContext+MagicalRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+MagicalRecord.h"; path = "MagicalRecord/Categories/NSManagedObjectContext/NSManagedObjectContext+MagicalRecord.h"; sourceTree = "<group>"; };
+		FC969CF9F376F2491C5004B700512FF2 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		FCE36506E5367F16E34D2C436E660BE9 /* NSEntityDescription+MagicalDataImport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSEntityDescription+MagicalDataImport.m"; path = "MagicalRecord/Categories/DataImport/NSEntityDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
+		FF2DA8CE427B6FBA8C551D298B795BEF /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0EB329B8E12A89DCC06053ADC52451E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DBC6776623D7F14151F2EBF0FA514AA /* CoreGraphics.framework in Frameworks */,
+				B34EE327725D3D8A0C0620EB0FAEDBFD /* Foundation.framework in Frameworks */,
+				655FA93CBD17F3CF67806F7C48EE7473 /* MobileCoreServices.framework in Frameworks */,
+				9B6F3E97E7435489C43BE1CC0F361CB5 /* Security.framework in Frameworks */,
+				365281511F621FEBD2F16C5FBA3EA929 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		112BDE3F79ACCBC59869EBA062F513F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCD812B08A7235B3A271E5A48B8D76FA /* CoreData.framework in Frameworks */,
+				BFF1E51E20B43595BC26047BFE775139 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5400D7A1BB29FB7FF57F3C9EACCF9326 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B70526E73DC55D17637134D7E31126E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7712AA80FC8E35C9D3781AECF6A8AC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70E28306682DABE48428ED82476AF5D2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC663F9A2CF3003EB2C42BE756331F77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D23EBA94DCF794E06DCECD085A98328 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08C495E12CBACB8CBA5A053E0A03B216 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2B8BA3CECAFC98BA3EB31005BA93AEBD /* MagicalImportFunctions.h */,
+				C51710AFAF694AD0E912EB5823BD995D /* MagicalImportFunctions.m */,
+				2568FACDFF18AC0D61489A6E99A627C1 /* MagicalRecord.h */,
+				9B554A8F0F215FD06314EC16564A0E6E /* MagicalRecord+Actions.h */,
+				A641C49C1A1F1D33F1278D970110AEB1 /* MagicalRecord+Actions.m */,
+				102D02311D2B89BAD2B340D219FEE7AE /* MagicalRecord+ErrorHandling.h */,
+				59FFEAB13FABC66D47CC68C6E53DEABF /* MagicalRecord+ErrorHandling.m */,
+				5A1138ACA24EB8C46AAEAD57888F5BFA /* MagicalRecord+iCloud.h */,
+				2F67BF68A9DF908EEE41A4C9AC75F80B /* MagicalRecord+iCloud.m */,
+				81EAF6F74D1A55325BEDA85B1F44D3FB /* MagicalRecord+Options.h */,
+				B8CA328B909846D442B9E28E4BE5885C /* MagicalRecord+Options.m */,
+				DE9447BF9435F3A29E41DBA8455CAAD3 /* MagicalRecord+Setup.h */,
+				A8FFB63EDC2A1A3F2DF49C072C6B4087 /* MagicalRecord+Setup.m */,
+				CA57F160EF67D1BCD6105B56F57107DD /* MagicalRecord+ShorthandMethods.h */,
+				E389453F08F18DC6E425C4B69E360837 /* MagicalRecord+ShorthandMethods.m */,
+				A78E7DE42BD16375932EBC88223B9D8D /* MagicalRecordDeprecationMacros.h */,
+				FB563D458A523B15DB8171B585776968 /* MagicalRecordInternal.h */,
+				9F741BB0B6ED147D0B37282DC8430C77 /* MagicalRecordInternal.m */,
+				B2870E13D94C3BC111EC43D3F341FC29 /* MagicalRecordLogging.h */,
+				5F1866FA9BE5ED5C285CE37291B43F7D /* MagicalRecordXcode7CompatibilityMacros.h */,
+				151F47796F6A868EFFB7F1291F28E503 /* NSAttributeDescription+MagicalDataImport.h */,
+				3C25F9B288978429F3A70972F2DFB1C2 /* NSAttributeDescription+MagicalDataImport.m */,
+				DCC90F4D1DC2F852F8B3A588EFD2541F /* NSEntityDescription+MagicalDataImport.h */,
+				FCE36506E5367F16E34D2C436E660BE9 /* NSEntityDescription+MagicalDataImport.m */,
+				BF7F6F03FD675D33A7FBBED723F2510A /* NSManagedObject+MagicalAggregation.h */,
+				EB61793FA4C557296FF09BEC57BA04FE /* NSManagedObject+MagicalAggregation.m */,
+				574C8DAEEA5F9D394499418CF11B6E21 /* NSManagedObject+MagicalDataImport.h */,
+				19B2CC9707CF3242E103F2C1E3B58CDD /* NSManagedObject+MagicalDataImport.m */,
+				B130F6020F9899F68A6870C2CCA0DAD2 /* NSManagedObject+MagicalFinders.h */,
+				71CE9781746E880045700C68F2BFDCA5 /* NSManagedObject+MagicalFinders.m */,
+				1C3FBC6C80848AD3AFD67BAE1E83A68F /* NSManagedObject+MagicalRecord.h */,
+				3822F5A724A04A9F09D1C4762E671AB0 /* NSManagedObject+MagicalRecord.m */,
+				3B298755A8E511AF9567D616E9CBEC99 /* NSManagedObject+MagicalRequests.h */,
+				D68D034F5F7888DA15A66EEC35C8474B /* NSManagedObject+MagicalRequests.m */,
+				19C5C4F442950AAC81D095E5CDA71585 /* NSManagedObjectContext+MagicalChainSave.h */,
+				4C3B118AEC4D8F00AB4BB17484A40E3D /* NSManagedObjectContext+MagicalChainSave.m */,
+				0D0D9C6E4E00ACC67F4C102A77FB57D6 /* NSManagedObjectContext+MagicalObserving.h */,
+				7E20950DFBBA1E9FCC53DC37C4BE2645 /* NSManagedObjectContext+MagicalObserving.m */,
+				FC5F7277EA06311331A97B3159A21398 /* NSManagedObjectContext+MagicalRecord.h */,
+				3632EF29729FEA33BFA571760AF61192 /* NSManagedObjectContext+MagicalRecord.m */,
+				0DBC927D1775BD138869D3ED0BE525AF /* NSManagedObjectContext+MagicalSaves.h */,
+				4110A7BF6D73F34FAB5F0DEF1145CA26 /* NSManagedObjectContext+MagicalSaves.m */,
+				A01FDD092D0766012671A0922FE1395D /* NSManagedObjectContext+MagicalThreading.h */,
+				EC775F7240566ACDC1A736DAAF3758C8 /* NSManagedObjectContext+MagicalThreading.m */,
+				D861CED4CC156F4967654E333815B460 /* NSManagedObjectModel+MagicalRecord.h */,
+				51CA4F753A7C741F3BFCE1C72E20515B /* NSManagedObjectModel+MagicalRecord.m */,
+				A8F7DDDB7C7D0A6CA056F157FA4895CA /* NSNumber+MagicalDataImport.h */,
+				B71F81FE80857F7AD00F3B7755D5C6BC /* NSNumber+MagicalDataImport.m */,
+				16C74D1126029AA29849243C35805C7B /* NSObject+MagicalDataImport.h */,
+				37CE79517C6F0291ACAF65B5A9A5EBFB /* NSObject+MagicalDataImport.m */,
+				F541F67AF174872488AA4AA5584F1065 /* NSPersistentStore+MagicalRecord.h */,
+				0722EA88737055DAA50427E9FD9C3CF5 /* NSPersistentStore+MagicalRecord.m */,
+				925D581755E3267C091429A0574C0822 /* NSPersistentStoreCoordinator+MagicalRecord.h */,
+				DFFC83E63DF367994DAC36E2DF630F1D /* NSPersistentStoreCoordinator+MagicalRecord.m */,
+				1404AD6DD754E2E19E18BEFEF584258D /* NSRelationshipDescription+MagicalDataImport.h */,
+				B931DDE14BAD7813E8D8AC7572B82BA4 /* NSRelationshipDescription+MagicalDataImport.m */,
+				4D5A4BB54BC0EA13C1418FCF582E954B /* NSString+MagicalDataImport.h */,
+				239FE61D19330FBF1B7BDE6D099740EF /* NSString+MagicalDataImport.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		0EB97101B666A58F65A978B2083202A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C82E60A3E6386FD4AF44FEC729BF390C /* AFNetworking */,
+				93D015B9804F61966B471ECD16B9B3BD /* Crashlytics */,
+				CCF2933D6A54DEE6E7F0C60B83500437 /* Fabric */,
+				AF43C4A7D90DFC8B26C691CF0DB456F7 /* MagicalRecord */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		0F75DF6C7C5F002280EC53F48E80B587 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2EAD6BC465ED81DC5222D38F8E72D68 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		241C07E3FBFE0D0AA65D05A9704FCFA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A574CEAA5AAF788DFD54CA79044172E /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		253E7B813B6A698EC4C18254CDD48D48 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				87541CFCCB71A98F178F404C9C3DE195 /* AFNetworkReachabilityManager.h */,
+				D14FBD8B15B150D25C6A21B6DEDFE7D1 /* AFNetworkReachabilityManager.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		3D1D70B58DC3993A7251D44AC7E59FE7 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7485925AC13787747BA46154D01B2DF1 /* Pods-Abstract-BDesignworks */,
+				59C1BED5883AF4F621CC679072FD2259 /* Pods-Abstract-BDesignworksTests */,
+				9A3CD437181CE24E8D9F09037B7BA9CA /* Pods-Abstract-BDesignworksUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		4E0B458E46F9C5FAFA15882F941529DE /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				80B9FE904FAF720D30E335E3A1AF3E55 /* AFHTTPSessionManager.h */,
+				448721B1B4CF90AC868EFAAC02E5B022 /* AFHTTPSessionManager.m */,
+				95A0AE21DB9CD3B61FD227C15CC7F8B1 /* AFURLSessionManager.h */,
+				FC969CF9F376F2491C5004B700512FF2 /* AFURLSessionManager.m */,
+			);
+			name = NSURLSession;
+			sourceTree = "<group>";
+		};
+		59C1BED5883AF4F621CC679072FD2259 /* Pods-Abstract-BDesignworksTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B20FF96EAC3C42BC0A923A72217EF3D /* Info.plist */,
+				F466E8CC7A571A9F61803E7606977803 /* Pods-Abstract-BDesignworksTests.modulemap */,
+				8C6C607A65E47BE574A852520DAEAF67 /* Pods-Abstract-BDesignworksTests-acknowledgements.markdown */,
+				53AE7A2A69BB28192741BBBF2205B9C5 /* Pods-Abstract-BDesignworksTests-acknowledgements.plist */,
+				D7BE48A5B96213AC72CC1AA6C21FEB2A /* Pods-Abstract-BDesignworksTests-dummy.m */,
+				FA30745BCD45BA213E0859B683A27235 /* Pods-Abstract-BDesignworksTests-frameworks.sh */,
+				3A4E4CEDF3600665C35E027606433570 /* Pods-Abstract-BDesignworksTests-resources.sh */,
+				8B0092259653C232A98BDB9B0DDE13C4 /* Pods-Abstract-BDesignworksTests-umbrella.h */,
+				9FAC87E8432271CB616032271D211263 /* Pods-Abstract-BDesignworksTests.appstore.xcconfig */,
+				8353538CC9D637024621DA761506E484 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */,
+				819D9EBCA260DA0438667DBFF26A1511 /* Pods-Abstract-BDesignworksTests.debug.xcconfig */,
+				DFE435B235A22038FB9E4C170BF3E25B /* Pods-Abstract-BDesignworksTests.debug staging.xcconfig */,
+				3756A09D121008B2FDE05566079F14F8 /* Pods-Abstract-BDesignworksTests.release.xcconfig */,
+				47E9D3575A696E0E893A8126791298CE /* Pods-Abstract-BDesignworksTests.release staging.xcconfig */,
+				2BF7BDC5892B5CF68FC1F02FAFAF4135 /* Pods-Abstract-BDesignworksTests.test.xcconfig */,
+				7F8D9A1D100819A0D8B2F1BE4F9C0ADD /* Pods-Abstract-BDesignworksTests.test staging.xcconfig */,
+			);
+			name = "Pods-Abstract-BDesignworksTests";
+			path = "Target Support Files/Pods-Abstract-BDesignworksTests";
+			sourceTree = "<group>";
+		};
+		7485925AC13787747BA46154D01B2DF1 /* Pods-Abstract-BDesignworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEDFF62C37C48F74F245AAAF6DF5CB14 /* Info.plist */,
+				E360FCD2B908A1644213171357067E57 /* Pods-Abstract-BDesignworks.modulemap */,
+				0BFDBAAE801CD54E34A7432354EA83F0 /* Pods-Abstract-BDesignworks-acknowledgements.markdown */,
+				338BDF6CA7B7AC4B76F8043C29F73DF1 /* Pods-Abstract-BDesignworks-acknowledgements.plist */,
+				4F118D1E65763C4402D351913219387F /* Pods-Abstract-BDesignworks-dummy.m */,
+				26B61A6A76CAFC8EB0CA2C1D770A8E6B /* Pods-Abstract-BDesignworks-frameworks.sh */,
+				7E037CCA3B068BEFD928F1F2269CDE9C /* Pods-Abstract-BDesignworks-resources.sh */,
+				803BD29A4B2AE941DC9A4A40C39CD472 /* Pods-Abstract-BDesignworks-umbrella.h */,
+				EF384ACB77491138BC548AA68E3D36C2 /* Pods-Abstract-BDesignworks.appstore.xcconfig */,
+				C9DBDE9DED04FC29AEC51AC2B463A8E7 /* Pods-Abstract-BDesignworks.appstore debug.xcconfig */,
+				A33A001CAB6AE6ED00133210C657E770 /* Pods-Abstract-BDesignworks.debug.xcconfig */,
+				4292653F6C543CC976BACB29B24DB1D9 /* Pods-Abstract-BDesignworks.debug staging.xcconfig */,
+				E72789903310BC411AF269C9BCA902FB /* Pods-Abstract-BDesignworks.release.xcconfig */,
+				9D22B78AF0EE6257C1B5CAF08338642C /* Pods-Abstract-BDesignworks.release staging.xcconfig */,
+				B85C7825423BCC01DA4B8EE5FA93180C /* Pods-Abstract-BDesignworks.test.xcconfig */,
+				47AB13A5DB15798A16984E58A1303B3D /* Pods-Abstract-BDesignworks.test staging.xcconfig */,
+			);
+			name = "Pods-Abstract-BDesignworks";
+			path = "Target Support Files/Pods-Abstract-BDesignworks";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				0F75DF6C7C5F002280EC53F48E80B587 /* Frameworks */,
+				0EB97101B666A58F65A978B2083202A8 /* Pods */,
+				BC49908F92CB2A512CEF7BFCAA28F4F1 /* Products */,
+				3D1D70B58DC3993A7251D44AC7E59FE7 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		87E73E947D5062815E653017B816699C /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				3852E65F2949EFA2E7E9712FF7C15C98 /* AFSecurityPolicy.h */,
+				8647B5B42B79B786E94591AAE95571E6 /* AFSecurityPolicy.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		931B276284697820C252DE94D825E67C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8B7266A5A8A4E01AAF43E91008B04E4 /* Crashlytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		936220A585CA6AEF90973D6E84817A5F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				90E13485F830F553032D6EE90F310427 /* AFNetworking.modulemap */,
+				0D0B913DFF62189D3B996D1B69496541 /* AFNetworking.xcconfig */,
+				5FCBA8ABD5C0C3C2CA2031BB817E481E /* AFNetworking-dummy.m */,
+				BE7412EFE0D50FB92769654C59DC628F /* AFNetworking-prefix.pch */,
+				38D322E662273B79C1D7FF2C95411BF3 /* AFNetworking-umbrella.h */,
+				A17E16F7356D9E6BA9CD8C1B5B634003 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AFNetworking";
+			sourceTree = "<group>";
+		};
+		93D015B9804F61966B471ECD16B9B3BD /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				931B276284697820C252DE94D825E67C /* Frameworks */,
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		9A3CD437181CE24E8D9F09037B7BA9CA /* Pods-Abstract-BDesignworksUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5BEED988FE30FDBA90E225AE6E2F5F49 /* Info.plist */,
+				9DFACC219B4803C66C469636B7E9FC65 /* Pods-Abstract-BDesignworksUITests.modulemap */,
+				1F6DA14A8EF16186D0125C4FD361192C /* Pods-Abstract-BDesignworksUITests-acknowledgements.markdown */,
+				E5DF0D429E754206AD97AA5C80AF0012 /* Pods-Abstract-BDesignworksUITests-acknowledgements.plist */,
+				976D9DC0D8C572DFA319E38F7393B984 /* Pods-Abstract-BDesignworksUITests-dummy.m */,
+				E9DCD39A5F66EBABD9DDA2FE5B0FFD20 /* Pods-Abstract-BDesignworksUITests-frameworks.sh */,
+				E44BDAFB092AAC2912793C22FBF035E3 /* Pods-Abstract-BDesignworksUITests-resources.sh */,
+				0C61DA482F8DAB662483EA5B06DD245A /* Pods-Abstract-BDesignworksUITests-umbrella.h */,
+				B477B02342FC0EE5C4352DF9DAB454C7 /* Pods-Abstract-BDesignworksUITests.appstore.xcconfig */,
+				27EE995B0316A05D53CF036A3B323CAF /* Pods-Abstract-BDesignworksUITests.appstore debug.xcconfig */,
+				8E2C48556BF2AB992F1BB848B37B7DC1 /* Pods-Abstract-BDesignworksUITests.debug.xcconfig */,
+				1F0EBF8A34168D259E8013CEE853F3D1 /* Pods-Abstract-BDesignworksUITests.debug staging.xcconfig */,
+				0E177353D5184709A7D11953D954A610 /* Pods-Abstract-BDesignworksUITests.release.xcconfig */,
+				875644AF23C776469924778381E695D2 /* Pods-Abstract-BDesignworksUITests.release staging.xcconfig */,
+				DAE9A85C2F6403CE4EFE2314228CFA5D /* Pods-Abstract-BDesignworksUITests.test.xcconfig */,
+				F787751E7735B6721C3CF8DC3819B66D /* Pods-Abstract-BDesignworksUITests.test staging.xcconfig */,
+			);
+			name = "Pods-Abstract-BDesignworksUITests";
+			path = "Target Support Files/Pods-Abstract-BDesignworksUITests";
+			sourceTree = "<group>";
+		};
+		A2EAD6BC465ED81DC5222D38F8E72D68 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				643F24EF5133EA12FB762D18B1FC7AB4 /* CoreData.framework */,
+				A6E9399DC208975BF8E59FB45A9520C0 /* CoreGraphics.framework */,
+				4D87EC6C33083BB0179608F1E8656C19 /* Foundation.framework */,
+				E0E46666FC893434DDD4304C662620FA /* MobileCoreServices.framework */,
+				75098F5398CEE255EA49A9B693796AFA /* Security.framework */,
+				F698563AA00EE29D9179EACA71B15A4C /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		AF43C4A7D90DFC8B26C691CF0DB456F7 /* MagicalRecord */ = {
+			isa = PBXGroup;
+			children = (
+				08C495E12CBACB8CBA5A053E0A03B216 /* Core */,
+				B477F13EAB16BB77E0D939E0779D52A3 /* Support Files */,
+			);
+			path = MagicalRecord;
+			sourceTree = "<group>";
+		};
+		B1CB95CE50D7D5C6D8280D583D0EC3C2 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				698A07BD75999AEF956BE52E4F791F04 /* AFAutoPurgingImageCache.h */,
+				92975659836F97E22674B2D07C65335C /* AFAutoPurgingImageCache.m */,
+				070CC2DD8DD454A00D819A76B59EE635 /* AFImageDownloader.h */,
+				468814AFA4BFA44BA041E9D6B5F24024 /* AFImageDownloader.m */,
+				7EA0FAC59DE58534809A107EEF15E9D8 /* AFNetworkActivityIndicatorManager.h */,
+				2874FCB70858B2CFD5C6663192A30D5F /* AFNetworkActivityIndicatorManager.m */,
+				09F90F85022AD86E35FDD02E55F36968 /* UIActivityIndicatorView+AFNetworking.h */,
+				655694FD56A02D6290F9266096F22016 /* UIActivityIndicatorView+AFNetworking.m */,
+				2F4DDC4C138BAA33BC526A0A0EE1C1C9 /* UIButton+AFNetworking.h */,
+				FF2DA8CE427B6FBA8C551D298B795BEF /* UIButton+AFNetworking.m */,
+				C417B36C543C8C0E00CBD0B0394B143D /* UIImage+AFNetworking.h */,
+				ECF85F8B34FE2C6482BE594F7EEAF354 /* UIImageView+AFNetworking.h */,
+				C200A1CE276A567CDEC3D65EC64602A2 /* UIImageView+AFNetworking.m */,
+				E242518782E384A0E9DA7CFC47E1CBD6 /* UIKit+AFNetworking.h */,
+				F56AF6CE66D2609485DDA017933634DE /* UIProgressView+AFNetworking.h */,
+				A37D10D9EA831B8C84AB93BE8A4B7152 /* UIProgressView+AFNetworking.m */,
+				B95075BACEC4D06EE1BB9B40A11B6C25 /* UIRefreshControl+AFNetworking.h */,
+				2B03A912CB01E84ACCFF945C8F9B78E7 /* UIRefreshControl+AFNetworking.m */,
+				1606FEF34FC380C68C29033CCC88C620 /* UIWebView+AFNetworking.h */,
+				30F66E6A15ADC71AA02AB2FB0E11350E /* UIWebView+AFNetworking.m */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		B477F13EAB16BB77E0D939E0779D52A3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E3EDFD4711C254D7EE7A40514B71FB5 /* Info.plist */,
+				55AFDC1EFB535F33FC0A83DAB2AC77EA /* MagicalRecord.modulemap */,
+				1B1E972B5AD72F0099A398914EF5E7AF /* MagicalRecord.xcconfig */,
+				E40F168907A358CB6485DBCF8B6C2980 /* MagicalRecord-dummy.m */,
+				8029387CDAD3604934847CCE6E674566 /* MagicalRecord-prefix.pch */,
+				E3D51667F4AB589B16696A154C001011 /* MagicalRecord-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MagicalRecord";
+			sourceTree = "<group>";
+		};
+		BC49908F92CB2A512CEF7BFCAA28F4F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40AADCAC03F59A1BED948671C4E9F896 /* AFNetworking.framework */,
+				8CCFF73060C1CB3EA6437B84B04E4C75 /* MagicalRecord.framework */,
+				F03179F74A4F1611D64BB260ED496ED0 /* Pods_Abstract_BDesignworks.framework */,
+				EF997E353581BC14AB984D2BF1756E61 /* Pods_Abstract_BDesignworksTests.framework */,
+				91488F86111D0C6382AE3554A212850D /* Pods_Abstract_BDesignworksUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C82E60A3E6386FD4AF44FEC729BF390C /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				7C23B68BB0CB4384633C27AACCAB07CE /* AFNetworking.h */,
+				4E0B458E46F9C5FAFA15882F941529DE /* NSURLSession */,
+				253E7B813B6A698EC4C18254CDD48D48 /* Reachability */,
+				87E73E947D5062815E653017B816699C /* Security */,
+				F357DD9488DAD0347866C02760163BA3 /* Serialization */,
+				936220A585CA6AEF90973D6E84817A5F /* Support Files */,
+				B1CB95CE50D7D5C6D8280D583D0EC3C2 /* UIKit */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		CCF2933D6A54DEE6E7F0C60B83500437 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				241C07E3FBFE0D0AA65D05A9704FCFA9 /* Frameworks */,
+			);
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		F357DD9488DAD0347866C02760163BA3 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				4BEF271A3EDB1D6AB2CFCEECD8C3EEBC /* AFURLRequestSerialization.h */,
+				C6B335DBA19107D45CB1BE89D5D174A9 /* AFURLRequestSerialization.m */,
+				8892F601099226880E0457303417A06F /* AFURLResponseSerialization.h */,
+				7958FE199A7C6DF34372203269864E19 /* AFURLResponseSerialization.m */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		09DB7ACE40B3C37DB9459054508E1C48 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC2269123C081796A6C63EFE69C7FA89 /* Pods-Abstract-BDesignworksUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		290E23B144CFF61D9283BB4A669D5896 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4067EFCF5E3EB39EF30B61D4ED7CABD8 /* AFAutoPurgingImageCache.h in Headers */,
+				B5819073A6906DA0255B81D9F7C399BF /* AFHTTPSessionManager.h in Headers */,
+				7E0AEE24FBFF0AE843F142BD9077D7EA /* AFImageDownloader.h in Headers */,
+				443D2C1F02661304D60280AFD87EDE94 /* AFNetworkActivityIndicatorManager.h in Headers */,
+				2C43A191D8DD208D26DA0C162330063C /* AFNetworking-umbrella.h in Headers */,
+				A7016A80A063A737D3A89B2A56D54045 /* AFNetworking.h in Headers */,
+				E481F01CD542237FE777C7886D611E19 /* AFNetworkReachabilityManager.h in Headers */,
+				793840ADC4B76F038EA45CBAB9C00411 /* AFSecurityPolicy.h in Headers */,
+				0E3EA64E5F45DC28DC0777F66DBB1D14 /* AFURLRequestSerialization.h in Headers */,
+				796974B2B7F09A6545FB3599CAE17327 /* AFURLResponseSerialization.h in Headers */,
+				DC3CB82B45D21EF61A5EBB84CD7D5D90 /* AFURLSessionManager.h in Headers */,
+				6A1A3ACAF8EE608ACAAF41A784F1FF38 /* UIActivityIndicatorView+AFNetworking.h in Headers */,
+				F293B10B4B186E02970888FA95A2919E /* UIButton+AFNetworking.h in Headers */,
+				269BFA01D6EC6E4F4844B4DF8A4D6282 /* UIImage+AFNetworking.h in Headers */,
+				6C4C9F2048F19A2EAA348F55FB1B4E86 /* UIImageView+AFNetworking.h in Headers */,
+				E2D710D57A111023E2247B32A6369355 /* UIKit+AFNetworking.h in Headers */,
+				3ED8349E833A40310AAAC4A3EE153AA1 /* UIProgressView+AFNetworking.h in Headers */,
+				8902464F0A59CB0157031F524F2FD0A3 /* UIRefreshControl+AFNetworking.h in Headers */,
+				BE3A4DCFF55EBC8C83DD61586D12C53D /* UIWebView+AFNetworking.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1B9EA5E207331C9FB2ACAE3BE6546FB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E3F3AAC4A8F18933F6096C746985C03 /* Pods-Abstract-BDesignworks-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3C6C8898034002DE76B503CB392F118 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				873A2565A8F13A37DC1F948FAE3A0C6B /* MagicalImportFunctions.h in Headers */,
+				32B280B6F88E5359B67CEDBF1FC04CE0 /* MagicalRecord+Actions.h in Headers */,
+				5F939E2D4FAF2FDBFD375C9EF51AB4AC /* MagicalRecord+ErrorHandling.h in Headers */,
+				63CD7049BB090C4451B710D904FA59DB /* MagicalRecord+iCloud.h in Headers */,
+				F9C327FAA4DCAFB43A38C93D96E139F6 /* MagicalRecord+Options.h in Headers */,
+				9164FADF1ABBE01AB6E91BB165EF5667 /* MagicalRecord+Setup.h in Headers */,
+				0F22351DA1A3D702C2E6CDD83E490D5F /* MagicalRecord+ShorthandMethods.h in Headers */,
+				CB353CD52B7F352D1915DE7955430FCF /* MagicalRecord-umbrella.h in Headers */,
+				D7054D617BEDE19E4799E46FB7789769 /* MagicalRecord.h in Headers */,
+				C3F7EB6381967C765C617DD8A4F7FC44 /* MagicalRecordDeprecationMacros.h in Headers */,
+				A8917F4F856B9BF67E9BB7F740F33E02 /* MagicalRecordInternal.h in Headers */,
+				3521DD81CBF7A37B5C82C98B2B699A1E /* MagicalRecordLogging.h in Headers */,
+				D70B5FD4563A492F941324224447056F /* MagicalRecordXcode7CompatibilityMacros.h in Headers */,
+				053DABFA92D9BFF453AC6EDEDC8984F6 /* NSAttributeDescription+MagicalDataImport.h in Headers */,
+				48A65F1B523A66A65C3D463DD26641CD /* NSEntityDescription+MagicalDataImport.h in Headers */,
+				E3A97FC13E0B19F080172C7CA01167E7 /* NSManagedObject+MagicalAggregation.h in Headers */,
+				99C73C815185BC9E8DFD1EAFB2D87EA4 /* NSManagedObject+MagicalDataImport.h in Headers */,
+				A4DA1E9955B1D43A2F1DAA06B5310698 /* NSManagedObject+MagicalFinders.h in Headers */,
+				1FBE4F1EF412E7D1439C5C723B0617F1 /* NSManagedObject+MagicalRecord.h in Headers */,
+				9CBC32F7EFE35EBB5975CBB5095C3707 /* NSManagedObject+MagicalRequests.h in Headers */,
+				855CBA47CAB145C27E7A80357D9EC66B /* NSManagedObjectContext+MagicalChainSave.h in Headers */,
+				5C648FA64F4E630D1FDD4093AE3DFE9B /* NSManagedObjectContext+MagicalObserving.h in Headers */,
+				E5BFD28822640534E062B93949DE373D /* NSManagedObjectContext+MagicalRecord.h in Headers */,
+				3EE596D04B1944834C61A012E557AAFC /* NSManagedObjectContext+MagicalSaves.h in Headers */,
+				E3E1503CD0D2E6F273E77E976B68B060 /* NSManagedObjectContext+MagicalThreading.h in Headers */,
+				301F8AD823893477E2B9E9CBC31F1D9B /* NSManagedObjectModel+MagicalRecord.h in Headers */,
+				6A34C7BA2F239663810E50AAC868E031 /* NSNumber+MagicalDataImport.h in Headers */,
+				BC21786E21AA8A53C2AE66DD3D7C526E /* NSObject+MagicalDataImport.h in Headers */,
+				D56C1A690A12F062DDF9FFAF0BD8828F /* NSPersistentStore+MagicalRecord.h in Headers */,
+				D0DBE6E6961116F542077FE5FC2B26BB /* NSPersistentStoreCoordinator+MagicalRecord.h in Headers */,
+				3174D49C6CD7F435FF97E52DED12B0D5 /* NSRelationshipDescription+MagicalDataImport.h in Headers */,
+				13A69E9B380214C8C762E34CD6B3951F /* NSString+MagicalDataImport.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F990FF51EEAD6EAA7EAFCE1EF3420B4B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154D3E16CA472D06C8337D6F16306720 /* Pods-Abstract-BDesignworksTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		26F9CCCCE896BEDFF4D0CDD1AF51BD56 /* Pods-Abstract-BDesignworks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8154FDFB682CC0D21F2E1AE83F552060 /* Build configuration list for PBXNativeTarget "Pods-Abstract-BDesignworks" */;
+			buildPhases = (
+				7738175305C2FE11D1515F6D07AD7776 /* Sources */,
+				DC663F9A2CF3003EB2C42BE756331F77 /* Frameworks */,
+				B1B9EA5E207331C9FB2ACAE3BE6546FB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18EB9F07E09DA0B7FDF4F36B63A872EA /* PBXTargetDependency */,
+				A6C2512275A6D1CD4DED4E2781D021C1 /* PBXTargetDependency */,
+			);
+			name = "Pods-Abstract-BDesignworks";
+			productName = "Pods-Abstract-BDesignworks";
+			productReference = F03179F74A4F1611D64BB260ED496ED0 /* Pods_Abstract_BDesignworks.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		80ABF78ED78D78668C2AC879AD19F924 /* Pods-Abstract-BDesignworksUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F4F18F845A9F4693F9F37E252293230 /* Build configuration list for PBXNativeTarget "Pods-Abstract-BDesignworksUITests" */;
+			buildPhases = (
+				BA62C5FC1BD5985546DADEEF5F8FFD66 /* Sources */,
+				A7712AA80FC8E35C9D3781AECF6A8AC4 /* Frameworks */,
+				09DB7ACE40B3C37DB9459054508E1C48 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD100B06A381A4935AED280B5E359F12 /* PBXTargetDependency */,
+				B2B9BC4290B694E8979F7081CE0071DD /* PBXTargetDependency */,
+			);
+			name = "Pods-Abstract-BDesignworksUITests";
+			productName = "Pods-Abstract-BDesignworksUITests";
+			productReference = 91488F86111D0C6382AE3554A212850D /* Pods_Abstract_BDesignworksUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AD47E339A26F876F910CD9E671989350 /* MagicalRecord */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3DD98F93CFF0CDAF92F03F2D77E6BF2 /* Build configuration list for PBXNativeTarget "MagicalRecord" */;
+			buildPhases = (
+				599C5A9217D2613663CFF2AE142CB5EB /* Sources */,
+				112BDE3F79ACCBC59869EBA062F513F9 /* Frameworks */,
+				D3C6C8898034002DE76B503CB392F118 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MagicalRecord;
+			productName = MagicalRecord;
+			productReference = 8CCFF73060C1CB3EA6437B84B04E4C75 /* MagicalRecord.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BB6D9DD106D1A7484C107C2C69F9624B /* AFNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01ADEA938D0C4E7FAE6E8FE2072482C0 /* Build configuration list for PBXNativeTarget "AFNetworking" */;
+			buildPhases = (
+				658676A0AFE16D327F91992D15090717 /* Sources */,
+				0EB329B8E12A89DCC06053ADC52451E1 /* Frameworks */,
+				290E23B144CFF61D9283BB4A669D5896 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AFNetworking;
+			productName = AFNetworking;
+			productReference = 40AADCAC03F59A1BED948671C4E9F896 /* AFNetworking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CE290975E77F6C435A4CBA9A0B3653D0 /* Pods-Abstract-BDesignworksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C14B54418ED87E3B00F25B787EDEC353 /* Build configuration list for PBXNativeTarget "Pods-Abstract-BDesignworksTests" */;
+			buildPhases = (
+				78DBCCE37CF094A0E8429160D5075EAB /* Sources */,
+				5400D7A1BB29FB7FF57F3C9EACCF9326 /* Frameworks */,
+				F990FF51EEAD6EAA7EAFCE1EF3420B4B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BDDFA663786289EABCD46C7FAC2BA3D /* PBXTargetDependency */,
+				4157B62B17BD60790AE30A01DC7EB882 /* PBXTargetDependency */,
+			);
+			name = "Pods-Abstract-BDesignworksTests";
+			productName = "Pods-Abstract-BDesignworksTests";
+			productReference = EF997E353581BC14AB984D2BF1756E61 /* Pods_Abstract_BDesignworksTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = BC49908F92CB2A512CEF7BFCAA28F4F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB6D9DD106D1A7484C107C2C69F9624B /* AFNetworking */,
+				AD47E339A26F876F910CD9E671989350 /* MagicalRecord */,
+				26F9CCCCE896BEDFF4D0CDD1AF51BD56 /* Pods-Abstract-BDesignworks */,
+				CE290975E77F6C435A4CBA9A0B3653D0 /* Pods-Abstract-BDesignworksTests */,
+				80ABF78ED78D78668C2AC879AD19F924 /* Pods-Abstract-BDesignworksUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		599C5A9217D2613663CFF2AE142CB5EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D96A2EC3B206F63D2764478B0201144 /* MagicalImportFunctions.m in Sources */,
+				FEF32063C461B20B65DB2A06A30BB6F7 /* MagicalRecord+Actions.m in Sources */,
+				C57FFEC01297CAAF01AD798435A0BFE0 /* MagicalRecord+ErrorHandling.m in Sources */,
+				3DD7C1ADF1DA17264B11B3FCA93CDD9A /* MagicalRecord+iCloud.m in Sources */,
+				44FBD4BED7EC0F0835002425D78154C4 /* MagicalRecord+Options.m in Sources */,
+				3F5DC541B71A33F6D5AA5012C7630425 /* MagicalRecord+Setup.m in Sources */,
+				0627EC150C177700387C9E0C44C5D20E /* MagicalRecord+ShorthandMethods.m in Sources */,
+				6FED892127561AFCEC7D866B4C73ECAD /* MagicalRecord-dummy.m in Sources */,
+				09E6DECD5AB594104764C6F81EB71537 /* MagicalRecordInternal.m in Sources */,
+				09E64866A37EAC1852E7FA08CF2BBB07 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
+				B8E051AE222124F3922022CD3BDD7C38 /* NSEntityDescription+MagicalDataImport.m in Sources */,
+				F3086DFFAA5BBA34A0A5AA264BCD64A5 /* NSManagedObject+MagicalAggregation.m in Sources */,
+				09CD5E8011F9FF90817B4CEA30CCAF79 /* NSManagedObject+MagicalDataImport.m in Sources */,
+				C1F35A8F2C9F043CD2793B591BB8EA48 /* NSManagedObject+MagicalFinders.m in Sources */,
+				36BEEF5338EF31B0955DC632E0482747 /* NSManagedObject+MagicalRecord.m in Sources */,
+				DB52E3ED7904BA42F3D27F55E11345E0 /* NSManagedObject+MagicalRequests.m in Sources */,
+				813F360497C515D67049CA30039E867E /* NSManagedObjectContext+MagicalChainSave.m in Sources */,
+				3BFEC1F842226F4A2EA83742A489AF04 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				FED654D996F54BAA458DC0A4E86EBA11 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
+				E4FF1388561CEA6536DD601C59E0E2D8 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
+				438151B3D667A8B3D478F37E744BACF3 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
+				CA1FC0E3273FF68DA837600721ECB68A /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				F7B7200B1DD5F3AA6EF4FB8A7E4D5675 /* NSNumber+MagicalDataImport.m in Sources */,
+				F1F8D1CD51E348CBDA66CE9FF0F75B52 /* NSObject+MagicalDataImport.m in Sources */,
+				921F9023DEE0379E9CBF31386853299B /* NSPersistentStore+MagicalRecord.m in Sources */,
+				49063CFE2BE637CB9319D1F794D3B752 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
+				565DBB9129441D06C3D401E5DF8F1456 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
+				2A77F38FE22978DCED7F724F8C554723 /* NSString+MagicalDataImport.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		658676A0AFE16D327F91992D15090717 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2A269484A8280B1DDC7D4D45432156F /* AFAutoPurgingImageCache.m in Sources */,
+				26619A95FEEF44DD9364917675A895C4 /* AFHTTPSessionManager.m in Sources */,
+				BD35C7AD6DD983685586E62A51A1636B /* AFImageDownloader.m in Sources */,
+				DB872C5121AA79D578F353483C0EE236 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				27DB4644CB311586956D4E69D03EDECD /* AFNetworking-dummy.m in Sources */,
+				CBE52A7343DAD44D55002BC0245B29AA /* AFNetworkReachabilityManager.m in Sources */,
+				1ED25AA526192FB5F23E548CD087A9D3 /* AFSecurityPolicy.m in Sources */,
+				F073E3199AB1263A0D73EB16465A676D /* AFURLRequestSerialization.m in Sources */,
+				8F0CE9C8293AB633C27761F997F6C4DC /* AFURLResponseSerialization.m in Sources */,
+				F8FDE00AA639609A248ABB2022049BB3 /* AFURLSessionManager.m in Sources */,
+				70B778EC8E66F741693DB5A4621258C8 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				F3FD71DF03D266FF20AE82A7D5D679CF /* UIButton+AFNetworking.m in Sources */,
+				02DD605FD5B64D5583FCD27F13F8862C /* UIImageView+AFNetworking.m in Sources */,
+				F09211BC390EC440EC8E15ACF457A26E /* UIProgressView+AFNetworking.m in Sources */,
+				7089F36838F4B800F0B3FCE6BCEE780A /* UIRefreshControl+AFNetworking.m in Sources */,
+				233BC55087C727070FEF93DD88E8EE92 /* UIWebView+AFNetworking.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7738175305C2FE11D1515F6D07AD7776 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A27AF124FDE86F3837132A325C915B5 /* Pods-Abstract-BDesignworks-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78DBCCE37CF094A0E8429160D5075EAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A067F11C3901BD12215ED09A6F4BAA99 /* Pods-Abstract-BDesignworksTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA62C5FC1BD5985546DADEEF5F8FFD66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A87F37C7D248D101FCD5135A1151DAFE /* Pods-Abstract-BDesignworksUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18EB9F07E09DA0B7FDF4F36B63A872EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AFNetworking;
+			target = BB6D9DD106D1A7484C107C2C69F9624B /* AFNetworking */;
+			targetProxy = 49395353C998342325009382A15BC030 /* PBXContainerItemProxy */;
+		};
+		3BDDFA663786289EABCD46C7FAC2BA3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AFNetworking;
+			target = BB6D9DD106D1A7484C107C2C69F9624B /* AFNetworking */;
+			targetProxy = 4E28EC93C606E4C434985FE3E64008A2 /* PBXContainerItemProxy */;
+		};
+		4157B62B17BD60790AE30A01DC7EB882 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MagicalRecord;
+			target = AD47E339A26F876F910CD9E671989350 /* MagicalRecord */;
+			targetProxy = 24EF32BF21F2AD4ABA9506CE5217D091 /* PBXContainerItemProxy */;
+		};
+		A6C2512275A6D1CD4DED4E2781D021C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MagicalRecord;
+			target = AD47E339A26F876F910CD9E671989350 /* MagicalRecord */;
+			targetProxy = 26080A32BE051B74F8C9190CA8E1D4B1 /* PBXContainerItemProxy */;
+		};
+		AD100B06A381A4935AED280B5E359F12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AFNetworking;
+			target = BB6D9DD106D1A7484C107C2C69F9624B /* AFNetworking */;
+			targetProxy = C1B615DB549412C9C034B3F1CDEA5403 /* PBXContainerItemProxy */;
+		};
+		B2B9BC4290B694E8979F7081CE0071DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MagicalRecord;
+			target = AD47E339A26F876F910CD9E671989350 /* MagicalRecord */;
+			targetProxy = 0EF1DE8988A0564C1BD323F56E72B403 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		090A72EF8C31DF782C6991540123F9AF /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4292653F6C543CC976BACB29B24DB1D9 /* Pods-Abstract-BDesignworks.debug staging.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworks;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug Staging";
+		};
+		0A1AF227C508747E10AED7E1078DED2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E2C48556BF2AB992F1BB848B37B7DC1 /* Pods-Abstract-BDesignworksUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0A39D1BDAAC1AE07BFB4C5A625ED4AB0 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0B913DFF62189D3B996D1B69496541 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		0AE009DE0000018C9DF31106C2BEB710 /* Test Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47AB13A5DB15798A16984E58A1303B3D /* Pods-Abstract-BDesignworks.test staging.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworks;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Test Staging";
+		};
+		1896C3E40CC1C05E7D4C2E301E8F1C5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E72789903310BC411AF269C9BCA902FB /* Pods-Abstract-BDesignworks.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworks;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1C9390B495C33D1D160F7DEB2A4F60FA /* AppStore Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0B913DFF62189D3B996D1B69496541 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "AppStore Debug";
+		};
+		2045BF6D69736E93EA5679BC18A39E48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3756A09D121008B2FDE05566079F14F8 /* Pods-Abstract-BDesignworksTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2279A3D4D32DE8F476DD489E07DA1902 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B1E972B5AD72F0099A398914EF5E7AF /* MagicalRecord.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MagicalRecord/MagicalRecord-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MagicalRecord/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MagicalRecord/MagicalRecord.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MagicalRecord;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2588EA364419D831347938453F4F6DE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		2738D39F715C27964B6CF654A57063DD /* AppStore Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_APP_STORE_DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "AppStore Debug";
+		};
+		2A02B07F5832EB297600E9CDD10B9860 /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE_STAGING=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release Staging";
+		};
+		301085D58C69541A02E8E082931A2453 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAE9A85C2F6403CE4EFE2314228CFA5D /* Pods-Abstract-BDesignworksUITests.test.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		37ABCBFC24B3252826A6CF4DF2043B91 /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F0EBF8A34168D259E8013CEE853F3D1 /* Pods-Abstract-BDesignworksUITests.debug staging.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug Staging";
+		};
+		428EED8EC31CEAC4FABEEA4BCB4AFD94 /* Test Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0B913DFF62189D3B996D1B69496541 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Test Staging";
+		};
+		43E76399CDF1AACE2AAD22C160A415FC /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF384ACB77491138BC548AA68E3D36C2 /* Pods-Abstract-BDesignworks.appstore.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworks;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = AppStore;
+		};
+		484A4EB22BAB427BF993CAC393DB466A /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG_STAGING=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Debug Staging";
+		};
+		4ACEEECF5516800D3561A3BAE08BE2E7 /* Test Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B1E972B5AD72F0099A398914EF5E7AF /* MagicalRecord.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MagicalRecord/MagicalRecord-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MagicalRecord/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MagicalRecord/MagicalRecord.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MagicalRecord;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Test Staging";
+		};
+		4ADFEE8ACAF960F0E5D9EE1F86F34D19 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B1E972B5AD72F0099A398914EF5E7AF /* MagicalRecord.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MagicalRecord/MagicalRecord-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MagicalRecord/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MagicalRecord/MagicalRecord.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MagicalRecord;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = AppStore;
+		};
+		4F9C92716832088CC207637BBDCFF639 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E177353D5184709A7D11953D954A610 /* Pods-Abstract-BDesignworksUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		53F50FFB9780F42284FBABBFD0993070 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FAC87E8432271CB616032271D211263 /* Pods-Abstract-BDesignworksTests.appstore.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = AppStore;
+		};
+		61AD4929AC3440F8BFA0595E8DCD90C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6F5CED0C3D0C9DFA0F72BC4D1B688280 /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 875644AF23C776469924778381E695D2 /* Pods-Abstract-BDesignworksUITests.release staging.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Release Staging";
+		};
+		73FEC839A0A06B1620F1B462BA07DE29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A33A001CAB6AE6ED00133210C657E770 /* Pods-Abstract-BDesignworks.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworks;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		77A8506A5DAA1B15BDC8A82EB60372D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0B913DFF62189D3B996D1B69496541 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		77CE2B3F0F4AC5CABC9FE6642DB5B4D6 /* AppStore Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27EE995B0316A05D53CF036A3B323CAF /* Pods-Abstract-BDesignworksUITests.appstore debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "AppStore Debug";
+		};
+		793D1A6F64F3E661FBDE3B2DD83D9B1B /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B85C7825423BCC01DA4B8EE5FA93180C /* Pods-Abstract-BDesignworks.test.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworks;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		7D0D7656552118F42510B8DAAC83172B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0B913DFF62189D3B996D1B69496541 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		80780D0A9ADE56296E9855B32B715823 /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47E9D3575A696E0E893A8126791298CE /* Pods-Abstract-BDesignworksTests.release staging.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Release Staging";
+		};
+		863DE222943D6BCC386CDF950B2229BD /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B1E972B5AD72F0099A398914EF5E7AF /* MagicalRecord.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MagicalRecord/MagicalRecord-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MagicalRecord/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MagicalRecord/MagicalRecord.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MagicalRecord;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		8C3696E19C86C2E023AAFACE81954EAF /* AppStore Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B1E972B5AD72F0099A398914EF5E7AF /* MagicalRecord.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MagicalRecord/MagicalRecord-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MagicalRecord/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MagicalRecord/MagicalRecord.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MagicalRecord;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "AppStore Debug";
+		};
+		907BE8B5ECDF9EDBF9FE157F678982E4 /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B1E972B5AD72F0099A398914EF5E7AF /* MagicalRecord.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MagicalRecord/MagicalRecord-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MagicalRecord/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MagicalRecord/MagicalRecord.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MagicalRecord;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Release Staging";
+		};
+		9474DFB42082CB07CEC55D883103AD12 /* Test Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_TEST_STAGING=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Test Staging";
+		};
+		A1A5D2031A42E22E07A4308C343BE7BA /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_TEST=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Test;
+		};
+		A2BAF3B15594C34CC86045C1496BD7A6 /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B1E972B5AD72F0099A398914EF5E7AF /* MagicalRecord.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MagicalRecord/MagicalRecord-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MagicalRecord/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MagicalRecord/MagicalRecord.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MagicalRecord;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug Staging";
+		};
+		AC14F353770D5500BB64DFE1CA005E3B /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BF7BDC5892B5CF68FC1F02FAFAF4135 /* Pods-Abstract-BDesignworksTests.test.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		AEC36B652E96AFAC6C58797AAF9AC825 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B477B02342FC0EE5C4352DF9DAB454C7 /* Pods-Abstract-BDesignworksUITests.appstore.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = AppStore;
+		};
+		B23C4D3921CBD5B663D68CC019FEEE7B /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0B913DFF62189D3B996D1B69496541 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug Staging";
+		};
+		B28DF6A6D59813D23560D202D1C81029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 819D9EBCA260DA0438667DBFF26A1511 /* Pods-Abstract-BDesignworksTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B3EE32CE6141C9E633F4EA32297D0F70 /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0B913DFF62189D3B996D1B69496541 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Release Staging";
+		};
+		C30E66024276343386C4B0E8B442475F /* AppStore Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8353538CC9D637024621DA761506E484 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "AppStore Debug";
+		};
+		C8B834C192FACF5102D0CB7466D8F06A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B1E972B5AD72F0099A398914EF5E7AF /* MagicalRecord.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MagicalRecord/MagicalRecord-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MagicalRecord/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MagicalRecord/MagicalRecord.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MagicalRecord;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CAF16D9285007D82084A44DD154E901D /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0B913DFF62189D3B996D1B69496541 /* AFNetworking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = AppStore;
+		};
+		D063D8617F57E9524DC4510486EAAAA0 /* Test Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F8D9A1D100819A0D8B2F1BE4F9C0ADD /* Pods-Abstract-BDesignworksTests.test staging.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Test Staging";
+		};
+		D96258642C3F48DAD91125B3CFD3AF3F /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFE435B235A22038FB9E4C170BF3E25B /* Pods-Abstract-BDesignworksTests.debug staging.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug Staging";
+		};
+		D9B2632AA1548427C115AA1A733EE77A /* Test Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F787751E7735B6721C3CF8DC3819B66D /* Pods-Abstract-BDesignworksUITests.test staging.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworksUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Test Staging";
+		};
+		DC24443D5D450B433A81A9857678926F /* AppStore Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9DBDE9DED04FC29AEC51AC2B463A8E7 /* Pods-Abstract-BDesignworks.appstore debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworks;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "AppStore Debug";
+		};
+		EF9EADFB0AF95EC5E6D7B150A77F29DD /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D22B78AF0EE6257C1B5CAF08338642C /* Pods-Abstract-BDesignworks.release staging.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Abstract_BDesignworks;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Release Staging";
+		};
+		F0D4C710D0D2C2FC866BD1CF03BFEE9B /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_APP_STORE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AppStore;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01ADEA938D0C4E7FAE6E8FE2072482C0 /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAF16D9285007D82084A44DD154E901D /* AppStore */,
+				1C9390B495C33D1D160F7DEB2A4F60FA /* AppStore Debug */,
+				77A8506A5DAA1B15BDC8A82EB60372D6 /* Debug */,
+				B23C4D3921CBD5B663D68CC019FEEE7B /* Debug Staging */,
+				7D0D7656552118F42510B8DAAC83172B /* Release */,
+				B3EE32CE6141C9E633F4EA32297D0F70 /* Release Staging */,
+				0A39D1BDAAC1AE07BFB4C5A625ED4AB0 /* Test */,
+				428EED8EC31CEAC4FABEEA4BCB4AFD94 /* Test Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0D4C710D0D2C2FC866BD1CF03BFEE9B /* AppStore */,
+				2738D39F715C27964B6CF654A57063DD /* AppStore Debug */,
+				2588EA364419D831347938453F4F6DE5 /* Debug */,
+				484A4EB22BAB427BF993CAC393DB466A /* Debug Staging */,
+				61AD4929AC3440F8BFA0595E8DCD90C8 /* Release */,
+				2A02B07F5832EB297600E9CDD10B9860 /* Release Staging */,
+				A1A5D2031A42E22E07A4308C343BE7BA /* Test */,
+				9474DFB42082CB07CEC55D883103AD12 /* Test Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F4F18F845A9F4693F9F37E252293230 /* Build configuration list for PBXNativeTarget "Pods-Abstract-BDesignworksUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEC36B652E96AFAC6C58797AAF9AC825 /* AppStore */,
+				77CE2B3F0F4AC5CABC9FE6642DB5B4D6 /* AppStore Debug */,
+				0A1AF227C508747E10AED7E1078DED2D /* Debug */,
+				37ABCBFC24B3252826A6CF4DF2043B91 /* Debug Staging */,
+				4F9C92716832088CC207637BBDCFF639 /* Release */,
+				6F5CED0C3D0C9DFA0F72BC4D1B688280 /* Release Staging */,
+				301085D58C69541A02E8E082931A2453 /* Test */,
+				D9B2632AA1548427C115AA1A733EE77A /* Test Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8154FDFB682CC0D21F2E1AE83F552060 /* Build configuration list for PBXNativeTarget "Pods-Abstract-BDesignworks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43E76399CDF1AACE2AAD22C160A415FC /* AppStore */,
+				DC24443D5D450B433A81A9857678926F /* AppStore Debug */,
+				73FEC839A0A06B1620F1B462BA07DE29 /* Debug */,
+				090A72EF8C31DF782C6991540123F9AF /* Debug Staging */,
+				1896C3E40CC1C05E7D4C2E301E8F1C5A /* Release */,
+				EF9EADFB0AF95EC5E6D7B150A77F29DD /* Release Staging */,
+				793D1A6F64F3E661FBDE3B2DD83D9B1B /* Test */,
+				0AE009DE0000018C9DF31106C2BEB710 /* Test Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C14B54418ED87E3B00F25B787EDEC353 /* Build configuration list for PBXNativeTarget "Pods-Abstract-BDesignworksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53F50FFB9780F42284FBABBFD0993070 /* AppStore */,
+				C30E66024276343386C4B0E8B442475F /* AppStore Debug */,
+				B28DF6A6D59813D23560D202D1C81029 /* Debug */,
+				D96258642C3F48DAD91125B3CFD3AF3F /* Debug Staging */,
+				2045BF6D69736E93EA5679BC18A39E48 /* Release */,
+				80780D0A9ADE56296E9855B32B715823 /* Release Staging */,
+				AC14F353770D5500BB64DFE1CA005E3B /* Test */,
+				D063D8617F57E9524DC4510486EAAAA0 /* Test Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3DD98F93CFF0CDAF92F03F2D77E6BF2 /* Build configuration list for PBXNativeTarget "MagicalRecord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ADFEE8ACAF960F0E5D9EE1F86F34D19 /* AppStore */,
+				8C3696E19C86C2E023AAFACE81954EAF /* AppStore Debug */,
+				2279A3D4D32DE8F476DD489E07DA1902 /* Debug */,
+				A2BAF3B15594C34CC86045C1496BD7A6 /* Debug Staging */,
+				C8B834C192FACF5102D0CB7466D8F06A /* Release */,
+				907BE8B5ECDF9EDBF9FE157F678982E4 /* Release Staging */,
+				863DE222943D6BCC386CDF950B2229BD /* Test */,
+				4ACEEECF5516800D3561A3BAE08BE2E7 /* Test Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

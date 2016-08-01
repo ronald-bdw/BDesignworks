@@ -1,0 +1,6 @@
+framework module Pods_Abstract_BDesignworks {
+  umbrella header "Pods-Abstract-BDesignworks-umbrella.h"
+
+  export *
+  module * { export * }
+}
