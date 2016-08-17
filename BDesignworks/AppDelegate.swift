@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -92,6 +93,8 @@ extension AppDelegate {
         //setup Crashlytics
         Fabric.with([Crashlytics.self])
         
+        //setup Smooch
+        self.setupSmooch()
     }
     
     func setupProjectForTests() {
@@ -120,6 +123,11 @@ extension AppDelegate {
     func setupAFNetworking() {
         AFNetworkReachabilityManager.sharedManager().startMonitoring()
         AFNetworkActivityIndicatorManager.sharedManager().enabled   = true
+    }
+    
+    func setupSmooch()
+    {
+        SmoochHelper.sharedInstance.startWithParameters("")
     }
     
 //    func setupMagicalRecord() {

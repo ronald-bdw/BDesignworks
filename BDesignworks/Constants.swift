@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FSHelpers_Swift
+
 
 /*--------------User Defaults keys-------------*/
 enum FSUserDefaultsKey {
@@ -30,8 +32,10 @@ enum FSNotificationKey {
 }
 
 /*----------Colors----------*/
-enum FSColors {
-    static let AppColor = UIColor.clearColor()
+enum AppColors
+{
+    static let MainColor = UIColor(fs_hexString: "224d71")
+    static let GoldColor = UIColor(fs_hexString: "ebc44b")
 }
 
 /*----------Helpers----------*/

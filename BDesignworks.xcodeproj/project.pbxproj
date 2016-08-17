@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		069D82E0E3D3C17AFF449024 /* Pods_Abstract_BDesignworksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE17C69B53345B23AAF846DA /* Pods_Abstract_BDesignworksUITests.framework */; };
 		1710DE5F1C453AF800912C5B /* Swift_BaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1710DE5E1C453AF800912C5B /* Swift_BaseUITests.swift */; };
-		2124DFA01A8DF48000422313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2124DF9F1A8DF48000422313 /* ViewController.swift */; };
 		212D018E1BB1986B00B34340 /* Swift_BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212D018D1BB1986B00B34340 /* Swift_BaseTests.swift */; };
 		213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213B89BE19F01A1E005D3749 /* CoreGraphics.framework */; };
 		214F4FF21BFDC2CF0084BE32 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214F4FF11BFDC2CF0084BE32 /* Extensions.swift */; };
@@ -26,6 +25,31 @@
 		21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */; };
 		2394765B05438AD162B7903B /* Pods_Abstract_BDesignworksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3709D2869868D539BA2F87 /* Pods_Abstract_BDesignworksTests.framework */; };
 		2AA988380CB5F0BA261165A1 /* Pods_Abstract_Swift_BaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E04C71AF697F9F512C851E /* Pods_Abstract_Swift_BaseTests.framework */; };
+		2F07298F1D64C85300A71B3C /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F07298E1D64C85300A71B3C /* HealthKit.framework */; };
+		2F0729911D64C86B00A71B3C /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0729901D64C86B00A71B3C /* HealthKitManager.swift */; };
+		2F16FE2C1D54CEDB00EFFDD7 /* ConversationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F16FE2B1D54CEDB00EFFDD7 /* ConversationScreen.swift */; };
+		2F16FE2E1D54E12000EFFDD7 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F16FE2D1D54E12000EFFDD7 /* ProfileScreen.swift */; };
+		2F16FE301D54E13700EFFDD7 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F16FE2F1D54E13700EFFDD7 /* SettingsScreen.swift */; };
+		2F16FE321D54E14D00EFFDD7 /* PushScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F16FE311D54E14D00EFFDD7 /* PushScreen.swift */; };
+		2F16FE341D54E15A00EFFDD7 /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F16FE331D54E15A00EFFDD7 /* AboutScreen.swift */; };
+		2F1B80AA1D5DD42D001AA5DA /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B80A91D5DD42D001AA5DA /* RoundButton.swift */; };
+		2F71794F1D5343F800231639 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71794E1D5343F800231639 /* WelcomeScreen.swift */; };
+		2F7179511D53497A00231639 /* TrialPageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7179501D53497A00231639 /* TrialPageScreen.swift */; };
+		2F7295F21D6323CC00FD7B21 /* CheckboxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7295F11D6323CC00FD7B21 /* CheckboxTableView.swift */; };
+		2F734A261D5397F60073CE23 /* PaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F734A251D5397F60073CE23 /* PaymentScreen.swift */; };
+		2F81CB701D51EBB900D9E93B /* AutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81CB6F1D51EBB900D9E93B /* AutocompleteView.swift */; };
+		2F81CB721D51ED4D00D9E93B /* RollUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81CB711D51ED4D00D9E93B /* RollUpButton.swift */; };
+		2F94CFF71D533998003A1B77 /* VerifyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94CFF61D533998003A1B77 /* VerifyScreen.swift */; };
+		2F954B5B1D5384DD004D4FF1 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F954B5A1D5384DD004D4FF1 /* ToggleButton.swift */; };
+		2FAA4FB81D5C809700DCFF46 /* SidebarTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA4FB71D5C809700DCFF46 /* SidebarTVC.swift */; };
+		2FAA4FBA1D5C83BC00DCFF46 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA4FB91D5C83BC00DCFF46 /* CustomNavigationController.swift */; };
+		2FAA4FBC1D5C890B00DCFF46 /* EditProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA4FBB1D5C890B00DCFF46 /* EditProfileScreen.swift */; };
+		2FB501AF1D51F29000D6D7BE /* Triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FB501AE1D51F29000D6D7BE /* Triangle.png */; };
+		2FC02C4E1D51E6020038BD88 /* SelectProviderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC02C4D1D51E6020038BD88 /* SelectProviderScreen.swift */; };
+		2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE13661D61A44D008702FE /* RoundImage.swift */; };
+		2FDE13691D61B938008702FE /* SmoochHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE13681D61B938008702FE /* SmoochHelper.swift */; };
+		2FE510791D5B793A00C23E8B /* FSHelpers_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE510781D5B793A00C23E8B /* FSHelpers_Swift.framework */; };
+		2FFEA0601D551D0E00ADA63B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFEA05F1D551D0E00ADA63B /* Message.swift */; };
 		723ADB013450927E3555FBEF /* Pods_Abstract_BDesignworks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6B8FA9206128EF0047AB0 /* Pods_Abstract_BDesignworks.framework */; };
 		81ABC4E5D5B644C560E0AA21 /* Pods_Abstract_Swift_BaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9091B29869F8A46A78676A7 /* Pods_Abstract_Swift_BaseUITests.framework */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
@@ -82,7 +106,6 @@
 		19D856C51AB5ED2E0014C459 /* test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = test.sh; path = Scripts/test.sh; sourceTree = "<group>"; };
 		19D856C71AB5EDDF0014C459 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		1EEA300C1693C74958C4FE90 /* Pods-Abstract-BDesignworks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.debug.xcconfig"; sourceTree = "<group>"; };
-		2124DF9F1A8DF48000422313 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		212D018B1BB1986B00B34340 /* BDesignworksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BDesignworksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		212D018D1BB1986B00B34340 /* Swift_BaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_BaseTests.swift; sourceTree = "<group>"; };
 		212D018F1BB1986B00B34340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,6 +132,32 @@
 		21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21E617E41CE61BBF005D67E0 /* generate_entities.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_entities.sh; sourceTree = SOURCE_ROOT; };
 		24CD8CBBB8A679E300A592E5 /* Pods-Abstract-BDesignworks.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.test.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.test.xcconfig"; sourceTree = "<group>"; };
+		2F07298D1D64C85200A71B3C /* BDesignworks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BDesignworks.entitlements; sourceTree = "<group>"; };
+		2F07298E1D64C85300A71B3C /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		2F0729901D64C86B00A71B3C /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		2F16FE2B1D54CEDB00EFFDD7 /* ConversationScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationScreen.swift; sourceTree = "<group>"; };
+		2F16FE2D1D54E12000EFFDD7 /* ProfileScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		2F16FE2F1D54E13700EFFDD7 /* SettingsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		2F16FE311D54E14D00EFFDD7 /* PushScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushScreen.swift; sourceTree = "<group>"; };
+		2F16FE331D54E15A00EFFDD7 /* AboutScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
+		2F1B80A91D5DD42D001AA5DA /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		2F71794E1D5343F800231639 /* WelcomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		2F7179501D53497A00231639 /* TrialPageScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageScreen.swift; sourceTree = "<group>"; };
+		2F7295F11D6323CC00FD7B21 /* CheckboxTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxTableView.swift; sourceTree = "<group>"; };
+		2F734A251D5397F60073CE23 /* PaymentScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentScreen.swift; sourceTree = "<group>"; };
+		2F81CB6F1D51EBB900D9E93B /* AutocompleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutocompleteView.swift; sourceTree = "<group>"; };
+		2F81CB711D51ED4D00D9E93B /* RollUpButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollUpButton.swift; sourceTree = "<group>"; };
+		2F94CFF61D533998003A1B77 /* VerifyScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyScreen.swift; sourceTree = "<group>"; };
+		2F954B5A1D5384DD004D4FF1 /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
+		2FAA4FB71D5C809700DCFF46 /* SidebarTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarTVC.swift; sourceTree = "<group>"; };
+		2FAA4FB91D5C83BC00DCFF46 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		2FAA4FBB1D5C890B00DCFF46 /* EditProfileScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileScreen.swift; sourceTree = "<group>"; };
+		2FB501AE1D51F29000D6D7BE /* Triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Triangle.png; sourceTree = "<group>"; };
+		2FC02C4D1D51E6020038BD88 /* SelectProviderScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectProviderScreen.swift; sourceTree = "<group>"; };
+		2FDE13661D61A44D008702FE /* RoundImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
+		2FDE13681D61B938008702FE /* SmoochHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoochHelper.swift; sourceTree = "<group>"; };
+		2FE510781D5B793A00C23E8B /* FSHelpers_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSHelpers_Swift.framework; path = "../../../../Library/Developer/Xcode/DerivedData/BDesignworks-fnrwlmgqpgovjdaqswozowltzxkl/Build/Products/Debug-iphonesimulator/FSHelpers+Swift/FSHelpers_Swift.framework"; sourceTree = "<group>"; };
+		2FFEA05F1D551D0E00ADA63B /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		34CEE7B0A1468777DB0D6EF8 /* Pods-Abstract-BDesignworksUITests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.test.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.test.xcconfig"; sourceTree = "<group>"; };
 		38B1BC0F25415CD477A6B5B8 /* Pods-Abstract-BDesignworksUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.release staging.xcconfig"; sourceTree = "<group>"; };
 		3A5FE293BB9438C1AE339D7F /* Pods-Abstract-BDesignworks.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.release staging.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +211,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FE510791D5B793A00C23E8B /* FSHelpers_Swift.framework in Frameworks */,
+				2F07298F1D64C85300A71B3C /* HealthKit.framework in Frameworks */,
 				213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */,
 				723ADB013450927E3555FBEF /* Pods_Abstract_BDesignworks.framework in Frameworks */,
 			);
@@ -185,6 +236,8 @@
 				214F4FF31BFDC2D90084BE32 /* Helpers.swift */,
 				214F4FF11BFDC2CF0084BE32 /* Extensions.swift */,
 				214F4FF51BFDC35C0084BE32 /* Protocols.swift */,
+				2F0729901D64C86B00A71B3C /* HealthKitManager.swift */,
+				2FDE13681D61B938008702FE /* SmoochHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -192,6 +245,7 @@
 		19C66A341C1DC54800C44FE3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2FFEA05F1D551D0E00ADA63B /* Message.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -284,6 +338,7 @@
 		21DB301119DD2289003A418D /* BDesignworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F07298D1D64C85200A71B3C /* BDesignworks.entitlements */,
 				21DB304819DD2D6D003A418D /* Constants.swift */,
 				21DB301419DD2289003A418D /* AppDelegate.swift */,
 				E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */,
@@ -309,6 +364,27 @@
 				215828691A91E2E000833BE6 /* Scripts */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F1B80AB1D5DEA0B001AA5DA /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				2FC02C4D1D51E6020038BD88 /* SelectProviderScreen.swift */,
+				2F94CFF61D533998003A1B77 /* VerifyScreen.swift */,
+				2F71794E1D5343F800231639 /* WelcomeScreen.swift */,
+				2F7179501D53497A00231639 /* TrialPageScreen.swift */,
+				2F734A251D5397F60073CE23 /* PaymentScreen.swift */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
+		2FB501B01D51F29400D6D7BE /* RollUpButton */ = {
+			isa = PBXGroup;
+			children = (
+				2FB501AE1D51F29000D6D7BE /* Triangle.png */,
+				2F81CB711D51ED4D00D9E93B /* RollUpButton.swift */,
+			);
+			name = RollUpButton;
 			sourceTree = "<group>";
 		};
 		35A5DC772BDBEE89744BCCF8 /* Pods */ = {
@@ -345,6 +421,8 @@
 		5C5B41AD2B6E0DFDD4D53E6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F07298E1D64C85300A71B3C /* HealthKit.framework */,
+				2FE510781D5B793A00C23E8B /* FSHelpers_Swift.framework */,
 				194478471AAF90AF00A34744 /* SenTestingKit.framework */,
 				213B89C019F01A40005D3749 /* SpriteKit.framework */,
 				213B89BE19F01A1E005D3749 /* CoreGraphics.framework */,
@@ -364,6 +442,12 @@
 		E731DC711A1CB30C00E12CBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2FB501B01D51F29400D6D7BE /* RollUpButton */,
+				2F81CB6F1D51EBB900D9E93B /* AutocompleteView.swift */,
+				2F954B5A1D5384DD004D4FF1 /* ToggleButton.swift */,
+				2F1B80A91D5DD42D001AA5DA /* RoundButton.swift */,
+				2FDE13661D61A44D008702FE /* RoundImage.swift */,
+				2F7295F11D6323CC00FD7B21 /* CheckboxTableView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -371,7 +455,15 @@
 		E736C5A41A252B1500B8986E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2124DF9F1A8DF48000422313 /* ViewController.swift */,
+				2FAA4FB91D5C83BC00DCFF46 /* CustomNavigationController.swift */,
+				2F1B80AB1D5DEA0B001AA5DA /* Welcome */,
+				2F16FE2B1D54CEDB00EFFDD7 /* ConversationScreen.swift */,
+				2FAA4FB71D5C809700DCFF46 /* SidebarTVC.swift */,
+				2F16FE2D1D54E12000EFFDD7 /* ProfileScreen.swift */,
+				2FAA4FBB1D5C890B00DCFF46 /* EditProfileScreen.swift */,
+				2F16FE311D54E14D00EFFDD7 /* PushScreen.swift */,
+				2F16FE2F1D54E13700EFFDD7 /* SettingsScreen.swift */,
+				2F16FE331D54E15A00EFFDD7 /* AboutScreen.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -473,7 +565,12 @@
 					};
 					21DB300E19DD2289003A418D = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = FM3GH9DAZN;
+						DevelopmentTeam = Y49MTY8CU2;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -518,6 +615,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */,
+				2FB501AF1D51F29000D6D7BE /* Triangle.png in Resources */,
 				218C64C01BA07DDE00EEEDF1 /* Localizable.strings in Resources */,
 				2158286D1A91E2F200833BE6 /* mogend.sh in Resources */,
 				21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */,
@@ -686,13 +784,34 @@
 			files = (
 				218C64B81BA078BA00EEEDF1 /* BDesignworks.xcdatamodeld in Sources */,
 				21E157E21BB3EDF40041FCE4 /* FSTestHelpers.swift in Sources */,
-				2124DFA01A8DF48000422313 /* ViewController.swift in Sources */,
+				2FAA4FB81D5C809700DCFF46 /* SidebarTVC.swift in Sources */,
 				214F4FF61BFDC35C0084BE32 /* Protocols.swift in Sources */,
+				2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */,
+				2F7179511D53497A00231639 /* TrialPageScreen.swift in Sources */,
+				2FAA4FBC1D5C890B00DCFF46 /* EditProfileScreen.swift in Sources */,
+				2F1B80AA1D5DD42D001AA5DA /* RoundButton.swift in Sources */,
+				2F0729911D64C86B00A71B3C /* HealthKitManager.swift in Sources */,
+				2F81CB721D51ED4D00D9E93B /* RollUpButton.swift in Sources */,
+				2F16FE341D54E15A00EFFDD7 /* AboutScreen.swift in Sources */,
+				2FDE13691D61B938008702FE /* SmoochHelper.swift in Sources */,
+				2FC02C4E1D51E6020038BD88 /* SelectProviderScreen.swift in Sources */,
+				2F71794F1D5343F800231639 /* WelcomeScreen.swift in Sources */,
 				214F4FF41BFDC2D90084BE32 /* Helpers.swift in Sources */,
 				21DB301519DD2289003A418D /* AppDelegate.swift in Sources */,
+				2F81CB701D51EBB900D9E93B /* AutocompleteView.swift in Sources */,
+				2F954B5B1D5384DD004D4FF1 /* ToggleButton.swift in Sources */,
+				2F16FE301D54E13700EFFDD7 /* SettingsScreen.swift in Sources */,
+				2F16FE2C1D54CEDB00EFFDD7 /* ConversationScreen.swift in Sources */,
+				2FAA4FBA1D5C83BC00DCFF46 /* CustomNavigationController.swift in Sources */,
+				2F7295F21D6323CC00FD7B21 /* CheckboxTableView.swift in Sources */,
 				2158286F1A91E56600833BE6 /* APIManager.swift in Sources */,
+				2F16FE2E1D54E12000EFFDD7 /* ProfileScreen.swift in Sources */,
+				2F734A261D5397F60073CE23 /* PaymentScreen.swift in Sources */,
+				2FFEA0601D551D0E00ADA63B /* Message.swift in Sources */,
 				21DB304919DD2D6D003A418D /* Constants.swift in Sources */,
+				2F94CFF71D533998003A1B77 /* VerifyScreen.swift in Sources */,
 				214F4FF21BFDC2CF0084BE32 /* Extensions.swift in Sources */,
+				2F16FE321D54E14D00EFFDD7 /* PushScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -925,8 +1044,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = BDesignworks;
 				BUNDLE_ID = com.flatstack.BDesignworks;
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -946,6 +1066,7 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -1002,8 +1123,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "BDesignworks Staging";
 				BUNDLE_ID = com.flatstack.BDesignworks.staging;
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1023,6 +1145,7 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -1083,6 +1206,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = BDesignworks;
 				BUNDLE_ID = com.flatstack.BDesignworks;
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_TESTABILITY = YES;
@@ -1103,6 +1227,7 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -1351,6 +1476,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = BDesignworks;
 				BUNDLE_ID = com.flatstack.BDesignworks;
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_TESTABILITY = YES;
@@ -1371,6 +1497,7 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -1386,8 +1513,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = BDesignworks;
 				BUNDLE_ID = com.flatstack.BDesignworks;
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1404,6 +1532,7 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -1463,6 +1592,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "BDesignworks Staging";
 				BUNDLE_ID = com.flatstack.BDesignworks.staging;
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_TESTABILITY = YES;
@@ -1483,6 +1613,7 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -1538,8 +1669,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "BDesignworks Staging";
 				BUNDLE_ID = com.flatstack.BDesignworks.staging;
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1556,6 +1688,7 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -1610,6 +1743,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = BDesignworks;
 				BUNDLE_ID = com.flatstack.BDesignworks;
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1628,6 +1762,7 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;

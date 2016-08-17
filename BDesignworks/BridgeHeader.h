@@ -19,4 +19,5 @@
 //@import SDWebImage;
 
 
+#import <Smooch/Smooch.h>
 //#import "ObjectiveC_Header.h"

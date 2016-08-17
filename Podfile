@@ -4,7 +4,7 @@ use_frameworks!
 
 
 abstract_target 'Abstract' do
-    #pod 'FSHelpers+Swift', :git => 'https://github.com/fs/FSHelper.git'
+    pod 'FSHelpers+Swift', :git => 'https://github.com/fs/FSHelper.git'
     
     # Analytics
     pod 'Fabric'
@@ -14,6 +14,9 @@ abstract_target 'Abstract' do
     pod 'AFNetworking'
     pod 'MagicalRecord'
     
+	pod 'Smooch'
+	pod 'SideMenu'
+
     target 'BDesignworks' do
     end
     
@@ -25,7 +28,6 @@ abstract_target 'Abstract' do
 end
 
 # Helpers
-
 #pod 'SDWebImage'
 #pod 'NSDate-Extensions'
 #pod 'Reachability'
