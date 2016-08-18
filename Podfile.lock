@@ -1,37 +1,29 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
-    - AFNetworking/NSURLSession
-  - Crashlytics (3.7.0):
+  - Alamofire (3.4.1)
+  - Crashlytics (3.7.3):
     - Fabric (~> 1.6.3)
-  - Fabric (1.6.7)
+  - Fabric (1.6.8)
   - FSHelpers+Swift (2.2)
-  - MagicalRecord (2.3.2):
-    - MagicalRecord/Core (= 2.3.2)
-  - MagicalRecord/Core (2.3.2)
-  - SideMenu (1.1.7)
+  - ObjectMapper (1.4.0)
+  - Realm (1.0.2):
+    - Realm/Headers (= 1.0.2)
+  - Realm/Headers (1.0.2)
+  - RealmSwift (1.0.2):
+    - Realm (= 1.0.2)
+  - SideMenu (1.1.9)
   - Smooch (4.2.2)
+  - XCGLogger (3.3)
 
 DEPENDENCIES:
-  - AFNetworking
+  - Alamofire
   - Crashlytics
   - Fabric
   - FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`)
-  - MagicalRecord
+  - ObjectMapper
+  - RealmSwift
   - SideMenu
   - Smooch
+  - XCGLogger
 
 EXTERNAL SOURCES:
   FSHelpers+Swift:
@@ -43,14 +35,17 @@ CHECKOUT OPTIONS:
     :git: https://github.com/fs/FSHelper.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
-  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Crashlytics: 76f6beaff70acf226139582c09c78461597c2b98
+  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   FSHelpers+Swift: df9494a1d09ac433dcb3a88dcec6546a7a09c17b
-  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
-  SideMenu: 7b420772e1aa7a2b3a0b0e191566e7e8e0868f53
+  ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
+  Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
+  RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
+  SideMenu: e4ecb0f1061e19230e53079edb2b300081446f80
   Smooch: eac65a9b9e888e3325fde725ce1a6a1ec2137dfc
+  XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
 
-PODFILE CHECKSUM: 009e31ecf9772d36adb048a82d7038debbb3965f
+PODFILE CHECKSUM: b7ce188e5049f94249aa2551014268ab9f2de205
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.0.0

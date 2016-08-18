@@ -9,6 +9,8 @@
 import UIKit
 import FSHelpers_Swift
 
+var Logger: XCGLogger {return XCGLogger.defaultInstance()}
+
 
 /*--------------User Defaults keys-------------*/
 enum FSUserDefaultsKey {

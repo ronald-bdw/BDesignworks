@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 
 @UIApplicationMain
@@ -81,14 +80,7 @@ extension AppDelegate {
         
         self.setupProjectForTests()
         
-        // setup AFNetwork
-        self.setupAFNetworking()
-        
-        // Magica Record
-//        self.setupMagicalRecord()
-        
-        //setup SDWebImage
-//        self.setupSDWebImage()
+        self.setupLogger()
         
         //setup Crashlytics
         Fabric.with([Crashlytics.self])
@@ -120,14 +112,18 @@ extension AppDelegate {
         #endif
     }
     
-    func setupAFNetworking() {
-        AFNetworkReachabilityManager.sharedManager().startMonitoring()
-        AFNetworkActivityIndicatorManager.sharedManager().enabled   = true
-    }
-    
     func setupSmooch()
     {
         SmoochHelper.sharedInstance.startWithParameters("")
+    }
+    
+    func setupLogger() {
+        Logger.setup(.Debug, showLogIdentifier: false, showFunctionName: false, showThreadName: true, showLogLevel: false, showFileNames: true, showLineNumbers: true, showDate: true, writeToFile: nil, fileLogLevel: .None)
+        
+        Logger.dateFormatter?.dateFormat = "HH:mm:ss.SSS"
+        Logger.xcodeColorsEnabled = true
+        
+        print()
     }
     
 //    func setupMagicalRecord() {
