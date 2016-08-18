@@ -1,0 +1,7 @@
+github "fs/FSHelper" "master"
+github "Alamofire/Alamofire" ~> 3.4
+github "DaveWoodCom/XCGLogger" ~> 3.3
+github "Hearst-DD/ObjectMapper"
+github "realm/realm-cocoa"
+github "smooch/smooch-ios"
+#github "jonkykong/SideMenu" "master"

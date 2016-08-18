@@ -14,7 +14,10 @@
 @import Crashlytics;
 
 // Libraries
-@import AFNetworking;
+@import Alamofire;
+@import ObjectMapper;
+@import XCGLogger;
+@import RealmSwift;
 //@import MagicalRecord;
 //@import SDWebImage;
 

@@ -11,8 +11,10 @@ abstract_target 'Abstract' do
     pod 'Crashlytics'
     
     # Libraries
-    pod 'AFNetworking'
-    pod 'MagicalRecord'
+    pod 'Alamofire'
+    pod 'ObjectMapper'
+    pod 'RealmSwift'
+    pod 'XCGLogger'
     
 	pod 'Smooch'
 	pod 'SideMenu'
