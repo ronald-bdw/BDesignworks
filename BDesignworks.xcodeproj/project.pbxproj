@@ -1068,7 +1068,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "c3af8eb2-e0b4-4e42-b8ec-898263ca0e05";
+				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1147,7 +1147,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "c3af8eb2-e0b4-4e42-b8ec-898263ca0e05";
+				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1499,7 +1499,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "c3af8eb2-e0b4-4e42-b8ec-898263ca0e05";
+				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1534,7 +1534,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "ab487fe0-0351-492a-a1ad-d4884e5d32f8";
+				PROVISIONING_PROFILE = "46444646-ee3e-4358-a6f5-2f6bbe7e977e";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1615,7 +1615,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "c3af8eb2-e0b4-4e42-b8ec-898263ca0e05";
+				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1690,7 +1690,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "ab487fe0-0351-492a-a1ad-d4884e5d32f8";
+				PROVISIONING_PROFILE = "46444646-ee3e-4358-a6f5-2f6bbe7e977e";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
