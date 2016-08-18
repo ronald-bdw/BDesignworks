@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import ObjectMapper
 
 extension Router {
     enum User {
         case GetAuthPhoneCode(phone: String)
-        case Register(firstName: String, lastname: String, email: String, phone: String, authPhoneCode: String, smsCode: String)
-        case SignIn(phone: String, authPhoneCode: String, smsCode: String)
+        case Register(firstName: String, lastname: String, email: String, phone: String, authPhoneCode: Int, smsCode: Int)
+        case SignIn(phone: String, authPhoneCode: Int, smsCode: Int)
     }
 }
 
@@ -44,5 +45,17 @@ extension Router.User: RouterProtocol {
                     "auth_phone_code" : authPhoneCode,
                     "sms_code" : smsCode]
         }
+    }
+}
+
+class RTUserResponse: Mappable {
+    var user: User?
+    
+    required convenience init?(_ map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        self.user <- map
     }
 }

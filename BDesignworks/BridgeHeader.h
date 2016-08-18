@@ -18,8 +18,7 @@
 @import ObjectMapper;
 @import XCGLogger;
 @import RealmSwift;
-//@import MagicalRecord;
-//@import SDWebImage;
+@import SAMKeychain;
 
 
 #import <Smooch/Smooch.h>

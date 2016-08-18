@@ -51,6 +51,9 @@
 		723ADB013450927E3555FBEF /* Pods_Abstract_BDesignworks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6B8FA9206128EF0047AB0 /* Pods_Abstract_BDesignworks.framework */; };
 		81ABC4E5D5B644C560E0AA21 /* Pods_Abstract_Swift_BaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9091B29869F8A46A78676A7 /* Pods_Abstract_Swift_BaseUITests.framework */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
+		E75994751D66082D00AFF8C4 /* VerificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75994741D66082D00AFF8C4 /* VerificationModel.swift */; };
+		E75994781D660FC700AFF8C4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75994771D660FC700AFF8C4 /* LoginModel.swift */; };
+		E759947B1D66194F00AFF8C4 /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759947A1D66194F00AFF8C4 /* RegistrationModel.swift */; };
 		E7B86BE51D6603F700560277 /* RTErrorsDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B86BE31D6603F700560277 /* RTErrorsDescription.swift */; };
 		E7B86BE61D6603F700560277 /* RTErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B86BE41D6603F700560277 /* RTErrors.swift */; };
 		E7B86BEC1D66040D00560277 /* RTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B86BE81D66040D00560277 /* RTUser.swift */; };
@@ -186,6 +189,9 @@
 		D9091B29869F8A46A78676A7 /* Pods_Abstract_Swift_BaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_Swift_BaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_Storyboard.storyboard; sourceTree = "<group>"; };
+		E75994741D66082D00AFF8C4 /* VerificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationModel.swift; sourceTree = "<group>"; };
+		E75994771D660FC700AFF8C4 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		E759947A1D66194F00AFF8C4 /* RegistrationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
 		E7B86BE31D6603F700560277 /* RTErrorsDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTErrorsDescription.swift; sourceTree = "<group>"; };
 		E7B86BE41D6603F700560277 /* RTErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTErrors.swift; sourceTree = "<group>"; };
 		E7B86BE81D66040D00560277 /* RTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTUser.swift; sourceTree = "<group>"; };
@@ -447,6 +453,9 @@
 		E736C5A41A252B1500B8986E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E75994791D66193900AFF8C4 /* Registration */,
+				E75994761D660F0800AFF8C4 /* Login */,
+				E75994731D66063300AFF8C4 /* Verification */,
 				2FAA4FB91D5C83BC00DCFF46 /* CustomNavigationController.swift */,
 				2F1B80AB1D5DEA0B001AA5DA /* Welcome */,
 				2F16FE2B1D54CEDB00EFFDD7 /* ConversationScreen.swift */,
@@ -458,6 +467,30 @@
 				2F16FE331D54E15A00EFFDD7 /* AboutScreen.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E75994731D66063300AFF8C4 /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				E75994741D66082D00AFF8C4 /* VerificationModel.swift */,
+			);
+			name = Verification;
+			sourceTree = "<group>";
+		};
+		E75994761D660F0800AFF8C4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E75994771D660FC700AFF8C4 /* LoginModel.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		E75994791D66193900AFF8C4 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				E759947A1D66194F00AFF8C4 /* RegistrationModel.swift */,
+			);
+			name = Registration;
 			sourceTree = "<group>";
 		};
 		E7B86BE11D6603E200560277 /* API */ = {
@@ -922,9 +955,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E75994751D66082D00AFF8C4 /* VerificationModel.swift in Sources */,
 				21E157E21BB3EDF40041FCE4 /* FSTestHelpers.swift in Sources */,
 				2FAA4FB81D5C809700DCFF46 /* SidebarTVC.swift in Sources */,
 				214F4FF61BFDC35C0084BE32 /* Protocols.swift in Sources */,
+				E759947B1D66194F00AFF8C4 /* RegistrationModel.swift in Sources */,
 				2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */,
 				E7B86BE61D6603F700560277 /* RTErrors.swift in Sources */,
 				2F7179511D53497A00231639 /* TrialPageScreen.swift in Sources */,
@@ -934,6 +969,7 @@
 				2F0729911D64C86B00A71B3C /* HealthKitManager.swift in Sources */,
 				2F81CB721D51ED4D00D9E93B /* RollUpButton.swift in Sources */,
 				2F16FE341D54E15A00EFFDD7 /* AboutScreen.swift in Sources */,
+				E75994781D660FC700AFF8C4 /* LoginModel.swift in Sources */,
 				2FDE13691D61B938008702FE /* SmoochHelper.swift in Sources */,
 				E7B86BF11D66042700560277 /* User.swift in Sources */,
 				2FC02C4E1D51E6020038BD88 /* SelectProviderScreen.swift in Sources */,

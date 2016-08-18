@@ -15,6 +15,7 @@ abstract_target 'Abstract' do
     pod 'ObjectMapper'
     pod 'RealmSwift'
     pod 'XCGLogger'
+    pod 'SAMKeychain'
     
 	pod 'Smooch'
 	pod 'SideMenu'

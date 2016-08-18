@@ -11,6 +11,13 @@ import FSHelpers_Swift
 
 var Logger: XCGLogger {return XCGLogger.defaultInstance()}
 
+/*--------------Keychain keys-------------*/
+enum FSKeychainKey {
+    
+    static let AccountName     = "com.pearup"
+    static let APIToken        = "KeychainAPIToken"
+    static let UserEmail       = "KeychainUserEmail"
+}
 
 /*--------------User Defaults keys-------------*/
 enum FSUserDefaultsKey {
