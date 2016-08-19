@@ -31,7 +31,6 @@ class LoginModel {
                 
                 defer {
                     self?.user = receivedData
-                    self?.presenter?.loginSuccessed()
                 }
                 
                 switch response.result {
@@ -48,6 +47,7 @@ class LoginModel {
                     } catch let error {
                         Logger.error("\(error)")
                     }
+                    self?.presenter?.loginSuccessed()
                 case .Failure(let error):
                     self?.presenter?.loginFailed()
                     Logger.error("\(error)")
