@@ -50,6 +50,9 @@
 		2FFEA0601D551D0E00ADA63B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFEA05F1D551D0E00ADA63B /* Message.swift */; };
 		723ADB013450927E3555FBEF /* Pods_Abstract_BDesignworks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6B8FA9206128EF0047AB0 /* Pods_Abstract_BDesignworks.framework */; };
 		81ABC4E5D5B644C560E0AA21 /* Pods_Abstract_Swift_BaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9091B29869F8A46A78676A7 /* Pods_Abstract_Swift_BaseUITests.framework */; };
+		E724B5371D66FAF80066A60C /* MVPProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724B5361D66FAF80066A60C /* MVPProtocol.swift */; };
+		E724B5391D66FD8B0066A60C /* VerificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724B5381D66FD8B0066A60C /* VerificationPresenter.swift */; };
+		E724B53B1D6709F60066A60C /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724B53A1D6709F60066A60C /* VerificationView.swift */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
 		E75994751D66082D00AFF8C4 /* VerificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75994741D66082D00AFF8C4 /* VerificationModel.swift */; };
 		E75994781D660FC700AFF8C4 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75994771D660FC700AFF8C4 /* LoginModel.swift */; };
@@ -188,6 +191,9 @@
 		D8D6B8FA9206128EF0047AB0 /* Pods_Abstract_BDesignworks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9091B29869F8A46A78676A7 /* Pods_Abstract_Swift_BaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_Swift_BaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
+		E724B5361D66FAF80066A60C /* MVPProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPProtocol.swift; sourceTree = "<group>"; };
+		E724B5381D66FD8B0066A60C /* VerificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationPresenter.swift; sourceTree = "<group>"; };
+		E724B53A1D6709F60066A60C /* VerificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_Storyboard.storyboard; sourceTree = "<group>"; };
 		E75994741D66082D00AFF8C4 /* VerificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationModel.swift; sourceTree = "<group>"; };
 		E75994771D660FC700AFF8C4 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -252,6 +258,7 @@
 				214F4FF51BFDC35C0084BE32 /* Protocols.swift */,
 				2F0729901D64C86B00A71B3C /* HealthKitManager.swift */,
 				2FDE13681D61B938008702FE /* SmoochHelper.swift */,
+				E724B5361D66FAF80066A60C /* MVPProtocol.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -473,6 +480,8 @@
 			isa = PBXGroup;
 			children = (
 				E75994741D66082D00AFF8C4 /* VerificationModel.swift */,
+				E724B53A1D6709F60066A60C /* VerificationView.swift */,
+				E724B5381D66FD8B0066A60C /* VerificationPresenter.swift */,
 			);
 			name = Verification;
 			sourceTree = "<group>";
@@ -961,6 +970,7 @@
 				214F4FF61BFDC35C0084BE32 /* Protocols.swift in Sources */,
 				E759947B1D66194F00AFF8C4 /* RegistrationModel.swift in Sources */,
 				2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */,
+				E724B5391D66FD8B0066A60C /* VerificationPresenter.swift in Sources */,
 				E7B86BE61D6603F700560277 /* RTErrors.swift in Sources */,
 				2F7179511D53497A00231639 /* TrialPageScreen.swift in Sources */,
 				E7B86BE51D6603F700560277 /* RTErrorsDescription.swift in Sources */,
@@ -969,6 +979,7 @@
 				2F0729911D64C86B00A71B3C /* HealthKitManager.swift in Sources */,
 				2F81CB721D51ED4D00D9E93B /* RollUpButton.swift in Sources */,
 				2F16FE341D54E15A00EFFDD7 /* AboutScreen.swift in Sources */,
+				E724B53B1D6709F60066A60C /* VerificationView.swift in Sources */,
 				E75994781D660FC700AFF8C4 /* LoginModel.swift in Sources */,
 				2FDE13691D61B938008702FE /* SmoochHelper.swift in Sources */,
 				E7B86BF11D66042700560277 /* User.swift in Sources */,
@@ -976,6 +987,7 @@
 				2F71794F1D5343F800231639 /* WelcomeScreen.swift in Sources */,
 				214F4FF41BFDC2D90084BE32 /* Helpers.swift in Sources */,
 				21DB301519DD2289003A418D /* AppDelegate.swift in Sources */,
+				E724B5371D66FAF80066A60C /* MVPProtocol.swift in Sources */,
 				2F81CB701D51EBB900D9E93B /* AutocompleteView.swift in Sources */,
 				2F954B5B1D5384DD004D4FF1 /* ToggleButton.swift in Sources */,
 				2F16FE301D54E13700EFFDD7 /* SettingsScreen.swift in Sources */,

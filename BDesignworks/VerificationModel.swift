@@ -8,9 +8,17 @@
 
 import Foundation
 
+protocol IVerificationModel {
+    func submitPhone(phone: String)
+}
+
 class VerificationModel {
     
+    weak var presenter: IVerificationPresenter?
+    
     var user: User?
+    
+    required init() {}
     
     private func receivePhoneCode(phone: String) {
         Router.User.GetAuthPhoneCode(phone: phone).request().responseObject { [weak self] (response: Response<RTUserResponse, RTError>) in
@@ -39,4 +47,14 @@ class VerificationModel {
             }
         }
     }
+}
+
+extension VerificationModel: IVerificationModel {
+    func submitPhone(phone: String) {
+        self.receivePhoneCode(phone)
+    }
+}
+
+extension VerificationModel: MVPModel {
+    typealias PresenterProtocol = IVerificationPresenter
 }
