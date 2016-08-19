@@ -29,8 +29,7 @@ struct MVPContainer<View: MVPView, Presenter: MVPPresenter, Model: MVPModel> {
         self.init(view: view, makeAssemble: makeAssemble)
     }
     
-    init (identifier: String, storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()), makeAssemble: Bool = true) {
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    init (identifier: String, storyboard: UIStoryboard = UIStoryboard(name: "Main_Storyboard", bundle: NSBundle.mainBundle()), makeAssemble: Bool = true) {
         let controller = storyboard.instantiateViewControllerWithIdentifier(identifier)
         
         if let view = controller as? View {

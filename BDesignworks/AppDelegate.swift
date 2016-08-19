@@ -19,8 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setupProject()
         
         let rootController = self.window?.rootViewController as! UINavigationController
+        do {
+            let realm = try Realm()
+            if realm.objects(AuthInfo).count > 0 {
+                let storyboard = UIStoryboard(name: "Main_Storyboard", bundle: NSBundle.mainBundle())
+                let controller = storyboard.instantiateViewControllerWithIdentifier("LoginView")
+                rootController.pushViewController(controller, animated: false)
+                LoginMVP(identifier: "LoginView").model.login("1234")
+            }
+            else {
+                let _ = VerificationMVP(navigationController: rootController)
+            }
+            
+        } catch let error {
+            Logger.error("\(error)")
+        }
         
-        let _ = VerificationMVP(navigationController: rootController)
         
         return true
     }

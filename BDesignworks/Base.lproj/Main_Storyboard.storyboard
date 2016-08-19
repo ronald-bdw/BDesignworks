@@ -1830,6 +1830,24 @@
             </objects>
             <point key="canvasLocation" x="1012" y="1015"/>
         </scene>
+        <!--Login View-->
+        <scene sceneID="5L6-vS-LoF">
+            <objects>
+                <viewController storyboardIdentifier="LoginView" id="Rph-Ob-VBf" customClass="LoginView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RNY-ad-KKQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="FwB-iX-sBP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="115-5G-sjR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0gt-fl-3vW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1715" y="1005"/>
+        </scene>
         <!--Conversation Screen-->
         <scene sceneID="mA1-d8-J1G">
             <objects>

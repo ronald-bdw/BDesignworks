@@ -12,6 +12,7 @@ import ObjectMapper
 class AuthInfo: Object {
     dynamic var id: Int = 0
     dynamic var isRegistered: Bool = false
+    dynamic var phone: String = ""
     
     override static func primaryKey() -> String? {
         return "id"

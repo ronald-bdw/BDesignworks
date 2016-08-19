@@ -43,10 +43,10 @@ class User: Object, IUser {
 
 extension User: Mappable {
     func mapping(map: ObjectMapper.Map) {
-        self.id     <- map["user"]["id"]
-        self.email   <- map["user"]["email"]
-        self.phoneNumber <- map["user"]["phone_number"]
-        self.token <- map["user"]["authentication_token"]
+        self.id     <- map["id"]
+        self.email   <- map["email"]
+        self.phoneNumber <- map["phone_number"]
+        self.token <- map["authentication_token"]
     }
 }
 

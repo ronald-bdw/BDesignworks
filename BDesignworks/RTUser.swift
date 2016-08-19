@@ -13,7 +13,7 @@ extension Router {
     enum User {
         case GetAuthPhoneCode(phone: String)
         case Register(firstName: String, lastname: String, email: String, phone: String, authPhoneCode: Int, smsCode: Int)
-        case SignIn(phone: String, authPhoneCode: Int, smsCode: Int)
+        case SignIn(phone: String, authPhoneCode: Int, smsCode: String)
     }
 }
 

@@ -32,6 +32,8 @@ class VerificationModel {
             switch response.result {
             case .Success(let value):
                 guard let lAuthInfo = value.authInfo else {return}
+                lAuthInfo.phone = phone
+                
                 receivedData = lAuthInfo
                 
                 do {
