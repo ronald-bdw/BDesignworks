@@ -56,6 +56,18 @@ class RTUserResponse: Mappable {
     }
     
     func mapping(map: Map) {
-        self.user <- map
+        self.user <- map["user"]
+    }
+}
+
+class RTAuthInfoResponse: Mappable {
+    var authInfo: AuthInfo?
+    
+    required convenience init?(_ map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        self.authInfo <- map["auth_phone_code"]
     }
 }

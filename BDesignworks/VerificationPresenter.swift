@@ -9,7 +9,8 @@
 import Foundation
 
 protocol IVerificationPresenter: class {
-    
+    func submitTapped(code: String, phone: String)
+    func phoneCodeReceived()
 }
 
 class VerificationPresenter {
@@ -17,6 +18,16 @@ class VerificationPresenter {
     var model: IVerificationModel?
     
     required init() {}
+}
+
+extension VerificationPresenter: IVerificationPresenter {
+    func submitTapped(code: String, phone: String) {
+        self.model?.submitPhone(code + phone)
+    }
+    
+    func phoneCodeReceived() {
+        self.view?.showSuccessAlert()
+    }
 }
 
 extension VerificationPresenter: MVPPresenter {

@@ -16,27 +16,29 @@ class VerificationModel {
     
     weak var presenter: IVerificationPresenter?
     
-    var user: User?
+    var authInfo: AuthInfo?
     
     required init() {}
     
     private func receivePhoneCode(phone: String) {
-        Router.User.GetAuthPhoneCode(phone: phone).request().responseObject { [weak self] (response: Response<RTUserResponse, RTError>) in
-            var receivedData: User?
+        Router.User.GetAuthPhoneCode(phone: phone).request().responseObject { [weak self] (response: Response<RTAuthInfoResponse, RTError>) in
+            var receivedData: AuthInfo?
             
             defer {
-                self?.user = receivedData
+                self?.authInfo = receivedData
+                self?.presenter?.phoneCodeReceived()
             }
             
             switch response.result {
             case .Success(let value):
-                guard let user = value.user else {return}
-                receivedData = user
+                guard let lAuthInfo = value.authInfo else {return}
+                receivedData = lAuthInfo
                 
                 do {
                     let realm = try Realm()
                     try realm.write({
-                        realm.add(user, update: true)
+                        realm.delete(realm.objects(AuthInfo))
+                        realm.add(lAuthInfo)
                     })
                     
                 } catch let error {

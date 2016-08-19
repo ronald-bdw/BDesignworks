@@ -13,8 +13,6 @@ class User: Object, IUser {
     dynamic var id: Int = 0
     dynamic var email: String = ""
     dynamic var phoneNumber: String = ""
-    dynamic var authCode: Int = 0
-    dynamic var isRegistered: Bool = false
     
     var token: String? {
         get {
@@ -49,15 +47,10 @@ extension User: Mappable {
         self.email   <- map["user"]["email"]
         self.phoneNumber <- map["user"]["phone_number"]
         self.token <- map["user"]["authentication_token"]
-        
-        self.authCode  <- map["auth_phone_code"]["id"]
-        self.isRegistered  <- map["auth_phone_code"]["phone_registered"]
     }
 }
 
 protocol IUser {
     var id: Int {get}
     var email: String {get}
-    var authCode: Int {get}
-    var isRegistered: Bool {get}
 }

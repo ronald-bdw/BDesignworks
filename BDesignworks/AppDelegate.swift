@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         self.setupProject()
         
+        let rootController = self.window?.rootViewController as! UINavigationController
+        
+        let _ = VerificationMVP(navigationController: rootController)
+        
         return true
     }
 

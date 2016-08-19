@@ -9,7 +9,7 @@
 import Foundation
 
 enum Router {
-    static let BaseURL = " https://b-designworks.herokuapp.com/v1"
+    static let BaseURL = "https://b-designworks.herokuapp.com/v1"
     static var OAuthToken: String?
 }
 

@@ -1,0 +1,33 @@
+//
+//  AuthInfo.swift
+//  BDesignworks
+//
+//  Created by Ellina Kuznetcova on 19.08.16.
+//  Copyright © 2016 Flatstack. All rights reserved.
+//
+
+import Foundation
+import ObjectMapper
+
+class AuthInfo: Object {
+    dynamic var id: Int = 0
+    dynamic var isRegistered: Bool = false
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    required convenience init?(_ map: ObjectMapper.Map) {
+        guard let _ = map.JSONDictionary["id"] as? Int else {return nil}
+        self.init()
+    }
+}
+
+
+
+extension AuthInfo: Mappable {
+    func mapping(map: ObjectMapper.Map) {
+        self.id <- map["id"]
+        self.isRegistered <- map["phone_registered"]
+    }
+}
