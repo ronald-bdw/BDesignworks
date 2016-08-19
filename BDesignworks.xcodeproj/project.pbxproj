@@ -675,7 +675,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run a58319df29eb3929f0ed864166f3c42deb476e66 3b5009c215f001848f3030458e2bbb292e68c6b82a2a092424a1caf7a1ee6225";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" d8a0d69184b7d8f0a23f94f036d032e37980c670 5524aac7432a9efc8acc969e905c58b33bee3a40c1690346de8f4fd58f16e2c8";
 		};
 		27B807D70486544FDB85DAA6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1138,10 +1138,10 @@
 			baseConfigurationReference = 24CD8CBBB8A679E300A592E5 /* Pods-Abstract-BDesignworks.test.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_DISPLAY_NAME = BDesignworks;
-				BUNDLE_ID = com.flatstack.BDesignworks;
+				BUNDLE_DISPLAY_NAME = PearUp;
+				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1163,8 +1163,8 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
-				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
+				PRODUCT_NAME = PearUp;
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1217,10 +1217,10 @@
 			baseConfigurationReference = 020C4A5E30B743EDD370DB89 /* Pods-Abstract-BDesignworks.test staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
-				BUNDLE_DISPLAY_NAME = "BDesignworks Staging";
-				BUNDLE_ID = com.flatstack.BDesignworks.staging;
+				BUNDLE_DISPLAY_NAME = "PearUp Staging";
+				BUNDLE_ID = com.flatstack.pearup.staging;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1242,8 +1242,8 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
-				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
+				PRODUCT_NAME = PearUp;
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1300,10 +1300,10 @@
 			baseConfigurationReference = 98101F9FE1B08B9670240835 /* Pods-Abstract-BDesignworks.appstore debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_DISPLAY_NAME = BDesignworks;
-				BUNDLE_ID = com.flatstack.BDesignworks;
+				BUNDLE_DISPLAY_NAME = PearUp;
+				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1324,8 +1324,8 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
-				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "8bad94d8-1a83-454d-81b9-f5e21d19016d";
+				PRODUCT_NAME = PearUp;
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1570,10 +1570,10 @@
 			baseConfigurationReference = 1EEA300C1693C74958C4FE90 /* Pods-Abstract-BDesignworks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_DISPLAY_NAME = BDesignworks;
-				BUNDLE_ID = com.flatstack.BDesignworks;
+				BUNDLE_DISPLAY_NAME = PearUp;
+				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1594,8 +1594,8 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
-				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
+				PRODUCT_NAME = PearUp;
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1607,10 +1607,10 @@
 			baseConfigurationReference = EE03134474C0070BF8DA767B /* Pods-Abstract-BDesignworks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_DISPLAY_NAME = BDesignworks;
-				BUNDLE_ID = com.flatstack.BDesignworks;
+				BUNDLE_DISPLAY_NAME = PearUp;
+				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1629,8 +1629,8 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
-				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "46444646-ee3e-4358-a6f5-2f6bbe7e977e";
+				PRODUCT_NAME = PearUp;
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1686,10 +1686,10 @@
 			baseConfigurationReference = 9E9AF561EE2CD0A3A7DDD0CF /* Pods-Abstract-BDesignworks.debug staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
-				BUNDLE_DISPLAY_NAME = "BDesignworks Staging";
-				BUNDLE_ID = com.flatstack.BDesignworks.staging;
+				BUNDLE_DISPLAY_NAME = "PearUp Staging";
+				BUNDLE_ID = com.flatstack.pearup.staging;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1710,8 +1710,8 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
-				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
+				PRODUCT_NAME = PearUp;
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1763,10 +1763,10 @@
 			baseConfigurationReference = 3A5FE293BB9438C1AE339D7F /* Pods-Abstract-BDesignworks.release staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
-				BUNDLE_DISPLAY_NAME = "BDesignworks Staging";
-				BUNDLE_ID = com.flatstack.BDesignworks.staging;
+				BUNDLE_DISPLAY_NAME = "PearUp Staging";
+				BUNDLE_ID = com.flatstack.pearup.staging;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1785,8 +1785,8 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
-				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "46444646-ee3e-4358-a6f5-2f6bbe7e977e";
+				PRODUCT_NAME = PearUp;
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1837,10 +1837,10 @@
 			baseConfigurationReference = AF5D1F97F5C59B62E7E84E1B /* Pods-Abstract-BDesignworks.appstore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_DISPLAY_NAME = BDesignworks;
-				BUNDLE_ID = com.flatstack.BDesignworks;
+				BUNDLE_DISPLAY_NAME = PearUp;
+				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1859,8 +1859,8 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
-				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "8bad94d8-1a83-454d-81b9-f5e21d19016d";
+				PRODUCT_NAME = PearUp;
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
