@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FSHelpers_Swift
 
 final class ModalPresentationController: UIPresentationController {
     
@@ -18,16 +19,17 @@ final class ModalPresentationController: UIPresentationController {
         return view
     }()
     
-    private var widthRatio  : CGFloat = 0.84
-    private var heightRatio : CGFloat = 0.39
+    private var modalScreenWidth  : CGFloat = 315 // Width of modal UIViewController
+    private var modalScreenHeight : CGFloat = 258 // Height of modal UIViewController
+    
     private var presentedControllerRadius: CGFloat = 8
     
     override func frameOfPresentedViewInContainerView() -> CGRect {
         guard let lContainerView = self.containerView else { return CGRectZero }
-        return CGRect(x     : lContainerView.fs_width*0.5*(1-widthRatio),
-                      y     : lContainerView.fs_height*0.5*(1-heightRatio),
-                      width : lContainerView.fs_width*widthRatio,
-                      height: lContainerView.fs_height*heightRatio)
+        return CGRect(x     : (lContainerView.fs_width-modalScreenWidth)*0.5,
+                      y     : (lContainerView.fs_height-modalScreenHeight)*0.5,
+                      width : modalScreenWidth,
+                      height: modalScreenHeight)
     }
     
     override func containerViewWillLayoutSubviews() {
@@ -41,11 +43,11 @@ final class ModalPresentationController: UIPresentationController {
         guard let lContainerView = self.containerView else { return }
         self.dimmingView.frame = lContainerView.frame
         self.dimmingView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.backgroundDidTapped(_:))))
-        self.containerView?.addSubview(self.dimmingView)
+        lContainerView.addSubview(self.dimmingView)
         
         guard let lPresentedView = self.presentedView() else { return }
         
-        lPresentedView.frame = CGRectOffset(self.frameOfPresentedViewInContainerView(), 0, -heightRatio*lContainerView.fs_height)
+        lPresentedView.frame = CGRectOffset(self.frameOfPresentedViewInContainerView(), 0, lContainerView.fs_height - (lContainerView.fs_height-lPresentedView.fs_height)/2)
         lContainerView.addSubview(lPresentedView)
         
         let coordinator = self.presentedViewController.transitionCoordinator()
@@ -63,14 +65,13 @@ final class ModalPresentationController: UIPresentationController {
     
     override func dismissalTransitionWillBegin() {
         
-        guard let lPresentedView = self.presentedView() else { return }
-        guard let lContainerView = self.containerView else { return }
+        guard let lPresentedView = self.presentedView() else { FSDLog("Presented view can't be nil"); return }
+        guard let lContainerView = self.containerView   else { FSDLog("Container view can't be nil"); return }
         
         let coordinator = self.presentedViewController.transitionCoordinator()
         coordinator?.animateAlongsideTransition({ (context: UIViewControllerTransitionCoordinatorContext) in
             self.dimmingView.backgroundColor = UIColor.clearColor()
-            lPresentedView.frame = CGRectOffset(self.frameOfPresentedViewInContainerView(), 0, -(1-self.heightRatio)*lContainerView.fs_height)
-            
+            lPresentedView.frame = CGRectOffset(self.frameOfPresentedViewInContainerView(), 0, -lContainerView.fs_height + (lContainerView.fs_height-lPresentedView.fs_height)/2)
         }, completion: { (context: UIViewControllerTransitionCoordinatorContext) in
             self.dimmingView.removeFromSuperview()
         })

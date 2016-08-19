@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrialPageScreen: UIViewController {
+final class TrialPageScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

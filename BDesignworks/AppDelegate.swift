@@ -93,7 +93,7 @@ extension AppDelegate {
     
     func setupAppearance() {
         
-        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: false)
         
         let navigationBar = UINavigationBar.appearance()
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
