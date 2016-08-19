@@ -14,26 +14,37 @@ final class WelcomeScreen: UIViewController {
         static let Trial           = "showTrialScreen"
         static let SelectProvider  = "showProviderSelection"
     }
+
+    @IBOutlet weak var conversationLabel: UILabel!
+    @IBOutlet weak var containerTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var conversationTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerView: UIView!
     
-    @IBOutlet weak var welcomeLabel: UILabel!
-    @IBOutlet weak var invitationLabel: UILabel!
-    @IBOutlet weak var noButton: UIButton!
-    @IBOutlet weak var yesButton: UIButton!
+    private lazy var modalPresentationController: ModalPresentationController = {
+        return ModalPresentationController()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.hidden = true
         self.navigationItem.hidesBackButton = true
-        self.welcomeLabel.font = UIFont.systemFontOfSize(16.0)
-        self.welcomeLabel.text = "your get active coach with you every step of the way"
-        self.noButton.hidden = true
-        self.yesButton.hidden = true
+        self.containerTopConstraint.constant += 216
+        self.containerView.alpha = 0.0
         self.view.layoutIfNeeded()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        UIView.animateWithDuration(0.7) {
+            self.conversationTopConstraint.constant += 216
+            self.containerTopConstraint.constant    -= 216
+            self.conversationLabel.alpha             = 0.0
+            self.containerView.alpha                 = 1.0
+            self.view.layoutIfNeeded()
+        }
     }
+    
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         guard let lIdentifier = segue.identifier else {
@@ -61,7 +72,7 @@ final class WelcomeScreen: UIViewController {
 extension WelcomeScreen: UIViewControllerTransitioningDelegate {
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ModalPresentationController(presentedViewController: presenting, presentingViewController: source)
+        return ModalPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
 }
 

@@ -87,6 +87,19 @@ extension AppDelegate {
         
         //setup Smooch
         self.setupSmooch()
+        
+        self.setupAppearance()
+    }
+    
+    func setupAppearance() {
+        
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
+        
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationBar.barTintColor = AppColors.MainColor
+        navigationBar.tintColor = UIColor.whiteColor()
+        navigationBar.translucent = false
     }
     
     func setupProjectForTests() {

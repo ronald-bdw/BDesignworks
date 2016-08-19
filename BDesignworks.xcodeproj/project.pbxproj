@@ -456,6 +456,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1710DE6B1C453AF800912C5B /* Build configuration list for PBXNativeTarget "BDesignworksUITests" */;
 			buildPhases = (
+				40DED73DE539653B2283AB64 /* 📦 Check Pods Manifest.lock */,
 				EB2477025219980F6979BF93 /* [CP] Check Pods Manifest.lock */,
 				89E91AAF0FB90E6F0FF929E5 /* [CP] Check Pods Manifest.lock */,
 				1710DE581C453AF700912C5B /* Sources */,
@@ -478,6 +479,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 212D01921BB1986B00B34340 /* Build configuration list for PBXNativeTarget "BDesignworksTests" */;
 			buildPhases = (
+				CA529FC7C1293A3D5D3DD259 /* 📦 Check Pods Manifest.lock */,
 				CFC0E14FC84EE9757BF537DB /* [CP] Check Pods Manifest.lock */,
 				0ACA543E4B3B0E6EB48E63C8 /* [CP] Check Pods Manifest.lock */,
 				212D01871BB1986B00B34340 /* Sources */,
@@ -502,6 +504,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21DB303119DD2289003A418D /* Build configuration list for PBXNativeTarget "BDesignworks" */;
 			buildPhases = (
+				77EFF2F5B64F128EAD53CD97 /* 📦 Check Pods Manifest.lock */,
 				B6310F3B3A598A61255A91D2 /* [CP] Check Pods Manifest.lock */,
 				A6DB15C2BC155A2623DF25F0 /* [CP] Check Pods Manifest.lock */,
 				21DB300B19DD2289003A418D /* Sources */,
@@ -695,6 +698,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		40DED73DE539653B2283AB64 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		6A105BDE6BBF4E1ACD2AAE0F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -708,6 +726,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77EFF2F5B64F128EAD53CD97 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		89E91AAF0FB90E6F0FF929E5 /* [CP] Check Pods Manifest.lock */ = {
@@ -823,6 +856,21 @@
 			inputPaths = (
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CA529FC7C1293A3D5D3DD259 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1145,7 +1193,7 @@
 				BUNDLE_DISPLAY_NAME = BDesignworks;
 				BUNDLE_ID = com.flatstack.BDesignworks;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1168,7 +1216,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
+				PROVISIONING_PROFILE = "ac98ccf9-f5ff-41f6-9b01-e09edb146bfa";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1224,7 +1272,7 @@
 				BUNDLE_DISPLAY_NAME = "BDesignworks Staging";
 				BUNDLE_ID = com.flatstack.BDesignworks.staging;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1247,7 +1295,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
+				PROVISIONING_PROFILE = "ac98ccf9-f5ff-41f6-9b01-e09edb146bfa";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1307,7 +1355,7 @@
 				BUNDLE_DISPLAY_NAME = BDesignworks;
 				BUNDLE_ID = com.flatstack.BDesignworks;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1329,7 +1377,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "8bad94d8-1a83-454d-81b9-f5e21d19016d";
+				PROVISIONING_PROFILE = "cb3faa1b-0d2e-4742-9bfc-96e797587f23";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1577,7 +1625,7 @@
 				BUNDLE_DISPLAY_NAME = BDesignworks;
 				BUNDLE_ID = com.flatstack.BDesignworks;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1599,7 +1647,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
+				PROVISIONING_PROFILE = "ac98ccf9-f5ff-41f6-9b01-e09edb146bfa";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1614,7 +1662,7 @@
 				BUNDLE_DISPLAY_NAME = BDesignworks;
 				BUNDLE_ID = com.flatstack.BDesignworks;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1693,7 +1741,7 @@
 				BUNDLE_DISPLAY_NAME = "BDesignworks Staging";
 				BUNDLE_ID = com.flatstack.BDesignworks.staging;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1715,7 +1763,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
+				PROVISIONING_PROFILE = "ac98ccf9-f5ff-41f6-9b01-e09edb146bfa";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1770,7 +1818,7 @@
 				BUNDLE_DISPLAY_NAME = "BDesignworks Staging";
 				BUNDLE_ID = com.flatstack.BDesignworks.staging;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1844,7 +1892,7 @@
 				BUNDLE_DISPLAY_NAME = BDesignworks;
 				BUNDLE_ID = com.flatstack.BDesignworks;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1864,7 +1912,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = BDesignworks;
-				PROVISIONING_PROFILE = "8bad94d8-1a83-454d-81b9-f5e21d19016d";
+				PROVISIONING_PROFILE = "cb3faa1b-0d2e-4742-9bfc-96e797587f23";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
