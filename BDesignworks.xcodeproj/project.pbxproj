@@ -55,6 +55,11 @@
 		4FF397DD1D6A5AEC004EAE2E /* IBDesignableKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		723ADB013450927E3555FBEF /* Pods_Abstract_BDesignworks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6B8FA9206128EF0047AB0 /* Pods_Abstract_BDesignworks.framework */; };
 		81ABC4E5D5B644C560E0AA21 /* Pods_Abstract_Swift_BaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9091B29869F8A46A78676A7 /* Pods_Abstract_Swift_BaseUITests.framework */; };
+		A436BE131D6B6098004B8E8B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A436BE121D6B6098004B8E8B /* HeaderView.swift */; };
+		A436BE151D6B60A7004B8E8B /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A436BE141D6B60A7004B8E8B /* HeaderView.xib */; };
+		A4819E491D6B3E9300178D30 /* PhoneCountries.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4819E481D6B3E9300178D30 /* PhoneCountries.txt */; };
+		A4819E4B1D6B3FD800178D30 /* AreaCodeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4819E4A1D6B3FD800178D30 /* AreaCodeScreen.swift */; };
+		A4819E4D1D6B405300178D30 /* AreaCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4819E4C1D6B405300178D30 /* AreaCodeCell.swift */; };
 		A4DCC4C71D661221005F7E05 /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCC4C61D661221005F7E05 /* ModalPresentationController.swift */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
 /* End PBXBuildFile section */
@@ -145,7 +150,7 @@
 		218C64C21BA07E1F00EEEDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		218C64C31BA07E4300EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		21C9F2DF19E833300084D18D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		21DB300F19DD2289003A418D /* BDesignworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDesignworks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21DB300F19DD2289003A418D /* PearUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PearUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DB301319DD2289003A418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21DB301419DD2289003A418D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21DB301E19DD2289003A418D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -202,6 +207,11 @@
 		9A3709D2869868D539BA2F87 /* Pods_Abstract_BDesignworksTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E9AF561EE2CD0A3A7DDD0CF /* Pods-Abstract-BDesignworks.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.debug staging.xcconfig"; sourceTree = "<group>"; };
 		9FE58E7B2053F4AFF188DF61 /* Pods-Abstract-BDesignworksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A436BE121D6B6098004B8E8B /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		A436BE141D6B60A7004B8E8B /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		A4819E481D6B3E9300178D30 /* PhoneCountries.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PhoneCountries.txt; sourceTree = "<group>"; };
+		A4819E4A1D6B3FD800178D30 /* AreaCodeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaCodeScreen.swift; sourceTree = "<group>"; };
+		A4819E4C1D6B405300178D30 /* AreaCodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaCodeCell.swift; sourceTree = "<group>"; };
 		A4DCC4C61D661221005F7E05 /* ModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresentationController.swift; sourceTree = "<group>"; };
 		AE17C69B53345B23AAF846DA /* Pods_Abstract_BDesignworksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5D1F97F5C59B62E7E84E1B /* Pods-Abstract-BDesignworks.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.appstore.xcconfig"; sourceTree = "<group>"; };
@@ -351,7 +361,7 @@
 		21DB301019DD2289003A418D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				21DB300F19DD2289003A418D /* BDesignworks.app */,
+				21DB300F19DD2289003A418D /* PearUp.app */,
 				212D018B1BB1986B00B34340 /* BDesignworksTests.xctest */,
 				1710DE5C1C453AF700912C5B /* BDesignworksUITests.xctest */,
 				4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */,
@@ -380,6 +390,7 @@
 		21DB301219DD2289003A418D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A4819E481D6B3E9300178D30 /* PhoneCountries.txt */,
 				218C64BC1BA07DDE00EEEDF1 /* Localization */,
 				21DB301319DD2289003A418D /* Info.plist */,
 				21DB303819DD2341003A418D /* BridgeHeader.h */,
@@ -479,6 +490,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A436BE161D6B61AF004B8E8B /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				A436BE121D6B6098004B8E8B /* HeaderView.swift */,
+				A436BE141D6B60A7004B8E8B /* HeaderView.xib */,
+			);
+			name = HeaderView;
+			sourceTree = "<group>";
+		};
 		E731DC711A1CB30C00E12CBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +510,7 @@
 				2FDE13661D61A44D008702FE /* RoundImage.swift */,
 				2F7295F11D6323CC00FD7B21 /* CheckboxTableView.swift */,
 				4F5080EF1D68D6CF00979890 /* BaseView.swift */,
+				A436BE161D6B61AF004B8E8B /* HeaderView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -507,6 +528,8 @@
 				2F16FE2F1D54E13700EFFDD7 /* SettingsScreen.swift */,
 				2F16FE331D54E15A00EFFDD7 /* AboutScreen.swift */,
 				A4DCC4C61D661221005F7E05 /* ModalPresentationController.swift */,
+				A4819E4A1D6B3FD800178D30 /* AreaCodeScreen.swift */,
+				A4819E4C1D6B405300178D30 /* AreaCodeCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -529,7 +552,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1710DE6B1C453AF800912C5B /* Build configuration list for PBXNativeTarget "BDesignworksUITests" */;
 			buildPhases = (
-				B5F251830735C4A2F2AB4744 /* 📦 Check Pods Manifest.lock */,
+				B5F251830735C4A2F2AB4744 /* [CP] Check Pods Manifest.lock */,
 				40DED73DE539653B2283AB64 /* [CP] Check Pods Manifest.lock */,
 				EB2477025219980F6979BF93 /* [CP] Check Pods Manifest.lock */,
 				89E91AAF0FB90E6F0FF929E5 /* [CP] Check Pods Manifest.lock */,
@@ -553,7 +576,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 212D01921BB1986B00B34340 /* Build configuration list for PBXNativeTarget "BDesignworksTests" */;
 			buildPhases = (
-				31C89D53C1429F4FA05D702C /* 📦 Check Pods Manifest.lock */,
+				31C89D53C1429F4FA05D702C /* [CP] Check Pods Manifest.lock */,
 				CA529FC7C1293A3D5D3DD259 /* [CP] Check Pods Manifest.lock */,
 				CFC0E14FC84EE9757BF537DB /* [CP] Check Pods Manifest.lock */,
 				0ACA543E4B3B0E6EB48E63C8 /* [CP] Check Pods Manifest.lock */,
@@ -579,7 +602,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21DB303119DD2289003A418D /* Build configuration list for PBXNativeTarget "BDesignworks" */;
 			buildPhases = (
-				7B90C6E7F3ECB367F033BF01 /* 📦 Check Pods Manifest.lock */,
+				7B90C6E7F3ECB367F033BF01 /* [CP] Check Pods Manifest.lock */,
 				77EFF2F5B64F128EAD53CD97 /* [CP] Check Pods Manifest.lock */,
 				B6310F3B3A598A61255A91D2 /* [CP] Check Pods Manifest.lock */,
 				A6DB15C2BC155A2623DF25F0 /* [CP] Check Pods Manifest.lock */,
@@ -602,7 +625,7 @@
 			);
 			name = BDesignworks;
 			productName = BDesignworks;
-			productReference = 21DB300F19DD2289003A418D /* BDesignworks.app */;
+			productReference = 21DB300F19DD2289003A418D /* PearUp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4FF397D41D6A5AEC004EAE2E /* IBDesignableKit */ = {
@@ -702,6 +725,8 @@
 				E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */,
 				218C64C01BA07DDE00EEEDF1 /* Localizable.strings in Resources */,
 				2158286D1A91E2F200833BE6 /* mogend.sh in Resources */,
+				A436BE151D6B60A7004B8E8B /* HeaderView.xib in Resources */,
+				A4819E491D6B3E9300178D30 /* PhoneCountries.txt in Resources */,
 				4F638FFD1D6A6438006EE693 /* RollUpButton.xib in Resources */,
 				21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */,
 				21DB301F19DD2289003A418D /* Images.xcassets in Resources */,
@@ -806,14 +831,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		31C89D53C1429F4FA05D702C /* 📦 Check Pods Manifest.lock */ = {
+		31C89D53C1429F4FA05D702C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -866,14 +891,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7B90C6E7F3ECB367F033BF01 /* 📦 Check Pods Manifest.lock */ = {
+		7B90C6E7F3ECB367F033BF01 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -986,14 +1011,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B5F251830735C4A2F2AB4744 /* 📦 Check Pods Manifest.lock */ = {
+		B5F251830735C4A2F2AB4744 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1095,8 +1120,11 @@
 				2FDE13691D61B938008702FE /* SmoochHelper.swift in Sources */,
 				2FC02C4E1D51E6020038BD88 /* SelectProviderScreen.swift in Sources */,
 				2F71794F1D5343F800231639 /* WelcomeScreen.swift in Sources */,
+				A4819E4D1D6B405300178D30 /* AreaCodeCell.swift in Sources */,
+				A4819E4B1D6B3FD800178D30 /* AreaCodeScreen.swift in Sources */,
 				214F4FF41BFDC2D90084BE32 /* Helpers.swift in Sources */,
 				21DB301519DD2289003A418D /* AppDelegate.swift in Sources */,
+				A436BE131D6B6098004B8E8B /* HeaderView.swift in Sources */,
 				2F81CB701D51EBB900D9E93B /* AutocompleteView.swift in Sources */,
 				2F954B5B1D5384DD004D4FF1 /* ToggleButton.swift in Sources */,
 				2F16FE301D54E13700EFFDD7 /* SettingsScreen.swift in Sources */,

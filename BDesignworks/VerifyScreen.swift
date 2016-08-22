@@ -96,6 +96,10 @@ private struct Constants {
 
 final class VerifyScreen: UIViewController {
     
+    struct SegueIdentifiers {
+        static let areaCodeSegue: String = "showAreaCodeScreen"
+    }
+    
     var scrollView: UIScrollView {
         return self.view as! UIScrollView
     }
@@ -120,6 +124,7 @@ final class VerifyScreen: UIViewController {
         self.rollButton.arrowDirection = .Right
         self.rollButton.animatable = false
         self.fs_keyboardScrollSupportRegisterForNotifications()
+        self.rollButton.delegate = self
         self.setupUI()
     }
     
@@ -147,6 +152,24 @@ final class VerifyScreen: UIViewController {
         self.mobileTextField.resignFirstResponder()
     }
     
+    //MARK: - Storyboard segues' logic
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let lIdentifier = segue.identifier else {
+            super.prepareForSegue(segue, sender: sender)
+            return
+        }
+        
+        switch lIdentifier {
+        case SegueIdentifiers.areaCodeSegue:
+            let destinationVC: AreaCodeScreen = segue.destinationViewController as! AreaCodeScreen
+            destinationVC.prepareController({ (area) in
+                
+            })
+        default:
+            super.prepareForSegue(segue, sender: sender)
+        }
+    }
+    
     @IBAction func nextPressed(sender: UIButton) {
         performSegueWithIdentifier("toWelcomeScreen", sender: nil)
     }
@@ -157,6 +180,13 @@ final class VerifyScreen: UIViewController {
     
     deinit {
         self.fs_keyboardScrollSupportRemoveNotifications()
+    }
+}
+
+extension VerifyScreen: RollUpButtonDelegate {
+    
+    func rollUpButtonDidChangeState(active: Bool) {
+        self.performSegueWithIdentifier(SegueIdentifiers.areaCodeSegue, sender: nil)
     }
 }
 

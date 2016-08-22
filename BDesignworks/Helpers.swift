@@ -39,3 +39,36 @@ enum FSScreenType {
         }
     }
 }
+
+var countryCodes: [String : [Area]] = {
+    
+    var list: [Area] = []
+    guard let filePath = NSBundle.mainBundle().pathForResource("PhoneCountries", ofType: "txt") else { return [:] }
+    let stringData: NSData? = NSData(contentsOfFile: filePath)
+    guard let lStringData = stringData else { return [:] }
+
+    let data: String? = String(data: lStringData, encoding: NSUTF8StringEncoding)
+    
+    guard let lData = data else { return [:] }
+    
+    let separator: String = ";"
+    let endOfLine: String = "\n"
+    
+    let lines: [String] = lData.componentsSeparatedByString(endOfLine)
+    
+    let trimmingCharacters: NSCharacterSet = NSCharacterSet(charactersInString: "\r")
+    
+    for line in lines {
+        
+        let currentLine: String = line.stringByTrimmingCharactersInSet(trimmingCharacters)
+        let components: [String] = currentLine.componentsSeparatedByString(separator)
+        guard let countryName = components.fs_objectAtIndexOrNil(2) else { continue }
+        guard let code        = components.fs_objectAtIndexOrNil(0)?.fs_toInt() else { continue }
+        let area: Area = Area(countryName: countryName, areaCode: code)
+        list.append(area)
+    }
+    
+    return list.categorise { (area: Area) -> String in
+        return area.countryName.substringToIndex(area.countryName.startIndex.advancedBy(1))
+    }
+}()
