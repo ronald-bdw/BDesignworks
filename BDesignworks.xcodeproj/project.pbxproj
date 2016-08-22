@@ -50,6 +50,23 @@
 		2FFEA0601D551D0E00ADA63B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFEA05F1D551D0E00ADA63B /* Message.swift */; };
 		723ADB013450927E3555FBEF /* Pods_Abstract_BDesignworks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6B8FA9206128EF0047AB0 /* Pods_Abstract_BDesignworks.framework */; };
 		81ABC4E5D5B644C560E0AA21 /* Pods_Abstract_Swift_BaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9091B29869F8A46A78676A7 /* Pods_Abstract_Swift_BaseUITests.framework */; };
+		DC2280C91D6AECDB00D5A0DA /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2280C71D6AECDB00D5A0DA /* RegistrationPresenter.swift */; };
+		DC2280CA1D6AECDB00D5A0DA /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2280C81D6AECDB00D5A0DA /* RegistrationView.swift */; };
+		DC2280CD1D6AECE400D5A0DA /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2280CB1D6AECE400D5A0DA /* LoginPresenter.swift */; };
+		DC2280CE1D6AECE400D5A0DA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2280CC1D6AECE400D5A0DA /* LoginView.swift */; };
+		DC2280D01D6AECF400D5A0DA /* AuthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2280CF1D6AECF400D5A0DA /* AuthInfo.swift */; };
+		DC2280D21D6AF42300D5A0DA /* TrialPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC2280D11D6AF42300D5A0DA /* TrialPage.storyboard */; };
+		DC2280D51D6AFDDE00D5A0DA /* RegistrationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2280D41D6AFDDE00D5A0DA /* RegistrationTableViewCell.xib */; };
+		DC2280D81D6B005A00D5A0DA /* OpenSansRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2280D71D6B005A00D5A0DA /* OpenSansRegular.ttf */; };
+		DC2280E21D6B054200D5A0DA /* OpenSansSemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2280D91D6B054200D5A0DA /* OpenSansSemiBoldItalic.ttf */; };
+		DC2280E31D6B054200D5A0DA /* OpenSansSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2280DA1D6B054200D5A0DA /* OpenSansSemiBold.ttf */; };
+		DC2280E41D6B054200D5A0DA /* OpenSansRegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2280DB1D6B054200D5A0DA /* OpenSansRegularItalic.ttf */; };
+		DC2280E51D6B054200D5A0DA /* OpenSansLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2280DC1D6B054200D5A0DA /* OpenSansLightItalic.ttf */; };
+		DC2280E61D6B054200D5A0DA /* OpenSansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2280DD1D6B054200D5A0DA /* OpenSansLight.ttf */; };
+		DC2280E71D6B054200D5A0DA /* OpenSansItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2280DE1D6B054200D5A0DA /* OpenSansItalic.ttf */; };
+		DC2280E81D6B054200D5A0DA /* OpenSansExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2280DF1D6B054200D5A0DA /* OpenSansExtraBoldItalic.ttf */; };
+		DC2280E91D6B054200D5A0DA /* OpenSansExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2280E01D6B054200D5A0DA /* OpenSansExtraBold.ttf */; };
+		DC2280EA1D6B054200D5A0DA /* OpenSansBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2280E11D6B054200D5A0DA /* OpenSansBoldItalic.ttf */; };
 		E724B5371D66FAF80066A60C /* MVPProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724B5361D66FAF80066A60C /* MVPProtocol.swift */; };
 		E724B5391D66FD8B0066A60C /* VerificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724B5381D66FD8B0066A60C /* VerificationPresenter.swift */; };
 		E724B53B1D6709F60066A60C /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724B53A1D6709F60066A60C /* VerificationView.swift */; };
@@ -130,7 +147,7 @@
 		218C64C21BA07E1F00EEEDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		218C64C31BA07E4300EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		21C9F2DF19E833300084D18D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		21DB300F19DD2289003A418D /* BDesignworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDesignworks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21DB300F19DD2289003A418D /* BDesignworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = BDesignworks.app; path = PearUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DB301319DD2289003A418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21DB301419DD2289003A418D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21DB301E19DD2289003A418D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -190,6 +207,23 @@
 		D36E011C9F5B75FAD1EAB225 /* Pods-Abstract-BDesignworksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D8D6B8FA9206128EF0047AB0 /* Pods_Abstract_BDesignworks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9091B29869F8A46A78676A7 /* Pods_Abstract_Swift_BaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_Swift_BaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC2280C71D6AECDB00D5A0DA /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		DC2280C81D6AECDB00D5A0DA /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		DC2280CB1D6AECE400D5A0DA /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		DC2280CC1D6AECE400D5A0DA /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DC2280CF1D6AECF400D5A0DA /* AuthInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthInfo.swift; sourceTree = "<group>"; };
+		DC2280D11D6AF42300D5A0DA /* TrialPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TrialPage.storyboard; sourceTree = "<group>"; };
+		DC2280D41D6AFDDE00D5A0DA /* RegistrationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationTableViewCell.xib; sourceTree = "<group>"; };
+		DC2280D71D6B005A00D5A0DA /* OpenSansRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansRegular.ttf; sourceTree = "<group>"; };
+		DC2280D91D6B054200D5A0DA /* OpenSansSemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansSemiBoldItalic.ttf; sourceTree = "<group>"; };
+		DC2280DA1D6B054200D5A0DA /* OpenSansSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansSemiBold.ttf; sourceTree = "<group>"; };
+		DC2280DB1D6B054200D5A0DA /* OpenSansRegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansRegularItalic.ttf; sourceTree = "<group>"; };
+		DC2280DC1D6B054200D5A0DA /* OpenSansLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansLightItalic.ttf; sourceTree = "<group>"; };
+		DC2280DD1D6B054200D5A0DA /* OpenSansLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansLight.ttf; sourceTree = "<group>"; };
+		DC2280DE1D6B054200D5A0DA /* OpenSansItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansItalic.ttf; sourceTree = "<group>"; };
+		DC2280DF1D6B054200D5A0DA /* OpenSansExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansExtraBoldItalic.ttf; sourceTree = "<group>"; };
+		DC2280E01D6B054200D5A0DA /* OpenSansExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansExtraBold.ttf; sourceTree = "<group>"; };
+		DC2280E11D6B054200D5A0DA /* OpenSansBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansBoldItalic.ttf; sourceTree = "<group>"; };
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		E724B5361D66FAF80066A60C /* MVPProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVPProtocol.swift; sourceTree = "<group>"; };
 		E724B5381D66FD8B0066A60C /* VerificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationPresenter.swift; sourceTree = "<group>"; };
@@ -347,6 +381,7 @@
 				21DB304819DD2D6D003A418D /* Constants.swift */,
 				21DB301419DD2289003A418D /* AppDelegate.swift */,
 				E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */,
+				DC2280D11D6AF42300D5A0DA /* TrialPage.storyboard */,
 				21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */,
 				21DB301E19DD2289003A418D /* Images.xcassets */,
 				E7B86BE11D6603E200560277 /* API */,
@@ -363,6 +398,7 @@
 		21DB301219DD2289003A418D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DC2280D61D6B004A00D5A0DA /* Fonts */,
 				218C64BC1BA07DDE00EEEDF1 /* Localization */,
 				21DB301319DD2289003A418D /* Info.plist */,
 				21DB303819DD2341003A418D /* BridgeHeader.h */,
@@ -444,9 +480,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC2280D31D6AFDC900D5A0DA /* RegistrationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DC2280D41D6AFDDE00D5A0DA /* RegistrationTableViewCell.xib */,
+			);
+			name = RegistrationTableViewCell;
+			sourceTree = "<group>";
+		};
+		DC2280D61D6B004A00D5A0DA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DC2280D91D6B054200D5A0DA /* OpenSansSemiBoldItalic.ttf */,
+				DC2280DA1D6B054200D5A0DA /* OpenSansSemiBold.ttf */,
+				DC2280DB1D6B054200D5A0DA /* OpenSansRegularItalic.ttf */,
+				DC2280DC1D6B054200D5A0DA /* OpenSansLightItalic.ttf */,
+				DC2280DD1D6B054200D5A0DA /* OpenSansLight.ttf */,
+				DC2280DE1D6B054200D5A0DA /* OpenSansItalic.ttf */,
+				DC2280DF1D6B054200D5A0DA /* OpenSansExtraBoldItalic.ttf */,
+				DC2280E01D6B054200D5A0DA /* OpenSansExtraBold.ttf */,
+				DC2280E11D6B054200D5A0DA /* OpenSansBoldItalic.ttf */,
+				DC2280D71D6B005A00D5A0DA /* OpenSansRegular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		E731DC711A1CB30C00E12CBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC2280D31D6AFDC900D5A0DA /* RegistrationTableViewCell */,
 				2FB501B01D51F29400D6D7BE /* RollUpButton */,
 				2F81CB6F1D51EBB900D9E93B /* AutocompleteView.swift */,
 				2F954B5A1D5384DD004D4FF1 /* ToggleButton.swift */,
@@ -489,6 +551,8 @@
 		E75994761D660F0800AFF8C4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				DC2280CB1D6AECE400D5A0DA /* LoginPresenter.swift */,
+				DC2280CC1D6AECE400D5A0DA /* LoginView.swift */,
 				E75994771D660FC700AFF8C4 /* LoginModel.swift */,
 			);
 			name = Login;
@@ -497,6 +561,8 @@
 		E75994791D66193900AFF8C4 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				DC2280C71D6AECDB00D5A0DA /* RegistrationPresenter.swift */,
+				DC2280C81D6AECDB00D5A0DA /* RegistrationView.swift */,
 				E759947A1D66194F00AFF8C4 /* RegistrationModel.swift */,
 			);
 			name = Registration;
@@ -525,6 +591,7 @@
 		E7B86BEF1D66041800560277 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				DC2280CF1D6AECF400D5A0DA /* AuthInfo.swift */,
 				E7B86BF01D66042700560277 /* User.swift */,
 			);
 			name = Database;
@@ -537,7 +604,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1710DE6B1C453AF800912C5B /* Build configuration list for PBXNativeTarget "BDesignworksUITests" */;
 			buildPhases = (
-				EB2477025219980F6979BF93 /* 📦 Check Pods Manifest.lock */,
+				EB2477025219980F6979BF93 /* [CP] Check Pods Manifest.lock */,
 				89E91AAF0FB90E6F0FF929E5 /* [CP] Check Pods Manifest.lock */,
 				1710DE581C453AF700912C5B /* Sources */,
 				1710DE591C453AF700912C5B /* Frameworks */,
@@ -559,7 +626,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 212D01921BB1986B00B34340 /* Build configuration list for PBXNativeTarget "BDesignworksTests" */;
 			buildPhases = (
-				CFC0E14FC84EE9757BF537DB /* 📦 Check Pods Manifest.lock */,
+				CFC0E14FC84EE9757BF537DB /* [CP] Check Pods Manifest.lock */,
 				0ACA543E4B3B0E6EB48E63C8 /* [CP] Check Pods Manifest.lock */,
 				212D01871BB1986B00B34340 /* Sources */,
 				212D01881BB1986B00B34340 /* Frameworks */,
@@ -583,7 +650,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21DB303119DD2289003A418D /* Build configuration list for PBXNativeTarget "BDesignworks" */;
 			buildPhases = (
-				B6310F3B3A598A61255A91D2 /* 📦 Check Pods Manifest.lock */,
+				B6310F3B3A598A61255A91D2 /* [CP] Check Pods Manifest.lock */,
 				A6DB15C2BC155A2623DF25F0 /* [CP] Check Pods Manifest.lock */,
 				21DB300B19DD2289003A418D /* Sources */,
 				21DB300C19DD2289003A418D /* Frameworks */,
@@ -676,12 +743,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2280E61D6B054200D5A0DA /* OpenSansLight.ttf in Resources */,
 				E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */,
+				DC2280E51D6B054200D5A0DA /* OpenSansLightItalic.ttf in Resources */,
 				2FB501AF1D51F29000D6D7BE /* Triangle.png in Resources */,
 				218C64C01BA07DDE00EEEDF1 /* Localizable.strings in Resources */,
 				2158286D1A91E2F200833BE6 /* mogend.sh in Resources */,
+				DC2280E91D6B054200D5A0DA /* OpenSansExtraBold.ttf in Resources */,
+				DC2280E41D6B054200D5A0DA /* OpenSansRegularItalic.ttf in Resources */,
+				DC2280D51D6AFDDE00D5A0DA /* RegistrationTableViewCell.xib in Resources */,
 				21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */,
+				DC2280E81D6B054200D5A0DA /* OpenSansExtraBoldItalic.ttf in Resources */,
+				DC2280E71D6B054200D5A0DA /* OpenSansItalic.ttf in Resources */,
+				DC2280EA1D6B054200D5A0DA /* OpenSansBoldItalic.ttf in Resources */,
+				DC2280E21D6B054200D5A0DA /* OpenSansSemiBoldItalic.ttf in Resources */,
 				21DB301F19DD2289003A418D /* Images.xcassets in Resources */,
+				DC2280D21D6AF42300D5A0DA /* TrialPage.storyboard in Resources */,
+				DC2280E31D6B054200D5A0DA /* OpenSansSemiBold.ttf in Resources */,
+				DC2280D81D6B005A00D5A0DA /* OpenSansRegular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -896,14 +975,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B6310F3B3A598A61255A91D2 /* 📦 Check Pods Manifest.lock */ = {
+		B6310F3B3A598A61255A91D2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -911,14 +990,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		CFC0E14FC84EE9757BF537DB /* 📦 Check Pods Manifest.lock */ = {
+		CFC0E14FC84EE9757BF537DB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -926,14 +1005,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		EB2477025219980F6979BF93 /* 📦 Check Pods Manifest.lock */ = {
+		EB2477025219980F6979BF93 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -967,6 +1046,8 @@
 				E75994751D66082D00AFF8C4 /* VerificationModel.swift in Sources */,
 				21E157E21BB3EDF40041FCE4 /* FSTestHelpers.swift in Sources */,
 				2FAA4FB81D5C809700DCFF46 /* SidebarTVC.swift in Sources */,
+				DC2280CA1D6AECDB00D5A0DA /* RegistrationView.swift in Sources */,
+				DC2280CD1D6AECE400D5A0DA /* LoginPresenter.swift in Sources */,
 				214F4FF61BFDC35C0084BE32 /* Protocols.swift in Sources */,
 				E759947B1D66194F00AFF8C4 /* RegistrationModel.swift in Sources */,
 				2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */,
@@ -979,6 +1060,7 @@
 				2F0729911D64C86B00A71B3C /* HealthKitManager.swift in Sources */,
 				2F81CB721D51ED4D00D9E93B /* RollUpButton.swift in Sources */,
 				2F16FE341D54E15A00EFFDD7 /* AboutScreen.swift in Sources */,
+				DC2280D01D6AECF400D5A0DA /* AuthInfo.swift in Sources */,
 				E724B53B1D6709F60066A60C /* VerificationView.swift in Sources */,
 				E75994781D660FC700AFF8C4 /* LoginModel.swift in Sources */,
 				2FDE13691D61B938008702FE /* SmoochHelper.swift in Sources */,
@@ -986,11 +1068,13 @@
 				2FC02C4E1D51E6020038BD88 /* SelectProviderScreen.swift in Sources */,
 				2F71794F1D5343F800231639 /* WelcomeScreen.swift in Sources */,
 				214F4FF41BFDC2D90084BE32 /* Helpers.swift in Sources */,
+				DC2280C91D6AECDB00D5A0DA /* RegistrationPresenter.swift in Sources */,
 				21DB301519DD2289003A418D /* AppDelegate.swift in Sources */,
 				E724B5371D66FAF80066A60C /* MVPProtocol.swift in Sources */,
 				2F81CB701D51EBB900D9E93B /* AutocompleteView.swift in Sources */,
 				2F954B5B1D5384DD004D4FF1 /* ToggleButton.swift in Sources */,
 				2F16FE301D54E13700EFFDD7 /* SettingsScreen.swift in Sources */,
+				DC2280CE1D6AECE400D5A0DA /* LoginView.swift in Sources */,
 				2F16FE2C1D54CEDB00EFFDD7 /* ConversationScreen.swift in Sources */,
 				2FAA4FBA1D5C83BC00DCFF46 /* CustomNavigationController.swift in Sources */,
 				E7B86BED1D66040D00560277 /* Router.swift in Sources */,
