@@ -41,6 +41,14 @@ struct MVPContainer<View: MVPView, Presenter: MVPPresenter, Model: MVPModel> {
         }
     }
     
+    init(controller: UIViewController, makeAssemble: Bool = true) {
+        if let view = controller as? View {
+            self.init(view: view, makeAssemble: makeAssemble)
+        } else {
+            fatalError()
+        }
+    }
+    
     func assemble () {
         self.view.setMVP(self.presenter)
         self.presenter.setMVP(self.view, model: self.model)

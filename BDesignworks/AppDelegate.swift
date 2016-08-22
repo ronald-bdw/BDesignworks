@@ -18,21 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         self.setupProject()
         
-        do {
-            let realm = try Realm()
-            if realm.objects(AuthInfo).count > 0 {
-                let storyboard = UIStoryboard(name: "TrialPage", bundle: NSBundle.mainBundle())
-                let controller = storyboard.instantiateInitialViewController()
-                self.window?.rootViewController = controller
-            }
-            else {
-                let rootController = self.window?.rootViewController as! UINavigationController
-                let _ = VerificationMVP(navigationController: rootController)
-            }
-            
-        } catch let error {
-            Logger.error("\(error)")
-        }
+//        do {
+//            let realm = try Realm()
+//            if realm.objects(AuthInfo).count > 0 {
+//                let storyboard = UIStoryboard(name: "TrialPage", bundle: NSBundle.mainBundle())
+//                let controller = storyboard.instantiateInitialViewController()
+//                self.window?.rootViewController = controller
+//            }
+//            else {
+//                let rootController = self.window?.rootViewController as! UINavigationController
+//                let _ = VerificationMVP(navigationController: rootController)
+//            }
+//            
+//        } catch let error {
+//            Logger.error("\(error)")
+//        }
         
         return true
     }

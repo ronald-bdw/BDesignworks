@@ -35,7 +35,7 @@
 		2F7295F21D6323CC00FD7B21 /* CheckboxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7295F11D6323CC00FD7B21 /* CheckboxTableView.swift */; };
 		2F734A261D5397F60073CE23 /* PaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F734A251D5397F60073CE23 /* PaymentScreen.swift */; };
 		2F81CB701D51EBB900D9E93B /* AutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81CB6F1D51EBB900D9E93B /* AutocompleteView.swift */; };
-		2F94CFF71D533998003A1B77 /* VerifyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94CFF61D533998003A1B77 /* VerifyScreen.swift */; };
+		2F94CFF71D533998003A1B77 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94CFF61D533998003A1B77 /* VerificationView.swift */; };
 		2F954B5B1D5384DD004D4FF1 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F954B5A1D5384DD004D4FF1 /* ToggleButton.swift */; };
 		2FAA4FB81D5C809700DCFF46 /* SidebarTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA4FB71D5C809700DCFF46 /* SidebarTVC.swift */; };
 		2FAA4FBA1D5C83BC00DCFF46 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA4FB91D5C83BC00DCFF46 /* CustomNavigationController.swift */; };
@@ -58,7 +58,6 @@
 		A4DCC4C71D661221005F7E05 /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCC4C61D661221005F7E05 /* ModalPresentationController.swift */; };
 		DC2280F31D6B463000D5A0DA /* VerificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2280F01D6B463000D5A0DA /* VerificationModel.swift */; };
 		DC2280F41D6B463000D5A0DA /* VerificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2280F11D6B463000D5A0DA /* VerificationPresenter.swift */; };
-		DC2280F51D6B463000D5A0DA /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2280F21D6B463000D5A0DA /* VerificationView.swift */; };
 		DC2280F91D6B464500D5A0DA /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2280F61D6B464500D5A0DA /* RegistrationModel.swift */; };
 		DC2280FA1D6B464500D5A0DA /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2280F71D6B464500D5A0DA /* RegistrationPresenter.swift */; };
 		DC2280FB1D6B464500D5A0DA /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2280F81D6B464500D5A0DA /* RegistrationView.swift */; };
@@ -200,7 +199,7 @@
 		2F734A251D5397F60073CE23 /* PaymentScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentScreen.swift; sourceTree = "<group>"; };
 		2F81CB6F1D51EBB900D9E93B /* AutocompleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutocompleteView.swift; sourceTree = "<group>"; };
 		2F81CB711D51ED4D00D9E93B /* RollUpButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollUpButton.swift; sourceTree = "<group>"; };
-		2F94CFF61D533998003A1B77 /* VerifyScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyScreen.swift; sourceTree = "<group>"; };
+		2F94CFF61D533998003A1B77 /* VerificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		2F954B5A1D5384DD004D4FF1 /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		2FAA4FB71D5C809700DCFF46 /* SidebarTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarTVC.swift; sourceTree = "<group>"; };
 		2FAA4FB91D5C83BC00DCFF46 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -244,7 +243,6 @@
 		D9091B29869F8A46A78676A7 /* Pods_Abstract_Swift_BaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_Swift_BaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2280F01D6B463000D5A0DA /* VerificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationModel.swift; sourceTree = "<group>"; };
 		DC2280F11D6B463000D5A0DA /* VerificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationPresenter.swift; sourceTree = "<group>"; };
-		DC2280F21D6B463000D5A0DA /* VerificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		DC2280F61D6B464500D5A0DA /* RegistrationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
 		DC2280F71D6B464500D5A0DA /* RegistrationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		DC2280F81D6B464500D5A0DA /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -457,7 +455,6 @@
 			isa = PBXGroup;
 			children = (
 				2FC02C4D1D51E6020038BD88 /* SelectProviderScreen.swift */,
-				2F94CFF61D533998003A1B77 /* VerifyScreen.swift */,
 				2F71794E1D5343F800231639 /* WelcomeScreen.swift */,
 				2F7179501D53497A00231639 /* TrialPageScreen.swift */,
 				2F734A251D5397F60073CE23 /* PaymentScreen.swift */,
@@ -558,7 +555,7 @@
 			isa = PBXGroup;
 			children = (
 				DC2280F01D6B463000D5A0DA /* VerificationModel.swift */,
-				DC2280F21D6B463000D5A0DA /* VerificationView.swift */,
+				2F94CFF61D533998003A1B77 /* VerificationView.swift */,
 				DC2280F11D6B463000D5A0DA /* VerificationPresenter.swift */,
 			);
 			name = Verification;
@@ -1281,7 +1278,6 @@
 				DC2281011D6B465400D5A0DA /* LoginView.swift in Sources */,
 				214F4FF41BFDC2D90084BE32 /* Helpers.swift in Sources */,
 				21DB301519DD2289003A418D /* AppDelegate.swift in Sources */,
-				DC2280F51D6B463000D5A0DA /* VerificationView.swift in Sources */,
 				2F81CB701D51EBB900D9E93B /* AutocompleteView.swift in Sources */,
 				2F954B5B1D5384DD004D4FF1 /* ToggleButton.swift in Sources */,
 				DC2281041D6B466300D5A0DA /* RegistrationTableViewCell.swift in Sources */,
@@ -1297,7 +1293,7 @@
 				2FFEA0601D551D0E00ADA63B /* Message.swift in Sources */,
 				21DB304919DD2D6D003A418D /* Constants.swift in Sources */,
 				DC2281091D6B469600D5A0DA /* MVPProtocol.swift in Sources */,
-				2F94CFF71D533998003A1B77 /* VerifyScreen.swift in Sources */,
+				2F94CFF71D533998003A1B77 /* VerificationView.swift in Sources */,
 				4F5080F01D68D6CF00979890 /* BaseView.swift in Sources */,
 				DC2281171D6B46AB00D5A0DA /* RTUser.swift in Sources */,
 				4F638FFC1D6A6435006EE693 /* RollUpButton.swift in Sources */,

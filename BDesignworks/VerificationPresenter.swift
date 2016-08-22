@@ -9,7 +9,7 @@
 import Foundation
 
 protocol IVerificationPresenter: class {
-    func submitTapped(code: String, phone: String)
+    func submitTapped(code: String, phone: String?)
     func phoneCodeReceived()
 }
 
@@ -21,8 +21,9 @@ class VerificationPresenter {
 }
 
 extension VerificationPresenter: IVerificationPresenter {
-    func submitTapped(code: String, phone: String) {
-        self.model?.submitPhone(code + phone)
+    func submitTapped(code: String, phone: String?) {
+        guard let lPhone = phone else {return}
+        self.model?.submitPhone(code + lPhone)
     }
     
     func phoneCodeReceived() {
