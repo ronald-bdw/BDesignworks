@@ -123,6 +123,7 @@ final class VerificationView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let _ = VerificationMVP(controller: self)
         self.view.layoutIfNeeded()
         self.navigationController?.navigationBar.hidden = false
         self.rollButton.arrowDirection = .Right

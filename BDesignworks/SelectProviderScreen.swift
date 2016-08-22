@@ -72,7 +72,7 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let _ = VerificationMVP(controller: segue.destinationViewController)
+//        let _ = VerificationMVP(controller: segue.destinationViewController)
     }
     
     //MARK: Actions
