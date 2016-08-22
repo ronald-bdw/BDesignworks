@@ -9,6 +9,18 @@
 import UIKit
 import FSHelpers_Swift
 
+private extension FSScreenType {
+    
+    var defaultContainerHeight: CGFloat {
+        switch self {
+        case ._3_5 : return 200
+        case ._4   : return 216
+        case ._4_7 : return 300
+        case ._5_5 : return 340
+        }
+    }
+}
+
 final class WelcomeScreen: UIViewController {
     
     struct SegueIdentifiers {
@@ -43,14 +55,8 @@ final class WelcomeScreen: UIViewController {
     }
     
     private func getDefaultContainerHeight() -> CGFloat {
-        
-        switch UIScreen.mainScreen().bounds.size.height {
-            case 480: return 200
-            case 568: return 216
-            case 667: return 300
-            case 736: return 340
-            default : return 200
-         }
+        guard let screenType = FSScreenType() else { return 200 }
+        return screenType.defaultContainerHeight
     }
     
     private func getDefaultLogoTopOffset() -> CGFloat {
@@ -61,12 +67,14 @@ final class WelcomeScreen: UIViewController {
         super.viewWillAppear(animated)
         
         UIView.animateWithDuration(0.8, delay: 0.4, options: .CurveEaseInOut, animations: {
-            self.logoTopConstraint.constant          = self.getDefaultLogoTopOffset()
-            self.conversationTopConstraint.constant += FSScreenBounds.size.height/2
-            self.containerBottomConstraint.constant  = 0
-            self.conversationLabel.alpha             = 0.0
-            self.containerView.alpha                 = 1.0
-            self.view.layoutIfNeeded()
+            [weak self] in
+            guard let sself = self else { return }
+            sself.logoTopConstraint.constant          = sself.getDefaultLogoTopOffset()
+            sself.conversationTopConstraint.constant += FSScreenBounds.size.height/2
+            sself.containerBottomConstraint.constant  = 0
+            sself.conversationLabel.alpha             = 0.0
+            sself.containerView.alpha                 = 1.0
+            sself.view.layoutIfNeeded()
         }, completion: nil)
     }
     

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class RoundButton: UIButton {
+@IBDesignable
+public class RoundButton: UIButton {
     
     @IBInspectable var buttonColor = UIColor.blackColor() {
         didSet {

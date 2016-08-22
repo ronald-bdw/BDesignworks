@@ -8,88 +8,110 @@
 
 import UIKit
 
-protocol RollUpButtonDelegate {
+protocol RollUpButtonDelegate: class {
     func rollUpButtonDidChangeState(active: Bool)
 }
 
-class RollUpButton: UIView {
+enum ArrowDirection: String {
+    case Right  = "Right"
+    case Bottom = "Bottom"
     
-    private let inset = CGFloat(12)
-    private lazy var triangle: UIImageView = {
-       let imageView = UIImageView()
-       imageView.image = UIImage(named: "TriangleTop")
-       imageView.contentMode = UIViewContentMode.ScaleAspectFit
-       return imageView
-    }()
-    let label = UILabel()
-    var active = false {
+    var image: UIImage! {
+        return UIImage(named: "Arrow/\(self.rawValue)")
+    }
+}
+
+final class RollUpButton: BaseView {
+    
+    struct Constants {
+        static let defaultCornerRadius: CGSize = CGSize(width: 10, height: 10)
+    }
+    
+    override class func layerClass() -> AnyClass { return CAShapeLayer.self }
+    
+    //MARK: - UI Outlets
+    @IBOutlet weak var triangleImageView: UIImageView!
+    @IBOutlet weak var chooseLabel: UILabel!
+    @IBOutlet weak var tapGestureRecognizer: UITapGestureRecognizer!
+    
+    var active: Bool = false {
+        didSet { self.update() }
+    }
+    
+    var animatable: Bool = true
+    
+    private var shapeLayer: CAShapeLayer {
+        return self.layer as! CAShapeLayer
+    }
+    
+    var arrowDirection: ArrowDirection = .Bottom {
         didSet {
-            self.triangle.transform = (active == true) ?  CGAffineTransformMakeRotation(CGFloat(M_PI)) :  CGAffineTransformMakeRotation(CGFloat(0))
-            self.changeBoundingPath()
+            self.triangleImageView.image = self.arrowDirection.image
         }
     }
     
-    private lazy var shapeLayer: CAShapeLayer = CAShapeLayer()
-    
-    var delegate: RollUpButtonDelegate?
+    weak var delegate: RollUpButtonDelegate?
     
     //MARK: Lifecycle
-    override init(frame: CGRect)
-    {
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        
         self.setup()
     }
     
-    required init?(coder: NSCoder)
-    {
+    required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
         self.setup()
     }
     
-    private func changeBoundingPath() {
-        if self.active {
-            self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.BottomLeft, .BottomRight], cornerRadii: CGSize(width: 10, height: 10)).CGPath
-        } else {
-            self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: .AllCorners, cornerRadii: CGSize(width: 10, height: 10)).CGPath
+    private func update() {
+        
+        guard self.animatable else { return }
+        
+        UIView.animateWithDuration(0.2) { [weak self] in
+            guard let sself = self else { return }
+            //Updating arrow
+            let angle: CGFloat = sself.active == true ? CGFloat(M_PI) : 0
+            sself.triangleImageView.transform = CGAffineTransformMakeRotation(angle)
+            
+            //Updating bounding path
+            sself.updateBoundingPath()
         }
     }
     
     
-    func setup()
-    {
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flipTriangle)))
-        
-        self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: 10, height: 10)).CGPath
+    private func setup() {
+        self.triangleImageView.image = self.arrowDirection.image
+        self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds,
+                                            byRoundingCorners: UIRectCorner.AllCorners,
+                                            cornerRadii: Constants.defaultCornerRadius).CGPath
         self.shapeLayer.backgroundColor = UIColor.clearColor().CGColor
-        self.layer.masksToBounds = true
-        self.layer.mask = self.shapeLayer
-        
-        self.backgroundColor = UIColor.whiteColor()
-        //self.layer.cornerRadius = 10
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor.lightGrayColor().CGColor
-        
-        self.addSubview(self.triangle)
-        
-        self.label.text = "Tap to chose"
-        self.label.textColor = UIColor.darkGrayColor()
-        self.addSubview(self.label)
+        self.shapeLayer.strokeColor = UIColor.lightGrayColor().CGColor
+        self.shapeLayer.fillColor = UIColor.whiteColor().CGColor
+        self.shapeLayer.lineWidth = 1
+        self.clipsToBounds = false
     }
     
-    override func layoutSubviews()
-    {
+    override func layoutSubviews() {
         super.layoutSubviews()
-        
-        self.triangle.frame = CGRectMake(self.frame.size.width - self.inset - 15, (self.frame.size.height - 15)/2, 15, 15)
-        self.label.frame = CGRectMake(self.inset, 0, self.frame.size.width - self.inset * 4, self.frame.size.height)
+        self.updateBoundingPath()
     }
     
-    func flipTriangle()
-    {
+    private func updateBoundingPath() {
+        
+        if self.active {
+            guard self.animatable else { return }
+            self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds,
+                                                 byRoundingCorners: [.TopLeft, .TopRight],
+                                                 cornerRadii: Constants.defaultCornerRadius).CGPath
+        } else {
+            self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds,
+                                                byRoundingCorners: .AllCorners,
+                                                cornerRadii: Constants.defaultCornerRadius).CGPath
+        }
+    }
+    
+    @IBAction func didChangeState(sender: AnyObject) {
         self.active = !self.active
         self.delegate?.rollUpButtonDidChangeState(self.active)
-        
     }
 }

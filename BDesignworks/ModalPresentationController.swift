@@ -51,12 +51,11 @@ final class ModalPresentationController: UIPresentationController {
         lContainerView.addSubview(lPresentedView)
         
         let coordinator = self.presentedViewController.transitionCoordinator()
-        coordinator?.animateAlongsideTransition({ (context: UIViewControllerTransitionCoordinatorContext) in
-            self.dimmingView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
-            lPresentedView.frame = self.frameOfPresentedViewInContainerView()
-        }, completion: { (context: UIViewControllerTransitionCoordinatorContext) in
-                
-        })
+        coordinator?.animateAlongsideTransition({[weak self] (context: UIViewControllerTransitionCoordinatorContext) in
+            guard let sself = self else { return }
+            sself.dimmingView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+            lPresentedView.frame = sself.frameOfPresentedViewInContainerView()
+        }, completion: nil)
     }
     
     func backgroundDidTapped(sender: UIView) {
@@ -69,11 +68,15 @@ final class ModalPresentationController: UIPresentationController {
         guard let lContainerView = self.containerView   else { FSDLog("Container view can't be nil"); return }
         
         let coordinator = self.presentedViewController.transitionCoordinator()
-        coordinator?.animateAlongsideTransition({ (context: UIViewControllerTransitionCoordinatorContext) in
-            self.dimmingView.backgroundColor = UIColor.clearColor()
-            lPresentedView.frame = CGRectOffset(self.frameOfPresentedViewInContainerView(), 0, -lContainerView.fs_height + (lContainerView.fs_height-lPresentedView.fs_height)/2)
-        }, completion: { (context: UIViewControllerTransitionCoordinatorContext) in
-            self.dimmingView.removeFromSuperview()
+        coordinator?.animateAlongsideTransition({[weak self] (context: UIViewControllerTransitionCoordinatorContext) in
+            guard let sself = self else { return }
+            sself.dimmingView.backgroundColor = UIColor.clearColor()
+            lPresentedView.frame = CGRectOffset(sself.frameOfPresentedViewInContainerView(),
+                                                0,
+                                                -lContainerView.fs_height + (lContainerView.fs_height-lPresentedView.fs_height)/2)
+        }, completion: {[weak self] (context: UIViewControllerTransitionCoordinatorContext) in
+            guard let sself = self else { return }
+            sself.dimmingView.removeFromSuperview()
         })
     }
 }
