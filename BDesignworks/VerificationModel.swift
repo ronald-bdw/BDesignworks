@@ -14,7 +14,7 @@ protocol IVerificationModel {
 
 class VerificationModel {
     
-    weak var presenter: IVerificationPresenter?
+    weak var presenter: PresenterProtocol?
     
     var authInfo: AuthInfo?
     

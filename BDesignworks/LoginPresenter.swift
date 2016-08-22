@@ -15,8 +15,8 @@ protocol ILoginPresenter: class {
 }
 
 class LoginPresenter {
-    weak var view: ILoginView?
-    var model: ILoginModel?
+    weak var view: ViewProtocol?
+    var model: ModelProtocol?
     
     required init() {}
 }

@@ -14,8 +14,8 @@ protocol IVerificationPresenter: class {
 }
 
 class VerificationPresenter {
-    weak var view: IVerificationView?
-    var model: IVerificationModel?
+    weak var view: ViewProtocol?
+    var model: ModelProtocol?
     
     required init() {}
 }

@@ -15,7 +15,8 @@ protocol ILoginView: class {
 }
 
 class LoginView: UIViewController {
-    var presenter: ILoginPresenter?
+    var presenter: PresenterProtocol?
+    
 }
 
 extension LoginView: ILoginView {

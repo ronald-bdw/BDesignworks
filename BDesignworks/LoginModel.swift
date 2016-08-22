@@ -15,7 +15,7 @@ protocol ILoginModel {
 class LoginModel {
     var user: User?
     
-    weak var presenter: ILoginPresenter?
+    weak var presenter: PresenterProtocol?
     
     required init() {}
     

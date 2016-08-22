@@ -17,8 +17,8 @@ protocol IRegistrationPresenter: class {
 }
 
 class RegistrationPresenter {
-    weak var view: IRegistrationView?
-    var model: IRegistrationModel?
+    weak var view: ViewProtocol?
+    var model: ModelProtocol?
     
     required init() {}
 }

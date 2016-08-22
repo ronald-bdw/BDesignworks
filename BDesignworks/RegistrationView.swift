@@ -15,7 +15,7 @@ protocol IRegistrationView: class {
 }
 
 class RegistrationView: UIViewController {
-    var presenter: IRegistrationPresenter?
+    var presenter: PresenterProtocol?
     
     @IBAction func submitPressed(sender: AnyObject){
         self.presenter?.submitTapped("firstname", lastname: "lastname", email: "user@t.t", phone: "12345678900")

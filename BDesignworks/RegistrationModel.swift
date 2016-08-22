@@ -15,7 +15,7 @@ protocol IRegistrationModel {
 class RegistrationModel {
     var user: User?
     
-    weak var presenter: IRegistrationPresenter?
+    weak var presenter: PresenterProtocol?
     
     required init() {}
     

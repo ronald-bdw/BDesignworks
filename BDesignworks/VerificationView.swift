@@ -16,7 +16,7 @@ protocol IVerificationView: class {
 
 class VerificationView: UIViewController {
     
-    var presenter: IVerificationPresenter?
+    var presenter: PresenterProtocol?
     
     @IBAction func submitPressed(sender: AnyObject){
         self.presenter?.submitTapped("7", phone: "9377709988")
