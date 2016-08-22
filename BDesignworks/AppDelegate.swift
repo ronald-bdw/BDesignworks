@@ -18,16 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         self.setupProject()
         
-        let rootController = self.window?.rootViewController as! UINavigationController
         do {
             let realm = try Realm()
             if realm.objects(AuthInfo).count > 0 {
-                let storyboard = UIStoryboard(name: "Main_Storyboard", bundle: NSBundle.mainBundle())
-                let controller = storyboard.instantiateViewControllerWithIdentifier("LoginView")
-                rootController.pushViewController(controller, animated: false)
-                LoginMVP(identifier: "LoginView").model.login("1234")
+                let storyboard = UIStoryboard(name: "TrialPage", bundle: NSBundle.mainBundle())
+                let controller = storyboard.instantiateInitialViewController()
+                self.window?.rootViewController = controller
             }
             else {
+                let rootController = self.window?.rootViewController as! UINavigationController
                 let _ = VerificationMVP(navigationController: rootController)
             }
             
@@ -132,7 +131,7 @@ extension AppDelegate {
     
     func setupSmooch()
     {
-        SmoochHelper.sharedInstance.startWithParameters("")
+        SmoochHelper.sharedInstance.startWithParameters("2")
     }
     
     func setupLogger() {

@@ -12,8 +12,8 @@ PODS:
     - Realm (= 1.0.2)
   - SAMKeychain (1.5.0)
   - SideMenu (1.1.9)
-  - Smooch (4.2.2)
-  - XCGLogger (3.3)
+  - Smooch (4.3.0)
+  - XCGLogger (3.4)
 
 DEPENDENCIES:
   - Alamofire
@@ -46,9 +46,9 @@ SPEC CHECKSUMS:
   RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
   SAMKeychain: 1fc9ae02f576365395758b12888c84704eebc423
   SideMenu: e4ecb0f1061e19230e53079edb2b300081446f80
-  Smooch: eac65a9b9e888e3325fde725ce1a6a1ec2137dfc
-  XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
+  Smooch: c266cae1bbe3abdadcb69c310858e85d9498a91a
+  XCGLogger: 80dbac4e62e2c360d5b3d83070131191ebb3ac93
 
 PODFILE CHECKSUM: ca2228a3dad133c2122bcebd30e87a0178859c2d
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1
