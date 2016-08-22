@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         self.setupProject()
-        
         return true
     }
 
@@ -87,6 +86,19 @@ extension AppDelegate {
         
         //setup Smooch
         self.setupSmooch()
+        
+        self.setupAppearance()
+    }
+    
+    func setupAppearance() {
+        
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: false)
+        
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationBar.barTintColor = AppColors.MainColor
+        navigationBar.tintColor = UIColor.whiteColor()
+        navigationBar.translucent = false
     }
     
     func setupProjectForTests() {

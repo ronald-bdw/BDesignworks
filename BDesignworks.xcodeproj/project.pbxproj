@@ -30,26 +30,32 @@
 		2F16FE301D54E13700EFFDD7 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F16FE2F1D54E13700EFFDD7 /* SettingsScreen.swift */; };
 		2F16FE321D54E14D00EFFDD7 /* PushScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F16FE311D54E14D00EFFDD7 /* PushScreen.swift */; };
 		2F16FE341D54E15A00EFFDD7 /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F16FE331D54E15A00EFFDD7 /* AboutScreen.swift */; };
-		2F1B80AA1D5DD42D001AA5DA /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B80A91D5DD42D001AA5DA /* RoundButton.swift */; };
 		2F71794F1D5343F800231639 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71794E1D5343F800231639 /* WelcomeScreen.swift */; };
 		2F7179511D53497A00231639 /* TrialPageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7179501D53497A00231639 /* TrialPageScreen.swift */; };
 		2F7295F21D6323CC00FD7B21 /* CheckboxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7295F11D6323CC00FD7B21 /* CheckboxTableView.swift */; };
 		2F734A261D5397F60073CE23 /* PaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F734A251D5397F60073CE23 /* PaymentScreen.swift */; };
 		2F81CB701D51EBB900D9E93B /* AutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81CB6F1D51EBB900D9E93B /* AutocompleteView.swift */; };
-		2F81CB721D51ED4D00D9E93B /* RollUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81CB711D51ED4D00D9E93B /* RollUpButton.swift */; };
 		2F94CFF71D533998003A1B77 /* VerifyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94CFF61D533998003A1B77 /* VerifyScreen.swift */; };
 		2F954B5B1D5384DD004D4FF1 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F954B5A1D5384DD004D4FF1 /* ToggleButton.swift */; };
 		2FAA4FB81D5C809700DCFF46 /* SidebarTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA4FB71D5C809700DCFF46 /* SidebarTVC.swift */; };
 		2FAA4FBA1D5C83BC00DCFF46 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA4FB91D5C83BC00DCFF46 /* CustomNavigationController.swift */; };
 		2FAA4FBC1D5C890B00DCFF46 /* EditProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAA4FBB1D5C890B00DCFF46 /* EditProfileScreen.swift */; };
-		2FB501AF1D51F29000D6D7BE /* Triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FB501AE1D51F29000D6D7BE /* Triangle.png */; };
 		2FC02C4E1D51E6020038BD88 /* SelectProviderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC02C4D1D51E6020038BD88 /* SelectProviderScreen.swift */; };
 		2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE13661D61A44D008702FE /* RoundImage.swift */; };
 		2FDE13691D61B938008702FE /* SmoochHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE13681D61B938008702FE /* SmoochHelper.swift */; };
 		2FE510791D5B793A00C23E8B /* FSHelpers_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE510781D5B793A00C23E8B /* FSHelpers_Swift.framework */; };
 		2FFEA0601D551D0E00ADA63B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFEA05F1D551D0E00ADA63B /* Message.swift */; };
+		4F5080F01D68D6CF00979890 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5080EF1D68D6CF00979890 /* BaseView.swift */; };
+		4F638FF71D6A6174006EE693 /* BDTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF397B41D6A4B49004EAE2E /* BDTextField.swift */; };
+		4F638FFC1D6A6435006EE693 /* RollUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81CB711D51ED4D00D9E93B /* RollUpButton.swift */; };
+		4F638FFD1D6A6438006EE693 /* RollUpButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5080ED1D68B4B800979890 /* RollUpButton.xib */; };
+		4F638FFF1D6A64E1006EE693 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B80A91D5DD42D001AA5DA /* RoundButton.swift */; };
+		4FF397D81D6A5AEC004EAE2E /* IBDesignableKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FF397D71D6A5AEC004EAE2E /* IBDesignableKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FF397DC1D6A5AEC004EAE2E /* IBDesignableKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */; };
+		4FF397DD1D6A5AEC004EAE2E /* IBDesignableKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		723ADB013450927E3555FBEF /* Pods_Abstract_BDesignworks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6B8FA9206128EF0047AB0 /* Pods_Abstract_BDesignworks.framework */; };
 		81ABC4E5D5B644C560E0AA21 /* Pods_Abstract_Swift_BaseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9091B29869F8A46A78676A7 /* Pods_Abstract_Swift_BaseUITests.framework */; };
+		A4DCC4C71D661221005F7E05 /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCC4C61D661221005F7E05 /* ModalPresentationController.swift */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -91,7 +97,28 @@
 			remoteGlobalIDString = 21DB300E19DD2289003A418D;
 			remoteInfo = BDesignworks;
 		};
+		4FF397DA1D6A5AEC004EAE2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21DB300719DD2289003A418D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FF397D41D6A5AEC004EAE2E;
+			remoteInfo = IBDesignableKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4FF397E71D6A5AED004EAE2E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4FF397DD1D6A5AEC004EAE2E /* IBDesignableKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		020C4A5E30B743EDD370DB89 /* Pods-Abstract-BDesignworks.test staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.test staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.test staging.xcconfig"; sourceTree = "<group>"; };
@@ -148,7 +175,6 @@
 		2FAA4FB71D5C809700DCFF46 /* SidebarTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarTVC.swift; sourceTree = "<group>"; };
 		2FAA4FB91D5C83BC00DCFF46 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		2FAA4FBB1D5C890B00DCFF46 /* EditProfileScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileScreen.swift; sourceTree = "<group>"; };
-		2FB501AE1D51F29000D6D7BE /* Triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Triangle.png; sourceTree = "<group>"; };
 		2FC02C4D1D51E6020038BD88 /* SelectProviderScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectProviderScreen.swift; sourceTree = "<group>"; };
 		2FDE13661D61A44D008702FE /* RoundImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		2FDE13681D61B938008702FE /* SmoochHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoochHelper.swift; sourceTree = "<group>"; };
@@ -157,6 +183,13 @@
 		34CEE7B0A1468777DB0D6EF8 /* Pods-Abstract-BDesignworksUITests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.test.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.test.xcconfig"; sourceTree = "<group>"; };
 		38B1BC0F25415CD477A6B5B8 /* Pods-Abstract-BDesignworksUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.release staging.xcconfig"; sourceTree = "<group>"; };
 		3A5FE293BB9438C1AE339D7F /* Pods-Abstract-BDesignworks.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.release staging.xcconfig"; sourceTree = "<group>"; };
+		4F5080ED1D68B4B800979890 /* RollUpButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RollUpButton.xib; sourceTree = "<group>"; };
+		4F5080EF1D68D6CF00979890 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		4F638FFA1D6A62F4006EE693 /* FSHelpers_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSHelpers_Swift.framework; path = "../../../Library/Developer/Xcode/DerivedData/BDesignworks-cvyvfcshftyhtrbffdfopxilrkdv/Build/Products/Debug Staging-iphonesimulator/FSHelpers+Swift/FSHelpers_Swift.framework"; sourceTree = "<group>"; };
+		4FF397B41D6A4B49004EAE2E /* BDTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDTextField.swift; sourceTree = "<group>"; };
+		4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IBDesignableKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FF397D71D6A5AEC004EAE2E /* IBDesignableKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBDesignableKit.h; sourceTree = "<group>"; };
+		4FF397D91D6A5AEC004EAE2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51A0D6856BD58979B29B2269 /* Pods-Abstract-BDesignworksTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore.xcconfig"; sourceTree = "<group>"; };
 		62261FC7DE20C9A6ACA0BAE4 /* Pods-Abstract-BDesignworksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		64B3F1B9224ADD02041E18AA /* Pods-Abstract-BDesignworksUITests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.debug staging.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +202,7 @@
 		9A3709D2869868D539BA2F87 /* Pods_Abstract_BDesignworksTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E9AF561EE2CD0A3A7DDD0CF /* Pods-Abstract-BDesignworks.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.debug staging.xcconfig"; sourceTree = "<group>"; };
 		9FE58E7B2053F4AFF188DF61 /* Pods-Abstract-BDesignworksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A4DCC4C61D661221005F7E05 /* ModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresentationController.swift; sourceTree = "<group>"; };
 		AE17C69B53345B23AAF846DA /* Pods_Abstract_BDesignworksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5D1F97F5C59B62E7E84E1B /* Pods-Abstract-BDesignworks.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.appstore.xcconfig"; sourceTree = "<group>"; };
 		B27D5D57B204407114491374 /* Pods-Abstract-BDesignworksUITests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.appstore.xcconfig"; sourceTree = "<group>"; };
@@ -209,8 +243,16 @@
 			files = (
 				2FE510791D5B793A00C23E8B /* FSHelpers_Swift.framework in Frameworks */,
 				2F07298F1D64C85300A71B3C /* HealthKit.framework in Frameworks */,
+				4FF397DC1D6A5AEC004EAE2E /* IBDesignableKit.framework in Frameworks */,
 				213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */,
 				723ADB013450927E3555FBEF /* Pods_Abstract_BDesignworks.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FF397D11D6A5AEC004EAE2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +341,7 @@
 				21DB301119DD2289003A418D /* BDesignworks */,
 				212D01801BB1977100B34340 /* Tests */,
 				1710DE5D1C453AF800912C5B /* BDesignworksUITests */,
+				4FF397D61D6A5AEC004EAE2E /* IBDesignableKit */,
 				21DB301019DD2289003A418D /* Products */,
 				5C5B41AD2B6E0DFDD4D53E6B /* Frameworks */,
 				35A5DC772BDBEE89744BCCF8 /* Pods */,
@@ -311,6 +354,7 @@
 				21DB300F19DD2289003A418D /* BDesignworks.app */,
 				212D018B1BB1986B00B34340 /* BDesignworksTests.xctest */,
 				1710DE5C1C453AF700912C5B /* BDesignworksUITests.xctest */,
+				4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -359,8 +403,8 @@
 		2FB501B01D51F29400D6D7BE /* RollUpButton */ = {
 			isa = PBXGroup;
 			children = (
-				2FB501AE1D51F29000D6D7BE /* Triangle.png */,
 				2F81CB711D51ED4D00D9E93B /* RollUpButton.swift */,
+				4F5080ED1D68B4B800979890 /* RollUpButton.xib */,
 			);
 			name = RollUpButton;
 			sourceTree = "<group>";
@@ -396,9 +440,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4F638FFE1D6A6464006EE693 /* IB Inspectables */ = {
+			isa = PBXGroup;
+			children = (
+				4FF397B41D6A4B49004EAE2E /* BDTextField.swift */,
+			);
+			name = "IB Inspectables";
+			sourceTree = "<group>";
+		};
+		4FF397D61D6A5AEC004EAE2E /* IBDesignableKit */ = {
+			isa = PBXGroup;
+			children = (
+				4FF397D71D6A5AEC004EAE2E /* IBDesignableKit.h */,
+				4FF397D91D6A5AEC004EAE2E /* Info.plist */,
+			);
+			path = IBDesignableKit;
+			sourceTree = "<group>";
+		};
 		5C5B41AD2B6E0DFDD4D53E6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4F638FFA1D6A62F4006EE693 /* FSHelpers_Swift.framework */,
 				2F07298E1D64C85300A71B3C /* HealthKit.framework */,
 				2FE510781D5B793A00C23E8B /* FSHelpers_Swift.framework */,
 				194478471AAF90AF00A34744 /* SenTestingKit.framework */,
@@ -420,12 +482,14 @@
 		E731DC711A1CB30C00E12CBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4F638FFE1D6A6464006EE693 /* IB Inspectables */,
 				2FB501B01D51F29400D6D7BE /* RollUpButton */,
 				2F81CB6F1D51EBB900D9E93B /* AutocompleteView.swift */,
 				2F954B5A1D5384DD004D4FF1 /* ToggleButton.swift */,
 				2F1B80A91D5DD42D001AA5DA /* RoundButton.swift */,
 				2FDE13661D61A44D008702FE /* RoundImage.swift */,
 				2F7295F11D6323CC00FD7B21 /* CheckboxTableView.swift */,
+				4F5080EF1D68D6CF00979890 /* BaseView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -442,18 +506,32 @@
 				2F16FE311D54E14D00EFFDD7 /* PushScreen.swift */,
 				2F16FE2F1D54E13700EFFDD7 /* SettingsScreen.swift */,
 				2F16FE331D54E15A00EFFDD7 /* AboutScreen.swift */,
+				A4DCC4C61D661221005F7E05 /* ModalPresentationController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		4FF397D21D6A5AEC004EAE2E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FF397D81D6A5AEC004EAE2E /* IBDesignableKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		1710DE5B1C453AF700912C5B /* BDesignworksUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1710DE6B1C453AF800912C5B /* Build configuration list for PBXNativeTarget "BDesignworksUITests" */;
 			buildPhases = (
-				EB2477025219980F6979BF93 /* 📦 Check Pods Manifest.lock */,
+				B5F251830735C4A2F2AB4744 /* 📦 Check Pods Manifest.lock */,
+				40DED73DE539653B2283AB64 /* [CP] Check Pods Manifest.lock */,
+				EB2477025219980F6979BF93 /* [CP] Check Pods Manifest.lock */,
 				89E91AAF0FB90E6F0FF929E5 /* [CP] Check Pods Manifest.lock */,
 				1710DE581C453AF700912C5B /* Sources */,
 				1710DE591C453AF700912C5B /* Frameworks */,
@@ -475,7 +553,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 212D01921BB1986B00B34340 /* Build configuration list for PBXNativeTarget "BDesignworksTests" */;
 			buildPhases = (
-				CFC0E14FC84EE9757BF537DB /* 📦 Check Pods Manifest.lock */,
+				31C89D53C1429F4FA05D702C /* 📦 Check Pods Manifest.lock */,
+				CA529FC7C1293A3D5D3DD259 /* [CP] Check Pods Manifest.lock */,
+				CFC0E14FC84EE9757BF537DB /* [CP] Check Pods Manifest.lock */,
 				0ACA543E4B3B0E6EB48E63C8 /* [CP] Check Pods Manifest.lock */,
 				212D01871BB1986B00B34340 /* Sources */,
 				212D01881BB1986B00B34340 /* Frameworks */,
@@ -499,7 +579,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21DB303119DD2289003A418D /* Build configuration list for PBXNativeTarget "BDesignworks" */;
 			buildPhases = (
-				B6310F3B3A598A61255A91D2 /* 📦 Check Pods Manifest.lock */,
+				7B90C6E7F3ECB367F033BF01 /* 📦 Check Pods Manifest.lock */,
+				77EFF2F5B64F128EAD53CD97 /* [CP] Check Pods Manifest.lock */,
+				B6310F3B3A598A61255A91D2 /* [CP] Check Pods Manifest.lock */,
 				A6DB15C2BC155A2623DF25F0 /* [CP] Check Pods Manifest.lock */,
 				21DB300B19DD2289003A418D /* Sources */,
 				21DB300C19DD2289003A418D /* Frameworks */,
@@ -509,17 +591,37 @@
 				6A105BDE6BBF4E1ACD2AAE0F /* [CP] Copy Pods Resources */,
 				B127C28676A94C891E32B5C8 /* 📦 Embed Pods Frameworks */,
 				8D624D20A7FE3B08118BE268 /* 📦 Copy Pods Resources */,
+				4FF397E71D6A5AED004EAE2E /* Embed Frameworks */,
 			);
 			buildRules = (
 				21DB304B19DD32D9003A418D /* PBXBuildRule */,
 				21DB304A19DD32B1003A418D /* PBXBuildRule */,
 			);
 			dependencies = (
+				4FF397DB1D6A5AEC004EAE2E /* PBXTargetDependency */,
 			);
 			name = BDesignworks;
 			productName = BDesignworks;
 			productReference = 21DB300F19DD2289003A418D /* BDesignworks.app */;
 			productType = "com.apple.product-type.application";
+		};
+		4FF397D41D6A5AEC004EAE2E /* IBDesignableKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FF397DE1D6A5AED004EAE2E /* Build configuration list for PBXNativeTarget "IBDesignableKit" */;
+			buildPhases = (
+				4FF397D01D6A5AEC004EAE2E /* Sources */,
+				4FF397D11D6A5AEC004EAE2E /* Frameworks */,
+				4FF397D21D6A5AEC004EAE2E /* Headers */,
+				4FF397D31D6A5AEC004EAE2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IBDesignableKit;
+			productName = IBDesignableKit;
+			productReference = 4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -528,7 +630,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0730;
 				LastTestingUpgradeCheck = 0700;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Flatstack;
@@ -550,6 +652,10 @@
 							};
 						};
 					};
+					4FF397D41D6A5AEC004EAE2E = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Y49MTY8CU2;
+					};
 				};
 			};
 			buildConfigurationList = 21DB300A19DD2289003A418D /* Build configuration list for PBXProject "BDesignworks" */;
@@ -569,6 +675,7 @@
 				21DB300E19DD2289003A418D /* BDesignworks */,
 				212D018A1BB1986B00B34340 /* BDesignworksTests */,
 				1710DE5B1C453AF700912C5B /* BDesignworksUITests */,
+				4FF397D41D6A5AEC004EAE2E /* IBDesignableKit */,
 			);
 		};
 /* End PBXProject section */
@@ -593,11 +700,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */,
-				2FB501AF1D51F29000D6D7BE /* Triangle.png in Resources */,
 				218C64C01BA07DDE00EEEDF1 /* Localizable.strings in Resources */,
 				2158286D1A91E2F200833BE6 /* mogend.sh in Resources */,
+				4F638FFD1D6A6438006EE693 /* RollUpButton.xib in Resources */,
 				21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */,
 				21DB301F19DD2289003A418D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FF397D31D6A5AEC004EAE2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +806,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		31C89D53C1429F4FA05D702C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		40DED73DE539653B2283AB64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		6A105BDE6BBF4E1ACD2AAE0F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -705,6 +849,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77EFF2F5B64F128EAD53CD97 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7B90C6E7F3ECB367F033BF01 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		89E91AAF0FB90E6F0FF929E5 /* [CP] Check Pods Manifest.lock */ = {
@@ -812,7 +986,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B6310F3B3A598A61255A91D2 /* 📦 Check Pods Manifest.lock */ = {
+		B5F251830735C4A2F2AB4744 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -827,14 +1001,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		CFC0E14FC84EE9757BF537DB /* 📦 Check Pods Manifest.lock */ = {
+		B6310F3B3A598A61255A91D2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -842,14 +1016,44 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		EB2477025219980F6979BF93 /* 📦 Check Pods Manifest.lock */ = {
+		CA529FC7C1293A3D5D3DD259 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CFC0E14FC84EE9757BF537DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB2477025219980F6979BF93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -886,9 +1090,7 @@
 				2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */,
 				2F7179511D53497A00231639 /* TrialPageScreen.swift in Sources */,
 				2FAA4FBC1D5C890B00DCFF46 /* EditProfileScreen.swift in Sources */,
-				2F1B80AA1D5DD42D001AA5DA /* RoundButton.swift in Sources */,
 				2F0729911D64C86B00A71B3C /* HealthKitManager.swift in Sources */,
-				2F81CB721D51ED4D00D9E93B /* RollUpButton.swift in Sources */,
 				2F16FE341D54E15A00EFFDD7 /* AboutScreen.swift in Sources */,
 				2FDE13691D61B938008702FE /* SmoochHelper.swift in Sources */,
 				2FC02C4E1D51E6020038BD88 /* SelectProviderScreen.swift in Sources */,
@@ -898,6 +1100,7 @@
 				2F81CB701D51EBB900D9E93B /* AutocompleteView.swift in Sources */,
 				2F954B5B1D5384DD004D4FF1 /* ToggleButton.swift in Sources */,
 				2F16FE301D54E13700EFFDD7 /* SettingsScreen.swift in Sources */,
+				A4DCC4C71D661221005F7E05 /* ModalPresentationController.swift in Sources */,
 				2F16FE2C1D54CEDB00EFFDD7 /* ConversationScreen.swift in Sources */,
 				2FAA4FBA1D5C83BC00DCFF46 /* CustomNavigationController.swift in Sources */,
 				2F7295F21D6323CC00FD7B21 /* CheckboxTableView.swift in Sources */,
@@ -906,8 +1109,19 @@
 				2FFEA0601D551D0E00ADA63B /* Message.swift in Sources */,
 				21DB304919DD2D6D003A418D /* Constants.swift in Sources */,
 				2F94CFF71D533998003A1B77 /* VerifyScreen.swift in Sources */,
+				4F5080F01D68D6CF00979890 /* BaseView.swift in Sources */,
+				4F638FFC1D6A6435006EE693 /* RollUpButton.swift in Sources */,
 				214F4FF21BFDC2CF0084BE32 /* Extensions.swift in Sources */,
 				2F16FE321D54E14D00EFFDD7 /* PushScreen.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FF397D01D6A5AEC004EAE2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F638FFF1D6A64E1006EE693 /* RoundButton.swift in Sources */,
+				4F638FF71D6A6174006EE693 /* BDTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -923,6 +1137,11 @@
 			isa = PBXTargetDependency;
 			target = 21DB300E19DD2289003A418D /* BDesignworks */;
 			targetProxy = 212D01901BB1986B00B34340 /* PBXContainerItemProxy */;
+		};
+		4FF397DB1D6A5AEC004EAE2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FF397D41D6A5AEC004EAE2E /* IBDesignableKit */;
+			targetProxy = 4FF397DA1D6A5AEC004EAE2E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1143,6 +1362,7 @@
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1222,6 +1442,7 @@
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1305,6 +1526,7 @@
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1575,6 +1797,7 @@
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1612,6 +1835,7 @@
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1691,6 +1915,7 @@
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1768,6 +1993,7 @@
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1792,6 +2018,220 @@
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Release Staging";
+		};
+		4FF397DF1D6A5AED004EAE2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IBDesignableKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.IBDesignableKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4FF397E01D6A5AED004EAE2E /* AppStore Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = IBDesignableKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.IBDesignableKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "AppStore Debug";
+		};
+		4FF397E11D6A5AED004EAE2E /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IBDesignableKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.IBDesignableKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug Staging";
+		};
+		4FF397E21D6A5AED004EAE2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = IBDesignableKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.IBDesignableKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4FF397E31D6A5AED004EAE2E /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = IBDesignableKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.IBDesignableKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		4FF397E41D6A5AED004EAE2E /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = IBDesignableKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.IBDesignableKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = AppStore;
+		};
+		4FF397E51D6A5AED004EAE2E /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = IBDesignableKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.IBDesignableKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Release Staging";
+		};
+		4FF397E61D6A5AED004EAE2E /* Test Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = IBDesignableKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.IBDesignableKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Test Staging";
 		};
 		E736C5DE1A25320400B8986E /* AppStore */ = {
 			isa = XCBuildConfiguration;
@@ -1842,6 +2282,7 @@
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1926,6 +2367,21 @@
 				E736C5DF1A25320400B8986E /* AppStore */,
 				21DB305019DD3B48003A418D /* Release Staging */,
 				212D01841BB1978B00B34340 /* Test Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FF397DE1D6A5AED004EAE2E /* Build configuration list for PBXNativeTarget "IBDesignableKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FF397DF1D6A5AED004EAE2E /* Debug */,
+				4FF397E01D6A5AED004EAE2E /* AppStore Debug */,
+				4FF397E11D6A5AED004EAE2E /* Debug Staging */,
+				4FF397E21D6A5AED004EAE2E /* Release */,
+				4FF397E31D6A5AED004EAE2E /* Test */,
+				4FF397E41D6A5AED004EAE2E /* AppStore */,
+				4FF397E51D6A5AED004EAE2E /* Release Staging */,
+				4FF397E61D6A5AED004EAE2E /* Test Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,19 +8,23 @@
 
 import UIKit
 
-class TrialPageScreen: UIViewController
-{
-    override func viewDidLoad()
-    {
+final class TrialPageScreen: UIViewController {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.title = "Welcome"
     }
     
-    override func viewWillAppear(animated: Bool)
-    {
+    override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    @IBAction func learnMoreAction(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func startTrialAction(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

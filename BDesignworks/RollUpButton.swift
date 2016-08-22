@@ -8,67 +8,109 @@
 
 import UIKit
 
-
-protocol RollUpButtonDelegate
-{
+protocol RollUpButtonDelegate: class {
     func rollUpButtonDidChangeState(active: Bool)
 }
 
+enum ArrowDirection: String {
+    case Right  = "Right"
+    case Bottom = "Bottom"
+    
+    var image: UIImage! {
+        return UIImage(named: "Arrow/\(self.rawValue)")
+    }
+}
 
-class RollUpButton: UIView
-{
-    private let inset = CGFloat(12)
-    private let triangle = UIImageView(image: UIImage(named: "TriangleTop"))
-    let label = UILabel()
-    var active = false {
+final class RollUpButton: BaseView {
+    
+    struct Constants {
+        static let defaultCornerRadius: CGSize = CGSize(width: 10, height: 10)
+    }
+    
+    override class func layerClass() -> AnyClass { return CAShapeLayer.self }
+    
+    //MARK: - UI Outlets
+    @IBOutlet weak var triangleImageView: UIImageView!
+    @IBOutlet weak var chooseLabel: UILabel!
+    @IBOutlet weak var tapGestureRecognizer: UITapGestureRecognizer!
+    
+    var active: Bool = false {
+        didSet { self.update() }
+    }
+    
+    var animatable: Bool = true
+    
+    private var shapeLayer: CAShapeLayer {
+        return self.layer as! CAShapeLayer
+    }
+    
+    var arrowDirection: ArrowDirection = .Bottom {
         didSet {
-            self.triangle.transform = (active == true) ?  CGAffineTransformMakeRotation(CGFloat(M_PI)) :  CGAffineTransformMakeRotation(CGFloat(0))
+            self.triangleImageView.image = self.arrowDirection.image
         }
     }
-    var delegate: RollUpButtonDelegate?
     
+    weak var delegate: RollUpButtonDelegate?
     
     //MARK: Lifecycle
-    override init(frame: CGRect)
-    {
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        
         self.setup()
     }
     
-    required init?(coder: NSCoder)
-    {
+    required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
         self.setup()
     }
     
-    func setup()
-    {
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flipTriangle)))
+    private func update() {
         
-        self.backgroundColor = UIColor.whiteColor()
-        self.layer.cornerRadius = 10
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor.lightGrayColor().CGColor
+        guard self.animatable else { return }
         
-        self.addSubview(self.triangle)
-        
-        self.label.text = "Tap to chose"
-        self.label.textColor = UIColor.darkGrayColor()
-        self.addSubview(self.label)
+        UIView.animateWithDuration(0.2) { [weak self] in
+            guard let sself = self else { return }
+            //Updating arrow
+            let angle: CGFloat = sself.active == true ? CGFloat(M_PI) : 0
+            sself.triangleImageView.transform = CGAffineTransformMakeRotation(angle)
+            
+            //Updating bounding path
+            sself.updateBoundingPath()
+        }
     }
     
-    override func layoutSubviews()
-    {
+    
+    private func setup() {
+        self.triangleImageView.image = self.arrowDirection.image
+        self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds,
+                                            byRoundingCorners: UIRectCorner.AllCorners,
+                                            cornerRadii: Constants.defaultCornerRadius).CGPath
+        self.shapeLayer.backgroundColor = UIColor.clearColor().CGColor
+        self.shapeLayer.strokeColor = UIColor.lightGrayColor().CGColor
+        self.shapeLayer.fillColor = UIColor.whiteColor().CGColor
+        self.shapeLayer.lineWidth = 1
+        self.clipsToBounds = false
+    }
+    
+    override func layoutSubviews() {
         super.layoutSubviews()
-        
-        self.triangle.frame = CGRectMake(self.frame.size.width - self.inset - 15, (self.frame.size.height - 15)/2, 15, 15)
-        self.label.frame = CGRectMake(self.inset, 0, self.frame.size.width - self.inset * 4, self.frame.size.height)
+        self.updateBoundingPath()
     }
     
-    func flipTriangle()
-    {
+    private func updateBoundingPath() {
+        
+        if self.active {
+            guard self.animatable else { return }
+            self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds,
+                                                 byRoundingCorners: [.TopLeft, .TopRight],
+                                                 cornerRadii: Constants.defaultCornerRadius).CGPath
+        } else {
+            self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds,
+                                                byRoundingCorners: .AllCorners,
+                                                cornerRadii: Constants.defaultCornerRadius).CGPath
+        }
+    }
+    
+    @IBAction func didChangeState(sender: AnyObject) {
         self.active = !self.active
         self.delegate?.rollUpButtonDidChangeState(self.active)
     }

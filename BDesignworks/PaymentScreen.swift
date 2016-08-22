@@ -8,9 +8,8 @@
 
 import UIKit
 
-
-class PaymentScreen: UITableViewController, ToggleButtonDelegate
-{
+final class PaymentScreen: UITableViewController, ToggleButtonDelegate {
+    
     @IBOutlet var firstToggle: ToggleButton!
     @IBOutlet var secondToggle: ToggleButton!
     @IBOutlet var thirdToggle: ToggleButton!
