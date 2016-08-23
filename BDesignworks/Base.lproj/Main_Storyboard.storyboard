@@ -587,7 +587,7 @@
                                     <action selector="nextPressed:" destination="M06-aI-0x9" eventType="touchUpInside" id="LKb-JG-pUi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please enter the unique code in the SMS that we have sent you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-5V-3lS">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the unique code in the SMS that we have sent you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-5V-3lS">
                                 <rect key="frame" x="24" y="345" width="552" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1765,6 +1765,22 @@
             </objects>
             <point key="canvasLocation" x="4489" y="845"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MOb-Wb-Fdg">
+            <objects>
+                <navigationController storyboardIdentifier="ConversationScreen" id="QDH-PD-D3D" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="csp-1o-wnl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="93R-j9-aqE" kind="relationship" relationship="rootViewController" id="dPB-6r-Ebd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c0G-pA-OCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2168" y="310"/>
+        </scene>
         <!--Conversation Screen-->
         <scene sceneID="mA1-d8-J1G">
             <objects>
@@ -2019,6 +2035,7 @@
                             <constraint firstAttribute="trailing" secondItem="XRX-b9-WBw" secondAttribute="trailing" id="tS0-uS-XT3"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="oVo-MG-H79"/>
                     <connections>
                         <outlet property="tableView" destination="kyA-b7-GXI" id="dwv-eK-LvK"/>
                         <outlet property="textField" destination="ZsI-Z4-iI9" id="qY3-tj-KP7"/>
@@ -2027,7 +2044,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-4z-3Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2402" y="292"/>
+            <point key="canvasLocation" x="2828" y="292"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="MUO-P6-UP7">
@@ -2049,7 +2066,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3m-0y-eqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3109" y="284"/>
+            <point key="canvasLocation" x="3519" y="278"/>
         </scene>
         <!--Custom Navigation Controller-->
         <scene sceneID="nUd-NQ-3Bv">

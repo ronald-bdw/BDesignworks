@@ -85,6 +85,7 @@
 		DC22812F1D6B470600D5A0DA /* OpenSansRegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2281251D6B470600D5A0DA /* OpenSansRegularItalic.ttf */; };
 		DC2281301D6B470600D5A0DA /* OpenSansSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2281261D6B470600D5A0DA /* OpenSansSemiBold.ttf */; };
 		DC2281311D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2281271D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf */; };
+		DC3311871D6C5484002A21F2 /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -174,7 +175,7 @@
 		218C64C21BA07E1F00EEEDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		218C64C31BA07E4300EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		21C9F2DF19E833300084D18D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		21DB300F19DD2289003A418D /* BDesignworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = BDesignworks.app; path = PearUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21DB300F19DD2289003A418D /* PearUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PearUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DB301319DD2289003A418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21DB301419DD2289003A418D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21DB301E19DD2289003A418D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -270,6 +271,7 @@
 		DC2281251D6B470600D5A0DA /* OpenSansRegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansRegularItalic.ttf; sourceTree = "<group>"; };
 		DC2281261D6B470600D5A0DA /* OpenSansSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansSemiBold.ttf; sourceTree = "<group>"; };
 		DC2281271D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansSemiBoldItalic.ttf; sourceTree = "<group>"; };
+		DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelcomeScreen.storyboard; sourceTree = "<group>"; };
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_Storyboard.storyboard; sourceTree = "<group>"; };
 		EE03134474C0070BF8DA767B /* Pods-Abstract-BDesignworks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.release.xcconfig"; sourceTree = "<group>"; };
@@ -410,7 +412,7 @@
 		21DB301019DD2289003A418D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				21DB300F19DD2289003A418D /* BDesignworks.app */,
+				21DB300F19DD2289003A418D /* PearUp.app */,
 				212D018B1BB1986B00B34340 /* BDesignworksTests.xctest */,
 				1710DE5C1C453AF700912C5B /* BDesignworksUITests.xctest */,
 				4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */,
@@ -427,6 +429,7 @@
 				E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */,
 				21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */,
 				DC2281101D6B46AB00D5A0DA /* TrialPage.storyboard */,
+				DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */,
 				21DB301E19DD2289003A418D /* Images.xcassets */,
 				DC22811A1D6B46B700D5A0DA /* API */,
 				DC22811C1D6B46D000D5A0DA /* Database */,
@@ -761,7 +764,7 @@
 			);
 			name = BDesignworks;
 			productName = BDesignworks;
-			productReference = 21DB300F19DD2289003A418D /* BDesignworks.app */;
+			productReference = 21DB300F19DD2289003A418D /* PearUp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4FF397D41D6A5AEC004EAE2E /* IBDesignableKit */ = {
@@ -866,6 +869,7 @@
 				DC22812F1D6B470600D5A0DA /* OpenSansRegularItalic.ttf in Resources */,
 				DC2281311D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf in Resources */,
 				DC22812D1D6B470600D5A0DA /* OpenSansLightItalic.ttf in Resources */,
+				DC3311871D6C5484002A21F2 /* WelcomeScreen.storyboard in Resources */,
 				DC22812B1D6B470600D5A0DA /* OpenSansItalic.ttf in Resources */,
 				DC2281281D6B470600D5A0DA /* OpenSansBoldItalic.ttf in Resources */,
 				DC22812A1D6B470600D5A0DA /* OpenSansExtraBoldItalic.ttf in Resources */,

@@ -9,6 +9,8 @@
 import Foundation
 
 protocol ILoginPresenter: class {
+    func login()
+    
     func loginStarted()
     func loginSuccessed()
     func loginFailed()
@@ -22,6 +24,10 @@ class LoginPresenter {
 }
 
 extension LoginPresenter: ILoginPresenter {
+    func login() {
+        self.model?.login("1234")
+    }
+    
     func loginStarted() {
         self.view?.setLoadingState(.Loading)
     }

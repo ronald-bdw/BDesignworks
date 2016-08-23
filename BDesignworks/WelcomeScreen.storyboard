@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pmn-Dh-aJ5">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Login View-->
+        <scene sceneID="1gG-Ss-B6q">
+            <objects>
+                <viewController id="pmn-Dh-aJ5" customClass="LoginView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1fs-KX-Sxv"/>
+                        <viewControllerLayoutGuide type="bottom" id="L25-aC-qE9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="568-1j-GNU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Re7-6D-pR2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="qNZ-wO-9Hm">
+                                <rect key="frame" x="102" y="97" width="170" height="227"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="CkG-cG-5Qf"/>
+                                    <constraint firstAttribute="height" constant="227" id="Pi9-BI-NGo"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hbf-logo" translatesAutoresizingMaskIntoConstraints="NO" id="GJL-zX-n8S">
+                                <rect key="frame" x="102.5" y="384" width="170" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="SSy-wy-fWE"/>
+                                    <constraint firstAttribute="height" constant="63" id="oyp-F9-izN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-temp" translatesAutoresizingMaskIntoConstraints="NO" id="iJo-8X-sXU">
+                                <rect key="frame" x="160" y="528" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="Joa-SW-Ioj"/>
+                                    <constraint firstAttribute="height" constant="55" id="rOu-EQ-yFK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Re7-6D-pR2" firstAttribute="leading" secondItem="568-1j-GNU" secondAttribute="leading" id="0Mf-Uf-vQ4"/>
+                            <constraint firstItem="L25-aC-qE9" firstAttribute="top" secondItem="iJo-8X-sXU" secondAttribute="bottom" constant="84" id="7E1-17-ydB"/>
+                            <constraint firstItem="qNZ-wO-9Hm" firstAttribute="centerX" secondItem="Re7-6D-pR2" secondAttribute="centerX" id="9sd-NH-bqj"/>
+                            <constraint firstItem="qNZ-wO-9Hm" firstAttribute="top" secondItem="1fs-KX-Sxv" secondAttribute="bottom" constant="77" id="F2M-fR-NfJ"/>
+                            <constraint firstItem="GJL-zX-n8S" firstAttribute="centerX" secondItem="Re7-6D-pR2" secondAttribute="centerX" id="L17-vj-Tne"/>
+                            <constraint firstAttribute="trailing" secondItem="Re7-6D-pR2" secondAttribute="trailing" id="SR3-Zr-Ivc"/>
+                            <constraint firstItem="iJo-8X-sXU" firstAttribute="centerX" secondItem="Re7-6D-pR2" secondAttribute="centerX" id="V1K-kr-oXd"/>
+                            <constraint firstItem="Re7-6D-pR2" firstAttribute="top" secondItem="1fs-KX-Sxv" secondAttribute="bottom" constant="-20" id="Vfv-Oz-B1l"/>
+                            <constraint firstItem="GJL-zX-n8S" firstAttribute="top" secondItem="qNZ-wO-9Hm" secondAttribute="bottom" constant="60" id="wN4-i1-KkL"/>
+                            <constraint firstItem="L25-aC-qE9" firstAttribute="top" secondItem="Re7-6D-pR2" secondAttribute="bottom" id="z37-FT-CmC"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zat-kW-HjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="617" y="293"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GradientBackground" width="375" height="667"/>
+        <image name="Logo" width="170" height="228"/>
+        <image name="hbf-logo" width="170" height="62"/>
+        <image name="loading-temp" width="54" height="53"/>
+    </resources>
+</document>

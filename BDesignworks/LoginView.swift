@@ -17,6 +17,13 @@ protocol ILoginView: class {
 class LoginView: UIViewController {
     var presenter: PresenterProtocol?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let _ = LoginMVP(controller: self)
+        
+        self.presenter?.login()
+    }
 }
 
 extension LoginView: ILoginView {
@@ -25,10 +32,12 @@ extension LoginView: ILoginView {
         case .Loading:
             Logger.debug("loading")
         case .Done:
-            Logger.debug("done")
+            let storyboard = UIStoryboard(name: "Main_Storyboard", bundle: NSBundle.mainBundle())
+            let controller = storyboard.instantiateViewControllerWithIdentifier("ConversationScreen")
+            let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+            appDelegate?.window?.rootViewController = controller
         case .Failed:
             Logger.debug("failed")
-            self.navigationController?.popViewControllerAnimated(true)
         }
     }
 }
