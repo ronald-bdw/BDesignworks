@@ -38,11 +38,11 @@ extension Router.User: RouterProtocol {
                     "last_name" : lastname,
                     "email" : email,
                     "phone_number" : phone,
-                    "auth_phone_code" : authPhoneCode,
+                    "auth_phone_code_id" : authPhoneCode,
                     "sms_code": smsCode]
         case .SignIn(let phone, let authPhoneCode, let smsCode):
             return ["phone_number": phone,
-                    "auth_phone_code" : authPhoneCode,
+                    "auth_phone_code_id" : authPhoneCode,
                     "sms_code" : smsCode]
         }
     }
@@ -50,6 +50,7 @@ extension Router.User: RouterProtocol {
 
 class RTUserResponse: Mappable {
     var user: User?
+    var error: ValidationError?
     
     required convenience init?(_ map: Map) {
         self.init()

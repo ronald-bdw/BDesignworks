@@ -62,12 +62,14 @@ enum SerializationError {
     case RequeriedFieldMissing
     case JSONSerializingFailed
     case Unknown
-    
+
     var error: RTError {return RTError(serialize: self)}
 }
 
 enum BackendError {
     case NotAuthorized
+    case SmsCodeExpired
+    case InvalidPhone
     
     var error: RTError {return RTError(backend: self)}
 }

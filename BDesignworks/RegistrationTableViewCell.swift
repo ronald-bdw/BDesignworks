@@ -8,40 +8,26 @@
 
 import UIKit
 
-enum RegistrationCellType: Int {
-    case FirstName
-    case LastName
-    case Email
-    case Phone
-    
-    var title: String {
-        switch self {
-        case .FirstName : return "First Name"
-        case .LastName  : return "Last Name"
-        case .Email     : return "Email"
-        case .Phone     : return "Phone"
-        }
-    }
-}
-
 class RegistrationTableViewCell: UITableViewCell {
     var type: RegistrationCellType = .FirstName
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentTextField: UITextField!
     
-    func prepareCell(type: RegistrationCellType) {
+    func prepareCell(type: RegistrationCellType, user: RegistrationUser?) {
         self.titleLabel.text = type.title
         
-        if type == .Phone {
-            do {
-                let realm  = try Realm()
-                let authInfo = realm.objects(AuthInfo).first
-                self.contentTextField.text = authInfo?.phone
-            }
-            catch let error {
-                Logger.error("\(error)")
-            }
+        switch type {
+        case .Email : self.contentTextField.keyboardType = .EmailAddress
+        case .Phone : self.contentTextField.keyboardType = .PhonePad
+        default     : self.contentTextField.keyboardType = .Default
         }
+        
+        switch type {
+        case .Phone : self.contentTextField.returnKeyType = .Done
+        default     : self.contentTextField.returnKeyType = .Next
+        }
+        
+        self.contentTextField.text = user?.getStructField(type).content
     }
 }

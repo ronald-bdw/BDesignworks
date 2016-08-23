@@ -55,7 +55,7 @@ class VerificationModel {
     }
     
     private func isPhoneValid(phone: String) -> Bool {
-        return phone.fs_length == 10
+        return phone.fs_length == 11
     }
 }
 

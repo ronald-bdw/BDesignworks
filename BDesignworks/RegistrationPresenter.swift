@@ -9,11 +9,19 @@
 import Foundation
 
 protocol IRegistrationPresenter: class {
-    func submitTapped(firstName: String, lastname: String, email: String, phone: String)
+    func submitTapped(user: RegistrationUser?)
+    func getRegistrationUser() -> RegistrationUser?
+    func resendPhoneCodeTapped()
     
     func registrationStarted()
     func registrationSuccessed()
-    func registrationFailed()
+    func requestFailed(error: RTError?)
+    func userNotValid()
+    func phoneCodeReceived()
+}
+
+extension IRegistrationPresenter {
+    func requestFailed(error: RTError? = nil) {}
 }
 
 class RegistrationPresenter {
@@ -24,8 +32,13 @@ class RegistrationPresenter {
 }
 
 extension RegistrationPresenter: IRegistrationPresenter {
-    func submitTapped(firstName: String, lastname: String, email: String, phone: String) {
-        self.model?.register(firstName, lastName: lastname, email: email, phone: phone)
+    func submitTapped(user: RegistrationUser?) {
+        guard let lUser = user else {return}
+        self.model?.register(lUser)
+    }
+    
+    func getRegistrationUser() -> RegistrationUser? {
+        return self.model?.getRegistrationUser()
     }
     
     func registrationStarted() {
@@ -36,8 +49,23 @@ extension RegistrationPresenter: IRegistrationPresenter {
         self.view?.setLoadingState(.Done)
     }
     
-    func registrationFailed() {
-        self.view?.setLoadingState(.Failed)
+    func requestFailed(error: RTError? = nil) {
+        guard let lError = error else {self.view?.setLoadingState(.Failed); return}
+        if case .Backend(let backendError) = lError {
+            self.view?.showErrorView(backendError.humanDescription.title, content: backendError.humanDescription.text, errorType: backendError)
+        }
+    }
+    
+    func userNotValid() {
+        self.view?.showValidationErrors()
+    }
+    
+    func resendPhoneCodeTapped() {
+        self.model?.receivePhoneCode()
+    }
+    
+    func phoneCodeReceived() {
+        self.view?.showPhoneCodeReceivedView()
     }
 }
 

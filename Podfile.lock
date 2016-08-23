@@ -13,6 +13,7 @@ PODS:
   - SAMKeychain (1.5.0)
   - SideMenu (1.1.9)
   - Smooch (4.3.0)
+  - SVProgressHUD (2.0.3)
   - XCGLogger (3.4)
 
 DEPENDENCIES:
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - SAMKeychain
   - SideMenu
   - Smooch
+  - SVProgressHUD
   - XCGLogger
 
 EXTERNAL SOURCES:
@@ -47,8 +49,9 @@ SPEC CHECKSUMS:
   SAMKeychain: 1fc9ae02f576365395758b12888c84704eebc423
   SideMenu: e4ecb0f1061e19230e53079edb2b300081446f80
   Smooch: c266cae1bbe3abdadcb69c310858e85d9498a91a
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   XCGLogger: 80dbac4e62e2c360d5b3d83070131191ebb3ac93
 
-PODFILE CHECKSUM: ca2228a3dad133c2122bcebd30e87a0178859c2d
+PODFILE CHECKSUM: e2f04103138e76b931e8ff1decae0a1a075a4841
 
 COCOAPODS: 1.0.1

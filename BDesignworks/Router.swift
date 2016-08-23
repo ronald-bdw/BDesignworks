@@ -39,7 +39,7 @@ extension RouterProtocol {
     }
     
     func request () -> Alamofire.Request {
-        return Alamofire.request(self.URLRequest)
+        return Alamofire.request(self.URLRequest).validate()
     }
 }
 

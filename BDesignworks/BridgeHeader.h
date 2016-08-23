@@ -19,6 +19,7 @@
 @import XCGLogger;
 @import RealmSwift;
 @import SAMKeychain;
+@import SVProgressHUD;
 
 
 #import <Smooch/Smooch.h>
