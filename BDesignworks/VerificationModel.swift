@@ -21,6 +21,8 @@ class VerificationModel {
     required init() {}
     
     private func receivePhoneCode(phone: String) {
+        guard self.isPhoneValid(phone) else {self.presenter?.phoneNotValid(); return}
+        
         Router.User.GetAuthPhoneCode(phone: phone).request().responseObject { [weak self] (response: Response<RTAuthInfoResponse, RTError>) in
             var receivedData: AuthInfo?
             
@@ -50,6 +52,10 @@ class VerificationModel {
                 Logger.error("\(error)")
             }
         }
+    }
+    
+    private func isPhoneValid(phone: String) -> Bool {
+        return phone.fs_length == 10
     }
 }
 

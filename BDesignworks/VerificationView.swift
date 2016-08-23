@@ -97,6 +97,7 @@ private struct Constants {
 typealias VerificationMVP = MVPContainer<VerificationView, VerificationPresenter, VerificationModel>
 
 protocol IVerificationView: class {
+    func showPhoneInvalidView()
     func showSuccessAlert()
 }
 
@@ -120,6 +121,9 @@ final class VerificationView: UIViewController {
     @IBOutlet weak var submitHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var labelWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var submitButton: RoundButton!
+    
+    @IBOutlet weak var verificationErrorView: VerificationErrorView!
+    @IBOutlet weak var verificationErrorViewHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,7 +152,12 @@ final class VerificationView: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        self.scrollView.contentSize = self.scrollView.bounds.size
+//        if self.verificationErrorViewHeightConstraint.constant == 59 {
+            self.scrollView.contentSize = CGSize(width: self.scrollView.bounds.size.width, height: self.scrollView.bounds.size.height + 59)
+//        }
+//        else {
+//            self.scrollView.contentSize = self.scrollView.bounds.size
+//        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -166,6 +175,11 @@ final class VerificationView: UIViewController {
 }
 
 extension VerificationView: IVerificationView {
+    func showPhoneInvalidView() {
+        Logger.error("phone not valid")
+        self.verificationErrorViewHeightConstraint.constant = 59
+    }
+    
     func showSuccessAlert() {
         Logger.debug("successful verification")
     }

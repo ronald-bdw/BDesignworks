@@ -587,7 +587,7 @@
                                     <action selector="nextPressed:" destination="M06-aI-0x9" eventType="touchUpInside" id="LKb-JG-pUi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the unique code in the SMS that we have sent you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-5V-3lS">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please enter the unique code in the SMS that we have sent you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-5V-3lS">
                                 <rect key="frame" x="24" y="345" width="552" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -670,7 +670,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your mobile number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ku4-ol-p4k" customClass="BDTextField" customModule="IBDesignableKit">
-                                <rect key="frame" x="161" y="479" width="279" height="50"/>
+                                <rect key="frame" x="161" y="478.5" width="279" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -694,7 +694,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your mobile phone number for SMS verification" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xD4-iL-KJZ">
-                                <rect key="frame" x="161" y="355" width="279" height="39"/>
+                                <rect key="frame" x="161" y="355" width="279" height="38.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="279" id="Gr8-qz-PP4"/>
                                 </constraints>
@@ -703,10 +703,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPC-X5-XR7" customClass="RollUpButton" customModule="PearUp" customModuleProvider="target">
-                                <rect key="frame" x="161" y="419" width="279" height="50"/>
+                                <rect key="frame" x="161" y="418.5" width="279" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dtg-Te-KAl"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYs-0Y-Lsf" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="507" width="600" height="0.0"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="J1U-VZ-NBD"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -714,11 +721,13 @@
                         <constraints>
                             <constraint firstItem="eEg-v9-Dzt" firstAttribute="top" secondItem="hdi-42-L35" secondAttribute="top" id="4VI-qU-FLp"/>
                             <constraint firstItem="eEg-v9-Dzt" firstAttribute="leading" secondItem="hdi-42-L35" secondAttribute="leading" id="53v-kQ-6jJ"/>
+                            <constraint firstAttribute="trailing" secondItem="XYs-0Y-Lsf" secondAttribute="trailing" id="7Um-lw-IbT"/>
                             <constraint firstItem="BkI-p9-5Pn" firstAttribute="centerX" secondItem="eEg-v9-Dzt" secondAttribute="centerX" id="DVq-5g-bn9"/>
                             <constraint firstItem="Ku4-ol-p4k" firstAttribute="width" secondItem="xD4-iL-KJZ" secondAttribute="width" id="Eax-x3-ATr"/>
                             <constraint firstItem="xD4-iL-KJZ" firstAttribute="top" secondItem="hbz-zG-nhg" secondAttribute="bottom" constant="27" id="Frc-od-plv"/>
                             <constraint firstItem="eEg-v9-Dzt" firstAttribute="centerX" secondItem="hdi-42-L35" secondAttribute="centerX" id="JhO-a6-n1f"/>
                             <constraint firstItem="hbz-zG-nhg" firstAttribute="centerX" secondItem="eEg-v9-Dzt" secondAttribute="centerX" id="Net-FF-HJa"/>
+                            <constraint firstItem="BkI-p9-5Pn" firstAttribute="top" secondItem="XYs-0Y-Lsf" secondAttribute="bottom" constant="15" id="QOO-1r-6Nm"/>
                             <constraint firstAttribute="trailing" secondItem="eEg-v9-Dzt" secondAttribute="trailing" id="Sai-PT-Uhd"/>
                             <constraint firstItem="Ku4-ol-p4k" firstAttribute="centerX" secondItem="BkI-p9-5Pn" secondAttribute="centerX" id="TIf-FM-G2c"/>
                             <constraint firstItem="zfK-PR-oK5" firstAttribute="top" secondItem="eEg-v9-Dzt" secondAttribute="bottom" id="dcK-Xg-oVt"/>
@@ -731,6 +740,7 @@
                             <constraint firstItem="Ku4-ol-p4k" firstAttribute="top" secondItem="OPC-X5-XR7" secondAttribute="bottom" constant="10" id="oYP-HF-9S6"/>
                             <constraint firstItem="eEg-v9-Dzt" firstAttribute="bottom" secondItem="BkI-p9-5Pn" secondAttribute="bottom" constant="23" id="osg-fa-eTm"/>
                             <constraint firstItem="eEg-v9-Dzt" firstAttribute="centerY" secondItem="hdi-42-L35" secondAttribute="centerY" id="qGm-0R-uCb"/>
+                            <constraint firstItem="XYs-0Y-Lsf" firstAttribute="leading" secondItem="hdi-42-L35" secondAttribute="leading" id="r4V-no-5gv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Verification" id="D19-xe-3td"/>
@@ -748,6 +758,8 @@
                         <outlet property="submitBottomConstraint" destination="osg-fa-eTm" id="vcG-SE-Tka"/>
                         <outlet property="submitButton" destination="BkI-p9-5Pn" id="8bM-15-Rae"/>
                         <outlet property="submitHeightConstraint" destination="Msc-VU-FU8" id="ec4-i5-JyL"/>
+                        <outlet property="verificationErrorView" destination="XYs-0Y-Lsf" id="YQP-0K-2aa"/>
+                        <outlet property="verificationErrorViewHeightConstraint" destination="J1U-VZ-NBD" id="X2Y-J7-cGC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYX-1u-qgr" userLabel="First Responder" sceneMemberID="firstResponder"/>

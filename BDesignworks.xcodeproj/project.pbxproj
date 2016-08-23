@@ -86,6 +86,8 @@
 		DC2281301D6B470600D5A0DA /* OpenSansSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2281261D6B470600D5A0DA /* OpenSansSemiBold.ttf */; };
 		DC2281311D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2281271D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf */; };
 		DC3311871D6C5484002A21F2 /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */; };
+		DC2281331D6B536200D5A0DA /* VerificationErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2281321D6B536200D5A0DA /* VerificationErrorView.swift */; };
+		DC2281361D6B539600D5A0DA /* VerificationErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2281351D6B539600D5A0DA /* VerificationErrorView.xib */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -272,6 +274,8 @@
 		DC2281261D6B470600D5A0DA /* OpenSansSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansSemiBold.ttf; sourceTree = "<group>"; };
 		DC2281271D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansSemiBoldItalic.ttf; sourceTree = "<group>"; };
 		DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelcomeScreen.storyboard; sourceTree = "<group>"; };
+		DC2281321D6B536200D5A0DA /* VerificationErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationErrorView.swift; sourceTree = "<group>"; };
+		DC2281351D6B539600D5A0DA /* VerificationErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerificationErrorView.xib; sourceTree = "<group>"; };
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_Storyboard.storyboard; sourceTree = "<group>"; };
 		EE03134474C0070BF8DA767B /* Pods-Abstract-BDesignworks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.release.xcconfig"; sourceTree = "<group>"; };
@@ -637,9 +641,19 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		DC2281341D6B536E00D5A0DA /* VerificationErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				DC2281321D6B536200D5A0DA /* VerificationErrorView.swift */,
+				DC2281351D6B539600D5A0DA /* VerificationErrorView.xib */,
+			);
+			name = VerificationErrorView;
+			sourceTree = "<group>";
+		};
 		E731DC711A1CB30C00E12CBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC2281341D6B536E00D5A0DA /* VerificationErrorView */,
 				4F638FFE1D6A6464006EE693 /* IB Inspectables */,
 				2FB501B01D51F29400D6D7BE /* RollUpButton */,
 				DC2281071D6B467400D5A0DA /* TableViewCells */,
@@ -875,6 +889,7 @@
 				DC22812A1D6B470600D5A0DA /* OpenSansExtraBoldItalic.ttf in Resources */,
 				4F638FFD1D6A6438006EE693 /* RollUpButton.xib in Resources */,
 				DC2281181D6B46AB00D5A0DA /* TrialPage.storyboard in Resources */,
+				DC2281361D6B539600D5A0DA /* VerificationErrorView.xib in Resources */,
 				21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */,
 				DC2281051D6B466300D5A0DA /* RegistrationTableViewCell.xib in Resources */,
 				21DB301F19DD2289003A418D /* Images.xcassets in Resources */,
@@ -1272,6 +1287,7 @@
 				2FAA4FBC1D5C890B00DCFF46 /* EditProfileScreen.swift in Sources */,
 				2F0729911D64C86B00A71B3C /* HealthKitManager.swift in Sources */,
 				2F16FE341D54E15A00EFFDD7 /* AboutScreen.swift in Sources */,
+				DC2281331D6B536200D5A0DA /* VerificationErrorView.swift in Sources */,
 				DC2281161D6B46AB00D5A0DA /* RTErrorsDescription.swift in Sources */,
 				2FDE13691D61B938008702FE /* SmoochHelper.swift in Sources */,
 				2FC02C4E1D51E6020038BD88 /* SelectProviderScreen.swift in Sources */,
