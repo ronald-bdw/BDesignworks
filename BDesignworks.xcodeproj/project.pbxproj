@@ -59,7 +59,9 @@
 		A436BE151D6B60A7004B8E8B /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A436BE141D6B60A7004B8E8B /* HeaderView.xib */; };
 		A4819E491D6B3E9300178D30 /* PhoneCountries.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4819E481D6B3E9300178D30 /* PhoneCountries.txt */; };
 		A4819E4B1D6B3FD800178D30 /* AreaCodeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4819E4A1D6B3FD800178D30 /* AreaCodeScreen.swift */; };
-		A4819E4D1D6B405300178D30 /* AreaCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4819E4C1D6B405300178D30 /* AreaCodeCell.swift */; };
+		A489C48A1D6C8F54002AAA75 /* AreaCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4819E4C1D6B405300178D30 /* AreaCodeCell.swift */; };
+		A489C48D1D6C9554002AAA75 /* VerificationErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489C48B1D6C9554002AAA75 /* VerificationErrorView.swift */; };
+		A489C48E1D6C9554002AAA75 /* VerificationErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489C48C1D6C9554002AAA75 /* VerificationErrorView.xib */; };
 		A4DCC4C71D661221005F7E05 /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCC4C61D661221005F7E05 /* ModalPresentationController.swift */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
 /* End PBXBuildFile section */
@@ -212,6 +214,9 @@
 		A4819E481D6B3E9300178D30 /* PhoneCountries.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PhoneCountries.txt; sourceTree = "<group>"; };
 		A4819E4A1D6B3FD800178D30 /* AreaCodeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaCodeScreen.swift; sourceTree = "<group>"; };
 		A4819E4C1D6B405300178D30 /* AreaCodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaCodeCell.swift; sourceTree = "<group>"; };
+		A489C4881D6C8E5D002AAA75 /* FSHelpers_Swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FSHelpers_Swift.framework; path = "../../../Library/Developer/Xcode/DerivedData/BDesignworks-eefepwvptgkeopfglogwewucgpiq/Build/Products/Debug Staging-iphoneos/FSHelpers+Swift/FSHelpers_Swift.framework"; sourceTree = "<group>"; };
+		A489C48B1D6C9554002AAA75 /* VerificationErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationErrorView.swift; sourceTree = "<group>"; };
+		A489C48C1D6C9554002AAA75 /* VerificationErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerificationErrorView.xib; sourceTree = "<group>"; };
 		A4DCC4C61D661221005F7E05 /* ModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresentationController.swift; sourceTree = "<group>"; };
 		AE17C69B53345B23AAF846DA /* Pods_Abstract_BDesignworksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5D1F97F5C59B62E7E84E1B /* Pods-Abstract-BDesignworks.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.appstore.xcconfig"; sourceTree = "<group>"; };
@@ -471,6 +476,7 @@
 		5C5B41AD2B6E0DFDD4D53E6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A489C4881D6C8E5D002AAA75 /* FSHelpers_Swift.framework */,
 				4F638FFA1D6A62F4006EE693 /* FSHelpers_Swift.framework */,
 				2F07298E1D64C85300A71B3C /* HealthKit.framework */,
 				2FE510781D5B793A00C23E8B /* FSHelpers_Swift.framework */,
@@ -499,9 +505,36 @@
 			name = HeaderView;
 			sourceTree = "<group>";
 		};
+		A489C4851D6C8919002AAA75 /* Area Code Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A489C4861D6C8927002AAA75 /* Table View Cells */,
+				A4819E4A1D6B3FD800178D30 /* AreaCodeScreen.swift */,
+			);
+			name = "Area Code Screen";
+			sourceTree = "<group>";
+		};
+		A489C4861D6C8927002AAA75 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A4819E4C1D6B405300178D30 /* AreaCodeCell.swift */,
+			);
+			name = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		A489C48F1D6C9557002AAA75 /* Verification Error View */ = {
+			isa = PBXGroup;
+			children = (
+				A489C48B1D6C9554002AAA75 /* VerificationErrorView.swift */,
+				A489C48C1D6C9554002AAA75 /* VerificationErrorView.xib */,
+			);
+			name = "Verification Error View";
+			sourceTree = "<group>";
+		};
 		E731DC711A1CB30C00E12CBA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A489C48F1D6C9557002AAA75 /* Verification Error View */,
 				4F638FFE1D6A6464006EE693 /* IB Inspectables */,
 				2FB501B01D51F29400D6D7BE /* RollUpButton */,
 				2F81CB6F1D51EBB900D9E93B /* AutocompleteView.swift */,
@@ -519,6 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				2FAA4FB91D5C83BC00DCFF46 /* CustomNavigationController.swift */,
+				A489C4851D6C8919002AAA75 /* Area Code Screen */,
 				2F1B80AB1D5DEA0B001AA5DA /* Welcome */,
 				2F16FE2B1D54CEDB00EFFDD7 /* ConversationScreen.swift */,
 				2FAA4FB71D5C809700DCFF46 /* SidebarTVC.swift */,
@@ -528,8 +562,6 @@
 				2F16FE2F1D54E13700EFFDD7 /* SettingsScreen.swift */,
 				2F16FE331D54E15A00EFFDD7 /* AboutScreen.swift */,
 				A4DCC4C61D661221005F7E05 /* ModalPresentationController.swift */,
-				A4819E4A1D6B3FD800178D30 /* AreaCodeScreen.swift */,
-				A4819E4C1D6B405300178D30 /* AreaCodeCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -725,6 +757,7 @@
 				E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */,
 				218C64C01BA07DDE00EEEDF1 /* Localizable.strings in Resources */,
 				2158286D1A91E2F200833BE6 /* mogend.sh in Resources */,
+				A489C48E1D6C9554002AAA75 /* VerificationErrorView.xib in Resources */,
 				A436BE151D6B60A7004B8E8B /* HeaderView.xib in Resources */,
 				A4819E491D6B3E9300178D30 /* PhoneCountries.txt in Resources */,
 				4F638FFD1D6A6438006EE693 /* RollUpButton.xib in Resources */,
@@ -1110,6 +1143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21E157E21BB3EDF40041FCE4 /* FSTestHelpers.swift in Sources */,
+				A489C48A1D6C8F54002AAA75 /* AreaCodeCell.swift in Sources */,
 				2FAA4FB81D5C809700DCFF46 /* SidebarTVC.swift in Sources */,
 				214F4FF61BFDC35C0084BE32 /* Protocols.swift in Sources */,
 				2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */,
@@ -1119,8 +1153,8 @@
 				2F16FE341D54E15A00EFFDD7 /* AboutScreen.swift in Sources */,
 				2FDE13691D61B938008702FE /* SmoochHelper.swift in Sources */,
 				2FC02C4E1D51E6020038BD88 /* SelectProviderScreen.swift in Sources */,
+				A489C48D1D6C9554002AAA75 /* VerificationErrorView.swift in Sources */,
 				2F71794F1D5343F800231639 /* WelcomeScreen.swift in Sources */,
-				A4819E4D1D6B405300178D30 /* AreaCodeCell.swift in Sources */,
 				A4819E4B1D6B3FD800178D30 /* AreaCodeScreen.swift in Sources */,
 				214F4FF41BFDC2D90084BE32 /* Helpers.swift in Sources */,
 				21DB301519DD2289003A418D /* AppDelegate.swift in Sources */,

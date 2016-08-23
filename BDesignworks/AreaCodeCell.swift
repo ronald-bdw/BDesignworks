@@ -23,11 +23,26 @@ final class AreaCodeCell: UITableViewCell {
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var areaCodeLabel: UILabel!
     
-//    override var selected: Bool {
-//        didSet {
-//            
-//        }
-//    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.selectedBackgroundView = UIView()
+        self.selectedBackgroundView?.backgroundColor = UIColor(fs_hexString: "29537C")
+    }
+    
+    private func updateCell() {
+        if self.selected {
+            self.countryNameLabel.textColor = UIColor.whiteColor()
+            self.areaCodeLabel.textColor    = UIColor.whiteColor()
+        } else {
+            self.countryNameLabel.textColor = UIColor(fs_hexString: "555555")
+            self.areaCodeLabel.textColor    = UIColor(fs_hexString: "555555")
+        }
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        self.updateCell()
+    }
     
     func prepareCell(area: Area) {
         self.countryNameLabel.text = area.countryName

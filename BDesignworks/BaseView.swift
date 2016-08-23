@@ -27,6 +27,7 @@ class BaseView: UIView {
     }
     
     private func initialize() {
+        self.backgroundColor = UIColor.clearColor()
         self.loadViewFromNib()
         guard let lView = self.view else { return }
         lView.backgroundColor = UIColor.clearColor()

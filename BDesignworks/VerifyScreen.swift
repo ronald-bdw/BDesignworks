@@ -66,6 +66,10 @@ private extension FSScreenType {
         }
     }
     
+    var submitTopOffset: CGFloat {
+        return 10
+    }
+    
     var submitBottomOffset: CGFloat {
         switch self {
         case ._3_5  : return 10
@@ -94,57 +98,140 @@ private struct Constants {
     static let defaultLogoTopConstraintRatio: CGFloat = 0.2 // Show how less logo's top offset relative to screen size
 }
 
+extension UIView {
+    
+    var bottom: CGFloat {
+        return self.frame.origin.y + self.frame.size.height
+    }
+}
+
 final class VerifyScreen: UIViewController {
     
     struct SegueIdentifiers {
         static let areaCodeSegue: String = "showAreaCodeScreen"
     }
     
+    struct Constants {
+        static let logoRatio: CGFloat = 85.0/114.0
+        static let submitButtonRatio: CGFloat = 137.0/55.0
+        static let errorViewHeight: CGFloat = 60.0
+        static let errorViewTopOffset: CGFloat = 10.0
+        static let errorViewBottomOffset: CGFloat = 25.0
+    }
+    
     var scrollView: UIScrollView {
         return self.view as! UIScrollView
     }
-    
-    @IBOutlet weak var logoBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var logoHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var labelBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var rollButton: RollUpButton!
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var mobileTextField: UITextField!
-    @IBOutlet weak var areaCodeHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var mobileVerticalSpacingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var submitBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var submitHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var labelWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var submitButton: RoundButton!
+    @IBOutlet weak var errorView: VerificationErrorView!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    private var isErrorShown: Bool = false {
+        didSet { self.view.layoutIfNeeded() }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.layoutIfNeeded()
         self.navigationController?.navigationBar.hidden = false
         self.rollButton.arrowDirection = .Right
         self.rollButton.animatable = false
         self.fs_keyboardScrollSupportRegisterForNotifications()
         self.rollButton.delegate = self
-        self.setupUI()
+        self.view.setNeedsLayout()
     }
     
-    private func setupUI() {
+    private func layoutScrollView() {
+        
         guard let screenType = FSScreenType() else { return }
-        self.logoBottomConstraint.constant            = screenType.logoBottomOffset
-        self.logoHeightConstraint.constant            = screenType.logoHeight
-        self.logoTopConstraint.constant               = screenType.logoTopOffset
-        self.labelBottomConstraint.constant           = screenType.labelBottomOffset
-        self.areaCodeHeightConstraint.constant        = screenType.textFieldsHeight
-        self.mobileVerticalSpacingConstraint.constant = screenType.mobileTexfieldVerticalOffset
-        self.submitBottomConstraint.constant          = screenType.submitBottomOffset
-        self.submitHeightConstraint.constant          = screenType.submitButtonHeight
+        let screenWidth  : CGFloat  = screenType.size.width
+        let screenHeight : CGFloat = screenType.size.height
+        
+        var contentHeight: CGFloat = 0.0
+        
+        //Logo image frame setting
+        let logoHeight: CGFloat = screenType.logoHeight
+        let logoTopOffset: CGFloat = screenType.logoTopOffset
+        
+        self.logoImageView.frame = CGRect(x: floor((screenWidth-logoHeight*Constants.logoRatio)/2),
+                                          y: logoTopOffset,
+                                          width: logoHeight*Constants.logoRatio,
+                                          height: logoHeight)
+        contentHeight += (logoTopOffset + logoHeight)
+        
+        //Welcome label frame setting
+        let welcomeWidth: CGFloat = screenType.labelWidth
+        let welcomeTopOffset: CGFloat = screenType.logoBottomOffset
+        let welcomeBottomOffset: CGFloat = screenType.labelBottomOffset
+        let welcomeLabelHeight: CGFloat = self.welcomeLabel.sizeThatFits(CGSize(width: welcomeWidth, height: CGFloat.max)).height
+        self.welcomeLabel.frame = CGRect(x: floor((screenWidth-welcomeWidth)/2),
+                                         y: self.logoImageView.bottom + welcomeTopOffset,
+                                         width: welcomeWidth,
+                                         height: welcomeLabelHeight)
+        
+        contentHeight += (welcomeTopOffset + welcomeLabelHeight + welcomeBottomOffset)
+        
+        //Rollbutton & Textfields frames setting
+        let height: CGFloat = screenType.mobileTexfieldVerticalOffset
+        
+        //Rollbutton frame setting
+        
+        self.rollButton.frame = CGRect(x: self.welcomeLabel.frame.origin.x,
+                                       y: self.welcomeLabel.bottom + welcomeBottomOffset,
+                                       width: self.welcomeLabel.frame.size.width,
+                                       height: height)
+        contentHeight += height
+        
+        //Mobile textfield frame setting
+        let textFieldTopOffset: CGFloat = screenType.mobileTexfieldVerticalOffset
+        self.mobileTextField.frame = CGRect(x: self.welcomeLabel.frame.origin.x,
+                                            y: self.rollButton.bottom + textFieldTopOffset,
+                                            width: self.welcomeLabel.frame.size.width,
+                                            height: height)
+        contentHeight += (textFieldTopOffset + height)
+        
+        //Error view frame setting
+        let errorViewTopOffset: CGFloat = Constants.errorViewTopOffset
+        let errorViewBottomOffset: CGFloat = Constants.errorViewBottomOffset
+        let errorViewHeight: CGFloat = Constants.errorViewHeight
+        self.errorView.frame = CGRect(x: 0,
+                                      y: self.mobileTextField.bottom + errorViewTopOffset,
+                                      width: screenWidth,
+                                      height: errorViewHeight)
+    
+        
+        //Submit button frame setting
+        let buttonTopOffset: CGFloat    = self.isErrorShown ? Constants.errorViewBottomOffset : screenType.submitTopOffset
+        let buttonHeight: CGFloat       = screenType.submitButtonHeight
+        let buttonBottomOffset: CGFloat = screenType.submitBottomOffset
+        self.submitButton.frame         = CGRect(x: floor((screenWidth-buttonHeight*Constants.submitButtonRatio)/2),
+                                                 y: screenHeight - buttonHeight - buttonBottomOffset,
+                                                 width: buttonHeight*Constants.submitButtonRatio,
+                                                 height: buttonHeight)
+        
+        if self.isErrorShown {
+            contentHeight += (errorViewTopOffset + errorViewHeight + errorViewBottomOffset)
+        } else {
+            contentHeight += buttonTopOffset
+        }
+        
+        contentHeight += (buttonHeight + buttonBottomOffset)
+        
+        self.scrollView.contentSize = CGSize(width: screenWidth, height: contentHeight)
+        self.backgroundImageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: contentHeight)
+        
         self.mobileTextField.font                     = screenType.textFont
         self.submitButton.layer.cornerRadius          = floor(self.submitButton.fs_height/2)
         self.rollButton.chooseLabel.text              = "Area Code"
     }
     
     override func viewWillLayoutSubviews() {
-        self.scrollView.contentSize = self.scrollView.bounds.size
+        self.layoutScrollView()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -162,20 +249,50 @@ final class VerifyScreen: UIViewController {
         switch lIdentifier {
         case SegueIdentifiers.areaCodeSegue:
             let destinationVC: AreaCodeScreen = segue.destinationViewController as! AreaCodeScreen
-            destinationVC.prepareController({ (area) in
-                
+            destinationVC.prepareController({[weak self] (area) in
+                guard let sself = self else { return }
+                sself.rollButton.chooseLabel.text = "+\(area.areaCode)"
             })
         default:
             super.prepareForSegue(segue, sender: sender)
         }
     }
     
-    @IBAction func nextPressed(sender: UIButton) {
-        performSegueWithIdentifier("toWelcomeScreen", sender: nil)
+    @IBAction func submitAction(sender: RoundButton) {
+        
+        self.dismissErrorView()
+        
+        guard self.validateFields() else {
+            self.showErrorView()
+            return
+        }
+        
+        //self.performSegueWithIdentifier(<#T##identifier: String##String#>, sender: <#T##AnyObject?#>)
     }
     
     @IBAction func backPressed(sender: AnyObject){
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    private func validateFields() -> Bool {
+        guard let text = self.mobileTextField.text where text.fs_length == 10 else { return false }
+        return true
+    }
+    
+    private func showErrorView() {
+        
+        UIView.animateWithDuration(0.3) {[weak self] in
+            guard let sself = self else { return }
+            sself.isErrorShown = true
+        }
+    }
+    
+    private func dismissErrorView() {
+        
+        UIView.animateWithDuration(0.3) {[weak self] in
+            guard let sself = self else { return }
+            sself.isErrorShown = false
+        }
     }
     
     deinit {

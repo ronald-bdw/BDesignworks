@@ -38,6 +38,15 @@ enum FSScreenType {
         default                             : return nil
         }
     }
+    
+    var size: CGSize {
+        switch self {
+        case ._3_5 : return CGSize(width: 320, height: 480)
+        case ._4   : return CGSize(width: 320, height: 568)
+        case ._4_7 : return CGSize(width: 375, height: 667)
+        case ._5_5 : return CGSize(width: 414, height: 736)
+        }
+    }
 }
 
 var countryCodes: [String : [Area]] = {

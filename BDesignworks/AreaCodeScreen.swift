@@ -11,15 +11,20 @@ import FSHelpers_Swift
 
 final class AreaCodeScreen: UIViewController {
     
+    struct CellIdentifier {
+        static let cellIdentifier   : String = "AreaCodeCell"
+        static let headerIdentifier : String = "HeaderView"
+    }
+    
     struct Constants {
-        static let cellIdentifier: String = "AreaCodeCell"
-        static let headerIdentifier: String = "HeaderView"
+        static let defualtCellHeight   : CGFloat = 36.0
+        static let defaultHeaderHeight : CGFloat = 36.0
     }
     
     private var sectionTitles: [String] = []
-    private var resultBlock: ((area: Area?) -> Void)?
+    private var resultBlock: ((area: Area) -> Void)?
     
-    func prepareController(resultBlock: ((area: Area?) -> Void)?) {
+    func prepareController(resultBlock: ((area: Area) -> Void)?) {
         self.resultBlock = resultBlock
     }
     
@@ -28,8 +33,8 @@ final class AreaCodeScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sectionTitles = countryCodes.map { $0.0 }.sort()
-        self.tableView.sectionIndexColor = UIColor(fs_hexString: "274273")
-        self.tableView.registerNib(UINib(nibName: HeaderView.className, bundle: nil), forHeaderFooterViewReuseIdentifier: Constants.headerIdentifier)
+        self.tableView.sectionIndexColor = UIColor(fs_hexString: "29537C")
+        self.tableView.registerNib(UINib(nibName: HeaderView.className, bundle: nil), forHeaderFooterViewReuseIdentifier: CellIdentifier.headerIdentifier)
     }
 }
 
@@ -45,7 +50,7 @@ extension AreaCodeScreen: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: AreaCodeCell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier) as! AreaCodeCell
+        let cell: AreaCodeCell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier.cellIdentifier) as! AreaCodeCell
         let key: String = self.sectionTitles[indexPath.section]
         if let area: Area = countryCodes[key]?.fs_objectAtIndexOrNil(indexPath.row) {
             cell.prepareCell(area)
@@ -57,13 +62,13 @@ extension AreaCodeScreen: UITableViewDataSource {
 extension AreaCodeScreen: UITableViewDelegate {
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView: HeaderView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(Constants.headerIdentifier) as! HeaderView
+        let headerView: HeaderView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(CellIdentifier.headerIdentifier) as! HeaderView
         headerView.titleLabel.text = self.sectionTitles[section]
         return headerView
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 36.0
+        return Constants.defualtCellHeight
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -71,10 +76,19 @@ extension AreaCodeScreen: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 36
+        return Constants.defaultHeaderHeight
     }
     
     func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
         return self.sectionTitles
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let key: String = self.sectionTitles[indexPath.section]
+        guard let area = countryCodes[key]?.fs_objectAtIndexOrNil(indexPath.row) else { return }
+        self.resultBlock?(area: area)
+        FSDispatch_after_short(0.2) {[weak self] in
+            self?.navigationController?.popViewControllerAnimated(true)
+        }
     }
 }

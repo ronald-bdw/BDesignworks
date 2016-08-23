@@ -15,10 +15,17 @@
                     <rect key="frame" x="0.0" y="0.0" width="390" height="65"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oh5-Db-gzw">
+                    <rect key="frame" x="0.0" y="64" width="390" height="1"/>
+                    <color key="backgroundColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="gBR-Bq-pTs"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bg-dN-SSc">
                     <rect key="frame" x="27" y="22" width="336" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.1529411765" green="0.25882352939999997" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.11764705882352941" green="0.19215686274509802" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -26,10 +33,13 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="7bg-dN-SSc" secondAttribute="trailing" constant="27" id="8og-Su-lPP"/>
                 <constraint firstItem="LL5-1K-M0X" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="G2T-1y-QFf"/>
+                <constraint firstAttribute="trailing" secondItem="Oh5-Db-gzw" secondAttribute="trailing" id="Jzs-lJ-Uly"/>
+                <constraint firstAttribute="bottom" secondItem="Oh5-Db-gzw" secondAttribute="bottom" id="KPw-PI-Eei"/>
                 <constraint firstItem="7bg-dN-SSc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="27" id="Qpc-aM-zs7"/>
                 <constraint firstAttribute="bottom" secondItem="LL5-1K-M0X" secondAttribute="bottom" id="kqT-wY-EBI"/>
                 <constraint firstItem="7bg-dN-SSc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pcR-Uo-FdT"/>
                 <constraint firstItem="LL5-1K-M0X" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sEO-W4-J7l"/>
+                <constraint firstItem="Oh5-Db-gzw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="u4h-cT-zu4"/>
                 <constraint firstAttribute="trailing" secondItem="LL5-1K-M0X" secondAttribute="trailing" id="y7I-ay-WnV"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
