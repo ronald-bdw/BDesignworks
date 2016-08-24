@@ -67,13 +67,19 @@ private extension FSScreenType {
     }
     
     var submitTopOffset: CGFloat {
-        return 10
+        switch self {
+            case ._3_5 : return 10
+            case ._4   : return 10
+            case ._4_7 : return 25
+            case ._5_5 : return 111
+        }
     }
     
     var submitBottomOffset: CGFloat {
         switch self {
         case ._3_5  : return 10
         case ._4_7  : return 23
+        case ._5_5  : return 23
         default     : return 14 //
         }
     }
@@ -116,11 +122,13 @@ final class VerifyScreen: UIViewController {
         return self.view as! UIScrollView
     }
 
+    //MARK: - Outlets
     @IBOutlet weak var rollButton: RollUpButton! {
         didSet {
             self.rollButton.arrowDirection = .Right
             self.rollButton.animatable = false
             self.rollButton.delegate = self
+            self.rollButton.chooseLabel.font = FSScreenType()?.textFont
         }
     }
     @IBOutlet weak var welcomeLabel: UILabel!
@@ -142,12 +150,21 @@ final class VerifyScreen: UIViewController {
         }
     }
     
+    override func loadView() {
+        super.loadView()
+        self.topLayoutGuide
+        self.scrollView.performRecursively { (view) -> Void in
+            view.translatesAutoresizingMaskIntoConstraints = true
+            view.removeConstraints(view.constraints)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = false
         self.fs_keyboardScrollSupportRegisterForNotifications()
         self.scrollView.alwaysBounceVertical = true
-        self.view.setNeedsLayout()
+        self.rollButton.chooseLabel.text     = "Area Code"
     }
     
     private func layoutScrollView() {
@@ -224,11 +241,10 @@ final class VerifyScreen: UIViewController {
         
         contentHeight += (buttonHeight + buttonBottomOffset)
         
-        self.scrollView.contentSize = CGSize(width: screenWidth, height: ceil(contentHeight))
-        self.backgroundImageView.frame = self.containerView.frame
-        
+        self.containerView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: max(ceil(contentHeight), scrollView.fs_height))
+        self.scrollView.contentSize = CGSize(width: screenWidth, height: max(ceil(contentHeight), scrollView.fs_height))
+        self.backgroundImageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: max(ceil(contentHeight), scrollView.fs_height))
         self.submitButton.layer.cornerRadius  = floor(self.submitButton.fs_height/2)
-        self.rollButton.chooseLabel.text      = "Area Code"
     }
     
     override func viewWillLayoutSubviews() {
@@ -261,11 +277,14 @@ final class VerifyScreen: UIViewController {
     
     @IBAction func submitAction(sender: RoundButton) {
         
-        self.dismissErrorView()
-        
-        guard self.validateFields() else {
-            self.showErrorView()
-            return
+        if self.validateFields() {
+            if self.isErrorShown {
+                self.dismissErrorView()
+            }
+        } else {
+            if !self.isErrorShown {
+                self.showErrorView()
+            }
         }
         
         //self.performSegueWithIdentifier(<#T##identifier: String##String#>, sender: <#T##AnyObject?#>)

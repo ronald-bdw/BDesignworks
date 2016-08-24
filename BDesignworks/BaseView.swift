@@ -38,11 +38,12 @@ class BaseView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.view?.frame = self.bounds
+        self.view?.bounds = self.bounds
     }
     
     private func loadViewFromNib() {
-        let bundle: NSBundle = NSBundle(forClass: self.classForCoder)
-        let nib = UINib(nibName: self.className, bundle: bundle)
+        let bundle : NSBundle = NSBundle(forClass: self.classForCoder)
+        let nib    : UINib    = UINib(nibName: self.className, bundle: bundle)
         self.view = nib.instantiateWithOwner(self, options: nil).first as? UIView
     }
 }

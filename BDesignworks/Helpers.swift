@@ -68,6 +68,17 @@ extension UIView {
     }
 }
 
+extension UIView {
+    
+    func performRecursively(block: ((view: UIView)->(Void))) {
+        
+        block(view: self)
+        
+        for subview in self.subviews {
+            subview.performRecursively(block)
+        }
+    }
+}
 
 var countryCodes: [String : [Area]] = {
     

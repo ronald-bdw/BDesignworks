@@ -11,9 +11,9 @@ import UIKit
 final class VerificationErrorView: BaseView {
     
     struct Constants {
-        static let triangleLeadingOffset: CGFloat = 49
-        static let triangleSize: CGSize = CGSize(width: 13, height: 11)
-        static let errorContainerHeight: CGFloat = 49
+        static let triangleLeadingOffset : CGFloat = 49
+        static let triangleSize          : CGSize  = CGSize(width: 13, height: 11)
+        static let errorContainerHeight  : CGFloat = 49
     }
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var errorTriangle: UIImageView!
@@ -33,5 +33,6 @@ final class VerificationErrorView: BaseView {
                                           y: self.errorTriangle.fs_bottom,
                                           width: self.fs_width,
                                           height: Constants.errorContainerHeight)
+        self.errorLabel.frame = self.containerView.bounds
     }
 }
