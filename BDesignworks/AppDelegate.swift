@@ -75,6 +75,8 @@ extension AppDelegate {
     
     func setupProject() {
         
+        let view = RollUpButton()
+        
         self.printProjectSettings()
         
         self.setupProjectForTests()

@@ -49,6 +49,26 @@ enum FSScreenType {
     }
 }
 
+extension UIView {
+    
+    var fs_bottom: CGFloat {
+        return self.fs_origin.y + self.fs_height
+    }
+    
+    var fs_trailing: CGFloat {
+        return self.fs_origin.x + self.fs_width
+    }
+    
+    var fs_leading: CGFloat {
+        return self.fs_origin.x
+    }
+    
+    var fs_top: CGFloat {
+        return self.fs_origin.y
+    }
+}
+
+
 var countryCodes: [String : [Area]] = {
     
     var list: [Area] = []

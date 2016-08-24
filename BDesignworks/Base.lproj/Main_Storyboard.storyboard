@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rys-JC-bgs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rys-JC-bgs">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -587,7 +587,7 @@
                                     <action selector="nextPressed:" destination="M06-aI-0x9" eventType="touchUpInside" id="LKb-JG-pUi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please enter the unique code in the SMS that we have sent you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-5V-3lS">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the unique code in the SMS that we have sent you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-5V-3lS">
                                 <rect key="frame" x="24" y="345" width="552" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -641,13 +641,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="319" placeholderIntrinsicHeight="515" translatesAutoresizingMaskIntoConstraints="NO" id="7gt-ft-BhW">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="hbz-zG-nhg">
-                                        <rect key="frame" x="215" y="20" width="170" height="228"/>
+                                        <rect key="frame" x="215" y="40" width="170" height="228"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your mobile number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ku4-ol-p4k" customClass="BDTextField" customModule="IBDesignableKit">
-                                        <rect key="frame" x="20" y="449" width="560" height="31"/>
+                                        <rect key="frame" x="20" y="469" width="560" height="31"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -671,20 +671,20 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your mobile phone number for SMS verification" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xD4-iL-KJZ">
-                                        <rect key="frame" x="161" y="280" width="279" height="111"/>
+                                        <rect key="frame" x="161" y="300" width="286" height="111"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPC-X5-XR7" customClass="RollUpButton" customModule="PearUp" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="408" width="560" height="31"/>
+                                        <rect key="frame" x="20" y="428" width="560" height="31"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5j-Jz-egE" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="490" width="600" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="510" width="600" height="0.0"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkI-p9-5Pn" customClass="RoundButton" customModule="IBDesignableKit">
-                                        <rect key="frame" x="232" y="505" width="137" height="55"/>
+                                        <rect key="frame" x="232" y="525" width="137" height="55"/>
                                         <color key="backgroundColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Submit">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

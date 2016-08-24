@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RollUpButton" customModule="BDesignworks" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RollUpButton" customModule="PearUp" customModuleProvider="target">
             <connections>
                 <outlet property="chooseLabel" destination="DQe-5r-3KM" id="Sqh-oA-30B"/>
                 <outlet property="tapGestureRecognizer" destination="WpY-Vv-06h" id="JKo-z7-w53"/>
@@ -17,33 +17,21 @@
             <rect key="frame" x="0.0" y="0.0" width="471" height="46"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to choose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQe-5r-3KM">
+                <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Arrow/Right" translatesAutoresizingMaskIntoConstraints="NO" id="0gS-0l-gTD">
+                    <rect key="frame" x="444" y="0.0" width="15" height="46"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="WpY-Vv-06h" appends="YES" id="eQs-bf-bPd"/>
+                    </connections>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to choose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQe-5r-3KM">
                     <rect key="frame" x="15" y="0.0" width="429" height="46"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow/Right" translatesAutoresizingMaskIntoConstraints="NO" id="0gS-0l-gTD">
-                    <rect key="frame" x="444" y="0.0" width="15" height="46"/>
-                    <gestureRecognizers/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="15" id="4KS-hc-yrn"/>
-                    </constraints>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="WpY-Vv-06h" appends="YES" id="eQs-bf-bPd"/>
-                    </connections>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="0gS-0l-gTD" secondAttribute="trailing" constant="12" id="1i4-uU-rPe"/>
-                <constraint firstAttribute="bottom" secondItem="DQe-5r-3KM" secondAttribute="bottom" id="EaA-k9-Pw2"/>
-                <constraint firstItem="DQe-5r-3KM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Ypp-m2-CI7"/>
-                <constraint firstItem="0gS-0l-gTD" firstAttribute="leading" secondItem="DQe-5r-3KM" secondAttribute="trailing" id="c2o-FH-ICt"/>
-                <constraint firstItem="DQe-5r-3KM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fg4-WX-nKg"/>
-                <constraint firstItem="0gS-0l-gTD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rTU-Fo-mVo"/>
-                <constraint firstAttribute="bottom" secondItem="0gS-0l-gTD" secondAttribute="bottom" id="tU8-FY-BzN"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="268.5" y="449"/>
