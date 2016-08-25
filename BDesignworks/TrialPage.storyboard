@@ -95,7 +95,14 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Registration" id="4Yb-Oj-FFc"/>
+                    <navigationItem key="navigationItem" title="Registration" id="4Yb-Oj-FFc">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="PaY-2s-7Qf">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backPressed:" destination="UQR-qA-zXc" id="gJT-mv-RJS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="scrollView" destination="nMa-Qx-0nd" id="hrT-XZ-MGr"/>
@@ -107,4 +114,7 @@
             <point key="canvasLocation" x="393" y="275"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="14" height="25"/>
+    </resources>
 </document>

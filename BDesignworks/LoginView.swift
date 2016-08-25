@@ -32,10 +32,7 @@ extension LoginView: ILoginView {
         case .Loading:
             Logger.debug("loading")
         case .Done:
-            let storyboard = UIStoryboard(name: "Main_Storyboard", bundle: NSBundle.mainBundle())
-            let controller = storyboard.instantiateViewControllerWithIdentifier("ConversationScreen")
-            let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-            appDelegate?.window?.rootViewController = controller
+            ShowConversationViewController()
         case .Failed:
             Logger.debug("failed")
         }

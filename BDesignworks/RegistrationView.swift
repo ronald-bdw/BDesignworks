@@ -48,6 +48,10 @@ class RegistrationView: UIViewController {
         self.presenter?.submitTapped(self.user)
     }
     
+    @IBAction func backPressed(sender: AnyObject) {
+        ShowInitialViewController()
+    }
+    
     func keyboardWillShow(notification: NSNotification) {
         guard let userInfo: NSDictionary = notification.userInfo, keyboardSize = userInfo.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue.size else {return}
         let contentInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height + 20, 0)
@@ -145,10 +149,7 @@ extension RegistrationView: IRegistrationView {
             SVProgressHUD.show()
         case .Done:
             SVProgressHUD.dismiss()
-            let storyboard = UIStoryboard(name: "Main_Storyboard", bundle: NSBundle.mainBundle())
-            let controller = storyboard.instantiateViewControllerWithIdentifier("ConversationScreen")
-            let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-            appDelegate?.window?.rootViewController = controller
+            ShowConversationViewController()
         case .Failed:
             SVProgressHUD.dismiss()
             ShowErrorAlert()

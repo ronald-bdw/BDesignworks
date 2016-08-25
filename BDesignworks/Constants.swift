@@ -51,3 +51,28 @@ enum AppColors
 private func GenerateKey (prefix: String, key: String) -> String {
     return "__\(prefix)-\(key)__"
 }
+
+/*----------Storyboards----------*/
+
+enum Storyboard {
+    case Main
+    
+    case TrialPage
+    case Welcome
+    
+    var name: String {
+        switch self {
+        case .Main      : return "Main_Storyboard"
+        case .TrialPage : return "TrialPage"
+        case .Welcome   : return "WelcomeScreen"
+        }
+    }
+    
+    var storyboard: UIStoryboard {
+        return UIStoryboard(name: self.name, bundle: nil)
+    }
+    
+    var firstController: UIViewController? {
+        return self.storyboard.instantiateInitialViewController()
+    }
+}

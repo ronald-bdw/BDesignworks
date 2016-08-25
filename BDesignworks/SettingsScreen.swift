@@ -32,10 +32,7 @@ class SettingsScreen: UITableViewController
                 realm.delete(realm.objects(User))
             })
             
-            let storyboard = UIStoryboard(name: "Main_Storyboard", bundle: NSBundle.mainBundle())
-            let controller = storyboard.instantiateInitialViewController()
-            let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-            appDelegate?.window?.rootViewController = controller
+            ShowInitialViewController()
         }
         catch let error {
             Logger.error("\(error)")

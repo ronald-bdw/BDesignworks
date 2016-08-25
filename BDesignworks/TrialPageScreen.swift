@@ -25,9 +25,6 @@ final class TrialPageScreen: UIViewController {
     }
     
     @IBAction func startTrialAction(sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "TrialPage", bundle: NSBundle.mainBundle())
-        let controller = storyboard.instantiateInitialViewController()
-        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-        appDelegate?.window?.rootViewController = controller
+        ShowRegistrationViewController()
     }
 }

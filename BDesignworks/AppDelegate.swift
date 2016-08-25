@@ -22,21 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let realm = try Realm()
             if let authInfo = realm.objects(AuthInfo).first {
                 if authInfo.isRegistered {
-                    let storyboard = UIStoryboard(name: "WelcomeScreen", bundle: NSBundle.mainBundle())
-                    let controller = storyboard.instantiateInitialViewController()
-                    self.window?.rootViewController = controller
+                    ShowWelcomeViewController()
                 }
                 else {
-                    let storyboard = UIStoryboard(name: "TrialPage", bundle: NSBundle.mainBundle())
-                    let controller = storyboard.instantiateInitialViewController()
-                    self.window?.rootViewController = controller
+                    ShowRegistrationViewController()
                 }
             }
             else if let _ = realm.objects(User).first {
-                let storyboard = UIStoryboard(name: "Main_Storyboard", bundle: NSBundle.mainBundle())
-                let controller = storyboard.instantiateViewControllerWithIdentifier("ConversationScreen")
-                let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-                appDelegate?.window?.rootViewController = controller
+                ShowConversationViewController()
             }
         } catch let error {
             Logger.error("\(error)")
