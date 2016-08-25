@@ -189,7 +189,7 @@ extension VerificationView: IVerificationView {
 }
 
 extension VerificationView: MVPView {
-    typealias PresenterProtocol = IVerificationPresenter
+    typealias PresenterProtocol = IVerificationViewPresenter
 }
 
 extension VerificationView {

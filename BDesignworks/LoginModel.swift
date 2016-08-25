@@ -69,5 +69,5 @@ extension LoginModel: ILoginModel {
 }
 
 extension LoginModel: MVPModel {
-    typealias PresenterProtocol = ILoginPresenter
+    typealias PresenterProtocol = ILoginModelPresenter
 }

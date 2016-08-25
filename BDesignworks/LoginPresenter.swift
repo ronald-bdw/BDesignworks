@@ -8,9 +8,11 @@
 
 import Foundation
 
-protocol ILoginPresenter: class {
+protocol ILoginViewPresenter: class {
     func login()
-    
+}
+
+protocol ILoginModelPresenter: class {
     func loginStarted()
     func loginSuccessed()
     func loginFailed()
@@ -23,10 +25,7 @@ class LoginPresenter {
     required init() {}
 }
 
-extension LoginPresenter: ILoginPresenter {
-    func login() {
-        self.model?.login("1234")
-    }
+extension LoginPresenter: ILoginModelPresenter {
     
     func loginStarted() {
         self.view?.setLoadingState(.Loading)
@@ -38,6 +37,12 @@ extension LoginPresenter: ILoginPresenter {
     
     func loginFailed() {
         self.view?.setLoadingState(.Failed)
+    }
+}
+
+extension LoginPresenter: ILoginViewPresenter {
+    func login() {
+        self.model?.login("1234")
     }
 }
 

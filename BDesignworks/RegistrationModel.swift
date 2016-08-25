@@ -151,5 +151,5 @@ extension RegistrationModel: IRegistrationModel {
 }
 
 extension RegistrationModel: MVPModel {
-    typealias PresenterProtocol = IRegistrationPresenter
+    typealias PresenterProtocol = IRegistrationModelPresenter
 }

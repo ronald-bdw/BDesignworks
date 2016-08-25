@@ -71,5 +71,5 @@ extension VerificationModel: IVerificationModel {
 }
 
 extension VerificationModel: MVPModel {
-    typealias PresenterProtocol = IVerificationPresenter
+    typealias PresenterProtocol = IVerificationModelPresenter
 }

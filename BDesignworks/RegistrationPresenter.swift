@@ -8,11 +8,14 @@
 
 import Foundation
 
-protocol IRegistrationPresenter: class {
+protocol IRegistrationViewPresenter: class {
     func submitTapped(user: RegistrationUser?)
     func getRegistrationUser() -> RegistrationUser?
     func resendPhoneCodeTapped(user: RegistrationUser?)
     
+}
+
+protocol IRegistrationModelPresenter: class {
     func registrationStarted()
     func registrationSuccessed()
     func requestFailed(error: RTError?)
@@ -20,7 +23,7 @@ protocol IRegistrationPresenter: class {
     func phoneCodeReceived()
 }
 
-extension IRegistrationPresenter {
+extension IRegistrationModelPresenter {
     func requestFailed(error: RTError? = nil) {}
 }
 
@@ -31,16 +34,7 @@ class RegistrationPresenter {
     required init() {}
 }
 
-extension RegistrationPresenter: IRegistrationPresenter {
-    func submitTapped(user: RegistrationUser?) {
-        guard let lUser = user else {return}
-        self.model?.register(lUser)
-    }
-    
-    func getRegistrationUser() -> RegistrationUser? {
-        return self.model?.getRegistrationUser()
-    }
-    
+extension RegistrationPresenter: IRegistrationModelPresenter {
     func registrationStarted() {
         self.view?.setLoadingState(.Loading)
     }
@@ -62,12 +56,23 @@ extension RegistrationPresenter: IRegistrationPresenter {
         self.view?.updateValidationErrors()
     }
     
-    func resendPhoneCodeTapped(user: RegistrationUser?) {
-        self.model?.receivePhoneCode(user)
-    }
-    
     func phoneCodeReceived() {
         self.view?.showPhoneCodeReceivedView()
+    }
+}
+
+extension RegistrationPresenter: IRegistrationViewPresenter {
+    func submitTapped(user: RegistrationUser?) {
+        guard let lUser = user else {return}
+        self.model?.register(lUser)
+    }
+    
+    func getRegistrationUser() -> RegistrationUser? {
+        return self.model?.getRegistrationUser()
+    }
+    
+    func resendPhoneCodeTapped(user: RegistrationUser?) {
+        self.model?.receivePhoneCode(user)
     }
 }
 

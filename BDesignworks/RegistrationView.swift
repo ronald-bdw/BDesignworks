@@ -175,5 +175,5 @@ extension RegistrationView: IRegistrationView {
 }
 
 extension RegistrationView: MVPView {
-    typealias PresenterProtocol = IRegistrationPresenter
+    typealias PresenterProtocol = IRegistrationViewPresenter
 }

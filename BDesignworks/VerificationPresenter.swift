@@ -8,9 +8,11 @@
 
 import Foundation
 
-protocol IVerificationPresenter: class {
+protocol IVerificationViewPresenter: class {
     func submitTapped(code: String, phone: String?)
-    
+}
+
+protocol IVerificationModelPresenter: class {
     func phoneNotValid()
     func phoneCodeReceived()
     func errorOccured()
@@ -24,12 +26,14 @@ class VerificationPresenter {
     required init() {}
 }
 
-extension VerificationPresenter: IVerificationPresenter {
+extension VerificationPresenter: IVerificationViewPresenter {
     func submitTapped(code: String, phone: String?) {
         guard let lPhone = phone else {return}
         self.model?.submitPhone(code + lPhone)
     }
-    
+}
+
+extension VerificationPresenter: IVerificationModelPresenter {
     func phoneNotValid() {
         self.view?.showPhoneInvalidView()
     }

@@ -40,5 +40,5 @@ extension LoginView: ILoginView {
 }
 
 extension LoginView: MVPView {
-    typealias PresenterProtocol = ILoginPresenter
+    typealias PresenterProtocol = ILoginViewPresenter
 }
