@@ -17,6 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         self.setupProject()
+        
+        do {
+            let realm = try Realm()
+            if let authInfo = realm.objects(AuthInfo).first {
+                if authInfo.isRegistered {
+                    ShowWelcomeViewController()
+                }
+                else {
+                    ShowRegistrationViewController()
+                }
+            }
+            else if let _ = realm.objects(User).first {
+                ShowConversationViewController()
+            }
+        } catch let error {
+            Logger.error("\(error)")
+        }
+        
         return true
     }
 
@@ -126,7 +144,7 @@ extension AppDelegate {
     
     func setupSmooch()
     {
-        SmoochHelper.sharedInstance.startWithParameters("")
+        SmoochHelper.sharedInstance.startWithParameters("2")
     }
     
     func setupLogger() {

@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum LoadingState {
+    case Loading
+    case Done
+    case Failed
+}
+
 let topBarHeight: CGFloat = 64.0 // Status and navigation bar's summary height
 
 //MARK: - Foundation

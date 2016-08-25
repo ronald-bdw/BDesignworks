@@ -11,6 +11,13 @@ import FSHelpers_Swift
 
 var Logger: XCGLogger {return XCGLogger.defaultInstance()}
 
+/*--------------Keychain keys-------------*/
+enum FSKeychainKey {
+    
+    static let AccountName     = "com.pearup"
+    static let APIToken        = "KeychainAPIToken"
+    static let UserEmail       = "KeychainUserEmail"
+}
 
 /*--------------User Defaults keys-------------*/
 enum FSUserDefaultsKey {
@@ -43,4 +50,29 @@ enum AppColors
 /*----------Helpers----------*/
 private func GenerateKey (prefix: String, key: String) -> String {
     return "__\(prefix)-\(key)__"
+}
+
+/*----------Storyboards----------*/
+
+enum Storyboard {
+    case Main
+    
+    case TrialPage
+    case Welcome
+    
+    var name: String {
+        switch self {
+        case .Main      : return "Main_Storyboard"
+        case .TrialPage : return "TrialPage"
+        case .Welcome   : return "WelcomeScreen"
+        }
+    }
+    
+    var storyboard: UIStoryboard {
+        return UIStoryboard(name: self.name, bundle: nil)
+    }
+    
+    var firstController: UIViewController? {
+        return self.storyboard.instantiateInitialViewController()
+    }
 }

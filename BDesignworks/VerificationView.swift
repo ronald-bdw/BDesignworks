@@ -94,11 +94,20 @@ private struct Constants {
     static let defaultLogoTopConstraintRatio: CGFloat = 0.2 // Show how less logo's top offset relative to screen size
 }
 
-final class VerifyScreen: UIViewController {
+typealias VerificationMVP = MVPContainer<VerificationView, VerificationPresenter, VerificationModel>
+
+protocol IVerificationView: class {
+    func showPhoneInvalidView()
+    func setLoadingState(state: LoadingState)
+}
+
+final class VerificationView: UIViewController {
     
     var scrollView: UIScrollView {
         return self.view as! UIScrollView
     }
+    
+    var presenter: PresenterProtocol?
     
     @IBOutlet weak var logoBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var logoHeightConstraint: NSLayoutConstraint!
@@ -113,8 +122,12 @@ final class VerifyScreen: UIViewController {
     @IBOutlet weak var labelWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var submitButton: RoundButton!
     
+    @IBOutlet weak var verificationErrorView: VerificationErrorView!
+    @IBOutlet weak var verificationErrorViewHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let _ = VerificationMVP(controller: self)
         self.view.layoutIfNeeded()
         self.navigationController?.navigationBar.hidden = false
         self.rollButton.arrowDirection = .Right
@@ -147,20 +160,39 @@ final class VerifyScreen: UIViewController {
         self.mobileTextField.resignFirstResponder()
     }
     
-    @IBAction func nextPressed(sender: UIButton) {
-        performSegueWithIdentifier("toWelcomeScreen", sender: nil)
-    }
-    
-    @IBAction func backPressed(sender: AnyObject){
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
     deinit {
         self.fs_keyboardScrollSupportRemoveNotifications()
     }
+    
+    @IBAction func submitPressed(sender: AnyObject){
+        self.presenter?.submitTapped("7", phone: self.mobileTextField.text)
+    }
 }
 
-extension VerifyScreen {
+extension VerificationView: IVerificationView {
+    func showPhoneInvalidView() {
+        Logger.error("phone not valid")
+    }
+    
+    func setLoadingState(state: LoadingState) {
+        switch state {
+        case .Loading:
+            SVProgressHUD.show()
+        case .Done:
+            SVProgressHUD.dismiss()
+            ShowOKAlert("Success!", message: "Please, wait for sms with link to app.")
+        case .Failed:
+            SVProgressHUD.dismiss()
+            ShowErrorAlert()
+        }
+    }
+}
+
+extension VerificationView: MVPView {
+    typealias PresenterProtocol = IVerificationViewPresenter
+}
+
+extension VerificationView {
     
     func fs_keyboardScrollSupportRegisterForNotifications () {
         

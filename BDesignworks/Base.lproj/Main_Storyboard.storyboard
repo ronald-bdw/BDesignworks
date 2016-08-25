@@ -11,7 +11,7 @@
         <!--Select Provider Screen-->
         <scene sceneID="szx-e5-UI9">
             <objects>
-                <viewController id="xJO-aM-hqn" customClass="SelectProviderScreen" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xJO-aM-hqn" customClass="SelectProviderScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fvF-Te-7tz"/>
                         <viewControllerLayoutGuide type="bottom" id="cap-Dn-Qp5"/>
@@ -58,7 +58,7 @@
                                     <action selector="nextButtonPressed:" destination="xJO-aM-hqn" eventType="touchUpInside" id="NFt-Jn-Ske"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-Ty-tCF" customClass="RollUpButton" customModule="BDesignworks" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-Ty-tCF" customClass="RollUpButton" customModule="PearUp" customModuleProvider="target">
                                 <rect key="frame" x="24" y="337" width="552" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -94,6 +94,7 @@
                         <outlet property="nextButton" destination="LSf-b0-zdR" id="ZBT-Fi-2Hl"/>
                         <outlet property="providerSelectionButton" destination="dB4-Ty-tCF" id="0CV-Qc-Fpe"/>
                         <segue destination="jLg-Mh-FPe" kind="show" identifier="VerificationSegue" id="8ca-PQ-ytg"/>
+                        <segue destination="nZU-o6-lK5" kind="presentation" identifier="TrialSegue" modalPresentationStyle="fullScreen" id="PU7-gE-PF0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwE-4P-50B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -103,7 +104,7 @@
         <!--Trial Page Screen-->
         <scene sceneID="Uzw-ne-ZKM">
             <objects>
-                <viewController id="srh-na-NEh" customClass="TrialPageScreen" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="srh-na-NEh" customClass="TrialPageScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JFq-kf-grS"/>
                         <viewControllerLayoutGuide type="bottom" id="h3k-vo-P6i"/>
@@ -116,7 +117,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="428"/>
                                 <color key="backgroundColor" red="0.7643629807692307" green="0.7643629807692307" blue="0.7643629807692307" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y9-6A-fHC" customClass="RoundButton" customModule="BDesignworks" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y9-6A-fHC" customClass="RoundButton" customModule="PearUp" customModuleProvider="target">
                                 <rect key="frame" x="170" y="50" width="130" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -160,7 +161,7 @@
         <!--Payment Screen-->
         <scene sceneID="mYZ-rq-Les">
             <objects>
-                <tableViewController id="4wv-Pv-CmU" customClass="PaymentScreen" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="4wv-Pv-CmU" customClass="PaymentScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vkL-F4-u4I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,7 +183,7 @@
                                                         <constraint firstAttribute="height" constant="2" id="ZSU-bN-RUp"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pna-Xq-H0N" customClass="ToggleButton" customModule="BDesignworks" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pna-Xq-H0N" customClass="ToggleButton" customModule="PearUp" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="16" width="25" height="25"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -190,7 +191,7 @@
                                                         <constraint firstAttribute="height" constant="25" id="Gjj-pn-ESm"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JbA-iW-X19" customClass="ToggleButton" customModule="BDesignworks" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JbA-iW-X19" customClass="ToggleButton" customModule="PearUp" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="80" width="25" height="25"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -198,7 +199,7 @@
                                                         <constraint firstAttribute="height" constant="25" id="MeU-bF-Ncr"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTD-Bf-XQy" customClass="ToggleButton" customModule="BDesignworks" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTD-Bf-XQy" customClass="ToggleButton" customModule="PearUp" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="117" width="25" height="25"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -484,7 +485,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9g-Dz-vkY" customClass="RoundButton" customModule="BDesignworks" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9g-Dz-vkY" customClass="RoundButton" customModule="PearUp" customModuleProvider="target">
                                                     <rect key="frame" x="98" y="25" width="125" height="50"/>
                                                     <color key="backgroundColor" red="0.93401442310000005" green="0.93401442310000005" blue="0.93401442310000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -524,7 +525,7 @@
         <!--Verify Screen-->
         <scene sceneID="1KV-0O-uXX">
             <objects>
-                <viewController id="M06-aI-0x9" customClass="VerifyScreen" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M06-aI-0x9" customClass="VerifyScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8L3-Uf-06y"/>
                         <viewControllerLayoutGuide type="bottom" id="tFw-rv-pB8"/>
@@ -587,7 +588,7 @@
                                     <action selector="nextPressed:" destination="M06-aI-0x9" eventType="touchUpInside" id="LKb-JG-pUi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please enter the unique code in the SMS that we have sent you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-5V-3lS">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the unique code in the SMS that we have sent you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-5V-3lS">
                                 <rect key="frame" x="24" y="345" width="552" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -628,7 +629,7 @@
         <!--Verification-->
         <scene sceneID="fyd-HN-XtR">
             <objects>
-                <viewController id="jLg-Mh-FPe" customClass="VerifyScreen" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jLg-Mh-FPe" customClass="VerificationView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TMU-VZ-S7V"/>
                         <viewControllerLayoutGuide type="bottom" id="zfK-PR-oK5"/>
@@ -666,11 +667,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="nextPressed:" destination="M06-aI-0x9" eventType="touchUpInside" id="uwe-H8-Wo8"/>
+                                    <action selector="submitPressed:" destination="jLg-Mh-FPe" eventType="touchUpInside" id="HTm-1b-tKB"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your mobile number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ku4-ol-p4k" customClass="BDTextField" customModule="IBDesignableKit">
-                                <rect key="frame" x="161" y="479" width="279" height="50"/>
+                                <rect key="frame" x="161" y="478.5" width="279" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -694,7 +695,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your mobile phone number for SMS verification" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xD4-iL-KJZ">
-                                <rect key="frame" x="161" y="355" width="279" height="39"/>
+                                <rect key="frame" x="161" y="355" width="279" height="38.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="279" id="Gr8-qz-PP4"/>
                                 </constraints>
@@ -702,11 +703,18 @@
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPC-X5-XR7" customClass="RollUpButton" customModule="BDesignworks" customModuleProvider="target">
-                                <rect key="frame" x="161" y="419" width="279" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPC-X5-XR7" customClass="RollUpButton" customModule="PearUp" customModuleProvider="target">
+                                <rect key="frame" x="161" y="418.5" width="279" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dtg-Te-KAl"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYs-0Y-Lsf" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="507" width="600" height="0.0"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="J1U-VZ-NBD"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -714,11 +722,13 @@
                         <constraints>
                             <constraint firstItem="eEg-v9-Dzt" firstAttribute="top" secondItem="hdi-42-L35" secondAttribute="top" id="4VI-qU-FLp"/>
                             <constraint firstItem="eEg-v9-Dzt" firstAttribute="leading" secondItem="hdi-42-L35" secondAttribute="leading" id="53v-kQ-6jJ"/>
+                            <constraint firstAttribute="trailing" secondItem="XYs-0Y-Lsf" secondAttribute="trailing" id="7Um-lw-IbT"/>
                             <constraint firstItem="BkI-p9-5Pn" firstAttribute="centerX" secondItem="eEg-v9-Dzt" secondAttribute="centerX" id="DVq-5g-bn9"/>
                             <constraint firstItem="Ku4-ol-p4k" firstAttribute="width" secondItem="xD4-iL-KJZ" secondAttribute="width" id="Eax-x3-ATr"/>
                             <constraint firstItem="xD4-iL-KJZ" firstAttribute="top" secondItem="hbz-zG-nhg" secondAttribute="bottom" constant="27" id="Frc-od-plv"/>
                             <constraint firstItem="eEg-v9-Dzt" firstAttribute="centerX" secondItem="hdi-42-L35" secondAttribute="centerX" id="JhO-a6-n1f"/>
                             <constraint firstItem="hbz-zG-nhg" firstAttribute="centerX" secondItem="eEg-v9-Dzt" secondAttribute="centerX" id="Net-FF-HJa"/>
+                            <constraint firstItem="BkI-p9-5Pn" firstAttribute="top" secondItem="XYs-0Y-Lsf" secondAttribute="bottom" constant="15" id="QOO-1r-6Nm"/>
                             <constraint firstAttribute="trailing" secondItem="eEg-v9-Dzt" secondAttribute="trailing" id="Sai-PT-Uhd"/>
                             <constraint firstItem="Ku4-ol-p4k" firstAttribute="centerX" secondItem="BkI-p9-5Pn" secondAttribute="centerX" id="TIf-FM-G2c"/>
                             <constraint firstItem="zfK-PR-oK5" firstAttribute="top" secondItem="eEg-v9-Dzt" secondAttribute="bottom" id="dcK-Xg-oVt"/>
@@ -731,6 +741,7 @@
                             <constraint firstItem="Ku4-ol-p4k" firstAttribute="top" secondItem="OPC-X5-XR7" secondAttribute="bottom" constant="10" id="oYP-HF-9S6"/>
                             <constraint firstItem="eEg-v9-Dzt" firstAttribute="bottom" secondItem="BkI-p9-5Pn" secondAttribute="bottom" constant="23" id="osg-fa-eTm"/>
                             <constraint firstItem="eEg-v9-Dzt" firstAttribute="centerY" secondItem="hdi-42-L35" secondAttribute="centerY" id="qGm-0R-uCb"/>
+                            <constraint firstItem="XYs-0Y-Lsf" firstAttribute="leading" secondItem="hdi-42-L35" secondAttribute="leading" id="r4V-no-5gv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Verification" id="D19-xe-3td"/>
@@ -748,6 +759,8 @@
                         <outlet property="submitBottomConstraint" destination="osg-fa-eTm" id="vcG-SE-Tka"/>
                         <outlet property="submitButton" destination="BkI-p9-5Pn" id="8bM-15-Rae"/>
                         <outlet property="submitHeightConstraint" destination="Msc-VU-FU8" id="ec4-i5-JyL"/>
+                        <outlet property="verificationErrorView" destination="XYs-0Y-Lsf" id="YQP-0K-2aa"/>
+                        <outlet property="verificationErrorViewHeightConstraint" destination="J1U-VZ-NBD" id="X2Y-J7-cGC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYX-1u-qgr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -757,7 +770,7 @@
         <!--Root View Controller-->
         <scene sceneID="rMv-qB-UTA">
             <objects>
-                <tableViewController id="47G-aA-BHa" customClass="SidebarTVC" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="47G-aA-BHa" customClass="SidebarTVC" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uNY-GM-cwX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -765,14 +778,14 @@
                         <sections>
                             <tableViewSection id="sH0-Mu-CFc">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="149" id="FHp-TE-1pJ" customClass="SidebarCell" customModule="BDesignworks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="149" id="FHp-TE-1pJ" customClass="SidebarCell" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FHp-TE-1pJ" id="Z8p-U0-4qU">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Giz-3A-eyD" customClass="RoundImage" customModule="BDesignworks" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Giz-3A-eyD" customClass="RoundImage" customModule="PearUp" customModuleProvider="target">
                                                     <rect key="frame" x="135" y="31" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="60q-4S-GE9"/>
@@ -811,7 +824,7 @@
                                             <segue destination="BLv-nk-hW9" kind="show" id="yY3-Jm-xmK"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="nKt-D7-cEV" customClass="SidebarCell" customModule="BDesignworks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="nKt-D7-cEV" customClass="SidebarCell" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="149" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nKt-D7-cEV" id="AJM-zQ-tDm">
@@ -844,7 +857,7 @@
                                             <segue destination="ic4-j7-mc0" kind="show" id="jT5-fW-jpx"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="tzY-St-sx8" customClass="SidebarCell" customModule="BDesignworks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="tzY-St-sx8" customClass="SidebarCell" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="214" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tzY-St-sx8" id="dc1-3P-izI">
@@ -892,7 +905,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="C0X-Fh-Kqz" customClass="SidebarCell" customModule="BDesignworks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="C0X-Fh-Kqz" customClass="SidebarCell" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="391" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C0X-Fh-Kqz" id="aCR-Uz-fxy">
@@ -949,7 +962,7 @@
         <!--Profile Screen-->
         <scene sceneID="wS8-EA-Tcn">
             <objects>
-                <tableViewController id="BLv-nk-hW9" customClass="ProfileScreen" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="BLv-nk-hW9" customClass="ProfileScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Ik-TY-31G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -968,7 +981,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                                     <color key="backgroundColor" red="0.1843137255" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B9d-Pw-LXE" customClass="RoundImage" customModule="BDesignworks" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B9d-Pw-LXE" customClass="RoundImage" customModule="PearUp" customModuleProvider="target">
                                                     <rect key="frame" x="95" y="40" width="130" height="130"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="130" id="VAC-z3-ytM"/>
@@ -1126,7 +1139,7 @@
         <!--Push Screen-->
         <scene sceneID="2r4-kN-0fg">
             <objects>
-                <viewController id="ic4-j7-mc0" customClass="PushScreen" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ic4-j7-mc0" customClass="PushScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v5x-ae-zQb"/>
                         <viewControllerLayoutGuide type="bottom" id="SjR-L3-wss"/>
@@ -1148,18 +1161,18 @@
                                     <constraint firstAttribute="height" constant="2" id="j6T-ok-YYN"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jap-MA-WIf" customClass="CheckboxTableView" customModule="BDesignworks" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jap-MA-WIf" customClass="CheckboxTableView" customModule="PearUp" customModuleProvider="target">
                                 <rect key="frame" x="12" y="83" width="296" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="qRa-7p-n0S"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PushSettingCell" rowHeight="60" id="6J0-Hg-sM4" customClass="PushSettingCell" customModule="BDesignworks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PushSettingCell" rowHeight="60" id="6J0-Hg-sM4" customClass="PushSettingCell" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="296" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6J0-Hg-sM4" id="8kP-gs-rmZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="296" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="296" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7d-nR-IAt">
@@ -1218,7 +1231,7 @@
         <!--Settings Screen-->
         <scene sceneID="C4D-f8-Uxm">
             <objects>
-                <tableViewController id="Dh9-b0-PWC" customClass="SettingsScreen" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Dh9-b0-PWC" customClass="SettingsScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zXJ-3Q-yGr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1466,7 +1479,7 @@
         <!--Edit Profile Screen-->
         <scene sceneID="wWG-x5-2hZ">
             <objects>
-                <tableViewController id="lsT-Cu-kGK" customClass="EditProfileScreen" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="lsT-Cu-kGK" customClass="EditProfileScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Q7-Uo-6bV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1485,7 +1498,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                                     <color key="backgroundColor" red="0.1843137255" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UqQ-qQ-pIa" customClass="RoundImage" customModule="BDesignworks" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UqQ-qQ-pIa" customClass="RoundImage" customModule="PearUp" customModuleProvider="target">
                                                     <rect key="frame" x="95" y="40" width="130" height="130"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="130" id="77P-wL-aaM"/>
@@ -1765,10 +1778,26 @@
             </objects>
             <point key="canvasLocation" x="4489" y="845"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MOb-Wb-Fdg">
+            <objects>
+                <navigationController storyboardIdentifier="ConversationScreen" id="QDH-PD-D3D" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="csp-1o-wnl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="93R-j9-aqE" kind="relationship" relationship="rootViewController" id="dPB-6r-Ebd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c0G-pA-OCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2168" y="310"/>
+        </scene>
         <!--Conversation Screen-->
         <scene sceneID="mA1-d8-J1G">
             <objects>
-                <viewController id="93R-j9-aqE" customClass="ConversationScreen" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="93R-j9-aqE" customClass="ConversationScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fpu-tS-uAl"/>
                         <viewControllerLayoutGuide type="bottom" id="bbK-tA-YbS"/>
@@ -1780,7 +1809,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XRX-b9-WBw">
                                 <rect key="frame" x="0.0" y="545" width="600" height="55"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2a-ny-oHX" customClass="RoundButton" customModule="BDesignworks" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2a-ny-oHX" customClass="RoundButton" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="532" y="8" width="60" height="39"/>
                                         <color key="backgroundColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1826,11 +1855,11 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kyA-b7-GXI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kyA-b7-GXI">
                                 <rect key="frame" x="0.0" y="20" width="600" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatusCell" rowHeight="59" id="iZe-A1-ncf" customClass="StatusCell" customModule="BDesignworks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatusCell" rowHeight="59" id="iZe-A1-ncf" customClass="StatusCell" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iZe-A1-ncf" id="C5F-gA-s4g">
@@ -1862,7 +1891,7 @@
                                             <outlet property="statusMessageLabel" destination="Rwe-QJ-KMB" id="jOd-pe-w9U"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IncomingMessage" rowHeight="59" id="TDH-ET-6kf" customClass="IncomingMessageCell" customModule="BDesignworks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IncomingMessage" rowHeight="59" id="TDH-ET-6kf" customClass="IncomingMessageCell" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="87" width="600" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TDH-ET-6kf" id="rDz-ji-p8f">
@@ -1934,7 +1963,7 @@
                                             <outlet property="messageLabel" destination="yFF-dv-J20" id="Hg2-4B-gVa"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OutcomingMessage" rowHeight="70" id="MX2-fJ-PFp" customClass="OutcomingMessageCell" customModule="BDesignworks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OutcomingMessage" rowHeight="70" id="MX2-fJ-PFp" customClass="OutcomingMessageCell" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="146" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MX2-fJ-PFp" id="r2a-44-CiK">
@@ -2019,6 +2048,7 @@
                             <constraint firstAttribute="trailing" secondItem="XRX-b9-WBw" secondAttribute="trailing" id="tS0-uS-XT3"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="oVo-MG-H79"/>
                     <connections>
                         <outlet property="tableView" destination="kyA-b7-GXI" id="dwv-eK-LvK"/>
                         <outlet property="textField" destination="ZsI-Z4-iI9" id="qY3-tj-KP7"/>
@@ -2027,7 +2057,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-4z-3Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2402" y="292"/>
+            <point key="canvasLocation" x="2828" y="292"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="MUO-P6-UP7">
@@ -2049,12 +2079,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3m-0y-eqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3109" y="284"/>
+            <point key="canvasLocation" x="3519" y="278"/>
         </scene>
         <!--Custom Navigation Controller-->
         <scene sceneID="nUd-NQ-3Bv">
             <objects>
-                <navigationController id="rys-JC-bgs" customClass="CustomNavigationController" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="rys-JC-bgs" customClass="CustomNavigationController" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a3u-v3-yAf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2070,7 +2100,7 @@
         <!--Welcome Screen-->
         <scene sceneID="hRC-fr-Gc0">
             <objects>
-                <viewController id="c4d-eD-W8X" customClass="WelcomeScreen" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c4d-eD-W8X" customClass="WelcomeScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="76m-up-ZwT"/>
                         <viewControllerLayoutGuide type="bottom" id="O9D-JZ-AJn"/>
@@ -2222,7 +2252,7 @@
         <!--Trial Page Screen-->
         <scene sceneID="0Jt-8k-qGJ">
             <objects>
-                <viewController id="nZU-o6-lK5" customClass="TrialPageScreen" customModule="BDesignworks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nZU-o6-lK5" customClass="TrialPageScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zqr-Y3-gkx"/>
                         <viewControllerLayoutGuide type="bottom" id="gSx-6c-IKI"/>
@@ -2320,4 +2350,7 @@
         <image name="TriangleRight" width="25" height="40"/>
         <image name="running" width="553" height="600"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PU7-gE-PF0"/>
+    </inferredMetricsTieBreakers>
 </document>

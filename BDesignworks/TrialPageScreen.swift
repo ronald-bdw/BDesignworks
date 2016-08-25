@@ -25,6 +25,6 @@ final class TrialPageScreen: UIViewController {
     }
     
     @IBAction func startTrialAction(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        ShowRegistrationViewController()
     }
 }

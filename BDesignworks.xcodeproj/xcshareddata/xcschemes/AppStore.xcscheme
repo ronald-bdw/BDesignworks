@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "21DB300E19DD2289003A418D"
-               BuildableName = "BDesignworks.app"
+               BuildableName = "PearUp.app"
                BlueprintName = "BDesignworks"
                ReferencedContainer = "container:BDesignworks.xcodeproj">
             </BuildableReference>
@@ -68,7 +68,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21DB300E19DD2289003A418D"
-            BuildableName = "BDesignworks.app"
+            BuildableName = "PearUp.app"
             BlueprintName = "BDesignworks"
             ReferencedContainer = "container:BDesignworks.xcodeproj">
          </BuildableReference>
@@ -98,7 +98,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21DB300E19DD2289003A418D"
-            BuildableName = "BDesignworks.app"
+            BuildableName = "PearUp.app"
             BlueprintName = "BDesignworks"
             ReferencedContainer = "container:BDesignworks.xcodeproj">
          </BuildableReference>
@@ -117,7 +117,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "21DB300E19DD2289003A418D"
-            BuildableName = "BDesignworks.app"
+            BuildableName = "PearUp.app"
             BlueprintName = "BDesignworks"
             ReferencedContainer = "container:BDesignworks.xcodeproj">
          </BuildableReference>
