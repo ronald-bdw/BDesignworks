@@ -23,17 +23,18 @@ class VerificationModel {
     private func receivePhoneCode(phone: String) {
         guard self.isPhoneValid(phone) else {self.presenter?.phoneNotValid(); return}
         
+        self.presenter?.loadingStarted()
+        
         Router.User.GetAuthPhoneCode(phone: phone).request().responseObject { [weak self] (response: Response<RTAuthInfoResponse, RTError>) in
             var receivedData: AuthInfo?
             
             defer {
                 self?.authInfo = receivedData
-                self?.presenter?.phoneCodeReceived()
             }
             
             switch response.result {
             case .Success(let value):
-                guard let lAuthInfo = value.authInfo else {return}
+                guard let lAuthInfo = value.authInfo else {self?.presenter?.errorOccured(); return}
                 lAuthInfo.phone = phone
                 
                 receivedData = lAuthInfo
@@ -44,12 +45,15 @@ class VerificationModel {
                         realm.delete(realm.objects(AuthInfo))
                         realm.add(lAuthInfo)
                     })
+                    self?.presenter?.phoneCodeReceived()
                     
                 } catch let error {
                     Logger.error("\(error)")
+                    self?.presenter?.errorOccured()
                 }
             case .Failure(let error):
                 Logger.error("\(error)")
+                self?.presenter?.errorOccured()
             }
         }
     }
