@@ -71,6 +71,7 @@ enum BackendError {
     case SmsCodeExpired
     case InvalidPhone
     case EmainTaken
+    case SmsCodeNotExist
     
     var error: RTError {return RTError(backend: self)}
 }

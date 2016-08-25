@@ -43,6 +43,7 @@ class VerificationModel {
                     let realm = try Realm()
                     try realm.write({
                         realm.delete(realm.objects(AuthInfo))
+                        realm.delete(realm.objects(User))
                         realm.add(lAuthInfo)
                     })
                     self?.presenter?.phoneCodeReceived()

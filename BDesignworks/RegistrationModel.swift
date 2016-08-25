@@ -22,12 +22,12 @@ class RegistrationModel {
     required init() {}
     
     private func startRegister(user: RegistrationUser) {
-        guard self.validateUser(user) else {self.presenter?.userNotValid(); return}
+        guard self.validateUser(user) else {self.presenter?.updateValidationErrors(); return}
         self.presenter?.registrationStarted()
         do {
             let realm = try Realm()
             //TODO: add error when there is no auth data
-            guard let authData = realm.objects(AuthInfo).first else {self.presenter?.requestFailed(RTError(backend: .SmsCodeExpired)); return}
+            guard let authData = realm.objects(AuthInfo).first else {self.presenter?.requestFailed(RTError(backend: .SmsCodeNotExist)); return}
             
             Router.User.Register(firstName: user.firstName.content, lastname: user.lastName.content, email: user.email.content, phone: user.phone.content, authPhoneCode: authData.id, smsCode: "1234").request().responseObject { [weak self] (response: Response<RTUserResponse, RTError>) in
                 var user: User?
@@ -45,6 +45,7 @@ class RegistrationModel {
                         let realm = try Realm()
                         try realm.write({
                             realm.delete(realm.objects(User))
+                            realm.delete(realm.objects(AuthInfo))
                             realm.add(lUser)
                         })
                         

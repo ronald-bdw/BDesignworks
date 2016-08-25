@@ -12,7 +12,7 @@ typealias RegistrationMVP = MVPContainer<RegistrationView, RegistrationPresenter
 
 protocol IRegistrationView: class {
     func setLoadingState (state: LoadingState)
-    func showValidationErrors()
+    func updateValidationErrors()
     
     func showErrorView(title: String, content: String, errorType: BackendError)
     func showPhoneCodeReceivedView()
@@ -139,7 +139,7 @@ extension RegistrationView: UITextFieldDelegate {
 }
 
 extension RegistrationView: IRegistrationView {
-    func showValidationErrors() {
+    func updateValidationErrors() {
         self.tableView.reloadData()
     }
     
@@ -158,9 +158,8 @@ extension RegistrationView: IRegistrationView {
     
     func showErrorView(title: String, content: String, errorType: BackendError) {
         SVProgressHUD.dismiss()
-        if errorType == .SmsCodeExpired {
+        if errorType == .SmsCodeNotExist {
             ShowAlertWithHandler(title, message: content) { [weak self] (action) in
-                SVProgressHUD.show()
                 self?.presenter?.resendPhoneCodeTapped(self?.user)
             }
         }
@@ -171,7 +170,6 @@ extension RegistrationView: IRegistrationView {
     
     func showPhoneCodeReceivedView() {
         SVProgressHUD.dismiss()
-        ShowOKAlert("Success", message: "Please, wait for sms with new link")
     }
 }
 

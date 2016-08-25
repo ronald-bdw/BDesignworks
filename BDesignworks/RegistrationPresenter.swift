@@ -16,7 +16,7 @@ protocol IRegistrationPresenter: class {
     func registrationStarted()
     func registrationSuccessed()
     func requestFailed(error: RTError?)
-    func userNotValid()
+    func updateValidationErrors()
     func phoneCodeReceived()
 }
 
@@ -58,8 +58,8 @@ extension RegistrationPresenter: IRegistrationPresenter {
         self.view?.setLoadingState(.Failed)
     }
     
-    func userNotValid() {
-        self.view?.showValidationErrors()
+    func updateValidationErrors() {
+        self.view?.updateValidationErrors()
     }
     
     func resendPhoneCodeTapped(user: RegistrationUser?) {

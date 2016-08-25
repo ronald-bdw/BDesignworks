@@ -26,6 +26,7 @@ extension BackendError: HumanErrorType {
         case .SmsCodeExpired: return "Sms code has expired"
         case .InvalidPhone: return "Phone is invalid"
         case .EmainTaken: return "Emain is taken"
+        case .SmsCodeNotExist: return "Sms code not saved in database"
         }
     }
     
@@ -35,6 +36,7 @@ extension BackendError: HumanErrorType {
         case .SmsCodeExpired: return ErrorHumanDescription(title: "Sms code has expired", text: "Resend sms code?")
         case .InvalidPhone: return ErrorHumanDescription(title: "Phone number is invalid", text: "You must provide valid phone number")
         case .EmainTaken: return ErrorHumanDescription(title: "Sorry", text: "Email is taken")
+        case .SmsCodeNotExist: return ErrorHumanDescription(title: "Success", text: "Please, enter the link in sended sms.")
         }
     }
 }

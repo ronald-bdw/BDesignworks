@@ -22,7 +22,7 @@
             </objects>
             <point key="canvasLocation" x="-127" y="275"/>
         </scene>
-        <!--Registration-->
+        <!--Start Your Free Trial-->
         <scene sceneID="nSJ-8g-ihS">
             <objects>
                 <viewController storyboardIdentifier="RegistrationView" id="UQR-qA-zXc" customClass="RegistrationView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -95,7 +95,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Registration" id="4Yb-Oj-FFc">
+                    <navigationItem key="navigationItem" title="Start Your Free Trial" id="4Yb-Oj-FFc">
                         <barButtonItem key="leftBarButtonItem" image="back" id="PaY-2s-7Qf">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
