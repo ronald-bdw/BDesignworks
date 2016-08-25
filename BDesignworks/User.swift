@@ -11,6 +11,8 @@ import ObjectMapper
 
 class User: Object, IUser {
     dynamic var id: Int = 0
+    dynamic var firstName: String = ""
+    dynamic var lastName: String = ""
     dynamic var email: String = ""
     dynamic var phoneNumber: String = ""
     
@@ -44,6 +46,8 @@ class User: Object, IUser {
 extension User: Mappable {
     func mapping(map: ObjectMapper.Map) {
         self.id     <- map["id"]
+        self.firstName <- map["first_name"]
+        self.lastName <- map["last_name"]
         self.email   <- map["email"]
         self.phoneNumber <- map["phone_number"]
         self.token <- map["authentication_token"]

@@ -25,7 +25,7 @@
         <!--Registration-->
         <scene sceneID="nSJ-8g-ihS">
             <objects>
-                <viewController id="UQR-qA-zXc" customClass="RegistrationView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationView" id="UQR-qA-zXc" customClass="RegistrationView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iui-WQ-A5I"/>
                         <viewControllerLayoutGuide type="bottom" id="261-KH-968"/>

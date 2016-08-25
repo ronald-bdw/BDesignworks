@@ -13,6 +13,7 @@ class ValidationError {
     var error: Int?
     var isPhoneValid: Bool = true
     var isSmsCodeValid: Bool = true
+    var isEmailNotTaken: Bool = true
     
     required convenience init?(_ map: ObjectMapper.Map) {
         self.init()
@@ -26,5 +27,6 @@ extension ValidationError: Mappable {
         guard let validations = map.JSONDictionary["validations"] as? [String: AnyObject] else {return}
         self.isSmsCodeValid = validations["sms_code"] == nil
         self.isPhoneValid = validations["phone_number"] == nil
+        self.isEmailNotTaken = validations["email"] == nil
     }
 }

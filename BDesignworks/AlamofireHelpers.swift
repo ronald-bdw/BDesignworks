@@ -47,6 +47,9 @@ extension Request {
                     if object.isSmsCodeValid == false {
                         return .Failure(RTError(backend: .SmsCodeExpired))
                     }
+                    if object.isEmailNotTaken == false {
+                        return .Failure(RTError(backend: .EmainTaken))
+                    }
                 }
                 catch let error {
                     Logger.error("\(error)")

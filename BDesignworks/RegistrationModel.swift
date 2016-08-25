@@ -10,7 +10,7 @@ import Foundation
 
 protocol IRegistrationModel {
     func register(user: RegistrationUser)
-    func receivePhoneCode()
+    func receivePhoneCode(user: RegistrationUser?)
     func getRegistrationUser() -> RegistrationUser
 }
 
@@ -27,7 +27,7 @@ class RegistrationModel {
         do {
             let realm = try Realm()
             //TODO: add error when there is no auth data
-            guard let authData = realm.objects(AuthInfo).first else {return}
+            guard let authData = realm.objects(AuthInfo).first else {self.presenter?.requestFailed(RTError(backend: .SmsCodeExpired)); return}
             
             Router.User.Register(firstName: user.firstName.content, lastname: user.lastName.content, email: user.email.content, phone: user.phone.content, authPhoneCode: authData.id, smsCode: "1234").request().responseObject { [weak self] (response: Response<RTUserResponse, RTError>) in
                 var user: User?
@@ -64,45 +64,35 @@ class RegistrationModel {
         }
     }
     
-    func receivePhoneCode() {
-        do {
-            let realm = try Realm()
-            //TODO: add error when there is no auth data
-            guard let authData = realm.objects(AuthInfo).first else {return}
+    func receivePhoneCode(user: RegistrationUser?) {
+        guard let lUser = user else {self.presenter?.requestFailed(); return}
+        
+        Router.User.GetAuthPhoneCode(phone: lUser.phone.content).request().responseObject { [weak self] (response: Response<RTAuthInfoResponse, RTError>) in
             
-            Router.User.GetAuthPhoneCode(phone: authData.phone).request().responseObject { [weak self] (response: Response<RTAuthInfoResponse, RTError>) in
-                var receivedData: AuthInfo?
+            switch response.result {
+            case .Success(let value):
+                guard let lAuthInfo = value.authInfo else {self?.presenter?.requestFailed();return}
+                lAuthInfo.phone = lUser.phone.content
                 
-                defer {
+                do {
+                    let realm = try Realm()
+                    try realm.write({
+                        realm.delete(realm.objects(AuthInfo))
+                        realm.add(lAuthInfo)
+                    })
+                    
+                    self?.saveUser(lUser)
+                    
                     self?.presenter?.phoneCodeReceived()
-                }
-                
-                switch response.result {
-                case .Success(let value):
-                    guard let lAuthInfo = value.authInfo else {self?.presenter?.requestFailed();return}
-                    lAuthInfo.phone = authData.phone
                     
-                    receivedData = lAuthInfo
-                    
-                    do {
-                        let realm = try Realm()
-                        try realm.write({
-                            realm.delete(realm.objects(AuthInfo))
-                            realm.add(lAuthInfo)
-                        })
-                        
-                    } catch let error {
-                        Logger.error("\(error)")
-                        self?.presenter?.requestFailed()
-                    }
-                case .Failure(let error):
+                } catch let error {
                     Logger.error("\(error)")
                     self?.presenter?.requestFailed()
                 }
+            case .Failure(let error):
+                Logger.error("\(error)")
+                self?.presenter?.requestFailed()
             }
-        } catch let error {
-            Logger.error("\(error)")
-            self.presenter?.requestFailed()
         }
     }
     
@@ -124,12 +114,38 @@ extension RegistrationModel: IRegistrationModel {
         var user = RegistrationUser()
         do {
             let realm = try Realm()
-            guard let phone = realm.objects(AuthInfo).first?.phone else {return user}
-            user.phone.content = phone
+            if let rUser = realm.objects(User).first {
+                user.firstName.content = rUser.firstName
+                user.lastName.content = rUser.lastName
+                user.email.content = rUser.email
+                user.phone.content = rUser.phoneNumber
+            }
+            else {
+                guard let authData = realm.objects(AuthInfo).first else {return user}
+                
+                user.phone.content = authData.phone
+            }
         } catch let error {
             Logger.error("\(error)")
         }
         return user
+    }
+    
+    func saveUser(user: RegistrationUser) {
+        do {
+            let realm = try Realm()
+            let rUser = User()
+            rUser.firstName = user.firstName.content
+            rUser.lastName = user.lastName.content
+            rUser.email = user.email.content
+            rUser.phoneNumber = user.phone.content
+            try realm.write({
+                realm.delete(realm.objects(User))
+                realm.add(rUser)
+            })
+        } catch let error {
+            Logger.error("\(error)")
+        }
     }
 }
 

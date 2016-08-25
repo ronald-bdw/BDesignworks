@@ -11,7 +11,7 @@ import Foundation
 protocol IRegistrationPresenter: class {
     func submitTapped(user: RegistrationUser?)
     func getRegistrationUser() -> RegistrationUser?
-    func resendPhoneCodeTapped()
+    func resendPhoneCodeTapped(user: RegistrationUser?)
     
     func registrationStarted()
     func registrationSuccessed()
@@ -53,15 +53,17 @@ extension RegistrationPresenter: IRegistrationPresenter {
         guard let lError = error else {self.view?.setLoadingState(.Failed); return}
         if case .Backend(let backendError) = lError {
             self.view?.showErrorView(backendError.humanDescription.title, content: backendError.humanDescription.text, errorType: backendError)
+            return
         }
+        self.view?.setLoadingState(.Failed)
     }
     
     func userNotValid() {
         self.view?.showValidationErrors()
     }
     
-    func resendPhoneCodeTapped() {
-        self.model?.receivePhoneCode()
+    func resendPhoneCodeTapped(user: RegistrationUser?) {
+        self.model?.receivePhoneCode(user)
     }
     
     func phoneCodeReceived() {

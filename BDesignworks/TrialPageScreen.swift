@@ -25,6 +25,9 @@ final class TrialPageScreen: UIViewController {
     }
     
     @IBAction func startTrialAction(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let storyboard = UIStoryboard(name: "TrialPage", bundle: NSBundle.mainBundle())
+        let controller = storyboard.instantiateInitialViewController()
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        appDelegate?.window?.rootViewController = controller
     }
 }

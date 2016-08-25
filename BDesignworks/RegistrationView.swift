@@ -159,7 +159,8 @@ extension RegistrationView: IRegistrationView {
         SVProgressHUD.dismiss()
         if errorType == .SmsCodeExpired {
             ShowAlertWithHandler(title, message: content) { [weak self] (action) in
-                self?.presenter?.resendPhoneCodeTapped()
+                SVProgressHUD.show()
+                self?.presenter?.resendPhoneCodeTapped(self?.user)
             }
         }
         else {
