@@ -22,6 +22,7 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     
     struct SegueIdentifiers {
         static let ShowVerify = "VerificationSegue"
+        static let ShowTrial = "TrialSegue"
     }
     
     @IBOutlet var providerSelectionButton: RollUpButton!
@@ -72,12 +73,28 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let _ = VerificationMVP(controller: segue.destinationViewController)
+        guard let lIdentifier = segue.identifier else {
+            super.prepareForSegue(segue, sender: sender)
+            return
+        }
+        switch lIdentifier {
+        case SegueIdentifiers.ShowTrial:
+            segue.destinationViewController.transitioningDelegate = self
+            segue.destinationViewController.modalPresentationStyle = .Custom
+        default:
+            super.prepareForSegue(segue, sender: sender)
+        }
     }
     
     //MARK: Actions
     @IBAction func nextButtonPressed(sender: AnyObject) {
-        self.performSegueWithIdentifier(SegueIdentifiers.ShowVerify, sender: nil)
+        guard let labelText = self.providerSelectionButton.chooseLabel.text,
+            let selectedButtonState = ProviderOption(rawValue: labelText) else {return}
+        
+        switch selectedButtonState {
+        case .HBF: self.performSegueWithIdentifier(SegueIdentifiers.ShowVerify, sender: nil)
+        case .NoProvider: self.performSegueWithIdentifier(SegueIdentifiers.ShowTrial, sender: nil)
+        }
     }
     
     //MARK: Delegates
@@ -96,5 +113,14 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .Default
+    }
+}
+
+extension SelectProviderScreen: UIViewControllerTransitioningDelegate {
+    
+    func presentationControllerForPresentedViewController(presented: UIViewController,
+                                                          presentingViewController presenting: UIViewController,
+                                                                                   sourceViewController source: UIViewController) -> UIPresentationController? {
+        return ModalPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
 }

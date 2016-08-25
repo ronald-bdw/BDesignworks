@@ -94,6 +94,7 @@
                         <outlet property="nextButton" destination="LSf-b0-zdR" id="ZBT-Fi-2Hl"/>
                         <outlet property="providerSelectionButton" destination="dB4-Ty-tCF" id="0CV-Qc-Fpe"/>
                         <segue destination="jLg-Mh-FPe" kind="show" identifier="VerificationSegue" id="8ca-PQ-ytg"/>
+                        <segue destination="nZU-o6-lK5" kind="presentation" identifier="TrialSegue" modalPresentationStyle="fullScreen" id="PU7-gE-PF0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwE-4P-50B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2349,4 +2350,7 @@
         <image name="TriangleRight" width="25" height="40"/>
         <image name="running" width="553" height="600"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PU7-gE-PF0"/>
+    </inferredMetricsTieBreakers>
 </document>
