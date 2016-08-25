@@ -109,6 +109,7 @@ extension RegistrationView: UITextFieldDelegate {
         
         guard let textFields = (self.tableView.visibleCells.filter({$0 is RegistrationTableViewCell}) as? [RegistrationTableViewCell])?.map({$0.contentTextField}) else {return false}
         
+        // 2 - because of error views between content cells
         if textFields.map({$0.tag}).contains(textField.tag + 2) {
             textFields.filter({$0.tag == textField.tag + 2}).first?.becomeFirstResponder()
         }
