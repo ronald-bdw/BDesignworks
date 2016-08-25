@@ -8,83 +8,47 @@
 
 import Foundation
 
-
-func ShowInitialViewController(animated: Bool = true) {
-    
+func PresentViewController(controller: UIViewController, animated: Bool = true) {
     guard let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate,
-        let window = appDelegate.window,
-        let navigationController = Storyboard.Main.firstController
+        let window = appDelegate.window
         else {return}
     
     if let rootViewController = window.rootViewController {
         
         UIView.transitionFromView(rootViewController.view,
-                                  toView: navigationController.view,
+                                  toView: controller.view,
                                   duration: animated ? 0.4 : 0.0,
                                   options: UIViewAnimationOptions.TransitionFlipFromRight) { (success) -> Void in
-                                    window.rootViewController = navigationController
+                                    window.rootViewController = controller
         }
     } else {
-        window.rootViewController = navigationController
+        window.rootViewController = controller
     }
+}
+
+func ShowInitialViewController(animated: Bool = true) {
+    
+    guard let navigationController = Storyboard.Main.firstController else {return}
+    
+    PresentViewController(navigationController, animated: animated)
 }
 
 
 func ShowRegistrationViewController(animated: Bool = true) {
     
-    guard let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate,
-        let window = appDelegate.window,
-        let navigationController = Storyboard.TrialPage.firstController
-        else {return}
+    guard let navigationController = Storyboard.TrialPage.firstController else {return}
     
-    if let rootViewController = window.rootViewController {
-        
-        UIView.transitionFromView(rootViewController.view,
-                                  toView: navigationController.view,
-                                  duration: animated ? 0.4 : 0.0,
-                                  options: UIViewAnimationOptions.TransitionFlipFromRight) { (success) -> Void in
-                                    window.rootViewController = navigationController
-        }
-    } else {
-        window.rootViewController = navigationController
-    }
+    PresentViewController(navigationController, animated: animated)
 }
 
 func ShowConversationViewController(animated: Bool = true) {
-    guard let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate,
-        let window = appDelegate.window
-        else {return}
-    
     let navigationController = Storyboard.Main.storyboard.instantiateViewControllerWithIdentifier("ConversationScreen")
     
-    if let rootViewController = window.rootViewController {
-        
-        UIView.transitionFromView(rootViewController.view,
-                                  toView: navigationController.view,
-                                  duration: animated ? 0.4 : 0.0,
-                                  options: UIViewAnimationOptions.TransitionFlipFromRight) { (success) -> Void in
-                                    window.rootViewController = navigationController
-        }
-    } else {
-        window.rootViewController = navigationController
-    }
+    PresentViewController(navigationController, animated: animated)
 }
 
 func ShowWelcomeViewController(animated: Bool = true) {
-    guard let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate,
-        let window = appDelegate.window,
-        let navigationController = Storyboard.Welcome.firstController
-        else {return}
+    guard let navigationController = Storyboard.Welcome.firstController else {return}
     
-    if let rootViewController = window.rootViewController {
-        
-        UIView.transitionFromView(rootViewController.view,
-                                  toView: navigationController.view,
-                                  duration: animated ? 0.4 : 0.0,
-                                  options: UIViewAnimationOptions.TransitionFlipFromRight) { (success) -> Void in
-                                    window.rootViewController = navigationController
-        }
-    } else {
-        window.rootViewController = navigationController
-    }
+    PresentViewController(navigationController, animated: animated)
 }
