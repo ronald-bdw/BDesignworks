@@ -102,9 +102,6 @@ extension AppDelegate {
         //setup Crashlytics
         Fabric.with([Crashlytics.self])
         
-        //setup Smooch
-        self.setupSmooch()
-        
         self.setupAppearance()
     }
     
@@ -140,11 +137,6 @@ extension AppDelegate {
             print("\n*******************************************\nDEVICE ID:\n\((UIDevice.currentDevice().identifierForVendor?.UUIDString)!)\n*******************************************\n")
             print("\n*******************************************\nBUNDLE ID:\n\((NSBundle.mainBundle().bundleIdentifier)!)\n*******************************************\n")
         #endif
-    }
-    
-    func setupSmooch()
-    {
-        SmoochHelper.sharedInstance.startWithParameters("2")
     }
     
     func setupLogger() {

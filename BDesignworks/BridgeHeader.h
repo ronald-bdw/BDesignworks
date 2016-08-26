@@ -13,6 +13,8 @@
 @import Fabric;
 @import Crashlytics;
 
+@import FSHelpers_Swift;
+
 // Libraries
 @import Alamofire;
 @import ObjectMapper;
