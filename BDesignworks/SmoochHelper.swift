@@ -11,7 +11,7 @@ import Foundation
 class SmoochHelper
 {
     static let sharedInstance = SmoochHelper()
-    let smoochToken = "833kwj0z5wkvt82tpgfbbqn3z"
+    let smoochToken = "eiw2afikzfabehcj65ilhnp7q"
     
     //Custom properties for user
     //SKTUser.currentUser().addProperties([ "nickname" : "Lil Big Daddy Slim", "weight" : 650, "premiumUser" : true ])
