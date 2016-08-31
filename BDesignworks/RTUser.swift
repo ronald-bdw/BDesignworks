@@ -19,7 +19,10 @@ extension Router {
 
 extension Router.User: RouterProtocol {
     var settings: RTRequestSettings {
-        return RTRequestSettings(method: .POST)
+        switch self {
+        case .GetAuthPhoneCode(_)   :return RTRequestSettings(method: .POST, encoding: .URL)
+        default                     :return RTRequestSettings(method: .POST)
+        }
     }
     
     var path: String {
