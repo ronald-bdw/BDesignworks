@@ -108,6 +108,9 @@ typealias VerificationMVP = MVPContainer<VerificationView, VerificationPresenter
 
 protocol IVerificationView: class {
     func showPhoneInvalidView()
+    func dismissPhoneInvalidView()
+    func showCodeInvalidView()
+    func dismissCodeInvalidView()
     func setLoadingState(state: LoadingState)
 }
 
@@ -124,6 +127,8 @@ final class VerificationView: UIViewController {
         static let errorViewTopOffset    : CGFloat = 10.0
         static let errorViewBottomOffset : CGFloat = 25.0
     }
+    
+    let rollButtonTitle = "Area Code"
     
     var scrollView: UIScrollView {
         return self.view as! UIScrollView
@@ -147,6 +152,7 @@ final class VerificationView: UIViewController {
     
     @IBOutlet weak var submitButton: RoundButton!
     @IBOutlet weak var errorView: VerificationErrorView!
+    @IBOutlet weak var codeErrorView: VerificationErrorView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -158,19 +164,22 @@ final class VerificationView: UIViewController {
         }
     }
     
+    private var isCodeErrorShown: Bool = false {
+        didSet {
+            self.scrollView.setNeedsLayout()
+            self.scrollView.layoutIfNeeded()
+        }
+    }
+    
     var presenter: PresenterProtocol?
     
     override func loadView() {
         super.loadView()
-        self.topLayoutGuide
         self.scrollView.performRecursively { (view) -> Void in
             view.translatesAutoresizingMaskIntoConstraints = true
             view.removeConstraints(view.constraints)
         }
     }
-    
-    @IBOutlet weak var verificationErrorView: VerificationErrorView!
-    @IBOutlet weak var verificationErrorViewHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -181,7 +190,9 @@ final class VerificationView: UIViewController {
         self.navigationController?.navigationBar.hidden = false
         self.fs_keyboardScrollSupportRegisterForNotifications()
         self.scrollView.alwaysBounceVertical = true
-        self.rollButton.chooseLabel.text     = "Area Code"
+        self.rollButton.chooseLabel.text     = self.rollButtonTitle
+        self.codeErrorView.setLabel("Please select area code and try again")
+        
     }
     
     deinit {
@@ -228,8 +239,16 @@ final class VerificationView: UIViewController {
                                        height: height)
         contentHeight += height
         
+        //Code error view frame setting
+        let codeErrorViewTopOffset: CGFloat = Constants.errorViewTopOffset
+        let codeErrorViewHeight: CGFloat = self.isCodeErrorShown ? Constants.errorViewHeight : 0
+        self.codeErrorView.frame = CGRect(x: 0,
+                                      y: self.rollButton.fs_bottom + codeErrorViewTopOffset,
+                                      width: screenWidth,
+                                      height: codeErrorViewHeight)
+        
         //Mobile textfield frame setting
-        let textFieldTopOffset: CGFloat = screenType.mobileTexfieldTopOffset
+        let textFieldTopOffset: CGFloat = self.isCodeErrorShown ? Constants.errorViewBottomOffset + codeErrorViewHeight : screenType.mobileTexfieldTopOffset
         self.mobileTextField.frame = CGRect(x: self.welcomeLabel.frame.origin.x,
                                             y: self.rollButton.fs_bottom + textFieldTopOffset,
                                             width: self.welcomeLabel.frame.size.width,
@@ -254,7 +273,7 @@ final class VerificationView: UIViewController {
                                                  width: floor(buttonHeight*Constants.submitButtonRatio),
                                                  height: buttonHeight)
         
-        if self.isErrorShown {
+        if self.isErrorShown || self.isCodeErrorShown {
             contentHeight += (errorViewTopOffset + errorViewHeight + errorViewBottomOffset)
         } else {
             contentHeight += buttonTopOffset
@@ -296,26 +315,25 @@ final class VerificationView: UIViewController {
     }
     
     @IBAction func submitAction(sender: RoundButton) {
-        
-        if self.validateFields() {
-            if self.isErrorShown {
-                self.dismissErrorView()
-            }
-        } else {
-            if !self.isErrorShown {
-                self.showErrorView()
-            }
-        }
-    }
-    
-    @IBAction func submitPressed(sender: AnyObject){
-        self.presenter?.submitTapped("7", phone: self.mobileTextField.text)
+        self.presenter?.submitTapped(self.rollButton.chooseLabel.text, phone: self.mobileTextField.text)
     }
 }
 
 extension VerificationView: IVerificationView {
     func showPhoneInvalidView() {
-        Logger.error("phone not valid")
+        self.showErrorView()
+    }
+    
+    func showCodeInvalidView() {
+        self.showCodeErrorView()
+    }
+    
+    func dismissPhoneInvalidView(){
+        self.dismissErrorView()
+    }
+    
+    func dismissCodeInvalidView() {
+        self.dismissCodeErrorView()
     }
     
     func setLoadingState(state: LoadingState) {
@@ -331,13 +349,7 @@ extension VerificationView: IVerificationView {
         }
     }
     
-    private func validateFields() -> Bool {
-        guard let text = self.mobileTextField.text where text.fs_length == 10 else { return false }
-        return true
-    }
-    
     private func showErrorView() {
-        
         UIView.animateWithDuration(0.3) {[weak self] in
             guard let sself = self else { return }
             sself.isErrorShown = true
@@ -345,10 +357,23 @@ extension VerificationView: IVerificationView {
     }
     
     private func dismissErrorView() {
-        
-        UIView.animateWithDuration(0.3) {[weak self] in
+       UIView.animateWithDuration(0.3) {[weak self] in
             guard let sself = self else { return }
             sself.isErrorShown = false
+        }
+    }
+    
+    private func showCodeErrorView() {
+        UIView.animateWithDuration(0.3) {[weak self] in
+            guard let sself = self else { return }
+            sself.isCodeErrorShown = true
+        }
+    }
+    
+    private func dismissCodeErrorView() {
+        UIView.animateWithDuration(0.3) {[weak self] in
+            guard let sself = self else { return }
+            sself.isCodeErrorShown = false
         }
     }
     

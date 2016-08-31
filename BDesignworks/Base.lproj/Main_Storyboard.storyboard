@@ -588,7 +588,7 @@
                                     <action selector="nextPressed:" destination="M06-aI-0x9" eventType="touchUpInside" id="LKb-JG-pUi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please enter the unique code in the SMS that we have sent you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-5V-3lS">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the unique code in the SMS that we have sent you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-5V-3lS">
                                 <rect key="frame" x="24" y="345" width="552" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -702,6 +702,10 @@
                                             <action selector="submitAction:" destination="jLg-Mh-FPe" eventType="touchUpInside" id="nKv-Ru-RvV"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1E-yO-MXp" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="421" width="600" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -721,6 +725,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="ZU9-hx-loE" id="i89-bW-4r7"/>
+                        <outlet property="codeErrorView" destination="n1E-yO-MXp" id="VnI-sP-vYz"/>
                         <outlet property="containerView" destination="7gt-ft-BhW" id="QyY-RV-f5Z"/>
                         <outlet property="errorView" destination="X5j-Jz-egE" id="7FV-zS-7bI"/>
                         <outlet property="logoImageView" destination="hbz-zG-nhg" id="Cwq-m2-oBA"/>
@@ -2004,7 +2009,7 @@
                                             <action selector="yesAction:" destination="c4d-eD-W8X" eventType="touchUpInside" id="dKd-eX-rQ8"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Did you receive a personal sign-up invitation?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="QX0-re-Tzi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you receive a personal sign-up invitation?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="QX0-re-Tzi">
                                         <rect key="frame" x="10" y="57" width="580" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
