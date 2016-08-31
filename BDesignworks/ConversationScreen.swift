@@ -55,6 +55,7 @@ class ConversationScreen: UIViewController {
             let realm = try Realm()
             if let user = realm.objects(User).first where user.id != 0 {
                 SmoochHelper.sharedInstance.startWithParameters("\(user.id)")
+                SmoochHelper.sharedInstance.updateUserInfo(user.firstName, lastName: user.lastName, email: user.email)
                 let controller = Smooch.newConversationViewController()
                 controller.view.frame = self.containerView.bounds
                 self.containerView.addSubview(controller.view)

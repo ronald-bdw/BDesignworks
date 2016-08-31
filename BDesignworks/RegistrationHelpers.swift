@@ -84,7 +84,7 @@ struct RegistrationUserField {
         switch self.type {
         case .FirstName, .LastName: return content.fs_length > 0
         case .Email: return content.fs_emailValidate()
-        case .Phone: return content.fs_length == 11
+        case .Phone: return content.fs_length > 11
         }
     }
     

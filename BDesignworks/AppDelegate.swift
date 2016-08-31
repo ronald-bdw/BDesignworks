@@ -102,6 +102,8 @@ extension AppDelegate {
         //setup Crashlytics
         Fabric.with([Crashlytics.self])
         
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {  countryCodes }
+        
         self.setupAppearance()
     }
     

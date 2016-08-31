@@ -10,6 +10,8 @@ import Foundation
 
 protocol IVerificationModel {
     func submitPhone(phone: String)
+    func validatePhone(phone: String) -> Bool
+    func validateCode(code: String) -> Bool
 }
 
 class VerificationModel {
@@ -21,8 +23,6 @@ class VerificationModel {
     required init() {}
     
     private func receivePhoneCode(phone: String) {
-        guard self.isPhoneValid(phone) else {self.presenter?.phoneNotValid(); return}
-        
         self.presenter?.loadingStarted()
         
         Router.User.GetAuthPhoneCode(phone: phone).request().responseObject { [weak self] (response: Response<RTAuthInfoResponse, RTError>) in
@@ -58,15 +58,29 @@ class VerificationModel {
             }
         }
     }
-    
-    private func isPhoneValid(phone: String) -> Bool {
-        return phone.fs_length == 11
-    }
 }
 
 extension VerificationModel: IVerificationModel {
     func submitPhone(phone: String) {
         self.receivePhoneCode(phone)
+    }
+    
+    func validatePhone(phone: String) -> Bool {
+        if phone.fs_length != 10 {
+            self.presenter?.phoneNotValid()
+            return false
+        }
+        self.presenter?.phoneValid()
+        return true
+    }
+    
+    func validateCode(code: String) -> Bool {
+        if code.substringToIndex(code.startIndex.advancedBy(1)) != "+" {
+            self.presenter?.codeNotValid()
+            return false
+        }
+        self.presenter?.codeValid()
+        return true
     }
 }
 
