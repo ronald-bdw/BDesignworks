@@ -27,16 +27,23 @@ class BaseView: UIView {
     }
     
     private func initialize() {
+        self.backgroundColor = UIColor.clearColor()
         self.loadViewFromNib()
         guard let lView = self.view else { return }
         lView.backgroundColor = UIColor.clearColor()
         lView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(lView)
-        self.addConstraints(FSEdgesConstraints(lView))
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.view?.frame = self.bounds
+        self.view?.bounds = self.bounds
     }
     
     private func loadViewFromNib() {
-        let nib = UINib(nibName: self.className, bundle: nil)
+        let bundle : NSBundle = NSBundle(forClass: self.classForCoder)
+        let nib    : UINib    = UINib(nibName: self.className, bundle: bundle)
         self.view = nib.instantiateWithOwner(self, options: nil).first as? UIView
     }
 }

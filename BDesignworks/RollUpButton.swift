@@ -25,6 +25,9 @@ final class RollUpButton: BaseView {
     
     struct Constants {
         static let defaultCornerRadius: CGSize = CGSize(width: 10, height: 10)
+        static let labelLeadingOffset : CGFloat = 15
+        static let arrowWidth         : CGFloat = 15
+        static let arrowTrailingOffset: CGFloat = 12
     }
     
     override class func layerClass() -> AnyClass { return CAShapeLayer.self }
@@ -93,6 +96,14 @@ final class RollUpButton: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.chooseLabel.frame = CGRect(x: Constants.labelLeadingOffset,
+                                        y: 0,
+                                        width: self.fs_width - Constants.labelLeadingOffset - Constants.arrowTrailingOffset - Constants.arrowWidth,
+                                        height: self.fs_height)
+        self.triangleImageView.frame = CGRect(x: self.chooseLabel.fs_trailing,
+                                              y: 0,
+                                              width: Constants.arrowWidth,
+                                              height: self.fs_height)
         self.updateBoundingPath()
     }
     

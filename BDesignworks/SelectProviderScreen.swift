@@ -42,13 +42,12 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         self.logoTopConstraint.constant = self.getDefaultLogoTopOffset()
         self.providerSelectionButton.delegate = self
         self.providerSelectionButton.chooseLabel.text = self.autocompleteView.items.first?.rawValue
-        self.view.layoutIfNeeded()
     }
     
     override func viewWillLayoutSubviews() {
-        self.autocompleteView.frame = CGRectMake(self.providerSelectionButton.frame.origin.x,
-                                                 self.providerSelectionButton.fs_y + self.providerSelectionButton.fs_height,
-                                                 self.providerSelectionButton.frame.size.width,
+        self.autocompleteView.frame = CGRectMake(self.providerSelectionButton.fs_leading,
+                                                 self.providerSelectionButton.fs_bottom,
+                                                 self.providerSelectionButton.fs_width,
                                                  self.autocompleteView.fs_height)
     }
     
