@@ -88,6 +88,7 @@
 		DC2281301D6B470600D5A0DA /* OpenSansSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2281261D6B470600D5A0DA /* OpenSansSemiBold.ttf */; };
 		DC2281311D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2281271D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf */; };
 		DC3311871D6C5484002A21F2 /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */; };
+		DC37F8551D79C42F00E0DBE5 /* OpenSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC37F8541D79C42F00E0DBE5 /* OpenSansBold.ttf */; };
 		DC9631F11D6EF12100B1C43E /* ViewControllersPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */; };
 		DC9C6C641D6C98B10034DC5A /* ValidationErrorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9C6C631D6C98B10034DC5A /* ValidationErrorCell.xib */; };
 		DC9C6C671D6C995B0034DC5A /* ValidationErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C6C661D6C995B0034DC5A /* ValidationErrorCell.swift */; };
@@ -280,6 +281,7 @@
 		DC2281261D6B470600D5A0DA /* OpenSansSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansSemiBold.ttf; sourceTree = "<group>"; };
 		DC2281271D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansSemiBoldItalic.ttf; sourceTree = "<group>"; };
 		DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelcomeScreen.storyboard; sourceTree = "<group>"; };
+		DC37F8541D79C42F00E0DBE5 /* OpenSansBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansBold.ttf; sourceTree = "<group>"; };
 		DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersPresentation.swift; sourceTree = "<group>"; };
 		DC9C6C631D6C98B10034DC5A /* ValidationErrorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValidationErrorCell.xib; sourceTree = "<group>"; };
 		DC9C6C661D6C995B0034DC5A /* ValidationErrorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationErrorCell.swift; sourceTree = "<group>"; };
@@ -670,6 +672,7 @@
 		DC22811D1D6B46F800D5A0DA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				DC37F8541D79C42F00E0DBE5 /* OpenSansBold.ttf */,
 				DC22811E1D6B470600D5A0DA /* OpenSansBoldItalic.ttf */,
 				DC22811F1D6B470600D5A0DA /* OpenSansExtraBold.ttf */,
 				DC2281201D6B470600D5A0DA /* OpenSansExtraBoldItalic.ttf */,
@@ -928,6 +931,7 @@
 				DC22812C1D6B470600D5A0DA /* OpenSansLight.ttf in Resources */,
 				E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */,
 				218C64C01BA07DDE00EEEDF1 /* Localizable.strings in Resources */,
+				DC37F8551D79C42F00E0DBE5 /* OpenSansBold.ttf in Resources */,
 				2158286D1A91E2F200833BE6 /* mogend.sh in Resources */,
 				DC2281301D6B470600D5A0DA /* OpenSansSemiBold.ttf in Resources */,
 				DC22812F1D6B470600D5A0DA /* OpenSansRegularItalic.ttf in Resources */,
