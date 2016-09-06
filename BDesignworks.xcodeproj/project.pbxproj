@@ -49,6 +49,8 @@
 		4FF397D81D6A5AEC004EAE2E /* IBDesignableKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FF397D71D6A5AEC004EAE2E /* IBDesignableKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FF397DC1D6A5AEC004EAE2E /* IBDesignableKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */; };
 		4FF397DD1D6A5AEC004EAE2E /* IBDesignableKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		94B60C35434459D757776208 /* Pods_Abstract_BDesignworksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F27C15549256EFEAD01C3A1 /* Pods_Abstract_BDesignworksTests.framework */; };
+		9D7F789640F47EC30E2908F7 /* Pods_Abstract_BDesignworksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5B966D6C1FE954CB0BC550 /* Pods_Abstract_BDesignworksUITests.framework */; };
 		A436BE131D6B6098004B8E8B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A436BE121D6B6098004B8E8B /* HeaderView.swift */; };
 		A436BE151D6B60A7004B8E8B /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A436BE141D6B60A7004B8E8B /* HeaderView.xib */; };
 		A4819E491D6B3E9300178D30 /* PhoneCountries.txt in Resources */ = {isa = PBXBuildFile; fileRef = A4819E481D6B3E9300178D30 /* PhoneCountries.txt */; };
@@ -94,6 +96,7 @@
 		DCD86E591D6DAA8C0072AFA1 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD86E581D6DAA8C0072AFA1 /* Alerts.swift */; };
 		DCD86E5B1D6DEAFA0072AFA1 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD86E5A1D6DEAFA0072AFA1 /* ValidationError.swift */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
+		F7018C5C4E9D83799A15BC04 /* Pods_Abstract_BDesignworks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CDFD2D8FBD39ED71F9EDC /* Pods_Abstract_BDesignworks.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -166,6 +169,7 @@
 		19D856C51AB5ED2E0014C459 /* test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = test.sh; path = Scripts/test.sh; sourceTree = "<group>"; };
 		19D856C71AB5EDDF0014C459 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		1EEA300C1693C74958C4FE90 /* Pods-Abstract-BDesignworks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.debug.xcconfig"; sourceTree = "<group>"; };
+		1F27C15549256EFEAD01C3A1 /* Pods_Abstract_BDesignworksTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		212D018B1BB1986B00B34340 /* BDesignworksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BDesignworksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		212D018D1BB1986B00B34340 /* Swift_BaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_BaseTests.swift; sourceTree = "<group>"; };
 		212D018F1BB1986B00B34340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 		4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IBDesignableKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF397D71D6A5AEC004EAE2E /* IBDesignableKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBDesignableKit.h; sourceTree = "<group>"; };
 		4FF397D91D6A5AEC004EAE2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		507CDFD2D8FBD39ED71F9EDC /* Pods_Abstract_BDesignworks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51A0D6856BD58979B29B2269 /* Pods-Abstract-BDesignworksTests.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore.xcconfig"; sourceTree = "<group>"; };
 		62261FC7DE20C9A6ACA0BAE4 /* Pods-Abstract-BDesignworksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		64B3F1B9224ADD02041E18AA /* Pods-Abstract-BDesignworksUITests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.debug staging.xcconfig"; sourceTree = "<group>"; };
@@ -284,6 +289,7 @@
 		DCD86E5A1D6DEAFA0072AFA1 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_Storyboard.storyboard; sourceTree = "<group>"; };
+		EC5B966D6C1FE954CB0BC550 /* Pods_Abstract_BDesignworksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE03134474C0070BF8DA767B /* Pods-Abstract-BDesignworks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.release.xcconfig"; sourceTree = "<group>"; };
 		FC6E3D360349BB799F9BA741 /* Pods-Abstract-BDesignworksTests.test staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.test staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.test staging.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -293,6 +299,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D7F789640F47EC30E2908F7 /* Pods_Abstract_BDesignworksUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +307,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B60C35434459D757776208 /* Pods_Abstract_BDesignworksTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +318,7 @@
 				2F07298F1D64C85300A71B3C /* HealthKit.framework in Frameworks */,
 				4FF397DC1D6A5AEC004EAE2E /* IBDesignableKit.framework in Frameworks */,
 				213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */,
+				F7018C5C4E9D83799A15BC04 /* Pods_Abstract_BDesignworks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +546,9 @@
 				213B89BE19F01A1E005D3749 /* CoreGraphics.framework */,
 				21513BBD19EBCBFA00EE6273 /* MediaPlayer.framework */,
 				21C9F2DF19E833300084D18D /* AVFoundation.framework */,
+				507CDFD2D8FBD39ED71F9EDC /* Pods_Abstract_BDesignworks.framework */,
+				1F27C15549256EFEAD01C3A1 /* Pods_Abstract_BDesignworksTests.framework */,
+				EC5B966D6C1FE954CB0BC550 /* Pods_Abstract_BDesignworksUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -867,7 +879,7 @@
 					};
 					4FF397D41D6A5AEC004EAE2E = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 3EZN9G7JS8;
+						DevelopmentTeam = Y49MTY8CU2;
 					};
 				};
 			};
@@ -1685,7 +1697,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
+				PROVISIONING_PROFILE = "ac98ccf9-f5ff-41f6-9b01-e09edb146bfa";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1765,7 +1777,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
+				PROVISIONING_PROFILE = "ac98ccf9-f5ff-41f6-9b01-e09edb146bfa";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1848,7 +1860,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "8bad94d8-1a83-454d-81b9-f5e21d19016d";
+				PROVISIONING_PROFILE = "cb3faa1b-0d2e-4742-9bfc-96e797587f23";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2119,7 +2131,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
+				PROVISIONING_PROFILE = "ac98ccf9-f5ff-41f6-9b01-e09edb146bfa";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2237,7 +2249,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "215adacc-23a0-4df3-adc7-11d0dab58a68";
+				PROVISIONING_PROFILE = "ac98ccf9-f5ff-41f6-9b01-e09edb146bfa";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2602,7 +2614,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "8bad94d8-1a83-454d-81b9-f5e21d19016d";
+				PROVISIONING_PROFILE = "cb3faa1b-0d2e-4742-9bfc-96e797587f23";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				TARGETED_DEVICE_FAMILY = 1;
