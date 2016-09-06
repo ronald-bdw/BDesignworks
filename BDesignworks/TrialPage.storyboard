@@ -3,10 +3,20 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="OpenSansBold.ttf">
             <string>OpenSans-Bold</string>
+            <string>OpenSans-Bold</string>
+            <string>OpenSans-Bold</string>
+            <string>OpenSans-Bold</string>
+        </mutableArray>
+        <mutableArray key="OpenSansRegularItalic.ttf">
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -25,7 +35,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3KD-FU-ACE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127" y="275"/>
+            <point key="canvasLocation" x="-511" y="-253"/>
         </scene>
         <!--Start Your Free Trial-->
         <scene sceneID="nSJ-8g-ihS">
@@ -116,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phG-ga-Pqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="393" y="275"/>
+            <point key="canvasLocation" x="168.5" y="-237.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eqo-zq-BFO">
@@ -133,12 +143,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ct-2u-XSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-559" y="1078"/>
+            <point key="canvasLocation" x="-951.5" y="901.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Trial Page View-->
         <scene sceneID="1x4-P0-ON8">
             <objects>
-                <viewController id="nYr-lQ-VPR" sceneMemberID="viewController">
+                <viewController id="nYr-lQ-VPR" customClass="TrialPageView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I2Z-Yl-HXF"/>
                         <viewControllerLayoutGuide type="bottom" id="YNd-s3-xOp"/>
@@ -151,10 +161,13 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgc-5L-862">
-                                <rect key="frame" x="0.0" y="107" width="375" height="420"/>
+                                <rect key="frame" x="30" y="107" width="315" height="420"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="0Bl-HZ-JyU" kind="embed" id="wek-9M-C4K"/>
+                                    <segue destination="QA2-Oi-oxp" kind="embed" id="fEa-ho-oB3"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dq-fi-Dm8">
@@ -181,13 +194,13 @@
                             <constraint firstItem="7dq-fi-Dm8" firstAttribute="centerX" secondItem="Sre-sy-YzM" secondAttribute="centerX" id="HnJ-0v-Wpj"/>
                             <constraint firstItem="xgc-5L-862" firstAttribute="top" secondItem="I2Z-Yl-HXF" secondAttribute="bottom" constant="43" id="JhH-Az-5CH"/>
                             <constraint firstAttribute="trailing" secondItem="7dq-fi-Dm8" secondAttribute="trailing" constant="47" id="Lsg-0B-4W8"/>
-                            <constraint firstAttribute="trailing" secondItem="xgc-5L-862" secondAttribute="trailing" id="Qje-Xr-JLL"/>
+                            <constraint firstAttribute="trailing" secondItem="xgc-5L-862" secondAttribute="trailing" constant="30" id="Qje-Xr-JLL"/>
                             <constraint firstItem="YNd-s3-xOp" firstAttribute="top" secondItem="7dq-fi-Dm8" secondAttribute="bottom" constant="39" id="ZxZ-hs-WLA"/>
                             <constraint firstItem="7dq-fi-Dm8" firstAttribute="top" secondItem="xgc-5L-862" secondAttribute="bottom" constant="41" id="d7p-nU-Efr"/>
                             <constraint firstItem="7dq-fi-Dm8" firstAttribute="leading" secondItem="JBb-Hh-ixM" secondAttribute="leading" constant="47" id="dWq-LS-MaX"/>
                             <constraint firstItem="Sre-sy-YzM" firstAttribute="leading" secondItem="JBb-Hh-ixM" secondAttribute="leading" id="i5H-Wf-L9y"/>
                             <constraint firstAttribute="trailing" secondItem="Sre-sy-YzM" secondAttribute="trailing" id="q0p-rI-8rt"/>
-                            <constraint firstItem="xgc-5L-862" firstAttribute="leading" secondItem="JBb-Hh-ixM" secondAttribute="leading" id="yj4-W8-IlX"/>
+                            <constraint firstItem="xgc-5L-862" firstAttribute="leading" secondItem="JBb-Hh-ixM" secondAttribute="leading" constant="30" id="yj4-W8-IlX"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -196,72 +209,333 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="qZ3-gW-l0p"/>
+                    <connections>
+                        <outlet property="containerView" destination="xgc-5L-862" id="Bs7-GQ-ROF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMO-62-dFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-117.5" y="1077.5"/>
+            <point key="canvasLocation" x="-349.5" y="901.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="QTf-Yp-9q9">
+        <!--Trial Page Card View-->
+        <scene sceneID="wSE-Ew-MlJ">
             <objects>
-                <viewController id="0Bl-HZ-JyU" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hG8-rn-c0m">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="420"/>
+                <viewController id="QA2-Oi-oxp" customClass="TrialPageCardView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5V4-aY-nz5"/>
+                        <viewControllerLayoutGuide type="bottom" id="hfI-od-tnZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="neh-wB-wH2">
+                        <rect key="frame" x="0.0" y="0.0" width="315" height="420"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ltu-eA-Jds">
-                                <rect key="frame" x="30" y="0.0" width="315" height="420"/>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myK-Rt-yOa">
+                                <rect key="frame" x="0.0" y="0.0" width="315" height="420"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rr3-g1-ph7">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="240"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x25-z2-8aY">
-                                        <rect key="frame" x="102" y="257" width="110" height="30"/>
-                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
-                                        <color key="textColor" red="0.11764705882352941" green="0.19215686274509802" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wr8-qY-Wcn">
-                                        <rect key="frame" x="0.0" y="295" width="315" height="104"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyb-4J-fcK">
+                                        <rect key="frame" x="0.0" y="0.0" width="1260" height="420"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mp-RA-vbn" userLabel="FirstView">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="420"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vd1-94-FG2">
+                                                        <rect key="frame" x="7" y="0.0" width="301" height="420"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrialPage/FirstScreen" translatesAutoresizingMaskIntoConstraints="NO" id="acy-f2-5A7">
+                                                                <rect key="frame" x="0.0" y="0.0" width="301" height="220"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOR-Yq-KEC">
+                                                                <rect key="frame" x="18" y="281" width="265" height="86"/>
+                                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6r-Ei-WsT">
+                                                                <rect key="frame" x="95" y="237" width="110" height="30"/>
+                                                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
+                                                                <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="acy-f2-5A7" firstAttribute="leading" secondItem="vd1-94-FG2" secondAttribute="leading" id="0nS-69-U6o"/>
+                                                            <constraint firstItem="w6r-Ei-WsT" firstAttribute="centerX" secondItem="vd1-94-FG2" secondAttribute="centerX" id="RbI-H8-2ry"/>
+                                                            <constraint firstItem="KOR-Yq-KEC" firstAttribute="top" secondItem="w6r-Ei-WsT" secondAttribute="bottom" constant="14" id="q06-Ri-xAm"/>
+                                                            <constraint firstItem="acy-f2-5A7" firstAttribute="top" secondItem="vd1-94-FG2" secondAttribute="top" id="sRQ-zv-nn5"/>
+                                                            <constraint firstItem="KOR-Yq-KEC" firstAttribute="leading" secondItem="vd1-94-FG2" secondAttribute="leading" constant="18" id="svb-it-tMi"/>
+                                                            <constraint firstItem="KOR-Yq-KEC" firstAttribute="centerX" secondItem="vd1-94-FG2" secondAttribute="centerX" id="ubT-ct-tSo"/>
+                                                            <constraint firstItem="w6r-Ei-WsT" firstAttribute="top" secondItem="acy-f2-5A7" secondAttribute="bottom" constant="17" id="wZU-cJ-VIw"/>
+                                                            <constraint firstAttribute="trailing" secondItem="acy-f2-5A7" secondAttribute="trailing" id="zsB-5M-xQn"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="vd1-94-FG2" firstAttribute="top" secondItem="6mp-RA-vbn" secondAttribute="top" id="CrH-fo-MVk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vd1-94-FG2" secondAttribute="trailing" constant="7" id="Hac-H1-Dpk"/>
+                                                    <constraint firstAttribute="bottom" secondItem="vd1-94-FG2" secondAttribute="bottom" id="IRO-dS-6SU"/>
+                                                    <constraint firstItem="vd1-94-FG2" firstAttribute="leading" secondItem="6mp-RA-vbn" secondAttribute="leading" constant="7" id="gap-gZ-VPA"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yo8-3N-Evc" userLabel="SecondView">
+                                                <rect key="frame" x="315" y="0.0" width="315" height="420"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQI-r6-rAV">
+                                                        <rect key="frame" x="7" y="0.0" width="301" height="420"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrialPage/SecondScreen" translatesAutoresizingMaskIntoConstraints="NO" id="1mH-pH-SYd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="301" height="220"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERSONALISED COACH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mip-da-BHc">
+                                                                <rect key="frame" x="28" y="237" width="246" height="30"/>
+                                                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
+                                                                <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NQ-dn-jB8">
+                                                                <rect key="frame" x="18" y="281" width="265" height="86"/>
+                                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Mip-da-BHc" firstAttribute="top" secondItem="1mH-pH-SYd" secondAttribute="bottom" constant="17" id="0jT-dL-HRe"/>
+                                                            <constraint firstItem="1mH-pH-SYd" firstAttribute="leading" secondItem="FQI-r6-rAV" secondAttribute="leading" id="Ki8-4I-BYf"/>
+                                                            <constraint firstAttribute="trailing" secondItem="9NQ-dn-jB8" secondAttribute="trailing" constant="18" id="OP8-4h-NJ0"/>
+                                                            <constraint firstItem="9NQ-dn-jB8" firstAttribute="leading" secondItem="FQI-r6-rAV" secondAttribute="leading" constant="18" id="Tlo-tg-ORk"/>
+                                                            <constraint firstItem="Mip-da-BHc" firstAttribute="centerX" secondItem="FQI-r6-rAV" secondAttribute="centerX" id="VKt-ur-cNL"/>
+                                                            <constraint firstItem="1mH-pH-SYd" firstAttribute="top" secondItem="Mip-da-BHc" secondAttribute="bottom" constant="17" id="aNV-Yh-Q2q"/>
+                                                            <constraint firstAttribute="trailing" secondItem="1mH-pH-SYd" secondAttribute="trailing" id="ffL-lT-RgH"/>
+                                                            <constraint firstItem="1mH-pH-SYd" firstAttribute="top" secondItem="FQI-r6-rAV" secondAttribute="top" id="gKs-Tp-TeX"/>
+                                                            <constraint firstItem="9NQ-dn-jB8" firstAttribute="top" secondItem="Mip-da-BHc" secondAttribute="bottom" constant="14" id="mz7-eU-jRe"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="aNV-Yh-Q2q"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="FQI-r6-rAV" firstAttribute="top" secondItem="yo8-3N-Evc" secondAttribute="top" id="29A-P1-AIG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="FQI-r6-rAV" secondAttribute="trailing" constant="7" id="Hvp-yR-7Gw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="FQI-r6-rAV" secondAttribute="bottom" id="Qb7-CA-LY6"/>
+                                                    <constraint firstItem="FQI-r6-rAV" firstAttribute="leading" secondItem="yo8-3N-Evc" secondAttribute="leading" constant="7" id="vQy-MG-2Ck"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nte-Bg-iNQ" userLabel="ThirdView">
+                                                <rect key="frame" x="630" y="0.0" width="315" height="420"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcP-xs-IdS">
+                                                        <rect key="frame" x="7" y="0.0" width="301" height="420"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrialPage/ThirdScreen" translatesAutoresizingMaskIntoConstraints="NO" id="jtS-DX-zU6">
+                                                                <rect key="frame" x="0.0" y="0.0" width="301" height="220"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GETTING ACTIVE TIPS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BY-kX-bZ2">
+                                                                <rect key="frame" x="36" y="237" width="229" height="30"/>
+                                                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
+                                                                <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCG-IE-ZwI">
+                                                                <rect key="frame" x="18" y="281" width="265" height="86"/>
+                                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="jtS-DX-zU6" firstAttribute="top" secondItem="YcP-xs-IdS" secondAttribute="top" id="4ep-fH-vmV"/>
+                                                            <constraint firstItem="7BY-kX-bZ2" firstAttribute="top" secondItem="jtS-DX-zU6" secondAttribute="bottom" constant="17" id="Ndg-Tt-2v6"/>
+                                                            <constraint firstItem="7BY-kX-bZ2" firstAttribute="centerX" secondItem="YcP-xs-IdS" secondAttribute="centerX" id="Pc6-mO-GVv"/>
+                                                            <constraint firstAttribute="trailing" secondItem="tCG-IE-ZwI" secondAttribute="trailing" constant="18" id="WwK-iV-EBc"/>
+                                                            <constraint firstItem="tCG-IE-ZwI" firstAttribute="leading" secondItem="YcP-xs-IdS" secondAttribute="leading" constant="18" id="bdV-XA-uZw"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jtS-DX-zU6" secondAttribute="trailing" id="emD-bc-yE4"/>
+                                                            <constraint firstItem="tCG-IE-ZwI" firstAttribute="top" secondItem="7BY-kX-bZ2" secondAttribute="bottom" constant="14" id="izt-AV-3mO"/>
+                                                            <constraint firstItem="jtS-DX-zU6" firstAttribute="leading" secondItem="YcP-xs-IdS" secondAttribute="leading" id="r87-OA-exg"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="YcP-xs-IdS" firstAttribute="top" secondItem="Nte-Bg-iNQ" secondAttribute="top" id="0q8-j4-fjJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YcP-xs-IdS" secondAttribute="trailing" constant="7" id="DdH-cl-PCS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="YcP-xs-IdS" secondAttribute="bottom" id="enR-9Z-k4k"/>
+                                                    <constraint firstItem="YcP-xs-IdS" firstAttribute="leading" secondItem="Nte-Bg-iNQ" secondAttribute="leading" constant="7" id="xZ6-hs-Fqr"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTP-aH-U9f" userLabel="FourthView">
+                                                <rect key="frame" x="945" y="0.0" width="315" height="420"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KrZ-pc-b7I">
+                                                        <rect key="frame" x="7" y="0.0" width="301" height="420"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrialPage/FourthScreen" translatesAutoresizingMaskIntoConstraints="NO" id="AoQ-gw-l3k">
+                                                                <rect key="frame" x="0.0" y="0.0" width="301" height="220"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FREE 14 DAY TRIAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysd-lV-Fha">
+                                                                <rect key="frame" x="51" y="237" width="200" height="30"/>
+                                                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
+                                                                <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL1-Wz-xQ7">
+                                                                <rect key="frame" x="18" y="281" width="265" height="86"/>
+                                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="AoQ-gw-l3k" secondAttribute="trailing" id="1j6-eJ-phy"/>
+                                                            <constraint firstItem="AoQ-gw-l3k" firstAttribute="leading" secondItem="KrZ-pc-b7I" secondAttribute="leading" id="9l8-Lu-dxo"/>
+                                                            <constraint firstAttribute="trailing" secondItem="PL1-Wz-xQ7" secondAttribute="trailing" constant="18" id="A5s-OX-btq"/>
+                                                            <constraint firstItem="PL1-Wz-xQ7" firstAttribute="leading" secondItem="KrZ-pc-b7I" secondAttribute="leading" constant="18" id="TVT-6v-NOH"/>
+                                                            <constraint firstItem="Ysd-lV-Fha" firstAttribute="top" secondItem="AoQ-gw-l3k" secondAttribute="bottom" constant="17" id="cXJ-mf-Qp5"/>
+                                                            <constraint firstItem="PL1-Wz-xQ7" firstAttribute="top" secondItem="Ysd-lV-Fha" secondAttribute="bottom" constant="14" id="iAs-bj-nxN"/>
+                                                            <constraint firstItem="Ysd-lV-Fha" firstAttribute="centerX" secondItem="KrZ-pc-b7I" secondAttribute="centerX" id="qMl-U4-V9B"/>
+                                                            <constraint firstItem="AoQ-gw-l3k" firstAttribute="top" secondItem="KrZ-pc-b7I" secondAttribute="top" id="zQD-7H-uKu"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="KrZ-pc-b7I" firstAttribute="leading" secondItem="zTP-aH-U9f" secondAttribute="leading" constant="7" id="4f5-pG-kcf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="KrZ-pc-b7I" secondAttribute="trailing" constant="7" id="Eli-OS-OsG"/>
+                                                    <constraint firstItem="KrZ-pc-b7I" firstAttribute="top" secondItem="zTP-aH-U9f" secondAttribute="top" id="LMe-Tg-Psu"/>
+                                                    <constraint firstAttribute="bottom" secondItem="KrZ-pc-b7I" secondAttribute="bottom" id="bac-wZ-IoI"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="6mp-RA-vbn" firstAttribute="leading" secondItem="gyb-4J-fcK" secondAttribute="leading" id="1Aa-np-fq4"/>
+                                            <constraint firstAttribute="trailing" secondItem="zTP-aH-U9f" secondAttribute="trailing" id="31n-EP-A63"/>
+                                            <constraint firstAttribute="bottom" secondItem="6mp-RA-vbn" secondAttribute="bottom" id="B5g-0I-217"/>
+                                            <constraint firstItem="Nte-Bg-iNQ" firstAttribute="top" secondItem="gyb-4J-fcK" secondAttribute="top" id="EAR-Bs-Qk9"/>
+                                            <constraint firstItem="6mp-RA-vbn" firstAttribute="top" secondItem="gyb-4J-fcK" secondAttribute="top" id="NAj-rv-gD5"/>
+                                            <constraint firstAttribute="bottom" secondItem="Nte-Bg-iNQ" secondAttribute="bottom" id="PmK-Ih-anq"/>
+                                            <constraint firstItem="yo8-3N-Evc" firstAttribute="top" secondItem="gyb-4J-fcK" secondAttribute="top" id="S8q-pg-2dV"/>
+                                            <constraint firstItem="yo8-3N-Evc" firstAttribute="leading" secondItem="6mp-RA-vbn" secondAttribute="trailing" id="UJT-ja-RZT"/>
+                                            <constraint firstAttribute="bottom" secondItem="zTP-aH-U9f" secondAttribute="bottom" id="c2z-rs-SpS"/>
+                                            <constraint firstItem="zTP-aH-U9f" firstAttribute="top" secondItem="gyb-4J-fcK" secondAttribute="top" id="kwp-Lk-wPC"/>
+                                            <constraint firstItem="zTP-aH-U9f" firstAttribute="leading" secondItem="Nte-Bg-iNQ" secondAttribute="trailing" id="nRT-5S-ZDZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="yo8-3N-Evc" secondAttribute="bottom" id="uMn-GK-KDL"/>
+                                            <constraint firstItem="Nte-Bg-iNQ" firstAttribute="leading" secondItem="yo8-3N-Evc" secondAttribute="trailing" id="ye5-q8-O3e"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Rr3-g1-ph7" secondAttribute="trailing" id="4kA-Dy-wY3"/>
-                                    <constraint firstAttribute="bottom" secondItem="wr8-qY-Wcn" secondAttribute="bottom" constant="21" id="9CR-UG-u3Z"/>
-                                    <constraint firstItem="wr8-qY-Wcn" firstAttribute="leading" secondItem="Ltu-eA-Jds" secondAttribute="leading" id="9So-JB-Tfg"/>
-                                    <constraint firstItem="Rr3-g1-ph7" firstAttribute="top" secondItem="Ltu-eA-Jds" secondAttribute="top" id="IeO-4Y-JZB"/>
-                                    <constraint firstItem="wr8-qY-Wcn" firstAttribute="top" secondItem="x25-z2-8aY" secondAttribute="bottom" constant="8" id="QOb-ka-fyK"/>
-                                    <constraint firstAttribute="bottom" secondItem="Rr3-g1-ph7" secondAttribute="bottom" constant="180" id="WjW-XZ-gxb"/>
-                                    <constraint firstItem="Rr3-g1-ph7" firstAttribute="leading" secondItem="Ltu-eA-Jds" secondAttribute="leading" id="WlS-xe-H60"/>
-                                    <constraint firstItem="x25-z2-8aY" firstAttribute="centerX" secondItem="Ltu-eA-Jds" secondAttribute="centerX" id="cl1-pl-dsc"/>
-                                    <constraint firstItem="x25-z2-8aY" firstAttribute="top" secondItem="Rr3-g1-ph7" secondAttribute="bottom" constant="17" id="p9W-yR-u6H"/>
-                                    <constraint firstAttribute="trailing" secondItem="wr8-qY-Wcn" secondAttribute="trailing" id="rQt-Dw-Pw0"/>
+                                    <constraint firstItem="zTP-aH-U9f" firstAttribute="width" secondItem="myK-Rt-yOa" secondAttribute="width" id="24t-7s-CC5"/>
+                                    <constraint firstItem="gyb-4J-fcK" firstAttribute="leading" secondItem="myK-Rt-yOa" secondAttribute="leading" id="44T-hP-xzz"/>
+                                    <constraint firstItem="gyb-4J-fcK" firstAttribute="width" secondItem="myK-Rt-yOa" secondAttribute="width" multiplier="4:1" id="HPJ-H8-YrJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="gyb-4J-fcK" secondAttribute="bottom" id="J8N-Rd-jYt"/>
+                                    <constraint firstItem="6mp-RA-vbn" firstAttribute="width" secondItem="myK-Rt-yOa" secondAttribute="width" id="S7g-D4-kxY"/>
+                                    <constraint firstItem="gyb-4J-fcK" firstAttribute="height" secondItem="myK-Rt-yOa" secondAttribute="height" id="hVA-9d-g11"/>
+                                    <constraint firstItem="Nte-Bg-iNQ" firstAttribute="width" secondItem="myK-Rt-yOa" secondAttribute="width" id="jeE-gD-XLa"/>
+                                    <constraint firstItem="gyb-4J-fcK" firstAttribute="top" secondItem="myK-Rt-yOa" secondAttribute="top" id="mBh-Jw-tL1"/>
+                                    <constraint firstItem="yo8-3N-Evc" firstAttribute="width" secondItem="myK-Rt-yOa" secondAttribute="width" id="nSW-q2-uUc"/>
+                                    <constraint firstAttribute="trailing" secondItem="gyb-4J-fcK" secondAttribute="trailing" id="zpD-qm-qUm"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                                <connections>
+                                    <outlet property="delegate" destination="QA2-Oi-oxp" id="fGP-mS-lj7"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ltu-eA-Jds" firstAttribute="top" secondItem="hG8-rn-c0m" secondAttribute="top" id="Lqo-u0-NSW"/>
-                            <constraint firstAttribute="bottom" secondItem="Ltu-eA-Jds" secondAttribute="bottom" id="Qru-d5-LYz"/>
-                            <constraint firstAttribute="trailing" secondItem="Ltu-eA-Jds" secondAttribute="trailing" constant="30" id="Rk8-WW-U5B"/>
-                            <constraint firstItem="Ltu-eA-Jds" firstAttribute="leading" secondItem="hG8-rn-c0m" secondAttribute="leading" constant="30" id="az2-h7-1Xu"/>
+                            <constraint firstItem="hfI-od-tnZ" firstAttribute="top" secondItem="myK-Rt-yOa" secondAttribute="bottom" id="G92-tR-brq"/>
+                            <constraint firstAttribute="trailing" secondItem="myK-Rt-yOa" secondAttribute="trailing" id="R0j-a7-2XL"/>
+                            <constraint firstItem="myK-Rt-yOa" firstAttribute="top" secondItem="5V4-aY-nz5" secondAttribute="bottom" id="TO0-jL-exB"/>
+                            <constraint firstItem="myK-Rt-yOa" firstAttribute="leading" secondItem="neh-wB-wH2" secondAttribute="leading" id="stK-Ic-TSY"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="NO"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="myK-Rt-yOa" id="sOG-xj-OMb"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sZX-rf-0Qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V0B-S4-5TI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="392.5" y="1077.5"/>
+            <point key="canvasLocation" x="129.5" y="865"/>
         </scene>
     </scenes>
     <resources>
         <image name="TrialPage/Background" width="377" height="603"/>
+        <image name="TrialPage/FirstScreen" width="315" height="220"/>
+        <image name="TrialPage/FourthScreen" width="315" height="220"/>
+        <image name="TrialPage/SecondScreen" width="315" height="220"/>
+        <image name="TrialPage/ThirdScreen" width="315" height="220"/>
         <image name="back" width="14" height="25"/>
     </resources>
 </document>

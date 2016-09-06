@@ -89,6 +89,8 @@
 		DC2281311D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2281271D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf */; };
 		DC3311871D6C5484002A21F2 /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */; };
 		DC37F8551D79C42F00E0DBE5 /* OpenSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC37F8541D79C42F00E0DBE5 /* OpenSansBold.ttf */; };
+		DC37F8581D79D40800E0DBE5 /* TrialPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC37F8571D79D40800E0DBE5 /* TrialPageView.swift */; };
+		DC4D78FA1D79E167005D958A /* TrialPageFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D78F91D79E167005D958A /* TrialPageFirstView.swift */; };
 		DC9631F11D6EF12100B1C43E /* ViewControllersPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */; };
 		DC9C6C641D6C98B10034DC5A /* ValidationErrorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9C6C631D6C98B10034DC5A /* ValidationErrorCell.xib */; };
 		DC9C6C671D6C995B0034DC5A /* ValidationErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C6C661D6C995B0034DC5A /* ValidationErrorCell.swift */; };
@@ -282,6 +284,8 @@
 		DC2281271D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansSemiBoldItalic.ttf; sourceTree = "<group>"; };
 		DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelcomeScreen.storyboard; sourceTree = "<group>"; };
 		DC37F8541D79C42F00E0DBE5 /* OpenSansBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansBold.ttf; sourceTree = "<group>"; };
+		DC37F8571D79D40800E0DBE5 /* TrialPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageView.swift; sourceTree = "<group>"; };
+		DC4D78F91D79E167005D958A /* TrialPageFirstView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageFirstView.swift; sourceTree = "<group>"; };
 		DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersPresentation.swift; sourceTree = "<group>"; };
 		DC9C6C631D6C98B10034DC5A /* ValidationErrorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValidationErrorCell.xib; sourceTree = "<group>"; };
 		DC9C6C661D6C995B0034DC5A /* ValidationErrorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationErrorCell.swift; sourceTree = "<group>"; };
@@ -687,6 +691,15 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		DC37F8561D79D2CF00E0DBE5 /* TrialPage */ = {
+			isa = PBXGroup;
+			children = (
+				DC37F8571D79D40800E0DBE5 /* TrialPageView.swift */,
+				DC4D78F91D79E167005D958A /* TrialPageFirstView.swift */,
+			);
+			name = TrialPage;
+			sourceTree = "<group>";
+		};
 		DC9C6C651D6C98B60034DC5A /* ValidationErrorCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -717,6 +730,7 @@
 		E736C5A41A252B1500B8986E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DC37F8561D79D2CF00E0DBE5 /* TrialPage */,
 				DC2280EF1D6B461000D5A0DA /* Login */,
 				DC2280EE1D6B460600D5A0DA /* Verification */,
 				DC2280ED1D6B45FC00D5A0DA /* Registration */,
@@ -1385,6 +1399,7 @@
 				DC2281121D6B46AB00D5A0DA /* AlamofireHelpers.swift in Sources */,
 				214F4FF61BFDC35C0084BE32 /* Protocols.swift in Sources */,
 				2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */,
+				DC37F8581D79D40800E0DBE5 /* TrialPageView.swift in Sources */,
 				DC2280FA1D6B464500D5A0DA /* RegistrationPresenter.swift in Sources */,
 				2F7179511D53497A00231639 /* TrialPageScreen.swift in Sources */,
 				2FAA4FBC1D5C890B00DCFF46 /* EditProfileScreen.swift in Sources */,
@@ -1420,6 +1435,7 @@
 				2FFEA0601D551D0E00ADA63B /* Message.swift in Sources */,
 				DC9C6C671D6C995B0034DC5A /* ValidationErrorCell.swift in Sources */,
 				21DB304919DD2D6D003A418D /* Constants.swift in Sources */,
+				DC4D78FA1D79E167005D958A /* TrialPageFirstView.swift in Sources */,
 				DC2281091D6B469600D5A0DA /* MVPProtocol.swift in Sources */,
 				2F94CFF71D533998003A1B77 /* VerificationView.swift in Sources */,
 				4F5080F01D68D6CF00979890 /* BaseView.swift in Sources */,

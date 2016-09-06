@@ -18,23 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         self.setupProject()
         
-        do {
-            let realm = try Realm()
-            if let authInfo = realm.objects(AuthInfo).first {
-                if authInfo.isRegistered {
-                    ShowWelcomeViewController()
-                }
-                else {
-                    ShowRegistrationViewController()
-                }
-            }
-            else if let _ = realm.objects(User).first {
-                ShowConversationViewController()
-            }
-        } catch let error {
-            Logger.error("\(error)")
-        }
-        
+//        do {
+//            let realm = try Realm()
+//            if let authInfo = realm.objects(AuthInfo).first {
+//                if authInfo.isRegistered {
+//                    ShowWelcomeViewController()
+//                }
+//                else {
+//                    ShowRegistrationViewController()
+//                }
+//            }
+//            else if let _ = realm.objects(User).first {
+//                ShowConversationViewController()
+//            }
+//        } catch let error {
+//            Logger.error("\(error)")
+//        }
+        ShowTrialPageViewController()
         return true
     }
 

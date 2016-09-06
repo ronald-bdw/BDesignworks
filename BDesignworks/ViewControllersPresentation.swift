@@ -52,3 +52,9 @@ func ShowWelcomeViewController(animated: Bool = true) {
     
     PresentViewController(navigationController, animated: animated)
 }
+
+func ShowTrialPageViewController(animated: Bool = true) {
+    guard let navigationController = Storyboard.TrialPage.firstController else {return}
+    
+    PresentViewController(navigationController, animated: animated)
+}
