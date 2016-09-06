@@ -98,6 +98,7 @@
 		DCD86E591D6DAA8C0072AFA1 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD86E581D6DAA8C0072AFA1 /* Alerts.swift */; };
 		DCD86E5B1D6DEAFA0072AFA1 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD86E5A1D6DEAFA0072AFA1 /* ValidationError.swift */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
+		E79D88F81D7F256200EBA8FA /* TrialPageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */; };
 		F7018C5C4E9D83799A15BC04 /* Pods_Abstract_BDesignworks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CDFD2D8FBD39ED71F9EDC /* Pods_Abstract_BDesignworks.framework */; };
 /* End PBXBuildFile section */
 
@@ -293,6 +294,7 @@
 		DCD86E5A1D6DEAFA0072AFA1 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_Storyboard.storyboard; sourceTree = "<group>"; };
+		E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageSelectionView.swift; sourceTree = "<group>"; };
 		EC5B966D6C1FE954CB0BC550 /* Pods_Abstract_BDesignworksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE03134474C0070BF8DA767B /* Pods-Abstract-BDesignworks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.release.xcconfig"; sourceTree = "<group>"; };
 		FC6E3D360349BB799F9BA741 /* Pods-Abstract-BDesignworksTests.test staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.test staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.test staging.xcconfig"; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 			isa = PBXGroup;
 			children = (
 				4FF397B41D6A4B49004EAE2E /* BDTextField.swift */,
+				E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */,
 			);
 			name = "IB Inspectables";
 			sourceTree = "<group>";
@@ -1402,6 +1405,7 @@
 				2FAA4FBC1D5C890B00DCFF46 /* EditProfileScreen.swift in Sources */,
 				2F0729911D64C86B00A71B3C /* HealthKitManager.swift in Sources */,
 				2F16FE341D54E15A00EFFDD7 /* AboutScreen.swift in Sources */,
+				E79D88F81D7F256200EBA8FA /* TrialPageSelectionView.swift in Sources */,
 				DC2281161D6B46AB00D5A0DA /* RTErrorsDescription.swift in Sources */,
 				2FDE13691D61B938008702FE /* SmoochHelper.swift in Sources */,
 				2FC02C4E1D51E6020038BD88 /* SelectProviderScreen.swift in Sources */,

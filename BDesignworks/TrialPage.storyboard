@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -145,7 +146,7 @@
             </objects>
             <point key="canvasLocation" x="-951.5" y="901.5"/>
         </scene>
-        <!--Trial Page View-->
+        <!--Pear Up-->
         <scene sceneID="1x4-P0-ON8">
             <objects>
                 <viewController id="nYr-lQ-VPR" customClass="TrialPageView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -161,7 +162,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgc-5L-862">
-                                <rect key="frame" x="30" y="107" width="315" height="420"/>
+                                <rect key="frame" x="30" y="107" width="315" height="401"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="NO"/>
@@ -171,12 +172,12 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dq-fi-Dm8">
-                                <rect key="frame" x="47" y="568" width="281" height="60"/>
+                                <rect key="frame" x="47" y="549" width="281" height="60"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="uCi-A2-ukl"/>
                                 </constraints>
-                                <state key="normal" title="Submit">
+                                <state key="normal" title="Start free 14-day trial now">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -185,19 +186,85 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3d7-qi-OQf">
+                                <rect key="frame" x="150" y="639" width="75" height="4"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pF-xM-pk7" customClass="TrialPageSelectionView" customModule="PearUp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="4"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="329-Kh-nGe"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="selected" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DK3-wE-1Fg" customClass="TrialPageSelectionView" customModule="PearUp" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="0.0" width="15" height="4"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="U6C-4S-s6A"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="selected" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5D-Je-uPO" customClass="TrialPageSelectionView" customModule="PearUp" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="0.0" width="15" height="4"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="GjT-Dc-Ndb"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="selected" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aS1-21-JxL" customClass="TrialPageSelectionView" customModule="PearUp" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="0.0" width="15" height="4"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="ky0-Q3-uQO"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="selected" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="aS1-21-JxL" firstAttribute="top" secondItem="3d7-qi-OQf" secondAttribute="top" id="0Vj-I6-Lnu"/>
+                                    <constraint firstItem="Q5D-Je-uPO" firstAttribute="top" secondItem="3d7-qi-OQf" secondAttribute="top" id="4kx-oB-9np"/>
+                                    <constraint firstAttribute="bottom" secondItem="3pF-xM-pk7" secondAttribute="bottom" id="54V-cy-Xmq"/>
+                                    <constraint firstItem="3pF-xM-pk7" firstAttribute="top" secondItem="3d7-qi-OQf" secondAttribute="top" id="8vr-5V-DPu"/>
+                                    <constraint firstItem="Q5D-Je-uPO" firstAttribute="leading" secondItem="DK3-wE-1Fg" secondAttribute="trailing" constant="5" id="CW5-Z3-vAJ"/>
+                                    <constraint firstItem="DK3-wE-1Fg" firstAttribute="top" secondItem="3d7-qi-OQf" secondAttribute="top" id="EVX-pu-TGk"/>
+                                    <constraint firstItem="DK3-wE-1Fg" firstAttribute="leading" secondItem="3pF-xM-pk7" secondAttribute="trailing" constant="5" id="Ecr-Wr-zMP"/>
+                                    <constraint firstItem="3pF-xM-pk7" firstAttribute="leading" secondItem="3d7-qi-OQf" secondAttribute="leading" id="HhG-oH-V7M"/>
+                                    <constraint firstAttribute="height" constant="4" id="XGX-gJ-U6c"/>
+                                    <constraint firstAttribute="trailing" secondItem="aS1-21-JxL" secondAttribute="trailing" id="XtH-Vx-knC"/>
+                                    <constraint firstAttribute="bottom" secondItem="DK3-wE-1Fg" secondAttribute="bottom" id="lp6-It-VgI"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q5D-Je-uPO" secondAttribute="bottom" id="n3h-59-Bg0"/>
+                                    <constraint firstAttribute="bottom" secondItem="aS1-21-JxL" secondAttribute="bottom" id="vEc-b4-Jdb"/>
+                                    <constraint firstAttribute="width" constant="75" id="wH3-RL-cPK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YNd-s3-xOp" firstAttribute="top" secondItem="Sre-sy-YzM" secondAttribute="bottom" id="7li-hZ-Z3d"/>
                             <constraint firstItem="Sre-sy-YzM" firstAttribute="top" secondItem="I2Z-Yl-HXF" secondAttribute="bottom" id="DA2-VH-6jT"/>
                             <constraint firstItem="7dq-fi-Dm8" firstAttribute="trailing" secondItem="Sre-sy-YzM" secondAttribute="trailing" id="FHV-Nz-RNb"/>
+                            <constraint firstItem="3d7-qi-OQf" firstAttribute="top" secondItem="7dq-fi-Dm8" secondAttribute="bottom" constant="30" id="FKi-04-kLa"/>
                             <constraint firstItem="7dq-fi-Dm8" firstAttribute="centerX" secondItem="Sre-sy-YzM" secondAttribute="centerX" id="HnJ-0v-Wpj"/>
                             <constraint firstItem="xgc-5L-862" firstAttribute="top" secondItem="I2Z-Yl-HXF" secondAttribute="bottom" constant="43" id="JhH-Az-5CH"/>
                             <constraint firstAttribute="trailing" secondItem="7dq-fi-Dm8" secondAttribute="trailing" constant="47" id="Lsg-0B-4W8"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="3d7-qi-OQf" secondAttribute="bottom" constant="24" id="Mgb-El-viq"/>
                             <constraint firstAttribute="trailing" secondItem="xgc-5L-862" secondAttribute="trailing" constant="30" id="Qje-Xr-JLL"/>
                             <constraint firstItem="YNd-s3-xOp" firstAttribute="top" secondItem="7dq-fi-Dm8" secondAttribute="bottom" constant="39" id="ZxZ-hs-WLA"/>
+                            <constraint firstItem="3d7-qi-OQf" firstAttribute="centerX" secondItem="JBb-Hh-ixM" secondAttribute="centerX" id="cNQ-hy-3n5"/>
                             <constraint firstItem="7dq-fi-Dm8" firstAttribute="top" secondItem="xgc-5L-862" secondAttribute="bottom" constant="41" id="d7p-nU-Efr"/>
                             <constraint firstItem="7dq-fi-Dm8" firstAttribute="leading" secondItem="JBb-Hh-ixM" secondAttribute="leading" constant="47" id="dWq-LS-MaX"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="3d7-qi-OQf" secondAttribute="bottom" constant="-43" id="hal-1O-6Dh"/>
                             <constraint firstItem="Sre-sy-YzM" firstAttribute="leading" secondItem="JBb-Hh-ixM" secondAttribute="leading" id="i5H-Wf-L9y"/>
                             <constraint firstAttribute="trailing" secondItem="Sre-sy-YzM" secondAttribute="trailing" id="q0p-rI-8rt"/>
                             <constraint firstItem="xgc-5L-862" firstAttribute="leading" secondItem="JBb-Hh-ixM" secondAttribute="leading" constant="30" id="yj4-W8-IlX"/>
@@ -205,12 +272,20 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="FHV-Nz-RNb"/>
+                                <exclude reference="ZxZ-hs-WLA"/>
+                                <exclude reference="hal-1O-6Dh"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="qZ3-gW-l0p"/>
+                    <navigationItem key="navigationItem" title="Pear Up" id="qZ3-gW-l0p">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="jP3-Nu-W0G"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="xgc-5L-862" id="Bs7-GQ-ROF"/>
+                        <outlet property="firstViewSelectionView" destination="3pF-xM-pk7" id="svc-YJ-rMb"/>
+                        <outlet property="fourthViewSelectionView" destination="aS1-21-JxL" id="4ZC-ns-loZ"/>
+                        <outlet property="secondViewSelectionView" destination="DK3-wE-1Fg" id="kAe-kS-PCJ"/>
+                        <outlet property="thirdViewSelectionView" destination="Q5D-Je-uPO" id="ve9-bu-2yq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMO-62-dFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -226,20 +301,20 @@
                         <viewControllerLayoutGuide type="bottom" id="hfI-od-tnZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="neh-wB-wH2">
-                        <rect key="frame" x="0.0" y="0.0" width="315" height="420"/>
+                        <rect key="frame" x="0.0" y="0.0" width="315" height="401"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myK-Rt-yOa">
-                                <rect key="frame" x="0.0" y="0.0" width="315" height="420"/>
+                                <rect key="frame" x="0.0" y="0.0" width="315" height="401"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyb-4J-fcK">
-                                        <rect key="frame" x="0.0" y="0.0" width="1260" height="420"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1260" height="401"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mp-RA-vbn" userLabel="FirstView">
-                                                <rect key="frame" x="0.0" y="0.0" width="315" height="420"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="401"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vd1-94-FG2">
-                                                        <rect key="frame" x="7" y="0.0" width="301" height="420"/>
+                                                        <rect key="frame" x="7" y="0.0" width="301" height="401"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrialPage/FirstScreen" translatesAutoresizingMaskIntoConstraints="NO" id="acy-f2-5A7">
                                                                 <rect key="frame" x="0.0" y="0.0" width="301" height="220"/>
@@ -294,10 +369,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yo8-3N-Evc" userLabel="SecondView">
-                                                <rect key="frame" x="315" y="0.0" width="315" height="420"/>
+                                                <rect key="frame" x="315" y="0.0" width="315" height="401"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQI-r6-rAV">
-                                                        <rect key="frame" x="7" y="0.0" width="301" height="420"/>
+                                                        <rect key="frame" x="7" y="0.0" width="301" height="401"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrialPage/SecondScreen" translatesAutoresizingMaskIntoConstraints="NO" id="1mH-pH-SYd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="301" height="220"/>
@@ -358,10 +433,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nte-Bg-iNQ" userLabel="ThirdView">
-                                                <rect key="frame" x="630" y="0.0" width="315" height="420"/>
+                                                <rect key="frame" x="630" y="0.0" width="315" height="401"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcP-xs-IdS">
-                                                        <rect key="frame" x="7" y="0.0" width="301" height="420"/>
+                                                        <rect key="frame" x="7" y="0.0" width="301" height="401"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrialPage/ThirdScreen" translatesAutoresizingMaskIntoConstraints="NO" id="jtS-DX-zU6">
                                                                 <rect key="frame" x="0.0" y="0.0" width="301" height="220"/>
@@ -416,10 +491,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTP-aH-U9f" userLabel="FourthView">
-                                                <rect key="frame" x="945" y="0.0" width="315" height="420"/>
+                                                <rect key="frame" x="945" y="0.0" width="315" height="401"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KrZ-pc-b7I">
-                                                        <rect key="frame" x="7" y="0.0" width="301" height="420"/>
+                                                        <rect key="frame" x="7" y="0.0" width="301" height="401"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TrialPage/FourthScreen" translatesAutoresizingMaskIntoConstraints="NO" id="AoQ-gw-l3k">
                                                                 <rect key="frame" x="0.0" y="0.0" width="301" height="220"/>
@@ -505,9 +580,6 @@
                                     <constraint firstItem="yo8-3N-Evc" firstAttribute="width" secondItem="myK-Rt-yOa" secondAttribute="width" id="nSW-q2-uUc"/>
                                     <constraint firstAttribute="trailing" secondItem="gyb-4J-fcK" secondAttribute="trailing" id="zpD-qm-qUm"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="QA2-Oi-oxp" id="fGP-mS-lj7"/>
-                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -521,9 +593,6 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="NO"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <connections>
-                        <outlet property="scrollView" destination="myK-Rt-yOa" id="sOG-xj-OMb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0B-S4-5TI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
