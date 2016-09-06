@@ -41,6 +41,8 @@ class RegistrationView: UIViewController {
         let center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil)
         center.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil)
+        
+        self.presenter?.viewDidLoad()
     }
     
     @IBAction func submitPressed(sender: AnyObject){

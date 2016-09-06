@@ -41,6 +41,15 @@ class User: Object, IUser {
         guard let _ = map.JSONDictionary["id"] as? Int else {return nil}
         self.init()
     }
+    
+    func getRegistrationUser() -> RegistrationUser {
+        var user = RegistrationUser()
+        user.firstName.content = self.firstName
+        user.lastName.content = self.lastName
+        user.email.content = self.email
+        user.phone.content = self.phoneNumber
+        return user
+    }
 }
 
 extension User: Mappable {
