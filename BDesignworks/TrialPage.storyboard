@@ -217,10 +217,10 @@
             </objects>
             <point key="canvasLocation" x="-349.5" y="901.5"/>
         </scene>
-        <!--Trial Page Card View-->
+        <!--View Controller-->
         <scene sceneID="wSE-Ew-MlJ">
             <objects>
-                <viewController id="QA2-Oi-oxp" customClass="TrialPageCardView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QA2-Oi-oxp" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5V4-aY-nz5"/>
                         <viewControllerLayoutGuide type="bottom" id="hfI-od-tnZ"/>
