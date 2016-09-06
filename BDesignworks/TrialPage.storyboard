@@ -24,7 +24,7 @@
         <!--Navigation Controller-->
         <scene sceneID="zlH-tn-tJg">
             <objects>
-                <navigationController id="Day-Hn-suc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RegistrationNavigationView" id="Day-Hn-suc" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qT2-97-jIk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -185,6 +185,9 @@
                                         <real key="value" value="27"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startTrialAction:" destination="nYr-lQ-VPR" eventType="touchUpInside" id="fcf-E1-UYz"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3d7-qi-OQf">
                                 <rect key="frame" x="150" y="639" width="75" height="4"/>
@@ -278,7 +281,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Pear Up" id="qZ3-gW-l0p">
-                        <barButtonItem key="leftBarButtonItem" image="back" id="jP3-Nu-W0G"/>
+                        <barButtonItem key="leftBarButtonItem" image="back" id="jP3-Nu-W0G">
+                            <connections>
+                                <action selector="backPressed:" destination="nYr-lQ-VPR" id="ClJ-v3-qnv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="xgc-5L-862" id="Bs7-GQ-ROF"/>

@@ -31,6 +31,15 @@ class TrialPageView: UIViewController {
             }
         }
     }
+    
+    @IBAction func backPressed(sender: AnyObject) {
+        ShowInitialViewController()
+    }
+    
+    @IBAction func startTrialAction(sender: AnyObject) {
+        ShowRegistrationViewController()
+    }
+    
 }
 
 extension TrialPageView: UIScrollViewDelegate {
