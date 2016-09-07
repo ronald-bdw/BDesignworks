@@ -12,7 +12,7 @@ protocol IRegistrationViewPresenter: class {
     func submitTapped(user: RegistrationUser?)
     func getRegistrationUser() -> RegistrationUser?
     func resendPhoneCodeTapped(user: RegistrationUser?)
-    
+    func viewDidLoad()
 }
 
 protocol IRegistrationModelPresenter: class {
@@ -73,6 +73,10 @@ extension RegistrationPresenter: IRegistrationViewPresenter {
     
     func resendPhoneCodeTapped(user: RegistrationUser?) {
         self.model?.receivePhoneCode(user)
+    }
+    
+    func viewDidLoad() {
+        self.model?.registerIfNeeded()
     }
 }
 

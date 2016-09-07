@@ -12,6 +12,7 @@ protocol IRegistrationModel {
     func register(user: RegistrationUser)
     func receivePhoneCode(user: RegistrationUser?)
     func getRegistrationUser() -> RegistrationUser
+    func registerIfNeeded()
 }
 
 class RegistrationModel {
@@ -111,15 +112,22 @@ extension RegistrationModel: IRegistrationModel {
         self.startRegister(user)
     }
     
+    func registerIfNeeded() {
+        do {
+            let realm = try Realm()
+            guard let user = realm.objects(User).first else {return}
+            self.startRegister(user.getRegistrationUser())
+        } catch let error {
+            Logger.error("\(error)")
+        }
+    }
+    
     func getRegistrationUser() -> RegistrationUser {
         var user = RegistrationUser()
         do {
             let realm = try Realm()
             if let rUser = realm.objects(User).first {
-                user.firstName.content = rUser.firstName
-                user.lastName.content = rUser.lastName
-                user.email.content = rUser.email
-                user.phone.content = rUser.phoneNumber
+                user = rUser.getRegistrationUser()
             }
             else {
                 guard let authData = realm.objects(AuthInfo).first else {return user}
