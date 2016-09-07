@@ -61,11 +61,25 @@ class HealthKitManager
     
     func sendHealthKitData() {
         let dataTypesToRead = NSSet(objects: self.stepsCount!)
+//        let itemsToWrite = Set(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!)
         self.healthStore?.requestAuthorizationToShareTypes(nil, readTypes: dataTypesToRead as? Set<HKObjectType>, completion: { [unowned self] (success, error) in
             if success {
                 self.queryStepsByDay()
             } else {
                 Logger.error("\(error)")
+            }
+        })
+    }
+    
+    func saveSteps() {
+        let stepsQuantity = HKQuantity(unit: HKUnit.countUnit(), doubleValue: 1000)
+        let distance = HKQuantitySample(type: self.stepsCount!, quantity: stepsQuantity, startDate: NSDate().dateByAddingHours(-5), endDate: NSDate())
+        
+        self.healthStore?.saveObject(distance, withCompletion: { (success, error) -> Void in
+            if (error != nil) {
+                Logger.debug("successfully written")
+            } else {
+                Logger.debug("Error writing steps: \(error)")
             }
         })
     }
@@ -100,6 +114,7 @@ class HealthKitManager
                                     try realm.write({
                                         user?.lastStepsUpdateDate = statistics.endDate
                                     })
+                                    Logger.debug("updatedStepsDate: \(user?.lastStepsUpdateDate)")
                                 }
                                 catch let error {
                                     Logger.error("\(error)")
