@@ -10,31 +10,6 @@
 
 import HealthKit
 
-typealias UserHealthInfo = (age: Int?, sex: HKBiologicalSexObject?, bloodType: HKBloodTypeObject?)
-
-enum HealthKitAuthorizationResult
-{
-    case Success
-    case InvailidDevice
-    case OperationCanceled
-    case OtherError
-    
-    var description: String {
-        switch self
-        {
-        case .Success:
-            return "Авторизация успешна"
-        case .InvailidDevice:
-            return "Данное устройство не поддерживает HealthKit"
-        case .OperationCanceled:
-            return "Доступ не был предоставлен"
-        case .OtherError:
-            return "Иная ошибка"
-        }
-    }
-}
-
-
 class HealthKitManager
 {
     class var sharedInstance: HealthKitManager {
@@ -71,6 +46,7 @@ class HealthKitManager
         })
     }
     
+    ///Use only in debug mode. Before using add corresponding write access
     func saveSteps() {
         let stepsQuantity = HKQuantity(unit: HKUnit.countUnit(), doubleValue: 1000)
         let distance = HKQuantitySample(type: self.stepsCount!, quantity: stepsQuantity, startDate: NSDate().dateByAddingHours(-5), endDate: NSDate())
@@ -101,30 +77,29 @@ class HealthKitManager
             let startDate = User.getMainUser()?.lastStepsUpdateDate ?? endDate.fs_dateByAddingDays(-self.defaultDaysToStepsCount)
             
             results?.enumerateStatisticsFromDate(startDate, toDate: endDate) {statistics, stop in
-                if let quantity = statistics.sumQuantity() {
-                    Router.Steps.Send(count: Int(quantity.doubleValueForUnit((HKUnit.countUnit()))), startedAt: statistics.startDate, finishedAt: statistics.endDate).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
-                        switch response.result {
-                        case .Success(let value):
-                            Logger.debug("\(value.activity)")
-                            guard let lUser = User.getMainUser() else {return}
-                            if lUser.lastStepsUpdateDate == nil || lUser.lastStepsUpdateDate!.compare(statistics.endDate) == .OrderedAscending {
-                                do {
-                                    let realm = try Realm()
-                                    let user = realm.objects(User).first
-                                    try realm.write({
-                                        user?.lastStepsUpdateDate = statistics.endDate
-                                    })
-                                    Logger.debug("updatedStepsDate: \(user?.lastStepsUpdateDate)")
-                                }
-                                catch let error {
-                                    Logger.error("\(error)")
-                                }
+                guard let quantity = statistics.sumQuantity() else {return}
+                Router.Steps.Send(count: Int(quantity.doubleValueForUnit((HKUnit.countUnit()))), startedAt: statistics.startDate, finishedAt: statistics.endDate).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
+                    switch response.result {
+                    case .Success(let value):
+                        Logger.debug("\(value.activity)")
+                        guard let lUser = User.getMainUser() else {return}
+                        if lUser.lastStepsUpdateDate == nil || lUser.lastStepsUpdateDate!.compare(statistics.endDate) == .OrderedAscending {
+                            do {
+                                let realm = try Realm()
+                                let user = realm.objects(User).first
+                                try realm.write({
+                                    user?.lastStepsUpdateDate = statistics.endDate
+                                })
+                                Logger.debug("updatedStepsDate: \(user?.lastStepsUpdateDate)")
                             }
-                        case .Failure(let error):
-                            Logger.error("\(error)")
+                            catch let error {
+                                Logger.error("\(error)")
+                            }
                         }
-                    })
-                }
+                    case .Failure(let error):
+                        Logger.error("\(error)")
+                    }
+                })
             }
             
         }
