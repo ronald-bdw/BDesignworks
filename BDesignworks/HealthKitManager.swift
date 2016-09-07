@@ -37,118 +37,83 @@ enum HealthKitAuthorizationResult
 
 class HealthKitManager
 {
-    private let healthKitStore: HKHealthStore = HKHealthStore()
-    static let sharedInstance = HealthKitManager()
-    
-    
-    func authorize(completion: ((authStatus: HealthKitAuthorizationResult) -> Void)?)
-    {
-        if !HKHealthStore.isHealthDataAvailable() {
-            completion?(authStatus: HealthKitAuthorizationResult.InvailidDevice)
-            return
+    class var sharedInstance: HealthKitManager {
+        struct Singleton {
+            static let instance = HealthKitManager()
         }
         
-        let itemsToWrite = Set(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMassIndex)!,
-                               HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierActiveEnergyBurned)!,
-                               HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDistanceWalkingRunning)!,
-                               HKQuantityType.workoutType())
-        
-        let itemsToRead = Set(arrayLiteral:  HKObjectType.characteristicTypeForIdentifier(HKCharacteristicTypeIdentifierDateOfBirth)!,
-                              HKObjectType.characteristicTypeForIdentifier(HKCharacteristicTypeIdentifierBloodType)!,
-                              HKObjectType.characteristicTypeForIdentifier(HKCharacteristicTypeIdentifierBiologicalSex)!,
-                              HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBodyMass)!,
-                              HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeight)!,
-                              HKObjectType.workoutType())
-        
-        
-        self.healthKitStore.requestAuthorizationToShareTypes(itemsToWrite, readTypes: itemsToRead) { (completed, error) in
-            
-            if error != nil {
-                if completed == false {
-                    completion?(authStatus: HealthKitAuthorizationResult.OperationCanceled)
-                } else {
-                    completion?(authStatus: HealthKitAuthorizationResult.OtherError)
-                }
-                return
-            }
-            
-            completion?(authStatus: HealthKitAuthorizationResult.Success)
-        }
+        return Singleton.instance
     }
     
+    let healthStore: HKHealthStore? = {
+        if HKHealthStore.isHealthDataAvailable() {
+            return HKHealthStore()
+        } else {
+            return nil
+        }
+    }()
     
+    let stepsCount = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
     
-    //MARK: Writing User Information
-    func saveDistance(distance: Double, date: NSDate, completion: ((success: Bool) -> Void)?)
-    {
-        let distanceType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDistanceWalkingRunning)
-        let distanceQuantity = HKQuantity(unit: HKUnit.meterUnit(), doubleValue: distance)
-        let distance = HKQuantitySample(type: distanceType!, quantity: distanceQuantity, startDate: date, endDate: date)
-        
-        healthKitStore.saveObject(distance, withCompletion: { (success, error) -> Void in
-            if (error != nil) {
-                completion?(success: false)
+    let stepsUnit = HKUnit.countUnit()
+    
+    let defaultDaysToStepsCount = 7
+    
+    func sendHealthKitData() {
+        let dataTypesToRead = NSSet(objects: self.stepsCount!)
+        self.healthStore?.requestAuthorizationToShareTypes(nil, readTypes: dataTypesToRead as? Set<HKObjectType>, completion: { [unowned self] (success, error) in
+            if success {
+                self.queryStepsByDay()
             } else {
-                print("Error writing steps: \(error?.localizedDescription)")
-                completion?(success: true)
+                Logger.error("\(error)")
             }
         })
     }
     
-    
-    
-    //MARK: Reading User Information
-    func userInfo() -> UserHealthInfo
-    {
-        return (userAge(), userSex(), userBloodType())
-    }
-    
-    func userAge() -> Int?
-    {
-        do {
-            let birthDay = try healthKitStore.dateOfBirth()
+    func queryStepsByDay() {
+        let interval = NSDateComponents()
+        interval.day = 1
+        
+        let anchorDate = NSDate().fs_midnightDate()
+        
+        let query = HKStatisticsCollectionQuery(quantityType: self.stepsCount!,
+                                                quantitySamplePredicate: nil,
+                                                options: .CumulativeSum,
+                                                anchorDate: anchorDate,
+                                                intervalComponents: interval)
+        
+        query.initialResultsHandler = { query, results, error in
+            let endDate = NSDate()
+            let startDate = User.getMainUser()?.lastStepsUpdateDate ?? endDate.fs_dateByAddingDays(-self.defaultDaysToStepsCount)
             
-            let today = NSDate()
-            let differenceComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.Year, fromDate: birthDay, toDate: today, options: NSCalendarOptions(rawValue: 0))
-            return differenceComponents.year
-        }
-        catch {
-            print("Error reading birthday: \(processInformationError(error as NSError))")
-            return nil
-        }
-    }
-    
-    func userSex() -> HKBiologicalSexObject?
-    {
-        do {
-            return try healthKitStore.biologicalSex()
-        }
-        catch {
-            print("Error reading sex: \(processInformationError(error as NSError))")
-            return nil
-        }
-    }
-    
-    func userBloodType() -> HKBloodTypeObject?
-    {
-        do {
-            return try healthKitStore.bloodType()
-        }
-        catch {
-            print("Error reading blood type: \(processInformationError(error as NSError))")
-            return nil
-        }
-    }
-    
-    func processInformationError(error: NSError) -> String
-    {
-        switch error.code
-        {
-        case 5:
-            return "Доступ к этому типу данных не был получен"
+            results?.enumerateStatisticsFromDate(startDate, toDate: endDate) {statistics, stop in
+                if let quantity = statistics.sumQuantity() {
+                    Router.Steps.Send(count: Int(quantity.doubleValueForUnit((HKUnit.countUnit()))), startedAt: statistics.startDate, finishedAt: statistics.endDate).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
+                        switch response.result {
+                        case .Success(let value):
+                            Logger.debug("\(value.activity)")
+                            guard let lUser = User.getMainUser() else {return}
+                            if lUser.lastStepsUpdateDate == nil || lUser.lastStepsUpdateDate!.compare(statistics.endDate) == .OrderedAscending {
+                                do {
+                                    let realm = try Realm()
+                                    let user = realm.objects(User).first
+                                    try realm.write({
+                                        user?.lastStepsUpdateDate = statistics.endDate
+                                    })
+                                }
+                                catch let error {
+                                    Logger.error("\(error)")
+                                }
+                            }
+                        case .Failure(let error):
+                            Logger.error("\(error)")
+                        }
+                    })
+                }
+            }
             
-        default:
-            return error.localizedDescription
         }
+        
+        self.healthStore?.executeQuery(query)
     }
 }
