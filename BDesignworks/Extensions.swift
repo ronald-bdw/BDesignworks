@@ -48,3 +48,25 @@ public extension SequenceType {
         return dict
     }
 }
+
+extension NSDate {
+    public func dateByAddingHours (hours: Int) -> NSDate {
+        let timeInterval:NSTimeInterval = self.timeIntervalSinceReferenceDate + FSTimePeriod.Hour.rawValue * NSTimeInterval(hours)
+        let newDate = NSDate(timeIntervalSinceReferenceDate: timeInterval)
+        return newDate
+    }
+    
+    public func dateByAddingMinutes (minutes: Int) -> NSDate {
+        let timeInterval:NSTimeInterval = self.timeIntervalSinceReferenceDate + FSTimePeriod.Minute.rawValue * NSTimeInterval(minutes)
+        let newDate = NSDate(timeIntervalSinceReferenceDate: timeInterval)
+        return newDate
+    }
+    
+    static func getDateFromISO8601(dateString: String) -> NSDate? {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
+        return dateFormatter.dateFromString(dateString)
+    }
+}

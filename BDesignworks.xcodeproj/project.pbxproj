@@ -99,6 +99,8 @@
 		DCD86E5B1D6DEAFA0072AFA1 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD86E5A1D6DEAFA0072AFA1 /* ValidationError.swift */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
 		E79D88F81D7F256200EBA8FA /* TrialPageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */; };
+		E7DA95801D8018FA0079EB79 /* RTSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA957F1D8018FA0079EB79 /* RTSteps.swift */; };
+		E7DA95821D8024A50079EB79 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA95811D8024A50079EB79 /* Steps.swift */; };
 		F7018C5C4E9D83799A15BC04 /* Pods_Abstract_BDesignworks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CDFD2D8FBD39ED71F9EDC /* Pods_Abstract_BDesignworks.framework */; };
 /* End PBXBuildFile section */
 
@@ -295,6 +297,8 @@
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_Storyboard.storyboard; sourceTree = "<group>"; };
 		E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageSelectionView.swift; sourceTree = "<group>"; };
+		E7DA957F1D8018FA0079EB79 /* RTSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTSteps.swift; sourceTree = "<group>"; };
+		E7DA95811D8024A50079EB79 /* Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
 		EC5B966D6C1FE954CB0BC550 /* Pods_Abstract_BDesignworksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE03134474C0070BF8DA767B /* Pods-Abstract-BDesignworks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.release.xcconfig"; sourceTree = "<group>"; };
 		FC6E3D360349BB799F9BA741 /* Pods-Abstract-BDesignworksTests.test staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.test staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.test staging.xcconfig"; sourceTree = "<group>"; };
@@ -650,6 +654,7 @@
 				DC22810A1D6B46AB00D5A0DA /* AlamofireHelpers.swift */,
 				DC22810C1D6B46AB00D5A0DA /* Router.swift */,
 				DC22810F1D6B46AB00D5A0DA /* RTUser.swift */,
+				E7DA957F1D8018FA0079EB79 /* RTSteps.swift */,
 				DC22811B1D6B46BD00D5A0DA /* Errors */,
 			);
 			name = API;
@@ -670,6 +675,7 @@
 			children = (
 				DC22810B1D6B46AB00D5A0DA /* AuthInfo.swift */,
 				DC2281111D6B46AB00D5A0DA /* User.swift */,
+				E7DA95811D8024A50079EB79 /* Steps.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -1389,6 +1395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7DA95821D8024A50079EB79 /* Steps.swift in Sources */,
 				DCCA51861D76EAE700B42736 /* VerificationModel.swift in Sources */,
 				DC2281151D6B46AB00D5A0DA /* RTErrors.swift in Sources */,
 				21E157E21BB3EDF40041FCE4 /* FSTestHelpers.swift in Sources */,
@@ -1412,6 +1419,7 @@
 				DCD86E5B1D6DEAFA0072AFA1 /* ValidationError.swift in Sources */,
 				DC2280F41D6B463000D5A0DA /* VerificationPresenter.swift in Sources */,
 				DC2280FF1D6B465400D5A0DA /* LoginModel.swift in Sources */,
+				E7DA95801D8018FA0079EB79 /* RTSteps.swift in Sources */,
 				DC9C6C691D6CA9280034DC5A /* RegistrationHelpers.swift in Sources */,
 				DC0ACC631D76E1C4006BB342 /* VerificationErrorView.swift in Sources */,
 				2F71794F1D5343F800231639 /* WelcomeScreen.swift in Sources */,

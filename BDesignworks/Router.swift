@@ -27,9 +27,16 @@ extension RouterProtocol {
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(self.path))
         mutableURLRequest.HTTPMethod = self.settings.method.rawValue
         
-//        if let token = Router.OAuthToken {
-//            mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-//        }
+        do {
+            let realm = try Realm()
+            if let user = realm.objects(User).first {
+                mutableURLRequest.setValue(user.token, forHTTPHeaderField: "X-User-Token")
+                mutableURLRequest.setValue(user.phoneNumber, forHTTPHeaderField: "X-User-Phone-Number")
+            }
+        }
+        catch let error {
+            Logger.debug("\(error)")
+        }
         
         return self.settings.encoding.encode(mutableURLRequest, parameters: parameters).0
     }
