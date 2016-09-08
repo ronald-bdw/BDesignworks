@@ -192,7 +192,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3d7-qi-OQf">
                                 <rect key="frame" x="150" y="639" width="75" height="4"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pF-xM-pk7" customClass="TrialPageSelectionView" customModule="PearUp" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pF-xM-pk7" userLabel="First Selection View" customClass="TrialPageSelectionView" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="15" height="4"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -202,7 +202,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="selected" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DK3-wE-1Fg" customClass="TrialPageSelectionView" customModule="PearUp" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DK3-wE-1Fg" userLabel="Second Selection View" customClass="TrialPageSelectionView" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="20" y="0.0" width="15" height="4"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -212,7 +212,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="selected" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5D-Je-uPO" customClass="TrialPageSelectionView" customModule="PearUp" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5D-Je-uPO" userLabel="Third Selection View" customClass="TrialPageSelectionView" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="40" y="0.0" width="15" height="4"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -222,7 +222,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="selected" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aS1-21-JxL" customClass="TrialPageSelectionView" customModule="PearUp" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aS1-21-JxL" userLabel="Fourth Selection View" customClass="TrialPageSelectionView" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="60" y="0.0" width="15" height="4"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -275,8 +275,8 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="FHV-Nz-RNb"/>
-                                <exclude reference="ZxZ-hs-WLA"/>
                                 <exclude reference="hal-1O-6Dh"/>
+                                <exclude reference="ZxZ-hs-WLA"/>
                             </mask>
                         </variation>
                     </view>
@@ -289,10 +289,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="xgc-5L-862" id="Bs7-GQ-ROF"/>
-                        <outlet property="firstViewSelectionView" destination="3pF-xM-pk7" id="svc-YJ-rMb"/>
-                        <outlet property="fourthViewSelectionView" destination="aS1-21-JxL" id="4ZC-ns-loZ"/>
-                        <outlet property="secondViewSelectionView" destination="DK3-wE-1Fg" id="kAe-kS-PCJ"/>
-                        <outlet property="thirdViewSelectionView" destination="Q5D-Je-uPO" id="ve9-bu-2yq"/>
+                        <outletCollection property="selectionViews" destination="3pF-xM-pk7" collectionClass="NSMutableArray" id="x3y-bp-pHg"/>
+                        <outletCollection property="selectionViews" destination="DK3-wE-1Fg" collectionClass="NSMutableArray" id="T7N-bB-0VU"/>
+                        <outletCollection property="selectionViews" destination="Q5D-Je-uPO" collectionClass="NSMutableArray" id="l36-pg-T83"/>
+                        <outletCollection property="selectionViews" destination="aS1-21-JxL" collectionClass="NSMutableArray" id="lnx-py-DWt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMO-62-dFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -329,7 +329,7 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOR-Yq-KEC">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOR-Yq-KEC">
                                                                 <rect key="frame" x="18" y="281" width="265" height="86"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
@@ -393,7 +393,7 @@
                                                                 <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NQ-dn-jB8">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NQ-dn-jB8">
                                                                 <rect key="frame" x="18" y="281" width="265" height="86"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
@@ -457,7 +457,7 @@
                                                                 <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCG-IE-ZwI">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCG-IE-ZwI">
                                                                 <rect key="frame" x="18" y="281" width="265" height="86"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
@@ -515,7 +515,7 @@
                                                                 <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL1-Wz-xQ7">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL1-Wz-xQ7">
                                                                 <rect key="frame" x="18" y="281" width="265" height="86"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>

@@ -10,17 +10,7 @@ import Foundation
 
 class TrialPageView: UIViewController {
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var firstViewSelectionView: TrialPageSelectionView!
-    @IBOutlet weak var secondViewSelectionView: TrialPageSelectionView!
-    @IBOutlet weak var thirdViewSelectionView: TrialPageSelectionView!
-    @IBOutlet weak var fourthViewSelectionView: TrialPageSelectionView!
-    
-    private var selectionViews: [TrialPageSelectionView] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.selectionViews = [self.firstViewSelectionView, self.secondViewSelectionView, self.thirdViewSelectionView, self.fourthViewSelectionView]
-    }
+    @IBOutlet var selectionViews: [TrialPageSelectionView]!
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destinationViewController = segue.destinationViewController
