@@ -74,6 +74,7 @@ class ConversationScreen: UIViewController {
         } catch let error {
             Logger.error("\(error)")
         }
+        HealthKitManager.sharedInstance.sendHealthKitData()
     }
     
     override func viewWillAppear(animated: Bool) {

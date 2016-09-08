@@ -15,6 +15,7 @@ class User: Object, IUser {
     dynamic var lastName: String = ""
     dynamic var email: String = ""
     dynamic var phoneNumber: String = ""
+    dynamic var lastStepsUpdateDate: NSDate?
     
     var token: String? {
         get {
@@ -49,6 +50,17 @@ class User: Object, IUser {
         user.email.content = self.email
         user.phone.content = self.phoneNumber
         return user
+    }
+    
+    static func getMainUser() -> User? {
+        do {
+            let realm = try Realm()
+            return realm.objects(User).first
+        }
+        catch let error {
+            Logger.error("\(error)")
+            return nil
+        }
     }
 }
 
