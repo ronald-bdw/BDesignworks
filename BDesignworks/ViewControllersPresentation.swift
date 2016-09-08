@@ -36,7 +36,7 @@ func ShowInitialViewController(animated: Bool = true) {
 
 func ShowRegistrationViewController(animated: Bool = true) {
     
-    guard let navigationController = Storyboard.TrialPage.firstController else {return}
+    let navigationController = Storyboard.TrialPage.storyboard.instantiateViewControllerWithIdentifier("RegistrationNavigationView")
     
     PresentViewController(navigationController, animated: animated)
 }
@@ -49,6 +49,12 @@ func ShowConversationViewController(animated: Bool = true) {
 
 func ShowWelcomeViewController(animated: Bool = true) {
     guard let navigationController = Storyboard.Welcome.firstController else {return}
+    
+    PresentViewController(navigationController, animated: animated)
+}
+
+func ShowTrialPageViewController(animated: Bool = true) {
+    guard let navigationController = Storyboard.TrialPage.firstController else {return}
     
     PresentViewController(navigationController, animated: animated)
 }

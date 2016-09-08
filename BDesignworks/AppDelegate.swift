@@ -34,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let error {
             Logger.error("\(error)")
         }
-        
         return true
     }
 
