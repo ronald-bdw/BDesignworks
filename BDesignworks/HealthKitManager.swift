@@ -12,13 +12,7 @@ import HealthKit
 
 class HealthKitManager
 {
-    class var sharedInstance: HealthKitManager {
-        struct Singleton {
-            static let instance = HealthKitManager()
-        }
-        
-        return Singleton.instance
-    }
+    static let sharedInstance = HealthKitManager()
     
     let healthStore: HKHealthStore? = {
         if HKHealthStore.isHealthDataAvailable() {
