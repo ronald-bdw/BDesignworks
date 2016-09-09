@@ -19,7 +19,6 @@ extension Request {
             
             let JSONResponseSerializer = Request.JSONResponseSerializer(options: .AllowFragments)
             let result = JSONResponseSerializer.serializeResponse(request, response, data, error)
-    
             
             switch result {
             case .Success(let value):
@@ -52,6 +51,9 @@ extension Request {
                     }
                 }
                 catch let error {
+                    if let object = T(JSON: [:]) where data?.length == 0 {
+                        return .Success(object)
+                    }
                     Logger.error("\(error)")
                 }
 

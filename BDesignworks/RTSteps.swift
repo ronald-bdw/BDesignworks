@@ -11,7 +11,7 @@ import ObjectMapper
 
 extension Router {
     enum Steps {
-        case Send(count: Int, startedAt: NSDate, finishedAt: NSDate)
+        case Send(steps: [ENSteps])
     }
 }
 
@@ -28,26 +28,27 @@ extension Router.Steps: RouterProtocol {
     
     var parameters: [String : AnyObject]? {
         switch self {
-        case .Send(let count, let startedAt, let finishedAt):
+        case .Send(let steps):
+            var jsonArray:[[String: AnyObject]] = []
+            
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "Y-MM-dd HH:mm:ss zzz"
-            
-            let startString = dateFormatter.stringFromDate(startedAt)
-            let finishString = dateFormatter.stringFromDate(finishedAt)
-            
-            return ["started_at": startString, "finished_at": finishString, "steps_count": count]
+            for step in steps {
+                let startString = dateFormatter.stringFromDate(step.startDate)
+                let finishString = dateFormatter.stringFromDate(step.finishDate)
+                jsonArray.append(["started_at": startString, "finished_at": finishString, "steps_count": step.count])
+            }
+            return ["activities": jsonArray]
         }
     }
 }
 
 class RTStepsSendResponse: Mappable {
-    var activity: Steps?
     
     required convenience init?(_ map: Map) {
         self.init()
     }
     
     func mapping(map: Map) {
-        self.activity <- map["activity"]
     }
 }
