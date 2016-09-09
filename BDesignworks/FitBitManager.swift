@@ -36,9 +36,39 @@ class FitBitManager {
             case .Success(let value):
                 Logger.debug("\(value.stepsPerDay)")
                 Logger.debug("\(value.stepsIntraday)")
+                for stepsSample in value.stepsIntraday {
+                    if stepsSample.count > 0 {
+                        self.sendDataToServer(stepsSample.count, startDate: stepsSample.startDate, endDate: stepsSample.finishDate)
+                    }
+                }
             case .Failure(let error):
                 Logger.error("\(error)")
             }
         }
+    }
+    
+    private func sendDataToServer(count: Int, startDate: NSDate, endDate: NSDate) {
+        Router.Steps.Send(count: count, startedAt: startDate, finishedAt: endDate).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
+            switch response.result {
+            case .Success(let value):
+                Logger.debug("\(value.activity)")
+                guard let lUser = User.getMainUser() else {return}
+                if lUser.lastStepsFitBitUpdateDate == nil || lUser.lastStepsFitBitUpdateDate!.compare(endDate) == .OrderedAscending {
+                    do {
+                        let realm = try Realm()
+                        let user = realm.objects(User).first
+                        try realm.write({
+                            user?.lastStepsFitBitUpdateDate = endDate
+                        })
+                        Logger.debug("updatedStepsDate: \(user?.lastStepsFitBitUpdateDate)")
+                    }
+                    catch let error {
+                        Logger.error("\(error)")
+                    }
+                }
+            case .Failure(let error):
+                Logger.error("\(error)")
+            }
+        })
     }
 }
