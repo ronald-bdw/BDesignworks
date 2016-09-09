@@ -30,9 +30,10 @@ extension RouterProtocol {
         do {
             let realm = try Realm()
             if let user = realm.objects(User).first {
-                mutableURLRequest.setValue(user.token, forHTTPHeaderField: "X-User-Token")
-                mutableURLRequest.setValue(user.phoneNumber, forHTTPHeaderField: "X-User-Phone-Number")
-                
+                if baseURL == Router.BaseURL {
+                    mutableURLRequest.setValue(user.token, forHTTPHeaderField: "X-User-Token")
+                    mutableURLRequest.setValue(user.phoneNumber, forHTTPHeaderField: "X-User-Phone-Number")
+                }
                 if let fitbitToken = user.fitbitToken {
                     mutableURLRequest.setValue("Bearer " + fitbitToken, forHTTPHeaderField: "Authorization")
                 }
