@@ -36,10 +36,11 @@ class HealthKitManager
     
     func sendHealthKitData() {
         let dataTypesToRead = NSSet(objects: self.stepsCount!)
-//        let itemsToWrite = Set(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!)
-        self.healthStore?.requestAuthorizationToShareTypes(nil, readTypes: dataTypesToRead as? Set<HKObjectType>, completion: { [unowned self] (success, error) in
+        let itemsToWrite = Set(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!)
+        self.healthStore?.requestAuthorizationToShareTypes(itemsToWrite, readTypes: dataTypesToRead as? Set<HKObjectType>, completion: { [unowned self] (success, error) in
             if success {
-                self.queryStepsByDay()
+//                self.saveSteps()
+                self.querySteps()
             } else {
                 Logger.error("\(error)")
             }
@@ -52,7 +53,7 @@ class HealthKitManager
         let distance = HKQuantitySample(type: self.stepsCount!, quantity: stepsQuantity, startDate: NSDate().dateByAddingHours(-5), endDate: NSDate())
         
         self.healthStore?.saveObject(distance, withCompletion: { (success, error) -> Void in
-            if (error != nil) {
+            if (error == nil) {
                 Logger.debug("successfully written")
             } else {
                 Logger.debug("Error writing steps: \(error)")
@@ -60,35 +61,30 @@ class HealthKitManager
         })
     }
     
-    func queryStepsByDay() {
-        let interval = NSDateComponents()
-        interval.day = 1
-        
-        let anchorDate = NSDate().fs_midnightDate()
-        
-        let query = HKStatisticsCollectionQuery(quantityType: self.stepsCount!,
-                                                quantitySamplePredicate: nil,
-                                                options: .CumulativeSum,
-                                                anchorDate: anchorDate,
-                                                intervalComponents: interval)
-        
-        query.initialResultsHandler = { query, results, error in
+    func querySteps() {
+        let sampleQuery = HKSampleQuery(sampleType: self.stepsCount!,
+                                        predicate: nil,
+                                        limit: 10,
+                                        sortDescriptors: nil)
+        {  (query, results, error) in
+            guard let results = results as? [HKQuantitySample] else {return}
+            
             let endDate = NSDate()
             let startDate = User.getMainUser()?.lastStepsUpdateDate ?? endDate.fs_dateByAddingDays(-self.defaultDaysToStepsCount)
             
-            results?.enumerateStatisticsFromDate(startDate, toDate: endDate) {statistics, stop in
-                guard let quantity = statistics.sumQuantity() else {return}
-                Router.Steps.Send(count: Int(quantity.doubleValueForUnit((HKUnit.countUnit()))), startedAt: statistics.startDate, finishedAt: statistics.endDate).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
+            let validResults = results.filter({startDate.compare($0.startDate) == .OrderedAscending})
+            for result in validResults {
+                Router.Steps.Send(count: Int(result.quantity.doubleValueForUnit((HKUnit.countUnit()))), startedAt: result.startDate, finishedAt: result.endDate).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
                     switch response.result {
                     case .Success(let value):
                         Logger.debug("\(value.activity)")
                         guard let lUser = User.getMainUser() else {return}
-                        if lUser.lastStepsUpdateDate == nil || lUser.lastStepsUpdateDate!.compare(statistics.endDate) == .OrderedAscending {
+                        if lUser.lastStepsUpdateDate == nil || lUser.lastStepsUpdateDate!.compare(result.endDate) == .OrderedAscending {
                             do {
                                 let realm = try Realm()
                                 let user = realm.objects(User).first
                                 try realm.write({
-                                    user?.lastStepsUpdateDate = statistics.endDate
+                                    user?.lastStepsUpdateDate = result.endDate
                                 })
                                 Logger.debug("updatedStepsDate: \(user?.lastStepsUpdateDate)")
                             }
@@ -101,9 +97,8 @@ class HealthKitManager
                     }
                 })
             }
-            
         }
         
-        self.healthStore?.executeQuery(query)
+        self.healthStore?.executeQuery(sampleQuery)
     }
 }
