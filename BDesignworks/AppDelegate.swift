@@ -65,6 +65,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
     }
     
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        //pearup://pearup.com?authcode=####
+        guard let urlFragment = url.fragment,
+            let startRange = urlFragment.rangeOfString("="),
+            let endRange = urlFragment.rangeOfString("&") else {return true}
+        let token = urlFragment.substringWithRange(startRange.endIndex..<endRange.startIndex)
+        do {
+            let realm = try Realm()
+            let user = User.getMainUser()
+            user?.fitbitToken = token
+            try realm.write({
+                user?.fitbitToken = token
+                Logger.debug(user?.fitbitToken)
+            })
+            FitBitManager.sharedInstance.sendFitBitData()
+        }
+        catch let error {
+            Logger.error("\(error)")
+        }
+        return true
+    }
+    
     //MARK: - Remote Notifications
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {

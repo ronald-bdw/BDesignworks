@@ -101,6 +101,7 @@
 		E79D88F81D7F256200EBA8FA /* TrialPageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */; };
 		E7DA95801D8018FA0079EB79 /* RTSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA957F1D8018FA0079EB79 /* RTSteps.swift */; };
 		E7DA95821D8024A50079EB79 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA95811D8024A50079EB79 /* Steps.swift */; };
+		E7F92C471D8173D60085684F /* FitBitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F92C461D8173D60085684F /* FitBitManager.swift */; };
 		F7018C5C4E9D83799A15BC04 /* Pods_Abstract_BDesignworks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CDFD2D8FBD39ED71F9EDC /* Pods_Abstract_BDesignworks.framework */; };
 /* End PBXBuildFile section */
 
@@ -299,6 +300,7 @@
 		E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageSelectionView.swift; sourceTree = "<group>"; };
 		E7DA957F1D8018FA0079EB79 /* RTSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTSteps.swift; sourceTree = "<group>"; };
 		E7DA95811D8024A50079EB79 /* Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
+		E7F92C461D8173D60085684F /* FitBitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitBitManager.swift; sourceTree = "<group>"; };
 		EC5B966D6C1FE954CB0BC550 /* Pods_Abstract_BDesignworksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE03134474C0070BF8DA767B /* Pods-Abstract-BDesignworks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.release.xcconfig"; sourceTree = "<group>"; };
 		FC6E3D360349BB799F9BA741 /* Pods-Abstract-BDesignworksTests.test staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.test staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.test staging.xcconfig"; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				214F4FF11BFDC2CF0084BE32 /* Extensions.swift */,
 				214F4FF51BFDC35C0084BE32 /* Protocols.swift */,
 				2F0729901D64C86B00A71B3C /* HealthKitManager.swift */,
+				E7F92C461D8173D60085684F /* FitBitManager.swift */,
 				2FDE13681D61B938008702FE /* SmoochHelper.swift */,
 				DCD86E581D6DAA8C0072AFA1 /* Alerts.swift */,
 				DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */,
@@ -1398,6 +1401,7 @@
 				E7DA95821D8024A50079EB79 /* Steps.swift in Sources */,
 				DCCA51861D76EAE700B42736 /* VerificationModel.swift in Sources */,
 				DC2281151D6B46AB00D5A0DA /* RTErrors.swift in Sources */,
+				E7F92C471D8173D60085684F /* FitBitManager.swift in Sources */,
 				21E157E21BB3EDF40041FCE4 /* FSTestHelpers.swift in Sources */,
 				DC2281191D6B46AB00D5A0DA /* User.swift in Sources */,
 				A489C48A1D6C8F54002AAA75 /* AreaCodeCell.swift in Sources */,

@@ -12,17 +12,38 @@ import ObjectMapper
 extension Router {
     enum Steps {
         case Send(steps: [ENSteps])
+        case Get(day: NSDate)
     }
 }
 
 extension Router.Steps: RouterProtocol {
+    
+    var URLRequest: NSMutableURLRequest {
+        if case .Get(_) = self {
+            return self.defaultURLRequest("https://api.fitbit.com")
+        }
+        else {
+            return self.defaultURLRequest()
+        }
+    }
+    
     var settings: RTRequestSettings {
-        return RTRequestSettings(method: .POST)
+        switch self {
+        case .Send(_): return RTRequestSettings(method: .POST)
+        case .Get(_): return RTRequestSettings(method: .GET)
+        }
     }
     
     var path: String {
         switch self {
         case .Send(_): return "/activities"
+        case .Get(let day):
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "Y-MM-dd"
+            
+            let dayString = dateFormatter.stringFromDate(day)
+            
+            return "/1/user/-/activities/steps/date/\(dayString)/1d/15min.json"
         }
     }
     
@@ -39,6 +60,8 @@ extension Router.Steps: RouterProtocol {
                 jsonArray.append(["started_at": startString, "finished_at": finishString, "steps_count": step.count])
             }
             return ["activities": jsonArray]
+        case .Get(_):
+            return nil
         }
     }
 }
@@ -50,5 +73,28 @@ class RTStepsSendResponse: Mappable {
     }
     
     func mapping(map: Map) {
+    }
+}
+
+class RTStepsGetResponse: Mappable {
+    var stepsPerDay: ENSteps?
+    var stepsIntraday: [ENSteps] = []
+    
+    required convenience init?(_ map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        
+        guard let stepsPerDayJsonValue = (map.JSONDictionary["activities-steps"] as? [[String : AnyObject]])?.first else {return}
+        self.stepsPerDay = Mapper<ENSteps>().map(stepsPerDayJsonValue)
+        
+        guard let dayString = (map.JSONDictionary["activities-steps"] as? [[String : AnyObject]])?.first?["dateTime"] else {return}
+        guard var stepsIntradayJsonArray = (map.JSONDictionary["activities-steps-intraday"] as? [String: AnyObject])?["dataset"] as? [[String : AnyObject]] else {return}
+        
+        for i in 0..<stepsIntradayJsonArray.count {
+            stepsIntradayJsonArray[i]["dateTime"] = dayString
+        }
+        self.stepsIntraday = Mapper<ENSteps>().mapArray(stepsIntradayJsonArray) ?? []
     }
 }

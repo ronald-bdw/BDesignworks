@@ -34,8 +34,29 @@ class User: Object, IUser {
     }
     var _token: String?
     
+    var fitbitToken: String? {
+        get {
+            guard let ssToken = SAMKeychain.passwordForService(FSKeychainKey.FitbitToken, account: FSKeychainKey.AccountName) else {return self._fitbitToken}
+            return ssToken
+        }
+        set(newToken) {
+            if newToken == nil {
+                self._fitbitToken = nil
+                SAMKeychain.deletePasswordForService(FSKeychainKey.FitbitToken, account: FSKeychainKey.AccountName)
+            } else {
+                self._fitbitToken = newToken
+                SAMKeychain.setPassword(newToken, forService: FSKeychainKey.FitbitToken, account: FSKeychainKey.AccountName)
+            }
+        }
+    }
+    var _fitbitToken: String?
+    
     override static func primaryKey() -> String? {
         return "id"
+    }
+    
+    override static func ignoredProperties() -> [String] {
+        return ["token", "_token", "fitbitToken", "_fitbitToken"]
     }
     
     required convenience init?(_ map: ObjectMapper.Map) {

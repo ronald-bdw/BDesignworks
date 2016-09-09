@@ -16,6 +16,7 @@ enum FSKeychainKey {
     
     static let AccountName     = "com.pearup"
     static let APIToken        = "KeychainAPIToken"
+    static let FitbitToken     = "KeychainFitbitToken"
     static let UserEmail       = "KeychainUserEmail"
 }
 

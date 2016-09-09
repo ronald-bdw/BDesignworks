@@ -21,9 +21,9 @@ protocol RouterProtocol: URLRequestConvertible {
 
 extension RouterProtocol {
     
-    func defaultURLRequest () -> NSMutableURLRequest {
+    func defaultURLRequest (baseURL: String = Router.BaseURL) -> NSMutableURLRequest {
         
-        let URL = NSURL(string: Router.BaseURL)!
+        let URL = NSURL(string: baseURL)!
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(self.path))
         mutableURLRequest.HTTPMethod = self.settings.method.rawValue
         
@@ -32,6 +32,10 @@ extension RouterProtocol {
             if let user = realm.objects(User).first {
                 mutableURLRequest.setValue(user.token, forHTTPHeaderField: "X-User-Token")
                 mutableURLRequest.setValue(user.phoneNumber, forHTTPHeaderField: "X-User-Phone-Number")
+                
+                if let fitbitToken = user.fitbitToken {
+                    mutableURLRequest.setValue("Bearer " + fitbitToken, forHTTPHeaderField: "Authorization")
+                }
             }
         }
         catch let error {
