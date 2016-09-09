@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class Steps: Object, Mappable {
+class ENSteps: Object, Mappable {
     dynamic var startDate: NSDate = NSDate(){
         didSet {
             compoundKey = compoundKeyValue()
@@ -32,12 +32,19 @@ class Steps: Object, Mappable {
         self.init()
     }
     
+    convenience init(startDate: NSDate, finishDate: NSDate, count: Int) {
+        self.init()
+        self.startDate = startDate
+        self.finishDate = finishDate
+        self.count = count
+    }
+    
     private func compoundKeyValue() -> String {
         return "\(startDate)-\(finishDate)"
     }
 }
 
-extension Steps {
+extension ENSteps {
     func mapping(map: ObjectMapper.Map) {
         let json = map.JSONDictionary
         if let startedAt = json["started_at"] as? String,

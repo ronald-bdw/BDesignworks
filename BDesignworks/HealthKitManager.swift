@@ -33,11 +33,12 @@ class HealthKitManager
     let stepsUnit = HKUnit.countUnit()
     
     let defaultDaysToStepsCount = 7
+    let defaultSamplesCount = 10
     
     func sendHealthKitData() {
         let dataTypesToRead = NSSet(objects: self.stepsCount!)
-        let itemsToWrite = Set(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!)
-        self.healthStore?.requestAuthorizationToShareTypes(itemsToWrite, readTypes: dataTypesToRead as? Set<HKObjectType>, completion: { [unowned self] (success, error) in
+//        let itemsToWrite = Set(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!)
+        self.healthStore?.requestAuthorizationToShareTypes(nil, readTypes: dataTypesToRead as? Set<HKObjectType>, completion: { [unowned self] (success, error) in
             if success {
 //                self.saveSteps()
                 self.querySteps()
@@ -64,7 +65,7 @@ class HealthKitManager
     func querySteps() {
         let sampleQuery = HKSampleQuery(sampleType: self.stepsCount!,
                                         predicate: nil,
-                                        limit: 10,
+                                        limit: self.defaultSamplesCount,
                                         sortDescriptors: nil)
         {  (query, results, error) in
             guard let results = results as? [HKQuantitySample] else {return}
@@ -73,30 +74,29 @@ class HealthKitManager
             let startDate = User.getMainUser()?.lastStepsUpdateDate ?? endDate.fs_dateByAddingDays(-self.defaultDaysToStepsCount)
             
             let validResults = results.filter({startDate.compare($0.startDate) == .OrderedAscending})
-            for result in validResults {
-                Router.Steps.Send(count: Int(result.quantity.doubleValueForUnit((HKUnit.countUnit()))), startedAt: result.startDate, finishedAt: result.endDate).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
-                    switch response.result {
-                    case .Success(let value):
-                        Logger.debug("\(value.activity)")
-                        guard let lUser = User.getMainUser() else {return}
-                        if lUser.lastStepsUpdateDate == nil || lUser.lastStepsUpdateDate!.compare(result.endDate) == .OrderedAscending {
-                            do {
-                                let realm = try Realm()
-                                let user = realm.objects(User).first
-                                try realm.write({
-                                    user?.lastStepsUpdateDate = result.endDate
-                                })
-                                Logger.debug("updatedStepsDate: \(user?.lastStepsUpdateDate)")
-                            }
-                            catch let error {
-                                Logger.error("\(error)")
-                            }
+            let steps = validResults.map({ENSteps(startDate: $0.startDate, finishDate: $0.endDate, count: Int($0.quantity.doubleValueForUnit((HKUnit.countUnit()))))})
+            guard steps.count > 0 else {return}
+            Router.Steps.Send(steps: steps).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
+                switch response.result {
+                case .Success(_):
+                    guard let lUser = User.getMainUser() else {return}
+                    if lUser.lastStepsUpdateDate == nil || lUser.lastStepsUpdateDate!.compare(endDate) == .OrderedAscending {
+                        do {
+                            let realm = try Realm()
+                            let user = realm.objects(User).first
+                            try realm.write({
+                                user?.lastStepsUpdateDate = endDate
+                            })
+                            Logger.debug("updatedStepsDate: \(user?.lastStepsUpdateDate)")
                         }
-                    case .Failure(let error):
-                        Logger.error("\(error)")
+                        catch let error {
+                            Logger.error("\(error)")
+                        }
                     }
-                })
-            }
+                case .Failure(let error):
+                    Logger.error("\(error)")
+                }
+            })
         }
         
         self.healthStore?.executeQuery(sampleQuery)
