@@ -36,29 +36,27 @@ class FitBitManager {
             case .Success(let value):
                 Logger.debug("\(value.stepsPerDay)")
                 Logger.debug("\(value.stepsIntraday)")
-                for stepsSample in value.stepsIntraday {
-                    if stepsSample.count > 0 {
-                        self.sendDataToServer(stepsSample.count, startDate: stepsSample.startDate, endDate: stepsSample.finishDate)
-                    }
-                }
+                
+                let validSteps = value.stepsIntraday.filter({$0.finishDate.compare(NSDate()) == .OrderedAscending})
+                guard validSteps.count > 0 else {return}
+                self.sendDataToServer(validSteps)
             case .Failure(let error):
                 Logger.error("\(error)")
             }
         }
     }
     
-    private func sendDataToServer(count: Int, startDate: NSDate, endDate: NSDate) {
-        Router.Steps.Send(count: count, startedAt: startDate, finishedAt: endDate).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
+    private func sendDataToServer(steps: [ENSteps]) {
+        Router.Steps.Send(steps: steps).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
             switch response.result {
-            case .Success(let value):
-                Logger.debug("\(value.activity)")
+            case .Success(_):
                 guard let lUser = User.getMainUser() else {return}
-                if lUser.lastStepsFitBitUpdateDate == nil || lUser.lastStepsFitBitUpdateDate!.compare(endDate) == .OrderedAscending {
+                if lUser.lastStepsFitBitUpdateDate == nil || lUser.lastStepsFitBitUpdateDate!.compare(NSDate()) == .OrderedAscending {
                     do {
                         let realm = try Realm()
                         let user = realm.objects(User).first
                         try realm.write({
-                            user?.lastStepsFitBitUpdateDate = endDate
+                            user?.lastStepsFitBitUpdateDate = NSDate()
                         })
                         Logger.debug("updatedStepsDate: \(user?.lastStepsFitBitUpdateDate)")
                     }
