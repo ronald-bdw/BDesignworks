@@ -32,8 +32,8 @@ class HealthKitManager
     
     func sendHealthKitData() {
         let dataTypesToRead = NSSet(objects: self.stepsCount!)
-        let itemsToWrite = Set(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!)
-        self.healthStore?.requestAuthorizationToShareTypes(itemsToWrite, readTypes: dataTypesToRead as? Set<HKObjectType>, completion: { [unowned self] (success, error) in
+//        let itemsToWrite = Set(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!)
+        self.healthStore?.requestAuthorizationToShareTypes(nil, readTypes: dataTypesToRead as? Set<HKObjectType>, completion: { [unowned self] (success, error) in
             if success {
 //                self.saveSteps()
                 self.querySteps()

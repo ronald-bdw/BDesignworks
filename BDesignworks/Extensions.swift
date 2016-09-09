@@ -81,6 +81,36 @@ extension NSDate {
         return calendar.dateFromComponents(dateTimeComponents)!
     }
     
+    func compareByDay(date: NSDate) -> NSComparisonResult {
+        let calendar = NSCalendar.currentCalendar()
+        calendar.timeZone = NSTimeZone(abbreviation: "UTC")!
+        
+        let components = calendar.components([.Year, .Month, .Day], fromDate: self)
+        let comparisionComponents = calendar.components([.Year, .Month, .Day], fromDate: date)
+        
+        guard components.year == comparisionComponents.year else {
+            return components.year < comparisionComponents.year ? .OrderedAscending : .OrderedDescending
+        }
+        guard components.month == comparisionComponents.month else {
+            return components.month < comparisionComponents.month ? .OrderedAscending : .OrderedDescending
+        }
+        
+        guard components.day == comparisionComponents.day else {
+            return components.day < comparisionComponents.day ? .OrderedAscending : .OrderedDescending
+        }
+        return .OrderedSame
+    }
+    
+    static func datesByDay(from startDate: NSDate, to finishDate: NSDate) -> [NSDate] {
+        var result: [NSDate] = []
+        var appendDate = startDate
+        while appendDate.compareByDay(finishDate) == .OrderedAscending || appendDate.compareByDay(finishDate) == .OrderedSame {
+            result.append(appendDate)
+            appendDate = appendDate.fs_dateByAddingDays(1)
+        }
+        return result
+    }
+    
     static func getDateFromISO8601(dateString: String) -> NSDate? {
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
