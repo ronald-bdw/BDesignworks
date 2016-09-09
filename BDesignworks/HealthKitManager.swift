@@ -75,23 +75,21 @@ class HealthKitManager
             Router.Steps.Send(steps: steps).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
                 switch response.result {
                 case .Success(_):
-                    guard let lUser = User.getMainUser() else {return}
-                    if lUser.lastStepsHealthKitUpdateDate == nil || lUser.lastStepsHealthKitUpdateDate!.compare(endDate) == .OrderedAscending {
-                        do {
-                            let realm = try Realm()
-                            let user = realm.objects(User).first
-                            try realm.write({
-                                user?.lastStepsHealthKitUpdateDate = endDate
-                            })
-                            Logger.debug("updatedStepsDate: \(user?.lastStepsHealthKitUpdateDate)")
-                        }
-                        catch let error {
-                            Logger.error("\(error)")
-                        }                    }
+                    do {
+                        let realm = try Realm()
+                        let user = realm.objects(User).first
+                        try realm.write({
+                            user?.lastStepsHealthKitUpdateDate = endDate
+                        })
+                        Logger.debug("updatedStepsDate: \(user?.lastStepsHealthKitUpdateDate)")
+                    }
+                    catch let error {
+                        Logger.error("\(error)")
+                    }
                 case .Failure(let error):
                     Logger.error("\(error)")
                 }
-            })       }
+            })}
         
         self.healthStore?.executeQuery(sampleQuery)
     }

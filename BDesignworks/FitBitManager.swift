@@ -50,19 +50,16 @@ class FitBitManager {
         Router.Steps.Send(steps: steps).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
             switch response.result {
             case .Success(_):
-                guard let lUser = User.getMainUser() else {return}
-                if lUser.lastStepsFitBitUpdateDate == nil || lUser.lastStepsFitBitUpdateDate!.compare(NSDate()) == .OrderedAscending {
-                    do {
-                        let realm = try Realm()
-                        let user = realm.objects(User).first
-                        try realm.write({
-                            user?.lastStepsFitBitUpdateDate = NSDate()
-                        })
-                        Logger.debug("updatedStepsDate: \(user?.lastStepsFitBitUpdateDate)")
-                    }
-                    catch let error {
-                        Logger.error("\(error)")
-                    }
+                do {
+                    let realm = try Realm()
+                    let user = realm.objects(User).first
+                    try realm.write({
+                        user?.lastStepsFitBitUpdateDate = NSDate()
+                    })
+                    Logger.debug("updatedStepsDate: \(user?.lastStepsFitBitUpdateDate)")
+                }
+                catch let error {
+                    Logger.error("\(error)")
                 }
             case .Failure(let error):
                 Logger.error("\(error)")
