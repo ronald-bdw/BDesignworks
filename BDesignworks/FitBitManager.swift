@@ -22,10 +22,14 @@ class FitBitManager {
             self.getSteps()
         }
         else {
-            let urlString = "https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=" + self.cliendId + "&redirect_uri=pearup%3A%2F%2Fpearup.com%2Ffitbit_auth&scope=activity&expires_in=\(self.expireTime)"
-            guard let url = NSURL(string: urlString) else {return}
-            UIApplication.sharedApplication().openURL(url)
+            self.signIn()
         }
+    }
+    
+    func signIn() {
+        let urlString = "https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=" + self.cliendId + "&redirect_uri=pearup%3A%2F%2Fpearup.com%2Ffitbit_auth&scope=activity&expires_in=\(self.expireTime)"
+        guard let url = NSURL(string: urlString) else {return}
+        UIApplication.sharedApplication().openURL(url)
     }
     
     private func getSteps() {
@@ -45,6 +49,13 @@ class FitBitManager {
                     self.sendDataToServer(validSteps)
                 case .Failure(let error):
                     Logger.error("\(error)")
+                    guard case let .Backend(backendError) = error else {return}
+                    switch backendError {
+                    case .FitbitTokenExpired, .FitbitTokenInvalid:
+                        ShowFitbitTokenErrorAlert(backendError.humanDescription)
+                    default:
+                        return
+                    }
                 }
             }
         }

@@ -73,6 +73,9 @@ enum BackendError {
     case EmainTaken
     case SmsCodeNotExist
     
+    case FitbitTokenExpired
+    case FitbitTokenInvalid
+    
     var error: RTError {return RTError(backend: self)}
 }
 

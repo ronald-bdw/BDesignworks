@@ -47,3 +47,18 @@ func ShowErrorAlert(title: String? = "Sorry", message: String? = "Something went
     
     alertController.presentIfNoAlertsPresented()
 }
+
+func ShowFitbitTokenErrorAlert(description: ErrorHumanDescription) {
+    let alertController = UIAlertController(title: description.title, message: description.text, preferredStyle: UIAlertControllerStyle.Alert)
+    
+    let alertOKButton = UIAlertAction(title: "OK", style: .Default) { (alertAction: UIAlertAction) -> Void in
+        FitBitManager.sharedInstance.signIn()
+    }
+    let alertCancelButton = UIAlertAction(title: "Cancel", style: .Cancel) { (alertAction) in
+        alertController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    alertController.addAction(alertOKButton)
+    alertController.addAction(alertCancelButton)
+    
+    alertController.presentIfNoAlertsPresented()
+}

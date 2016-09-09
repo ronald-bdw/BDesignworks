@@ -97,6 +97,7 @@
 		DCCA51861D76EAE700B42736 /* VerificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCA51851D76EAE700B42736 /* VerificationModel.swift */; };
 		DCD86E591D6DAA8C0072AFA1 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD86E581D6DAA8C0072AFA1 /* Alerts.swift */; };
 		DCD86E5B1D6DEAFA0072AFA1 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD86E5A1D6DEAFA0072AFA1 /* ValidationError.swift */; };
+		E709FB111D869D8000BC9336 /* FitbitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E709FB101D869D8000BC9336 /* FitbitError.swift */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
 		E79D88F81D7F256200EBA8FA /* TrialPageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */; };
 		E7DA95801D8018FA0079EB79 /* RTSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA957F1D8018FA0079EB79 /* RTSteps.swift */; };
@@ -296,6 +297,7 @@
 		DCD86E581D6DAA8C0072AFA1 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		DCD86E5A1D6DEAFA0072AFA1 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
+		E709FB101D869D8000BC9336 /* FitbitError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitbitError.swift; sourceTree = "<group>"; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_Storyboard.storyboard; sourceTree = "<group>"; };
 		E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageSelectionView.swift; sourceTree = "<group>"; };
 		E7DA957F1D8018FA0079EB79 /* RTSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTSteps.swift; sourceTree = "<group>"; };
@@ -669,6 +671,7 @@
 				DC22810D1D6B46AB00D5A0DA /* RTErrors.swift */,
 				DC22810E1D6B46AB00D5A0DA /* RTErrorsDescription.swift */,
 				DCD86E5A1D6DEAFA0072AFA1 /* ValidationError.swift */,
+				E709FB101D869D8000BC9336 /* FitbitError.swift */,
 			);
 			name = Errors;
 			sourceTree = "<group>";
@@ -1455,6 +1458,7 @@
 				4F638FFC1D6A6435006EE693 /* RollUpButton.swift in Sources */,
 				DC2281001D6B465400D5A0DA /* LoginPresenter.swift in Sources */,
 				214F4FF21BFDC2CF0084BE32 /* Extensions.swift in Sources */,
+				E709FB111D869D8000BC9336 /* FitbitError.swift in Sources */,
 				DC9631F11D6EF12100B1C43E /* ViewControllersPresentation.swift in Sources */,
 				2F16FE321D54E14D00EFFDD7 /* PushScreen.swift in Sources */,
 				DC2281131D6B46AB00D5A0DA /* AuthInfo.swift in Sources */,

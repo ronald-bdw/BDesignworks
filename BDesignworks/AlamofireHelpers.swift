@@ -13,8 +13,8 @@ extension Request {
     func responseObject<T: Mappable>(completionHandler: Response<T, RTError> -> Void) -> Self {
         
         let responseSerializer = ResponseSerializer<T, RTError> { request, response, data, error in
-            guard error == nil || response?.statusCode == 422 else {
-                return .Failure(RTError(request: .Unknown(error: error)))
+            guard error == nil else {
+                return Request.handleErrors(response, error: error!, data: data)
             }
             
             let JSONResponseSerializer = Request.JSONResponseSerializer(options: .AllowFragments)
@@ -34,33 +34,49 @@ extension Request {
                 return .Success(object)
                 
             case .Failure(_):
-                do {
-                guard let lData = data, let json = try NSJSONSerialization.JSONObjectWithData(lData, options: []) as? [String : AnyObject] else {
-                    return .Failure(RTError(serialize: .WrongType))
+                if let object = T(JSON: [:]) where data?.length == 0 {
+                    return .Success(object)
                 }
-                    var object = ValidationError()
-                    object = Mapper<ValidationError>().map(json["error"], toObject: object)
-                    if object.isPhoneValid == false {
-                        return .Failure(RTError(backend: .InvalidPhone))
-                    }
-                    if object.isSmsCodeValid == false {
-                        return .Failure(RTError(backend: .SmsCodeExpired))
-                    }
-                    if object.isEmailNotTaken == false {
-                        return .Failure(RTError(backend: .EmainTaken))
-                    }
-                }
-                catch let error {
-                    if let object = T(JSON: [:]) where data?.length == 0 {
-                        return .Success(object)
-                    }
-                    Logger.error("\(error)")
-                }
-
                 return .Failure(RTError(serialize: .JSONSerializingFailed))
             }
         }
         
         return response(responseSerializer: responseSerializer, completionHandler: completionHandler)
+    }
+    
+    class func handleErrors<T: Mappable>(response: NSHTTPURLResponse?, error: NSError, data: NSData?) -> Result<T, RTError> {
+        do {
+            guard let lData = data, let json = try NSJSONSerialization.JSONObjectWithData(lData, options: []) as? [String : AnyObject] else {
+                return .Failure(RTError(serialize: .WrongType))
+            }
+            if response?.statusCode == 401 && response?.URL?.host == "api.fitbit.com" {
+                guard let jsonObject = (json["errors"] as? [[String : AnyObject]])?.first,
+                    let object = Mapper<FitbitError>().map(jsonObject) else {return .Failure(RTError(request: .Unknown(error: error)))}
+                if object.isTokenExpired {
+                    return .Failure(RTError(backend: .FitbitTokenExpired))
+                }
+                if object.isTokenInvalid == false {
+                    return .Failure(RTError(backend: .FitbitTokenInvalid))
+                }
+            }
+            if response?.statusCode == 422 && response?.URL?.host == NSURL(string: Router.BaseURL)?.host {
+                var object = ValidationError()
+                object = Mapper<ValidationError>().map(json["error"], toObject: object)
+                if object.isPhoneValid == false {
+                    return .Failure(RTError(backend: .InvalidPhone))
+                }
+                if object.isSmsCodeValid == false {
+                    return .Failure(RTError(backend: .SmsCodeExpired))
+                }
+                if object.isEmailNotTaken == false {
+                    return .Failure(RTError(backend: .EmainTaken))
+                }
+            }
+
+        }
+        catch let error {
+            Logger.error("\(error)")
+        }
+        return .Failure(RTError(request: .Unknown(error: error)))
     }
 }
