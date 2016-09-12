@@ -82,21 +82,15 @@ extension NSDate {
     }
     
     func compareByDay(date: NSDate) -> NSComparisonResult {
-        let calendar = NSCalendar.currentCalendar()
-        calendar.timeZone = NSTimeZone(abbreviation: "UTC")!
         
-        let components = calendar.components([.Year, .Month, .Day], fromDate: self)
-        let comparisionComponents = calendar.components([.Year, .Month, .Day], fromDate: date)
+        let currentTimeIntervalSince1970 = self.fs_midnightDate().timeIntervalSince1970
+        let comparisionTimeIntervalSince1970 = date.fs_midnightDate().timeIntervalSince1970
         
-        guard components.year == comparisionComponents.year else {
-            return components.year < comparisionComponents.year ? .OrderedAscending : .OrderedDescending
+        if currentTimeIntervalSince1970 < comparisionTimeIntervalSince1970 {
+            return .OrderedAscending
         }
-        guard components.month == comparisionComponents.month else {
-            return components.month < comparisionComponents.month ? .OrderedAscending : .OrderedDescending
-        }
-        
-        guard components.day == comparisionComponents.day else {
-            return components.day < comparisionComponents.day ? .OrderedAscending : .OrderedDescending
+        if currentTimeIntervalSince1970 > comparisionTimeIntervalSince1970 {
+            return .OrderedDescending
         }
         return .OrderedSame
     }
