@@ -23,7 +23,7 @@ class HealthKitManager
         }
     }()
     
-    let stepsCount = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
+    let stepsCount = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!
     
     let stepsUnit = HKUnit.countUnit()
     
@@ -31,23 +31,31 @@ class HealthKitManager
     let defaultSamplesCount = 10
     
     func sendHealthKitData() {
-        let dataTypesToRead = NSSet(objects: self.stepsCount!)
+        let dataTypesToRead = NSSet(objects: self.stepsCount)
 //        let itemsToWrite = Set(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!)
         self.healthStore?.requestAuthorizationToShareTypes(nil, readTypes: dataTypesToRead as? Set<HKObjectType>, completion: { [unowned self] (success, error) in
             if success {
 //                self.saveSteps()
-                self.querySteps()
-                FitBitManager.sharedInstance.sendFitBitData()
+//                self.querySteps()
+                self.enableBackgroundDelivery()
+//                FitBitManager.sharedInstance.sendFitBitData()
             } else {
                 Logger.error("\(error)")
             }
         })
     }
     
+    func enableBackgroundDelivery() {
+        self.healthStore?.enableBackgroundDeliveryForType(self.stepsCount, frequency: .Hourly, withCompletion: { (success, error) in
+            guard error == nil else {print(error); return}
+            self.queryStepsInBackground()
+        })
+    }
+    
     ///Use only in debug mode. Before using add corresponding write access
     func saveSteps() {
         let stepsQuantity = HKQuantity(unit: HKUnit.countUnit(), doubleValue: 1000)
-        let distance = HKQuantitySample(type: self.stepsCount!, quantity: stepsQuantity, startDate: NSDate().dateByAddingHours(-5), endDate: NSDate())
+        let distance = HKQuantitySample(type: self.stepsCount, quantity: stepsQuantity, startDate: NSDate().dateByAddingHours(-5), endDate: NSDate())
         
         self.healthStore?.saveObject(distance, withCompletion: { (success, error) -> Void in
             if (error == nil) {
@@ -59,7 +67,7 @@ class HealthKitManager
     }
     
     func querySteps() {
-        let sampleQuery = HKSampleQuery(sampleType: self.stepsCount!,
+        let sampleQuery = HKSampleQuery(sampleType: self.stepsCount,
                                         predicate: nil,
                                         limit: self.defaultSamplesCount,
                                         sortDescriptors: nil)
@@ -72,7 +80,7 @@ class HealthKitManager
             let validResults = results.filter({startDate.compare($0.startDate) == .OrderedAscending})
             let steps = validResults.map({ENSteps(startDate: $0.startDate, finishDate: $0.endDate, count: Int($0.quantity.doubleValueForUnit((HKUnit.countUnit()))))})
             guard steps.count > 0 else {return}
-            Router.Steps.Send(steps: steps).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
+            Router.Steps.Send(steps: steps, source: .HealthKit).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
                 switch response.result {
                 case .Success(_):
                     do {
@@ -92,5 +100,13 @@ class HealthKitManager
             })}
         
         self.healthStore?.executeQuery(sampleQuery)
+    }
+    
+    func queryStepsInBackground() {
+        let observerQuery = HKObserverQuery(sampleType: self.stepsCount, predicate: nil) { [weak self] (query, completionHandler, error) in
+            guard error == nil else {Logger.error("\(error)"); return}
+            self?.querySteps()
+        }
+        self.healthStore?.executeQuery(observerQuery)
     }
 }

@@ -62,7 +62,7 @@ class FitBitManager {
     }
     
     private func sendDataToServer(steps: [ENSteps]) {
-        Router.Steps.Send(steps: steps).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
+        Router.Steps.Send(steps: steps, source: .Fitbit).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
             switch response.result {
             case .Success(_):
                 do {
