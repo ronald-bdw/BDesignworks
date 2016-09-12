@@ -57,54 +57,35 @@ extension ENSteps {
             self.count = stepsCount
         }
         
-//        if let dateValue = json["dateTime"] as? String {//fitbit api
-//        
-//            if let intCount = (json["value"] as? NSNumber)?.integerValue {
-//                self.count = intCount
-//            }
-//            else if let stringCount = Int(json["value"] as! String) {
-//                self.count = stringCount
-//            }
-//            
-//            let dateFormatter = NSDateFormatter()
-//            dateFormatter.dateFormat = "y-MM-dd"
-//            dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
-//            let date = dateFormatter.dateFromString(dateValue)!
-//            
-//            if let timeValue = json["time"] as? String {
-//                let timeFormatter = NSDateFormatter()
-//                timeFormatter.dateFormat = "HH:mm:ss"
-//                timeFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
-//                let time = timeFormatter.dateFromString(timeValue)!
-//                
-//                self.startDate = self.dateFrom(date, time: time)
-//                
-//                let timeInterval:NSTimeInterval = self.startDate.timeIntervalSinceReferenceDate + FSTimePeriod.Minute.rawValue * NSTimeInterval(15)
-//                self.endDate = NSDate(timeIntervalSinceReferenceDate: timeInterval)
-//            }
-//            else {
-//                self.startDate = date
-//                self.endDate = date.fs_tomorrow
-//            }
-//        }
-    }
-    
-    
-    
-    func dateFrom(date: NSDate, time: NSDate) -> NSDate {
+        //FitBit API
+        if let dateValue = json["dateTime"] as? String {
         
-        let dateComponents = NSCalendar.currentCalendar().components([.Year, .Month, .Day], fromDate: date)
-        
-        let timeComponents = NSCalendar.currentCalendar().components([.Hour, .Minute, .Second], fromDate: time)
-        
-        let dateTimeComponents = NSDateComponents()
-        dateTimeComponents.year = dateComponents.year
-        dateTimeComponents.month = dateComponents.month
-        dateTimeComponents.day = dateComponents.day
-        dateTimeComponents.hour = timeComponents.hour
-        dateTimeComponents.minute = timeComponents.minute
-        dateTimeComponents.second = timeComponents.second
-        
-        return NSCalendar.currentCalendar().dateFromComponents(dateTimeComponents)!
+            if let intCount = (json["value"] as? NSNumber)?.integerValue {
+                self.count = intCount
+            }
+            else if let valueString = json["value"] as? String,
+                let stringCount = Int(valueString) {
+                self.count = stringCount
+            }
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "y-MM-dd"
+            dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
+            guard let date = dateFormatter.dateFromString(dateValue) else {return}
+            
+            if let timeValue = json["time"] as? String {
+                let timeFormatter = NSDateFormatter()
+                timeFormatter.dateFormat = "HH:mm:ss"
+                timeFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
+                guard let time = timeFormatter.dateFromString(timeValue) else {return}
+                
+                self.startDate = date.dateByAddingTime(time)
+                self.finishDate = self.startDate.dateByAddingMinutes(15)
+            }
+            else {
+                self.startDate = date
+                self.finishDate = date.fs_tomorrow
+            }
+        }
     }
 }

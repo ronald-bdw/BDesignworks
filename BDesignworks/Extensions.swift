@@ -62,6 +62,49 @@ extension NSDate {
         return newDate
     }
     
+    public func dateByAddingTime(time: NSDate) -> NSDate {
+        let calendar = NSCalendar.currentCalendar()
+        calendar.timeZone = NSTimeZone(abbreviation: "UTC")!
+        
+        let dateComponents = calendar.components([.Year, .Month, .Day], fromDate: self)
+        
+        let timeComponents = calendar.components([.Hour, .Minute, .Second], fromDate: time)
+        
+        let dateTimeComponents = NSDateComponents()
+        dateTimeComponents.year = dateComponents.year
+        dateTimeComponents.month = dateComponents.month
+        dateTimeComponents.day = dateComponents.day
+        dateTimeComponents.hour = timeComponents.hour
+        dateTimeComponents.minute = timeComponents.minute
+        dateTimeComponents.second = timeComponents.second
+        
+        return calendar.dateFromComponents(dateTimeComponents)!
+    }
+    
+    func compareByDay(date: NSDate) -> NSComparisonResult {
+        
+        let currentTimeIntervalSince1970 = self.fs_midnightDate().timeIntervalSince1970
+        let comparisionTimeIntervalSince1970 = date.fs_midnightDate().timeIntervalSince1970
+        
+        if currentTimeIntervalSince1970 < comparisionTimeIntervalSince1970 {
+            return .OrderedAscending
+        }
+        if currentTimeIntervalSince1970 > comparisionTimeIntervalSince1970 {
+            return .OrderedDescending
+        }
+        return .OrderedSame
+    }
+    
+    static func datesByDay(from startDate: NSDate, to finishDate: NSDate) -> [NSDate] {
+        var result: [NSDate] = []
+        var appendDate = startDate
+        while appendDate.compareByDay(finishDate) == .OrderedAscending || appendDate.compareByDay(finishDate) == .OrderedSame {
+            result.append(appendDate)
+            appendDate = appendDate.fs_dateByAddingDays(1)
+        }
+        return result
+    }
+    
     static func getDateFromISO8601(dateString: String) -> NSDate? {
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
