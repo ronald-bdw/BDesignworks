@@ -72,7 +72,7 @@ class HealthKitManager
             let validResults = results.filter({startDate.compare($0.startDate) == .OrderedAscending})
             let steps = validResults.map({ENSteps(startDate: $0.startDate, finishDate: $0.endDate, count: Int($0.quantity.doubleValueForUnit((HKUnit.countUnit()))))})
             guard steps.count > 0 else {return}
-            Router.Steps.Send(steps: steps).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
+            Router.Steps.Send(steps: steps, source: .HealthKit).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
                 switch response.result {
                 case .Success(_):
                     do {
