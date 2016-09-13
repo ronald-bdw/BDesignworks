@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+protocol IProfileEditingModel {
+    
+}
+
+class ProfileEditingModel {
+    weak var presenter: PresenterProtocol?
+    
+    required init() {}
+}
+
+extension ProfileEditingModel: MVPModel {
+    typealias PresenterProtocol = IProfileEditingPresenterModel
+}

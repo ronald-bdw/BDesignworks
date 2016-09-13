@@ -13,7 +13,7 @@ protocol IProfileModel {
 }
 
 class ProfileModel {
-    var presenter: PresenterProtocol?
+    weak var presenter: PresenterProtocol?
     
     required init() {}
 }

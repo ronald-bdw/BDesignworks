@@ -8,6 +8,12 @@
 
 import Foundation
 
+typealias ProfileEditingMVP = MVPContainer<ProfileEditingView,ProfileEditingPresenter,ProfileEditingModel>
+
+protocol IProfileEditingView: class {
+    
+}
+
 class ProfileEditingView: UITableViewController {
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var nameLabel: UILabel!
@@ -17,11 +23,19 @@ class ProfileEditingView: UITableViewController {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var phoneTextField: UITextField!
     
+    var presenter: PresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let _ = ProfileEditingMVP(controller: self)
     }
     
     @IBAction func photoPressed(sender: AnyObject) {
     }
     
+}
+
+extension ProfileEditingView: MVPView {
+    typealias PresenterProtocol = IProfileEditingPresenterView
 }
