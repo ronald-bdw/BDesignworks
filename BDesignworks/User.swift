@@ -12,7 +12,7 @@ import ObjectMapper
 class User: Object, IUser {
     dynamic var id: Int = 0
     dynamic var firstName: String = ""
-    dynamic var lastName: String = ""
+    dynamic var lastName: String = "" 
     dynamic var email: String = ""
     dynamic var phoneNumber: String = ""
     dynamic var lastStepsHealthKitUpdateDate: NSDate?
@@ -52,12 +52,16 @@ class User: Object, IUser {
     }
     var _fitbitToken: String?
     
+    var fullname: String {
+        return firstName + " " + lastName
+    }
+    
     override static func primaryKey() -> String? {
         return "id"
     }
     
     override static func ignoredProperties() -> [String] {
-        return ["token", "_token", "fitbitToken", "_fitbitToken"]
+        return ["token", "_token", "fitbitToken", "_fitbitToken", "fullname"]
     }
     
     required convenience init?(_ map: ObjectMapper.Map) {

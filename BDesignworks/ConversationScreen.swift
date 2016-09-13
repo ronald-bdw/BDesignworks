@@ -54,6 +54,8 @@ class ConversationScreen: UIViewController {
         do {
             let realm = try Realm()
             if let user = realm.objects(User).first where user.id != 0 {
+                Logger.debug(user.token)
+                Logger.debug(user.phoneNumber)
                 SmoochHelper.sharedInstance.startWithParameters("\(user.id)")
                 SmoochHelper.sharedInstance.updateUserInfo(user.firstName, lastName: user.lastName, email: user.email)
                 let controller = Smooch.newConversationViewController()
@@ -74,7 +76,6 @@ class ConversationScreen: UIViewController {
         } catch let error {
             Logger.error("\(error)")
         }
-        HealthKitManager.sharedInstance.sendHealthKitData()
     }
     
     override func viewWillAppear(animated: Bool) {

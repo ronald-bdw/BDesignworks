@@ -8,24 +8,38 @@
 
 import Foundation
 
+typealias ProfileMVP = MVPContainer<ProfileView, ProfilePresenter, ProfileModel>
+
+protocol IProfileView: class {
+    func updateView(with: User)
+}
+
 class ProfileView: UITableViewController {
     @IBOutlet var avatarImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailPreviewLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var phoneLabel: UILabel!
+
+    var presenter: PresenterProtocol?
     
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        self.testSetup()
+        let _ = ProfileMVP(controller: self)
+        self.presenter?.viewLoaded()
     }
-    
-    func testSetup(){
-        self.avatarImageView.image = UIImage(named: "Image")
-        self.nameLabel.text = "Jeffrey Lebowski"
-        self.emailPreviewLabel.text = "dude@gmail.com"
-        self.emailLabel.text = "dude@gmail.com"
-        self.phoneLabel.text = "123456789"
+}
+
+extension ProfileView: IProfileView {
+    func updateView(user: User) {
+        self.nameLabel.text = user.fullname
+        self.emailPreviewLabel.text = user.email
+        self.emailLabel.text = user.email
+        self.phoneLabel.text = user.phoneNumber
     }
+}
+
+extension ProfileView: MVPView {
+    typealias PresenterProtocol = IProfilePresenterView
 }
