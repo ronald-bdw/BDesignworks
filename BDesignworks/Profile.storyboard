@@ -203,7 +203,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Profile" id="RyR-b7-kAZ">
-                        <barButtonItem key="backBarButtonItem" title=" " id="Y1t-qU-HP5"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="CBP-vo-s1t"/>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="HTJ-2z-KIS">
                             <connections>
                                 <segue destination="nvq-iA-CvE" kind="show" id="Q1a-rg-IMc"/>
@@ -227,8 +227,8 @@
         <!--Edit Profile-->
         <scene sceneID="UcP-Nm-A2t">
             <objects>
-                <tableViewController id="nvq-iA-CvE" customClass="EditProfileScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hcv-LG-VxN">
+                <tableViewController id="nvq-iA-CvE" customClass="ProfileEditingView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hcv-LG-VxN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -265,20 +265,31 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZY-ih-RX0">
+                                                    <rect key="frame" x="157" y="80" width="62" height="51"/>
+                                                    <state key="normal" image="Profile/Photo"/>
+                                                    <connections>
+                                                        <action selector="photoPressed:" destination="nvq-iA-CvE" eventType="touchUpInside" id="WDh-sJ-Myg"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="hHO-CK-Vdr" firstAttribute="width" secondItem="Mkj-9c-idS" secondAttribute="height" multiplier="74:143" id="0BF-Mk-pIf"/>
                                                 <constraint firstAttribute="bottom" secondItem="aYf-da-3th" secondAttribute="bottom" id="CCf-I5-bNp"/>
+                                                <constraint firstItem="bZY-ih-RX0" firstAttribute="centerY" secondItem="hHO-CK-Vdr" secondAttribute="centerY" id="FtS-JV-WlZ"/>
                                                 <constraint firstItem="aou-AI-xk0" firstAttribute="top" secondItem="hHO-CK-Vdr" secondAttribute="bottom" constant="12" id="KWg-j1-uDi"/>
                                                 <constraint firstItem="aou-AI-xk0" firstAttribute="centerX" secondItem="Mkj-9c-idS" secondAttribute="centerX" id="NSa-Cz-RVj"/>
                                                 <constraint firstItem="aYf-da-3th" firstAttribute="leading" secondItem="Mkj-9c-idS" secondAttribute="leading" id="Rpk-Kl-Uts"/>
+                                                <constraint firstItem="bZY-ih-RX0" firstAttribute="centerX" secondItem="hHO-CK-Vdr" secondAttribute="centerX" id="Ua9-Jk-rnz"/>
                                                 <constraint firstItem="hHO-CK-Vdr" firstAttribute="centerY" secondItem="Mkj-9c-idS" secondAttribute="centerY" constant="-20" id="Y3P-nY-E1K"/>
                                                 <constraint firstItem="4D1-Ka-b0v" firstAttribute="top" secondItem="aou-AI-xk0" secondAttribute="bottom" constant="8" id="ZCQ-E3-L1Q"/>
                                                 <constraint firstItem="hHO-CK-Vdr" firstAttribute="centerX" secondItem="Mkj-9c-idS" secondAttribute="centerX" id="ZgD-iX-tcy"/>
                                                 <constraint firstItem="4D1-Ka-b0v" firstAttribute="top" secondItem="aou-AI-xk0" secondAttribute="bottom" constant="2" id="eOp-nD-GJc"/>
+                                                <constraint firstItem="bZY-ih-RX0" firstAttribute="top" secondItem="hHO-CK-Vdr" secondAttribute="top" constant="40" id="iZW-qC-80A"/>
                                                 <constraint firstAttribute="trailing" secondItem="aYf-da-3th" secondAttribute="trailing" id="iag-8m-yIC"/>
                                                 <constraint firstItem="aYf-da-3th" firstAttribute="top" secondItem="Mkj-9c-idS" secondAttribute="top" id="obl-RE-Ot2"/>
                                                 <constraint firstItem="4D1-Ka-b0v" firstAttribute="centerX" secondItem="aou-AI-xk0" secondAttribute="centerX" id="sHv-ge-Hr3"/>
+                                                <constraint firstItem="bZY-ih-RX0" firstAttribute="leading" secondItem="hHO-CK-Vdr" secondAttribute="leading" constant="34" id="tm9-Ks-nqM"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -440,23 +451,26 @@
                             <outlet property="delegate" destination="nvq-iA-CvE" id="xS4-yT-okE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Edit Profile" id="8Q4-cR-Sag"/>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="8Q4-cR-Sag">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="un0-6A-cBR"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="emailMiniLabel" destination="4D1-Ka-b0v" id="yyM-rg-K0m"/>
-                        <outlet property="emailTextField" destination="349-Ee-o4M" id="07e-3J-VHb"/>
-                        <outlet property="firstNameTextField" destination="aN9-5i-MpO" id="XaF-db-6S4"/>
-                        <outlet property="lastNameTExtField" destination="0IH-qV-0fU" id="ArZ-k7-N5Z"/>
-                        <outlet property="nameLabel" destination="aou-AI-xk0" id="iOW-qI-zZy"/>
-                        <outlet property="phoneTextField" destination="Rlv-ZJ-oRU" id="FU3-ub-mGQ"/>
-                        <outlet property="profileImage" destination="hHO-CK-Vdr" id="3ni-lj-MVU"/>
+                        <outlet property="emailPreviewLabel" destination="4D1-Ka-b0v" id="vQd-oE-bFe"/>
+                        <outlet property="emailTextField" destination="349-Ee-o4M" id="zBR-rO-khH"/>
+                        <outlet property="firstNameTextField" destination="aN9-5i-MpO" id="DBV-ix-FiP"/>
+                        <outlet property="lastNameTExtField" destination="0IH-qV-0fU" id="fEM-KO-1JC"/>
+                        <outlet property="nameLabel" destination="aou-AI-xk0" id="vkR-wb-c8G"/>
+                        <outlet property="phoneTextField" destination="Rlv-ZJ-oRU" id="ke2-ac-kQQ"/>
+                        <outlet property="profileImage" destination="hHO-CK-Vdr" id="RYT-Sf-74K"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GkU-0X-osZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4489" y="-420"/>
+            <point key="canvasLocation" x="4488.5" y="-420.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="Profile/Background" width="375" height="196"/>
+        <image name="Profile/Photo" width="144" height="119"/>
     </resources>
 </document>
