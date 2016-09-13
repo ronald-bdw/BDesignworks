@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0b6-DK-bSG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0b6-DK-bSG">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -12,14 +12,12 @@
             <string>OpenSans-Light</string>
             <string>OpenSans-Light</string>
             <string>OpenSans-Light</string>
-            <string>OpenSans-Light</string>
         </mutableArray>
         <mutableArray key="OpenSansRegular.ttf">
             <string>OpenSans</string>
             <string>OpenSans</string>
         </mutableArray>
         <mutableArray key="OpenSansSemiBold.ttf">
-            <string>OpenSans-Semibold</string>
             <string>OpenSans-Semibold</string>
             <string>OpenSans-Semibold</string>
             <string>OpenSans-Semibold</string>
@@ -403,40 +401,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="mVI-Ai-3Lr">
-                                        <rect key="frame" x="0.0" y="510" width="375" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mVI-Ai-3Lr" id="OMO-K8-FCa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqJ-DC-3LP">
-                                                    <rect key="frame" x="24" y="8" width="108" height="21"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="15"/>
-                                                    <color key="textColor" red="0.11764705882352941" green="0.19215686274509802" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rlv-ZJ-oRU">
-                                                    <rect key="frame" x="12" y="32" width="351" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="d6J-Gi-UbY"/>
-                                                    </constraints>
-                                                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans Light" pointSize="15"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="dqJ-DC-3LP" firstAttribute="leading" secondItem="OMO-K8-FCa" secondAttribute="leading" constant="24" id="0ui-Pt-P05"/>
-                                                <constraint firstItem="Rlv-ZJ-oRU" firstAttribute="leading" secondItem="OMO-K8-FCa" secondAttribute="leading" constant="12" id="MG0-gj-MSu"/>
-                                                <constraint firstAttribute="bottom" secondItem="Rlv-ZJ-oRU" secondAttribute="bottom" constant="8" id="aRu-8G-6xK"/>
-                                                <constraint firstItem="dqJ-DC-3LP" firstAttribute="top" secondItem="OMO-K8-FCa" secondAttribute="top" constant="8" id="jqv-EQ-XDH"/>
-                                                <constraint firstAttribute="trailing" secondItem="Rlv-ZJ-oRU" secondAttribute="trailing" constant="12" id="z1r-Pv-Jwm"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="20" id="XHW-81-5MA">
-                                        <rect key="frame" x="0.0" y="590" width="375" height="20"/>
+                                        <rect key="frame" x="0.0" y="510" width="375" height="20"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XHW-81-5MA" id="cFa-xu-sHC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
@@ -452,7 +418,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Edit Profile" id="8Q4-cR-Sag">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="un0-6A-cBR"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="un0-6A-cBR">
+                            <connections>
+                                <action selector="donePressed:" destination="nvq-iA-CvE" id="oew-ri-gh7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="emailPreviewLabel" destination="4D1-Ka-b0v" id="vQd-oE-bFe"/>
@@ -460,7 +430,6 @@
                         <outlet property="firstNameTextField" destination="aN9-5i-MpO" id="DBV-ix-FiP"/>
                         <outlet property="lastNameTExtField" destination="0IH-qV-0fU" id="fEM-KO-1JC"/>
                         <outlet property="nameLabel" destination="aou-AI-xk0" id="vkR-wb-c8G"/>
-                        <outlet property="phoneTextField" destination="Rlv-ZJ-oRU" id="ke2-ac-kQQ"/>
                         <outlet property="profileImage" destination="hHO-CK-Vdr" id="RYT-Sf-74K"/>
                     </connections>
                 </tableViewController>

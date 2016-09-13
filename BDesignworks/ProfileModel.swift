@@ -26,6 +26,16 @@ extension ProfileModel: IProfileModel {
                 let user = value.user == nil ? User.getMainUser() : value.user
                 guard let lUser = user else {return}
                 self.presenter?.userReceived(lUser)
+                guard let receivedUser = value.user else {return}
+                do {
+                    let realm = try Realm()
+                    try realm.write({
+                        realm.add(receivedUser, update: true)
+                    })
+                }
+                catch let error {
+                    Logger.error(error)
+                }
             case .Failure(let error):
                 Logger.error(error)
                 guard let lUser = User.getMainUser() else {return}

@@ -49,6 +49,15 @@ public extension SequenceType {
     }
 }
 
+public extension Dictionary {
+    
+    public mutating func updateIfNotDefault(object: Value?, forKey key: Key, defaultValue: Value) {
+        guard let updateObject = object as? AnyObject?, let defaultValuet = defaultValue as? AnyObject else {return}
+        guard defaultValuet.isEqual(updateObject) == false else {return}
+        self.fs_updateIfExist(object, forKey: key)
+    }
+}
+
 extension NSDate {
     public func dateByAddingHours (hours: Int) -> NSDate {
         let timeInterval:NSTimeInterval = self.timeIntervalSinceReferenceDate + FSTimePeriod.Hour.rawValue * NSTimeInterval(hours)
