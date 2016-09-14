@@ -90,11 +90,3 @@ class RTAuthInfoResponse: Mappable {
         self.authInfo <- map["auth_phone_code"]
     }
 }
-
-struct UserEdited {
-    var id: Int
-    var firstName: String?
-    var lastName: String?
-    var email: String?
-    var avatar: String?
-}

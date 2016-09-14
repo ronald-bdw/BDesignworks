@@ -102,6 +102,7 @@
 		E729165A1D883A7A00A6D70A /* ProfileEditingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916591D883A7A00A6D70A /* ProfileEditingModel.swift */; };
 		E729165C1D88459A00A6D70A /* ProfileEditingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729165B1D88459A00A6D70A /* ProfileEditingPresenter.swift */; };
 		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
+		E774EF8B1D899629007A8BC4 /* ProfileEditingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774EF8A1D899629007A8BC4 /* ProfileEditingHelpers.swift */; };
 		E79D88F81D7F256200EBA8FA /* TrialPageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */; };
 		E7C1F2691D88011C007F9D7A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C1F2681D88011C007F9D7A /* Profile.storyboard */; };
 		E7C1F26D1D881C37007F9D7A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C1F26C1D881C37007F9D7A /* ProfileView.swift */; };
@@ -307,6 +308,7 @@
 		E72916591D883A7A00A6D70A /* ProfileEditingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingModel.swift; sourceTree = "<group>"; };
 		E729165B1D88459A00A6D70A /* ProfileEditingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingPresenter.swift; sourceTree = "<group>"; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_Storyboard.storyboard; sourceTree = "<group>"; };
+		E774EF8A1D899629007A8BC4 /* ProfileEditingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingHelpers.swift; sourceTree = "<group>"; };
 		E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageSelectionView.swift; sourceTree = "<group>"; };
 		E7C1F2681D88011C007F9D7A /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E7C1F26A1D880AAC007F9D7A /* WorkSans-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-SemiBold.otf"; sourceTree = "<group>"; };
@@ -745,6 +747,7 @@
 				E72916591D883A7A00A6D70A /* ProfileEditingModel.swift */,
 				E72916571D88365E00A6D70A /* ProfileEditingView.swift */,
 				E729165B1D88459A00A6D70A /* ProfileEditingPresenter.swift */,
+				E774EF8A1D899629007A8BC4 /* ProfileEditingHelpers.swift */,
 			);
 			name = ProflleEditing;
 			sourceTree = "<group>";
@@ -771,9 +774,8 @@
 			isa = PBXGroup;
 			children = (
 				2FAA4FB91D5C83BC00DCFF46 /* CustomNavigationController.swift */,
-				E7C1F26B1D881B6D007F9D7A /* Profile */,
-				E72916561D88364400A6D70A /* ProflleEditing */,
 				2F1B80AB1D5DEA0B001AA5DA /* Welcome */,
+				E774EF891D8995DD007A8BC4 /* Profile */,
 				2F16FE2B1D54CEDB00EFFDD7 /* ConversationScreen.swift */,
 				2FAA4FB71D5C809700DCFF46 /* SidebarTVC.swift */,
 				2F16FE311D54E14D00EFFDD7 /* PushScreen.swift */,
@@ -782,6 +784,15 @@
 				A4DCC4C61D661221005F7E05 /* ModalPresentationController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E774EF891D8995DD007A8BC4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E72916561D88364400A6D70A /* ProflleEditing */,
+				E7C1F26B1D881B6D007F9D7A /* Profile */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		E7C1F26B1D881B6D007F9D7A /* Profile */ = {
@@ -1393,6 +1404,7 @@
 				21DB304919DD2D6D003A418D /* Constants.swift in Sources */,
 				DC2281091D6B469600D5A0DA /* MVPProtocol.swift in Sources */,
 				2F94CFF71D533998003A1B77 /* VerificationView.swift in Sources */,
+				E774EF8B1D899629007A8BC4 /* ProfileEditingHelpers.swift in Sources */,
 				4F5080F01D68D6CF00979890 /* BaseView.swift in Sources */,
 				DC2281171D6B46AB00D5A0DA /* RTUser.swift in Sources */,
 				4F638FFC1D6A6435006EE693 /* RollUpButton.swift in Sources */,

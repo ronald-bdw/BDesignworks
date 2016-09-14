@@ -13,6 +13,7 @@ protocol IProfileEditingPresenterModel: class {
     func loadingStarted()
     func loadingFinished()
     func loadingFailed()
+    func updateInvalidView(type: UserEditedValidationField, value: Bool)
 }
 
 protocol IProfileEditingPresenterView {
@@ -43,11 +44,14 @@ extension ProfileEditingPresenter: IProfileEditingPresenterModel {
     func loadingFinished() {
         self.view?.setLoadingState(.Done)
     }
-}
-
-
-extension IProfileEditingPresenterView where Self: ProfileEditingPresenter  {
     
+    func updateInvalidView(type: UserEditedValidationField, value: Bool) {
+        switch type {
+        case .FirstName: self.view?.updateFirstNameErrorView(value)
+        case .LastName: self.view?.updateLastNameErrorView(value)
+        case .Email: self.view?.updateEmailErrorView(value)
+        }
+    }
 }
 
 extension ProfileEditingPresenter: IProfileEditingPresenterView {

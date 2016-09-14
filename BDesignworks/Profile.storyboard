@@ -325,7 +325,10 @@
                                                     </constraints>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans Light" pointSize="15"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="nvq-iA-CvE" id="uBk-Cj-8Gb"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -337,13 +340,42 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="x7d-tB-6fF">
+                                        <rect key="frame" x="0.0" y="350" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x7d-tB-6fF" id="Iw9-Kc-Ymi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Fr-Qi-Z2r" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="errorText" value="First name should not be empty"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="0Fr-Qi-Z2r" secondAttribute="bottom" id="AkC-TD-OMy"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Fr-Qi-Z2r" secondAttribute="trailing" id="Oz2-Yw-WRG"/>
+                                                <constraint firstItem="0Fr-Qi-Z2r" firstAttribute="leading" secondItem="Iw9-Kc-Ymi" secondAttribute="leading" id="RNr-eE-5Cc"/>
+                                                <constraint firstItem="0Fr-Qi-Z2r" firstAttribute="top" secondItem="Iw9-Kc-Ymi" secondAttribute="top" id="mPk-AG-A8u"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="4eZ-gw-tFd">
-                                        <rect key="frame" x="0.0" y="350" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="394" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4eZ-gw-tFd" id="bmi-ha-kIj">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ta-re-fla">
+                                                    <rect key="frame" x="24" y="8" width="78" height="21"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="15"/>
+                                                    <color key="textColor" red="0.11764705882352941" green="0.19215686274509802" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0IH-qV-0fU">
                                                     <rect key="frame" x="12" y="32" width="351" height="40"/>
                                                     <constraints>
@@ -351,14 +383,11 @@
                                                     </constraints>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans Light" pointSize="15"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="nvq-iA-CvE" id="xTW-1i-1Ff"/>
+                                                    </connections>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ta-re-fla">
-                                                    <rect key="frame" x="24" y="8" width="78" height="21"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="15"/>
-                                                    <color key="textColor" red="0.11764705882352941" green="0.19215686274509802" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="0IH-qV-0fU" secondAttribute="trailing" constant="12" id="57P-st-m00"/>
@@ -369,8 +398,31 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LIZ-ev-zpc">
+                                        <rect key="frame" x="0.0" y="474" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LIZ-ev-zpc" id="f1C-RF-YB1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUM-FW-5oS" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="errorText" value="Last name should not be empty"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="IUM-FW-5oS" secondAttribute="trailing" id="FEO-DT-vjp"/>
+                                                <constraint firstAttribute="bottom" secondItem="IUM-FW-5oS" secondAttribute="bottom" id="mU3-sR-DnT"/>
+                                                <constraint firstItem="IUM-FW-5oS" firstAttribute="top" secondItem="f1C-RF-YB1" secondAttribute="top" id="nqx-st-xWT"/>
+                                                <constraint firstItem="IUM-FW-5oS" firstAttribute="leading" secondItem="f1C-RF-YB1" secondAttribute="leading" id="rb6-nC-Ulj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="VbM-GA-Okt">
-                                        <rect key="frame" x="0.0" y="430" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="518" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VbM-GA-Okt" id="6m4-Qt-hQd">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
@@ -389,7 +441,10 @@
                                                     </constraints>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans Light" pointSize="15"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="nvq-iA-CvE" id="qtf-a7-Tme"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -401,12 +456,27 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="20" id="XHW-81-5MA">
-                                        <rect key="frame" x="0.0" y="510" width="375" height="20"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RaH-FN-6PT">
+                                        <rect key="frame" x="0.0" y="598" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XHW-81-5MA" id="cFa-xu-sHC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RaH-FN-6PT" id="6wE-Fb-0aj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHz-9J-6a4" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="errorText" value="Emain not valid"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="gHz-9J-6a4" secondAttribute="bottom" id="a8X-8Q-6vF"/>
+                                                <constraint firstAttribute="trailing" secondItem="gHz-9J-6a4" secondAttribute="trailing" id="cTg-8r-gtg"/>
+                                                <constraint firstItem="gHz-9J-6a4" firstAttribute="top" secondItem="6wE-Fb-0aj" secondAttribute="top" id="e1s-26-7IK"/>
+                                                <constraint firstItem="gHz-9J-6a4" firstAttribute="leading" secondItem="6wE-Fb-0aj" secondAttribute="leading" id="wF1-ez-AX0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -425,9 +495,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailErrorView" destination="gHz-9J-6a4" id="czr-EQ-8aY"/>
                         <outlet property="emailPreviewLabel" destination="4D1-Ka-b0v" id="vQd-oE-bFe"/>
                         <outlet property="emailTextField" destination="349-Ee-o4M" id="zBR-rO-khH"/>
+                        <outlet property="firstNameErrorView" destination="0Fr-Qi-Z2r" id="95g-U3-2Ka"/>
                         <outlet property="firstNameTextField" destination="aN9-5i-MpO" id="DBV-ix-FiP"/>
+                        <outlet property="lastNameErrorView" destination="IUM-FW-5oS" id="mMB-09-4Zo"/>
                         <outlet property="lastNameTExtField" destination="0IH-qV-0fU" id="fEM-KO-1JC"/>
                         <outlet property="nameLabel" destination="aou-AI-xk0" id="vkR-wb-c8G"/>
                         <outlet property="profileImage" destination="hHO-CK-Vdr" id="RYT-Sf-74K"/>
