@@ -22,6 +22,7 @@
 @import RealmSwift;
 @import SAMKeychain;
 @import SVProgressHUD;
+@import SDWebImage;
 
 
 #import <Smooch/Smooch.h>

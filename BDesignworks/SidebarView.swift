@@ -32,22 +32,32 @@ class SidebarCell: UITableViewCell
     }
 }
 
+typealias SidebarMVP = MVPContainer<SidebarView,SidebarPresenter,SidebarModel>
 
-class SidebarTVC: UITableViewController
-{
+protocol ISidebarView: class {
+    func updateView(user: User)
+}
+
+class SidebarView: UITableViewController {
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
     let rowHeight = CGFloat(60)
     let profileRowHeight = CGFloat(150)
     var lastSelected = 0
     
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
+    var presenter: PresenterProtocol?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let _ = SidebarMVP(controller: self)
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "running"))
+        self.presenter?.viewLoaded()
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
-    {
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.row
         {
         case 0:
@@ -59,8 +69,7 @@ class SidebarTVC: UITableViewController
         }
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 3 {
             return
         }
@@ -73,4 +82,15 @@ class SidebarTVC: UITableViewController
         cell = self.tableView.cellForRowAtIndexPath(indexPath) as! SidebarCell
         cell.cellSelected = true
     }
+}
+
+extension SidebarView: ISidebarView {
+    func updateView(user: User) {
+        self.nameLabel.text = user.fullname
+        self.emailLabel.text = user.email
+    }
+}
+
+extension SidebarView: MVPView {
+    typealias PresenterProtocol = ISidebarPresenterView
 }
