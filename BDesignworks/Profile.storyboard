@@ -58,14 +58,14 @@
                                                         <constraint firstAttribute="height" constant="130" id="Svf-6j-Ksr"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzX-Tk-R8u">
-                                                    <rect key="frame" x="162" y="182" width="52" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzX-Tk-R8u">
+                                                    <rect key="frame" x="188" y="182" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                     <color key="textColor" red="0.90196078430000004" green="0.75294117650000003" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdE-SO-Ogy">
-                                                    <rect key="frame" x="170" y="206" width="36" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdE-SO-Ogy">
+                                                    <rect key="frame" x="188" y="184" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -114,8 +114,8 @@
                                                     <color key="textColor" red="0.11764705882352941" green="0.19215686274509802" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16D-ie-4zZ">
-                                                    <rect key="frame" x="27" y="50" width="37" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16D-ie-4zZ">
+                                                    <rect key="frame" x="27" y="50" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans Light" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -166,8 +166,8 @@
                                                     <color key="textColor" red="0.11764705882352941" green="0.19215686274509802" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2L-bt-y02">
-                                                    <rect key="frame" x="27" y="50" width="37" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2L-bt-y02">
+                                                    <rect key="frame" x="27" y="71" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans Light" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -251,14 +251,8 @@
                                                         <constraint firstAttribute="height" constant="130" id="w8J-Yp-bF6"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aou-AI-xk0">
-                                                    <rect key="frame" x="162" y="182" width="52" height="22"/>
-                                                    <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
-                                                    <color key="textColor" red="0.90196078430000004" green="0.75294117650000003" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4D1-Ka-b0v">
-                                                    <rect key="frame" x="170" y="206" width="36" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4D1-Ka-b0v">
+                                                    <rect key="frame" x="187" y="184" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -270,6 +264,12 @@
                                                         <action selector="photoPressed:" destination="nvq-iA-CvE" eventType="touchUpInside" id="WDh-sJ-Myg"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aou-AI-xk0">
+                                                    <rect key="frame" x="187" y="182" width="0.0" height="0.0"/>
+                                                    <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
+                                                    <color key="textColor" red="0.90196078430000004" green="0.75294117650000003" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="hHO-CK-Vdr" firstAttribute="width" secondItem="Mkj-9c-idS" secondAttribute="height" multiplier="74:143" id="0BF-Mk-pIf"/>
