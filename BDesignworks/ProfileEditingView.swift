@@ -75,6 +75,7 @@ class ProfileEditingView: UITableViewController {
     var isLastNameValid     : Bool = true
     var isEmailValid        : Bool = true
     
+    var textFields: [UITextField] = []
     var presenter: PresenterProtocol?
     
     override func viewDidLoad() {
@@ -88,9 +89,10 @@ class ProfileEditingView: UITableViewController {
     }
     
     func setTextFieldTags() {
-        self.firstNameTextField.tag = 0
-        self.lastNameTExtField.tag = 1
-        self.emailTextField.tag = 2
+        self.textFields = [self.firstNameTextField, self.lastNameTExtField, self.emailTextField]
+        self.firstNameTextField.tag = self.textFields.indexOf(self.firstNameTextField) ?? 0
+        self.lastNameTExtField.tag = self.textFields.indexOf(self.lastNameTExtField) ?? 0
+        self.emailTextField.tag = self.textFields.indexOf(self.emailTextField) ?? 0
     }
     
     func setValidationViews() {
@@ -164,8 +166,8 @@ extension ProfileEditingView: IProfileEditingView {
 extension ProfileEditingView: UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if let nextTextField = self.view.viewWithTag(textField.tag + 1) as? UITextField {
-            nextTextField.becomeFirstResponder()
+        if textField.tag + 1 < self.textFields.count  {
+            self.textFields[textField.tag + 1].becomeFirstResponder()
         }
         else {
             textField.resignFirstResponder()
