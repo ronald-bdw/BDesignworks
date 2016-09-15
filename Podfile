@@ -17,6 +17,7 @@ abstract_target 'Abstract' do
     pod 'XCGLogger'
     pod 'SAMKeychain'
     pod 'SVProgressHUD'
+    pod 'SDWebImage'
     
 	pod 'Smooch'
 	pod 'SideMenu'
