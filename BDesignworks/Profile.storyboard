@@ -51,12 +51,16 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Background" translatesAutoresizingMaskIntoConstraints="NO" id="SBM-HY-8u1">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Qe-Dl-O1R" customClass="RoundImage" customModule="PearUp" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="4Qe-Dl-O1R" customClass="RoundImage" customModule="PearUp" customModuleProvider="target">
                                                     <rect key="frame" x="123" y="40" width="130" height="130"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="130" id="2Lb-Py-CeS"/>
                                                         <constraint firstAttribute="height" constant="130" id="Svf-6j-Ksr"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzX-Tk-R8u">
                                                     <rect key="frame" x="188" y="182" width="0.0" height="0.0"/>
@@ -244,12 +248,16 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                                     <color key="backgroundColor" red="0.1843137255" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hHO-CK-Vdr" customClass="RoundImage" customModule="PearUp" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="hHO-CK-Vdr" customClass="RoundImage" customModule="PearUp" customModuleProvider="target">
                                                     <rect key="frame" x="123" y="40" width="130" height="130"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="130" id="KgZ-Ba-c7U"/>
                                                         <constraint firstAttribute="height" constant="130" id="w8J-Yp-bF6"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4D1-Ka-b0v">
                                                     <rect key="frame" x="187" y="184" width="0.0" height="0.0"/>
@@ -512,6 +520,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Profile/Avatar" width="375" height="375"/>
         <image name="Profile/Background" width="375" height="196"/>
         <image name="Profile/Photo" width="144" height="119"/>
     </resources>
