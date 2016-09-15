@@ -49,11 +49,10 @@ public extension SequenceType {
     }
 }
 
-public extension Dictionary {
+extension Dictionary where Value: Equatable {
     
     public mutating func updateIfNotDefault(object: Value?, forKey key: Key, defaultValue: Value) {
-        guard let updateObject = object as? AnyObject?, let defaultValuet = defaultValue as? AnyObject else {return}
-        guard defaultValuet.isEqual(updateObject) == false else {return}
+        guard defaultValue != object else {return}
         self.fs_updateIfExist(object, forKey: key)
     }
 }

@@ -54,7 +54,7 @@ extension Router.User: RouterProtocol {
                     "auth_phone_code_id" : authPhoneCode,
                     "sms_code" : smsCode]
         case .EditUser(let user):
-            var params :[String: AnyObject] = [:]
+            var params :[String: String] = [:]
             params.updateIfNotDefault(user.firstName, forKey: "first_name", defaultValue: "")
             params.updateIfNotDefault(user.lastName, forKey: "last_name", defaultValue: "")
             params.updateIfNotDefault(user.email, forKey: "email", defaultValue: "")
