@@ -31,7 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             else if let _ = realm.objects(User).first {
                 ShowConversationViewController()
             }
+            else {
+                ShowInitialViewController()
+            }
         } catch let error {
+            ShowInitialViewController()
             Logger.error("\(error)")
         }
         return true

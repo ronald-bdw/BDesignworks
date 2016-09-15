@@ -46,6 +46,8 @@ class ConversationScreen: UIViewController {
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         SideMenuManager.menuFadeStatusBar = false
         
+        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: true)
+        
         self.title = "Messages"
         
         self.navigationItem.hidesBackButton = true

@@ -28,7 +28,7 @@ func PresentViewController(controller: UIViewController, animated: Bool = true) 
 
 func ShowInitialViewController(animated: Bool = true) {
     
-    guard let navigationController = Storyboard.Main.firstController else {return}
+    let navigationController = Storyboard.Main.storyboard.instantiateViewControllerWithIdentifier("WelcomeController")
     
     PresentViewController(navigationController, animated: animated)
 }
