@@ -16,6 +16,8 @@ protocol IProfileEditingView: class {
     func updateFirstNameErrorView(isValid: Bool)
     func updateLastNameErrorView(isValid: Bool)
     func updateEmailErrorView(isValid: Bool)
+    func showBackendErrorView(description: ErrorHumanDescription)
+    func showErrorView()
 }
 
 class ProfileEditingView: UITableViewController {
@@ -143,8 +145,15 @@ extension ProfileEditingView: IProfileEditingView {
             self.navigationController?.popViewControllerAnimated(true)
         case .Failed:
             SVProgressHUD.dismiss()
-            ShowErrorAlert()
         }
+    }
+    
+    func showBackendErrorView(description: ErrorHumanDescription) {
+        ShowErrorAlert(description.title, message: description.text)
+    }
+    
+    func showErrorView() {
+        ShowErrorAlert()
     }
     
     func updateFirstNameErrorView(isValid: Bool) {

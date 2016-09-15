@@ -32,9 +32,19 @@ extension ProfileEditingModel: IProfileEditingModel {
             switch response.result {
             case .Success(let value):
                 self.presenter?.loadingFinished()
+                guard let user = value.user else {return}
+                do {
+                    let realm = try Realm()
+                    try realm.write({
+                        realm.add(user, update: true)
+                    })
+                }
+                catch let error {
+                    Logger.error(error)
+                }
                 Logger.debug(value.user)
             case .Failure(let error):
-                self.presenter?.loadingFailed()
+                self.presenter?.loadingFailed(error)
                 Logger.error(error)
             }
         }

@@ -12,7 +12,7 @@ protocol IProfileEditingPresenterModel: class {
     func userReceived(user: User)
     func loadingStarted()
     func loadingFinished()
-    func loadingFailed()
+    func loadingFailed(error: RTError)
     func updateInvalidView(type: UserEditedValidationField, value: Bool)
 }
 
@@ -37,8 +37,14 @@ extension ProfileEditingPresenter: IProfileEditingPresenterModel {
         self.view?.setLoadingState(.Loading)
     }
     
-    func loadingFailed() {
+    func loadingFailed(error: RTError) {
         self.view?.setLoadingState(.Failed)
+        if case let .Backend(backendError) = error {
+            self.view?.showBackendErrorView(backendError.humanDescription)
+        }
+        else {
+            self.view?.showErrorView()
+        }
     }
     
     func loadingFinished() {
