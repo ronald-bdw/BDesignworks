@@ -9,11 +9,11 @@
 import Foundation
 
 protocol ISidebarPresenterModel: class {
-    
+    func userLoaded(user: User)
 }
 
 protocol ISidebarPresenterView {
-    
+    func viewLoaded()
 }
 
 
@@ -25,11 +25,15 @@ class SidebarPresenter {
 }
 
 extension SidebarPresenter: ISidebarPresenterModel {
-    
+    func userLoaded(user: User) {
+        self.view?.updateView(user)
+    }
 }
 
 extension SidebarPresenter: ISidebarPresenterView {
-    
+    func viewLoaded() {
+        self.model?.loadUser()
+    }
 }
 
 extension SidebarPresenter: MVPPresenter {

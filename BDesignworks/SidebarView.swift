@@ -35,7 +35,7 @@ class SidebarCell: UITableViewCell
 typealias SidebarMVP = MVPContainer<SidebarView,SidebarPresenter,SidebarModel>
 
 protocol ISidebarView: class {
-    
+    func updateView(user: User)
 }
 
 class SidebarView: UITableViewController {
@@ -54,6 +54,7 @@ class SidebarView: UITableViewController {
         
         let _ = SidebarMVP(controller: self)
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "running"))
+        self.presenter?.viewLoaded()
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -84,7 +85,10 @@ class SidebarView: UITableViewController {
 }
 
 extension SidebarView: ISidebarView {
-    
+    func updateView(user: User) {
+        self.nameLabel.text = user.fullname
+        self.emailLabel.text = user.email
+    }
 }
 
 extension SidebarView: MVPView {
