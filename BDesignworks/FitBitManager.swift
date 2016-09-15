@@ -41,12 +41,13 @@ class FitBitManager {
             Router.Steps.Get(day: date).request().responseObject { (response: Response<RTStepsGetResponse, RTError>) in
                 switch response.result {
                 case .Success(let value):
-                    
-                    let validSteps = value.stepsIntraday.filter({startDate.compare($0.startDate) == .OrderedAscending})
-                        .filter({$0.finishDate.compare(endDate) == .OrderedAscending})
-                    
-                    guard validSteps.count > 0 else {return}
-                    self.sendDataToServer(validSteps)
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                        let validSteps = value.stepsIntraday.filter({startDate.compare($0.startDate) == .OrderedAscending})
+                            .filter({$0.finishDate.compare(endDate) == .OrderedAscending})
+                        
+                        guard validSteps.count > 0 else {return}
+                        self.sendDataToServer(validSteps)
+                    })
                 case .Failure(let error):
                     Logger.error("\(error)")
                     guard case let .Backend(backendError) = error else {return}
@@ -62,19 +63,21 @@ class FitBitManager {
     }
     
     private func sendDataToServer(steps: [ENSteps]) {
-        Router.Steps.Send(steps: steps).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
+        Router.Steps.Send(steps: steps, source: .Fitbit).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
             switch response.result {
             case .Success(_):
-                do {
-                    let realm = try Realm()
-                    let user = realm.objects(User).first
-                    try realm.write({
-                        user?.lastStepsFitBitUpdateDate = NSDate()
-                    })
-                }
-                catch let error {
-                    Logger.error("\(error)")
-                }
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                    do {
+                        let realm = try Realm()
+                        let user = realm.objects(User).first
+                        try realm.write({
+                            user?.lastStepsFitBitUpdateDate = NSDate()
+                        })
+                    }
+                    catch let error {
+                        Logger.error("\(error)")
+                    }
+                })
             case .Failure(let error):
                 Logger.error("\(error)")
             }
