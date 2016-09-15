@@ -27,6 +27,10 @@ class ProfileView: UITableViewController {
         super.viewDidLoad()
         
         let _ = ProfileMVP(controller: self)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.presenter?.viewLoaded()
     }
 }
