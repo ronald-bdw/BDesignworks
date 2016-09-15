@@ -56,36 +56,5 @@ extension ENSteps {
             self.finishDate = lFinishDate
             self.count = stepsCount
         }
-        
-        //FitBit API
-        if let dateValue = json["dateTime"] as? String {
-        
-            if let intCount = (json["value"] as? NSNumber)?.integerValue {
-                self.count = intCount
-            }
-            else if let valueString = json["value"] as? String,
-                let stringCount = Int(valueString) {
-                self.count = stringCount
-            }
-            
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "y-MM-dd"
-            dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
-            guard let date = dateFormatter.dateFromString(dateValue) else {return}
-            
-            if let timeValue = json["time"] as? String {
-                let timeFormatter = NSDateFormatter()
-                timeFormatter.dateFormat = "HH:mm:ss"
-                timeFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
-                guard let time = timeFormatter.dateFromString(timeValue) else {return}
-                
-                self.startDate = date.dateByAddingTime(time)
-                self.finishDate = self.startDate.dateByAddingMinutes(15)
-            }
-            else {
-                self.startDate = date
-                self.finishDate = date.fs_tomorrow
-            }
-        }
     }
 }

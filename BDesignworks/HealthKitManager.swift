@@ -37,7 +37,6 @@ class HealthKitManager
             if success {
 //                self.saveSteps()
                 self.querySteps()
-                FitBitManager.sharedInstance.sendFitBitData()
             } else {
                 Logger.error("\(error)")
             }

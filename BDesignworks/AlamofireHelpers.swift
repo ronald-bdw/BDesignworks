@@ -49,16 +49,6 @@ extension Request {
             guard let lData = data, let json = try NSJSONSerialization.JSONObjectWithData(lData, options: []) as? [String : AnyObject] else {
                 return .Failure(RTError(serialize: .WrongType))
             }
-            if response?.statusCode == 401 && response?.URL?.host == "api.fitbit.com" {
-                guard let jsonObject = (json["errors"] as? [[String : AnyObject]])?.first,
-                    let object = Mapper<FitbitError>().map(jsonObject) else {return .Failure(RTError(request: .Unknown(error: error)))}
-                if object.isTokenExpired {
-                    return .Failure(RTError(backend: .FitbitTokenExpired))
-                }
-                if object.isTokenInvalid == false {
-                    return .Failure(RTError(backend: .FitbitTokenInvalid))
-                }
-            }
             if response?.statusCode == 422 && response?.URL?.host == NSURL(string: Router.BaseURL)?.host {
                 var object = ValidationError()
                 object = Mapper<ValidationError>().map(json["error"], toObject: object)

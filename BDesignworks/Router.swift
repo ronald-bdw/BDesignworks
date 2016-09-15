@@ -21,22 +21,17 @@ protocol RouterProtocol: URLRequestConvertible {
 
 extension RouterProtocol {
     
-    func defaultURLRequest (baseURL: String = Router.BaseURL) -> NSMutableURLRequest {
+    func defaultURLRequest () -> NSMutableURLRequest {
         
-        let URL = NSURL(string: baseURL)!
+        let URL = NSURL(string: Router.BaseURL)!
         let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(self.path))
         mutableURLRequest.HTTPMethod = self.settings.method.rawValue
         
         do {
             let realm = try Realm()
             if let user = realm.objects(User).first {
-                if baseURL == Router.BaseURL {
-                    mutableURLRequest.setValue(user.token, forHTTPHeaderField: "X-User-Token")
-                    mutableURLRequest.setValue(user.phoneNumber, forHTTPHeaderField: "X-User-Phone-Number")
-                }
-                if let fitbitToken = user.fitbitToken {
-                    mutableURLRequest.setValue("Bearer " + fitbitToken, forHTTPHeaderField: "Authorization")
-                }
+                mutableURLRequest.setValue(user.token, forHTTPHeaderField: "X-User-Token")
+                mutableURLRequest.setValue(user.phoneNumber, forHTTPHeaderField: "X-User-Phone-Number")
             }
         }
         catch let error {

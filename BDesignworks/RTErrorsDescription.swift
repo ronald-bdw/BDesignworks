@@ -27,8 +27,6 @@ extension BackendError: HumanErrorType {
         case .InvalidPhone      : return "Phone is invalid"
         case .EmainTaken        : return "Emain is taken"
         case .SmsCodeNotExist   : return "Sms code not saved in database"
-        case .FitbitTokenExpired: return "Fitbit token has expired"
-        case .FitbitTokenInvalid: return "Fitbit token is invalid"
         }
     }
     
@@ -39,8 +37,6 @@ extension BackendError: HumanErrorType {
         case .InvalidPhone      : return ErrorHumanDescription(title: "Phone number is invalid", text: "You must provide valid phone number")
         case .EmainTaken        : return ErrorHumanDescription(title: "Sorry", text: "Email is taken")
         case .SmsCodeNotExist   : return ErrorHumanDescription(title: "Success", text: "Please, enter the link in sended sms.")
-        case .FitbitTokenExpired: return ErrorHumanDescription(title: "Sorry", text: "Fitbit token has expired. Do you want to sign in again?")
-        case .FitbitTokenInvalid: return ErrorHumanDescription(title: "Sorry", text: "Fitbit token is invalid. Do you want to sign in again?")
         }
     }
 }
