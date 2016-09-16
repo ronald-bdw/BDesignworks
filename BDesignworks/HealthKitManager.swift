@@ -80,24 +80,32 @@ class HealthKitManager
             let validResults = results.filter({startDate.compare($0.startDate) == .OrderedAscending})
             let steps = validResults.map({ENSteps(startDate: $0.startDate, finishDate: $0.endDate, count: Int($0.quantity.doubleValueForUnit((HKUnit.countUnit()))))})
             guard steps.count > 0 else {return}
-            Router.Steps.Send(steps: steps, source: .HealthKit).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
-                switch response.result {
-                case .Success(_):
-                    do {
-                        let realm = try Realm()
-                        let user = realm.objects(User).first
-                        try realm.write({
-                            user?.lastStepsHealthKitUpdateDate = endDate
-                        })
-                        Logger.debug("updatedStepsDate: \(user?.lastStepsHealthKitUpdateDate)")
-                    }
-                    catch let error {
-                        Logger.error("\(error)")
-                    }
-                case .Failure(let error):
-                    Logger.error("\(error)")
-                }
-            })}
+            
+            
+            let notification = UILocalNotification()
+            notification.repeatInterval = NSCalendarUnit.Minute
+            notification.alertBody = "Hello"
+            notification.fireDate = NSDate().dateByAddingMinutes(1)
+            notification.timeZone = NSTimeZone.defaultTimeZone()
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+//            Router.Steps.Send(steps: steps, source: .HealthKit).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
+//                switch response.result {
+//                case .Success(_):
+//                    do {
+//                        let realm = try Realm()
+//                        let user = realm.objects(User).first
+//                        try realm.write({
+//                            user?.lastStepsHealthKitUpdateDate = endDate
+//                        })
+//                        Logger.debug("updatedStepsDate: \(user?.lastStepsHealthKitUpdateDate)")
+//                    }
+//                    catch let error {
+//                        Logger.error("\(error)")
+//                    }
+//                case .Failure(let error):
+//                    Logger.error("\(error)")
+//                }
+//            })}
         
         self.healthStore?.executeQuery(sampleQuery)
     }

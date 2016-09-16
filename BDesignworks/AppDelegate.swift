@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ShowInitialViewController()
             Logger.error("\(error)")
         }
+        
         return true
     }
 
@@ -117,6 +118,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     
     func setupProject() {
+        
+        
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         
         self.printProjectSettings()
         
