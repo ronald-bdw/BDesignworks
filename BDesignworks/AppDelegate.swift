@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         self.setupProject()
-        
+        User.createTestUser()
         do {
             let realm = try Realm()
             if let authInfo = realm.objects(AuthInfo).first {

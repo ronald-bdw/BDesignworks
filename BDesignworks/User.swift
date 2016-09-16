@@ -87,6 +87,26 @@ class User: Object, IUser {
             return nil
         }
     }
+    
+    static func createTestUser() {
+        do {
+            let realm = try Realm()
+            let user = User()
+            guard realm.objects(User).count == 0 else {return}
+            user.id = 1
+            user.firstName = "Ellina"
+            user.lastName = "K"
+            user.email = "ekd@t.t"
+            user.phoneNumber = "+79377709988"
+            user.token = "iYW5v84__UDNLYdnPjkj"
+            try realm.write({
+                realm.add(user)
+            })
+        }
+        catch let error {
+            Logger.error("\(error)")
+        }
+    }
 }
 
 extension User: Mappable {
