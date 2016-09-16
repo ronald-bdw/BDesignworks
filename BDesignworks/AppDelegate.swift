@@ -76,19 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let startRange = urlFragment.rangeOfString("="),
             let endRange = urlFragment.rangeOfString("&") else {return true}
         let token = urlFragment.substringWithRange(startRange.endIndex..<endRange.startIndex)
-        do {
-            let realm = try Realm()
-            let user = User.getMainUser()
-            user?.fitbitToken = token
-            try realm.write({
-                user?.fitbitToken = token
-                Logger.debug(user?.fitbitToken)
-            })
-            FitBitManager.sharedInstance.sendFitBitData()
-        }
-        catch let error {
-            Logger.error("\(error)")
-        }
+        Logger.debug(token)
         return true
     }
     

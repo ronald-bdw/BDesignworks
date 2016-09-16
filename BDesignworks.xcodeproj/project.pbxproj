@@ -97,7 +97,6 @@
 		DCD86E5B1D6DEAFA0072AFA1 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD86E5A1D6DEAFA0072AFA1 /* ValidationError.swift */; };
 		E705D56B1D8AB25E00A05EC5 /* SidebarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705D56A1D8AB25E00A05EC5 /* SidebarModel.swift */; };
 		E705D56D1D8AB31A00A05EC5 /* SidebarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705D56C1D8AB31A00A05EC5 /* SidebarPresenter.swift */; };
-		E709FB111D869D8000BC9336 /* FitbitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E709FB101D869D8000BC9336 /* FitbitError.swift */; };
 		E72916531D8820B600A6D70A /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916521D8820B600A6D70A /* ProfileModel.swift */; };
 		E72916551D8828C600A6D70A /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916541D8828C600A6D70A /* ProfilePresenter.swift */; };
 		E72916581D88365E00A6D70A /* ProfileEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916571D88365E00A6D70A /* ProfileEditingView.swift */; };
@@ -110,7 +109,6 @@
 		E7C1F26D1D881C37007F9D7A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C1F26C1D881C37007F9D7A /* ProfileView.swift */; };
 		E7DA95801D8018FA0079EB79 /* RTSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA957F1D8018FA0079EB79 /* RTSteps.swift */; };
 		E7DA95821D8024A50079EB79 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA95811D8024A50079EB79 /* Steps.swift */; };
-		E7F92C471D8173D60085684F /* FitBitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F92C461D8173D60085684F /* FitBitManager.swift */; };
 		F7018C5C4E9D83799A15BC04 /* Pods_Abstract_BDesignworks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CDFD2D8FBD39ED71F9EDC /* Pods_Abstract_BDesignworks.framework */; };
 /* End PBXBuildFile section */
 
@@ -305,7 +303,6 @@
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		E705D56A1D8AB25E00A05EC5 /* SidebarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarModel.swift; sourceTree = "<group>"; };
 		E705D56C1D8AB31A00A05EC5 /* SidebarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarPresenter.swift; sourceTree = "<group>"; };
-		E709FB101D869D8000BC9336 /* FitbitError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitbitError.swift; sourceTree = "<group>"; };
 		E72916521D8820B600A6D70A /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		E72916541D8828C600A6D70A /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		E72916571D88365E00A6D70A /* ProfileEditingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingView.swift; sourceTree = "<group>"; };
@@ -319,7 +316,6 @@
 		E7C1F26C1D881C37007F9D7A /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E7DA957F1D8018FA0079EB79 /* RTSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTSteps.swift; sourceTree = "<group>"; };
 		E7DA95811D8024A50079EB79 /* Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
-		E7F92C461D8173D60085684F /* FitBitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitBitManager.swift; sourceTree = "<group>"; };
 		EC5B966D6C1FE954CB0BC550 /* Pods_Abstract_BDesignworksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE03134474C0070BF8DA767B /* Pods-Abstract-BDesignworks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.release.xcconfig"; sourceTree = "<group>"; };
 		FC6E3D360349BB799F9BA741 /* Pods-Abstract-BDesignworksTests.test staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.test staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.test staging.xcconfig"; sourceTree = "<group>"; };
@@ -380,7 +376,6 @@
 				214F4FF11BFDC2CF0084BE32 /* Extensions.swift */,
 				214F4FF51BFDC35C0084BE32 /* Protocols.swift */,
 				2F0729901D64C86B00A71B3C /* HealthKitManager.swift */,
-				E7F92C461D8173D60085684F /* FitBitManager.swift */,
 				2FDE13681D61B938008702FE /* SmoochHelper.swift */,
 				DCD86E581D6DAA8C0072AFA1 /* Alerts.swift */,
 				DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */,
@@ -694,7 +689,6 @@
 				DC22810D1D6B46AB00D5A0DA /* RTErrors.swift */,
 				DC22810E1D6B46AB00D5A0DA /* RTErrorsDescription.swift */,
 				DCD86E5A1D6DEAFA0072AFA1 /* ValidationError.swift */,
-				E709FB101D869D8000BC9336 /* FitbitError.swift */,
 			);
 			name = Errors;
 			sourceTree = "<group>";
@@ -1367,7 +1361,6 @@
 				E7DA95821D8024A50079EB79 /* Steps.swift in Sources */,
 				DCCA51861D76EAE700B42736 /* VerificationModel.swift in Sources */,
 				DC2281151D6B46AB00D5A0DA /* RTErrors.swift in Sources */,
-				E7F92C471D8173D60085684F /* FitBitManager.swift in Sources */,
 				21E157E21BB3EDF40041FCE4 /* FSTestHelpers.swift in Sources */,
 				DC2281191D6B46AB00D5A0DA /* User.swift in Sources */,
 				A489C48A1D6C8F54002AAA75 /* AreaCodeCell.swift in Sources */,
@@ -1425,7 +1418,6 @@
 				DC2281001D6B465400D5A0DA /* LoginPresenter.swift in Sources */,
 				214F4FF21BFDC2CF0084BE32 /* Extensions.swift in Sources */,
 				E729165A1D883A7A00A6D70A /* ProfileEditingModel.swift in Sources */,
-				E709FB111D869D8000BC9336 /* FitbitError.swift in Sources */,
 				E705D56B1D8AB25E00A05EC5 /* SidebarModel.swift in Sources */,
 				E705D56D1D8AB31A00A05EC5 /* SidebarPresenter.swift in Sources */,
 				E72916551D8828C600A6D70A /* ProfilePresenter.swift in Sources */,

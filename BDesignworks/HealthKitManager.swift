@@ -38,7 +38,6 @@ class HealthKitManager
 //                self.saveSteps()
 //                self.querySteps()
                 self.enableBackgroundDelivery()
-//                FitBitManager.sharedInstance.sendFitBitData()
             } else {
                 Logger.error("\(error)")
             }
@@ -106,6 +105,7 @@ class HealthKitManager
 //                    Logger.error("\(error)")
 //                }
 //            })}
+            }
         
         self.healthStore?.executeQuery(sampleQuery)
     }

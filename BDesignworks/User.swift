@@ -16,7 +16,6 @@ class User: Object, IUser {
     dynamic var email: String = ""
     dynamic var phoneNumber: String = ""
     dynamic var lastStepsHealthKitUpdateDate: NSDate?
-    dynamic var lastStepsFitBitUpdateDate: NSDate?
     
     var token: String? {
         get {
