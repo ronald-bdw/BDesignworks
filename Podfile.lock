@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (3.5.0)
+  - Alamofire (3.4.2)
   - Crashlytics (3.8.1):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.8)
   - FSHelpers+Swift (2.2)
-  - ObjectMapper (2.0.0)
+  - ObjectMapper (1.4.0)
   - Realm (1.0.2):
     - Realm/Headers (= 1.0.2)
   - Realm/Headers (1.0.2)
@@ -14,49 +14,50 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - SideMenu (1.2.1)
-  - Smooch (5.0.0)
+  - SideMenu (1.2.0)
+  - Smooch (4.3.1)
   - SVProgressHUD (2.0.3)
-  - XCGLogger (3.5.3)
+  - XCGLogger (3.5.1)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (= 3.4.2)
   - Crashlytics
   - Fabric
-  - FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`)
-  - ObjectMapper
-  - RealmSwift
-  - SAMKeychain
-  - SDWebImage
-  - SideMenu
-  - Smooch
-  - SVProgressHUD
-  - XCGLogger
+  - FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`, commit `62a65e4be8dc3cee77d7efb5042c1c4b362982be`)
+  - ObjectMapper (= 1.4.0)
+  - RealmSwift (= 1.0.2)
+  - SAMKeychain (= 1.5.1)
+  - SDWebImage (= 3.8.2)
+  - SideMenu (= 1.2.0)
+  - Smooch (= 4.3.1)
+  - SVProgressHUD (= 2.0.3)
+  - XCGLogger (= 3.5.1)
 
 EXTERNAL SOURCES:
   FSHelpers+Swift:
+    :commit: 62a65e4be8dc3cee77d7efb5042c1c4b362982be
     :git: https://github.com/fs/FSHelper.git
 
 CHECKOUT OPTIONS:
   FSHelpers+Swift:
-    :commit: bcb2d93862df7501e50ae161bb5ffb53d290a25f
+    :commit: 62a65e4be8dc3cee77d7efb5042c1c4b362982be
     :git: https://github.com/fs/FSHelper.git
 
 SPEC CHECKSUMS:
-  Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
+  Alamofire: 6aa33201d20d069e1598891cf928883ff1888c7a
   Crashlytics: 4391d8df0b125345e9f209c5db6e7f40a6a8435d
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   FSHelpers+Swift: df9494a1d09ac433dcb3a88dcec6546a7a09c17b
-  ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
+  ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
   Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
   RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
   SAMKeychain: 6b04852a20684167aea97bdf8ba12c95d3616376
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  SideMenu: d38e42ab18a5c0875a77cfec7e7cecea72a69518
-  Smooch: 88d317c4972654e854eba3383d43e6b77d0cb988
+  SideMenu: ca3f5cee9f711191be4edb938eb2ce1de1595293
+  Smooch: 1d2d45c808bf00125769edfa6e5e7e37dff3bc3b
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
-  XCGLogger: dbe4a9c7bbaac73717a34e0b94c64fd151c74d6c
+  XCGLogger: 94829865eea6fcc1f9a49e23bdc9f120a6848f30
 
-PODFILE CHECKSUM: 6358f9d16d7996e8908c06a8a94581b0169303ee
+PODFILE CHECKSUM: a8c0aa324f82e18c8276d510fd006a49b977b5a8
 
 COCOAPODS: 1.0.1
