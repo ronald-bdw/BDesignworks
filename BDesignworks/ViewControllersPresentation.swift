@@ -28,7 +28,7 @@ func PresentViewController(controller: UIViewController, animated: Bool = true) 
 
 func ShowInitialViewController(animated: Bool = true) {
     
-    let navigationController = Storyboard.Main.storyboard.instantiateViewControllerWithIdentifier("WelcomeController")
+    let navigationController = Storyboard.Login.storyboard.instantiateViewControllerWithIdentifier("WelcomeController")
     
     PresentViewController(navigationController, animated: animated)
 }
@@ -42,7 +42,7 @@ func ShowRegistrationViewController(animated: Bool = true) {
 }
 
 func ShowConversationViewController(animated: Bool = true) {
-    let navigationController = Storyboard.Main.storyboard.instantiateViewControllerWithIdentifier("ConversationScreen")
+    guard let navigationController = Storyboard.Main.firstController else {return}
     
     PresentViewController(navigationController, animated: animated)
 }

@@ -57,13 +57,14 @@ private func GenerateKey (prefix: String, key: String) -> String {
 
 enum Storyboard {
     case Main
-    
+    case Login
     case TrialPage
     case Welcome
     
     var name: String {
         switch self {
-        case .Main      : return "Main_Storyboard"
+        case .Main      : return "Main"
+        case .Login     : return "Login"
         case .TrialPage : return "TrialPage"
         case .Welcome   : return "WelcomeScreen"
         }
