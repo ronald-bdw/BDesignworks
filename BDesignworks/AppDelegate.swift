@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         self.setupProject()
-        
+//        User.createTestUser()
         do {
             let realm = try Realm()
             if let authInfo = realm.objects(AuthInfo).first {
@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ShowInitialViewController()
             Logger.error("\(error)")
         }
+        
         return true
     }
 
@@ -94,11 +95,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSUserDefaults.standardUserDefaults().setObject(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
         NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
         NSUserDefaults.standardUserDefaults().synchronize()
-    }
-    
-    func requestForRemoteNotifications () {
-        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert, UIUserNotificationType.Sound, UIUserNotificationType.Badge], categories: nil))
-        UIApplication.sharedApplication().registerForRemoteNotifications()
     }
 }
 

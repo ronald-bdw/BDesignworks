@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (3.4.2)
-  - Crashlytics (3.8.0):
+  - Crashlytics (3.8.1):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.8)
   - FSHelpers+Swift (2.2)
@@ -20,21 +20,22 @@ PODS:
   - XCGLogger (3.5.1)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (= 3.4.2)
   - Crashlytics
   - Fabric
-  - FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`)
-  - ObjectMapper
-  - RealmSwift
-  - SAMKeychain
-  - SDWebImage
-  - SideMenu
-  - Smooch
-  - SVProgressHUD
-  - XCGLogger
+  - FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`, commit `62a65e4be8dc3cee77d7efb5042c1c4b362982be`)
+  - ObjectMapper (= 1.4.0)
+  - RealmSwift (= 1.0.2)
+  - SAMKeychain (= 1.5.1)
+  - SDWebImage (= 3.8.2)
+  - SideMenu (= 1.2.0)
+  - Smooch (= 4.3.1)
+  - SVProgressHUD (= 2.0.3)
+  - XCGLogger (= 3.5.1)
 
 EXTERNAL SOURCES:
   FSHelpers+Swift:
+    :commit: 62a65e4be8dc3cee77d7efb5042c1c4b362982be
     :git: https://github.com/fs/FSHelper.git
 
 CHECKOUT OPTIONS:
@@ -44,7 +45,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 6aa33201d20d069e1598891cf928883ff1888c7a
-  Crashlytics: 8601d9c74a4c4d28f3e7f408bf4c0e490c70e8b4
+  Crashlytics: 4391d8df0b125345e9f209c5db6e7f40a6a8435d
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   FSHelpers+Swift: df9494a1d09ac433dcb3a88dcec6546a7a09c17b
   ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
@@ -57,6 +58,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   XCGLogger: 94829865eea6fcc1f9a49e23bdc9f120a6848f30
 
-PODFILE CHECKSUM: 6358f9d16d7996e8908c06a8a94581b0169303ee
+PODFILE CHECKSUM: a8c0aa324f82e18c8276d510fd006a49b977b5a8
 
 COCOAPODS: 1.0.1
