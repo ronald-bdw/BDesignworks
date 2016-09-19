@@ -10,6 +10,7 @@ import UIKit
 import FSHelpers_Swift
 
 enum ProviderOption: String {
+    case SelectOne   = "Select one"
     case HBF         = "HBF"
     case NoProvider  = "I do not have a provider"
 }
@@ -25,13 +26,15 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         static let ShowTrial = "TrialSegue"
     }
     
-    @IBOutlet var providerSelectionButton: RollUpButton!
+    @IBOutlet weak var providerSelectionButton: RollUpButton!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var inactiveView: UIView!
+    @IBOutlet weak var inactiveViewTapGestureRecognizer: UIGestureRecognizer!
     @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
     
     private lazy var autocompleteView: AutocompleteView = {
         let autocompleteView = AutocompleteView()
-        autocompleteView.items = [.HBF, .NoProvider]
+        autocompleteView.items = [.SelectOne, .HBF, .NoProvider]
         autocompleteView.delegate = self
         self.view.addSubview(autocompleteView)
         return autocompleteView
@@ -45,9 +48,9 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     }
     
     override func viewWillLayoutSubviews() {
-        self.autocompleteView.frame = CGRectMake(self.providerSelectionButton.fs_leading,
-                                                 self.providerSelectionButton.fs_bottom,
-                                                 self.providerSelectionButton.fs_width,
+        self.autocompleteView.frame = CGRectMake(0,
+                                                 self.view.fs_height - self.autocompleteView.fs_height,
+                                                 self.view.fs_width,
                                                  self.autocompleteView.fs_height)
     }
     
@@ -85,6 +88,14 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         }
     }
     
+    func changeViewState(active: Bool) {
+        self.inactiveView.hidden = !active
+    }
+    
+    @IBAction func disableAutocompleteViewPressed(sender: AnyObject) {
+        self.providerSelectionButton.didChangeState(self)
+    }
+    
     //MARK: Actions
     @IBAction func nextButtonPressed(sender: AnyObject) {
         guard let labelText = self.providerSelectionButton.chooseLabel.text,
@@ -93,6 +104,7 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         switch selectedButtonState {
         case .HBF: self.performSegueWithIdentifier(SegueIdentifiers.ShowVerify, sender: nil)
         case .NoProvider: self.performSegueWithIdentifier(SegueIdentifiers.ShowTrial, sender: nil)
+        default: return
         }
     }
     
@@ -103,11 +115,11 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         } else {
             self.autocompleteView.dismiss()
         }
+        self.changeViewState(active)
     }
     
     func autocompleteViewRowSelected(row: Int, item: String) {
         self.providerSelectionButton.chooseLabel.text = item
-        self.providerSelectionButton.active = false
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

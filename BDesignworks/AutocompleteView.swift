@@ -12,40 +12,26 @@ protocol AutocompleteViewDelegate: class {
     func autocompleteViewRowSelected(row: Int, item: String)
 }
 
-final class AutocompleteView: UIView, UITableViewDelegate, UITableViewDataSource {
+final class AutocompleteView: UIView {
     
     struct Constants {
-        static let defaultCellHeight         : CGFloat = 50
+        static let defaultCellHeight         : CGFloat = 60
+        static let pickerViewHeight          : CGFloat = Constants.defaultCellHeight * 3
         static let defaultAnimationDuration  : NSTimeInterval = 0.2
-        static let cellIdentifier            : String = "Cell"
-        static let defaultCornerRadius       : CGSize = CGSize(width: 10, height: 10)
+        static let pickerTextLeftOffset      : CGFloat = 32
     }
     
     override class func layerClass() -> AnyClass { return CAShapeLayer.self }
     
     var items: [ProviderOption] = [] {
         didSet {
-            self.selectedItem = self.items.first ?? nil
             self.layoutSubviews()
         }
     }
     
-    private var selectedItem: ProviderOption!  {
-        didSet {
-            self.availableItems = self.items.filter { $0 != self.selectedItem }
-            self.tableView.reloadData()
-        }
-    }
-    
-    private var availableItems: [ProviderOption] = []
-    
     weak var delegate: AutocompleteViewDelegate?
     
-    private let tableView = UITableView()
-    
-    private var shapeLayer: CAShapeLayer {
-        return self.layer as! CAShapeLayer
-    }
+    private let pickerView = UIPickerView()
     
     //MARK: Lifecycle
     override init(frame: CGRect) {
@@ -76,57 +62,50 @@ final class AutocompleteView: UIView, UITableViewDelegate, UITableViewDataSource
         
         self.hidden = true
         
-        //UITableView's setup
-        self.tableView.backgroundColor    = UIColor.whiteColor()
-        self.tableView.separatorStyle     = .None
-        self.tableView.layer.cornerRadius = Constants.defaultCornerRadius.height
-        self.tableView.scrollEnabled      = false
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: Constants.cellIdentifier)
-        self.addSubview(self.tableView)
-        
-        //CAShapeLayer's setup
-        self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.BottomLeft, .BottomRight], cornerRadii: Constants.defaultCornerRadius).CGPath
-        self.shapeLayer.backgroundColor = UIColor.clearColor().CGColor
-        self.shapeLayer.strokeColor     = UIColor.lightGrayColor().CGColor
-        self.shapeLayer.fillColor       = UIColor.whiteColor().CGColor
-        self.shapeLayer.lineWidth       = 1
-        self.shapeLayer.borderColor     = UIColor.lightGrayColor().CGColor
+        self.pickerView.dataSource = self
+        self.pickerView.delegate = self
+        self.pickerView.backgroundColor = FSRGBA(250, 250, 250, 0.98)
+        self.pickerView.fs_borderColor = FSRGBA(200, 200, 200, 1)
+        self.pickerView.fs_borderWidth = 1
+        self.pickerView.frame = CGRect(x: 0, y: 0, width: self.fs_width, height: Constants.pickerViewHeight)
+        self.addSubview(self.pickerView)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.fs_height = CGFloat(self.availableItems.count) * Constants.defaultCellHeight
-        self.tableView.frame = CGRectInset(self.bounds, 1, 1)
-        self.shapeLayer.frame = self.bounds
-        self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds,
-                                            byRoundingCorners: [.BottomLeft, .BottomRight],
-                                            cornerRadii: Constants.defaultCornerRadius).CGPath
+        
+        self.fs_height = Constants.pickerViewHeight
+        self.pickerView.frame = CGRect(x: 0, y: 0, width: self.fs_width, height:  Constants.pickerViewHeight)
+        self.pickerView.reloadAllComponents()
+    }
+}
+
+extension AutocompleteView: UIPickerViewDataSource {
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
     }
     
-    //MARK: TableView
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.items.count
+    }
+}
+
+extension AutocompleteView: UIPickerViewDelegate {
+    
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+        let label = UILabel(frame: CGRect(x: Constants.pickerTextLeftOffset, y: 0, width: self.fs_width - Constants.pickerTextLeftOffset, height: Constants.defaultCellHeight))
+        label.font = Fonts.OpenSans.Bold.getFontOfSize(18)
+        label.textColor = pickerView.selectedRowInComponent(component) == row ? FSRGBA(41, 83, 124, 1) : UIColor.lightGrayColor()
+        label.text = self.items[row].rawValue
+        return label
+    }
+    
+    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return Constants.defaultCellHeight
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.availableItems.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath)
-        cell.textLabel?.text = self.availableItems[indexPath.row].rawValue
-        cell.textLabel?.textAlignment = .Center
-        cell.backgroundColor = UIColor.clearColor()
-        cell.selectionStyle = .None
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.delegate?.autocompleteViewRowSelected(indexPath.row, item: self.availableItems[indexPath.row].rawValue)
-        self.dismiss()
-        self.selectedItem = self.availableItems[indexPath.row]
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickerView.reloadAllComponents()
+        self.delegate?.autocompleteViewRowSelected(row, item: self.items[row].rawValue)
     }
 }

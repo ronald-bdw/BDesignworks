@@ -88,3 +88,17 @@ enum Image {
         static var HbfLogoWhite = UIImage(named: "hbf-logo-white")!
     }
 }
+
+enum Fonts {
+    enum OpenSans {
+        case Bold
+        
+        var fontName: String {
+            return "OpenSans-Bold"
+        }
+        
+        func getFontOfSize(size: CGFloat) -> UIFont {
+            return UIFont(name: self.fontName, size: size)!
+        }
+    }
+}

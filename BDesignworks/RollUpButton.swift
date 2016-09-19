@@ -109,16 +109,16 @@ final class RollUpButton: BaseView {
     
     private func updateBoundingPath() {
         
-        if self.active {
-            guard self.animatable else { return }
-            self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds,
-                                                 byRoundingCorners: [.TopLeft, .TopRight],
-                                                 cornerRadii: Constants.defaultCornerRadius).CGPath
-        } else {
+//        if self.active {
+//            guard self.animatable else { return }
+//            self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds,
+//                                                 byRoundingCorners: [.TopLeft, .TopRight],
+//                                                 cornerRadii: Constants.defaultCornerRadius).CGPath
+//        } else {
             self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds,
                                                 byRoundingCorners: .AllCorners,
                                                 cornerRadii: Constants.defaultCornerRadius).CGPath
-        }
+//        }
     }
     
     @IBAction func didChangeState(sender: AnyObject) {

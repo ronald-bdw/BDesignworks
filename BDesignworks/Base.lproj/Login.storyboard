@@ -15,7 +15,7 @@
             <string>OpenSans-Light</string>
             <string>OpenSans-Light</string>
         </mutableArray>
-        <mutableArray key="OpenSansRegularItalic.ttf">
+        <mutableArray key="OpenSansRegular.ttf">
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
@@ -92,6 +92,13 @@
                                     <constraint firstAttribute="height" constant="50" id="emr-Sp-xSf"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAj-bX-Mg6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hxl-cF-s1Q" appends="YES" id="aia-se-AT9"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -101,15 +108,19 @@
                             <constraint firstItem="dB4-Ty-tCF" firstAttribute="leading" secondItem="StV-eM-zTl" secondAttribute="leading" constant="24" id="BY3-UO-Rvf"/>
                             <constraint firstItem="cap-Dn-Qp5" firstAttribute="top" secondItem="LSf-b0-zdR" secondAttribute="bottom" constant="23" id="D9D-Qe-VEC"/>
                             <constraint firstItem="Bi6-wE-5hF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Beh-0N-qr5" secondAttribute="leading" constant="16" id="Geh-OC-aNJ"/>
+                            <constraint firstItem="yAj-bX-Mg6" firstAttribute="leading" secondItem="StV-eM-zTl" secondAttribute="leading" id="H0T-4w-xlx"/>
                             <constraint firstAttribute="trailing" secondItem="dB4-Ty-tCF" secondAttribute="trailing" constant="24" id="HGb-ah-WMb"/>
+                            <constraint firstItem="cap-Dn-Qp5" firstAttribute="top" secondItem="yAj-bX-Mg6" secondAttribute="bottom" id="Tkr-zA-Mq6"/>
                             <constraint firstItem="IlK-AI-DJw" firstAttribute="top" secondItem="Beh-0N-qr5" secondAttribute="top" constant="50" id="V85-pg-EhM"/>
                             <constraint firstItem="dB4-Ty-tCF" firstAttribute="top" secondItem="Bi6-wE-5hF" secondAttribute="bottom" constant="15" id="VJz-9Q-P5d"/>
                             <constraint firstItem="Beh-0N-qr5" firstAttribute="top" secondItem="StV-eM-zTl" secondAttribute="top" id="XuR-zx-hMm"/>
+                            <constraint firstItem="yAj-bX-Mg6" firstAttribute="top" secondItem="StV-eM-zTl" secondAttribute="top" id="YYy-Gh-hq2"/>
                             <constraint firstItem="Beh-0N-qr5" firstAttribute="leading" secondItem="StV-eM-zTl" secondAttribute="leading" id="aIs-Qn-sbZ"/>
                             <constraint firstAttribute="trailing" secondItem="Beh-0N-qr5" secondAttribute="trailing" id="dGu-UP-0v1"/>
                             <constraint firstItem="Bi6-wE-5hF" firstAttribute="top" secondItem="IlK-AI-DJw" secondAttribute="bottom" constant="27" id="elu-ZW-5Le"/>
                             <constraint firstItem="cap-Dn-Qp5" firstAttribute="top" secondItem="Beh-0N-qr5" secondAttribute="bottom" id="erP-7R-OMT"/>
                             <constraint firstItem="IlK-AI-DJw" firstAttribute="centerX" secondItem="Beh-0N-qr5" secondAttribute="centerX" id="gwO-RO-TJg"/>
+                            <constraint firstAttribute="trailing" secondItem="yAj-bX-Mg6" secondAttribute="trailing" id="tco-e9-CZU"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -117,6 +128,8 @@
                         <barButtonItem key="backBarButtonItem" title="                " id="LIO-3Z-OdX"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="inactiveView" destination="yAj-bX-Mg6" id="7jS-tb-Q1o"/>
+                        <outlet property="inactiveViewTapGestureRecognizer" destination="hxl-cF-s1Q" id="nam-yp-ela"/>
                         <outlet property="logoTopConstraint" destination="V85-pg-EhM" id="ox7-4O-nmz"/>
                         <outlet property="nextButton" destination="LSf-b0-zdR" id="ZBT-Fi-2Hl"/>
                         <outlet property="providerSelectionButton" destination="dB4-Ty-tCF" id="0CV-Qc-Fpe"/>
@@ -125,6 +138,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwE-4P-50B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hxl-cF-s1Q">
+                    <connections>
+                        <action selector="disableAutocompleteViewPressed:" destination="xJO-aM-hqn" id="uoN-AC-7Ch"/>
+                        <outlet property="delegate" destination="xJO-aM-hqn" id="hhs-bq-D1D"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1376" y="322"/>
         </scene>
@@ -615,7 +634,7 @@
                                     <action selector="nextPressed:" destination="M06-aI-0x9" eventType="touchUpInside" id="LKb-JG-pUi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the unique code in the SMS that we have sent you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-5V-3lS">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please enter the unique code in the SMS that we have sent you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdS-5V-3lS">
                                 <rect key="frame" x="24" y="345" width="552" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -665,16 +684,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ZU9-hx-loE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ZU9-hx-loE">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="319" placeholderIntrinsicHeight="515" translatesAutoresizingMaskIntoConstraints="NO" id="7gt-ft-BhW">
+                            <view contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="319" placeholderIntrinsicHeight="515" translatesAutoresizingMaskIntoConstraints="NO" id="7gt-ft-BhW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="hbz-zG-nhg">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="hbz-zG-nhg">
                                         <rect key="frame" x="215" y="40" width="170" height="228"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your mobile number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ku4-ol-p4k" customClass="BDTextField" customModule="IBDesignableKit">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your mobile number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ku4-ol-p4k" customClass="BDTextField" customModule="IBDesignableKit">
                                         <rect key="frame" x="20" y="469" width="560" height="31"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
@@ -698,20 +717,20 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your mobile phone number for SMS verification" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xD4-iL-KJZ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome! Please enter your mobile phone number for SMS verification" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xD4-iL-KJZ">
                                         <rect key="frame" x="161" y="300" width="286" height="111"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPC-X5-XR7" customClass="RollUpButton" customModule="PearUp" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OPC-X5-XR7" customClass="RollUpButton" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="20" y="428" width="560" height="31"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5j-Jz-egE" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5j-Jz-egE" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="510" width="600" height="0.0"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkI-p9-5Pn" customClass="RoundButton" customModule="IBDesignableKit">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkI-p9-5Pn" customClass="RoundButton" customModule="IBDesignableKit">
                                         <rect key="frame" x="232" y="525" width="137" height="55"/>
                                         <color key="backgroundColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="18"/>
@@ -730,14 +749,14 @@
                                             <action selector="submitAction:" destination="jLg-Mh-FPe" eventType="touchUpInside" id="nKv-Ru-RvV"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1E-yO-MXp" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1E-yO-MXp" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="421" width="600" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYs-0Y-Lsf" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XYs-0Y-Lsf" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="507" width="600" height="0.0"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -792,13 +811,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAH-nk-3vt">
-                                                    <rect key="frame" x="538" y="12" width="34.5" height="20"/>
+                                                    <rect key="frame" x="538" y="12" width="35" height="20"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans Light" pointSize="15"/>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Australia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uw5-dw-6UC">
-                                                    <rect key="frame" x="27" y="12" width="501.5" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Australia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uw5-dw-6UC">
+                                                    <rect key="frame" x="27" y="12" width="502" height="20"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans Light" pointSize="15"/>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -889,7 +908,7 @@
                                     <constraint firstAttribute="width" constant="170" id="qX9-di-L9i"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your get active coach with you every step of the way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-s1-bai">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="your get active coach with you every step of the way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-s1-bai">
                                 <rect key="frame" x="184" y="399" width="233" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="233" id="qp8-sU-04S"/>
@@ -901,7 +920,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFb-vO-jqj" userLabel="Container">
                                 <rect key="frame" x="0.0" y="260" width="600" height="340"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="WELCOME TO PEARUP!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rd7-Dk-h0J">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" text="WELCOME TO PEARUP!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rd7-Dk-h0J">
                                         <rect key="frame" x="182" y="11" width="237" height="27"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
                                         <color key="textColor" red="0.15294117647058825" green="0.25882352941176467" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
@@ -952,7 +971,7 @@
                                             <action selector="yesAction:" destination="c4d-eD-W8X" eventType="touchUpInside" id="dKd-eX-rQ8"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you receive a personal sign-up invitation?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="QX0-re-Tzi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Did you receive a personal sign-up invitation?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="QX0-re-Tzi">
                                         <rect key="frame" x="10" y="57" width="580" height="39"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
@@ -1033,7 +1052,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="315" height="258"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kog-XU-tyt" customClass="RoundButton" customModule="IBDesignableKit">
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kog-XU-tyt" customClass="RoundButton" customModule="IBDesignableKit">
                                 <rect key="frame" x="65" y="161" width="185" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="185" id="Rvk-ea-FWA"/>
@@ -1058,7 +1077,7 @@
                                     <action selector="learnMoreAction:" destination="nZU-o6-lK5" eventType="touchUpInside" id="aJW-Ms-hMn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4i9-bg-wVS" customClass="RoundButton" customModule="IBDesignableKit">
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4i9-bg-wVS" customClass="RoundButton" customModule="IBDesignableKit">
                                 <rect key="frame" x="18" y="85" width="279" height="60"/>
                                 <color key="backgroundColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1081,7 +1100,7 @@
                                     <action selector="startTrialAction:" destination="nZU-o6-lK5" eventType="touchUpInside" id="Mai-3r-7EB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No worries. Pear Up is open to everyone! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62e-A4-Kez">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No worries. Pear Up is open to everyone! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62e-A4-Kez">
                                 <rect key="frame" x="18" y="30" width="279" height="39"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
@@ -1125,7 +1144,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="9sq-x7-HeC">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your get active coach with you every step of the way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6F-iB-b4c">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="your get active coach with you every step of the way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6F-iB-b4c">
                                 <rect key="frame" x="184" y="429" width="233" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="233" id="yug-3n-F7u"/>
