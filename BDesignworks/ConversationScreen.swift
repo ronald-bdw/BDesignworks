@@ -49,9 +49,7 @@ class ConversationScreen: UIViewController {
         UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: true)
         
         self.title = "Messages"
-        
-        self.navigationItem.hidesBackButton = true
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Menu", style: .Plain, target: self, action: #selector(showSideMenu))
+        self.setNavigationBarButtons()
         
         do {
             let realm = try Realm()
@@ -78,6 +76,23 @@ class ConversationScreen: UIViewController {
         } catch let error {
             Logger.error("\(error)")
         }
+    }
+    
+    private func setNavigationBarButtons() {
+        self.navigationItem.hidesBackButton = true
+        
+        let leftBarButtonImageView = UIImageView(image: Image.Logo.HbfLogoWhite)
+        let imageHeight: CGFloat = 23
+        let resizedLeftImageViewWidth = imageHeight * leftBarButtonImageView.fs_width / leftBarButtonImageView.fs_height
+        leftBarButtonImageView.frame = CGRect(x: 0, y: 0, width: resizedLeftImageViewWidth, height: imageHeight)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonImageView)
+        
+        let rightBarImage = Image.Icon.Menu
+        let buttonWidth = imageHeight * rightBarImage.size.width / rightBarImage.size.height
+        let rightBarButton = UIButton(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: imageHeight))
+        rightBarButton.setImage(rightBarImage, forState: .Normal)
+        rightBarButton.addTarget(self, action: #selector(self.showSideMenu), forControlEvents: .TouchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
     }
     
     override func viewWillAppear(animated: Bool) {
