@@ -117,6 +117,9 @@ extension User: Mappable {
         self.email   <- map["email"]
         self.phoneNumber <- map["phone_number"]
         self.token <- map["authentication_token"]
+        var lastUpdateDate: String = ""
+        lastUpdateDate <- map["last_healthkit_activity.started_at"]
+        self.lastStepsHealthKitUpdateDate = NSDate.getDateFromISO8601(lastUpdateDate)
     }
 }
 

@@ -80,6 +80,9 @@ class HealthKitManager
             let steps = validResults.map({ENSteps(startDate: $0.startDate, finishDate: $0.endDate, count: Int($0.quantity.doubleValueForUnit((HKUnit.countUnit()))))})
             guard steps.count > 0 else {return}
             
+            let lastStepsSampleDate = steps.map({$0.startDate}).maxElement({ (date, otherDate) -> Bool in
+                date.compare(otherDate) == .OrderedAscending
+            })
             Router.Steps.Send(steps: steps, source: .HealthKit).request().responseObject({ (response: Response<RTStepsSendResponse, RTError>) in
                 switch response.result {
                 case .Success(_):
@@ -87,9 +90,8 @@ class HealthKitManager
                         let realm = try Realm()
                         let user = realm.objects(User).first
                         try realm.write({
-                            user?.lastStepsHealthKitUpdateDate = endDate
+                            user?.lastStepsHealthKitUpdateDate = lastStepsSampleDate
                         })
-                        Logger.debug("updatedStepsDate: \(user?.lastStepsHealthKitUpdateDate)")
                     }
                     catch let error {
                         Logger.error("\(error)")
