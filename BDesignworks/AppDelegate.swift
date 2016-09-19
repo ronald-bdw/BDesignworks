@@ -96,20 +96,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
-    
-    func requestForRemoteNotifications () {
-        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert, UIUserNotificationType.Sound, UIUserNotificationType.Badge], categories: nil))
-        UIApplication.sharedApplication().registerForRemoteNotifications()
-    }
 }
 
 extension AppDelegate {
     
     func setupProject() {
-        
-        
-        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         
         self.printProjectSettings()
         
