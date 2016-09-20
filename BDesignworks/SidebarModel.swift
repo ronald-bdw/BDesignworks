@@ -21,7 +21,7 @@ class SidebarModel {
 
 extension SidebarModel: ISidebarModel {
     func loadUser() {
-        if let user = User.getMainUser() {
+        if let user = ENUser.getMainUser() {
             self.presenter?.userLoaded(user)
         }
         let _ = Router.User.getUser.request().responseObject { (response: DataResponse<RTUserResponse>) in

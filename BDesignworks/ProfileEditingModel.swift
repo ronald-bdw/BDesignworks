@@ -21,7 +21,7 @@ class ProfileEditingModel {
 
 extension ProfileEditingModel: IProfileEditingModel {
     func getUser() {
-        guard let user = User.getMainUser() else {return}
+        guard let user = ENUser.getMainUser() else {return}
         self.presenter?.userReceived(user)
     }
     

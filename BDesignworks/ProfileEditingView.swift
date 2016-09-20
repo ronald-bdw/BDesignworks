@@ -11,7 +11,7 @@ import Foundation
 typealias ProfileEditingMVP = MVPContainer<ProfileEditingView,ProfileEditingPresenter,ProfileEditingModel>
 
 protocol IProfileEditingView: class {
-    func updateView(_ user: User)
+    func updateView(_ user: ENUser)
     func setLoadingState(_ state: LoadingState)
     func updateFirstNameErrorView(_ isValid: Bool)
     func updateLastNameErrorView(_ isValid: Bool)
@@ -126,7 +126,7 @@ class ProfileEditingView: UITableViewController {
 }
 
 extension ProfileEditingView: IProfileEditingView {
-    func updateView(_ user: User) {
+    func updateView(_ user: ENUser) {
         self.nameLabel.text = user.fullname
         self.emailPreviewLabel.text = user.email
         self.emailPreviewLabel.text = user.email

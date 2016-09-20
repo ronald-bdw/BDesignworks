@@ -35,7 +35,7 @@ class SidebarCell: UITableViewCell
 typealias SidebarMVP = MVPContainer<SidebarView,SidebarPresenter,SidebarModel>
 
 protocol ISidebarView: class {
-    func updateView(_ user: User)
+    func updateView(_ user: ENUser)
 }
 
 class SidebarView: UITableViewController {
@@ -85,7 +85,7 @@ class SidebarView: UITableViewController {
 }
 
 extension SidebarView: ISidebarView {
-    func updateView(_ user: User) {
+    func updateView(_ user: ENUser) {
         self.nameLabel.text = user.fullname
         self.emailLabel.text = user.email
     }

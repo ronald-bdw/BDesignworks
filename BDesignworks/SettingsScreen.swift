@@ -29,7 +29,7 @@ class SettingsScreen: UITableViewController
         do {
             let realm = try Realm()
             try realm.write({
-                realm.delete(realm.objects(User.self))
+                realm.delete(realm.objects(ENUser.self))
             })
             
             ShowInitialViewController()

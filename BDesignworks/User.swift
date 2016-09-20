@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class User: Object, IUser {
+class ENUser: Object, IUser {
     dynamic var id: Int = 0
     dynamic var firstName: String = ""
     dynamic var lastName: String = "" 
@@ -77,10 +77,10 @@ class User: Object, IUser {
         return user
     }
     
-    static func getMainUser() -> User? {
+    static func getMainUser() -> ENUser? {
         do {
             let realm = try Realm()
-            return realm.objects(User.self).first
+            return realm.objects(ENUser.self).first
         }
         catch let error {
             Logger.error("\(error)")
@@ -91,8 +91,8 @@ class User: Object, IUser {
     static func createTestUser() {
         do {
             let realm = try Realm()
-            let user = User()
-            guard realm.objects(User.self).count == 0 else {return}
+            let user = ENUser()
+            guard realm.objects(ENUser.self).count == 0 else {return}
             user.id = 1
             user.firstName = "Ellina"
             user.lastName = "K"
@@ -109,7 +109,7 @@ class User: Object, IUser {
     }
 }
 
-extension User: Mappable {
+extension ENUser: Mappable {
     func mapping(map: ObjectMapper.Map) {
         self.id     <- map["id"]
         self.firstName <- map["first_name"]

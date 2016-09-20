@@ -9,7 +9,7 @@
 import Foundation
 
 protocol IProfileEditingPresenterModel: class {
-    func userReceived(_ user: User)
+    func userReceived(_ user: ENUser)
     func loadingStarted()
     func loadingFinished()
     func loadingFailed(_ error: RTError)
@@ -29,7 +29,7 @@ class ProfileEditingPresenter {
 }
 
 extension ProfileEditingPresenter: IProfileEditingPresenterModel {
-    func userReceived(_ user: User) {
+    func userReceived(_ user: ENUser) {
         self.view?.updateView(user)
     }
     
@@ -66,7 +66,7 @@ extension ProfileEditingPresenter: IProfileEditingPresenterView {
     }
     
     func donePressed(_ firstName: String?, lastName: String?, email: String?) {
-        guard let mainUser = User.getMainUser() else {return}
+        guard let mainUser = ENUser.getMainUser() else {return}
         let user = UserEdited(id: mainUser.id, firstName: firstName, lastName: lastName, email: email, avatar: nil)
         self.model?.updateUser(user)
     }

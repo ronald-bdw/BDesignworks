@@ -13,7 +13,7 @@ protocol ILoginModel {
 }
 
 class LoginModel {
-    var user: User?
+    var user: ENUser?
     
     weak var presenter: PresenterProtocol?
     
@@ -27,7 +27,7 @@ class LoginModel {
             guard let authData = realm.objects(AuthInfo.self).first else {return}
             
             let _ = Router.User.signIn(phone: authData.phone, authPhoneCode: authData.id, smsCode: smsCode).request().responseObject { [weak self] (response: DataResponse<RTUserResponse>) in
-                var receivedData: User?
+                var receivedData: ENUser?
                 
                 defer {
                     self?.user = receivedData

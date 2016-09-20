@@ -16,7 +16,7 @@ protocol IRegistrationModel {
 }
 
 class RegistrationModel {
-    var user: User?
+    var user: ENUser?
     
     weak var presenter: PresenterProtocol?
     
@@ -31,7 +31,7 @@ class RegistrationModel {
             guard let authData = realm.objects(AuthInfo.self).first else {self.presenter?.requestFailed(RTError(backend: .smsCodeNotExist)); return}
             
             let _ = Router.User.register(firstName: user.firstName.content, lastname: user.lastName.content, email: user.email.content, phone: user.phone.content, authPhoneCode: authData.id, smsCode: "1234").request().responseObject { [weak self] (response: DataResponse<RTUserResponse>) in
-                var user: User?
+                var user: ENUser?
                 
                 defer {
                     self?.user = user
@@ -45,7 +45,7 @@ class RegistrationModel {
                     do {
                         let realm = try Realm()
                         try realm.write({
-                            realm.delete(realm.objects(User.self))
+                            realm.delete(realm.objects(ENUser.self))
                             realm.delete(realm.objects(AuthInfo.self))
                             realm.add(lUser)
                         })
@@ -115,7 +115,7 @@ extension RegistrationModel: IRegistrationModel {
     func registerIfNeeded() {
         do {
             let realm = try Realm()
-            guard let user = realm.objects(User.self).first else {return}
+            guard let user = realm.objects(ENUser.self).first else {return}
             self.startRegister(user.getRegistrationUser())
         } catch let error {
             Logger.error("\(error)")
@@ -126,7 +126,7 @@ extension RegistrationModel: IRegistrationModel {
         var user = RegistrationUser()
         do {
             let realm = try Realm()
-            if let rUser = realm.objects(User.self).first {
+            if let rUser = realm.objects(ENUser.self).first {
                 user = rUser.getRegistrationUser()
             }
             else {
@@ -143,13 +143,13 @@ extension RegistrationModel: IRegistrationModel {
     func saveUser(_ user: RegistrationUser) {
         do {
             let realm = try Realm()
-            let rUser = User()
+            let rUser = ENUser()
             rUser.firstName = user.firstName.content
             rUser.lastName = user.lastName.content
             rUser.email = user.email.content
             rUser.phoneNumber = user.phone.content
             try realm.write({
-                realm.delete(realm.objects(User.self))
+                realm.delete(realm.objects(ENUser.self))
                 realm.add(rUser)
             })
         } catch let error {

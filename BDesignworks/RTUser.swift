@@ -68,7 +68,7 @@ extension Router.User: RouterProtocol {
 }
 
 class RTUserResponse: Mappable {
-    var user: User?
+    var user: ENUser?
     var error: ValidationError?
     
     required convenience init?(map: Map) {

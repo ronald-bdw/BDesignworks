@@ -37,17 +37,9 @@ enum Router {
         
         headers.updateValue("no-cache", forKey: "Cache-Control")
         
-        //TODO: rename entity User
-//        do {
-//            let realm = try Realm()
-//            if let user = realm.objects(User.self).first {
-//                headers = ["X-User-Token": user.token!, "X-User-Phone-Number": user.phoneNumber]
-//            }
-//        }
-//        catch let error {
-//            Logger.debug("\(error)")
-//        }
-
+        if let user = ENUser.getMainUser(), let token = user.token {
+            headers = ["X-User-Token": token, "X-User-Phone-Number": user.phoneNumber]
+        }
         
         return headers
     }

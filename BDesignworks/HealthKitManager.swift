@@ -74,7 +74,7 @@ class HealthKitManager
             guard let results = results as? [HKQuantitySample] else {return}
             guard let sself = self else {return}
             let endDate = Date()
-            let startDate = User.getMainUser()?.lastStepsHealthKitUpdateDate ?? endDate.fs_dateByAddingDays(-sself.defaultDaysToStepsCount)
+            let startDate = ENUser.getMainUser()?.lastStepsHealthKitUpdateDate ?? endDate.fs_dateByAddingDays(-sself.defaultDaysToStepsCount)
             
             let validResults = results.filter({startDate.compare($0.startDate) == .orderedAscending})
             let steps = validResults.map({ENSteps(startDate: $0.startDate, finishDate: $0.endDate, count: Int($0.quantity.doubleValue(for: (HKUnit.count()))))})
@@ -88,7 +88,7 @@ class HealthKitManager
                 case .success(_):
                     do {
                         let realm = try Realm()
-                        let user = realm.objects(User.self).first
+                        let user = realm.objects(ENUser.self).first
                         try realm.write({
                             user?.lastStepsHealthKitUpdateDate = lastStepsSampleDate
                         })

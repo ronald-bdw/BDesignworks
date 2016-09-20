@@ -13,7 +13,7 @@ protocol IProfilePresenterView {
 }
 
 protocol IProfilePresenterModel: class {
-    func userReceived(_ user: User)
+    func userReceived(_ user: ENUser)
 }
 
 class ProfilePresenter {
@@ -30,7 +30,7 @@ extension ProfilePresenter: IProfilePresenterView {
 }
 
 extension ProfilePresenter: IProfilePresenterModel {
-    func userReceived(_ user: User) {
+    func userReceived(_ user: ENUser) {
         self.view?.updateView(user)
     }
 }

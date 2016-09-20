@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     ShowRegistrationViewController()
                 }
             }
-            else if let _ = realm.objects(User.self).first {
+            else if let _ = realm.objects(ENUser.self).first {
                 ShowConversationViewController()
             }
             else {
