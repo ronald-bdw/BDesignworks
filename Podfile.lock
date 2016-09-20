@@ -17,9 +17,9 @@ PODS:
   - SideMenu (2.0.1)
   - Smooch (5.0.0)
   - SVProgressHUD (2.0.3)
-  - XCGLogger (4.0.0-beta.5):
-    - XCGLogger/Core (= 4.0.0-beta.5)
-  - XCGLogger/Core (4.0.0-beta.5)
+  - XCGLogger (4.0.0):
+    - XCGLogger/Core (= 4.0.0)
+  - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -49,7 +49,7 @@ CHECKOUT OPTIONS:
     :commit: 835f7d730f142880439d27607f905125bf39fa0e
     :git: https://github.com/fs/FSHelper.git
   XCGLogger:
-    :commit: ecee85d6343bbfc653e5a313ca863dc3f6161bfa
+    :commit: 2fd27c92eb102bcf09f3176a230e42e38cacd4a2
     :git: https://github.com/DaveWoodCom/XCGLogger.git
 
 SPEC CHECKSUMS:
@@ -65,7 +65,7 @@ SPEC CHECKSUMS:
   SideMenu: 015d74d94b2e77c4710cc30a60e2d0be71821d2b
   Smooch: 88d317c4972654e854eba3383d43e6b77d0cb988
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
-  XCGLogger: 27634666573071fcfacbf8c20f84285363fa7d4a
+  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
 PODFILE CHECKSUM: 01a8de51138822e45e9b4d92434639fff11f7db2
 

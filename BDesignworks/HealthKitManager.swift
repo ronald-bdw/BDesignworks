@@ -68,7 +68,7 @@ class HealthKitManager
         let sampleQuery = HKSampleQuery(sampleType: self.stepsCount,
                                         predicate: nil,
                                         limit: self.defaultSamplesCount,
-                                        sortDescriptors: nil)
+                                        sortDescriptors: [NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)] )
         {  [weak self] (query, results, error) in
             
             guard let results = results as? [HKQuantitySample] else {return}
