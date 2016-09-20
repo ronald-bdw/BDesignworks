@@ -9,21 +9,21 @@
 import Foundation
 
 enum UserEditedValidationField: Int {
-    case FirstName
-    case LastName
-    case Email
+    case firstName
+    case lastName
+    case email
     
     var validationText: String {
         switch self {
-        case .FirstName : return "First name shouldn't be empty"
-        case .LastName  : return "Last name shouldn't be empty"
-        case .Email     : return "Email not valid"
+        case .firstName : return "First name shouldn't be empty"
+        case .lastName  : return "Last name shouldn't be empty"
+        case .email     : return "Email not valid"
         }
     }
-    func isValid(content: String?) -> Bool {
+    func isValid(_ content: String?) -> Bool {
         switch self {
-        case .FirstName, .LastName: return content?.fs_length > 0
-        case .Email: return content?.fs_emailValidate() ?? false
+        case .firstName, .lastName: return (content?.fs_length)! > 0
+        case .email: return content?.fs_emailValidate() ?? false
         }
     }
 }
@@ -35,11 +35,11 @@ struct UserEdited {
     var email: String?
     var avatar: String?
     
-    func isValid(type: UserEditedValidationField) -> Bool {
+    func isValid(_ type: UserEditedValidationField) -> Bool {
         switch type {
-        case .FirstName : return type.isValid(self.firstName)
-        case .LastName  : return type.isValid(self.lastName)
-        case .Email     : return type.isValid(self.email)
+        case .firstName : return type.isValid(self.firstName)
+        case .lastName  : return type.isValid(self.lastName)
+        case .email     : return type.isValid(self.email)
         }
     }
 }

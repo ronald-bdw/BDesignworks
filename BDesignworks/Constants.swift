@@ -9,7 +9,7 @@
 import UIKit
 import FSHelpers_Swift
 
-var Logger: XCGLogger {return XCGLogger.defaultInstance()}
+var Logger: XCGLogger {return XCGLogger.default}
 
 /*--------------Keychain keys-------------*/
 enum FSKeychainKey {
@@ -24,7 +24,7 @@ enum FSKeychainKey {
 enum FSUserDefaultsKey {
     
     enum DeviceToken {
-        private static let Prefix = "FSDeviceToken"
+        fileprivate static let Prefix = "FSDeviceToken"
         
         static let Data    = GenerateKey(Prefix, key: "Data")
         static let String  = GenerateKey(Prefix, key: "String")
@@ -35,7 +35,7 @@ enum FSUserDefaultsKey {
 enum FSNotificationKey {
     
     enum Example {
-        private static let Prefix = "Example"
+        fileprivate static let Prefix = "Example"
         
         static let Key = GenerateKey(Prefix, key: "Key")
     }
@@ -49,24 +49,24 @@ enum AppColors
 }
 
 /*----------Helpers----------*/
-private func GenerateKey (prefix: String, key: String) -> String {
+private func GenerateKey (_ prefix: String, key: String) -> String {
     return "__\(prefix)-\(key)__"
 }
 
 /*----------Storyboards----------*/
 
 enum Storyboard {
-    case Main
-    case Login
-    case TrialPage
-    case Welcome
+    case main
+    case login
+    case trialPage
+    case welcome
     
     var name: String {
         switch self {
-        case .Main      : return "Main"
-        case .Login     : return "Login"
-        case .TrialPage : return "TrialPage"
-        case .Welcome   : return "WelcomeScreen"
+        case .main      : return "Main"
+        case .login     : return "Login"
+        case .trialPage : return "TrialPage"
+        case .welcome   : return "WelcomeScreen"
         }
     }
     
@@ -91,13 +91,13 @@ enum Image {
 
 enum Fonts {
     enum OpenSans {
-        case Bold
+        case bold
         
         var fontName: String {
             return "OpenSans-Bold"
         }
         
-        func getFontOfSize(size: CGFloat) -> UIFont {
+        func getFontOfSize(_ size: CGFloat) -> UIFont {
             return UIFont(name: self.fontName, size: size)!
         }
     }

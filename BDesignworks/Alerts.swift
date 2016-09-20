@@ -8,40 +8,40 @@
 
 import Foundation
 
-func ShowAlert (message: String, delay: Double, onViewController viewController: UIViewController?) {
-    let alertView = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-    viewController?.presentViewController(alertView, animated: true, completion: nil)
-    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC)))
-    dispatch_after(delayTime, dispatch_get_main_queue()) {
-        alertView.dismissViewControllerAnimated(true, completion: nil)
+func ShowAlert (_ message: String, delay: Double, onViewController viewController: UIViewController?) {
+    let alertView = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.alert)
+    viewController?.present(alertView, animated: true, completion: nil)
+    let delayTime = DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+    DispatchQueue.main.asyncAfter(deadline: delayTime) {
+        alertView.dismiss(animated: true, completion: nil)
     }
 }
 
 /// Add Alert with UIAlertAction button, actionButton REQUIRED!
-func ShowAlertWithHandler (title: String? = nil, message: String?, handler: ((UIAlertAction) -> Void)?){
-    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-    let alertButton = UIAlertAction(title: "OK", style: .Default, handler: handler)
+func ShowAlertWithHandler (_ title: String? = nil, message: String?, handler: ((UIAlertAction) -> Void)?){
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+    let alertButton = UIAlertAction(title: "OK", style: .default, handler: handler)
     alertController.addAction(alertButton)
     
     alertController.presentOnModal()
 }
 
-func ShowOKAlert (title: String? = nil, message: String?) {
-    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+func ShowOKAlert (_ title: String? = nil, message: String?) {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
     
-    let alertButton = UIAlertAction(title: "OK", style: .Default) { (alertAction: UIAlertAction) -> Void in
-        alertController.dismissViewControllerAnimated(true, completion: nil)
+    let alertButton = UIAlertAction(title: "OK", style: .default) { (alertAction: UIAlertAction) -> Void in
+        alertController.dismiss(animated: true, completion: nil)
     }
     alertController.addAction(alertButton)
     
     alertController.presentOnModal()
 }
 
-func ShowErrorAlert(title: String? = "Sorry", message: String? = "Something went wrong") {
-    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+func ShowErrorAlert(_ title: String? = "Sorry", message: String? = "Something went wrong") {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
     
-    let alertButton = UIAlertAction(title: "OK", style: .Default) { (alertAction: UIAlertAction) -> Void in
-        alertController.dismissViewControllerAnimated(true, completion: nil)
+    let alertButton = UIAlertAction(title: "OK", style: .default) { (alertAction: UIAlertAction) -> Void in
+        alertController.dismiss(animated: true, completion: nil)
     }
     alertController.addAction(alertButton)
     

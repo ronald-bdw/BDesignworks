@@ -11,21 +11,21 @@ import FSHelpers_Swift
 
 final class ModalPresentationController: UIPresentationController {
     
-    private var duration: NSTimeInterval = 0.25
+    fileprivate var duration: TimeInterval = 0.25
     
-    private lazy var dimmingView: UIView = {
+    fileprivate lazy var dimmingView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.clearColor()
+        view.backgroundColor = UIColor.clear
         return view
     }()
     
-    private var modalScreenWidth  : CGFloat = 315 // Width of modal UIViewController
-    private var modalScreenHeight : CGFloat = 258 // Height of modal UIViewController
+    fileprivate var modalScreenWidth  : CGFloat = 315 // Width of modal UIViewController
+    fileprivate var modalScreenHeight : CGFloat = 258 // Height of modal UIViewController
     
-    private var presentedControllerRadius: CGFloat = 8
+    fileprivate var presentedControllerRadius: CGFloat = 8
     
-    override func frameOfPresentedViewInContainerView() -> CGRect {
-        guard let lContainerView = self.containerView else { return CGRectZero }
+    override var frameOfPresentedViewInContainerView : CGRect {
+        guard let lContainerView = self.containerView else { return CGRect.zero }
         return CGRect(x     : (lContainerView.fs_width-modalScreenWidth)*0.5,
                       y     : (lContainerView.fs_height-modalScreenHeight)*0.5,
                       width : modalScreenWidth,
@@ -33,9 +33,9 @@ final class ModalPresentationController: UIPresentationController {
     }
     
     override func containerViewWillLayoutSubviews() {
-        let frame = self.frameOfPresentedViewInContainerView()
-        self.presentedView()?.frame = frame
-        self.presentedView()?.layer.cornerRadius = self.presentedControllerRadius
+        let frame = self.frameOfPresentedViewInContainerView
+        self.presentedView?.frame = frame
+        self.presentedView?.layer.cornerRadius = self.presentedControllerRadius
     }
     
     override func presentationTransitionWillBegin() {
@@ -45,35 +45,34 @@ final class ModalPresentationController: UIPresentationController {
         self.dimmingView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.backgroundDidTapped(_:))))
         lContainerView.addSubview(self.dimmingView)
         
-        guard let lPresentedView = self.presentedView() else { return }
+        guard let lPresentedView = self.presentedView else { return }
         
-        lPresentedView.frame = CGRectOffset(self.frameOfPresentedViewInContainerView(), 0, lContainerView.fs_height - (lContainerView.fs_height-lPresentedView.fs_height)/2)
+        lPresentedView.frame = self.frameOfPresentedViewInContainerView.offsetBy(dx: 0, dy: lContainerView.fs_height - (lContainerView.fs_height-lPresentedView.fs_height)/2)
         lContainerView.addSubview(lPresentedView)
         
-        let coordinator = self.presentedViewController.transitionCoordinator()
-        coordinator?.animateAlongsideTransition({[weak self] (context: UIViewControllerTransitionCoordinatorContext) in
+        let coordinator = self.presentedViewController.transitionCoordinator
+        coordinator?.animate(alongsideTransition: {[weak self] (context: UIViewControllerTransitionCoordinatorContext) in
             guard let sself = self else { return }
-            sself.dimmingView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
-            lPresentedView.frame = sself.frameOfPresentedViewInContainerView()
+            sself.dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            lPresentedView.frame = sself.frameOfPresentedViewInContainerView
         }, completion: nil)
     }
     
-    func backgroundDidTapped(sender: UIView) {
-        self.presentedViewController.dismissViewControllerAnimated(true, completion: nil)
+    func backgroundDidTapped(_ sender: UIView) {
+        self.presentedViewController.dismiss(animated: true, completion: nil)
     }
     
     override func dismissalTransitionWillBegin() {
         
-        guard let lPresentedView = self.presentedView() else { FSDLog("Presented view can't be nil"); return }
+        guard let lPresentedView = self.presentedView else { FSDLog("Presented view can't be nil"); return }
         guard let lContainerView = self.containerView   else { FSDLog("Container view can't be nil"); return }
         
-        let coordinator = self.presentedViewController.transitionCoordinator()
-        coordinator?.animateAlongsideTransition({[weak self] (context: UIViewControllerTransitionCoordinatorContext) in
+        let coordinator = self.presentedViewController.transitionCoordinator
+        coordinator?.animate(alongsideTransition: {[weak self] (context: UIViewControllerTransitionCoordinatorContext) in
             guard let sself = self else { return }
-            sself.dimmingView.backgroundColor = UIColor.clearColor()
-            lPresentedView.frame = CGRectOffset(sself.frameOfPresentedViewInContainerView(),
-                                                0,
-                                                -lContainerView.fs_height + (lContainerView.fs_height-lPresentedView.fs_height)/2)
+            sself.dimmingView.backgroundColor = UIColor.clear
+            lPresentedView.frame = sself.frameOfPresentedViewInContainerView.offsetBy(dx: 0,
+                                                dy: -lContainerView.fs_height + (lContainerView.fs_height-lPresentedView.fs_height)/2)
         }, completion: {[weak self] (context: UIViewControllerTransitionCoordinatorContext) in
             guard let sself = self else { return }
             sself.dimmingView.removeFromSuperview()

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AutocompleteViewDelegate: class {
-    func autocompleteViewRowSelected(row: Int, item: String)
+    func autocompleteViewRowSelected(_ row: Int, item: String)
 }
 
 final class AutocompleteView: UIView {
@@ -17,11 +17,11 @@ final class AutocompleteView: UIView {
     struct Constants {
         static let defaultCellHeight         : CGFloat = 60
         static let pickerViewHeight          : CGFloat = Constants.defaultCellHeight * 3
-        static let defaultAnimationDuration  : NSTimeInterval = 0.2
+        static let defaultAnimationDuration  : TimeInterval = 0.2
         static let pickerTextLeftOffset      : CGFloat = 32
     }
     
-    override class func layerClass() -> AnyClass { return CAShapeLayer.self }
+    override class var layerClass : AnyClass { return CAShapeLayer.self }
     
     var items: [ProviderOption] = [] {
         didSet {
@@ -31,7 +31,7 @@ final class AutocompleteView: UIView {
     
     weak var delegate: AutocompleteViewDelegate?
     
-    private let pickerView = UIPickerView()
+    fileprivate let pickerView = UIPickerView()
     
     //MARK: Lifecycle
     override init(frame: CGRect) {
@@ -45,22 +45,22 @@ final class AutocompleteView: UIView {
     }
     
     func present() {
-        UIView.animateWithDuration(Constants.defaultAnimationDuration) { [weak self] in
+        UIView.animate(withDuration: Constants.defaultAnimationDuration, animations: { [weak self] in
             guard let sself = self else { return }
-            sself.hidden = false
-        }
+            sself.isHidden = false
+        }) 
     }
     
     func dismiss() {
-        UIView.animateWithDuration(Constants.defaultAnimationDuration) { [weak self] in
+        UIView.animate(withDuration: Constants.defaultAnimationDuration, animations: { [weak self] in
             guard let sself = self else { return }
-            sself.hidden = true
-        }
+            sself.isHidden = true
+        }) 
     }
     
-    private func xibSetup() {
+    fileprivate func xibSetup() {
         
-        self.hidden = true
+        self.isHidden = true
         
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
@@ -81,30 +81,30 @@ final class AutocompleteView: UIView {
 }
 
 extension AutocompleteView: UIPickerViewDataSource {
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.items.count
     }
 }
 
 extension AutocompleteView: UIPickerViewDelegate {
     
-    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel(frame: CGRect(x: Constants.pickerTextLeftOffset, y: 0, width: self.fs_width - Constants.pickerTextLeftOffset, height: Constants.defaultCellHeight))
-        label.font = Fonts.OpenSans.Bold.getFontOfSize(18)
-        label.textColor = pickerView.selectedRowInComponent(component) == row ? FSRGBA(41, 83, 124, 1) : UIColor.lightGrayColor()
+        label.font = Fonts.OpenSans.bold.getFontOfSize(18)
+        label.textColor = pickerView.selectedRow(inComponent: component) == row ? FSRGBA(41, 83, 124, 1) : UIColor.lightGray
         label.text = self.items[row].rawValue
         return label
     }
     
-    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return Constants.defaultCellHeight
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerView.reloadAllComponents()
         self.delegate?.autocompleteViewRowSelected(row, item: self.items[row].rawValue)
     }

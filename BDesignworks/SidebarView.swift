@@ -14,8 +14,8 @@ class SidebarCell: UITableViewCell
     let sideView = UIView()
     var cellSelected = false {
         didSet {
-            self.backgroundColor = cellSelected ? AppColors.MainColor : UIColor.clearColor()
-            self.sideView.hidden = cellSelected ? false : true
+            self.backgroundColor = cellSelected ? AppColors.MainColor : UIColor.clear
+            self.sideView.isHidden = cellSelected ? false : true
         }
     }
     
@@ -23,11 +23,11 @@ class SidebarCell: UITableViewCell
     {
         super.awakeFromNib()
         
-        self.selectionStyle = .None
+        self.selectionStyle = .none
         
-        self.sideView.hidden = true
+        self.sideView.isHidden = true
         self.sideView.backgroundColor = AppColors.GoldColor
-        self.sideView.frame = CGRectMake(0, 0, 10, self.frame.height)
+        self.sideView.frame = CGRect(x: 0, y: 0, width: 10, height: self.frame.height)
         self.contentView.addSubview(self.sideView)
     }
 }
@@ -35,7 +35,7 @@ class SidebarCell: UITableViewCell
 typealias SidebarMVP = MVPContainer<SidebarView,SidebarPresenter,SidebarModel>
 
 protocol ISidebarView: class {
-    func updateView(user: User)
+    func updateView(_ user: User)
 }
 
 class SidebarView: UITableViewController {
@@ -57,8 +57,8 @@ class SidebarView: UITableViewController {
         self.presenter?.viewLoaded()
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        switch indexPath.row
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch (indexPath as NSIndexPath).row
         {
         case 0:
             return profileRowHeight
@@ -69,23 +69,23 @@ class SidebarView: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 3 {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath as NSIndexPath).row == 3 {
             return
         }
         
-        var cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: self.lastSelected, inSection: 0)) as! SidebarCell
+        var cell = self.tableView.cellForRow(at: IndexPath(row: self.lastSelected, section: 0)) as! SidebarCell
         cell.cellSelected = false
         
-        self.lastSelected = indexPath.row
+        self.lastSelected = (indexPath as NSIndexPath).row
         
-        cell = self.tableView.cellForRowAtIndexPath(indexPath) as! SidebarCell
+        cell = self.tableView.cellForRow(at: indexPath) as! SidebarCell
         cell.cellSelected = true
     }
 }
 
 extension SidebarView: ISidebarView {
-    func updateView(user: User) {
+    func updateView(_ user: User) {
         self.nameLabel.text = user.fullname
         self.emailLabel.text = user.email
     }

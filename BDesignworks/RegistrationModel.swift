@@ -9,8 +9,8 @@
 import Foundation
 
 protocol IRegistrationModel {
-    func register(user: RegistrationUser)
-    func receivePhoneCode(user: RegistrationUser?)
+    func register(_ user: RegistrationUser)
+    func receivePhoneCode(_ user: RegistrationUser?)
     func getRegistrationUser() -> RegistrationUser
     func registerIfNeeded()
 }
@@ -22,15 +22,15 @@ class RegistrationModel {
     
     required init() {}
     
-    private func startRegister(user: RegistrationUser) {
+    fileprivate func startRegister(_ user: RegistrationUser) {
         guard self.validateUser(user) else {self.presenter?.updateValidationErrors(); return}
         self.presenter?.registrationStarted()
         do {
             let realm = try Realm()
             //TODO: add error when there is no auth data
-            guard let authData = realm.objects(AuthInfo).first else {self.presenter?.requestFailed(RTError(backend: .SmsCodeNotExist)); return}
+            guard let authData = realm.objects(AuthInfo.self).first else {self.presenter?.requestFailed(RTError(backend: .smsCodeNotExist)); return}
             
-            Router.User.Register(firstName: user.firstName.content, lastname: user.lastName.content, email: user.email.content, phone: user.phone.content, authPhoneCode: authData.id, smsCode: "1234").request().responseObject { [weak self] (response: Response<RTUserResponse, RTError>) in
+            let _ = Router.User.register(firstName: user.firstName.content, lastname: user.lastName.content, email: user.email.content, phone: user.phone.content, authPhoneCode: authData.id, smsCode: "1234").request().responseObject { [weak self] (response: DataResponse<RTUserResponse>) in
                 var user: User?
                 
                 defer {
@@ -38,15 +38,15 @@ class RegistrationModel {
                 }
                 
                 switch response.result {
-                case .Success(let value):
+                case .success(let value):
                     guard let lUser = value.user else {self?.presenter?.requestFailed();return}
                     user = lUser
                     
                     do {
                         let realm = try Realm()
                         try realm.write({
-                            realm.delete(realm.objects(User))
-                            realm.delete(realm.objects(AuthInfo))
+                            realm.delete(realm.objects(User.self))
+                            realm.delete(realm.objects(AuthInfo.self))
                             realm.add(lUser)
                         })
                         
@@ -55,9 +55,9 @@ class RegistrationModel {
                         self?.presenter?.requestFailed();
                     }
                     self?.presenter?.registrationSuccessed()
-                case .Failure(let error):
+                case .failure(let error):
                     Logger.error("\(error)")
-                    self?.presenter?.requestFailed(error)
+                    self?.presenter?.requestFailed( error as? RTError)
                 }
             }
         } catch let error {
@@ -66,20 +66,20 @@ class RegistrationModel {
         }
     }
     
-    func receivePhoneCode(user: RegistrationUser?) {
+    func receivePhoneCode(_ user: RegistrationUser?) {
         guard let lUser = user else {self.presenter?.requestFailed(); return}
         
-        Router.User.GetAuthPhoneCode(phone: lUser.phone.content).request().responseObject { [weak self] (response: Response<RTAuthInfoResponse, RTError>) in
+        let _ = Router.User.getAuthPhoneCode(phone: lUser.phone.content).request().responseObject { [weak self] (response: DataResponse<RTAuthInfoResponse>) in
             
             switch response.result {
-            case .Success(let value):
+            case .success(let value):
                 guard let lAuthInfo = value.authInfo else {self?.presenter?.requestFailed();return}
                 lAuthInfo.phone = lUser.phone.content
                 
                 do {
                     let realm = try Realm()
                     try realm.write({
-                        realm.delete(realm.objects(AuthInfo))
+                        realm.delete(realm.objects(AuthInfo.self))
                         realm.add(lAuthInfo)
                     })
                     
@@ -91,14 +91,14 @@ class RegistrationModel {
                     Logger.error("\(error)")
                     self?.presenter?.requestFailed()
                 }
-            case .Failure(let error):
+            case .failure(let error):
                 Logger.error("\(error)")
                 self?.presenter?.requestFailed()
             }
         }
     }
     
-    func validateUser(user: RegistrationUser) -> Bool {
+    func validateUser(_ user: RegistrationUser) -> Bool {
         var isValid = true
         for field in user.allFields() {
             isValid = isValid && field.isValid
@@ -108,14 +108,14 @@ class RegistrationModel {
 }
 
 extension RegistrationModel: IRegistrationModel {
-    func register(user: RegistrationUser) {
+    func register(_ user: RegistrationUser) {
         self.startRegister(user)
     }
     
     func registerIfNeeded() {
         do {
             let realm = try Realm()
-            guard let user = realm.objects(User).first else {return}
+            guard let user = realm.objects(User.self).first else {return}
             self.startRegister(user.getRegistrationUser())
         } catch let error {
             Logger.error("\(error)")
@@ -126,11 +126,11 @@ extension RegistrationModel: IRegistrationModel {
         var user = RegistrationUser()
         do {
             let realm = try Realm()
-            if let rUser = realm.objects(User).first {
+            if let rUser = realm.objects(User.self).first {
                 user = rUser.getRegistrationUser()
             }
             else {
-                guard let authData = realm.objects(AuthInfo).first else {return user}
+                guard let authData = realm.objects(AuthInfo.self).first else {return user}
                 
                 user.phone.content = authData.phone
             }
@@ -140,7 +140,7 @@ extension RegistrationModel: IRegistrationModel {
         return user
     }
     
-    func saveUser(user: RegistrationUser) {
+    func saveUser(_ user: RegistrationUser) {
         do {
             let realm = try Realm()
             let rUser = User()
@@ -149,7 +149,7 @@ extension RegistrationModel: IRegistrationModel {
             rUser.email = user.email.content
             rUser.phoneNumber = user.phone.content
             try realm.write({
-                realm.delete(realm.objects(User))
+                realm.delete(realm.objects(User.self))
                 realm.add(rUser)
             })
         } catch let error {

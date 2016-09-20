@@ -12,8 +12,8 @@ class TrialPageView: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var selectionViews: [TrialPageSelectionView]!
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationViewController = segue.destinationViewController
+    func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destinationViewController = segue.destination
         for view in destinationViewController.view.subviews {
             if let scrollView = view as? UIScrollView {
                 scrollView.delegate = self
@@ -22,18 +22,18 @@ class TrialPageView: UIViewController {
         }
     }
     
-    @IBAction func backPressed(sender: AnyObject) {
+    @IBAction func backPressed(_ sender: AnyObject) {
         ShowInitialViewController()
     }
     
-    @IBAction func startTrialAction(sender: AnyObject) {
+    @IBAction func startTrialAction(_ sender: AnyObject) {
         ShowRegistrationViewController()
     }
     
 }
 
 extension TrialPageView: UIScrollViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = Int(scrollView.contentOffset.x / self.containerView.fs_width)
         
         self.selectionViews.forEach({$0.selected = false})

@@ -11,56 +11,57 @@ import ObjectMapper
 
 extension Router {
     enum User {
-        case GetAuthPhoneCode(phone: String)
-        case Register(firstName: String, lastname: String, email: String, phone: String, authPhoneCode: Int, smsCode: String)
-        case SignIn(phone: String, authPhoneCode: Int, smsCode: String)
-        case GetUser
-        case EditUser(user: UserEdited)
+        case getAuthPhoneCode(phone: String)
+        case register(firstName: String, lastname: String, email: String, phone: String, authPhoneCode: Int, smsCode: String)
+        case signIn(phone: String, authPhoneCode: Int, smsCode: String)
+        case getUser
+        case editUser(user: UserEdited)
     }
 }
 
 extension Router.User: RouterProtocol {
+
     var settings: RTRequestSettings {
         switch self {
-        case .GetAuthPhoneCode(_)   :return RTRequestSettings(method: .POST, encoding: .URL)
-        case .GetUser               :return RTRequestSettings(method: .GET)
-        case .EditUser(_)           :return RTRequestSettings(method: .PUT)
-        default                     :return RTRequestSettings(method: .POST)
+        case .getAuthPhoneCode(_)   :return RTRequestSettings(method: .post, encoding: URLEncoding.default)
+        case .getUser               :return RTRequestSettings(method: .get)
+        case .editUser(_)           :return RTRequestSettings(method: .put)
+        default                     :return RTRequestSettings(method: .post)
         }
     }
     
     var path: String {
         switch self {
-        case .GetAuthPhoneCode(_)   : return "/auth_phone_codes"
-        case .Register              : return "/users"
-        case .SignIn                : return "/users/sign_in"
-        case .GetUser               : return "/users/account"
-        case .EditUser(let user)    : return "/users/\(user.id)"
+        case .getAuthPhoneCode(_)   : return "/auth_phone_codes"
+        case .register              : return "/users"
+        case .signIn                : return "/users/sign_in"
+        case .getUser               : return "/users/account"
+        case .editUser(let user)    : return "/users/\(user.id)"
         }
     }
     
     var parameters: [String : AnyObject]? {
         switch self {
-        case .GetAuthPhoneCode(let phone):  return ["phone_number": phone]
-        case .Register(let firstName, let lastname, let email, let phone, let authPhoneCode, let smsCode):
-            return ["first_name" : firstName,
-                    "last_name" : lastname,
-                    "email" : email,
-                    "phone_number" : phone,
-                    "auth_phone_code_id" : authPhoneCode,
-                    "sms_code": smsCode]
-        case .SignIn(let phone, let authPhoneCode, let smsCode):
-            return ["phone_number": phone,
-                    "auth_phone_code_id" : authPhoneCode,
-                    "sms_code" : smsCode]
-        case .EditUser(let user):
+        case .getAuthPhoneCode(let phone):  return ["phone_number": phone as AnyObject]
+        case .register(let firstName, let lastname, let email, let phone, let authPhoneCode, let smsCode):
+            return ["first_name" : firstName as AnyObject,
+                    "last_name" : lastname as AnyObject,
+                    "email" : email as AnyObject,
+                    "phone_number" : phone as AnyObject,
+                    "auth_phone_code_id" : authPhoneCode as AnyObject,
+                    "sms_code": smsCode as AnyObject]
+        case .signIn(let phone, let authPhoneCode, let smsCode):
+            return ["phone_number": phone as AnyObject,
+                    "auth_phone_code_id" : authPhoneCode as AnyObject,
+                    "sms_code" : smsCode as AnyObject]
+        case .editUser(let user):
             var params :[String: String] = [:]
             params.updateIfNotDefault(user.firstName, forKey: "first_name", defaultValue: "")
             params.updateIfNotDefault(user.lastName, forKey: "last_name", defaultValue: "")
             params.updateIfNotDefault(user.email, forKey: "email", defaultValue: "")
             params.updateIfNotDefault(user.avatar, forKey: "avatar", defaultValue: "")
-            return params
-        case .GetUser:
+            return params as [String : AnyObject]?
+        case .getUser:
             return nil
         }
     }
@@ -70,7 +71,7 @@ class RTUserResponse: Mappable {
     var user: User?
     var error: ValidationError?
     
-    required convenience init?(_ map: Map) {
+    required convenience init?(map: Map) {
         self.init()
     }
     
@@ -82,7 +83,7 @@ class RTUserResponse: Mappable {
 class RTAuthInfoResponse: Mappable {
     var authInfo: AuthInfo?
     
-    required convenience init?(_ map: Map) {
+    required convenience init?(map: Map) {
         self.init()
     }
     

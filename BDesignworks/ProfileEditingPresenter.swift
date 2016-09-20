@@ -9,16 +9,16 @@
 import Foundation
 
 protocol IProfileEditingPresenterModel: class {
-    func userReceived(user: User)
+    func userReceived(_ user: User)
     func loadingStarted()
     func loadingFinished()
-    func loadingFailed(error: RTError)
-    func updateInvalidView(type: UserEditedValidationField, value: Bool)
+    func loadingFailed(_ error: RTError)
+    func updateInvalidView(_ type: UserEditedValidationField, value: Bool)
 }
 
 protocol IProfileEditingPresenterView {
     func viewLoaded()
-    func donePressed(firstName: String?, lastName: String?, email: String?)
+    func donePressed(_ firstName: String?, lastName: String?, email: String?)
 }
 
 class ProfileEditingPresenter {
@@ -29,17 +29,17 @@ class ProfileEditingPresenter {
 }
 
 extension ProfileEditingPresenter: IProfileEditingPresenterModel {
-    func userReceived(user: User) {
+    func userReceived(_ user: User) {
         self.view?.updateView(user)
     }
     
     func loadingStarted() {
-        self.view?.setLoadingState(.Loading)
+        self.view?.setLoadingState(.loading)
     }
     
-    func loadingFailed(error: RTError) {
-        self.view?.setLoadingState(.Failed)
-        if case let .Backend(backendError) = error {
+    func loadingFailed(_ error: RTError) {
+        self.view?.setLoadingState(.failed)
+        if case let .backend(backendError) = error {
             self.view?.showBackendErrorView(backendError.humanDescription)
         }
         else {
@@ -48,14 +48,14 @@ extension ProfileEditingPresenter: IProfileEditingPresenterModel {
     }
     
     func loadingFinished() {
-        self.view?.setLoadingState(.Done)
+        self.view?.setLoadingState(.done)
     }
     
-    func updateInvalidView(type: UserEditedValidationField, value: Bool) {
+    func updateInvalidView(_ type: UserEditedValidationField, value: Bool) {
         switch type {
-        case .FirstName: self.view?.updateFirstNameErrorView(value)
-        case .LastName: self.view?.updateLastNameErrorView(value)
-        case .Email: self.view?.updateEmailErrorView(value)
+        case .firstName: self.view?.updateFirstNameErrorView(value)
+        case .lastName: self.view?.updateLastNameErrorView(value)
+        case .email: self.view?.updateEmailErrorView(value)
         }
     }
 }
@@ -65,7 +65,7 @@ extension ProfileEditingPresenter: IProfileEditingPresenterView {
         self.model?.getUser()
     }
     
-    func donePressed(firstName: String?, lastName: String?, email: String?) {
+    func donePressed(_ firstName: String?, lastName: String?, email: String?) {
         guard let mainUser = User.getMainUser() else {return}
         let user = UserEdited(id: mainUser.id, firstName: firstName, lastName: lastName, email: email, avatar: nil)
         self.model?.updateUser(user)

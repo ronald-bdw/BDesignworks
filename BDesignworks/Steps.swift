@@ -10,12 +10,12 @@ import Foundation
 import ObjectMapper
 
 class ENSteps: Object, Mappable {
-    dynamic var startDate: NSDate = NSDate(){
+    dynamic var startDate: Date = Date(){
         didSet {
             compoundKey = compoundKeyValue()
         }
     }
-    dynamic var finishDate: NSDate = NSDate().fs_tomorrow {
+    dynamic var finishDate: Date = Date().fs_tomorrow {
         didSet {
             compoundKey = compoundKeyValue()
         }
@@ -28,30 +28,30 @@ class ENSteps: Object, Mappable {
         return "compoundKey"
     }
     
-    required convenience init?(_ map: ObjectMapper.Map) {
+    required convenience init?(map: ObjectMapper.Map) {
         self.init()
     }
     
-    convenience init(startDate: NSDate, finishDate: NSDate, count: Int) {
+    convenience init(startDate: Date, finishDate: Date, count: Int) {
         self.init()
         self.startDate = startDate
         self.finishDate = finishDate
         self.count = count
     }
     
-    private func compoundKeyValue() -> String {
+    fileprivate func compoundKeyValue() -> String {
         return "\(startDate)-\(finishDate)"
     }
 }
 
 extension ENSteps {
     func mapping(map: ObjectMapper.Map) {
-        let json = map.JSONDictionary
+        let json = map.JSON
         if let startedAt = json["started_at"] as? String,
             let finishedAt = json["finished_at"] as? String,
             let stepsCount = json["steps_count"] as? Int {
-            guard let lStartDate = NSDate.getDateFromISO8601(startedAt),
-                let lFinishDate = NSDate.getDateFromISO8601(finishedAt) else {return}
+            guard let lStartDate = Date.getDateFromISO8601(startedAt),
+                let lFinishDate = Date.getDateFromISO8601(finishedAt) else {return}
             self.startDate = lStartDate
             self.finishDate = lFinishDate
             self.count = stepsCount

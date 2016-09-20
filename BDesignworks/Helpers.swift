@@ -9,9 +9,9 @@
 import Foundation
 
 enum LoadingState {
-    case Loading
-    case Done
-    case Failed
+    case loading
+    case done
+    case failed
 }
 
 let topBarHeight: CGFloat = 64.0 // Status and navigation bar's summary height
@@ -20,11 +20,11 @@ let topBarHeight: CGFloat = 64.0 // Status and navigation bar's summary height
 extension NSObject {
     
     class var className: String {
-        return NSStringFromClass(self).componentsSeparatedByString(".").last!
+        return NSStringFromClass(self).components(separatedBy: ".").last!
     }
     
     var className: String {
-        return self.dynamicType.className
+        return type(of: self).className
     }
 }
 
@@ -36,11 +36,11 @@ enum FSScreenType {
     case _5_5
     
     init?() {
-        switch UIScreen.mainScreen().bounds.size {
-        case CGSize(width: 320, height: 480): self = _3_5
-        case CGSize(width: 320, height: 568): self = _4
-        case CGSize(width: 375, height: 667): self = _4_7
-        case CGSize(width: 414, height: 736): self = _5_5
+        switch UIScreen.main.bounds.size {
+        case CGSize(width: 320, height: 480): self = ._3_5
+        case CGSize(width: 320, height: 568): self = ._4
+        case CGSize(width: 375, height: 667): self = ._4_7
+        case CGSize(width: 414, height: 736): self = ._5_5
         default                             : return nil
         }
     }
@@ -76,9 +76,9 @@ extension UIView {
 
 extension UIView {
     
-    func performRecursively(block: ((view: UIView)->(Void))) {
+    func performRecursively(_ block: ((_ view: UIView)->(Void))) {
         
-        block(view: self)
+        block(self)
         
         for subview in self.subviews {
             subview.performRecursively(block)
@@ -89,25 +89,25 @@ extension UIView {
 var countryCodes: [String : [Area]] = {
     
     var list: [Area] = []
-    guard let filePath = NSBundle.mainBundle().pathForResource("PhoneCountries", ofType: "txt") else { return [:] }
-    let stringData: NSData? = NSData(contentsOfFile: filePath)
+    guard let filePath = Bundle.main.path(forResource: "PhoneCountries", ofType: "txt") else { return [:] }
+    let stringData: Data? = try? Data(contentsOf: URL(fileURLWithPath: filePath))
     guard let lStringData = stringData else { return [:] }
 
-    let data: String? = String(data: lStringData, encoding: NSUTF8StringEncoding)
+    let data: String? = String(data: lStringData, encoding: String.Encoding.utf8)
     
     guard let lData = data else { return [:] }
     
     let separator: String = ";"
     let endOfLine: String = "\n"
     
-    let lines: [String] = lData.componentsSeparatedByString(endOfLine)
+    let lines: [String] = lData.components(separatedBy: endOfLine)
     
-    let trimmingCharacters: NSCharacterSet = NSCharacterSet(charactersInString: "\r")
+    let trimmingCharacters: CharacterSet = CharacterSet(charactersIn: "\r")
     
     for line in lines {
         
-        let currentLine: String = line.stringByTrimmingCharactersInSet(trimmingCharacters)
-        let components: [String] = currentLine.componentsSeparatedByString(separator)
+        let currentLine: String = line.trimmingCharacters(in: trimmingCharacters)
+        let components: [String] = currentLine.components(separatedBy: separator)
         guard let countryName = components.fs_objectAtIndexOrNil(2) else { continue }
         guard let code        = components.fs_objectAtIndexOrNil(0)?.fs_toInt() else { continue }
         let area: Area = Area(countryName: countryName, areaCode: code)
@@ -115,6 +115,6 @@ var countryCodes: [String : [Area]] = {
     }
     
     return list.categorise { (area: Area) -> String in
-        return area.countryName.substringToIndex(area.countryName.startIndex.advancedBy(1))
+        return area.countryName.substring(to: area.countryName.characters.index(area.countryName.startIndex, offsetBy: 1))
     }
 }()

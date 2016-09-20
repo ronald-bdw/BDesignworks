@@ -11,10 +11,10 @@ import Foundation
 typealias RegistrationMVP = MVPContainer<RegistrationView, RegistrationPresenter, RegistrationModel>
 
 protocol IRegistrationView: class {
-    func setLoadingState (state: LoadingState)
+    func setLoadingState (_ state: LoadingState)
     func updateValidationErrors()
     
-    func showErrorView(title: String, content: String, errorType: BackendError)
+    func showErrorView(_ title: String, content: String, errorType: BackendError)
     func showPhoneCodeReceivedView()
 }
 
@@ -35,46 +35,48 @@ class RegistrationView: UIViewController {
         self.user = self.presenter?.getRegistrationUser()
         self.tableView.reloadData()
 
-        self.tableView.registerNib(UINib(nibName: RegistrationTableViewCell.fs_className, bundle: nil), forCellReuseIdentifier: RegistrationTableViewCell.fs_className)
-        self.tableView.registerNib(UINib(nibName: ValidationErrorCell.fs_className, bundle: nil), forCellReuseIdentifier: ValidationErrorCell.fs_className)
+        self.tableView.register(UINib(nibName: RegistrationTableViewCell.fs_className, bundle: nil), forCellReuseIdentifier: RegistrationTableViewCell.fs_className)
+        self.tableView.register(UINib(nibName: ValidationErrorCell.fs_className, bundle: nil), forCellReuseIdentifier: ValidationErrorCell.fs_className)
         
-        let center = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil)
-        center.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil)
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        center.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         self.presenter?.viewDidLoad()
     }
     
-    @IBAction func submitPressed(sender: AnyObject){
+    @IBAction func submitPressed(_ sender: AnyObject){
         self.shouldShowErrors = true
         self.presenter?.submitTapped(self.user)
     }
     
-    @IBAction func backPressed(sender: AnyObject) {
+    @IBAction func backPressed(_ sender: AnyObject) {
         ShowInitialViewController()
     }
     
-    func keyboardWillShow(notification: NSNotification) {
-        guard let userInfo: NSDictionary = notification.userInfo, keyboardSize = userInfo.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue.size else {return}
+    func keyboardWillShow(_ notification: Notification) {
+        guard let userInfo: NSDictionary = (notification as NSNotification).userInfo as NSDictionary? else {return}
+        let keyboardSize = (userInfo.object(forKey: UIKeyboardFrameBeginUserInfoKey) as AnyObject).cgRectValue.size
         let contentInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height + 20, 0)
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
     }
     
-    func keyboardWillHide(notification: NSNotification) {
-        self.scrollView.contentInset = UIEdgeInsetsZero
-        self.scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
+    func keyboardWillHide(_ notification: Notification) {
+        self.scrollView.contentInset = UIEdgeInsets.zero
+        self.scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
 }
 
 extension RegistrationView: UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 8
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cellType = RegistrationCellType(rawValue: indexPath.row) {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier(RegistrationTableViewCell.fs_className) as! RegistrationTableViewCell
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: RegistrationTableViewCell.fs_className) as! RegistrationTableViewCell
             cell.prepareCell(cellType, user: self.user)
             
             cell.contentTextField.tag = cellType.rawValue
@@ -83,7 +85,7 @@ extension RegistrationView: UITableViewDataSource {
             return cell
         }
         else {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier(ValidationErrorCell.fs_className) as! ValidationErrorCell
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: ValidationErrorCell.fs_className) as! ValidationErrorCell
             let contentCellRow = indexPath.row - 1
             guard let cellType = RegistrationCellType(rawValue: contentCellRow) else {fatalError()}
             cell.prepareCell(cellType)
@@ -93,8 +95,8 @@ extension RegistrationView: UITableViewDataSource {
 }
 
 extension RegistrationView: UITableViewDelegate {
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        switch indexPath.row % 2 {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch (indexPath as NSIndexPath).row % 2 {
         case 0:
             return 78
         default:
@@ -107,9 +109,9 @@ extension RegistrationView: UITableViewDelegate {
 
 extension RegistrationView: UITextFieldDelegate {
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        guard let textFields = (self.tableView.visibleCells.filter({$0 is RegistrationTableViewCell}) as? [RegistrationTableViewCell])?.map({$0.contentTextField}) else {return false}
+        guard let textFields = (self.tableView.visibleCells.filter({$0 is RegistrationTableViewCell}) as? [RegistrationTableViewCell])?.map({$0.contentTextField!}) else {return false}
         
         // 2 - because of error views between content cells
         if textFields.map({$0.tag}).contains(textField.tag + 2) {
@@ -123,18 +125,18 @@ extension RegistrationView: UITextFieldDelegate {
         return false
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         guard let cellType = RegistrationCellType(rawValue: textField.tag) else {fatalError("cannot init registration cell with tag: \(textField.tag)")}
         
         let nsString = (textField.text ?? "") as NSString
-        let newString = nsString.stringByReplacingCharactersInRange(range,
-                                                                    withString: string)
+        let newString = nsString.replacingCharacters(in: range,
+                                                                    with: string)
         switch cellType {
-        case .FirstName: self.user?.firstName.content = newString
-        case .LastName: self.user?.lastName.content = newString
-        case .Email: self.user?.email.content = newString
-        case .Phone: self.user?.phone.content = newString
+        case .firstName: self.user?.firstName.content = newString
+        case .lastName: self.user?.lastName.content = newString
+        case .email: self.user?.email.content = newString
+        case .phone: self.user?.phone.content = newString
         }
         
         return true
@@ -146,22 +148,22 @@ extension RegistrationView: IRegistrationView {
         self.tableView.reloadData()
     }
     
-    func setLoadingState(state: LoadingState) {
+    func setLoadingState(_ state: LoadingState) {
         switch state {
-        case .Loading:
+        case .loading:
             SVProgressHUD.show()
-        case .Done:
+        case .done:
             SVProgressHUD.dismiss()
             ShowConversationViewController()
-        case .Failed:
+        case .failed:
             SVProgressHUD.dismiss()
             ShowErrorAlert()
         }
     }
     
-    func showErrorView(title: String, content: String, errorType: BackendError) {
+    func showErrorView(_ title: String, content: String, errorType: BackendError) {
         SVProgressHUD.dismiss()
-        if errorType == .SmsCodeNotExist {
+        if errorType == .smsCodeNotExist {
             ShowAlertWithHandler(title, message: content) { [weak self] (action) in
                 self?.presenter?.resendPhoneCodeTapped(self?.user)
             }

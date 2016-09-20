@@ -10,8 +10,8 @@ import Foundation
 
 @IBDesignable
 class TrialPageSelectionView: UIView {
-    private let selectedColor = UIColor.whiteColor()
-    private let deselectedColor = UIColor.whiteColor().colorWithAlphaComponent(0.3)
+    fileprivate let selectedColor = UIColor.white
+    fileprivate let deselectedColor = UIColor.white.withAlphaComponent(0.3)
     
     @IBInspectable var selected: Bool = false {
         willSet(newValue) {

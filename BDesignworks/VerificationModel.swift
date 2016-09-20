@@ -9,9 +9,9 @@
 import Foundation
 
 protocol IVerificationModel {
-    func submitPhone(phone: String)
-    func validatePhone(phone: String) -> Bool
-    func validateCode(code: String) -> Bool
+    func submitPhone(_ phone: String)
+    func validatePhone(_ phone: String) -> Bool
+    func validateCode(_ code: String) -> Bool
 }
 
 class VerificationModel {
@@ -22,10 +22,10 @@ class VerificationModel {
     
     required init() {}
     
-    private func receivePhoneCode(phone: String) {
+    fileprivate func receivePhoneCode(_ phone: String) {
         self.presenter?.loadingStarted()
         
-        Router.User.GetAuthPhoneCode(phone: phone).request().responseObject { [weak self] (response: Response<RTAuthInfoResponse, RTError>) in
+        let _ = Router.User.getAuthPhoneCode(phone: phone).request().responseObject { [weak self] (response: DataResponse<RTAuthInfoResponse>) in
             var receivedData: AuthInfo?
             
             defer {
@@ -33,7 +33,7 @@ class VerificationModel {
             }
             
             switch response.result {
-            case .Success(let value):
+            case .success(let value):
                 guard let lAuthInfo = value.authInfo else {self?.presenter?.errorOccured(); return}
                 lAuthInfo.phone = phone
                 
@@ -42,8 +42,8 @@ class VerificationModel {
                 do {
                     let realm = try Realm()
                     try realm.write({
-                        realm.delete(realm.objects(AuthInfo))
-                        realm.delete(realm.objects(User))
+                        realm.delete(realm.objects(AuthInfo.self))
+                        realm.delete(realm.objects(User.self))
                         realm.add(lAuthInfo)
                     })
                     self?.presenter?.phoneCodeReceived()
@@ -52,7 +52,7 @@ class VerificationModel {
                     Logger.error("\(error)")
                     self?.presenter?.errorOccured()
                 }
-            case .Failure(let error):
+            case .failure(let error):
                 Logger.error("\(error)")
                 self?.presenter?.errorOccured()
             }
@@ -61,11 +61,11 @@ class VerificationModel {
 }
 
 extension VerificationModel: IVerificationModel {
-    func submitPhone(phone: String) {
+    func submitPhone(_ phone: String) {
         self.receivePhoneCode(phone)
     }
     
-    func validatePhone(phone: String) -> Bool {
+    func validatePhone(_ phone: String) -> Bool {
         if phone.fs_length != 10 {
             self.presenter?.phoneNotValid()
             return false
@@ -74,8 +74,8 @@ extension VerificationModel: IVerificationModel {
         return true
     }
     
-    func validateCode(code: String) -> Bool {
-        if code.substringToIndex(code.startIndex.advancedBy(1)) != "+" {
+    func validateCode(_ code: String) -> Bool {
+        if code.substring(to: code.characters.index(code.startIndex, offsetBy: 1)) != "+" {
             self.presenter?.codeNotValid()
             return false
         }

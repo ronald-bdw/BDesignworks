@@ -12,20 +12,20 @@ import SideMenu
 
 enum StatusCellStatus
 {
-    case PullToRefresh
-    case NoMoreHistory
-    case NoMessages
+    case pullToRefresh
+    case noMoreHistory
+    case noMessages
     
     var message: String {
         switch self
         {
-        case .PullToRefresh:
+        case .pullToRefresh:
             return "Pull to download mesage history"
             
-        case .NoMoreHistory:
+        case .noMoreHistory:
             return "No more messages in history"
             
-        case .NoMessages:
+        case .noMessages:
             return "Your message history is empty"
         }
     }
@@ -38,38 +38,40 @@ class ConversationScreen: UIViewController {
    
     var smoochController: UIViewController?
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        SideMenuManager.menuPresentMode = .ViewSlideOut
+        SideMenuManager.menuPresentMode = .viewSlideOut
         SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         SideMenuManager.menuFadeStatusBar = false
-        
-        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: true)
         
         self.title = "Messages"
         self.setNavigationBarButtons()
         
         do {
             let realm = try Realm()
-            if let user = realm.objects(User).first where user.id != 0 {
+            if let user = realm.objects(User.self).first , user.id != 0 {
                 Logger.debug(user.token)
                 Logger.debug(user.phoneNumber)
                 SmoochHelper.sharedInstance.startWithParameters("\(user.id)")
                 SmoochHelper.sharedInstance.updateUserInfo(user.firstName, lastName: user.lastName, email: user.email)
                 let controller = Smooch.newConversationViewController()
-                controller.view.frame = self.containerView.bounds
-                self.containerView.addSubview(controller.view)
-                self.addChildViewController(controller)
-                controller.didMoveToParentViewController(self)
+                controller?.view.frame = self.containerView.bounds
+                self.containerView.addSubview((controller?.view)!)
+                self.addChildViewController(controller!)
+                controller?.didMove(toParentViewController: self)
                 
                 self.smoochController = controller
                 
                 
-                for view in controller.view.subviews {
+                for view in (controller?.view.subviews)! {
                     if let navbar = view as? UINavigationBar {
-                        navbar.hidden = true
+                        navbar.isHidden = true
                     }
                 }
             }
@@ -79,7 +81,7 @@ class ConversationScreen: UIViewController {
         HealthKitManager.sharedInstance.sendHealthKitData()
     }
     
-    private func setNavigationBarButtons() {
+    fileprivate func setNavigationBarButtons() {
         self.navigationItem.hidesBackButton = true
         
         let leftBarButtonImageView = UIImageView(image: Image.Logo.HbfLogoWhite)
@@ -91,17 +93,17 @@ class ConversationScreen: UIViewController {
         let rightBarImage = Image.Icon.Menu
         let buttonWidth = imageHeight * rightBarImage.size.width / rightBarImage.size.height
         let rightBarButton = UIButton(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: imageHeight))
-        rightBarButton.setImage(rightBarImage, forState: .Normal)
-        rightBarButton.addTarget(self, action: #selector(self.showSideMenu), forControlEvents: .TouchUpInside)
+        rightBarButton.setImage(rightBarImage, for: UIControlState())
+        rightBarButton.addTarget(self, action: #selector(self.showSideMenu), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     func showSideMenu(){
-        self.performSegueWithIdentifier("toSideMenu", sender: nil)
+        self.performSegue(withIdentifier: "toSideMenu", sender: nil)
     }
 }

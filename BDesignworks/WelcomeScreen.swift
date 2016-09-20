@@ -45,32 +45,32 @@ final class WelcomeScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layoutIfNeeded()
-        self.navigationController?.navigationBar.hidden = true
+        self.navigationController?.navigationBar.isHidden = true
         self.navigationItem.hidesBackButton = true
         self.containerHeightConstraint.constant = self.getDefaultContainerHeight()
-        self.logoTopConstraint.constant = (FSScreenBounds.size.height - Constants.defaultLogoHeight)/2 - Constants.defaultVerticalCenterOffset
+        self.logoTopConstraint.constant = (UIScreen.main.bounds.size.height - Constants.defaultLogoHeight)/2 - Constants.defaultVerticalCenterOffset
         self.containerBottomConstraint.constant = -self.containerView.fs_height
         self.containerView.alpha = 0.0
         self.view.layoutIfNeeded()
     }
     
-    private func getDefaultContainerHeight() -> CGFloat {
+    fileprivate func getDefaultContainerHeight() -> CGFloat {
         guard let screenType = FSScreenType() else { return 200 }
         return screenType.defaultContainerHeight
     }
     
-    private func getDefaultLogoTopOffset() -> CGFloat {
-        return UIScreen.mainScreen().bounds.size.height == 480 ? 50 : FSScreenBounds.size.height*Constants.defaultLogoTopConstraintRatio  //Checking for iPhone 4/4s
+    fileprivate func getDefaultLogoTopOffset() -> CGFloat {
+        return UIScreen.main.bounds.size.height == 480 ? 50 : UIScreen.main.bounds.size.height*Constants.defaultLogoTopConstraintRatio  //Checking for iPhone 4/4s
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        UIView.animateWithDuration(0.8, delay: 0.4, options: .CurveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.8, delay: 0.4, options: UIViewAnimationOptions(), animations: {
             [weak self] in
             guard let sself = self else { return }
             sself.logoTopConstraint.constant          = sself.getDefaultLogoTopOffset()
-            sself.conversationTopConstraint.constant += FSScreenBounds.size.height/2
+            sself.conversationTopConstraint.constant += UIScreen.main.bounds.size.height/2
             sself.containerBottomConstraint.constant  = 0
             sself.conversationLabel.alpha             = 0.0
             sself.containerView.alpha                 = 1.0
@@ -78,35 +78,35 @@ final class WelcomeScreen: UIViewController {
         }, completion: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let lIdentifier = segue.identifier else {
-            super.prepareForSegue(segue, sender: sender)
+            super.prepare(for: segue, sender: sender)
             return
         }
         switch lIdentifier {
         case SegueIdentifiers.Trial:
-            segue.destinationViewController.transitioningDelegate = self
-            segue.destinationViewController.modalPresentationStyle = .Custom
+            segue.destination.transitioningDelegate = self
+            segue.destination.modalPresentationStyle = .custom
         default:
-            super.prepareForSegue(segue, sender: sender)
+            super.prepare(for: segue, sender: sender)
         }
     }
     
-    @IBAction func yesAction(sender: AnyObject) {
-        self.performSegueWithIdentifier(SegueIdentifiers.SelectProvider, sender: nil)
+    @IBAction func yesAction(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: SegueIdentifiers.SelectProvider, sender: nil)
     }
     
-    @IBAction func noAction(sender: AnyObject) {
-        self.performSegueWithIdentifier(SegueIdentifiers.Trial, sender: nil)
+    @IBAction func noAction(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: SegueIdentifiers.Trial, sender: nil)
     }
 }
 
 extension WelcomeScreen: UIViewControllerTransitioningDelegate {
     
-    func presentationControllerForPresentedViewController(presented: UIViewController,
-                                                          presentingViewController presenting: UIViewController,
-                                                          sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ModalPresentationController(presentedViewController: presented, presentingViewController: presenting)
+    func presentationController(forPresented presented: UIViewController,
+                                                          presenting: UIViewController?,
+                                                          source: UIViewController) -> UIPresentationController? {
+        return ModalPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }
 

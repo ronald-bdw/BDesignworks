@@ -21,42 +21,42 @@ class PushScreen: UIViewController, UITableViewDelegate, UITableViewDataSource
     {
         super.viewDidLoad()
         
-        self.tableView.registerClass(PushSettingCell.self, forCellReuseIdentifier: "PushSettingCell")
+        self.tableView.register(PushSettingCell.self, forCellReuseIdentifier: "PushSettingCell")
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
         self.tableView.layer.cornerRadius = 14
-        self.tableView.layer.borderColor = AppColors.MainColor?.CGColor
+        self.tableView.layer.borderColor = AppColors.MainColor?.cgColor
         self.tableView.layer.borderWidth = 1
     }
     
     //MARK: TableView
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return self.settings.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 80
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("PushSettingCell", forIndexPath: indexPath) as! PushSettingCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "PushSettingCell", for: indexPath) as! PushSettingCell
         
-        if let checkedRow = checked where indexPath.row == checkedRow {
+        if let checkedRow = checked , (indexPath as NSIndexPath).row == checkedRow {
             cell.checked = true
         }
         
-        cell.label.text = settings[indexPath.row]
+        cell.label.text = settings[(indexPath as NSIndexPath).row]
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        self.checked = indexPath.row
+        self.checked = (indexPath as NSIndexPath).row
         self.tableView.reloadData()
     }
 }

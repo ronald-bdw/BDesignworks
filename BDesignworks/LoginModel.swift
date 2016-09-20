@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ILoginModel {
-    func login(smsCode: String)
+    func login(_ smsCode: String)
 }
 
 class LoginModel {
@@ -19,14 +19,14 @@ class LoginModel {
     
     required init() {}
     
-    private func startLogin(smsCode: String) {
+    fileprivate func startLogin(_ smsCode: String) {
         self.presenter?.loginStarted()
         do {
             let realm = try Realm()
             //TODO: add error when there is no auth data
-            guard let authData = realm.objects(AuthInfo).first else {return}
+            guard let authData = realm.objects(AuthInfo.self).first else {return}
             
-            Router.User.SignIn(phone: authData.phone, authPhoneCode: authData.id, smsCode: smsCode).request().responseObject { [weak self] (response: Response<RTUserResponse, RTError>) in
+            let _ = Router.User.signIn(phone: authData.phone, authPhoneCode: authData.id, smsCode: smsCode).request().responseObject { [weak self] (response: DataResponse<RTUserResponse>) in
                 var receivedData: User?
                 
                 defer {
@@ -34,21 +34,21 @@ class LoginModel {
                 }
                 
                 switch response.result {
-                case .Success(let value):
+                case .success(let value):
                     guard let user = value.user else {return}
                     receivedData = user
                     
                     do {
                         try realm.write({
                             realm.add(user, update: true)
-                            realm.delete(realm.objects(AuthInfo))
+                            realm.delete(realm.objects(AuthInfo.self))
                         })
                         
                     } catch let error {
                         Logger.error("\(error)")
                     }
                     self?.presenter?.loginSuccessed()
-                case .Failure(let error):
+                case .failure(let error):
                     self?.presenter?.loginFailed()
                     Logger.error("\(error)")
                 }
@@ -63,7 +63,7 @@ class LoginModel {
 }
 
 extension LoginModel: ILoginModel {
-    func login(smsCode: String) {
+    func login(_ smsCode: String) {
         self.startLogin(smsCode)
     }
 }

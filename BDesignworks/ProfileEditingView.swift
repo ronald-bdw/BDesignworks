@@ -11,33 +11,33 @@ import Foundation
 typealias ProfileEditingMVP = MVPContainer<ProfileEditingView,ProfileEditingPresenter,ProfileEditingModel>
 
 protocol IProfileEditingView: class {
-    func updateView(user: User)
-    func setLoadingState(state: LoadingState)
-    func updateFirstNameErrorView(isValid: Bool)
-    func updateLastNameErrorView(isValid: Bool)
-    func updateEmailErrorView(isValid: Bool)
-    func showBackendErrorView(description: ErrorHumanDescription)
+    func updateView(_ user: User)
+    func setLoadingState(_ state: LoadingState)
+    func updateFirstNameErrorView(_ isValid: Bool)
+    func updateLastNameErrorView(_ isValid: Bool)
+    func updateEmailErrorView(_ isValid: Bool)
+    func showBackendErrorView(_ description: ErrorHumanDescription)
     func showErrorView()
 }
 
 class ProfileEditingView: UITableViewController {
     
     enum CellType {
-        case Header
-        case Empty
-        case Content
-        case Error
+        case header
+        case empty
+        case content
+        case error
         
         enum ErrorCellType {
-            case FirstName
-            case LastName
-            case Email
+            case firstName
+            case lastName
+            case email
             
-            static func getType(row: Int) -> ErrorCellType {
+            static func getType(_ row: Int) -> ErrorCellType {
                 switch row {
-                case 3  : return FirstName
-                case 5  : return LastName
-                case 7  : return Email
+                case 3  : return firstName
+                case 5  : return lastName
+                case 7  : return email
                 default : fatalError()
                 }
             }
@@ -45,19 +45,19 @@ class ProfileEditingView: UITableViewController {
         
         var height: CGFloat {
             switch self {
-            case .Header    : return 250
-            case .Empty     : return 20
-            case .Content   : return 80
-            case .Error     : return 60
+            case .header    : return 250
+            case .empty     : return 20
+            case .content   : return 80
+            case .error     : return 60
             }
         }
         
-        static func getType(row: Int) -> CellType {
+        static func getType(_ row: Int) -> CellType {
             switch row {
-            case 0      : return Header
-            case 1      : return Empty
-            case 2,4,6  : return Content
-            case 3,5,7  : return Error
+            case 0      : return header
+            case 1      : return empty
+            case 2,4,6  : return content
+            case 3,5,7  : return error
             default     : fatalError()
             }
         }
@@ -92,33 +92,33 @@ class ProfileEditingView: UITableViewController {
     
     func setTextFieldTags() {
         self.textFields = [self.firstNameTextField, self.lastNameTExtField, self.emailTextField]
-        self.firstNameTextField.tag = self.textFields.indexOf(self.firstNameTextField) ?? 0
-        self.lastNameTExtField.tag = self.textFields.indexOf(self.lastNameTExtField) ?? 0
-        self.emailTextField.tag = self.textFields.indexOf(self.emailTextField) ?? 0
+        self.firstNameTextField.tag = self.textFields.index(of: self.firstNameTextField) ?? 0
+        self.lastNameTExtField.tag = self.textFields.index(of: self.lastNameTExtField) ?? 0
+        self.emailTextField.tag = self.textFields.index(of: self.emailTextField) ?? 0
     }
     
     func setValidationViews() {
-        self.firstNameErrorView.setLabel(UserEditedValidationField.FirstName.validationText)
-        self.lastNameErrorView.setLabel(UserEditedValidationField.LastName.validationText)
-        self.emailErrorView.setLabel(UserEditedValidationField.Email.validationText)
+        self.firstNameErrorView.setLabel(UserEditedValidationField.firstName.validationText)
+        self.lastNameErrorView.setLabel(UserEditedValidationField.lastName.validationText)
+        self.emailErrorView.setLabel(UserEditedValidationField.email.validationText)
     }
     
-    @IBAction func photoPressed(sender: AnyObject) {
+    @IBAction func photoPressed(_ sender: AnyObject) {
     }
     
-    @IBAction func donePressed(sender: AnyObject) {
+    @IBAction func donePressed(_ sender: AnyObject) {
         self.presenter?.donePressed(self.firstNameTextField.text, lastName: self.lastNameTExtField.text, email: self.emailTextField.text)
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let cellType = CellType.getType(indexPath.row)
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cellType = CellType.getType((indexPath as NSIndexPath).row)
         switch cellType {
-        case .Error:
-            let errorCellType = CellType.ErrorCellType.getType(indexPath.row)
+        case .error:
+            let errorCellType = CellType.ErrorCellType.getType((indexPath as NSIndexPath).row)
             switch errorCellType {
-            case .FirstName : return isFirstNameValid ? 0 : cellType.height
-            case .LastName  : return isLastNameValid ? 0 : cellType.height
-            case .Email     : return isEmailValid ? 0 : cellType.height
+            case .firstName : return isFirstNameValid ? 0 : cellType.height
+            case .lastName  : return isLastNameValid ? 0 : cellType.height
+            case .email     : return isEmailValid ? 0 : cellType.height
             }
         default: return cellType.height
         }
@@ -126,7 +126,7 @@ class ProfileEditingView: UITableViewController {
 }
 
 extension ProfileEditingView: IProfileEditingView {
-    func updateView(user: User) {
+    func updateView(_ user: User) {
         self.nameLabel.text = user.fullname
         self.emailPreviewLabel.text = user.email
         self.emailPreviewLabel.text = user.email
@@ -136,19 +136,19 @@ extension ProfileEditingView: IProfileEditingView {
     }
     
     
-    func setLoadingState(state: LoadingState) {
+    func setLoadingState(_ state: LoadingState) {
         switch state {
-        case .Loading:
+        case .loading:
             SVProgressHUD.show()
-        case .Done:
+        case .done:
             SVProgressHUD.dismiss()
-            self.navigationController?.popViewControllerAnimated(true)
-        case .Failed:
+            let _ = self.navigationController?.popViewController(animated: true)
+        case .failed:
             SVProgressHUD.dismiss()
         }
     }
     
-    func showBackendErrorView(description: ErrorHumanDescription) {
+    func showBackendErrorView(_ description: ErrorHumanDescription) {
         ShowErrorAlert(description.title, message: description.text)
     }
     
@@ -156,17 +156,17 @@ extension ProfileEditingView: IProfileEditingView {
         ShowErrorAlert()
     }
     
-    func updateFirstNameErrorView(isValid: Bool) {
+    func updateFirstNameErrorView(_ isValid: Bool) {
         self.isFirstNameValid = isValid
         self.tableView.reloadData()
     }
     
-    func updateLastNameErrorView(isValid: Bool) {
+    func updateLastNameErrorView(_ isValid: Bool) {
         self.isLastNameValid = isValid
         self.tableView.reloadData()
     }
     
-    func updateEmailErrorView(isValid: Bool) {
+    func updateEmailErrorView(_ isValid: Bool) {
         self.isEmailValid = isValid
         self.tableView.reloadData()
     }
@@ -174,7 +174,7 @@ extension ProfileEditingView: IProfileEditingView {
 
 extension ProfileEditingView: UITextFieldDelegate {
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag + 1 < self.textFields.count  {
             self.textFields[textField.tag + 1].becomeFirstResponder()
         }

@@ -23,7 +23,7 @@ private extension FSScreenType {
     var logoTopOffset: CGFloat {
         switch self {
         case ._3_5  : return 16
-        default     : return UIScreen.mainScreen().bounds.size.height*Constants.defaultLogoTopConstraintRatio - topBarHeight
+        default     : return UIScreen.main.bounds.size.height*Constants.defaultLogoTopConstraintRatio - topBarHeight
         }
     }
     
@@ -86,8 +86,8 @@ private extension FSScreenType {
     
     var textFont: UIFont {
         switch self {
-        case ._3_5  : return UIFont.systemFontOfSize(15.0)
-        default     : return UIFont.systemFontOfSize(16.0) //
+        case ._3_5  : return UIFont.systemFont(ofSize: 15.0)
+        default     : return UIFont.systemFont(ofSize: 16.0) //
         }
     }
     
@@ -111,7 +111,7 @@ protocol IVerificationView: class {
     func dismissPhoneInvalidView()
     func showCodeInvalidView()
     func dismissCodeInvalidView()
-    func setLoadingState(state: LoadingState)
+    func setLoadingState(_ state: LoadingState)
 }
 
 final class VerificationView: UIViewController {
@@ -157,14 +157,14 @@ final class VerificationView: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     
-    private var isErrorShown: Bool = false {
+    fileprivate var isErrorShown: Bool = false {
         didSet {
             self.scrollView.setNeedsLayout()
             self.scrollView.layoutIfNeeded()
         }
     }
     
-    private var isCodeErrorShown: Bool = false {
+    fileprivate var isCodeErrorShown: Bool = false {
         didSet {
             self.scrollView.setNeedsLayout()
             self.scrollView.layoutIfNeeded()
@@ -187,7 +187,7 @@ final class VerificationView: UIViewController {
         let _ = VerificationMVP(controller: self)
         self.view.layoutIfNeeded()
         
-        self.navigationController?.navigationBar.hidden = false
+        self.navigationController?.navigationBar.isHidden = false
         self.fs_keyboardScrollSupportRegisterForNotifications()
         self.scrollView.alwaysBounceVertical = true
         self.rollButton.chooseLabel.text     = self.rollButtonTitle
@@ -199,7 +199,7 @@ final class VerificationView: UIViewController {
         self.fs_keyboardScrollSupportRemoveNotifications()
     }
     
-    private func layoutScrollView() {
+    fileprivate func layoutScrollView() {
         
         guard let screenType = FSScreenType() else { return }
         let screenWidth  : CGFloat  = screenType.size.width
@@ -220,7 +220,7 @@ final class VerificationView: UIViewController {
         let welcomeWidth: CGFloat = screenType.welcomeLabelWidth
         let welcomeTopOffset: CGFloat = screenType.logoBottomOffset
         let welcomeBottomOffset: CGFloat = screenType.welcomeBottomOffset
-        let welcomeLabelHeight: CGFloat = ceil(self.welcomeLabel.textRectForBounds(welcomeLabel.bounds, limitedToNumberOfLines: 0).height)
+        let welcomeLabelHeight: CGFloat = ceil(self.welcomeLabel.textRect(forBounds: welcomeLabel.bounds, limitedToNumberOfLines: 0).height)
         self.welcomeLabel.frame = CGRect(x: ceil((screenWidth-welcomeWidth)/2),
                                          y: self.logoImageView.fs_bottom + welcomeTopOffset,
                                          width: welcomeWidth,
@@ -291,30 +291,30 @@ final class VerificationView: UIViewController {
         self.layoutScrollView()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.mobileTextField.resignFirstResponder()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let lIdentifier = segue.identifier else {
-            super.prepareForSegue(segue, sender: sender)
+            super.prepare(for: segue, sender: sender)
             return
         }
         
         switch lIdentifier {
         case SegueIdentifiers.areaCodeSegue:
-            let destinationVC: AreaCodeScreen = segue.destinationViewController as! AreaCodeScreen
+            let destinationVC: AreaCodeScreen = segue.destination as! AreaCodeScreen
             destinationVC.prepareController({[weak self] (area) in
                 guard let sself = self else { return }
                 sself.rollButton.chooseLabel.text = "+\(area.areaCode)"
             })
         default:
-            super.prepareForSegue(segue, sender: sender)
+            super.prepare(for: segue, sender: sender)
         }
     }
     
-    @IBAction func submitAction(sender: RoundButton) {
+    @IBAction func submitAction(_ sender: RoundButton) {
         self.presenter?.submitTapped(self.rollButton.chooseLabel.text, phone: self.mobileTextField.text)
     }
 }
@@ -336,45 +336,45 @@ extension VerificationView: IVerificationView {
         self.dismissCodeErrorView()
     }
     
-    func setLoadingState(state: LoadingState) {
+    func setLoadingState(_ state: LoadingState) {
         switch state {
-        case .Loading:
+        case .loading:
             SVProgressHUD.show()
-        case .Done:
+        case .done:
             SVProgressHUD.dismiss()
             ShowOKAlert("Success!", message: "Please, wait for sms with link to app.")
-        case .Failed:
+        case .failed:
             SVProgressHUD.dismiss()
             ShowErrorAlert()
         }
     }
     
-    private func showErrorView() {
-        UIView.animateWithDuration(0.3) {[weak self] in
+    fileprivate func showErrorView() {
+        UIView.animate(withDuration: 0.3, animations: {[weak self] in
             guard let sself = self else { return }
             sself.isErrorShown = true
-        }
+        }) 
     }
     
-    private func dismissErrorView() {
-       UIView.animateWithDuration(0.3) {[weak self] in
+    fileprivate func dismissErrorView() {
+       UIView.animate(withDuration: 0.3, animations: {[weak self] in
             guard let sself = self else { return }
             sself.isErrorShown = false
-        }
+        }) 
     }
     
-    private func showCodeErrorView() {
-        UIView.animateWithDuration(0.3) {[weak self] in
+    fileprivate func showCodeErrorView() {
+        UIView.animate(withDuration: 0.3, animations: {[weak self] in
             guard let sself = self else { return }
             sself.isCodeErrorShown = true
-        }
+        }) 
     }
     
-    private func dismissCodeErrorView() {
-        UIView.animateWithDuration(0.3) {[weak self] in
+    fileprivate func dismissCodeErrorView() {
+        UIView.animate(withDuration: 0.3, animations: {[weak self] in
             guard let sself = self else { return }
             sself.isCodeErrorShown = false
-        }
+        }) 
     }
     
 }
@@ -385,8 +385,8 @@ extension VerificationView: MVPView {
 
 extension VerificationView: RollUpButtonDelegate {
     
-    func rollUpButtonDidChangeState(active: Bool) {
-        self.performSegueWithIdentifier(SegueIdentifiers.areaCodeSegue, sender: nil)
+    func rollUpButtonDidChangeState(_ active: Bool) {
+        self.performSegue(withIdentifier: SegueIdentifiers.areaCodeSegue, sender: nil)
     }
 }
 
@@ -394,17 +394,17 @@ extension VerificationView {
     
     func fs_keyboardScrollSupportRegisterForNotifications () {
         
-        let center = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: #selector(self.fs_keyboardScrollSupportKeyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil)
-        center.addObserver(self, selector: #selector(self.fs_keyboardScrollSupportKeyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil)
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(self.fs_keyboardScrollSupportKeyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        center.addObserver(self, selector: #selector(self.fs_keyboardScrollSupportKeyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     func fs_keyboardScrollSupportRemoveNotifications () {
         
-        let center = NSNotificationCenter.defaultCenter()
+        let center = NotificationCenter.default
         
-        center.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        center.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        center.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        center.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     var fs_keyboardScrollSupportScrollView: UIScrollView? {
@@ -415,27 +415,27 @@ extension VerificationView {
         return self.mobileTextField
     }
     
-    func fs_keyboardScrollSupportKeyboardWillShow (notif: NSNotification) {
+    func fs_keyboardScrollSupportKeyboardWillShow (_ notif: Notification) {
         
         guard let scrollView = self.fs_keyboardScrollSupportScrollView else { return }
         
-        guard let info = notif.userInfo else { return }
+        guard let info = (notif as NSNotification).userInfo else { return }
         guard let value = info[UIKeyboardFrameEndUserInfoKey] as? NSValue else { return }
         
-        let keyboardFrame = value.CGRectValue()
+        let keyboardFrame = value.cgRectValue
         let contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardFrame.height, 0.0)
         
         scrollView.contentInset             = contentInsets
         scrollView.scrollIndicatorInsets    = contentInsets
         
-        scrollView.contentOffset = CGPointMake(0, scrollView.contentSize.height - keyboardFrame.height*2 + 44)
+        scrollView.contentOffset = CGPoint(x: 0, y: scrollView.contentSize.height - keyboardFrame.height*2 + 44)
     }
     
-    func fs_keyboardScrollSupportKeyboardWillHide (notif: NSNotification) {
+    func fs_keyboardScrollSupportKeyboardWillHide (_ notif: Notification) {
         
         guard let scrollView = self.fs_keyboardScrollSupportScrollView else { return }
         
-        let contentInsets = UIEdgeInsetsZero
+        let contentInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
     }

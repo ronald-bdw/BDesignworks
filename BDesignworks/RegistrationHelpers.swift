@@ -10,34 +10,34 @@ import Foundation
 
 
 enum RegistrationCellType: Int {
-    case FirstName = 0
-    case LastName = 2
-    case Email = 4
-    case Phone = 6
+    case firstName = 0
+    case lastName = 2
+    case email = 4
+    case phone = 6
     
     var title: String {
         switch self {
-        case .FirstName : return "First Name"
-        case .LastName  : return "Last Name"
-        case .Email     : return "Email"
-        case .Phone     : return "Phone"
+        case .firstName : return "First Name"
+        case .lastName  : return "Last Name"
+        case .email     : return "Email"
+        case .phone     : return "Phone"
         }
     }
     
     var validationError: String {
         switch self {
-        case .FirstName, .LastName : return "Shouldn't be clear"
-        case .Email     : return "Email not valid"
-        case .Phone     : return "Should have 11 symbols"
+        case .firstName, .lastName : return "Shouldn't be clear"
+        case .email     : return "Email not valid"
+        case .phone     : return "Should have 11 symbols"
         }
     }
     
-    func getStructField(user: RegistrationUser) -> RegistrationUserField {
+    func getStructField(_ user: RegistrationUser) -> RegistrationUserField {
         switch self {
-        case .FirstName : return user.firstName
-        case .LastName  : return user.lastName
-        case .Email     : return user.email
-        case .Phone     : return user.phone
+        case .firstName : return user.firstName
+        case .lastName  : return user.lastName
+        case .email     : return user.email
+        case .phone     : return user.phone
         }
     }
 }
@@ -49,25 +49,25 @@ struct RegistrationUser {
     var phone: RegistrationUserField
     
     init() {
-        self.firstName = RegistrationUserField(type: .FirstName)
-        self.lastName = RegistrationUserField(type: .LastName)
-        self.email = RegistrationUserField(type: .Email)
-        self.phone = RegistrationUserField(type: .Phone)
+        self.firstName = RegistrationUserField(type: .firstName)
+        self.lastName = RegistrationUserField(type: .lastName)
+        self.email = RegistrationUserField(type: .email)
+        self.phone = RegistrationUserField(type: .phone)
     }
     
-    func isFieldValid(errorRow: Int) -> Bool {
+    func isFieldValid(_ errorRow: Int) -> Bool {
         let dataRow = errorRow - 1
         
         guard let cellType = RegistrationCellType(rawValue: dataRow) else {fatalError()}
         return cellType.getStructField(self).isValid
     }
     
-    func getStructField(type: RegistrationCellType) -> RegistrationUserField {
+    func getStructField(_ type: RegistrationCellType) -> RegistrationUserField {
         switch type {
-        case .FirstName : return self.firstName
-        case .LastName  : return self.lastName
-        case .Email     : return self.email
-        case .Phone     : return self.phone
+        case .firstName : return self.firstName
+        case .lastName  : return self.lastName
+        case .email     : return self.email
+        case .phone     : return self.phone
         }
     }
     
@@ -82,9 +82,9 @@ struct RegistrationUserField {
     
     var isValid: Bool {
         switch self.type {
-        case .FirstName, .LastName: return content.fs_length > 0
-        case .Email: return content.fs_emailValidate()
-        case .Phone: return content.fs_length > 11
+        case .firstName, .lastName: return content.fs_length > 0
+        case .email: return content.fs_emailValidate()
+        case .phone: return content.fs_length > 11
         }
     }
     

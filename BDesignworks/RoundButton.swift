@@ -9,17 +9,17 @@
 import UIKit
 
 @IBDesignable
-public class RoundButton: UIButton {
+open class RoundButton: UIButton {
     
-    @IBInspectable var buttonColor = UIColor.blackColor() {
+    @IBInspectable var buttonColor = UIColor.black {
         didSet {
             self.backgroundColor = buttonColor
-            self.layer.borderColor = buttonColor.CGColor
+            self.layer.borderColor = buttonColor.cgColor
         }
     }
-    @IBInspectable var textColor = UIColor.whiteColor() {
+    @IBInspectable var textColor = UIColor.white {
         didSet {
-            self.setTitleColor(textColor, forState: .Normal)
+            self.setTitleColor(textColor, for: UIControlState())
         }
     }
     @IBInspectable var cornerRadius = CGFloat(0) {

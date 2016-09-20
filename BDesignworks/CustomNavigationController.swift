@@ -10,13 +10,19 @@ import UIKit
 
 final class CustomNavigationController: UINavigationController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return self.statusBarStyle
+    }
+    
+    private var statusBarStyle = UIStatusBarStyle.default
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.interactivePopGestureRecognizer?.enabled = false
-        self.navigationBar.titleTextAttributes        = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.interactivePopGestureRecognizer?.isEnabled = false
+        self.navigationBar.titleTextAttributes        = [NSForegroundColorAttributeName: UIColor.white]
         self.navigationBar.barTintColor               = AppColors.MainColor
-        self.navigationBar.tintColor                  = UIColor.whiteColor()
+        self.navigationBar.tintColor                  = UIColor.white
     }
     
     override init(rootViewController: UIViewController) {
@@ -30,28 +36,28 @@ final class CustomNavigationController: UINavigationController {
         self.updateUI(withViewController: topVC)
     }
     
-    override func showViewController(vc: UIViewController, sender: AnyObject?) {
-        super.showViewController(vc, sender: sender)
+    override func show(_ vc: UIViewController, sender: Any?) {
+        super.show(vc, sender: sender)
         self.updateUI(withViewController: vc)
     }
     
-    override func popViewControllerAnimated(animated: Bool) -> UIViewController? {
+    override func popViewController(animated: Bool) -> UIViewController? {
         
-        let viewController = super.popViewControllerAnimated(animated)
+        let viewController = super.popViewController(animated: animated)
         if let topVC = self.topViewController {
             self.updateUI(withViewController: topVC)
         }
         return viewController
     }
     
-    private func updateUI(withViewController vc: UIViewController) {
+    fileprivate func updateUI(withViewController vc: UIViewController) {
         switch vc {
         case is WelcomeScreen,
              is SelectProviderScreen:
-            UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: true)
+            self.statusBarStyle = .default
             self.setNavigationBarHidden(true, animated: true)
         default:
-            UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: true)
+            self.statusBarStyle = .lightContent
             self.setNavigationBarHidden(false, animated: true)
         }
     }

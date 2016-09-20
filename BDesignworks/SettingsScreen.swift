@@ -22,14 +22,14 @@ class SettingsScreen: UITableViewController
         self.profilePhoto.image = UIImage(named: "Image")
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.fs_deselectSelectedRow(true)
-        guard indexPath.row == 2 else {return}
+        guard (indexPath as NSIndexPath).row == 2 else {return}
         
         do {
             let realm = try Realm()
             try realm.write({
-                realm.delete(realm.objects(User))
+                realm.delete(realm.objects(User.self))
             })
             
             ShowInitialViewController()

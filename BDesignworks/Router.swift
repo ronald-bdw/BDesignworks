@@ -11,9 +11,50 @@ import Foundation
 enum Router {
     static let BaseURL = "https://b-designworks.herokuapp.com/v1"
     static var OAuthToken: String?
+    
+    //MARK: -
+    static let manager: SessionManager = {
+        let configuration = URLSessionConfiguration.default
+        
+        var headers: [AnyHashable: Any] = [:]
+        for header in SessionManager.defaultHTTPHeaders {
+            headers.updateValue(header.1, forKey: header.0)
+        }
+        configuration.httpAdditionalHeaders = headers
+        
+        let manager = SessionManager(configuration: configuration)
+        return manager
+    }()
+    
+    static let networkReachabilityManager: NetworkReachabilityManager? = {
+        let networkReachabilityManager = NetworkReachabilityManager()
+        networkReachabilityManager?.startListening()
+        return networkReachabilityManager
+    }()
+    
+    static var extendHeaders: [String : String] {
+        var headers: [String : String] = [:]
+        
+        headers.updateValue("no-cache", forKey: "Cache-Control")
+        
+        //TODO: rename entity User
+//        do {
+//            let realm = try Realm()
+//            if let user = realm.objects(User.self).first {
+//                headers = ["X-User-Token": user.token!, "X-User-Phone-Number": user.phoneNumber]
+//            }
+//        }
+//        catch let error {
+//            Logger.debug("\(error)")
+//        }
+
+        
+        return headers
+    }
+
 }
 
-protocol RouterProtocol: URLRequestConvertible {
+protocol RouterProtocol {
     var settings: RTRequestSettings {get}
     var path: String {get}
     var parameters: [String : AnyObject]? {get}
@@ -21,51 +62,33 @@ protocol RouterProtocol: URLRequestConvertible {
 
 extension RouterProtocol {
     
-    func defaultURLRequest () -> NSMutableURLRequest {
+    func request () -> DataRequest {
+        let path = "\(Router.BaseURL)\(self.path)"
         
-        let URL = NSURL(string: Router.BaseURL)!
-        let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(self.path))
-        mutableURLRequest.HTTPMethod = self.settings.method.rawValue
+        let headers = Router.extendHeaders
         
-        do {
-            let realm = try Realm()
-            if let user = realm.objects(User).first {
-                mutableURLRequest.setValue(user.token, forHTTPHeaderField: "X-User-Token")
-                mutableURLRequest.setValue(user.phoneNumber, forHTTPHeaderField: "X-User-Phone-Number")
-            }
-        }
-        catch let error {
-            Logger.debug("\(error)")
-        }
+        let request = Router.manager.request(path, method: self.settings.method, parameters: self.parameters, encoding: self.settings.encoding, headers: headers)
         
-        return self.settings.encoding.encode(mutableURLRequest, parameters: parameters).0
-    }
-    
-    var URLRequest: NSMutableURLRequest {
-        return self.defaultURLRequest()
-    }
-    
-    func request () -> Alamofire.Request {
-        return Alamofire.request(self.URLRequest).validate()
+        return request
     }
 }
 
 struct RTRequestSettings {
-    let method: Alamofire.Method
+    let method: HTTPMethod
     let encoding: ParameterEncoding
     
-    init (method: Alamofire.Method, encoding: ParameterEncoding? = nil) {
+    init (method: HTTPMethod, encoding: ParameterEncoding? = nil) {
         self.method = method
         self.encoding = encoding ?? method.encoding
     }
 }
 
-extension Alamofire.Method {
-    var encoding : ParameterEncoding {
+extension HTTPMethod {
+    var encoding: ParameterEncoding {
         switch self {
-        case .GET                   : return .URL
-        case .POST, .PUT, .PATCH    : return .JSON
-        default                     : return .URL
+        case .get                   : return URLEncoding.default
+        case .post, .put, .patch    : return JSONEncoding.default
+        default                     : return URLEncoding.default
         }
     }
 }

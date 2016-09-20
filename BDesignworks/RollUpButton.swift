@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RollUpButtonDelegate: class {
-    func rollUpButtonDidChangeState(active: Bool)
+    func rollUpButtonDidChangeState(_ active: Bool)
 }
 
 enum ArrowDirection: String {
@@ -30,7 +30,7 @@ final class RollUpButton: BaseView {
         static let arrowTrailingOffset: CGFloat = 12
     }
     
-    override class func layerClass() -> AnyClass { return CAShapeLayer.self }
+    override class var layerClass : AnyClass { return CAShapeLayer.self }
     
     //MARK: - UI Outlets
     @IBOutlet weak var triangleImageView: UIImageView!
@@ -43,7 +43,7 @@ final class RollUpButton: BaseView {
     
     var animatable: Bool = true
     
-    private var shapeLayer: CAShapeLayer {
+    fileprivate var shapeLayer: CAShapeLayer {
         return self.layer as! CAShapeLayer
     }
     
@@ -66,30 +66,30 @@ final class RollUpButton: BaseView {
         self.setup()
     }
     
-    private func update() {
+    fileprivate func update() {
         
         guard self.animatable else { return }
         
-        UIView.animateWithDuration(0.2) { [weak self] in
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
             guard let sself = self else { return }
             //Updating arrow
             let angle: CGFloat = sself.active == true ? CGFloat(M_PI) : 0
-            sself.triangleImageView.transform = CGAffineTransformMakeRotation(angle)
+            sself.triangleImageView.transform = CGAffineTransform(rotationAngle: angle)
             
             //Updating bounding path
             sself.updateBoundingPath()
-        }
+        }) 
     }
     
     
-    private func setup() {
+    fileprivate func setup() {
         self.triangleImageView.image = self.arrowDirection.image
         self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds,
-                                            byRoundingCorners: UIRectCorner.AllCorners,
-                                            cornerRadii: Constants.defaultCornerRadius).CGPath
-        self.shapeLayer.backgroundColor = UIColor.clearColor().CGColor
-        self.shapeLayer.strokeColor = UIColor.lightGrayColor().CGColor
-        self.shapeLayer.fillColor = UIColor.whiteColor().CGColor
+                                            byRoundingCorners: UIRectCorner.allCorners,
+                                            cornerRadii: Constants.defaultCornerRadius).cgPath
+        self.shapeLayer.backgroundColor = UIColor.clear.cgColor
+        self.shapeLayer.strokeColor = UIColor.lightGray.cgColor
+        self.shapeLayer.fillColor = UIColor.white.cgColor
         self.shapeLayer.lineWidth = 1
         self.clipsToBounds = false
     }
@@ -107,7 +107,7 @@ final class RollUpButton: BaseView {
         self.updateBoundingPath()
     }
     
-    private func updateBoundingPath() {
+    fileprivate func updateBoundingPath() {
         
 //        if self.active {
 //            guard self.animatable else { return }
@@ -116,12 +116,12 @@ final class RollUpButton: BaseView {
 //                                                 cornerRadii: Constants.defaultCornerRadius).CGPath
 //        } else {
             self.shapeLayer.path = UIBezierPath(roundedRect: self.bounds,
-                                                byRoundingCorners: .AllCorners,
-                                                cornerRadii: Constants.defaultCornerRadius).CGPath
+                                                byRoundingCorners: .allCorners,
+                                                cornerRadii: Constants.defaultCornerRadius).cgPath
 //        }
     }
     
-    @IBAction func didChangeState(sender: AnyObject) {
+    @IBAction func didChangeState(_ sender: AnyObject) {
         self.active = !self.active
         self.delegate?.rollUpButtonDidChangeState(self.active)
     }

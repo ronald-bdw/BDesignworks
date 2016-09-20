@@ -28,15 +28,15 @@ class LoginPresenter {
 extension LoginPresenter: ILoginModelPresenter {
     
     func loginStarted() {
-        self.view?.setLoadingState(.Loading)
+        self.view?.setLoadingState(.loading)
     }
     
     func loginSuccessed() {
-        self.view?.setLoadingState(.Done)
+        self.view?.setLoadingState(.done)
     }
     
     func loginFailed() {
-        self.view?.setLoadingState(.Failed)
+        self.view?.setLoadingState(.failed)
     }
 }
 

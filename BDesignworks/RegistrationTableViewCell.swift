@@ -9,23 +9,23 @@
 import UIKit
 
 class RegistrationTableViewCell: UITableViewCell {
-    var type: RegistrationCellType = .FirstName
+    var type: RegistrationCellType = .firstName
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentTextField: UITextField!
     
-    func prepareCell(type: RegistrationCellType, user: RegistrationUser?) {
+    func prepareCell(_ type: RegistrationCellType, user: RegistrationUser?) {
         self.titleLabel.text = type.title
         
         switch type {
-        case .Email : self.contentTextField.keyboardType = .EmailAddress
-        case .Phone : self.contentTextField.keyboardType = .PhonePad
-        default     : self.contentTextField.keyboardType = .Default
+        case .email : self.contentTextField.keyboardType = .emailAddress
+        case .phone : self.contentTextField.keyboardType = .phonePad
+        default     : self.contentTextField.keyboardType = .default
         }
         
         switch type {
-        case .Phone : self.contentTextField.returnKeyType = .Done
-        default     : self.contentTextField.returnKeyType = .Next
+        case .phone : self.contentTextField.returnKeyType = .done
+        default     : self.contentTextField.returnKeyType = .next
         }
         
         self.contentTextField.text = user?.getStructField(type).content

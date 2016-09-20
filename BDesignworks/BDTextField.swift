@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-public class BDTextField: UITextField {
+open class BDTextField: UITextField {
     
     @IBInspectable var insetX: CGFloat = 0
     @IBInspectable var insetY: CGFloat = 0
@@ -17,21 +17,21 @@ public class BDTextField: UITextField {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "",
-                                                        attributes: [NSForegroundColorAttributeName : UIColor.darkGrayColor(),
-                                                                     NSFontAttributeName            : UIFont.systemFontOfSize(16.0)])
+                                                        attributes: [NSForegroundColorAttributeName : UIColor.darkGray,
+                                                                     NSFontAttributeName            : UIFont.systemFont(ofSize: 16.0)])
     }
     
     // placeholder position
-    override public func textRectForBounds(bounds: CGRect) -> CGRect {
-        return CGRectInset(bounds , self.insetX , self.insetY)
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: self.insetX , dy: self.insetY)
     }
     
     // text position
-    override public func editingRectForBounds(bounds: CGRect) -> CGRect {
-        return CGRectInset(bounds , self.insetX , self.insetY)
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: self.insetX , dy: self.insetY)
     }
     
-    override public func placeholderRectForBounds(bounds: CGRect) -> CGRect {
-        return CGRectInset(bounds , self.insetX , self.insetY)
+    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: self.insetX , dy: self.insetY)
     }
 }

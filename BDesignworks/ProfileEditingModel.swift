@@ -10,7 +10,7 @@ import Foundation
 
 protocol IProfileEditingModel {
     func getUser()
-    func updateUser(user: UserEdited)
+    func updateUser(_ user: UserEdited)
 }
 
 class ProfileEditingModel {
@@ -25,12 +25,12 @@ extension ProfileEditingModel: IProfileEditingModel {
         self.presenter?.userReceived(user)
     }
     
-    func updateUser(user: UserEdited) {
+    func updateUser(_ user: UserEdited) {
         guard self.validateUser(user) else {return}
         self.presenter?.loadingStarted()
-        Router.User.EditUser(user: user).request().responseObject { (response: Response<RTUserResponse,RTError>) in
+        let _ = Router.User.editUser(user: user).request().responseObject { (response: DataResponse<RTUserResponse>) in
             switch response.result {
-            case .Success(let value):
+            case .success(let value):
                 self.presenter?.loadingFinished()
                 guard let user = value.user else {return}
                 do {
@@ -43,14 +43,14 @@ extension ProfileEditingModel: IProfileEditingModel {
                     Logger.error(error)
                 }
                 Logger.debug(value.user)
-            case .Failure(let error):
-                self.presenter?.loadingFailed(error)
+            case .failure(let error):
+                self.presenter?.loadingFailed(error as! RTError)
                 Logger.error(error)
             }
         }
     }
     
-    func validateUser(user: UserEdited) -> Bool {
+    func validateUser(_ user: UserEdited) -> Bool {
         var areFieldsValid = true
         for type in UserEditedValidationField.allCases {
             self.presenter?.updateInvalidView(type, value: user.isValid(type))
