@@ -428,21 +428,7 @@ extension VerificationView {
         scrollView.contentInset             = contentInsets
         scrollView.scrollIndicatorInsets    = contentInsets
         
-        // If active text field is hidden by keyboard, scroll it so it's visible
-        // Your app might not need or want this behavior.
-        guard let activeField = self.fs_keyboardScrollSupportActiveField else { return }
-        
-        // By default activeField must be subview of the scrollView
-        guard let superview = activeField.superview else {return}
-        
-        var viewRect = self.view.frame
-        viewRect.size.height -= keyboardFrame.height
-        
-        let convertedRect = superview.convertRect(activeField.frame, toView: self.view)
-        
-        if !CGRectContainsPoint(viewRect, convertedRect.origin)  {
-            scrollView.scrollRectToVisible(activeField.frame, animated: true)
-        }
+        scrollView.contentOffset = CGPointMake(0, scrollView.contentSize.height - keyboardFrame.height*2 + 44)
     }
     
     func fs_keyboardScrollSupportKeyboardWillHide (notif: NSNotification) {

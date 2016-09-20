@@ -88,6 +88,7 @@
 		DC3311871D6C5484002A21F2 /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */; };
 		DC37F8551D79C42F00E0DBE5 /* OpenSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC37F8541D79C42F00E0DBE5 /* OpenSansBold.ttf */; };
 		DC37F8581D79D40800E0DBE5 /* TrialPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC37F8571D79D40800E0DBE5 /* TrialPageView.swift */; };
+		DC91E0411D8C4082003A4941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC91E0401D8C4082003A4941 /* Main.storyboard */; };
 		DC9631F11D6EF12100B1C43E /* ViewControllersPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */; };
 		DC9C6C641D6C98B10034DC5A /* ValidationErrorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9C6C631D6C98B10034DC5A /* ValidationErrorCell.xib */; };
 		DC9C6C671D6C995B0034DC5A /* ValidationErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C6C661D6C995B0034DC5A /* ValidationErrorCell.swift */; };
@@ -102,7 +103,7 @@
 		E72916581D88365E00A6D70A /* ProfileEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916571D88365E00A6D70A /* ProfileEditingView.swift */; };
 		E729165A1D883A7A00A6D70A /* ProfileEditingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916591D883A7A00A6D70A /* ProfileEditingModel.swift */; };
 		E729165C1D88459A00A6D70A /* ProfileEditingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729165B1D88459A00A6D70A /* ProfileEditingPresenter.swift */; };
-		E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */; };
+		E7566D9F1A1F85CB00DE3010 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Login.storyboard */; };
 		E774EF8B1D899629007A8BC4 /* ProfileEditingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774EF8A1D899629007A8BC4 /* ProfileEditingHelpers.swift */; };
 		E79D88F81D7F256200EBA8FA /* TrialPageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */; };
 		E7C1F2691D88011C007F9D7A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C1F2681D88011C007F9D7A /* Profile.storyboard */; };
@@ -193,7 +194,7 @@
 		214F4FF51BFDC35C0084BE32 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		21513BBD19EBCBFA00EE6273 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2158286B1A91E2F200833BE6 /* mogend.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = mogend.sh; path = Scripts/mogend.sh; sourceTree = "<group>"; };
-		218C64BB1BA07D3800EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main_Storyboard.strings; sourceTree = "<group>"; };
+		218C64BB1BA07D3800EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Login.strings; sourceTree = "<group>"; };
 		218C64C21BA07E1F00EEEDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		218C64C31BA07E4300EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		21C9F2DF19E833300084D18D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -293,6 +294,8 @@
 		DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelcomeScreen.storyboard; sourceTree = "<group>"; };
 		DC37F8541D79C42F00E0DBE5 /* OpenSansBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansBold.ttf; sourceTree = "<group>"; };
 		DC37F8571D79D40800E0DBE5 /* TrialPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageView.swift; sourceTree = "<group>"; };
+		DC91E0401D8C4082003A4941 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DC91E0431D8C4301003A4941 /* WorkSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.otf"; sourceTree = "<group>"; };
 		DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersPresentation.swift; sourceTree = "<group>"; };
 		DC9C6C631D6C98B10034DC5A /* ValidationErrorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValidationErrorCell.xib; sourceTree = "<group>"; };
 		DC9C6C661D6C995B0034DC5A /* ValidationErrorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationErrorCell.swift; sourceTree = "<group>"; };
@@ -308,7 +311,7 @@
 		E72916571D88365E00A6D70A /* ProfileEditingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingView.swift; sourceTree = "<group>"; };
 		E72916591D883A7A00A6D70A /* ProfileEditingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingModel.swift; sourceTree = "<group>"; };
 		E729165B1D88459A00A6D70A /* ProfileEditingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingPresenter.swift; sourceTree = "<group>"; };
-		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_Storyboard.storyboard; sourceTree = "<group>"; };
+		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		E774EF8A1D899629007A8BC4 /* ProfileEditingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingHelpers.swift; sourceTree = "<group>"; };
 		E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageSelectionView.swift; sourceTree = "<group>"; };
 		E7C1F2681D88011C007F9D7A /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -468,12 +471,8 @@
 				2F07298D1D64C85200A71B3C /* BDesignworks.entitlements */,
 				21DB304819DD2D6D003A418D /* Constants.swift */,
 				21DB301419DD2289003A418D /* AppDelegate.swift */,
-				E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */,
-				21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */,
-				DC2281101D6B46AB00D5A0DA /* TrialPage.storyboard */,
-				E7C1F2681D88011C007F9D7A /* Profile.storyboard */,
-				DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */,
 				21DB301E19DD2289003A418D /* Images.xcassets */,
+				DC91E0421D8C408A003A4941 /* Storyboards */,
 				DC22811A1D6B46B700D5A0DA /* API */,
 				DC22811C1D6B46D000D5A0DA /* Database */,
 				196D6E161BAB0736000B7997 /* Helpers */,
@@ -717,6 +716,7 @@
 				DC2281251D6B470600D5A0DA /* OpenSansRegularItalic.ttf */,
 				DC2281261D6B470600D5A0DA /* OpenSansSemiBold.ttf */,
 				DC2281271D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf */,
+				DC91E0431D8C4301003A4941 /* WorkSans-Regular.otf */,
 				E7C1F26A1D880AAC007F9D7A /* WorkSans-SemiBold.otf */,
 			);
 			name = Fonts;
@@ -728,6 +728,19 @@
 				DC37F8571D79D40800E0DBE5 /* TrialPageView.swift */,
 			);
 			name = TrialPage;
+			sourceTree = "<group>";
+		};
+		DC91E0421D8C408A003A4941 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */,
+				DC2281101D6B46AB00D5A0DA /* TrialPage.storyboard */,
+				E7566DA11A1F85CB00DE3010 /* Login.storyboard */,
+				DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */,
+				DC91E0401D8C4082003A4941 /* Main.storyboard */,
+				E7C1F2681D88011C007F9D7A /* Profile.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		DC9C6C651D6C98B60034DC5A /* ValidationErrorCell */ = {
@@ -1004,11 +1017,12 @@
 			files = (
 				DC9C6C641D6C98B10034DC5A /* ValidationErrorCell.xib in Resources */,
 				DC22812C1D6B470600D5A0DA /* OpenSansLight.ttf in Resources */,
-				E7566D9F1A1F85CB00DE3010 /* Main_Storyboard.storyboard in Resources */,
+				E7566D9F1A1F85CB00DE3010 /* Login.storyboard in Resources */,
 				218C64C01BA07DDE00EEEDF1 /* Localizable.strings in Resources */,
 				DC37F8551D79C42F00E0DBE5 /* OpenSansBold.ttf in Resources */,
 				2158286D1A91E2F200833BE6 /* mogend.sh in Resources */,
 				DC2281301D6B470600D5A0DA /* OpenSansSemiBold.ttf in Resources */,
+				DC91E0411D8C4082003A4941 /* Main.storyboard in Resources */,
 				DC22812F1D6B470600D5A0DA /* OpenSansRegularItalic.ttf in Resources */,
 				DC2281311D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf in Resources */,
 				DC22812D1D6B470600D5A0DA /* OpenSansLightItalic.ttf in Resources */,
@@ -1469,13 +1483,13 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		E7566DA11A1F85CB00DE3010 /* Main_Storyboard.storyboard */ = {
+		E7566DA11A1F85CB00DE3010 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E7566DA01A1F85CB00DE3010 /* Base */,
 				218C64BB1BA07D3800EEEDF1 /* ru */,
 			);
-			name = Main_Storyboard.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

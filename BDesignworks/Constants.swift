@@ -57,13 +57,14 @@ private func GenerateKey (prefix: String, key: String) -> String {
 
 enum Storyboard {
     case Main
-    
+    case Login
     case TrialPage
     case Welcome
     
     var name: String {
         switch self {
-        case .Main      : return "Main_Storyboard"
+        case .Main      : return "Main"
+        case .Login     : return "Login"
         case .TrialPage : return "TrialPage"
         case .Welcome   : return "WelcomeScreen"
         }
@@ -75,5 +76,29 @@ enum Storyboard {
     
     var firstController: UIViewController? {
         return self.storyboard.instantiateInitialViewController()
+    }
+}
+
+enum Image {
+    enum Icon {
+        static var Menu = UIImage(named: "menuIcon")!
+    }
+    
+    enum Logo {
+        static var HbfLogoWhite = UIImage(named: "hbf-logo-white")!
+    }
+}
+
+enum Fonts {
+    enum OpenSans {
+        case Bold
+        
+        var fontName: String {
+            return "OpenSans-Bold"
+        }
+        
+        func getFontOfSize(size: CGFloat) -> UIFont {
+            return UIFont(name: self.fontName, size: size)!
+        }
     }
 }
