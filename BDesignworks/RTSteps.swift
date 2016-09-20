@@ -11,7 +11,7 @@ import ObjectMapper
 
 extension Router {
     enum Steps {
-        case Send(steps: [ENSteps], source: Source)
+        case send(steps: [ENSteps], source: Source)
         
         enum Source: String {
             case HealthKit    = "healthkit"
@@ -21,39 +21,40 @@ extension Router {
 }
 
 extension Router.Steps: RouterProtocol {
+
     
     var settings: RTRequestSettings {
         switch self {
-        case .Send(_): return RTRequestSettings(method: .POST)
+        case .send(_): return RTRequestSettings(method: .post)
         }
     }
     
     var path: String {
         switch self {
-        case .Send(_): return "/activities"
+        case .send(_): return "/activities"
         }
     }
     
     var parameters: [String : AnyObject]? {
         switch self {
-        case .Send(let steps, let source):
+        case .send(let steps, let source):
             var jsonArray:[[String: AnyObject]] = []
             
-            let dateFormatter = NSDateFormatter()
+            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "Y-MM-dd HH:mm:ss zzz"
             for step in steps {
-                let startString = dateFormatter.stringFromDate(step.startDate)
-                let finishString = dateFormatter.stringFromDate(step.finishDate)
-                jsonArray.append(["started_at": startString, "finished_at": finishString, "steps_count": step.count, "source": source.rawValue])
+                let startString = dateFormatter.string(from: step.startDate as Date)
+                let finishString = dateFormatter.string(from: step.finishDate as Date)
+                jsonArray.append(["started_at": startString as AnyObject, "finished_at": finishString as AnyObject, "steps_count": step.count as AnyObject, "source": source.rawValue as AnyObject])
             }
-            return ["activities": jsonArray]
+            return ["activities": jsonArray as AnyObject]
         }
     }
 }
 
 class RTStepsSendResponse: Mappable {
     
-    required convenience init?(_ map: Map) {
+    required convenience init?(map: Map) {
         self.init()
     }
     

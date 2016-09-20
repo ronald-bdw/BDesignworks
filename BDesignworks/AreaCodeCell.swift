@@ -29,22 +29,22 @@ final class AreaCodeCell: UITableViewCell {
         self.selectedBackgroundView?.backgroundColor = UIColor(fs_hexString: "29537C")
     }
     
-    private func updateCell() {
-        if self.selected {
-            self.countryNameLabel.textColor = UIColor.whiteColor()
-            self.areaCodeLabel.textColor    = UIColor.whiteColor()
+    fileprivate func updateCell() {
+        if self.isSelected {
+            self.countryNameLabel.textColor = UIColor.white
+            self.areaCodeLabel.textColor    = UIColor.white
         } else {
             self.countryNameLabel.textColor = UIColor(fs_hexString: "555555")
             self.areaCodeLabel.textColor    = UIColor(fs_hexString: "555555")
         }
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         self.updateCell()
     }
     
-    func prepareCell(area: Area) {
+    func prepareCell(_ area: Area) {
         self.countryNameLabel.text = area.countryName
         self.areaCodeLabel.text = "\(area.areaCode)"
     }

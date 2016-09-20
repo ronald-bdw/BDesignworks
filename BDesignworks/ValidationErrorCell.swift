@@ -11,7 +11,7 @@ import Foundation
 class ValidationErrorCell: UITableViewCell {
     @IBOutlet weak var errorView: VerificationErrorView!
     
-    func prepareCell(type: RegistrationCellType) {
+    func prepareCell(_ type: RegistrationCellType) {
         self.errorView.setLabel(type.validationError)
     }
 }

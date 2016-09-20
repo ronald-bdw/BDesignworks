@@ -14,13 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         self.setupProject()
 //        User.createTestUser()
         do {
             let realm = try Realm()
-            if let authInfo = realm.objects(AuthInfo).first {
+            if let authInfo = realm.objects(AuthInfo.self).first {
                 if authInfo.isRegistered {
                     ShowWelcomeViewController()
                 }
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     ShowRegistrationViewController()
                 }
             }
-            else if let _ = realm.objects(User).first {
+            else if let _ = realm.objects(ENUser.self).first {
                 ShowConversationViewController()
             }
             else {
@@ -42,59 +42,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication)
+    func applicationWillResignActive(_ application: UIApplication)
     {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication)
+    func applicationDidEnterBackground(_ application: UIApplication)
     {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication)
+    func applicationWillEnterForeground(_ application: UIApplication)
     {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication)
+    func applicationDidBecomeActive(_ application: UIApplication)
     {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication)
+    func applicationWillTerminate(_ application: UIApplication)
     {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
     }
     
-    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         //pearup://pearup.com?authcode=####
         guard let urlFragment = url.fragment,
-            let startRange = urlFragment.rangeOfString("="),
-            let endRange = urlFragment.rangeOfString("&") else {return true}
-        let token = urlFragment.substringWithRange(startRange.endIndex..<endRange.startIndex)
+            let startRange = urlFragment.range(of: "="),
+            let endRange = urlFragment.range(of: "&") else {return true}
+        let token = urlFragment.substring(with: startRange.upperBound..<endRange.lowerBound)
         Logger.debug(token)
         return true
     }
     
     //MARK: - Remote Notifications
     
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
-        let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+        let tokenChars = (deviceToken as NSData).bytes.bindMemory(to: CChar.self, capacity: deviceToken.count)
         var tokenString = ""
-        UIFont.systemFontOfSize(1, weight: 1)
-        for i in 0 ..< deviceToken.length {
+        UIFont.systemFont(ofSize: 1, weight: 1)
+        for i in 0 ..< deviceToken.count {
             let formatString = "%02.2hhx"
             tokenString += String(format: formatString, arguments: [tokenChars[i]])
         }
         
-        NSUserDefaults.standardUserDefaults().setObject(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
-        NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.set(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
+        UserDefaults.standard.set(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
+        UserDefaults.standard.synchronize()
     }
 }
 
@@ -111,20 +111,18 @@ extension AppDelegate {
         //setup Crashlytics
         Fabric.with([Crashlytics.self])
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {  countryCodes }
+        DispatchQueue.global().async {  let _ = countryCodes }
         
         self.setupAppearance()
     }
     
     func setupAppearance() {
         
-        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: false)
-        
         let navigationBar = UINavigationBar.appearance()
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         navigationBar.barTintColor = AppColors.MainColor
-        navigationBar.tintColor = UIColor.whiteColor()
-        navigationBar.translucent = false
+        navigationBar.tintColor = UIColor.white
+        navigationBar.isTranslucent = false
     }
     
     func setupProjectForTests() {
@@ -144,17 +142,16 @@ extension AppDelegate {
     func printProjectSettings() {
         #if DEBUG
             // print documents directory and device ID
-            print("\n*******************************************\nDOCUMENTS:\n\(NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0])\n*******************************************\n")
-            print("\n*******************************************\nDEVICE ID:\n\((UIDevice.currentDevice().identifierForVendor?.UUIDString)!)\n*******************************************\n")
-            print("\n*******************************************\nBUNDLE ID:\n\((NSBundle.mainBundle().bundleIdentifier)!)\n*******************************************\n")
+            print("\n*******************************************\nDOCUMENTS:\n\(NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0])\n*******************************************\n")
+            print("\n*******************************************\nDEVICE ID:\n\((UIDevice.current.identifierForVendor?.uuidString)!)\n*******************************************\n")
+            print("\n*******************************************\nBUNDLE ID:\n\((Bundle.main.bundleIdentifier)!)\n*******************************************\n")
         #endif
     }
     
     func setupLogger() {
-        Logger.setup(.Debug, showLogIdentifier: false, showFunctionName: false, showThreadName: true, showLogLevel: false, showFileNames: true, showLineNumbers: true, showDate: true, writeToFile: nil, fileLogLevel: .None)
+        Logger.setup(level: .debug, showLogIdentifier: false, showFunctionName: false, showThreadName: true, showLevel: false, showFileNames: true, showLineNumbers: true, showDate: true, writeToFile: nil, fileLevel: .none)
         
         Logger.dateFormatter?.dateFormat = "HH:mm:ss.SSS"
-        Logger.xcodeColorsEnabled = true
         
         print()
     }

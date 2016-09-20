@@ -15,16 +15,16 @@ final class TrialPageScreen: UIViewController {
         self.title = "Welcome"
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
-    @IBAction func learnMoreAction(sender: AnyObject) {
+    @IBAction func learnMoreAction(_ sender: AnyObject) {
         ShowTrialPageViewController()
     }
     
-    @IBAction func startTrialAction(sender: AnyObject) {
+    @IBAction func startTrialAction(_ sender: AnyObject) {
         ShowRegistrationViewController()
     }
 }

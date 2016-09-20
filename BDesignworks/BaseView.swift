@@ -12,7 +12,7 @@ import FSHelpers_Swift
 //Inherit from that class if you want add .XIB-view in storyboard
 class BaseView: UIView {
     
-    private var view: UIView?
+    fileprivate var view: UIView?
     
     //MARK: - Manual initializing
     override init(frame: CGRect) {
@@ -26,11 +26,11 @@ class BaseView: UIView {
         self.initialize()
     }
     
-    private func initialize() {
-        self.backgroundColor = UIColor.clearColor()
+    fileprivate func initialize() {
+        self.backgroundColor = UIColor.clear
         self.loadViewFromNib()
         guard let lView = self.view else { return }
-        lView.backgroundColor = UIColor.clearColor()
+        lView.backgroundColor = UIColor.clear
         lView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(lView)
     }
@@ -41,9 +41,9 @@ class BaseView: UIView {
         self.view?.bounds = self.bounds
     }
     
-    private func loadViewFromNib() {
-        let bundle : NSBundle = NSBundle(forClass: self.classForCoder)
+    fileprivate func loadViewFromNib() {
+        let bundle : Bundle = Bundle(for: self.classForCoder)
         let nib    : UINib    = UINib(nibName: self.className, bundle: bundle)
-        self.view = nib.instantiateWithOwner(self, options: nil).first as? UIView
+        self.view = nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
 }

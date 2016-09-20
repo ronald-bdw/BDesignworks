@@ -8,58 +8,57 @@
 
 import Foundation
 
-extension Request {
+extension DataRequest {
     
-    func responseObject<T: Mappable>(completionHandler: Response<T, RTError> -> Void) -> Self {
+    func responseObject<T: Mappable>(_ completionHandler: @escaping (DataResponse<T>) -> Void) -> Self {
         
-        let responseSerializer = ResponseSerializer<T, RTError> { request, response, data, error in
+        let responseSerializer = DataResponseSerializer<T> { request, response, data, error in
             guard error == nil else {
-                return Request.handleErrors(response, error: error!, data: data)
+                return DataRequest.handleErrors(response, error: error!, data: data)
             }
             
-            let JSONResponseSerializer = Request.JSONResponseSerializer(options: .AllowFragments)
-            let result = JSONResponseSerializer.serializeResponse(request, response, data, error)
+            let result = Request.serializeResponseJSON(options: .allowFragments, response: response, data: data, error: error)
             
             switch result {
-            case .Success(let value):
+            case .success(let value):
                 
                 guard let json = value as? [String : AnyObject] else {
-                    return .Failure(RTError(serialize: .WrongType))
+                    return .failure(RTError(serialize: .wrongType))
                 }
                 
-                guard var object = T(JSON: json) else {return .Failure(RTError(serialize: .RequeriedFieldMissing))}
+                guard var object = T(JSON: json) else {return .failure(RTError(serialize: .requeriedFieldMissing))}
                 
-                object = Mapper<T>().map(json, toObject: object)
+                object = Mapper<T>().map(JSONObject: json, toObject: object)
                 
-                return .Success(object)
+                return .success(object)
                 
-            case .Failure(_):
-                if let object = T(JSON: [:]) where data?.length == 0 {
-                    return .Success(object)
+            case .failure(_):
+                if let object = T(JSON: [:]) , data?.count == 0 {
+                    return .success(object)
                 }
-                return .Failure(RTError(serialize: .JSONSerializingFailed))
+                return .failure(RTError(serialize: .jsonSerializingFailed))
             }
         }
         
         return response(responseSerializer: responseSerializer, completionHandler: completionHandler)
     }
     
-    class func handleErrors<T: Mappable>(response: NSHTTPURLResponse?, error: NSError, data: NSData?) -> Result<T, RTError> {
+    class func handleErrors<T: Mappable>(_ response: HTTPURLResponse?, error: Swift.Error, data: Data?) -> Result<T> {
         do {
-            guard let lData = data, let json = try NSJSONSerialization.JSONObjectWithData(lData, options: []) as? [String : AnyObject] else {
-                return .Failure(RTError(serialize: .WrongType))
+            guard let lData = data, let json = try JSONSerialization.jsonObject(with: lData as Data, options: []) as? [String : AnyObject] else {
+                return .failure(RTError(serialize: .wrongType))
             }
-            if response?.statusCode == 422 && response?.URL?.host == NSURL(string: Router.BaseURL)?.host {
+            if response?.statusCode == 422 && response?.url?.host == NSURL(string: Router.BaseURL)?.host {
                 var object = ValidationError()
-                object = Mapper<ValidationError>().map(json["error"], toObject: object)
+                object = Mapper<ValidationError>().map(JSONObject: json["error"], toObject: object)
                 if object.isPhoneValid == false {
-                    return .Failure(RTError(backend: .InvalidPhone))
+                    return .failure(RTError(backend: .invalidPhone))
                 }
                 if object.isSmsCodeValid == false {
-                    return .Failure(RTError(backend: .SmsCodeExpired))
+                    return .failure(RTError(backend: .smsCodeExpired))
                 }
                 if object.isEmailNotTaken == false {
-                    return .Failure(RTError(backend: .EmainTaken))
+                    return .failure(RTError(backend: .emainTaken))
                 }
             }
 
@@ -67,6 +66,6 @@ extension Request {
         catch let error {
             Logger.error("\(error)")
         }
-        return .Failure(RTError(request: .Unknown(error: error)))
+        return .failure(RTError(request: .unknown(error: error)))
     }
 }

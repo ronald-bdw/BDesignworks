@@ -1,27 +1,35 @@
-platform :ios, '8.2'
+platform :ios, '9.1'
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-
 abstract_target 'Abstract' do
-    pod 'FSHelpers+Swift', :git => 'https://github.com/fs/FSHelper.git', :commit => '62a65e4be8dc3cee77d7efb5042c1c4b362982be'
+    
+    pod 'Realm'
+    pod 'RealmSwift'
+    
+    # Helpers
+    pod 'FSHelpers+Swift', :git => 'https://github.com/fs/FSHelper.git', :branch => 'master'
+    pod 'XCGLogger', :git => 'https://github.com/DaveWoodCom/XCGLogger.git', :branch => 'swift_3.0'
     
     # Analytics
     pod 'Fabric'
     pod 'Crashlytics'
     
     # Libraries
-    pod 'Alamofire', '=3.4.2'
-    pod 'ObjectMapper', '=1.4.0'
-    pod 'RealmSwift', '=1.0.2'
-    pod 'XCGLogger', '=3.5.1'
-    pod 'SAMKeychain', '=1.5.1'
-    pod 'SVProgressHUD', '=2.0.3'
-    pod 'SDWebImage', '=3.8.2'
+    pod 'Alamofire'
+    pod 'ObjectMapper'
+    pod 'SDWebImage'
+    pod 'SVProgressHUD'
+    pod 'Smooch'
+    pod 'SideMenu'
+    #pod 'Reachability'
+    #pod 'SVProgressHUD'
+    #pod 'MKStoreKit'
     
-	pod 'Smooch', '=4.3.1'
-	pod 'SideMenu', '=1.2.0'
-
+    #secure
+    pod 'SAMKeychain'
+    
+    #TARGETS
     target 'BDesignworks' do
     end
     
@@ -29,6 +37,14 @@ abstract_target 'Abstract' do
     end
     
     target 'BDesignworksUITests' do
+    end
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '3.0'
+        end
     end
 end
 

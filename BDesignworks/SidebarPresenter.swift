@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ISidebarPresenterModel: class {
-    func userLoaded(user: User)
+    func userLoaded(_ user: ENUser)
 }
 
 protocol ISidebarPresenterView {
@@ -25,7 +25,7 @@ class SidebarPresenter {
 }
 
 extension SidebarPresenter: ISidebarPresenterModel {
-    func userLoaded(user: User) {
+    func userLoaded(_ user: ENUser) {
         self.view?.updateView(user)
     }
 }

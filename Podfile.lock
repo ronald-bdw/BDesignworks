@@ -1,63 +1,72 @@
 PODS:
-  - Alamofire (3.4.2)
+  - Alamofire (4.0.0)
   - Crashlytics (3.8.1):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.8)
   - FSHelpers+Swift (2.2)
-  - ObjectMapper (1.4.0)
-  - Realm (1.0.2):
-    - Realm/Headers (= 1.0.2)
-  - Realm/Headers (1.0.2)
-  - RealmSwift (1.0.2):
-    - Realm (= 1.0.2)
+  - ObjectMapper (2.0.0)
+  - Realm (1.1.0):
+    - Realm/Headers (= 1.1.0)
+  - Realm/Headers (1.1.0)
+  - RealmSwift (1.1.0):
+    - Realm (= 1.1.0)
   - SAMKeychain (1.5.1)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - SideMenu (1.2.0)
-  - Smooch (4.3.1)
+  - SideMenu (2.0.1)
+  - Smooch (5.0.0)
   - SVProgressHUD (2.0.3)
-  - XCGLogger (3.5.1)
+  - XCGLogger (4.0.0-beta.5):
+    - XCGLogger/Core (= 4.0.0-beta.5)
+  - XCGLogger/Core (4.0.0-beta.5)
 
 DEPENDENCIES:
-  - Alamofire (= 3.4.2)
+  - Alamofire
   - Crashlytics
   - Fabric
-  - FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`, commit `62a65e4be8dc3cee77d7efb5042c1c4b362982be`)
-  - ObjectMapper (= 1.4.0)
-  - RealmSwift (= 1.0.2)
-  - SAMKeychain (= 1.5.1)
-  - SDWebImage (= 3.8.2)
-  - SideMenu (= 1.2.0)
-  - Smooch (= 4.3.1)
-  - SVProgressHUD (= 2.0.3)
-  - XCGLogger (= 3.5.1)
+  - FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`, branch `master`)
+  - ObjectMapper
+  - Realm
+  - RealmSwift
+  - SAMKeychain
+  - SDWebImage
+  - SideMenu
+  - Smooch
+  - SVProgressHUD
+  - XCGLogger (from `https://github.com/DaveWoodCom/XCGLogger.git`, branch `swift_3.0`)
 
 EXTERNAL SOURCES:
   FSHelpers+Swift:
-    :commit: 62a65e4be8dc3cee77d7efb5042c1c4b362982be
+    :branch: master
     :git: https://github.com/fs/FSHelper.git
+  XCGLogger:
+    :branch: swift_3.0
+    :git: https://github.com/DaveWoodCom/XCGLogger.git
 
 CHECKOUT OPTIONS:
   FSHelpers+Swift:
-    :commit: 62a65e4be8dc3cee77d7efb5042c1c4b362982be
+    :commit: 835f7d730f142880439d27607f905125bf39fa0e
     :git: https://github.com/fs/FSHelper.git
+  XCGLogger:
+    :commit: ecee85d6343bbfc653e5a313ca863dc3f6161bfa
+    :git: https://github.com/DaveWoodCom/XCGLogger.git
 
 SPEC CHECKSUMS:
-  Alamofire: 6aa33201d20d069e1598891cf928883ff1888c7a
+  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
   Crashlytics: 4391d8df0b125345e9f209c5db6e7f40a6a8435d
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   FSHelpers+Swift: df9494a1d09ac433dcb3a88dcec6546a7a09c17b
-  ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
-  Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
-  RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
+  ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
+  Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
+  RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
   SAMKeychain: 6b04852a20684167aea97bdf8ba12c95d3616376
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  SideMenu: ca3f5cee9f711191be4edb938eb2ce1de1595293
-  Smooch: 1d2d45c808bf00125769edfa6e5e7e37dff3bc3b
+  SideMenu: 015d74d94b2e77c4710cc30a60e2d0be71821d2b
+  Smooch: 88d317c4972654e854eba3383d43e6b77d0cb988
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
-  XCGLogger: 94829865eea6fcc1f9a49e23bdc9f120a6848f30
+  XCGLogger: 27634666573071fcfacbf8c20f84285363fa7d4a
 
-PODFILE CHECKSUM: a8c0aa324f82e18c8276d510fd006a49b977b5a8
+PODFILE CHECKSUM: 01a8de51138822e45e9b4d92434639fff11f7db2
 
 COCOAPODS: 1.0.1

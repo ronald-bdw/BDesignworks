@@ -9,22 +9,22 @@
 import Foundation
 
 protocol IRegistrationViewPresenter: class {
-    func submitTapped(user: RegistrationUser?)
+    func submitTapped(_ user: RegistrationUser?)
     func getRegistrationUser() -> RegistrationUser?
-    func resendPhoneCodeTapped(user: RegistrationUser?)
+    func resendPhoneCodeTapped(_ user: RegistrationUser?)
     func viewDidLoad()
 }
 
 protocol IRegistrationModelPresenter: class {
     func registrationStarted()
     func registrationSuccessed()
-    func requestFailed(error: RTError?)
+    func requestFailed(_ error: RTError?)
     func updateValidationErrors()
     func phoneCodeReceived()
 }
 
 extension IRegistrationModelPresenter {
-    func requestFailed(error: RTError? = nil) {}
+    func requestFailed(_ error: RTError? = nil) {}
 }
 
 class RegistrationPresenter {
@@ -36,20 +36,20 @@ class RegistrationPresenter {
 
 extension RegistrationPresenter: IRegistrationModelPresenter {
     func registrationStarted() {
-        self.view?.setLoadingState(.Loading)
+        self.view?.setLoadingState(.loading)
     }
     
     func registrationSuccessed() {
-        self.view?.setLoadingState(.Done)
+        self.view?.setLoadingState(.done)
     }
     
-    func requestFailed(error: RTError? = nil) {
-        guard let lError = error else {self.view?.setLoadingState(.Failed); return}
-        if case .Backend(let backendError) = lError {
+    func requestFailed(_ error: RTError? = nil) {
+        guard let lError = error else {self.view?.setLoadingState(.failed); return}
+        if case .backend(let backendError) = lError {
             self.view?.showErrorView(backendError.humanDescription.title, content: backendError.humanDescription.text, errorType: backendError)
             return
         }
-        self.view?.setLoadingState(.Failed)
+        self.view?.setLoadingState(.failed)
     }
     
     func updateValidationErrors() {
@@ -62,7 +62,7 @@ extension RegistrationPresenter: IRegistrationModelPresenter {
 }
 
 extension RegistrationPresenter: IRegistrationViewPresenter {
-    func submitTapped(user: RegistrationUser?) {
+    func submitTapped(_ user: RegistrationUser?) {
         guard let lUser = user else {return}
         self.model?.register(lUser)
     }
@@ -71,7 +71,7 @@ extension RegistrationPresenter: IRegistrationViewPresenter {
         return self.model?.getRegistrationUser()
     }
     
-    func resendPhoneCodeTapped(user: RegistrationUser?) {
+    func resendPhoneCodeTapped(_ user: RegistrationUser?) {
         self.model?.receivePhoneCode(user)
     }
     

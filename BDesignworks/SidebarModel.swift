@@ -21,15 +21,15 @@ class SidebarModel {
 
 extension SidebarModel: ISidebarModel {
     func loadUser() {
-        if let user = User.getMainUser() {
+        if let user = ENUser.getMainUser() {
             self.presenter?.userLoaded(user)
         }
-        Router.User.GetUser.request().responseObject { (response: Response<RTUserResponse, RTError>) in
+        let _ = Router.User.getUser.request().responseObject { (response: DataResponse<RTUserResponse>) in
             switch response.result {
-            case .Success(let value):
+            case .success(let value):
                 guard let user = value.user else {return}
                 self.presenter?.userLoaded(user)
-            case .Failure(let error):
+            case .failure(let error):
                 Logger.error(error)
             }
         }

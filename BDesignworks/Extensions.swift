@@ -10,7 +10,7 @@ import Foundation
 
 extension UIAlertController {
     func presentOnModal() {
-        guard   let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate,
+        guard   let appDelegate = UIApplication.shared.delegate as? AppDelegate,
             let window = appDelegate.window else {return}
         var presentedController = window.rootViewController
         var nextController = presentedController?.presentedViewController
@@ -18,13 +18,13 @@ extension UIAlertController {
             presentedController = nextController
             nextController = presentedController?.presentedViewController
         }
-        presentedController?.presentViewController(self, animated: true, completion: nil)
+        presentedController?.present(self, animated: true, completion: nil)
     }
     
     /** Presents alert only if no alert presented on view.
      */
     func presentIfNoAlertsPresented() {
-        guard   let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate,
+        guard   let appDelegate = UIApplication.shared.delegate as? AppDelegate,
             let window = appDelegate.window else {return}
         var presentedController = window.rootViewController
         var nextController = presentedController?.presentedViewController
@@ -33,14 +33,14 @@ extension UIAlertController {
             nextController = presentedController?.presentedViewController
         }
         if let _ = presentedController as? UIAlertController {return}
-        presentedController?.presentViewController(self, animated: true, completion: nil)
+        presentedController?.present(self, animated: true, completion: nil)
     }
 }
 
-public extension SequenceType {
+public extension Sequence {
     
-    func categorise<U : Hashable>(@noescape keyFunc: Generator.Element -> U) -> [U:[Generator.Element]] {
-        var dict: [U:[Generator.Element]] = [:]
+    func categorise<U : Hashable>(_ keyFunc: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
+        var dict: [U:[Iterator.Element]] = [:]
         for el in self {
             let key = keyFunc(el)
             if case nil = dict[key]?.append(el) { dict[key] = [el] }
@@ -51,34 +51,34 @@ public extension SequenceType {
 
 extension Dictionary where Value: Equatable {
     
-    public mutating func updateIfNotDefault(object: Value?, forKey key: Key, defaultValue: Value) {
+    public mutating func updateIfNotDefault(_ object: Value?, forKey key: Key, defaultValue: Value) {
         guard defaultValue != object else {return}
         self.fs_updateIfExist(object, forKey: key)
     }
 }
 
-extension NSDate {
-    public func dateByAddingHours (hours: Int) -> NSDate {
-        let timeInterval:NSTimeInterval = self.timeIntervalSinceReferenceDate + FSTimePeriod.Hour.rawValue * NSTimeInterval(hours)
-        let newDate = NSDate(timeIntervalSinceReferenceDate: timeInterval)
+extension Date {
+    public func dateByAddingHours (_ hours: Int) -> Date {
+        let timeInterval:TimeInterval = self.timeIntervalSinceReferenceDate + FSTimePeriod.hour.rawValue * TimeInterval(hours)
+        let newDate = Date(timeIntervalSinceReferenceDate: timeInterval)
         return newDate
     }
     
-    public func dateByAddingMinutes (minutes: Int) -> NSDate {
-        let timeInterval:NSTimeInterval = self.timeIntervalSinceReferenceDate + FSTimePeriod.Minute.rawValue * NSTimeInterval(minutes)
-        let newDate = NSDate(timeIntervalSinceReferenceDate: timeInterval)
+    public func dateByAddingMinutes (_ minutes: Int) -> Date {
+        let timeInterval:TimeInterval = self.timeIntervalSinceReferenceDate + FSTimePeriod.minute.rawValue * TimeInterval(minutes)
+        let newDate = Date(timeIntervalSinceReferenceDate: timeInterval)
         return newDate
     }
     
-    public func dateByAddingTime(time: NSDate) -> NSDate {
-        let calendar = NSCalendar.currentCalendar()
-        calendar.timeZone = NSTimeZone(abbreviation: "UTC")!
+    public func dateByAddingTime(_ time: Date) -> Date {
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(abbreviation: "UTC")!
         
-        let dateComponents = calendar.components([.Year, .Month, .Day], fromDate: self)
+        let dateComponents = (calendar as NSCalendar).components([.year, .month, .day], from: self)
         
-        let timeComponents = calendar.components([.Hour, .Minute, .Second], fromDate: time)
+        let timeComponents = (calendar as NSCalendar).components([.hour, .minute, .second], from: time)
         
-        let dateTimeComponents = NSDateComponents()
+        var dateTimeComponents = DateComponents()
         dateTimeComponents.year = dateComponents.year
         dateTimeComponents.month = dateComponents.month
         dateTimeComponents.day = dateComponents.day
@@ -86,38 +86,38 @@ extension NSDate {
         dateTimeComponents.minute = timeComponents.minute
         dateTimeComponents.second = timeComponents.second
         
-        return calendar.dateFromComponents(dateTimeComponents)!
+        return calendar.date(from: dateTimeComponents)!
     }
     
-    func compareByDay(date: NSDate) -> NSComparisonResult {
+    func compareByDay(_ date: Date) -> ComparisonResult {
         
         let currentTimeIntervalSince1970 = self.fs_midnightDate().timeIntervalSince1970
         let comparisionTimeIntervalSince1970 = date.fs_midnightDate().timeIntervalSince1970
         
         if currentTimeIntervalSince1970 < comparisionTimeIntervalSince1970 {
-            return .OrderedAscending
+            return .orderedAscending
         }
         if currentTimeIntervalSince1970 > comparisionTimeIntervalSince1970 {
-            return .OrderedDescending
+            return .orderedDescending
         }
-        return .OrderedSame
+        return .orderedSame
     }
     
-    static func datesByDay(from startDate: NSDate, to finishDate: NSDate) -> [NSDate] {
-        var result: [NSDate] = []
+    static func datesByDay(from startDate: Date, to finishDate: Date) -> [Date] {
+        var result: [Date] = []
         var appendDate = startDate
-        while appendDate.compareByDay(finishDate) == .OrderedAscending || appendDate.compareByDay(finishDate) == .OrderedSame {
+        while appendDate.compareByDay(finishDate) == .orderedAscending || appendDate.compareByDay(finishDate) == .orderedSame {
             result.append(appendDate)
             appendDate = appendDate.fs_dateByAddingDays(1)
         }
         return result
     }
     
-    static func getDateFromISO8601(dateString: String) -> NSDate? {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+    static func getDateFromISO8601(_ dateString: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
-        return dateFormatter.dateFromString(dateString)
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        return dateFormatter.date(from: dateString)
     }
 }

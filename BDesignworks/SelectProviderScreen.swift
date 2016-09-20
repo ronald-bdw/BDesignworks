@@ -32,7 +32,7 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     @IBOutlet weak var inactiveViewTapGestureRecognizer: UIGestureRecognizer!
     @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
     
-    private lazy var autocompleteView: AutocompleteView = {
+    fileprivate lazy var autocompleteView: AutocompleteView = {
         let autocompleteView = AutocompleteView()
         autocompleteView.items = [.SelectOne, .HBF, .NoProvider]
         autocompleteView.delegate = self
@@ -48,68 +48,68 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     }
     
     override func viewWillLayoutSubviews() {
-        self.autocompleteView.frame = CGRectMake(0,
-                                                 self.view.fs_height - self.autocompleteView.fs_height,
-                                                 self.view.fs_width,
-                                                 self.autocompleteView.fs_height)
+        self.autocompleteView.frame = CGRect(x: 0,
+                                                 y: self.view.fs_height - self.autocompleteView.fs_height,
+                                                 width: self.view.fs_width,
+                                                 height: self.autocompleteView.fs_height)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.initialAnimation()
     }
     
-    private func getDefaultLogoTopOffset() -> CGFloat {
-        return UIScreen.mainScreen().bounds.size.height == 480 ? 50 : FSScreenBounds.size.height*Constants.defaultLogoTopConstraintRatio  //Checking for iPhone 4/4s
+    fileprivate func getDefaultLogoTopOffset() -> CGFloat {
+        return UIScreen.main.bounds.size.height == 480 ? 50 : UIScreen.main.bounds.size.height*Constants.defaultLogoTopConstraintRatio  //Checking for iPhone 4/4s
     }
     
-    private func initialAnimation() {
+    fileprivate func initialAnimation() {
         self.providerSelectionButton.alpha = 0
         self.nextButton.alpha = 0
         
-        UIView.animateWithDuration(0.5) {[weak self] in
+        UIView.animate(withDuration: 0.5, animations: {[weak self] in
             guard let sself = self else { return }
             sself.providerSelectionButton.alpha = 1
             sself.nextButton.alpha = 1
-        }
+        }) 
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let lIdentifier = segue.identifier else {
-            super.prepareForSegue(segue, sender: sender)
+            super.prepare(for: segue, sender: sender)
             return
         }
         switch lIdentifier {
         case SegueIdentifiers.ShowTrial:
-            segue.destinationViewController.transitioningDelegate = self
-            segue.destinationViewController.modalPresentationStyle = .Custom
+            segue.destination.transitioningDelegate = self
+            segue.destination.modalPresentationStyle = .custom
         default:
-            super.prepareForSegue(segue, sender: sender)
+            super.prepare(for: segue, sender: sender)
         }
     }
     
-    func changeViewState(active: Bool) {
-        self.inactiveView.hidden = !active
+    func changeViewState(_ active: Bool) {
+        self.inactiveView.isHidden = !active
     }
     
-    @IBAction func disableAutocompleteViewPressed(sender: AnyObject) {
+    @IBAction func disableAutocompleteViewPressed(_ sender: AnyObject) {
         self.providerSelectionButton.didChangeState(self)
     }
     
     //MARK: Actions
-    @IBAction func nextButtonPressed(sender: AnyObject) {
+    @IBAction func nextButtonPressed(_ sender: AnyObject) {
         guard let labelText = self.providerSelectionButton.chooseLabel.text,
             let selectedButtonState = ProviderOption(rawValue: labelText) else {return}
         
         switch selectedButtonState {
-        case .HBF: self.performSegueWithIdentifier(SegueIdentifiers.ShowVerify, sender: nil)
-        case .NoProvider: self.performSegueWithIdentifier(SegueIdentifiers.ShowTrial, sender: nil)
+        case .HBF: self.performSegue(withIdentifier: SegueIdentifiers.ShowVerify, sender: nil)
+        case .NoProvider: self.performSegue(withIdentifier: SegueIdentifiers.ShowTrial, sender: nil)
         default: return
         }
     }
     
     //MARK: Delegates
-    func rollUpButtonDidChangeState(active: Bool) {
+    func rollUpButtonDidChangeState(_ active: Bool) {
         if active {
             self.autocompleteView.present()
         } else {
@@ -118,20 +118,20 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         self.changeViewState(active)
     }
     
-    func autocompleteViewRowSelected(row: Int, item: String) {
+    func autocompleteViewRowSelected(_ row: Int, item: String) {
         self.providerSelectionButton.chooseLabel.text = item
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .Default
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .default
     }
 }
 
 extension SelectProviderScreen: UIViewControllerTransitioningDelegate {
     
-    func presentationControllerForPresentedViewController(presented: UIViewController,
-                                                          presentingViewController presenting: UIViewController,
-                                                                                   sourceViewController source: UIViewController) -> UIPresentationController? {
-        return ModalPresentationController(presentedViewController: presented, presentingViewController: presenting)
+    func presentationController(forPresented presented: UIViewController,
+                                                          presenting: UIViewController?,
+                                                                                   source: UIViewController) -> UIPresentationController? {
+        return ModalPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

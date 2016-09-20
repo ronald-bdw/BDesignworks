@@ -29,7 +29,7 @@ final class PaymentScreen: UITableViewController, ToggleButtonDelegate {
         self.thirdToggle.delegate = self
     }
     
-    func toggleButtonWasPressed(on: Bool, buttonTag: Int)
+    func toggleButtonWasPressed(_ on: Bool, buttonTag: Int)
     {
         self.firstToggle.setToggled(false)
         self.secondToggle.setToggled(false)

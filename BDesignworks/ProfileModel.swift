@@ -20,10 +20,10 @@ class ProfileModel {
 
 extension ProfileModel: IProfileModel {
     func getUser() {
-        Router.User.GetUser.request().responseObject { (response: Response<RTUserResponse, RTError>) in
+        let _ = Router.User.getUser.request().responseObject { (response: DataResponse<RTUserResponse>) in
             switch response.result {
-            case .Success(let value):
-                let user = value.user == nil ? User.getMainUser() : value.user
+            case .success(let value):
+                let user = value.user == nil ? ENUser.getMainUser() : value.user
                 guard let lUser = user else {return}
                 self.presenter?.userReceived(lUser)
                 guard let receivedUser = value.user else {return}
@@ -36,9 +36,9 @@ extension ProfileModel: IProfileModel {
                 catch let error {
                     Logger.error(error)
                 }
-            case .Failure(let error):
+            case .failure(let error):
                 Logger.error(error)
-                guard let lUser = User.getMainUser() else {return}
+                guard let lUser = ENUser.getMainUser() else {return}
                 self.presenter?.userReceived(lUser)
             }
         }

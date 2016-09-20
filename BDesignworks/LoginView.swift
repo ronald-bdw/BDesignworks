@@ -11,7 +11,7 @@ import Foundation
 typealias LoginMVP = MVPContainer<LoginView, LoginPresenter, LoginModel>
 
 protocol ILoginView: class {
-    func setLoadingState (state: LoadingState)
+    func setLoadingState (_ state: LoadingState)
 }
 
 class LoginView: UIViewController {
@@ -27,13 +27,13 @@ class LoginView: UIViewController {
 }
 
 extension LoginView: ILoginView {
-    func setLoadingState(state: LoadingState) {
+    func setLoadingState(_ state: LoadingState) {
         switch state {
-        case .Loading:
+        case .loading:
             Logger.debug("loading")
-        case .Done:
+        case .done:
             ShowConversationViewController()
-        case .Failed:
+        case .failed:
             Logger.debug("failed")
         }
     }

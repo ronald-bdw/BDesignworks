@@ -11,7 +11,7 @@ import Foundation
 typealias ProfileMVP = MVPContainer<ProfileView, ProfilePresenter, ProfileModel>
 
 protocol IProfileView: class {
-    func updateView(with: User)
+    func updateView(_ with: ENUser)
 }
 
 class ProfileView: UITableViewController {
@@ -29,14 +29,14 @@ class ProfileView: UITableViewController {
         let _ = ProfileMVP(controller: self)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.presenter?.viewLoaded()
     }
 }
 
 extension ProfileView: IProfileView {
-    func updateView(user: User) {
+    func updateView(_ user: ENUser) {
         self.nameLabel.text = user.fullname
         self.emailPreviewLabel.text = user.email
         self.emailLabel.text = user.email

@@ -16,7 +16,7 @@ class RoundImage: UIImageView
         
         self.layer.masksToBounds = false
         self.clipsToBounds = true
-        self.layer.borderColor = UIColor.whiteColor().CGColor
+        self.layer.borderColor = UIColor.white.cgColor
         self.layer.borderWidth = 2
         self.layer.cornerRadius = self.frame.size.height/2
     }

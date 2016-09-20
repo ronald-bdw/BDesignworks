@@ -11,7 +11,7 @@ import UIKit
 
 protocol ToggleButtonDelegate
 {
-    func toggleButtonWasPressed(on: Bool, buttonTag: Int)
+    func toggleButtonWasPressed(_ on: Bool, buttonTag: Int)
 }
 
 
@@ -19,18 +19,18 @@ class ToggleButton: UIView
 {
     var delegate: ToggleButtonDelegate?
     var toggleTag = 0
-    private(set) var on = false
-    var color = UIColor.grayColor() {
+    fileprivate(set) var on = false
+    var color = UIColor.gray {
         didSet {
-            self.circle.layer.borderColor = self.color.CGColor
+            self.circle.layer.borderColor = self.color.cgColor
             self.dot.backgroundColor = self.color
         }
     }
     
     
-    private let circle = UIView()
-    private let dot = UIView()
-    private var isAnimating = false
+    fileprivate let circle = UIView()
+    fileprivate let dot = UIView()
+    fileprivate var isAnimating = false
     
     //MARK: Lifecycle
     override init(frame: CGRect)
@@ -49,21 +49,21 @@ class ToggleButton: UIView
     
     func setup()
     {
-        self.backgroundColor = UIColor.whiteColor()
-        self.userInteractionEnabled = true
+        self.backgroundColor = UIColor.white
+        self.isUserInteractionEnabled = true
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressed)))
         
-        self.circle.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.width)
+        self.circle.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.width)
         self.circle.layer.cornerRadius = self.frame.size.width/2;
         self.circle.layer.borderWidth = self.frame.size.width / 30 * 2;
-        self.circle.layer.borderColor = self.color.CGColor
+        self.circle.layer.borderColor = self.color.cgColor
         self.addSubview(self.circle)
         
         let dotSize = self.frame.size.width - self.frame.size.width/4;
-        self.dot.frame = CGRectMake((self.frame.size.width - dotSize)/2, (self.frame.size.height - dotSize)/2, dotSize, dotSize)
+        self.dot.frame = CGRect(x: (self.frame.size.width - dotSize)/2, y: (self.frame.size.height - dotSize)/2, width: dotSize, height: dotSize)
         self.dot.backgroundColor = self.color
         self.dot.layer.cornerRadius = dotSize/2;
-        self.dot.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.001, 0.001);
+        self.dot.transform = CGAffineTransform.identity.scaledBy(x: 0.001, y: 0.001);
         self.addSubview(self.dot);
     }
     
@@ -75,28 +75,28 @@ class ToggleButton: UIView
             self.isAnimating = true
             self.delegate?.toggleButtonWasPressed(self.on, buttonTag: self.toggleTag)
             
-            dispatch_async(dispatch_get_main_queue(),{
-                UIView.animateWithDuration(0.1, animations: {
-                    self.dot.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.2, 1.2);
-                }) { (finished) in
-                    UIView.animateWithDuration(0.1, animations: {
-                        self.dot.transform = self.on ? CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0) : CGAffineTransformScale(CGAffineTransformIdentity, 0.001, 0.001)
-                    }) {(finished) in
+            DispatchQueue.main.async(execute: {
+                UIView.animate(withDuration: 0.1, animations: {
+                    self.dot.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2);
+                }, completion: { (finished) in
+                    UIView.animate(withDuration: 0.1, animations: {
+                        self.dot.transform = self.on ? CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0) : CGAffineTransform.identity.scaledBy(x: 0.001, y: 0.001)
+                    }, completion: {(finished) in
                         self.isAnimating = false
-                    }
-                }
+                    }) 
+                }) 
             })
         }
     }
     
-    func setToggled(on: Bool)
+    func setToggled(_ on: Bool)
     {
         self.on = on
         
-        dispatch_async(dispatch_get_main_queue(),{
-            UIView.animateWithDuration(0.1) {
-                self.dot.transform = self.on ? CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0) : CGAffineTransformScale(CGAffineTransformIdentity, 0.001, 0.001)
-            }
+        DispatchQueue.main.async(execute: {
+            UIView.animate(withDuration: 0.1, animations: {
+                self.dot.transform = self.on ? CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0) : CGAffineTransform.identity.scaledBy(x: 0.001, y: 0.001)
+            }) 
         })
     }
 }

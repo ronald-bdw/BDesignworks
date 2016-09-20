@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol FSError: ErrorType {
+protocol FSError: Swift.Error {
     var description: String {get}
 }
 
@@ -32,52 +32,52 @@ protocol HumanErrorType: FSError {
     var humanDescription: ErrorHumanDescription {get}
 }
 
-enum RTError: ErrorType {
-    case Request(RequestError)
-    case Backend(BackendError)
-    case Serialize(SerializationError)
-    case Unknown(NSError?)
+enum RTError: Swift.Error {
+    case request(RequestError)
+    case backend(BackendError)
+    case serialize(SerializationError)
+    case unknown(Swift.Error?)
 }
 
 extension RTError {
     init (request: RequestError) {
-        self = .Request(request)
+        self = .request(request)
     }
     
     init (backend: BackendError) {
-        self = .Backend(backend)
+        self = .backend(backend)
     }
     
     init (serialize: SerializationError) {
-        self = .Serialize(serialize)
+        self = .serialize(serialize)
     }
     
-    init (error: NSError?) {
-        self = .Unknown(error)
+    init (error: Swift.Error?) {
+        self = .unknown(error)
     }
 }
 
 enum SerializationError {
-    case WrongType
-    case RequeriedFieldMissing
-    case JSONSerializingFailed
-    case Unknown
+    case wrongType
+    case requeriedFieldMissing
+    case jsonSerializingFailed
+    case unknown
 
     var error: RTError {return RTError(serialize: self)}
 }
 
 enum BackendError {
-    case NotAuthorized
-    case SmsCodeExpired
-    case InvalidPhone
-    case EmainTaken
-    case SmsCodeNotExist
+    case notAuthorized
+    case smsCodeExpired
+    case invalidPhone
+    case emainTaken
+    case smsCodeNotExist
     
     var error: RTError {return RTError(backend: self)}
 }
 
 enum RequestError {
-    case Unknown(error: NSError?)
+    case unknown(error: Swift.Error?)
     
     var error: RTError {return RTError(request: self)}
 }

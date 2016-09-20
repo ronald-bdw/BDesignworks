@@ -29,8 +29,8 @@ struct MVPContainer<View: MVPView, Presenter: MVPPresenter, Model: MVPModel> {
         self.init(view: view, makeAssemble: makeAssemble)
     }
     
-    init (identifier: String, storyboard: UIStoryboard = Storyboard.Login.storyboard, makeAssemble: Bool = true) {
-        let controller = storyboard.instantiateViewControllerWithIdentifier(identifier)
+    init (identifier: String, storyboard: UIStoryboard = Storyboard.login.storyboard, makeAssemble: Bool = true) {
+        let controller = storyboard.instantiateViewController(withIdentifier: identifier)
         
         if let view = controller as? View {
             self.init(view: view, makeAssemble: makeAssemble)
@@ -68,11 +68,11 @@ protocol MVPView: class {
     
     var presenter: PresenterProtocol? {get set}
     
-    func setMVP (presenter: Any)
+    func setMVP (_ presenter: Any)
 }
 
 extension MVPView {
-    func setMVP (presenter: Any) {
+    func setMVP (_ presenter: Any) {
         self.presenter = (presenter as! PresenterProtocol)
     }
 }
@@ -85,13 +85,13 @@ protocol MVPPresenter: class {
     var view    : ViewProtocol?      {get set}
     var model   : ModelProtocol?     {get set}
     
-    func setMVP (view: Any, model: Any)
+    func setMVP (_ view: Any, model: Any)
     
     init ()
 }
 
 extension MVPPresenter {
-    func setMVP (view: Any, model: Any) {
+    func setMVP (_ view: Any, model: Any) {
         self.view = (view as! ViewProtocol)
         self.model = (model as! ModelProtocol)
     }
@@ -103,13 +103,13 @@ protocol MVPModel: class {
     
     var presenter: PresenterProtocol? {get set}
     
-    func setMVP (presenter: Any)
+    func setMVP (_ presenter: Any)
     
     init ()
 }
 
 extension MVPModel {
-    func setMVP (presenter: Any) {
+    func setMVP (_ presenter: Any) {
         self.presenter = (presenter as! PresenterProtocol)
     }
 }

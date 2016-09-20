@@ -19,7 +19,7 @@ class VerificationErrorView: BaseView {
     @IBOutlet weak var errorTriangle: UIImageView!
     @IBOutlet weak var containerView: UIView!
     
-    func setLabel(errorText: String) {
+    func setLabel(_ errorText: String) {
         self.errorLabel.text = errorText
     }
     

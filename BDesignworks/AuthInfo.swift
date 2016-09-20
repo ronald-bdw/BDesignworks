@@ -18,8 +18,8 @@ class AuthInfo: Object {
         return "id"
     }
     
-    required convenience init?(_ map: ObjectMapper.Map) {
-        guard let _ = map.JSONDictionary["id"] as? Int else {return nil}
+    required convenience init?(map: ObjectMapper.Map) {
+        guard let _ = map.JSON["id"] as? Int else {return nil}
         self.init()
     }
 }

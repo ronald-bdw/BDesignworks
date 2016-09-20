@@ -9,7 +9,7 @@
 import Foundation
 
 protocol IVerificationViewPresenter: class {
-    func submitTapped(code: String?, phone: String?)
+    func submitTapped(_ code: String?, phone: String?)
 }
 
 protocol IVerificationModelPresenter: class {
@@ -30,7 +30,7 @@ class VerificationPresenter {
 }
 
 extension VerificationPresenter: IVerificationViewPresenter {
-    func submitTapped(code: String?, phone: String?) {
+    func submitTapped(_ code: String?, phone: String?) {
         guard let lCode = code else {return}
         guard let lPhone = phone else {return}
         
@@ -59,15 +59,15 @@ extension VerificationPresenter: IVerificationModelPresenter {
     }
     
     func loadingStarted() {
-        self.view?.setLoadingState(.Loading)
+        self.view?.setLoadingState(.loading)
     }
     
     func phoneCodeReceived() {
-        self.view?.setLoadingState(.Done)
+        self.view?.setLoadingState(.done)
     }
     
     func errorOccured() {
-        self.view?.setLoadingState(.Failed)
+        self.view?.setLoadingState(.failed)
     }
 }
 

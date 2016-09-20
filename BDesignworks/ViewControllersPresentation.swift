@@ -8,17 +8,17 @@
 
 import Foundation
 
-func PresentViewController(controller: UIViewController, animated: Bool = true) {
-    guard let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate,
+func PresentViewController(_ controller: UIViewController, animated: Bool = true) {
+    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
         let window = appDelegate.window
         else {return}
     
     if let rootViewController = window.rootViewController {
         
-        UIView.transitionFromView(rootViewController.view,
-                                  toView: controller.view,
+        UIView.transition(from: rootViewController.view,
+                                  to: controller.view,
                                   duration: animated ? 0.4 : 0.0,
-                                  options: UIViewAnimationOptions.TransitionFlipFromRight) { (success) -> Void in
+                                  options: UIViewAnimationOptions.transitionFlipFromRight) { (success) -> Void in
                                     window.rootViewController = controller
         }
     } else {
@@ -26,35 +26,35 @@ func PresentViewController(controller: UIViewController, animated: Bool = true) 
     }
 }
 
-func ShowInitialViewController(animated: Bool = true) {
+func ShowInitialViewController(_ animated: Bool = true) {
     
-    let navigationController = Storyboard.Login.storyboard.instantiateViewControllerWithIdentifier("WelcomeController")
-    
-    PresentViewController(navigationController, animated: animated)
-}
-
-
-func ShowRegistrationViewController(animated: Bool = true) {
-    
-    let navigationController = Storyboard.TrialPage.storyboard.instantiateViewControllerWithIdentifier("RegistrationNavigationView")
+    let navigationController = Storyboard.login.storyboard.instantiateViewController(withIdentifier: "WelcomeController")
     
     PresentViewController(navigationController, animated: animated)
 }
 
-func ShowConversationViewController(animated: Bool = true) {
-    guard let navigationController = Storyboard.Main.firstController else {return}
+
+func ShowRegistrationViewController(_ animated: Bool = true) {
+    
+    let navigationController = Storyboard.trialPage.storyboard.instantiateViewController(withIdentifier: "RegistrationNavigationView")
     
     PresentViewController(navigationController, animated: animated)
 }
 
-func ShowWelcomeViewController(animated: Bool = true) {
-    guard let navigationController = Storyboard.Welcome.firstController else {return}
+func ShowConversationViewController(_ animated: Bool = true) {
+    guard let navigationController = Storyboard.main.firstController else {return}
     
     PresentViewController(navigationController, animated: animated)
 }
 
-func ShowTrialPageViewController(animated: Bool = true) {
-    guard let navigationController = Storyboard.TrialPage.firstController else {return}
+func ShowWelcomeViewController(_ animated: Bool = true) {
+    guard let navigationController = Storyboard.welcome.firstController else {return}
+    
+    PresentViewController(navigationController, animated: animated)
+}
+
+func ShowTrialPageViewController(_ animated: Bool = true) {
+    guard let navigationController = Storyboard.trialPage.firstController else {return}
     
     PresentViewController(navigationController, animated: animated)
 }
