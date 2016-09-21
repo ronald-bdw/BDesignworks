@@ -48,6 +48,10 @@ extension DataRequest {
             guard let lData = data, let json = try JSONSerialization.jsonObject(with: lData as Data, options: []) as? [String : AnyObject] else {
                 return .failure(RTError(serialize: .wrongType))
             }
+            if response?.statusCode == 401 && response?.url?.host == NSURL(string: Router.BaseURL)?.host {
+                ShowUnauthorizedAlert()
+                return .failure(RTError(backend: .notAuthorized))
+            }
             if response?.statusCode == 422 && response?.url?.host == NSURL(string: Router.BaseURL)?.host {
                 var object = ValidationError()
                 object = Mapper<ValidationError>().map(JSONObject: json["error"], toObject: object)

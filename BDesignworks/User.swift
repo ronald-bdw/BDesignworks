@@ -107,6 +107,20 @@ class ENUser: Object, IUser {
             Logger.error("\(error)")
         }
     }
+    
+    static func logout() {
+        guard let user = ENUser.getMainUser() else {return}
+        user.token = nil
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.delete(realm.objects(ENUser.self))
+            }
+        }
+        catch let error {
+            Logger.error(error)
+        }
+    }
 }
 
 extension ENUser: Mappable {

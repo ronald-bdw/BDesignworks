@@ -65,19 +65,21 @@ class HealthKitManager
     
     func querySteps(_ completionHandler: HKObserverQueryCompletionHandler? = nil) {
         
+        let endDate = Date()
+        let startDate = ENUser.getMainUser()?.lastStepsHealthKitUpdateDate ?? endDate.fs_dateByAddingDays(-self.defaultDaysToStepsCount)
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions())
         let sampleQuery = HKSampleQuery(sampleType: self.stepsCount,
-                                        predicate: nil,
-                                        limit: self.defaultSamplesCount,
+                                        predicate: predicate,
+                                        limit: HKObjectQueryNoLimit,
                                         sortDescriptors: [NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)] )
-        {  [weak self] (query, results, error) in
+        {  (query, results, error) in
             
-            guard let results = results as? [HKQuantitySample] else {return}
-            guard let sself = self else {return}
-            let endDate = Date()
-            let startDate = ENUser.getMainUser()?.lastStepsHealthKitUpdateDate ?? endDate.fs_dateByAddingDays(-sself.defaultDaysToStepsCount)
-            
-            let validResults = results.filter({startDate.compare($0.startDate) == .orderedAscending})
-            let steps = validResults.map({ENSteps(startDate: $0.startDate, finishDate: $0.endDate, count: Int($0.quantity.doubleValue(for: (HKUnit.count()))))})
+            guard var results = results as? [HKQuantitySample] else {return}
+            if Int(startDate.timeIntervalSince1970) == Int(results.last?.startDate.timeIntervalSince1970 ?? 0) {
+                results.remove(at: results.count - 1)
+            }
+            let steps = results.map({ENSteps(startDate: $0.startDate, finishDate: $0.endDate, count: Int($0.quantity.doubleValue(for: (HKUnit.count()))))})
             guard steps.count > 0 else {return}
             
             let lastStepsSampleDate = steps.map({$0.startDate}).max(by: { (date, otherDate) -> Bool in
