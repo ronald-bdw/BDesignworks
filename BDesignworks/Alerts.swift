@@ -47,3 +47,17 @@ func ShowErrorAlert(_ title: String? = "Sorry", message: String? = "Something we
     
     alertController.presentIfNoAlertsPresented()
 }
+
+func ShowUnauthorizedAlert() {
+    let errorDescription = BackendError.notAuthorized.humanDescription
+    let alertController = UIAlertController(title: errorDescription.title, message: errorDescription.text, preferredStyle: UIAlertControllerStyle.alert)
+    
+    let alertButton = UIAlertAction(title: "OK", style: .default) { (alertAction: UIAlertAction) -> Void in
+        ENUser.logout()
+        ShowInitialViewController()
+        alertController.dismiss(animated: true, completion: nil)
+    }
+    alertController.addAction(alertButton)
+    
+    alertController.presentIfNoAlertsPresented()
+}

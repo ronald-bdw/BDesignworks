@@ -59,7 +59,7 @@ extension RouterProtocol {
         
         let headers = Router.extendHeaders
         
-        let request = Router.manager.request(path, method: self.settings.method, parameters: self.parameters, encoding: self.settings.encoding, headers: headers)
+        let request = Router.manager.request(path, method: self.settings.method, parameters: self.parameters, encoding: self.settings.encoding, headers: headers).validate()
         
         return request
     }

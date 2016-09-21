@@ -32,7 +32,7 @@ extension BackendError: HumanErrorType {
     
     var humanDescription: ErrorHumanDescription {
         switch self {
-        case .notAuthorized     : return ErrorHumanDescription(title: "Not authorized", text: "You must be authorized for this action")
+        case .notAuthorized     : return ErrorHumanDescription(title: "Error", text: "Someone accessed your account. You will be redirected to authetication screen.")
         case .smsCodeExpired    : return ErrorHumanDescription(title: "Sms code has expired", text: "Resend sms code?")
         case .invalidPhone      : return ErrorHumanDescription(title: "Phone number is invalid", text: "You must provide valid phone number")
         case .emainTaken        : return ErrorHumanDescription(title: "Sorry", text: "Email is taken")
