@@ -53,7 +53,7 @@ class SidebarView: UITableViewController {
         super.viewDidLoad()
         
         let _ = SidebarMVP(controller: self)
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "running"))
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "right-menu-bg"))
         self.presenter?.viewLoaded()
     }
     
