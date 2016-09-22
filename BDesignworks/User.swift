@@ -97,8 +97,8 @@ class ENUser: Object, IUser {
             user.firstName = "Ellina"
             user.lastName = "K"
             user.email = "ekd@t.t"
-            user.phoneNumber = "+79377709988"
-            user.token = "iYW5v84__UDNLYdnPjkj"
+            user.phoneNumber = "+79377709981"
+            user.token = "8SK2RD8UJs6W9FRQB-i2"
             try realm.write({
                 realm.add(user)
             })

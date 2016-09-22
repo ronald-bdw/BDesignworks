@@ -14,7 +14,7 @@ class SidebarCell: UITableViewCell
     let sideView = UIView()
     var cellSelected = false {
         didSet {
-            self.backgroundColor = cellSelected ? AppColors.MainColor : UIColor.clear
+            self.backgroundColor = cellSelected ? UIColor(fs_hexString: "1D3B57") : UIColor.clear
             self.sideView.isHidden = cellSelected ? false : true
         }
     }
