@@ -43,8 +43,8 @@ class SidebarView: UITableViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
-    let rowHeight = CGFloat(60)
-    let profileRowHeight = CGFloat(150)
+    let rowHeight = CGFloat(90)
+    let profileRowHeight = CGFloat(164)
     var lastSelected = 0
     
     var presenter: PresenterProtocol?
@@ -53,7 +53,7 @@ class SidebarView: UITableViewController {
         super.viewDidLoad()
         
         let _ = SidebarMVP(controller: self)
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "running"))
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "right-menu-bg"))
         self.presenter?.viewLoaded()
     }
     
