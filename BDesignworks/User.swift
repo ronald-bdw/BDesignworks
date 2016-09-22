@@ -116,10 +116,12 @@ class ENUser: Object, IUser {
             try realm.write {
                 realm.delete(realm.objects(ENUser.self))
             }
+            HealthKitManager.sharedInstance.stopSendingData()
         }
         catch let error {
             Logger.error(error)
         }
+        ShowInitialViewController()
     }
 }
 
