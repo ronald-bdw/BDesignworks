@@ -30,6 +30,8 @@ class HealthKitManager
     let defaultDaysToStepsCount = 7
     let defaultSamplesCount = 10
     
+    var observerQuery: HKObserverQuery?
+    
     func sendHealthKitData() {
         let dataTypesToRead = NSSet(objects: self.stepsCount)
 //        let itemsToWrite = Set(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!)
@@ -40,6 +42,16 @@ class HealthKitManager
                 Logger.error("\(error)")
             }
         })
+    }
+    
+    func stopSendingData() {
+        self.healthStore?.disableAllBackgroundDelivery(completion: { (success, error) in
+            success && error == nil ? Logger.debug("disabled background delivery") : Logger.error("error occured" + (error != nil ? "\(error)" : ""))
+        })
+        
+        if let lObserverQuery = self.observerQuery {
+            self.healthStore?.stop(lObserverQuery)
+        }
     }
     
     func enableBackgroundDelivery() {
@@ -110,12 +122,15 @@ class HealthKitManager
     }
     
     func queryStepsInBackground() {
-        let observerQuery = HKObserverQuery(sampleType: self.stepsCount, predicate: nil) { [weak self] (query, completionHandler, error) in
+        if let lObserverQuery = self.observerQuery {
+            self.healthStore?.stop(lObserverQuery)
+        }
+        self.observerQuery = HKObserverQuery(sampleType: self.stepsCount, predicate: nil) { [weak self] (query, completionHandler, error) in
             
             guard error == nil else { Logger.error(error); return}
             
             self?.querySteps(completionHandler)
         }
-        self.healthStore?.execute(observerQuery)
+        self.healthStore?.execute(self.observerQuery!)
     }
 }
