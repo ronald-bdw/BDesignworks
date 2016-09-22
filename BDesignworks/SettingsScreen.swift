@@ -26,16 +26,6 @@ class SettingsScreen: UITableViewController
         self.tableView.fs_deselectSelectedRow(true)
         guard (indexPath as NSIndexPath).row == 2 else {return}
         
-        do {
-            let realm = try Realm()
-            try realm.write({
-                realm.delete(realm.objects(ENUser.self))
-            })
-            
-            ShowInitialViewController()
-        }
-        catch let error {
-            Logger.error("\(error)")
-        }
+        ENUser.logout()
     }
 }

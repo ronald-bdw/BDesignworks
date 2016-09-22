@@ -97,8 +97,8 @@ class ENUser: Object, IUser {
             user.firstName = "Ellina"
             user.lastName = "K"
             user.email = "ekd@t.t"
-            user.phoneNumber = "+79377709981"
-            user.token = "8SK2RD8UJs6W9FRQB-i2"
+            user.phoneNumber = "+79377709981" // +79377709988
+            user.token = "GLyzsjLbcmuWMY6sp7s1" //nxZsbQc3e_jVSbMDDsFS
             try realm.write({
                 realm.add(user)
             })
@@ -116,10 +116,12 @@ class ENUser: Object, IUser {
             try realm.write {
                 realm.delete(realm.objects(ENUser.self))
             }
+            HealthKitManager.sharedInstance.stopSendingData()
         }
         catch let error {
             Logger.error(error)
         }
+        ShowInitialViewController()
     }
 }
 
