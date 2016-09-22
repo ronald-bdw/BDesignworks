@@ -55,8 +55,8 @@ class RegistrationView: UIViewController {
     }
     
     func keyboardWillShow(_ notification: Notification) {
-        guard let userInfo: NSDictionary = (notification as NSNotification).userInfo as NSDictionary? else {return}
-        let keyboardSize = (userInfo.object(forKey: UIKeyboardFrameBeginUserInfoKey) as AnyObject).cgRectValue.size
+        guard let userInfo: NSDictionary = (notification as NSNotification).userInfo as NSDictionary?,
+            let keyboardSize = (userInfo.object(forKey: UIKeyboardFrameBeginUserInfoKey) as? NSValue)?.cgRectValue.size else {return}
         let contentInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height + 20, 0)
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
