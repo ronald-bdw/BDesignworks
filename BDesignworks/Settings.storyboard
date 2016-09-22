@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9GJ-SZ-QtN">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9GJ-SZ-QtN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -7,8 +7,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="OpenSansRegular.ttf">
+            <string>OpenSans</string>
+        </array>
         <array key="OpenSansSemiBold.ttf">
             <string>OpenSans-Semibold</string>
+        </array>
+        <array key="WorkSans-Regular.otf">
+            <string>WorkSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -220,6 +226,9 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="pKh-DZ-gew" kind="presentation" identifier="Logout" id="ZzU-Ha-6Go"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -236,6 +245,89 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Hd-Lu-NhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6521" y="-140"/>
+        </scene>
+        <!--Logout View-->
+        <scene sceneID="y2d-gq-cuQ">
+            <objects>
+                <viewController id="pKh-DZ-gew" customClass="LogoutView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ha5-zo-1vI"/>
+                        <viewControllerLayoutGuide type="bottom" id="kGZ-Pk-hDd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ccX-rR-Ecs">
+                        <rect key="frame" x="0.0" y="0.0" width="315" height="321"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure that you like to logout of the app? You will require to resend an SMS verification to login to the app again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aX1-ij-3oI">
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4K-kl-wYf" customClass="RoundButton" customModule="IBDesignableKit">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Ttz-Mj-RmN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="18"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                        <real key="value" value="28"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fs_borderColor">
+                                        <color key="value" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logoutAction:" destination="pKh-DZ-gew" eventType="touchUpInside" id="ZaP-0h-YtW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJV-1g-8tb" customClass="RoundButton" customModule="IBDesignableKit">
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Cj2-fO-tZg"/>
+                                    <constraint firstAttribute="width" constant="150" id="aQg-Xk-vrG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="18"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                        <real key="value" value="28"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="fs_shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelAction:" destination="pKh-DZ-gew" eventType="touchUpInside" id="MWk-ls-dd1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="DJV-1g-8tb" firstAttribute="centerX" secondItem="ccX-rR-Ecs" secondAttribute="centerX" id="44C-cG-sh8"/>
+                            <constraint firstItem="b4K-kl-wYf" firstAttribute="top" secondItem="DJV-1g-8tb" secondAttribute="bottom" constant="16" id="4Ho-Ts-9Dc"/>
+                            <constraint firstItem="b4K-kl-wYf" firstAttribute="centerX" secondItem="ccX-rR-Ecs" secondAttribute="centerX" id="C7h-Jr-f2o"/>
+                            <constraint firstItem="aX1-ij-3oI" firstAttribute="centerX" secondItem="ccX-rR-Ecs" secondAttribute="centerX" id="MAB-1H-eNg"/>
+                            <constraint firstItem="b4K-kl-wYf" firstAttribute="height" secondItem="DJV-1g-8tb" secondAttribute="height" id="Ofv-af-Pna"/>
+                            <constraint firstItem="aX1-ij-3oI" firstAttribute="top" secondItem="Ha5-zo-1vI" secondAttribute="bottom" constant="34" id="Qsg-Fi-wG6"/>
+                            <constraint firstItem="DJV-1g-8tb" firstAttribute="top" secondItem="aX1-ij-3oI" secondAttribute="bottom" constant="32" id="moj-14-XqF"/>
+                            <constraint firstAttribute="trailing" secondItem="aX1-ij-3oI" secondAttribute="trailing" constant="17" id="x1t-CE-lG8"/>
+                            <constraint firstItem="aX1-ij-3oI" firstAttribute="leading" secondItem="ccX-rR-Ecs" secondAttribute="leading" constant="17" id="y9y-IL-89d"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="315" height="321"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uUc-eu-9o9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6521" y="498"/>
         </scene>
         <!--Profile-->
         <scene sceneID="MOv-Bz-HKv">
