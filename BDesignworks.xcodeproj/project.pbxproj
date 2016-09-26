@@ -96,6 +96,7 @@
 		DCD86E591D6DAA8C0072AFA1 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD86E581D6DAA8C0072AFA1 /* Alerts.swift */; };
 		DCD86E5B1D6DEAFA0072AFA1 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD86E5A1D6DEAFA0072AFA1 /* ValidationError.swift */; };
 		DCF96E621D992547005AFE42 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF96E611D992547005AFE42 /* LogoutView.swift */; };
+		DCF96E641D992B1C005AFE42 /* DataSyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF96E631D992B1C005AFE42 /* DataSyncView.swift */; };
 		E705D56B1D8AB25E00A05EC5 /* SidebarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705D56A1D8AB25E00A05EC5 /* SidebarModel.swift */; };
 		E705D56D1D8AB31A00A05EC5 /* SidebarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705D56C1D8AB31A00A05EC5 /* SidebarPresenter.swift */; };
 		E72916531D8820B600A6D70A /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916521D8820B600A6D70A /* ProfileModel.swift */; };
@@ -304,6 +305,7 @@
 		DCD86E581D6DAA8C0072AFA1 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		DCD86E5A1D6DEAFA0072AFA1 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		DCF96E611D992547005AFE42 /* LogoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
+		DCF96E631D992B1C005AFE42 /* DataSyncView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSyncView.swift; sourceTree = "<group>"; };
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		E705D56A1D8AB25E00A05EC5 /* SidebarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarModel.swift; sourceTree = "<group>"; };
 		E705D56C1D8AB31A00A05EC5 /* SidebarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarPresenter.swift; sourceTree = "<group>"; };
@@ -766,6 +768,7 @@
 		DCF96E601D991A8F005AFE42 /* DataSync */ = {
 			isa = PBXGroup;
 			children = (
+				DCF96E631D992B1C005AFE42 /* DataSyncView.swift */,
 			);
 			name = DataSync;
 			sourceTree = "<group>";
@@ -1410,6 +1413,7 @@
 				E7DA95821D8024A50079EB79 /* Steps.swift in Sources */,
 				DCCA51861D76EAE700B42736 /* VerificationModel.swift in Sources */,
 				DC2281151D6B46AB00D5A0DA /* RTErrors.swift in Sources */,
+				DCF96E641D992B1C005AFE42 /* DataSyncView.swift in Sources */,
 				21E157E21BB3EDF40041FCE4 /* FSTestHelpers.swift in Sources */,
 				DC2281191D6B46AB00D5A0DA /* User.swift in Sources */,
 				A489C48A1D6C8F54002AAA75 /* AreaCodeCell.swift in Sources */,

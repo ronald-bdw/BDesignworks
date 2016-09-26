@@ -16,8 +16,6 @@ class SettingsView: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Settings"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
