@@ -33,7 +33,6 @@ struct UserEdited {
     var firstName: String?
     var lastName: String?
     var email: String?
-    var avatar: String?
     
     func isValid(_ type: UserEditedValidationField) -> Bool {
         switch type {

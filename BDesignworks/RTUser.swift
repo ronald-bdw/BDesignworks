@@ -16,6 +16,7 @@ extension Router {
         case signIn(phone: String, authPhoneCode: Int, smsCode: String)
         case getUser
         case editUser(user: UserEdited)
+        case sendAvatar(id: Int, image: UIImage)
     }
 }
 
@@ -25,7 +26,8 @@ extension Router.User: RouterProtocol {
         switch self {
         case .getAuthPhoneCode(_)   :return RTRequestSettings(method: .post, encoding: URLEncoding.default)
         case .getUser               :return RTRequestSettings(method: .get)
-        case .editUser(_)           :return RTRequestSettings(method: .put)
+        case .editUser(_),
+             .sendAvatar(_,_)       :return RTRequestSettings(method: .put)
         default                     :return RTRequestSettings(method: .post)
         }
     }
@@ -37,6 +39,7 @@ extension Router.User: RouterProtocol {
         case .signIn                : return "/users/sign_in"
         case .getUser               : return "/users/account"
         case .editUser(let user)    : return "/users/\(user.id)"
+        case .sendAvatar(let id,_)  : return "/users/\(id)"
         }
     }
     
@@ -59,12 +62,22 @@ extension Router.User: RouterProtocol {
             params.updateIfNotDefault(user.firstName, forKey: "first_name", defaultValue: "")
             params.updateIfNotDefault(user.lastName, forKey: "last_name", defaultValue: "")
             params.updateIfNotDefault(user.email, forKey: "email", defaultValue: "")
-            params.updateIfNotDefault(user.avatar, forKey: "avatar", defaultValue: "")
             return params as [String : AnyObject]?
-        case .getUser:
+        default:
             return nil
         }
     }
+    
+    var multipartParameters: [String: Data]? {
+        switch self {
+        case .sendAvatar(_, let image):
+            guard let data = UIImageJPEGRepresentation(image, 1.0) else {return nil}
+            return ["user[avatar]": data]
+        default:
+            return nil
+        }
+    }
+
 }
 
 class RTUserResponse: Mappable {

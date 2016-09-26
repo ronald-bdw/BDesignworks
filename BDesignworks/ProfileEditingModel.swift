@@ -11,6 +11,7 @@ import Foundation
 protocol IProfileEditingModel {
     func getUser()
     func updateUser(_ user: UserEdited)
+    func sendAvatar(image: UIImage)
 }
 
 class ProfileEditingModel {
@@ -31,7 +32,7 @@ extension ProfileEditingModel: IProfileEditingModel {
         let _ = Router.User.editUser(user: user).request().responseObject { (response: DataResponse<RTUserResponse>) in
             switch response.result {
             case .success(let value):
-                self.presenter?.loadingFinished()
+                self.presenter?.loadingFinished(isUserInfoUpdated: true)
                 guard let user = value.user else {return}
                 do {
                     let realm = try Realm()
@@ -57,6 +58,37 @@ extension ProfileEditingModel: IProfileEditingModel {
             areFieldsValid = areFieldsValid && user.isValid(type)
         }
         return areFieldsValid
+    }
+    
+    func sendAvatar(image: UIImage) {
+        guard let user = ENUser.getMainUser() else {self.presenter?.loadingFailed(RTError(backend: BackendError.notAuthorized)); return}
+        self.presenter?.loadingStarted()
+        let _ = Router.User.sendAvatar(id: user.id, image: image).upload(completion: { uploadRequest, error in
+            guard let uploadRequest = uploadRequest else {
+                self.presenter?.loadingFailed(RTError(error: error))
+                return
+            }
+            let _ = uploadRequest.responseObject { (response: DataResponse<RTUserResponse>) in
+                switch response.result {
+                case .success(let value):
+                    self.presenter?.loadingFinished(isUserInfoUpdated: false)
+                    
+                    guard let user = value.user else {return}
+                    do {
+                        let realm = try Realm()
+                        try realm.write({
+                            realm.add(user, update: true)
+                        })
+                    }
+                    catch let error {
+                        Logger.error(error)
+                    }
+                case .failure(let error):
+                    self.presenter?.loadingFailed(error as! RTError)
+                }
+            }
+
+        })
     }
 }
 

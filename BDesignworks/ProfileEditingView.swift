@@ -18,6 +18,7 @@ protocol IProfileEditingView: class {
     func updateEmailErrorView(_ isValid: Bool)
     func showBackendErrorView(_ description: ErrorHumanDescription)
     func showErrorView()
+    func userInfoUpdated()
 }
 
 class ProfileEditingView: UITableViewController {
@@ -104,6 +105,7 @@ class ProfileEditingView: UITableViewController {
     }
     
     @IBAction func photoPressed(_ sender: AnyObject) {
+        self.presentChoosingPhotoSourceController()
     }
     
     @IBAction func donePressed(_ sender: AnyObject) {
@@ -125,6 +127,53 @@ class ProfileEditingView: UITableViewController {
     }
 }
 
+extension ProfileEditingView {
+    //MARK: - image picker
+    func presentChoosingPhotoSourceController() {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancel)
+        
+        let takePhoto = UIAlertAction(title: "Take Photo", style: .default) {[weak self](alert: UIAlertAction!) -> Void in
+            guard let sself = self else {return}
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = sself
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = true
+            sself.present(imagePicker, animated: true, completion: nil)
+        }
+        alertController.addAction(takePhoto)
+        
+        let library = UIAlertAction(title: "Choose from Library", style: .default) {[weak self](alert: UIAlertAction!) -> Void in
+            guard let sself = self else {return}
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = sself
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = true
+            sself.present(imagePicker, animated: true, completion: nil)
+        }
+        alertController.addAction(library)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension ProfileEditingView: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        DispatchQueue.main.async(execute: {[weak self] () -> Void in
+            guard let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage else {return}
+            self?.presenter?.imageReceived(image: pickedImage)
+        })
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 extension ProfileEditingView: IProfileEditingView {
     func updateView(_ user: ENUser) {
         self.nameLabel.text = user.fullname
@@ -142,10 +191,13 @@ extension ProfileEditingView: IProfileEditingView {
             SVProgressHUD.show()
         case .done:
             SVProgressHUD.dismiss()
-            let _ = self.navigationController?.popViewController(animated: true)
         case .failed:
             SVProgressHUD.dismiss()
         }
+    }
+    
+    func userInfoUpdated() {
+        let _ = self.navigationController?.popViewController(animated: true)
     }
     
     func showBackendErrorView(_ description: ErrorHumanDescription) {

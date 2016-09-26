@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         self.setupProject()
-//        ENUser.createTestUser()
+        ENUser.createTestUser()
         do {
             let realm = try Realm()
             if let authInfo = realm.objects(AuthInfo.self).first {
@@ -91,10 +91,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let formatString = "%02.2hhx"
             tokenString += String(format: formatString, arguments: [tokenChars[i]])
         }
-        
-        UserDefaults.standard.set(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
-        UserDefaults.standard.set(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
-        UserDefaults.standard.synchronize()
+//        UserDefaults.standard.set(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
+//        UserDefaults.standard.set(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
+//        UserDefaults.standard.synchronize()
     }
 }
 
