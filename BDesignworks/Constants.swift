@@ -23,12 +23,7 @@ enum FSKeychainKey {
 /*--------------User Defaults keys-------------*/
 enum FSUserDefaultsKey {
     
-    enum DeviceToken {
-        fileprivate static let Prefix = "FSDeviceToken"
-        
-        static let Data    = GenerateKey(Prefix, key: "Data")
-        static let String  = GenerateKey(Prefix, key: "String")
-    }
+    static let HealthKitRegistered = "HealthKitRegistered"
 }
 
 /*----------Notifications---------*/

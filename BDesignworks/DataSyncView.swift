@@ -15,17 +15,19 @@ class DataSyncView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if HealthKitManager.sharedInstance.isAuthorized {
+            self.healthKitSwitch.setOn(true, animated: true)
+        }
+        
         self.healthKitSwitch.addTarget(self, action: #selector(self.healthKitSwitchStateChanged(sender:)), for: .valueChanged)
     }
     
     func healthKitSwitchStateChanged(sender: AnyObject) {
         if self.healthKitSwitch.isOn {
-            HealthKitManager.sharedInstance.sendHealthKitData()
-            Logger.debug("on")
+            HealthKitManager.sharedInstance.authorize()
         }
         else {
             HealthKitManager.sharedInstance.stopSendingData()
-            Logger.debug("off")
         }
     }
 }

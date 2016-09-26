@@ -23,6 +23,10 @@ class HealthKitManager
         }
     }()
     
+    var isAuthorized: Bool {
+        return UserDefaults.standard.bool(forKey: FSUserDefaultsKey.HealthKitRegistered)
+    }
+    
     let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
     
     let stepsUnit = HKUnit.count()
@@ -32,16 +36,23 @@ class HealthKitManager
     
     var observerQuery: HKObserverQuery?
     
-    func sendHealthKitData() {
+    
+    func authorize() {
         let dataTypesToRead = NSSet(objects: self.stepsCount)
-//        let itemsToWrite = Set(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!)
+//                let itemsToWrite = Set(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!)
         self.healthStore?.requestAuthorization(toShare: nil, read: dataTypesToRead as? Set<HKObjectType>, completion: { [weak self] (success, error) in
             if success {
-                self?.enableBackgroundDelivery()
+                UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.HealthKitRegistered)
+                UserDefaults.standard.synchronize()
+                self?.sendHealthKitData()
             } else {
                 Logger.error("\(error)")
             }
         })
+    }
+    
+    func sendHealthKitData() {
+        self.enableBackgroundDelivery()
     }
     
     func stopSendingData() {
@@ -52,6 +63,9 @@ class HealthKitManager
         if let lObserverQuery = self.observerQuery {
             self.healthStore?.stop(lObserverQuery)
         }
+        
+        UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.HealthKitRegistered)
+        UserDefaults.standard.synchronize()
     }
     
     func enableBackgroundDelivery() {
