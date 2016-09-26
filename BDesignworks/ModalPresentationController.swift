@@ -24,6 +24,11 @@ final class ModalPresentationController: UIPresentationController {
     
     fileprivate var presentedControllerRadius: CGFloat = 8
     
+    init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?, height: CGFloat = 258) {
+        super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
+        self.modalScreenHeight = height
+    }
+    
     override var frameOfPresentedViewInContainerView : CGRect {
         guard let lContainerView = self.containerView else { return CGRect.zero }
         return CGRect(x     : (lContainerView.fs_width-modalScreenWidth)*0.5,
