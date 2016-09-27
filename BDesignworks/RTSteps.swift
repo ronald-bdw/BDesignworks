@@ -12,6 +12,7 @@ import ObjectMapper
 extension Router {
     enum Steps {
         case send(steps: [ENSteps], source: Source)
+        case sendFitbitCode(code: String)
         
         enum Source: String {
             case HealthKit    = "healthkit"
@@ -24,14 +25,13 @@ extension Router.Steps: RouterProtocol {
 
     
     var settings: RTRequestSettings {
-        switch self {
-        case .send(_): return RTRequestSettings(method: .post)
-        }
+        return RTRequestSettings(method: .post)
     }
     
     var path: String {
         switch self {
-        case .send(_): return "/activities"
+        case .send(_)           : return "/activities"
+        case .sendFitbitCode(_) : return "/fitness_tokens"
         }
     }
     
@@ -48,6 +48,8 @@ extension Router.Steps: RouterProtocol {
                 jsonArray.append(["started_at": startString as AnyObject, "finished_at": finishString as AnyObject, "steps_count": step.count as AnyObject, "source": source.rawValue as AnyObject])
             }
             return ["activities": jsonArray as AnyObject]
+        case .sendFitbitCode(let code):
+            return ["source": Source.Fitbit.rawValue as AnyObject, "token": code as AnyObject]
         }
     }
 }

@@ -71,12 +71,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        //pearup://pearup.com?authcode=####
-        guard let urlFragment = url.fragment,
-            let startRange = urlFragment.range(of: "="),
-            let endRange = urlFragment.range(of: "&") else {return true}
-        let token = urlFragment.substring(with: startRange.upperBound..<endRange.lowerBound)
-        Logger.debug(token)
+        //pearup://pearup.com?code=####
+        guard let query = url.query,
+            let dividerIndex = query.range(of: "=")?.upperBound else {return true}
+        let code = query.substring(from: dividerIndex)
+        
+        let _ = Router.Steps.sendFitbitCode(code: code).request().responseObject { (response: DataResponse<RTStepsSendResponse>) in
+            switch response.result {
+            case .success(_):
+                Logger.debug("successfully sent fitbit code")
+                UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.FitbitRegistered)
+                UserDefaults.standard.synchronize()
+            case .failure(let error):
+                Logger.error(error)
+                ShowErrorAlert()
+            }
+        }
         return true
     }
     
@@ -92,9 +102,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tokenString += String(format: formatString, arguments: [tokenChars[i]])
         }
         
-        UserDefaults.standard.set(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
-        UserDefaults.standard.set(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
-        UserDefaults.standard.synchronize()
     }
 }
 
