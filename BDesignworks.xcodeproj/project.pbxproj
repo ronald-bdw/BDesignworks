@@ -840,8 +840,8 @@
 		E774EF891D8995DD007A8BC4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				E72916561D88364400A6D70A /* ProflleEditing */,
 				E7C1F26B1D881B6D007F9D7A /* Profile */,
+				E72916561D88364400A6D70A /* ProflleEditing */,
 			);
 			name = Profile;
 			sourceTree = "<group>";

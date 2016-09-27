@@ -46,7 +46,7 @@ class ProfileEditingView: UITableViewController {
         
         var height: CGFloat {
             switch self {
-            case .header    : return 250
+            case .header    : return 196
             case .empty     : return 20
             case .content   : return 80
             case .error     : return 60
