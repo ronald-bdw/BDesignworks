@@ -23,7 +23,8 @@ enum FSKeychainKey {
 /*--------------User Defaults keys-------------*/
 enum FSUserDefaultsKey {
     
-    static let HealthKitRegistered = "HealthKitRegistered"
+    static let HealthKitRegistered  = "HealthKitRegistered"
+    static let FitbitRegistered     = "FitbitRegistered"
 }
 
 /*----------Notifications---------*/

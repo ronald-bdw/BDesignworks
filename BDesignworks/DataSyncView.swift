@@ -19,7 +19,12 @@ class DataSyncView: UITableViewController {
             self.healthKitSwitch.setOn(true, animated: true)
         }
         
+        if UserDefaults.standard.bool(forKey: FSUserDefaultsKey.FitbitRegistered) {
+            self.fitbitSwitch.setOn(true, animated: true)
+        }
+        
         self.healthKitSwitch.addTarget(self, action: #selector(self.healthKitSwitchStateChanged(sender:)), for: .valueChanged)
+        self.fitbitSwitch.addTarget(self, action: #selector(self.fitbitSwitchStateChanged(sender:)), for: .valueChanged)
     }
     
     func healthKitSwitchStateChanged(sender: AnyObject) {
@@ -28,6 +33,21 @@ class DataSyncView: UITableViewController {
         }
         else {
             HealthKitManager.sharedInstance.stopSendingData()
+        }
+    }
+    
+    func fitbitSwitchStateChanged(sender: AnyObject) {
+        if self.fitbitSwitch.isOn {
+            
+            let urlString = "https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=227ZMJ&scope=activity"
+            
+            guard let url = URL(string: urlString) else {return}
+            
+            UIApplication.shared.openURL(url)
+        }
+        else {
+            UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.FitbitRegistered)
+            UserDefaults.standard.synchronize()
         }
     }
 }

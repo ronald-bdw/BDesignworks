@@ -63,7 +63,7 @@ extension ProfileEditingModel: IProfileEditingModel {
     func sendAvatar(image: UIImage) {
         guard let user = ENUser.getMainUser() else {self.presenter?.loadingFailed(RTError(backend: BackendError.notAuthorized)); return}
         self.presenter?.loadingStarted()
-        let _ = Router.User.sendAvatar(id: user.id, image: image).upload(completion: { uploadRequest, error in
+        Router.User.sendAvatar(id: user.id, image: image).upload(completion: { uploadRequest, error in
             guard let uploadRequest = uploadRequest else {
                 self.presenter?.loadingFailed(RTError(error: error))
                 return

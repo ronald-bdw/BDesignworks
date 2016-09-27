@@ -79,7 +79,7 @@ extension RouterProtocol {
         
         let headers = Router.extendHeaders
         
-         Router.manager.upload(multipartFormData: { (multipartFormData) in
+        Router.manager.upload(multipartFormData: { (multipartFormData) in
             if let multipartParameters = self.multipartParameters {
                 for multipartParameter in multipartParameters {
                     multipartFormData.append(multipartParameter.value, withName: multipartParameter.key, fileName: "avatar.jpeg", mimeType: "image/jpeg")
