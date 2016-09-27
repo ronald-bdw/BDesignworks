@@ -20,6 +20,9 @@ class ProfileModel {
 
 extension ProfileModel: IProfileModel {
     func getUser() {
+        if let user = ENUser.getMainUser() {
+            self.presenter?.userReceived(user)
+        }
         let _ = Router.User.getUser.request().responseObject { (response: DataResponse<RTUserResponse>) in
             switch response.result {
             case .success(let value):
