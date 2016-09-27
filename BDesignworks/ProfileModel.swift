@@ -20,27 +20,8 @@ class ProfileModel {
 
 extension ProfileModel: IProfileModel {
     func getUser() {
-        let _ = Router.User.getUser.request().responseObject { (response: DataResponse<RTUserResponse>) in
-            switch response.result {
-            case .success(let value):
-                let user = value.user == nil ? ENUser.getMainUser() : value.user
-                guard let lUser = user else {return}
-                self.presenter?.userReceived(lUser)
-                guard let receivedUser = value.user else {return}
-                do {
-                    let realm = try Realm()
-                    try realm.write({
-                        realm.add(receivedUser, update: true)
-                    })
-                }
-                catch let error {
-                    Logger.error(error)
-                }
-            case .failure(let error):
-                Logger.error(error)
-                guard let lUser = ENUser.getMainUser() else {return}
-                self.presenter?.userReceived(lUser)
-            }
+        if let user = ENUser.getMainUser() {
+            self.presenter?.userReceived(user)
         }
     }
 }

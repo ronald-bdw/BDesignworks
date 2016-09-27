@@ -24,15 +24,6 @@ extension SidebarModel: ISidebarModel {
         if let user = ENUser.getMainUser() {
             self.presenter?.userLoaded(user)
         }
-        let _ = Router.User.getUser.request().responseObject { (response: DataResponse<RTUserResponse>) in
-            switch response.result {
-            case .success(let value):
-                guard let user = value.user else {return}
-                self.presenter?.userLoaded(user)
-            case .failure(let error):
-                Logger.error(error)
-            }
-        }
     }
 }
 

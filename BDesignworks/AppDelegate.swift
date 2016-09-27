@@ -101,7 +101,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let formatString = "%02.2hhx"
             tokenString += String(format: formatString, arguments: [tokenChars[i]])
         }
-        
+//        UserDefaults.standard.set(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
+//        UserDefaults.standard.set(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
+//        UserDefaults.standard.synchronize()
     }
 }
 
@@ -114,6 +116,8 @@ extension AppDelegate {
         self.setupProjectForTests()
         
         self.setupLogger()
+        
+        self.setupSDWebImage()
         
         //setup Crashlytics
         Fabric.with([Crashlytics.self])
@@ -169,13 +173,13 @@ extension AppDelegate {
 //        MagicalRecord.setLoggingLevel(MagicalRecordLoggingLevel.Off)
 //    }
     
-//    func setupSDWebImage() {
-//        let imageCache:SDImageCache = SDImageCache.sharedImageCache()
-//        imageCache.maxCacheSize     = 1024*1024*100 // 100mb on disk
-//        imageCache.maxMemoryCost    = 1024*1024*10  // 10mb in memory
-//        
-//        let imageDownloader:SDWebImageDownloader = SDWebImageDownloader.sharedDownloader()
-//        imageDownloader.downloadTimeout          = 60.0
-//    }
+    func setupSDWebImage() {
+        let imageCache:SDImageCache = SDImageCache.shared()
+        imageCache.maxCacheSize     = 1024*1024*50 // 100mb on disk
+        imageCache.maxMemoryCost    = 1024*1024*10  // 10mb in memory
+        
+        let imageDownloader:SDWebImageDownloader = SDWebImageDownloader.shared()
+        imageDownloader.downloadTimeout          = 60.0
+    }
 }
 

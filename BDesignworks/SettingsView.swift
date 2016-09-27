@@ -12,10 +12,13 @@ class SettingsView: UITableViewController {
     
     let rowHeight: CGFloat = 90
     
-    @IBOutlet var profilePhoto: UIImageView!
+    @IBOutlet weak var profilePhoto: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let user = ENUser.getMainUser(),
+            let url = URL(string: user.avatarThumbUrl) else {return}
+        self.profilePhoto.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "Profile/Avatar"))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

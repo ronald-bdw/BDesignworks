@@ -11,7 +11,7 @@ import Foundation
 protocol IProfileEditingPresenterModel: class {
     func userReceived(_ user: ENUser)
     func loadingStarted()
-    func loadingFinished()
+    func loadingFinished(isUserInfoUpdated: Bool)
     func loadingFailed(_ error: RTError)
     func updateInvalidView(_ type: UserEditedValidationField, value: Bool)
 }
@@ -19,6 +19,7 @@ protocol IProfileEditingPresenterModel: class {
 protocol IProfileEditingPresenterView {
     func viewLoaded()
     func donePressed(_ firstName: String?, lastName: String?, email: String?)
+    func imageReceived(image: UIImage)
 }
 
 class ProfileEditingPresenter {
@@ -47,8 +48,11 @@ extension ProfileEditingPresenter: IProfileEditingPresenterModel {
         }
     }
     
-    func loadingFinished() {
+    func loadingFinished(isUserInfoUpdated: Bool) {
         self.view?.setLoadingState(.done)
+        if isUserInfoUpdated {
+            self.view?.userInfoUpdated()
+        }
     }
     
     func updateInvalidView(_ type: UserEditedValidationField, value: Bool) {
@@ -67,8 +71,12 @@ extension ProfileEditingPresenter: IProfileEditingPresenterView {
     
     func donePressed(_ firstName: String?, lastName: String?, email: String?) {
         guard let mainUser = ENUser.getMainUser() else {return}
-        let user = UserEdited(id: mainUser.id, firstName: firstName, lastName: lastName, email: email, avatar: nil)
+        let user = UserEdited(id: mainUser.id, firstName: firstName, lastName: lastName, email: email)
         self.model?.updateUser(user)
+    }
+    
+    func imageReceived(image: UIImage) {
+        self.model?.sendAvatar(image: image)
     }
 }
 
