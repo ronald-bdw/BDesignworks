@@ -78,7 +78,7 @@ class ENUser: Object, IUser {
             let realm = try Realm()
             guard realm.objects(ENUser.self).count == 0 else {return}
             let user = ENUser()
-            user.id = 1
+            user.id = 14//1
             user.firstName = "Ellina"
             user.lastName = "K"
             user.email = "ekd@t.t"

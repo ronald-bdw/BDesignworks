@@ -182,6 +182,9 @@ extension ProfileEditingView: IProfileEditingView {
         self.firstNameTextField.text = user.firstName
         self.lastNameTExtField.text = user.lastName
         self.emailTextField.text = user.email
+        
+        guard let url = URL(string: user.avatarUrl) else {return}
+        self.profileImage.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "Profile/Avatar"))
     }
     
     

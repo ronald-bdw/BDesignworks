@@ -79,6 +79,7 @@ extension ProfileEditingModel: IProfileEditingModel {
                         try realm.write({
                             realm.add(user, update: true)
                         })
+                        self.presenter?.userReceived(user)
                     }
                     catch let error {
                         Logger.error(error)

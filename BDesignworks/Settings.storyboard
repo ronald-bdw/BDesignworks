@@ -30,7 +30,7 @@
                             <tableViewSection id="aCe-hf-TzI">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="lHa-TF-xbl">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="64" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lHa-TF-xbl" id="91b-rR-lSs">
                                             <frame key="frameInset" width="375" height="90"/>
@@ -85,7 +85,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Mmg-xi-77e">
-                                        <rect key="frame" x="0.0" y="90" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="154" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mmg-xi-77e" id="6cl-34-bzO">
                                             <frame key="frameInset" width="375" height="90"/>
@@ -127,7 +127,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="YgS-Rh-VXg">
-                                        <rect key="frame" x="0.0" y="180" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="244" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YgS-Rh-VXg" id="a6u-bb-5fd">
                                             <frame key="frameInset" width="375" height="90"/>
@@ -175,7 +175,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="BGz-Ez-VjA">
-                                        <rect key="frame" x="0.0" y="270" width="375" height="300"/>
+                                        <rect key="frame" x="0.0" y="334" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BGz-Ez-VjA" id="9i8-LQ-gag">
                                             <frame key="frameInset" width="375" height="300"/>
@@ -183,7 +183,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="BlX-5c-ylG">
-                                        <rect key="frame" x="0.0" y="570" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="634" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BlX-5c-ylG" id="TTN-Ui-0wY">
                                             <frame key="frameInset" width="375" height="90"/>
@@ -459,7 +459,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Profile/Avatar" width="375" height="375"/>
+        <image name="Profile/Avatar" width="1967" height="1958"/>
         <image name="Settings/Accessory" width="14" height="25"/>
         <image name="Settings/FitBit" width="144" height="148"/>
         <image name="Settings/HealthKit" width="237" height="209"/>

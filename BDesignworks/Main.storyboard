@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="F86-dg-wFh">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="F86-dg-wFh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -199,6 +199,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="EBa-Ar-IU6"/>
                     <connections>
+                        <outlet property="avatarImageView" destination="oue-tC-Lb9" id="xPR-Sz-vzL"/>
                         <outlet property="emailLabel" destination="DNh-2J-ObK" id="kIw-pt-UTv"/>
                         <outlet property="nameLabel" destination="e41-Vb-vjE" id="PZw-8Y-1ef"/>
                     </connections>
@@ -285,7 +286,7 @@
         <scene sceneID="EVt-zh-efg">
             <objects>
                 <navigationController storyboardIdentifier="ConversationScreen" id="F86-dg-wFh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tew-rN-fi6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tew-rN-fi6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -341,7 +342,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="rd8-Fq-ioC" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CBJ-Bo-2Oc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CBJ-Bo-2Oc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -380,7 +381,7 @@
     </scenes>
     <resources>
         <image name="AppLogo" width="144" height="144"/>
-        <image name="Profile/Avatar" width="375" height="375"/>
+        <image name="Profile/Avatar" width="1967" height="1958"/>
         <image name="SettingsIcon" width="144" height="144"/>
         <image name="ShareIcon" width="134" height="144"/>
     </resources>

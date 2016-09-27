@@ -45,6 +45,8 @@ class ConversationScreen: UIViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        self.loadMainUser()
+        
         SideMenuManager.menuPresentMode = .viewSlideOut
         SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
@@ -96,6 +98,26 @@ class ConversationScreen: UIViewController {
         rightBarButton.setImage(rightBarImage, for: UIControlState())
         rightBarButton.addTarget(self, action: #selector(self.showSideMenu), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
+    }
+    
+    func loadMainUser() {
+        let _ = Router.User.getUser.request().responseObject { (response: DataResponse<RTUserResponse>) in
+            switch response.result {
+            case .success(let value):
+                guard let receivedUser = value.user else {return}
+                do {
+                    let realm = try Realm()
+                    try realm.write({
+                        realm.add(receivedUser, update: true)
+                    })
+                }
+                catch let error {
+                    Logger.error(error)
+                }
+            case .failure(let error):
+                Logger.error(error)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

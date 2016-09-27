@@ -27,6 +27,7 @@ class ProfileView: UITableViewController {
         super.viewDidLoad()
         
         let _ = ProfileMVP(controller: self)
+        self.presenter?.viewLoaded()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +42,9 @@ extension ProfileView: IProfileView {
         self.emailPreviewLabel.text = user.email
         self.emailLabel.text = user.email
         self.phoneLabel.text = user.phoneNumber
+        
+        guard let url = URL(string: user.avatarUrl) else {return}
+        self.avatarImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "Profile/Avatar"))
     }
 }
 

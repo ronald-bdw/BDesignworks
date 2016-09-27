@@ -40,6 +40,7 @@ protocol ISidebarView: class {
 
 class SidebarView: UITableViewController {
     
+    @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
@@ -88,6 +89,9 @@ extension SidebarView: ISidebarView {
     func updateView(_ user: ENUser) {
         self.nameLabel.text = user.fullname
         self.emailLabel.text = user.email
+        
+        guard let url = URL(string: user.avatarUrl) else {return}
+        self.avatarImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "Profile/Avatar"))
     }
 }
 

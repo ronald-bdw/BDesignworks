@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         self.setupProject()
-        ENUser.createTestUser()
+//        ENUser.createTestUser()
         do {
             let realm = try Realm()
             if let authInfo = realm.objects(AuthInfo.self).first {
@@ -107,6 +107,8 @@ extension AppDelegate {
         
         self.setupLogger()
         
+        self.setupSDWebImage()
+        
         //setup Crashlytics
         Fabric.with([Crashlytics.self])
         
@@ -161,13 +163,13 @@ extension AppDelegate {
 //        MagicalRecord.setLoggingLevel(MagicalRecordLoggingLevel.Off)
 //    }
     
-//    func setupSDWebImage() {
-//        let imageCache:SDImageCache = SDImageCache.sharedImageCache()
-//        imageCache.maxCacheSize     = 1024*1024*100 // 100mb on disk
-//        imageCache.maxMemoryCost    = 1024*1024*10  // 10mb in memory
-//        
-//        let imageDownloader:SDWebImageDownloader = SDWebImageDownloader.sharedDownloader()
-//        imageDownloader.downloadTimeout          = 60.0
-//    }
+    func setupSDWebImage() {
+        let imageCache:SDImageCache = SDImageCache.shared()
+        imageCache.maxCacheSize     = 1024*1024*50 // 100mb on disk
+        imageCache.maxMemoryCost    = 1024*1024*10  // 10mb in memory
+        
+        let imageDownloader:SDWebImageDownloader = SDWebImageDownloader.shared()
+        imageDownloader.downloadTimeout          = 60.0
+    }
 }
 
