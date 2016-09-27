@@ -16,6 +16,8 @@ class ENUser: Object, IUser {
     dynamic var email: String = ""
     dynamic var phoneNumber: String = ""
     dynamic var lastStepsHealthKitUpdateDate: Date?
+    dynamic var avatarUrl: String = ""
+    dynamic var avatarThumbUrl: String = ""
     
     var token: String? {
         get {
@@ -34,23 +36,6 @@ class ENUser: Object, IUser {
     }
     var _token: String?
     
-    var fitbitToken: String? {
-        get {
-            guard let ssToken = SAMKeychain.password(forService: FSKeychainKey.FitbitToken, account: FSKeychainKey.AccountName) else {return self._fitbitToken}
-            return ssToken
-        }
-        set(newToken) {
-            if newToken == nil {
-                self._fitbitToken = nil
-                SAMKeychain.deletePassword(forService: FSKeychainKey.FitbitToken, account: FSKeychainKey.AccountName)
-            } else {
-                self._fitbitToken = newToken
-                SAMKeychain.setPassword(newToken, forService: FSKeychainKey.FitbitToken, account: FSKeychainKey.AccountName)
-            }
-        }
-    }
-    var _fitbitToken: String?
-    
     var fullname: String {
         return firstName + " " + lastName
     }
@@ -60,7 +45,7 @@ class ENUser: Object, IUser {
     }
     
     override static func ignoredProperties() -> [String] {
-        return ["token", "_token", "fitbitToken", "_fitbitToken", "fullname"]
+        return ["token", "_token", "fullname"]
     }
     
     required convenience init?(map: ObjectMapper.Map) {
@@ -91,8 +76,8 @@ class ENUser: Object, IUser {
     static func createTestUser() {
         do {
             let realm = try Realm()
-            let user = ENUser()
             guard realm.objects(ENUser.self).count == 0 else {return}
+            let user = ENUser()
             user.id = 1
             user.firstName = "Ellina"
             user.lastName = "K"
@@ -136,6 +121,8 @@ extension ENUser: Mappable {
         var lastUpdateDate: String = ""
         lastUpdateDate <- map["last_healthkit_activity.started_at"]
         self.lastStepsHealthKitUpdateDate = Date.getDateFromISO8601(lastUpdateDate)
+        self.avatarUrl <- map["avatar.original"]
+        self.avatarThumbUrl <- map["avatar.thumb"]
     }
 }
 
