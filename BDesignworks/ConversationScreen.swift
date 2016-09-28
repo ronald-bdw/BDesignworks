@@ -60,6 +60,7 @@ class ConversationScreen: UIViewController {
             if let user = realm.objects(ENUser.self).first , user.id != 0 {
                 Logger.debug(user.token)
                 Logger.debug(user.phoneNumber)
+                Logger.debug(user.id)
                 SmoochHelper.sharedInstance.startWithParameters("\(user.id)")
                 SmoochHelper.sharedInstance.updateUserInfo(user.firstName, lastName: user.lastName, email: user.email)
                 let controller = Smooch.newConversationViewController()

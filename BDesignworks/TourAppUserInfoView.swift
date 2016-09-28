@@ -1,81 +1,64 @@
 //
-//  RegistrationView.swift
+//  TourAppUserInfoView.swift
 //  BDesignworks
 //
-//  Created by Ellina Kuznetcova on 19.08.16.
+//  Created by Ellina Kuznecova on 28.09.16.
 //  Copyright © 2016 Flatstack. All rights reserved.
 //
 
 import Foundation
 
-typealias RegistrationMVP = MVPContainer<RegistrationView, RegistrationPresenter, RegistrationModel>
 
-protocol IRegistrationView: class {
-    func setLoadingState (_ state: LoadingState)
-    func updateValidationErrors()
-    
-    func showErrorView(_ title: String, content: String, errorType: BackendError)
-    func showPhoneCodeReceivedView()
-}
-
-
-class RegistrationView: UIViewController {
-    var presenter: PresenterProtocol?
-    
+class TourAppUserInfoView: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var scrollView: UIScrollView!
     
-    var user: RegistrationUser?
-    var shouldShowErrors = false
+    var user: TourAppUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let _ = RegistrationMVP(view: self)
-        self.user = self.presenter?.getRegistrationUser()
-        self.tableView.reloadData()
-
+        
+        self.user = ENUser.getMainUser()?.getTourAppUser()
         self.tableView.register(UINib(nibName: RegistrationTableViewCell.fs_className, bundle: nil), forCellReuseIdentifier: RegistrationTableViewCell.fs_className)
         self.tableView.register(UINib(nibName: ValidationErrorCell.fs_className, bundle: nil), forCellReuseIdentifier: ValidationErrorCell.fs_className)
+        
         
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
-        self.presenter?.viewDidLoad()
     }
     
-    @IBAction func submitPressed(_ sender: AnyObject){
-        self.shouldShowErrors = true
-        self.presenter?.submitTapped(self.user)
+    @IBAction func skipPressed(_ sender: AnyObject) {
     }
     
-    @IBAction func backPressed(_ sender: AnyObject) {
-        ShowInitialViewController()
+    @IBAction func nextPressed(_ sender: AnyObject) {
     }
     
     func keyboardWillShow(_ notification: Notification) {
         guard let userInfo: NSDictionary = (notification as NSNotification).userInfo as NSDictionary?,
             let keyboardSize = (userInfo.object(forKey: UIKeyboardFrameBeginUserInfoKey) as? NSValue)?.cgRectValue.size else {return}
-        let contentInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height + 20, 0)
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
+        let contentInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height - (self.view.fs_height - self.tableView.fs_height - 40), 0)
+        self.tableView.contentInset = contentInsets
+        self.tableView.scrollIndicatorInsets = contentInsets
     }
     
     func keyboardWillHide(_ notification: Notification) {
-        self.scrollView.contentInset = UIEdgeInsets.zero
-        self.scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+        self.tableView.contentInset = UIEdgeInsets.zero
+        self.tableView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
 }
 
-extension RegistrationView: UITableViewDataSource {
-
+extension TourAppUserInfoView: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return 7
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cellType = RegistrationCellType(rawValue: indexPath.row) {
+        if indexPath.row == 0 {
+            return self.tableView.dequeueReusableCell(withIdentifier: "profileHeader")!
+        }
+        if let cellType = TourAppUserInfoCellType(rawValue: indexPath.row) {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: RegistrationTableViewCell.fs_className) as! RegistrationTableViewCell
             cell.prepareCell(cellType, user: self.user)
             
@@ -87,27 +70,26 @@ extension RegistrationView: UITableViewDataSource {
         else {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: ValidationErrorCell.fs_className) as! ValidationErrorCell
             let contentCellRow = indexPath.row - 1
-            guard let cellType = RegistrationCellType(rawValue: contentCellRow) else {fatalError()}
+            guard let cellType = TourAppUserInfoCellType(rawValue: contentCellRow) else {fatalError()}
             cell.prepareCell(cellType)
             return cell
         }
     }
 }
 
-extension RegistrationView: UITableViewDelegate {
+extension TourAppUserInfoView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard indexPath.row != 0 else {return 250}
         switch (indexPath as NSIndexPath).row % 2 {
         case 0:
-            return 78
+            return (self.user?.isFieldValid(indexPath.row) ?? false) ? 0 : 49
         default:
-            return self.shouldShowErrors ?
-            (self.user?.isFieldValid(indexPath.row) ?? false) ? 0 : 49 :
-            0
+            return 78
         }
     }
 }
 
-extension RegistrationView: UITextFieldDelegate {
+extension TourAppUserInfoView: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -119,7 +101,7 @@ extension RegistrationView: UITextFieldDelegate {
         }
         else {
             textField.resignFirstResponder()
-            self.submitPressed(self)
+            self.nextPressed(self)
         }
         
         return false
@@ -127,57 +109,17 @@ extension RegistrationView: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        guard let cellType = RegistrationCellType(rawValue: textField.tag) else {fatalError("cannot init registration cell with tag: \(textField.tag)")}
+        guard let cellType = TourAppUserInfoCellType(rawValue: textField.tag) else {fatalError("cannot init registration cell with tag: \(textField.tag)")}
         
         let nsString = (textField.text ?? "") as NSString
         let newString = nsString.replacingCharacters(in: range,
-                                                                    with: string)
+                                                     with: string)
         switch cellType {
         case .firstName: self.user?.firstName.content = newString
         case .lastName: self.user?.lastName.content = newString
         case .email: self.user?.email.content = newString
-        case .phone: self.user?.phone.content = newString
         }
         
         return true
     }
-}
-
-extension RegistrationView: IRegistrationView {
-    func updateValidationErrors() {
-        self.tableView.reloadData()
-    }
-    
-    func setLoadingState(_ state: LoadingState) {
-        switch state {
-        case .loading:
-            SVProgressHUD.show()
-        case .done:
-            SVProgressHUD.dismiss()
-            ShowTourAppViewController()
-        case .failed:
-            SVProgressHUD.dismiss()
-            ShowErrorAlert()
-        }
-    }
-    
-    func showErrorView(_ title: String, content: String, errorType: BackendError) {
-        SVProgressHUD.dismiss()
-        if errorType == .smsCodeNotExist {
-            ShowAlertWithHandler(title, message: content) { [weak self] (action) in
-                self?.presenter?.resendPhoneCodeTapped(self?.user)
-            }
-        }
-        else {
-            ShowErrorAlert(title, message: content)
-        }
-    }
-    
-    func showPhoneCodeReceivedView() {
-        SVProgressHUD.dismiss()
-    }
-}
-
-extension RegistrationView: MVPView {
-    typealias PresenterProtocol = IRegistrationViewPresenter
 }
