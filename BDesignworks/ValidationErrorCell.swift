@@ -14,4 +14,8 @@ class ValidationErrorCell: UITableViewCell {
     func prepareCell(_ type: RegistrationCellType) {
         self.errorView.setLabel(type.validationError)
     }
+    
+    func prepareCell(_ type: TourAppUserInfoCellType) {
+        self.errorView.setLabel(type.validationError)
+    }
 }

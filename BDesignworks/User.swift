@@ -62,6 +62,14 @@ class ENUser: Object, IUser {
         return user
     }
     
+    func getTourAppUser() -> TourAppUser {
+        var user = TourAppUser()
+        user.firstName.content = self.firstName
+        user.lastName.content = self.lastName
+        user.email.content = self.email
+        return user
+    }
+    
     static func getMainUser() -> ENUser? {
         do {
             let realm = try Realm()

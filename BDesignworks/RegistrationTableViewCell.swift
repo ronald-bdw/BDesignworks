@@ -30,4 +30,20 @@ class RegistrationTableViewCell: UITableViewCell {
         
         self.contentTextField.text = user?.getStructField(type).content
     }
+    
+    func prepareCell(_ type: TourAppUserInfoCellType, user: TourAppUser?) {
+        self.titleLabel.text = type.title
+        
+        switch type {
+        case .email : self.contentTextField.keyboardType = .emailAddress
+        default     : self.contentTextField.keyboardType = .default
+        }
+        
+        switch type {
+        case .email : self.contentTextField.returnKeyType = .done
+        default     : self.contentTextField.returnKeyType = .next
+        }
+        
+        self.contentTextField.text = user?.getStructField(type).content
+    }
 }
