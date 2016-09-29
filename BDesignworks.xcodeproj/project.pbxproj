@@ -990,7 +990,7 @@
 					};
 					21DB300E19DD2289003A418D = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = Y49MTY8CU2;
+						DevelopmentTeam = K8WJN89HXG;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1745,8 +1745,9 @@
 				BUNDLE_DISPLAY_NAME = PearUp;
 				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1766,9 +1767,10 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "ac98ccf9-f5ff-41f6-9b01-e09edb146bfa";
+				PROVISIONING_PROFILE = "0fb04261-eadf-4a12-b788-b44a98d1952e";
+				PROVISIONING_PROFILE_SPECIFIER = "PearUp dev";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1830,8 +1832,9 @@
 				BUNDLE_DISPLAY_NAME = "PearUp Staging";
 				BUNDLE_ID = com.flatstack.pearup.staging;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1851,9 +1854,10 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "ac98ccf9-f5ff-41f6-9b01-e09edb146bfa";
+				PROVISIONING_PROFILE = "0fb04261-eadf-4a12-b788-b44a98d1952e";
+				PROVISIONING_PROFILE_SPECIFIER = "PearUp dev";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1919,8 +1923,9 @@
 				BUNDLE_DISPLAY_NAME = PearUp;
 				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1939,9 +1944,10 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "cb3faa1b-0d2e-4742-9bfc-96e797587f23";
+				PROVISIONING_PROFILE = "d2871815-00df-4e0f-93c6-2418c6446ebc";
+				PROVISIONING_PROFILE_SPECIFIER = "PearUp AdHoc";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
@@ -2208,8 +2214,9 @@
 				BUNDLE_DISPLAY_NAME = PearUp;
 				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2228,9 +2235,10 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "ac98ccf9-f5ff-41f6-9b01-e09edb146bfa";
+				PROVISIONING_PROFILE = "0fb04261-eadf-4a12-b788-b44a98d1952e";
+				PROVISIONING_PROFILE_SPECIFIER = "PearUp dev";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
@@ -2247,8 +2255,9 @@
 				BUNDLE_DISPLAY_NAME = PearUp;
 				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2265,9 +2274,10 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "46444646-ee3e-4358-a6f5-2f6bbe7e977e";
+				PROVISIONING_PROFILE = "d2871815-00df-4e0f-93c6-2418c6446ebc";
+				PROVISIONING_PROFILE_SPECIFIER = "PearUp AdHoc";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
@@ -2332,8 +2342,9 @@
 				BUNDLE_DISPLAY_NAME = "PearUp Staging";
 				BUNDLE_ID = com.flatstack.pearup.staging;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Schultz (Q5NM9YSVCD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2352,9 +2363,10 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "ac98ccf9-f5ff-41f6-9b01-e09edb146bfa";
+				PROVISIONING_PROFILE = "0fb04261-eadf-4a12-b788-b44a98d1952e";
+				PROVISIONING_PROFILE_SPECIFIER = "PearUp dev";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
@@ -2416,8 +2428,9 @@
 				BUNDLE_DISPLAY_NAME = "PearUp Staging";
 				BUNDLE_ID = com.flatstack.pearup.staging;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2434,9 +2447,10 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "46444646-ee3e-4358-a6f5-2f6bbe7e977e";
+				PROVISIONING_PROFILE = "d2871815-00df-4e0f-93c6-2418c6446ebc";
+				PROVISIONING_PROFILE_SPECIFIER = "PearUp AdHoc";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
@@ -2718,8 +2732,9 @@
 				BUNDLE_DISPLAY_NAME = PearUp;
 				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLATSTACK, LLC (Y49MTY8CU2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2736,9 +2751,10 @@
 					"\"QuartzCore\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.pearup;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
 				PRODUCT_NAME = PearUp;
-				PROVISIONING_PROFILE = "cb3faa1b-0d2e-4742-9bfc-96e797587f23";
+				PROVISIONING_PROFILE = "d2871815-00df-4e0f-93c6-2418c6446ebc";
+				PROVISIONING_PROFILE_SPECIFIER = "PearUp AdHoc";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworks/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;

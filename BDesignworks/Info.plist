@@ -66,11 +66,11 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) uses photos to upload images to conversation and to set avatar.</string>
 	<key>NSHealthShareUsageDescription</key>
 	<string>To understand your active level better, please ensure to sync your device with our app.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>$(PRODUCT_NAME) uses photos to upload images to conversation and to set avatar.</string>
-	<key>NSCameraUsageDescription</key>
 	<string>$(PRODUCT_NAME) uses photos to upload images to conversation and to set avatar.</string>
 	<key>UIAppFonts</key>
 	<array>
