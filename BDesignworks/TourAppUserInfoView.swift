@@ -28,9 +28,6 @@ class TourAppUserInfoView: UIViewController {
         center.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    @IBAction func skipPressed(_ sender: AnyObject) {
-    }
-    
     @IBAction func nextPressed(_ sender: AnyObject) {
     }
     

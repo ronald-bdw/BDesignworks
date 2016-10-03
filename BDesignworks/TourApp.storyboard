@@ -1,16 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qf0-c4-R4C">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qf0-c4-R4C">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="OpenSansBold.ttf">
             <string>OpenSans-Bold</string>
         </array>
-        <array key="OpenSansRegular.ttf">
+        <array key="OpenSansRegularItalic.ttf">
             <string>OpenSans</string>
         </array>
         <array key="WorkSans-Regular.otf">
@@ -32,9 +31,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDf-eL-tNa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1636" y="-66"/>
+            <point key="canvasLocation" x="-1303" y="-66"/>
         </scene>
-        <!--Step 1 of 5-->
+        <!--Step 1 of 4-->
         <scene sceneID="5nb-nH-m5O">
             <objects>
                 <viewController id="XDl-FY-iJh" customClass="TourAppUserInfoView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,30 +96,6 @@
                                     <outlet property="delegate" destination="XDl-FY-iJh" id="NzG-du-eW2"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRe-xI-zy0">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="2rx-Gn-tt5"/>
-                                    <constraint firstAttribute="width" constant="150" id="hg1-5S-o3y"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="17"/>
-                                <state key="normal" title="Skip">
-                                    <color key="titleColor" red="0.16078431372549018" green="0.32549019607843138" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fs_borderColor">
-                                        <color key="value" red="0.16078431372549018" green="0.32549019607843138" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="skipPressed:" destination="XDl-FY-iJh" eventType="touchUpInside" id="3d5-de-ptz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKj-Ct-K8g">
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -150,18 +125,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jKj-Ct-K8g" firstAttribute="leading" secondItem="LRe-xI-zy0" secondAttribute="trailing" constant="20" id="5Ou-Sk-d3j"/>
                             <constraint firstAttribute="trailing" secondItem="9Je-jm-rPh" secondAttribute="trailing" id="8Gm-1Y-riK"/>
-                            <constraint firstItem="jKj-Ct-K8g" firstAttribute="top" secondItem="LRe-xI-zy0" secondAttribute="top" id="KNS-v0-mOP"/>
+                            <constraint firstItem="eRz-8t-4bb" firstAttribute="top" secondItem="jKj-Ct-K8g" secondAttribute="bottom" constant="23" id="DIV-eq-Szv"/>
+                            <constraint firstItem="jKj-Ct-K8g" firstAttribute="centerX" secondItem="qvi-t1-c1s" secondAttribute="centerX" id="WYM-eg-C1w"/>
                             <constraint firstItem="9Je-jm-rPh" firstAttribute="leading" secondItem="qvi-t1-c1s" secondAttribute="leading" id="cju-Ws-OFx"/>
-                            <constraint firstItem="LRe-xI-zy0" firstAttribute="top" secondItem="9Je-jm-rPh" secondAttribute="bottom" constant="38" id="dx2-PP-Nc0"/>
-                            <constraint firstItem="LRe-xI-zy0" firstAttribute="leading" secondItem="qvi-t1-c1s" secondAttribute="leading" constant="28" id="hpn-et-MNQ"/>
                             <constraint firstItem="9Je-jm-rPh" firstAttribute="top" secondItem="qf2-Gu-Gex" secondAttribute="bottom" id="nSK-zP-GtY"/>
-                            <constraint firstItem="eRz-8t-4bb" firstAttribute="top" secondItem="LRe-xI-zy0" secondAttribute="bottom" constant="23" id="shJ-ad-NEx"/>
+                            <constraint firstItem="jKj-Ct-K8g" firstAttribute="top" secondItem="9Je-jm-rPh" secondAttribute="bottom" constant="15" id="uTi-z1-uCg"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Step 1 of 5" id="unt-gg-Cv0">
+                    <navigationItem key="navigationItem" title="Step 1 of 4" id="unt-gg-Cv0">
                         <barButtonItem key="backBarButtonItem" title=" " id="y0n-Cb-EIC"/>
                         <barButtonItem key="rightBarButtonItem" image="forward" id="EJb-58-Xlu">
                             <connections>
@@ -179,7 +152,7 @@
             </objects>
             <point key="canvasLocation" x="-351.19999999999999" y="-66.11694152923539"/>
         </scene>
-        <!--Step 2 of 5-->
+        <!--Step 2 of 4-->
         <scene sceneID="apR-M4-ruj">
             <objects>
                 <viewController id="gu8-dU-7og" sceneMemberID="viewController">
@@ -273,7 +246,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Step 2 of 5" id="H73-8B-v2q">
+                    <navigationItem key="navigationItem" title="Step 2 of 4" id="H73-8B-v2q">
                         <barButtonItem key="backBarButtonItem" title=" " id="rhM-vW-TaC"/>
                         <barButtonItem key="rightBarButtonItem" image="forward" id="FCy-UI-JxQ">
                             <connections>
@@ -286,7 +259,7 @@
             </objects>
             <point key="canvasLocation" x="544.79999999999995" y="-66.11694152923539"/>
         </scene>
-        <!--Step 3 of 5-->
+        <!--Step 3 of 4-->
         <scene sceneID="mRB-Ac-dcn">
             <objects>
                 <viewController id="amk-Bn-ZYo" sceneMemberID="viewController">
@@ -359,7 +332,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Step 3 of 5" id="9lj-yA-dcA">
+                    <navigationItem key="navigationItem" title="Step 3 of 4" id="9lj-yA-dcA">
                         <barButtonItem key="backBarButtonItem" title=" " id="2RL-Jc-b7s"/>
                         <barButtonItem key="rightBarButtonItem" image="forward" id="prY-5x-ZTn">
                             <connections>
@@ -372,7 +345,7 @@
             </objects>
             <point key="canvasLocation" x="1343" y="-66"/>
         </scene>
-        <!--Step 4 of 5-->
+        <!--Step 4 of 4-->
         <scene sceneID="Yey-cZ-HWm">
             <objects>
                 <viewController id="P40-GB-UAa" sceneMemberID="viewController">
@@ -403,23 +376,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUi-8t-IAe">
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="8wK-Ql-aUP"/>
                                     <constraint firstAttribute="width" constant="150" id="zic-vW-ALh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="17"/>
-                                <state key="normal" title="Skip">
-                                    <color key="titleColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Finish">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
                                         <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fs_borderColor">
-                                        <color key="value" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="fs_borderWidth">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -452,181 +423,17 @@
                             <constraint firstItem="AUi-8t-IAe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4M6-c9-V5P" secondAttribute="bottom" constant="20" id="yy6-dd-YQT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Step 4 of 5" id="bVb-9j-rxn">
+                    <navigationItem key="navigationItem" title="Step 4 of 4" id="bVb-9j-rxn">
                         <barButtonItem key="backBarButtonItem" title=" " id="an8-91-g7i"/>
-                        <barButtonItem key="rightBarButtonItem" image="forward" id="nCY-tf-9mg">
-                            <connections>
-                                <segue destination="17x-0o-CuD" kind="show" id="WYg-ih-xly"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQn-QT-1Nk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2172" y="-61.619190404797607"/>
         </scene>
-        <!--Step 5 of 5-->
-        <scene sceneID="9Cz-D8-cMe">
-            <objects>
-                <viewController id="17x-0o-CuD" customClass="TourAppSocialView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ekR-x9-SEt"/>
-                        <viewControllerLayoutGuide type="bottom" id="EqZ-Sm-c1Z"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="asi-fK-rML">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOOKS LIKE YOU ARE ALL SET! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7A-wM-lNP">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="4V0-dp-vO1"/>
-                                    <constraint firstAttribute="width" constant="280" id="HYc-2o-y7A"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
-                                <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One of our coach will contact you shortly. Meantime, you can follow us on our Facebook for more tips to get active." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnQ-Fx-z8b">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="87.5" id="5Ty-e1-zd9"/>
-                                    <constraint firstAttribute="width" constant="280" id="axy-6g-6lt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Social/twiiter" translatesAutoresizingMaskIntoConstraints="NO" id="CG8-W4-u5w"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Social/facebook" translatesAutoresizingMaskIntoConstraints="NO" id="fIX-lW-CIh">
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="fIX-lW-CIh" secondAttribute="height" multiplier="1:1" id="V7B-tb-Jtt"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNT-Hq-1uo">
-                                <color key="backgroundColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="LzT-mk-V4Z"/>
-                                    <constraint firstAttribute="height" constant="60" id="sab-vx-P3r"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="17"/>
-                                <state key="normal" title="Finish">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_borderWidth">
-                                        <real key="value" value="-1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="finishPressed:" destination="17x-0o-CuD" eventType="touchUpInside" id="x95-q5-7Yx"/>
-                                    <action selector="skipPressed:" destination="XDl-FY-iJh" eventType="touchUpInside" id="Kir-3m-7SL"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or you can share this app with your family and friends to enjoy the FREE 14-day trial." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyr-3X-YIG">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="46J-NU-oaG"/>
-                                    <constraint firstAttribute="height" constant="87.5" id="O1p-CI-5ij"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="88" id="aDY-Sq-9Bw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xhH-kT-B4A">
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="facebook.com/pearupapp">
-                                            <attributes>
-                                                <color key="NSColor" red="0.16078431372549021" green="0.32549019607843138" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="16" name="OpenSans-Bold"/>
-                                                <real key="NSKern" value="0.20000000000000001"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                    <tabStops>
-                                                        <textTab alignment="left" location="28">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="56">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="84">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="112">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="140">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="168">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="196">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="224">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="252">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="280">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="308">
-                                                            <options/>
-                                                        </textTab>
-                                                        <textTab alignment="left" location="336">
-                                                            <options/>
-                                                        </textTab>
-                                                    </tabStops>
-                                                </paragraphStyle>
-                                                <integer key="NSUnderline" value="1"/>
-                                                <color key="NSUnderlineColor" red="0.16078431372549021" green="0.32549019607843138" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="cyr-3X-YIG" firstAttribute="centerX" secondItem="asi-fK-rML" secondAttribute="centerX" id="0ig-n9-VGK"/>
-                            <constraint firstItem="k7A-wM-lNP" firstAttribute="centerX" secondItem="asi-fK-rML" secondAttribute="centerX" id="3Ta-ng-Ghi"/>
-                            <constraint firstItem="CG8-W4-u5w" firstAttribute="bottom" secondItem="fIX-lW-CIh" secondAttribute="bottom" id="ENt-bI-qtk"/>
-                            <constraint firstItem="tnQ-Fx-z8b" firstAttribute="top" secondItem="k7A-wM-lNP" secondAttribute="bottom" constant="15" id="IlA-k5-Vfv"/>
-                            <constraint firstItem="zNT-Hq-1uo" firstAttribute="top" relation="lessThanOrEqual" secondItem="fIX-lW-CIh" secondAttribute="bottom" constant="140" id="LGb-0j-R0j"/>
-                            <constraint firstItem="zNT-Hq-1uo" firstAttribute="centerX" secondItem="asi-fK-rML" secondAttribute="centerX" id="MaF-Pc-vKl"/>
-                            <constraint firstItem="CG8-W4-u5w" firstAttribute="leading" secondItem="fIX-lW-CIh" secondAttribute="trailing" constant="73" id="MxV-Pe-O6V"/>
-                            <constraint firstItem="fIX-lW-CIh" firstAttribute="top" secondItem="tnQ-Fx-z8b" secondAttribute="bottom" priority="750" constant="30" id="Opl-O3-CBh"/>
-                            <constraint firstItem="CG8-W4-u5w" firstAttribute="width" secondItem="fIX-lW-CIh" secondAttribute="width" id="Q6U-g7-283"/>
-                            <constraint firstItem="zNT-Hq-1uo" firstAttribute="top" secondItem="cyr-3X-YIG" secondAttribute="bottom" constant="8" id="RmO-A3-xts"/>
-                            <constraint firstItem="fIX-lW-CIh" firstAttribute="leading" secondItem="asi-fK-rML" secondAttribute="leadingMargin" constant="48" id="Wdp-gb-aLP"/>
-                            <constraint firstAttribute="trailing" secondItem="CG8-W4-u5w" secondAttribute="trailing" constant="48" id="eum-KF-KSC"/>
-                            <constraint firstItem="k7A-wM-lNP" firstAttribute="top" secondItem="ekR-x9-SEt" secondAttribute="bottom" constant="19" id="hHr-ni-ypE"/>
-                            <constraint firstItem="EqZ-Sm-c1Z" firstAttribute="top" secondItem="zNT-Hq-1uo" secondAttribute="bottom" constant="27" id="kWx-b9-pOU"/>
-                            <constraint firstItem="fIX-lW-CIh" firstAttribute="width" secondItem="fIX-lW-CIh" secondAttribute="height" multiplier="1:1" id="oGE-2Z-12t"/>
-                            <constraint firstItem="xhH-kT-B4A" firstAttribute="top" secondItem="tnQ-Fx-z8b" secondAttribute="bottom" id="pBU-Ic-6Rj"/>
-                            <constraint firstItem="CG8-W4-u5w" firstAttribute="top" secondItem="fIX-lW-CIh" secondAttribute="top" id="qq2-zh-do9"/>
-                            <constraint firstItem="zNT-Hq-1uo" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fIX-lW-CIh" secondAttribute="bottom" constant="20" id="tYT-FS-atE"/>
-                            <constraint firstItem="xhH-kT-B4A" firstAttribute="centerX" secondItem="asi-fK-rML" secondAttribute="centerX" id="uHq-oz-Axa"/>
-                            <constraint firstItem="tnQ-Fx-z8b" firstAttribute="centerX" secondItem="asi-fK-rML" secondAttribute="centerX" id="x1a-8f-J4D"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Step 5 of 5" id="8X8-jd-PHE">
-                        <barButtonItem key="backBarButtonItem" title=" " id="rpG-Ah-TMe"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eog-Xe-0ws" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3008.8000000000002" y="-63.418290854572717"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Profile/Photo" width="144" height="119"/>
-        <image name="Social/facebook" width="85" height="85"/>
-        <image name="Social/twiiter" width="85" height="70"/>
         <image name="Sync/FitBit" width="144" height="148"/>
         <image name="Sync/HealthKit" width="237" height="209"/>
         <image name="TourApp/phone" width="216" height="193"/>

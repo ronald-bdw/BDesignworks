@@ -19,26 +19,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setupProject()
         
 //        ENUser.createTestUser()
-        do {
-            let realm = try Realm()
-            if let authInfo = realm.objects(AuthInfo.self).first {
-                if authInfo.isRegistered {
-                    ShowWelcomeViewController()
-                }
-                else {
-                    ShowRegistrationViewController()
-                }
-            }
-            else if let _ = realm.objects(ENUser.self).first {
-                ShowConversationViewController()
-            }
-            else {
-                ShowInitialViewController()
-            }
-        } catch let error {
-            ShowInitialViewController()
-            Logger.error("\(error)")
-        }
+        ShowTourAppViewController()
+//        do {
+//            let realm = try Realm()
+//            if let authInfo = realm.objects(AuthInfo.self).first {
+//                if authInfo.isRegistered {
+//                    ShowWelcomeViewController()
+//                }
+//                else {
+//                    ShowRegistrationViewController()
+//                }
+//            }
+//            else if let _ = realm.objects(ENUser.self).first {
+//                ShowConversationViewController()
+//            }
+//            else {
+//                ShowInitialViewController()
+//            }
+//        } catch let error {
+//            ShowInitialViewController()
+//            Logger.error("\(error)")
+//        }
         
         return true
     }
