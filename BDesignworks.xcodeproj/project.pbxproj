@@ -100,7 +100,6 @@
 		DCF96E661D9BBBE3005AFE42 /* TourApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCF96E651D9BBBE3005AFE42 /* TourApp.storyboard */; };
 		DCF96E6F1D9BCD7D005AFE42 /* TourAppUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF96E6E1D9BCD7D005AFE42 /* TourAppUserInfoView.swift */; };
 		DCF96E721D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF96E711D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift */; };
-		DCF96E751D9C0D51005AFE42 /* TourAppSocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF96E741D9C0D51005AFE42 /* TourAppSocialView.swift */; };
 		E705D56B1D8AB25E00A05EC5 /* SidebarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705D56A1D8AB25E00A05EC5 /* SidebarModel.swift */; };
 		E705D56D1D8AB31A00A05EC5 /* SidebarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705D56C1D8AB31A00A05EC5 /* SidebarPresenter.swift */; };
 		E72916531D8820B600A6D70A /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916521D8820B600A6D70A /* ProfileModel.swift */; };
@@ -313,7 +312,6 @@
 		DCF96E651D9BBBE3005AFE42 /* TourApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TourApp.storyboard; sourceTree = "<group>"; };
 		DCF96E6E1D9BCD7D005AFE42 /* TourAppUserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppUserInfoView.swift; sourceTree = "<group>"; };
 		DCF96E711D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppUserInfoHelpers.swift; sourceTree = "<group>"; };
-		DCF96E741D9C0D51005AFE42 /* TourAppSocialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppSocialView.swift; sourceTree = "<group>"; };
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		E705D56A1D8AB25E00A05EC5 /* SidebarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarModel.swift; sourceTree = "<group>"; };
 		E705D56C1D8AB31A00A05EC5 /* SidebarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarPresenter.swift; sourceTree = "<group>"; };
@@ -786,7 +784,6 @@
 			isa = PBXGroup;
 			children = (
 				DCF96E701D9BCD81005AFE42 /* TourAppUserInfo */,
-				DCF96E731D9C0D31005AFE42 /* TourAppSocial */,
 			);
 			name = TourApp;
 			sourceTree = "<group>";
@@ -798,14 +795,6 @@
 				DCF96E711D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift */,
 			);
 			name = TourAppUserInfo;
-			sourceTree = "<group>";
-		};
-		DCF96E731D9C0D31005AFE42 /* TourAppSocial */ = {
-			isa = PBXGroup;
-			children = (
-				DCF96E741D9C0D51005AFE42 /* TourAppSocialView.swift */,
-			);
-			name = TourAppSocial;
 			sourceTree = "<group>";
 		};
 		E705D5691D8AB1FA00A05EC5 /* Sidebar */ = {
@@ -1464,7 +1453,6 @@
 				DC37F8581D79D40800E0DBE5 /* TrialPageView.swift in Sources */,
 				DC2280FA1D6B464500D5A0DA /* RegistrationPresenter.swift in Sources */,
 				2F7179511D53497A00231639 /* TrialPageScreen.swift in Sources */,
-				DCF96E751D9C0D51005AFE42 /* TourAppSocialView.swift in Sources */,
 				2F0729911D64C86B00A71B3C /* HealthKitManager.swift in Sources */,
 				2F16FE341D54E15A00EFFDD7 /* AboutScreen.swift in Sources */,
 				E7C1F26D1D881C37007F9D7A /* ProfileView.swift in Sources */,
