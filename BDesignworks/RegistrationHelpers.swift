@@ -89,7 +89,7 @@ struct RegistrationUserField {
     }
     
     init(type: RegistrationCellType) {
-        self.content = ""
         self.type = type
+        self.content = (self.type == .phone ? "+" : "")
     }
 }

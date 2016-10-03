@@ -58,7 +58,7 @@ class ENUser: Object, IUser {
         user.firstName.content = self.firstName
         user.lastName.content = self.lastName
         user.email.content = self.email
-        user.phone.content = self.phoneNumber
+        user.phone.content = self.phoneNumber == "" ? "+" : self.phoneNumber
         return user
     }
     

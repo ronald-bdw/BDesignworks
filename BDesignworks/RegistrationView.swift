@@ -101,7 +101,7 @@ extension RegistrationView: UITableViewDelegate {
             return 78
         default:
             return self.shouldShowErrors ?
-            (self.user?.isFieldValid(indexPath.row) ?? false) ? 0 : 49 :
+            (self.user?.isFieldValid(indexPath.row) ?? false) ? 0 : 60 :
             0
         }
     }
@@ -139,7 +139,8 @@ extension RegistrationView: UITextFieldDelegate {
         case .phone: self.user?.phone.content = newString
         }
         
-        return true
+        guard cellType == .phone && string == "" && textField.text == "+" else {return true}
+        return false
     }
 }
 
@@ -175,6 +176,7 @@ extension RegistrationView: IRegistrationView {
     
     func showPhoneCodeReceivedView() {
         SVProgressHUD.dismiss()
+        ShowOKAlert("Success!", message: "Please wait for sms with code.")
     }
 }
 

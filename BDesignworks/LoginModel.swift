@@ -40,6 +40,7 @@ class LoginModel {
                     
                     do {
                         try realm.write({
+                            realm.delete(realm.objects(ENUser.self))
                             realm.add(user, update: true)
                             realm.delete(realm.objects(AuthInfo.self))
                         })
