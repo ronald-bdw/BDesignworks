@@ -2,14 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qf0-c4-R4C">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="OpenSansBold.ttf">
             <string>OpenSans-Bold</string>
         </array>
-        <array key="OpenSansRegularItalic.ttf">
+        <array key="OpenSansRegular.ttf">
             <string>OpenSans</string>
         </array>
         <array key="WorkSans-Regular.otf">
@@ -248,195 +247,16 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Step 2 of 4" id="H73-8B-v2q">
                         <barButtonItem key="backBarButtonItem" title=" " id="rhM-vW-TaC"/>
-                        <barButtonItem key="rightBarButtonItem" image="forward" id="FCy-UI-JxQ">
-                            <connections>
-                                <segue destination="amk-Bn-ZYo" kind="show" id="9XT-fe-Tkf"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="forward" id="FCy-UI-JxQ"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A87-2P-5n0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="544.79999999999995" y="-66.11694152923539"/>
         </scene>
-        <!--Step 3 of 4-->
-        <scene sceneID="mRB-Ac-dcn">
-            <objects>
-                <viewController id="amk-Bn-ZYo" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LtV-Pi-9hi"/>
-                        <viewControllerLayoutGuide type="bottom" id="QUn-XH-VyP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sjq-Xw-pI4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TURN ON YOUR NOTIFICATIONS." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljM-BE-jXG">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="hjL-dd-0dC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
-                                <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In order for us to assist you better, please ensure to turn on your notifications under your phone’s settings." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jak-BO-gSR">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="xeQ-hI-psn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="TourApp/phone" translatesAutoresizingMaskIntoConstraints="NO" id="mhk-bS-BSP">
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="mhk-bS-BSP" secondAttribute="height" multiplier="216:193" id="Irx-7h-yWg"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax9-Cp-sA1">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="gTl-iN-2q0"/>
-                                    <constraint firstAttribute="width" constant="150" id="yya-1N-FXw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="17"/>
-                                <state key="normal" title="Skip">
-                                    <color key="titleColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fs_borderColor">
-                                        <color key="value" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="skipPressed:" destination="XDl-FY-iJh" eventType="touchUpInside" id="B8u-ys-Qpj"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="QUn-XH-VyP" firstAttribute="top" secondItem="Ax9-Cp-sA1" secondAttribute="bottom" constant="23" id="6gM-L8-vJs"/>
-                            <constraint firstItem="Ax9-Cp-sA1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mhk-bS-BSP" secondAttribute="bottom" constant="15" id="DX7-D5-4oJ"/>
-                            <constraint firstItem="ljM-BE-jXG" firstAttribute="top" secondItem="LtV-Pi-9hi" secondAttribute="bottom" constant="19" id="EEL-Rd-c3e"/>
-                            <constraint firstItem="ljM-BE-jXG" firstAttribute="centerX" secondItem="sjq-Xw-pI4" secondAttribute="centerX" id="WSf-Vg-mAP"/>
-                            <constraint firstItem="Jak-BO-gSR" firstAttribute="centerX" secondItem="sjq-Xw-pI4" secondAttribute="centerX" id="c0Y-hC-GyS"/>
-                            <constraint firstItem="mhk-bS-BSP" firstAttribute="top" secondItem="Jak-BO-gSR" secondAttribute="bottom" constant="15" id="cOn-zF-5qf"/>
-                            <constraint firstItem="mhk-bS-BSP" firstAttribute="leading" secondItem="sjq-Xw-pI4" secondAttribute="leading" constant="79.5" id="goM-9x-Mqe"/>
-                            <constraint firstItem="Ax9-Cp-sA1" firstAttribute="centerX" secondItem="sjq-Xw-pI4" secondAttribute="centerX" id="inV-t5-eTT"/>
-                            <constraint firstAttribute="trailing" secondItem="mhk-bS-BSP" secondAttribute="trailing" constant="79.5" id="sJ8-NL-MGL"/>
-                            <constraint firstItem="Jak-BO-gSR" firstAttribute="top" secondItem="ljM-BE-jXG" secondAttribute="bottom" constant="15" id="uOO-UV-XaF"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Step 3 of 4" id="9lj-yA-dcA">
-                        <barButtonItem key="backBarButtonItem" title=" " id="2RL-Jc-b7s"/>
-                        <barButtonItem key="rightBarButtonItem" image="forward" id="prY-5x-ZTn">
-                            <connections>
-                                <segue destination="P40-GB-UAa" kind="show" id="ISW-tw-VZq"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nV9-cj-qZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1343" y="-66"/>
-        </scene>
-        <!--Step 4 of 4-->
-        <scene sceneID="Yey-cZ-HWm">
-            <objects>
-                <viewController id="P40-GB-UAa" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JOd-No-Xpg"/>
-                        <viewControllerLayoutGuide type="bottom" id="PLJ-ea-G7O"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lHd-5s-SVW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="TRACK YOUR STEPS WITH FITBIT/GOOGLE FIT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8k6-cc-z4i">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="RvN-yo-od7"/>
-                                    <constraint firstAttribute="height" constant="60" id="e7x-8b-7bM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
-                                <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="We are nearly there… to understand your active level better, please ensure to sync your device with  our app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alc-8S-q69">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="ez8-Tm-cYf"/>
-                                    <constraint firstAttribute="height" constant="87.5" id="j6v-tu-AOm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUi-8t-IAe">
-                                <color key="backgroundColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="8wK-Ql-aUP"/>
-                                    <constraint firstAttribute="width" constant="150" id="zic-vW-ALh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="17"/>
-                                <state key="normal" title="Finish">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="skipPressed:" destination="XDl-FY-iJh" eventType="touchUpInside" id="ljs-xJ-bzV"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sync/HealthKit" translatesAutoresizingMaskIntoConstraints="NO" id="csw-iJ-A5p"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Sync/FitBit" translatesAutoresizingMaskIntoConstraints="NO" id="4M6-c9-V5P">
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="4M6-c9-V5P" secondAttribute="height" multiplier="1:1" id="Zsr-L1-Gux"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="AUi-8t-IAe" firstAttribute="centerX" secondItem="lHd-5s-SVW" secondAttribute="centerX" id="1r6-Uj-Cj4"/>
-                            <constraint firstItem="csw-iJ-A5p" firstAttribute="leading" secondItem="4M6-c9-V5P" secondAttribute="trailing" constant="73" id="7lw-od-VEc"/>
-                            <constraint firstItem="PLJ-ea-G7O" firstAttribute="top" secondItem="AUi-8t-IAe" secondAttribute="bottom" constant="23" id="AcK-XS-go4"/>
-                            <constraint firstItem="4M6-c9-V5P" firstAttribute="leading" secondItem="lHd-5s-SVW" secondAttribute="leading" constant="48" id="MzR-Vk-NfX"/>
-                            <constraint firstItem="csw-iJ-A5p" firstAttribute="width" secondItem="4M6-c9-V5P" secondAttribute="width" id="TeI-kY-Zgw"/>
-                            <constraint firstItem="AUi-8t-IAe" firstAttribute="top" relation="lessThanOrEqual" secondItem="4M6-c9-V5P" secondAttribute="bottom" constant="140" id="WRi-Wx-fZA"/>
-                            <constraint firstItem="alc-8S-q69" firstAttribute="centerX" secondItem="lHd-5s-SVW" secondAttribute="centerX" id="cgj-Fr-H5v"/>
-                            <constraint firstItem="csw-iJ-A5p" firstAttribute="bottom" secondItem="4M6-c9-V5P" secondAttribute="bottom" id="eAJ-Zq-i8z"/>
-                            <constraint firstItem="4M6-c9-V5P" firstAttribute="top" secondItem="alc-8S-q69" secondAttribute="bottom" priority="750" constant="30" id="g89-8s-pMb"/>
-                            <constraint firstItem="8k6-cc-z4i" firstAttribute="top" secondItem="JOd-No-Xpg" secondAttribute="bottom" constant="19" id="gSp-sm-hpM"/>
-                            <constraint firstItem="csw-iJ-A5p" firstAttribute="top" secondItem="4M6-c9-V5P" secondAttribute="top" id="gxo-1z-rGo"/>
-                            <constraint firstAttribute="trailing" secondItem="csw-iJ-A5p" secondAttribute="trailing" constant="48" id="ren-cQ-ua0"/>
-                            <constraint firstItem="alc-8S-q69" firstAttribute="top" secondItem="8k6-cc-z4i" secondAttribute="bottom" constant="15" id="s5A-Mn-XFj"/>
-                            <constraint firstItem="8k6-cc-z4i" firstAttribute="centerX" secondItem="lHd-5s-SVW" secondAttribute="centerX" id="vIV-2t-9fD"/>
-                            <constraint firstItem="AUi-8t-IAe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4M6-c9-V5P" secondAttribute="bottom" constant="20" id="yy6-dd-YQT"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Step 4 of 4" id="bVb-9j-rxn">
-                        <barButtonItem key="backBarButtonItem" title=" " id="an8-91-g7i"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xQn-QT-1Nk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2172" y="-61.619190404797607"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Profile/Photo" width="144" height="119"/>
-        <image name="Sync/FitBit" width="144" height="148"/>
-        <image name="Sync/HealthKit" width="237" height="209"/>
-        <image name="TourApp/phone" width="216" height="193"/>
         <image name="forward" width="14" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
