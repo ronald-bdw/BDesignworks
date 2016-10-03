@@ -16,15 +16,11 @@ protocol IRegistrationViewPresenter: class {
 }
 
 protocol IRegistrationModelPresenter: class {
-    func registrationStarted()
-    func registrationSuccessed()
+    func loadingStarted()
+    func loadingSuccessed()
     func requestFailed(_ error: RTError?)
     func updateValidationErrors()
     func phoneCodeReceived()
-}
-
-extension IRegistrationModelPresenter {
-    func requestFailed(_ error: RTError? = nil) {}
 }
 
 class RegistrationPresenter {
@@ -35,15 +31,15 @@ class RegistrationPresenter {
 }
 
 extension RegistrationPresenter: IRegistrationModelPresenter {
-    func registrationStarted() {
+    func loadingStarted() {
         self.view?.setLoadingState(.loading)
     }
     
-    func registrationSuccessed() {
+    func loadingSuccessed() {
         self.view?.setLoadingState(.done)
     }
     
-    func requestFailed(_ error: RTError? = nil) {
+    func requestFailed(_ error: RTError?) {
         guard let lError = error else {self.view?.setLoadingState(.failed); return}
         if case .backend(let backendError) = lError {
             self.view?.showErrorView(backendError.humanDescription.title, content: backendError.humanDescription.text, errorType: backendError)
@@ -63,8 +59,20 @@ extension RegistrationPresenter: IRegistrationModelPresenter {
 
 extension RegistrationPresenter: IRegistrationViewPresenter {
     func submitTapped(_ user: RegistrationUser?) {
-        guard let lUser = user else {return}
-        self.model?.register(lUser)
+        guard let lUser = user else {self.view?.setLoadingState(.failed); return}
+        do {
+            let realm = try Realm()
+            if let authInfo = realm.objects(AuthInfo.self).first {
+                self.model?.register(lUser, authData: authInfo)
+            }
+            else {
+                self.model?.receivePhoneCode(lUser)
+            }
+        }
+        catch let error {
+            Logger.error(error)
+            self.view?.setLoadingState(.failed)
+        }
     }
     
     func getRegistrationUser() -> RegistrationUser? {
@@ -72,7 +80,8 @@ extension RegistrationPresenter: IRegistrationViewPresenter {
     }
     
     func resendPhoneCodeTapped(_ user: RegistrationUser?) {
-        self.model?.receivePhoneCode(user)
+        guard let lUser = user else {self.view?.setLoadingState(.failed); return}
+        self.model?.receivePhoneCode(lUser)
     }
     
     func viewDidLoad() {

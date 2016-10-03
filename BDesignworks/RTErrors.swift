@@ -70,6 +70,7 @@ enum BackendError {
     case notAuthorized
     case smsCodeExpired
     case invalidPhone
+    case phoneTaken
     case emainTaken
     case smsCodeNotExist
     

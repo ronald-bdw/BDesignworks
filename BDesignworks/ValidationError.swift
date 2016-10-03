@@ -26,7 +26,7 @@ extension ValidationError: Mappable {
         
         guard let validations = map.JSON["validations"] as? [String: AnyObject] else {return}
         self.isSmsCodeValid = validations["sms_code"] == nil
-        self.isPhoneValid = validations["phone_number"] == nil
+        self.isPhoneValid = validations["phone_number"] == nil && "\(validations["message"])".contains("is not a valid phone number")
         self.isEmailNotTaken = validations["email"] == nil
     }
 }

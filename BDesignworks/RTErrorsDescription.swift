@@ -25,6 +25,7 @@ extension BackendError: HumanErrorType {
         case .notAuthorized     : return "User is not authorized"
         case .smsCodeExpired    : return "Sms code has expired"
         case .invalidPhone      : return "Phone is invalid"
+        case .phoneTaken        : return "Phone number is already taken"
         case .emainTaken        : return "Emain is taken"
         case .smsCodeNotExist   : return "Sms code not saved in database"
         }
@@ -35,6 +36,7 @@ extension BackendError: HumanErrorType {
         case .notAuthorized     : return ErrorHumanDescription(title: "Error", text: "Someone accessed your account. You will be redirected to authetication screen.")
         case .smsCodeExpired    : return ErrorHumanDescription(title: "Sms code has expired", text: "Resend sms code?")
         case .invalidPhone      : return ErrorHumanDescription(title: "Phone number is invalid", text: "You must provide valid phone number")
+        case .phoneTaken        : return ErrorHumanDescription(title: "Sorry", text: "Phone number is already taken")
         case .emainTaken        : return ErrorHumanDescription(title: "Sorry", text: "Email is taken")
         case .smsCodeNotExist   : return ErrorHumanDescription(title: "Success", text: "Please, enter the link in sended sms.")
         }
