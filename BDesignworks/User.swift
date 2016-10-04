@@ -86,12 +86,12 @@ class ENUser: Object, IUser {
             let realm = try Realm()
             guard realm.objects(ENUser.self).count == 0 else {return}
             let user = ENUser()
-            user.id = 14//1
+            user.id = 1//14
             user.firstName = "Ellina"
             user.lastName = "K"
             user.email = "ekd@t.t"
-            user.phoneNumber = "+79377709981" // +79377709988
-            user.token = "GLyzsjLbcmuWMY6sp7s1" //nxZsbQc3e_jVSbMDDsFS
+            user.phoneNumber = "+79377709988" // +79377709988
+            user.token = "sK6W4zG-jCTyy_LY5CUr" //nxZsbQc3e_jVSbMDDsFS
             try realm.write({
                 realm.add(user)
             })

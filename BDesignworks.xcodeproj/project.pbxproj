@@ -111,6 +111,8 @@
 		E765DBAC1D93D2A800D94FF9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E765DBAB1D93D2A800D94FF9 /* Settings.storyboard */; };
 		E774EF8B1D899629007A8BC4 /* ProfileEditingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774EF8A1D899629007A8BC4 /* ProfileEditingHelpers.swift */; };
 		E79D88F81D7F256200EBA8FA /* TrialPageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */; };
+		E7AF27371DA2855D00596191 /* TourAppUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF27361DA2855D00596191 /* TourAppUserInfoModel.swift */; };
+		E7AF27391DA2857000596191 /* TourAppUserInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF27381DA2857000596191 /* TourAppUserInfoPresenter.swift */; };
 		E7C1F2691D88011C007F9D7A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C1F2681D88011C007F9D7A /* Profile.storyboard */; };
 		E7C1F26D1D881C37007F9D7A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C1F26C1D881C37007F9D7A /* ProfileView.swift */; };
 		E7DA95801D8018FA0079EB79 /* RTSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA957F1D8018FA0079EB79 /* RTSteps.swift */; };
@@ -324,6 +326,8 @@
 		E765DBAB1D93D2A800D94FF9 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		E774EF8A1D899629007A8BC4 /* ProfileEditingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingHelpers.swift; sourceTree = "<group>"; };
 		E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageSelectionView.swift; sourceTree = "<group>"; };
+		E7AF27361DA2855D00596191 /* TourAppUserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppUserInfoModel.swift; sourceTree = "<group>"; };
+		E7AF27381DA2857000596191 /* TourAppUserInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppUserInfoPresenter.swift; sourceTree = "<group>"; };
 		E7C1F2681D88011C007F9D7A /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E7C1F26A1D880AAC007F9D7A /* WorkSans-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-SemiBold.otf"; sourceTree = "<group>"; };
 		E7C1F26C1D881C37007F9D7A /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -791,7 +795,9 @@
 		DCF96E701D9BCD81005AFE42 /* TourAppUserInfo */ = {
 			isa = PBXGroup;
 			children = (
+				E7AF27361DA2855D00596191 /* TourAppUserInfoModel.swift */,
 				DCF96E6E1D9BCD7D005AFE42 /* TourAppUserInfoView.swift */,
+				E7AF27381DA2857000596191 /* TourAppUserInfoPresenter.swift */,
 				DCF96E711D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift */,
 			);
 			name = TourAppUserInfo;
@@ -1457,6 +1463,7 @@
 				2F16FE341D54E15A00EFFDD7 /* AboutScreen.swift in Sources */,
 				E7C1F26D1D881C37007F9D7A /* ProfileView.swift in Sources */,
 				E72916581D88365E00A6D70A /* ProfileEditingView.swift in Sources */,
+				E7AF27391DA2857000596191 /* TourAppUserInfoPresenter.swift in Sources */,
 				E79D88F81D7F256200EBA8FA /* TrialPageSelectionView.swift in Sources */,
 				DCF96E6F1D9BCD7D005AFE42 /* TourAppUserInfoView.swift in Sources */,
 				DC2281161D6B46AB00D5A0DA /* RTErrorsDescription.swift in Sources */,
@@ -1504,6 +1511,7 @@
 				E72916551D8828C600A6D70A /* ProfilePresenter.swift in Sources */,
 				DC9631F11D6EF12100B1C43E /* ViewControllersPresentation.swift in Sources */,
 				DCF96E621D992547005AFE42 /* LogoutView.swift in Sources */,
+				E7AF27371DA2855D00596191 /* TourAppUserInfoModel.swift in Sources */,
 				DC2281131D6B46AB00D5A0DA /* AuthInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,7 +20,7 @@
         <scene sceneID="QK1-Sy-g0j">
             <objects>
                 <navigationController id="qf0-c4-R4C" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lnc-D7-2t3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lnc-D7-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -118,7 +118,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextPressed:" destination="XDl-FY-iJh" eventType="touchUpInside" id="LNg-QT-gCZ"/>
-                                    <segue destination="gu8-dU-7og" kind="show" id="c8F-jN-iBW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -154,7 +153,7 @@
         <!--Step 2 of 4-->
         <scene sceneID="apR-M4-ruj">
             <objects>
-                <viewController id="gu8-dU-7og" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TourAppPhotoView" id="gu8-dU-7og" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fk1-kf-J7u"/>
                         <viewControllerLayoutGuide type="bottom" id="Dxi-mP-Yp9"/>
@@ -259,7 +258,4 @@
         <image name="Profile/Photo" width="144" height="119"/>
         <image name="forward" width="14" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="l68-Bj-MBN"/>
-    </inferredMetricsTieBreakers>
 </document>

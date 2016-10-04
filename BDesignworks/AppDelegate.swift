@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         self.setupProject()
         
-//        ENUser.createTestUser()
+        ENUser.createTestUser()
         ShowTourAppViewController()
 //        do {
 //            let realm = try Realm()
@@ -103,9 +103,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let formatString = "%02.2hhx"
             tokenString += String(format: formatString, arguments: [tokenChars[i]])
         }
+        Logger.debug(tokenString)
 //        UserDefaults.standard.set(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
 //        UserDefaults.standard.set(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
 //        UserDefaults.standard.synchronize()
+    }
+    
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        guard let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController,
+            let _ = navigationController.topViewController as? TourAppUserInfoView else {return}
+        UIApplication.shared.registerForRemoteNotifications()
+        HealthKitManager.sharedInstance.authorize()
     }
 }
 
