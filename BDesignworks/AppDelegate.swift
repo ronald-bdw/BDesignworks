@@ -129,6 +129,8 @@ extension AppDelegate {
         
         self.setupSDWebImage()
         
+        self.setupSVProgressHUD()
+        
         //setup Crashlytics
         Fabric.with([Crashlytics.self])
         
@@ -190,6 +192,10 @@ extension AppDelegate {
         
         let imageDownloader:SDWebImageDownloader = SDWebImageDownloader.shared()
         imageDownloader.downloadTimeout          = 60.0
+    }
+    
+    func setupSVProgressHUD() {
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.gradient)
     }
 }
 
