@@ -54,6 +54,10 @@ class RegistrationView: UIViewController {
         ShowInitialViewController()
     }
     
+    @IBAction func didChangeState(_ sender: AnyObject) {
+        self.view.endEditing(true)
+    }
+    
     func keyboardWillShow(_ notification: Notification) {
         guard let userInfo: NSDictionary = (notification as NSNotification).userInfo as NSDictionary?,
             let keyboardSize = (userInfo.object(forKey: UIKeyboardFrameBeginUserInfoKey) as? NSValue)?.cgRectValue.size else {return}
