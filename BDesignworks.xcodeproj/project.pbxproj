@@ -102,6 +102,9 @@
 		DCF96E721D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF96E711D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift */; };
 		E705D56B1D8AB25E00A05EC5 /* SidebarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705D56A1D8AB25E00A05EC5 /* SidebarModel.swift */; };
 		E705D56D1D8AB31A00A05EC5 /* SidebarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705D56C1D8AB31A00A05EC5 /* SidebarPresenter.swift */; };
+		E72552541DA3B7A8005C1B58 /* TourAppAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72552531DA3B7A8005C1B58 /* TourAppAvatarView.swift */; };
+		E72552561DA3B7B9005C1B58 /* TourAppAvatarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72552551DA3B7B9005C1B58 /* TourAppAvatarPresenter.swift */; };
+		E72552581DA3B7C5005C1B58 /* TourAppAvatarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72552571DA3B7C5005C1B58 /* TourAppAvatarModel.swift */; };
 		E72916531D8820B600A6D70A /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916521D8820B600A6D70A /* ProfileModel.swift */; };
 		E72916551D8828C600A6D70A /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916541D8828C600A6D70A /* ProfilePresenter.swift */; };
 		E72916581D88365E00A6D70A /* ProfileEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916571D88365E00A6D70A /* ProfileEditingView.swift */; };
@@ -317,6 +320,9 @@
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		E705D56A1D8AB25E00A05EC5 /* SidebarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarModel.swift; sourceTree = "<group>"; };
 		E705D56C1D8AB31A00A05EC5 /* SidebarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarPresenter.swift; sourceTree = "<group>"; };
+		E72552531DA3B7A8005C1B58 /* TourAppAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppAvatarView.swift; sourceTree = "<group>"; };
+		E72552551DA3B7B9005C1B58 /* TourAppAvatarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppAvatarPresenter.swift; sourceTree = "<group>"; };
+		E72552571DA3B7C5005C1B58 /* TourAppAvatarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppAvatarModel.swift; sourceTree = "<group>"; };
 		E72916521D8820B600A6D70A /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		E72916541D8828C600A6D70A /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		E72916571D88365E00A6D70A /* ProfileEditingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingView.swift; sourceTree = "<group>"; };
@@ -788,6 +794,7 @@
 			isa = PBXGroup;
 			children = (
 				DCF96E701D9BCD81005AFE42 /* TourAppUserInfo */,
+				E72552521DA3B794005C1B58 /* TourAppAvatar */,
 			);
 			name = TourApp;
 			sourceTree = "<group>";
@@ -811,6 +818,16 @@
 				E705D56C1D8AB31A00A05EC5 /* SidebarPresenter.swift */,
 			);
 			name = Sidebar;
+			sourceTree = "<group>";
+		};
+		E72552521DA3B794005C1B58 /* TourAppAvatar */ = {
+			isa = PBXGroup;
+			children = (
+				E72552531DA3B7A8005C1B58 /* TourAppAvatarView.swift */,
+				E72552551DA3B7B9005C1B58 /* TourAppAvatarPresenter.swift */,
+				E72552571DA3B7C5005C1B58 /* TourAppAvatarModel.swift */,
+			);
+			name = TourAppAvatar;
 			sourceTree = "<group>";
 		};
 		E72916561D88364400A6D70A /* ProflleEditing */ = {
@@ -1492,7 +1509,9 @@
 				DC2280FB1D6B464500D5A0DA /* RegistrationView.swift in Sources */,
 				2F7295F21D6323CC00FD7B21 /* CheckboxTableView.swift in Sources */,
 				DC2281141D6B46AB00D5A0DA /* Router.swift in Sources */,
+				E72552581DA3B7C5005C1B58 /* TourAppAvatarModel.swift in Sources */,
 				2F734A261D5397F60073CE23 /* PaymentScreen.swift in Sources */,
+				E72552561DA3B7B9005C1B58 /* TourAppAvatarPresenter.swift in Sources */,
 				2FFEA0601D551D0E00ADA63B /* Message.swift in Sources */,
 				DC9C6C671D6C995B0034DC5A /* ValidationErrorCell.swift in Sources */,
 				E72916531D8820B600A6D70A /* ProfileModel.swift in Sources */,
@@ -1505,6 +1524,7 @@
 				4F638FFC1D6A6435006EE693 /* RollUpButton.swift in Sources */,
 				DC2281001D6B465400D5A0DA /* LoginPresenter.swift in Sources */,
 				214F4FF21BFDC2CF0084BE32 /* Extensions.swift in Sources */,
+				E72552541DA3B7A8005C1B58 /* TourAppAvatarView.swift in Sources */,
 				E729165A1D883A7A00A6D70A /* ProfileEditingModel.swift in Sources */,
 				E705D56B1D8AB25E00A05EC5 /* SidebarModel.swift in Sources */,
 				E705D56D1D8AB31A00A05EC5 /* SidebarPresenter.swift in Sources */,
