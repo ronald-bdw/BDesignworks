@@ -38,8 +38,12 @@ extension TourAppAvatarPresenter: ITourAppAvatarPresenterModel {
     }
     
     func loadingFinished(user: ENUser) {
+        guard let url = URL(string: user.avatarUrl) else {
+            self.view?.setLoadingState(.failed)
+            self.view?.showErrorView()
+            return
+        }
         self.view?.setLoadingState(.done)
-        guard let url = URL(string: user.avatarUrl) else {return}
         self.view?.updateView(avatarURL: url)
     }
     
