@@ -89,46 +89,58 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileFooter" rowHeight="100" id="bEr-ew-HWc">
+                                        <rect key="frame" x="0.0" y="342" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bEr-ew-HWc" id="Bwr-Zs-dyf">
+                                            <frame key="frameInset" width="320" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKj-Ct-K8g">
+                                                    <color key="backgroundColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="G6A-hs-m9U"/>
+                                                        <constraint firstAttribute="width" constant="150" id="uhf-dz-pd2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="18"/>
+                                                    <state key="normal" title="Next">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                                            <real key="value" value="30"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="fs_borderColor">
+                                                            <color key="value" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fs_borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="nextPressed:" destination="XDl-FY-iJh" eventType="touchUpInside" id="LNg-QT-gCZ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jKj-Ct-K8g" firstAttribute="centerX" secondItem="Bwr-Zs-dyf" secondAttribute="centerX" id="pyi-9t-kBO"/>
+                                                <constraint firstItem="jKj-Ct-K8g" firstAttribute="centerY" secondItem="Bwr-Zs-dyf" secondAttribute="centerY" id="x8x-MV-ylE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="XDl-FY-iJh" id="Ega-sR-Efq"/>
                                     <outlet property="delegate" destination="XDl-FY-iJh" id="NzG-du-eW2"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKj-Ct-K8g">
-                                <color key="backgroundColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="G6A-hs-m9U"/>
-                                    <constraint firstAttribute="width" constant="150" id="uhf-dz-pd2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="18"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fs_borderColor">
-                                        <color key="value" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="nextPressed:" destination="XDl-FY-iJh" eventType="touchUpInside" id="LNg-QT-gCZ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9Je-jm-rPh" secondAttribute="trailing" id="8Gm-1Y-riK"/>
-                            <constraint firstItem="eRz-8t-4bb" firstAttribute="top" secondItem="jKj-Ct-K8g" secondAttribute="bottom" constant="23" id="DIV-eq-Szv"/>
-                            <constraint firstItem="jKj-Ct-K8g" firstAttribute="centerX" secondItem="qvi-t1-c1s" secondAttribute="centerX" id="WYM-eg-C1w"/>
+                            <constraint firstAttribute="bottom" secondItem="9Je-jm-rPh" secondAttribute="bottom" id="96q-S8-ZR4"/>
                             <constraint firstItem="9Je-jm-rPh" firstAttribute="leading" secondItem="qvi-t1-c1s" secondAttribute="leading" id="cju-Ws-OFx"/>
                             <constraint firstItem="9Je-jm-rPh" firstAttribute="top" secondItem="qf2-Gu-Gex" secondAttribute="bottom" id="nSK-zP-GtY"/>
-                            <constraint firstItem="jKj-Ct-K8g" firstAttribute="top" secondItem="9Je-jm-rPh" secondAttribute="bottom" constant="15" id="uTi-z1-uCg"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -148,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="foj-5Z-vlu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-351.19999999999999" y="-66.11694152923539"/>
+            <point key="canvasLocation" x="-352.5" y="-66.549295774647888"/>
         </scene>
         <!--Step 2 of 2-->
         <scene sceneID="apR-M4-ruj">

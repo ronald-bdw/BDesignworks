@@ -802,9 +802,9 @@
 		DCF96E701D9BCD81005AFE42 /* TourAppUserInfo */ = {
 			isa = PBXGroup;
 			children = (
-				E7AF27361DA2855D00596191 /* TourAppUserInfoModel.swift */,
 				DCF96E6E1D9BCD7D005AFE42 /* TourAppUserInfoView.swift */,
 				E7AF27381DA2857000596191 /* TourAppUserInfoPresenter.swift */,
+				E7AF27361DA2855D00596191 /* TourAppUserInfoModel.swift */,
 				DCF96E711D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift */,
 			);
 			name = TourAppUserInfo;

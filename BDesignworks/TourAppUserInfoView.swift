@@ -66,12 +66,15 @@ class TourAppUserInfoView: UIViewController {
 extension TourAppUserInfoView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 8
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             return self.tableView.dequeueReusableCell(withIdentifier: "profileHeader")!
+        }
+        if indexPath.row == 7 {
+            return self.tableView.dequeueReusableCell(withIdentifier: "profileFooter")!
         }
         if let cellType = TourAppUserInfoCellType(rawValue: indexPath.row) {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: RegistrationTableViewCell.fs_className) as! RegistrationTableViewCell
@@ -95,6 +98,7 @@ extension TourAppUserInfoView: UITableViewDataSource {
 extension TourAppUserInfoView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard indexPath.row != 0 else {return 250}
+        guard indexPath.row != 7 else {return 100}
         switch (indexPath as NSIndexPath).row % 2 {
         case 0:
             return (self.presenter?.getUser()?.isFieldValid(indexPath.row) ?? false) ? 0 : 60 
