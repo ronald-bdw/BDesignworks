@@ -15,12 +15,24 @@ protocol ITourAppAvatarView: class {
 }
 
 class TourAppAvatarView: UIViewController {
+    static let identifier = "TourAppAvatarView"
+    
+    @IBOutlet weak var avatarView: UIImageView!
+    
     var presenter: ITourAppAvatarPresenterView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let _ = TourAppAvatarMVP(controller: self)
+    }
+    
+    @IBAction func photoPressed(_ sender: AnyObject) {
+        
+    }
+    
+    @IBAction func skipPressed(_ sender: AnyObject) {
+        
     }
 }
 

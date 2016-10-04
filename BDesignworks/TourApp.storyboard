@@ -8,7 +8,7 @@
         <array key="OpenSansBold.ttf">
             <string>OpenSans-Bold</string>
         </array>
-        <array key="OpenSansRegular.ttf">
+        <array key="OpenSansRegularItalic.ttf">
             <string>OpenSans</string>
         </array>
         <array key="WorkSans-Regular.otf">
@@ -32,7 +32,7 @@
             </objects>
             <point key="canvasLocation" x="-1303" y="-66"/>
         </scene>
-        <!--Step 1 of 4-->
+        <!--Step 1 of 2-->
         <scene sceneID="5nb-nH-m5O">
             <objects>
                 <viewController id="XDl-FY-iJh" customClass="TourAppUserInfoView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,17 +41,17 @@
                         <viewControllerLayoutGuide type="bottom" id="eRz-8t-4bb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qvi-t1-c1s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Je-jm-rPh">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileHeader" rowHeight="250" id="lMf-jw-Zqd">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="250"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lMf-jw-Zqd" id="3qF-5A-YUP">
-                                            <frame key="frameInset" width="375" height="250"/>
+                                            <frame key="frameInset" width="320" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HELLO! WELCOME TO PEARUP!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujb-9W-pXT">
@@ -132,7 +132,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Step 1 of 4" id="unt-gg-Cv0">
+                    <navigationItem key="navigationItem" title="Step 1 of 2" id="unt-gg-Cv0">
                         <barButtonItem key="backBarButtonItem" title=" " id="y0n-Cb-EIC"/>
                         <barButtonItem key="rightBarButtonItem" image="forward" id="EJb-58-Xlu">
                             <connections>
@@ -150,16 +150,16 @@
             </objects>
             <point key="canvasLocation" x="-351.19999999999999" y="-66.11694152923539"/>
         </scene>
-        <!--Step 2 of 4-->
+        <!--Step 2 of 2-->
         <scene sceneID="apR-M4-ruj">
             <objects>
-                <viewController storyboardIdentifier="TourAppPhotoView" id="gu8-dU-7og" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TourAppAvatarView" id="gu8-dU-7og" customClass="TourAppAvatarView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fk1-kf-J7u"/>
                         <viewControllerLayoutGuide type="bottom" id="Dxi-mP-Yp9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cSl-5K-eZd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPLOAD YOUR PROFILE PHOTO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pap-LP-TPC">
@@ -203,6 +203,11 @@
                                     <constraint firstAttribute="width" constant="32" id="McY-TZ-cIf"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMV-k5-C0d">
+                                <connections>
+                                    <action selector="photoPressed:" destination="gu8-dU-7og" eventType="touchUpInside" id="C3W-b5-hJL"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btc-3F-sUc">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ku0-Xq-oKh"/>
@@ -225,6 +230,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="skipPressed:" destination="XDl-FY-iJh" eventType="touchUpInside" id="R2G-yT-A4c"/>
+                                    <action selector="skipPressed:" destination="gu8-dU-7og" eventType="touchUpInside" id="aeZ-iX-aUM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -236,18 +242,29 @@
                             <constraint firstItem="n8L-iH-OgM" firstAttribute="centerX" secondItem="cSl-5K-eZd" secondAttribute="centerX" id="Kwq-nI-npf"/>
                             <constraint firstItem="pap-LP-TPC" firstAttribute="centerX" secondItem="cSl-5K-eZd" secondAttribute="centerX" id="Nqf-yn-1Bi"/>
                             <constraint firstItem="n8L-iH-OgM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GOD-bw-0vh" secondAttribute="bottom" constant="8" id="VVG-wz-M45"/>
+                            <constraint firstItem="eMV-k5-C0d" firstAttribute="top" secondItem="n8L-iH-OgM" secondAttribute="top" id="WPJ-Oa-8JJ"/>
+                            <constraint firstItem="eMV-k5-C0d" firstAttribute="trailing" secondItem="n8L-iH-OgM" secondAttribute="trailing" id="Wyf-3E-q6U"/>
                             <constraint firstItem="pap-LP-TPC" firstAttribute="top" secondItem="fk1-kf-J7u" secondAttribute="bottom" constant="19" id="aXl-nq-bJH"/>
+                            <constraint firstItem="eMV-k5-C0d" firstAttribute="leading" secondItem="n8L-iH-OgM" secondAttribute="leading" id="dCH-Ox-AbV"/>
                             <constraint firstItem="GOD-bw-0vh" firstAttribute="top" secondItem="pap-LP-TPC" secondAttribute="bottom" constant="15" id="fGk-Dj-jgl"/>
                             <constraint firstItem="Dxi-mP-Yp9" firstAttribute="top" secondItem="Btc-3F-sUc" secondAttribute="bottom" constant="23" id="oe3-7n-RFr"/>
+                            <constraint firstItem="eMV-k5-C0d" firstAttribute="bottom" secondItem="n8L-iH-OgM" secondAttribute="bottom" id="pek-Qa-fTl"/>
                             <constraint firstItem="r4C-zH-7Pn" firstAttribute="centerY" secondItem="n8L-iH-OgM" secondAttribute="centerY" id="sB5-Xe-aAC"/>
                             <constraint firstItem="n8L-iH-OgM" firstAttribute="centerY" secondItem="cSl-5K-eZd" secondAttribute="centerY" priority="750" id="tc9-dL-o3R"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Step 2 of 4" id="H73-8B-v2q">
+                    <navigationItem key="navigationItem" title="Step 2 of 2" id="H73-8B-v2q">
                         <barButtonItem key="backBarButtonItem" title=" " id="rhM-vW-TaC"/>
-                        <barButtonItem key="rightBarButtonItem" image="forward" id="FCy-UI-JxQ"/>
+                        <barButtonItem key="rightBarButtonItem" image="forward" id="FCy-UI-JxQ">
+                            <connections>
+                                <action selector="skipPressed:" destination="gu8-dU-7og" id="y5K-cM-McD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="avatarView" destination="n8L-iH-OgM" id="xXk-sy-UsG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A87-2P-5n0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

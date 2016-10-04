@@ -146,7 +146,7 @@ extension TourAppUserInfoView: ITourAppUserInfoView {
             SVProgressHUD.show()
         case .done:
             SVProgressHUD.dismiss()
-            let viewController = Storyboard.tourApp.storyboard.instantiateViewController(withIdentifier: "TourAppPhotoView")
+            let viewController = Storyboard.tourApp.storyboard.instantiateViewController(withIdentifier: TourAppAvatarView.identifier)
             self.navigationController?.pushViewController(viewController, animated: true)
         case .failed:
             SVProgressHUD.dismiss()
