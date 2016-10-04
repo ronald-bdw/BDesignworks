@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         self.setupProject()
         
-//        ENUser.createTestUser()
+        ENUser.createTestUser()
         do {
             let realm = try Realm()
             if let authInfo = realm.objects(AuthInfo.self).first {
