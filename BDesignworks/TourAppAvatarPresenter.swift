@@ -9,11 +9,14 @@
 import Foundation
 
 protocol ITourAppAvatarPresenterView {
-    
+    func imageReceived(image: UIImage)
 }
 
 protocol ITourAppAvatarPresenterModel: class {
-    
+    func loadingStarted()
+    func loadingFinished(user: ENUser)
+    func loadingFailed(_ error: RTError)
+    func loadingFailed()
 }
 
 class TourAppAvatarPresenter {
@@ -24,11 +27,36 @@ class TourAppAvatarPresenter {
 }
 
 extension TourAppAvatarPresenter: ITourAppAvatarPresenterView {
-    
+    func imageReceived(image: UIImage) {
+        self.model?.sendAvatar(image: image)
+    }
 }
 
 extension TourAppAvatarPresenter: ITourAppAvatarPresenterModel {
+    func loadingStarted() {
+        self.view?.setLoadingState(.loading)
+    }
     
+    func loadingFinished(user: ENUser) {
+        self.view?.setLoadingState(.done)
+        guard let url = URL(string: user.avatarUrl) else {return}
+        self.view?.updateView(avatarURL: url)
+    }
+    
+    func loadingFailed(_ error: RTError) {
+        self.view?.setLoadingState(.failed)
+        if case let .backend(backendError) = error {
+            self.view?.showBackendErrorView(backendError.humanDescription)
+        }
+        else {
+            self.view?.showErrorView()
+        }
+    }
+    
+    func loadingFailed() {
+        self.view?.setLoadingState(.failed)
+        self.view?.showErrorView()
+    }
 }
 
 extension TourAppAvatarPresenter: MVPPresenter {
