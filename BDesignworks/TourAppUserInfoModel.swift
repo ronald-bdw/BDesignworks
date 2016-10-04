@@ -23,6 +23,14 @@ class TourAppUserInfoModel {
     required init() {
         self.user = ENUser.getMainUser()?.getTourAppUser() ?? TourAppUser()
     }
+    
+    func isUserValid() -> Bool {
+        var isValid = true
+        for field in self.user.allFields() {
+            isValid = isValid && field.isValid
+        }
+        return isValid
+    }
 }
 
 extension TourAppUserInfoModel: ITourAppUserInfoModel {
@@ -37,6 +45,8 @@ extension TourAppUserInfoModel: ITourAppUserInfoModel {
     
     func sendUserIfNeeded() {
         guard self.isUserUpdated else {self.presenter?.loadingSuccessed(); return}
+        self.presenter?.updateValidationErrors()
+        guard self.isUserValid() else {return}
         guard let id = ENUser.getMainUser()?.id else {self.presenter?.requestFailed(nil); return}
         self.presenter?.loadingStarted()
         let userEdited = UserEdited(id: id, firstName: self.user.firstName.content, lastName: self.user.lastName.content, email: self.user.email.content)
