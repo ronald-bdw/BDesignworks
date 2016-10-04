@@ -268,8 +268,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="FHV-Nz-RNb"/>
                                 <exclude reference="hal-1O-6Dh"/>
+                                <exclude reference="FHV-Nz-RNb"/>
                                 <exclude reference="ZxZ-hs-WLA"/>
                             </mask>
                         </variation>
