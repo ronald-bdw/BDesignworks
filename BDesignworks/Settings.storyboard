@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9GJ-SZ-QtN">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9GJ-SZ-QtN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="OpenSansRegular.ttf">
+        <array key="OpenSansRegularItalic.ttf">
             <string>OpenSans</string>
         </array>
         <array key="OpenSansSemiBold.ttf">
@@ -30,7 +30,7 @@
                             <tableViewSection id="aCe-hf-TzI">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="lHa-TF-xbl">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="64" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lHa-TF-xbl" id="91b-rR-lSs">
                                             <frame key="frameInset" width="375" height="90"/>
@@ -85,7 +85,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Mmg-xi-77e">
-                                        <rect key="frame" x="0.0" y="90" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="154" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mmg-xi-77e" id="6cl-34-bzO">
                                             <frame key="frameInset" width="375" height="90"/>
@@ -127,7 +127,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="YgS-Rh-VXg">
-                                        <rect key="frame" x="0.0" y="180" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="244" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YgS-Rh-VXg" id="a6u-bb-5fd">
                                             <frame key="frameInset" width="375" height="90"/>
@@ -175,7 +175,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="BGz-Ez-VjA">
-                                        <rect key="frame" x="0.0" y="270" width="375" height="300"/>
+                                        <rect key="frame" x="0.0" y="334" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BGz-Ez-VjA" id="9i8-LQ-gag">
                                             <frame key="frameInset" width="375" height="300"/>
@@ -183,7 +183,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="BlX-5c-ylG">
-                                        <rect key="frame" x="0.0" y="570" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="634" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BlX-5c-ylG" id="TTN-Ui-0wY">
                                             <frame key="frameInset" width="375" height="90"/>
@@ -354,13 +354,13 @@
                             <tableViewSection id="4ER-Vh-dnk">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="keL-9V-IY3">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="64" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="keL-9V-IY3" id="c4I-8o-la7">
                                             <frame key="frameInset" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings/HealthKit" translatesAutoresizingMaskIntoConstraints="NO" id="cOE-es-b0S">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sync/HealthKit" translatesAutoresizingMaskIntoConstraints="NO" id="cOE-es-b0S">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="37" id="11t-17-dtd"/>
                                                         <constraint firstAttribute="height" constant="37" id="Iox-nk-h8I"/>
@@ -396,13 +396,13 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="idm-TC-pAW">
-                                        <rect key="frame" x="0.0" y="90" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="154" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="idm-TC-pAW" id="sTO-z4-n5I">
                                             <frame key="frameInset" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings/FitBit" translatesAutoresizingMaskIntoConstraints="NO" id="Gwj-IK-l5L">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sync/FitBit" translatesAutoresizingMaskIntoConstraints="NO" id="Gwj-IK-l5L">
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Gwj-IK-l5L" secondAttribute="height" multiplier="1:1" id="9rT-Bf-4xh"/>
                                                         <constraint firstAttribute="height" constant="37" id="Kfg-K5-dPO"/>
@@ -461,10 +461,10 @@
     <resources>
         <image name="Profile/Avatar" width="1967" height="1958"/>
         <image name="Settings/Accessory" width="14" height="25"/>
-        <image name="Settings/FitBit" width="144" height="148"/>
-        <image name="Settings/HealthKit" width="237" height="209"/>
         <image name="Settings/Logout" width="31" height="26"/>
         <image name="Settings/notifications" width="144" height="144"/>
         <image name="Settings/sync" width="144" height="144"/>
+        <image name="Sync/FitBit" width="144" height="148"/>
+        <image name="Sync/HealthKit" width="237" height="209"/>
     </resources>
 </document>

@@ -8,17 +8,25 @@
 
 import Foundation
 
+typealias TourAppUserInfoMVP = MVPContainer<TourAppUserInfoView, TourAppUserInfoPresenter, TourAppUserInfoModel>
+
+protocol ITourAppUserInfoView: class {
+    func setLoadingState (_ state: LoadingState)
+    func updateValidationErrors()
+    
+    func showErrorView(_ title: String, content: String, errorType: BackendError)
+}
 
 class TourAppUserInfoView: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var user: TourAppUser?
+    var presenter: PresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let _ = TourAppUserInfoMVP(controller: self)
         
-        self.user = ENUser.getMainUser()?.getTourAppUser()
         self.tableView.register(UINib(nibName: RegistrationTableViewCell.fs_className, bundle: nil), forCellReuseIdentifier: RegistrationTableViewCell.fs_className)
         self.tableView.register(UINib(nibName: ValidationErrorCell.fs_className, bundle: nil), forCellReuseIdentifier: ValidationErrorCell.fs_className)
         
@@ -26,12 +34,19 @@ class TourAppUserInfoView: UIViewController {
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
-    }
-    
-    @IBAction func skipPressed(_ sender: AnyObject) {
+        
+        center.addObserver(self, selector: #selector(self.healthKitRegistered(_:)), name: NSNotification.Name(rawValue: FSNotificationKey.FitnessDataIntegration.HealthKit) , object: nil)
     }
     
     @IBAction func nextPressed(_ sender: AnyObject) {
+        let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+    }
+    
+    func healthKitRegistered(_ notification: Notification) {
+        DispatchQueue.main.async {[weak self] in
+            self?.presenter?.showNextView()
+        }
     }
     
     func keyboardWillShow(_ notification: Notification) {
@@ -51,16 +66,19 @@ class TourAppUserInfoView: UIViewController {
 extension TourAppUserInfoView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 8
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             return self.tableView.dequeueReusableCell(withIdentifier: "profileHeader")!
         }
+        if indexPath.row == 7 {
+            return self.tableView.dequeueReusableCell(withIdentifier: "profileFooter")!
+        }
         if let cellType = TourAppUserInfoCellType(rawValue: indexPath.row) {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: RegistrationTableViewCell.fs_className) as! RegistrationTableViewCell
-            cell.prepareCell(cellType, user: self.user)
+            cell.prepareCell(cellType, user: self.presenter?.getUser())
             
             cell.contentTextField.tag = cellType.rawValue
             cell.contentTextField.delegate = self
@@ -80,9 +98,10 @@ extension TourAppUserInfoView: UITableViewDataSource {
 extension TourAppUserInfoView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard indexPath.row != 0 else {return 250}
+        guard indexPath.row != 7 else {return 100}
         switch (indexPath as NSIndexPath).row % 2 {
         case 0:
-            return (self.user?.isFieldValid(indexPath.row) ?? false) ? 0 : 49
+            return (self.presenter?.getUser()?.isFieldValid(indexPath.row) ?? false) ? 0 : 60 
         default:
             return 78
         }
@@ -114,12 +133,37 @@ extension TourAppUserInfoView: UITextFieldDelegate {
         let nsString = (textField.text ?? "") as NSString
         let newString = nsString.replacingCharacters(in: range,
                                                      with: string)
-        switch cellType {
-        case .firstName: self.user?.firstName.content = newString
-        case .lastName: self.user?.lastName.content = newString
-        case .email: self.user?.email.content = newString
-        }
+        self.presenter?.fieldsUpdated(cellType: cellType, content: newString)
         
         return true
     }
+}
+
+extension TourAppUserInfoView: ITourAppUserInfoView {
+    func updateValidationErrors() {
+        self.tableView.reloadData()
+    }
+    
+    func setLoadingState(_ state: LoadingState) {
+        switch state {
+        case .loading:
+            SVProgressHUD.show()
+        case .done:
+            SVProgressHUD.dismiss()
+            let viewController = Storyboard.tourApp.storyboard.instantiateViewController(withIdentifier: TourAppAvatarView.identifier)
+            self.navigationController?.pushViewController(viewController, animated: true)
+        case .failed:
+            SVProgressHUD.dismiss()
+            ShowErrorAlert()
+        }
+    }
+    
+    func showErrorView(_ title: String, content: String, errorType: BackendError) {
+        SVProgressHUD.dismiss()
+        ShowErrorAlert(title, message: content)
+    }
+}
+
+extension TourAppUserInfoView: MVPView {
+    typealias PresenterProtocol = ITourAppUserInfoPresenterView
 }

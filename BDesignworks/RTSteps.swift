@@ -49,7 +49,7 @@ extension Router.Steps: RouterProtocol {
             }
             return ["activities": jsonArray as AnyObject]
         case .sendFitbitCode(let code):
-            return ["source": Source.Fitbit.rawValue as AnyObject, "token": code as AnyObject]
+            return ["source": Source.Fitbit.rawValue as AnyObject, "authorization_code": code as AnyObject]
         }
     }
 }

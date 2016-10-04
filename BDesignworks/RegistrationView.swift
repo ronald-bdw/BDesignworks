@@ -23,7 +23,6 @@ class RegistrationView: UIViewController {
     var presenter: PresenterProtocol?
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var scrollView: UIScrollView!
     
     var user: RegistrationUser?
     var shouldShowErrors = false
@@ -54,27 +53,37 @@ class RegistrationView: UIViewController {
         ShowInitialViewController()
     }
     
+    @IBAction func didChangeState(_ sender: AnyObject) {
+        self.view.endEditing(true)
+    }
+    
     func keyboardWillShow(_ notification: Notification) {
         guard let userInfo: NSDictionary = (notification as NSNotification).userInfo as NSDictionary?,
             let keyboardSize = (userInfo.object(forKey: UIKeyboardFrameBeginUserInfoKey) as? NSValue)?.cgRectValue.size else {return}
         let contentInsets = UIEdgeInsetsMake(0, 0, keyboardSize.height + 20, 0)
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
+        self.tableView.contentInset = contentInsets
+        self.tableView.scrollIndicatorInsets = contentInsets
     }
     
     func keyboardWillHide(_ notification: Notification) {
-        self.scrollView.contentInset = UIEdgeInsets.zero
-        self.scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
+        self.tableView.contentInset = UIEdgeInsets.zero
+        self.tableView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
 }
 
 extension RegistrationView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return 10
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard indexPath.row != 8 else {
+            return self.tableView.dequeueReusableCell(withIdentifier: "emptyCell")!
+        }
+        guard indexPath.row != 9 else {
+            return self.tableView.dequeueReusableCell(withIdentifier: "registrationFooter")!
+        }
         if let cellType = RegistrationCellType(rawValue: indexPath.row) {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: RegistrationTableViewCell.fs_className) as! RegistrationTableViewCell
             cell.prepareCell(cellType, user: self.user)
@@ -96,6 +105,18 @@ extension RegistrationView: UITableViewDataSource {
 
 extension RegistrationView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard indexPath.row != 8 else {
+            let cellsHeight = Array(0..<indexPath.row)
+                .map({IndexPath(row:$0, section: 0)})
+                .map({self.tableView(tableView, heightForRowAt: $0)})
+                .reduce(0, {$0 + $1}) + 100
+            
+            let emptySpaceHeight = self.tableView.fs_height - cellsHeight
+            return emptySpaceHeight > 0 ? emptySpaceHeight : 0
+        }
+        guard indexPath.row != 9 else {
+            return 100
+        }
         switch (indexPath as NSIndexPath).row % 2 {
         case 0:
             return 78

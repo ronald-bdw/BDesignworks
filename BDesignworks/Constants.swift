@@ -30,6 +30,10 @@ enum FSUserDefaultsKey {
 /*----------Notifications---------*/
 enum FSNotificationKey {
     
+    enum FitnessDataIntegration {
+        static let HealthKit = "HealthKit"
+    }
+    
     enum Example {
         fileprivate static let Prefix = "Example"
         
