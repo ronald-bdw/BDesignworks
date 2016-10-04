@@ -52,7 +52,7 @@ class ConversationScreen: UIViewController {
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         SideMenuManager.menuFadeStatusBar = false
         
-        self.title = "Messages"
+        self.title = ENUser.getMainUser()?.fullname
         self.setNavigationBarButtons()
         
         
@@ -110,6 +110,7 @@ class ConversationScreen: UIViewController {
             switch response.result {
             case .success(let value):
                 guard let receivedUser = value.user else {return}
+                self.title = receivedUser.fullname
                 do {
                     let realm = try Realm()
                     try realm.write({
