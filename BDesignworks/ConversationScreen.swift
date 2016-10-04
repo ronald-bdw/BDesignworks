@@ -65,8 +65,7 @@ class ConversationScreen: UIViewController {
                 Logger.debug(user.token)
                 Logger.debug(user.phoneNumber)
                 Logger.debug(user.id)
-                SmoochHelper.sharedInstance.startWithParameters("\(user.id)")
-                SmoochHelper.sharedInstance.updateUserInfo(user.firstName, lastName: user.lastName, email: user.email)
+                SmoochHelper.sharedInstance.startWithParameters(user)
                 let controller = Smooch.newConversationViewController()
                 controller?.view.frame = self.containerView.bounds
                 self.containerView.addSubview((controller?.view)!)

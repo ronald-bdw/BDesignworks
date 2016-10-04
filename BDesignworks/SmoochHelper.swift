@@ -16,11 +16,16 @@ class SmoochHelper
     //Custom properties for user
     //SKTUser.currentUser().addProperties([ "nickname" : "Lil Big Daddy Slim", "weight" : 650, "premiumUser" : true ])
     
-    func startWithParameters(_ userID: String)
-    {
+    func startWithParameters(_ user: ENUser) {
         let settings = SKTSettings(appToken: smoochToken)
-        settings?.userId = userID
+        settings?.userId = "\(user.id)"
+        
+        settings?.conversationAccentColor = UIColor(fs_hexString: "74A025")
         Smooch.initWith(settings)
+        
+        SKTUser.current().firstName = user.firstName
+        SKTUser.current().lastName = user.lastName
+        SKTUser.current().email = user.email
     }
     
     func login(_ userID: String)
