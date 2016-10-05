@@ -22,26 +22,22 @@ class SmoochHelper
         
         settings?.conversationAccentColor = UIColor(fs_hexString: "74A025")
         Smooch.initWith(settings)
+        self.login("\(user.id)")
         
+        self.updateUserInfo(user: user)
+    }
+    
+    func login(_ userID: String) {
+        Smooch.login(userID, jwt: nil)
+    }
+    
+    func updateUserInfo(user: ENUser) {
         SKTUser.current().firstName = user.firstName
         SKTUser.current().lastName = user.lastName
         SKTUser.current().email = user.email
     }
     
-    func login(_ userID: String)
-    {
-        Smooch.login(userID, jwt: nil)
-    }
-    
-    func updateUserInfo(_ name: String, lastName: String, email: String)
-    {
-        SKTUser.current().firstName = name
-        SKTUser.current().lastName = lastName
-        SKTUser.current().email = email
-    }
-    
-    func updateSignUpDate()
-    {
+    func updateSignUpDate() {
         SKTUser.current().signedUpAt = Date()
     }
 }

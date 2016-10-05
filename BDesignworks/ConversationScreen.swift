@@ -52,37 +52,31 @@ class ConversationScreen: UIViewController {
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         SideMenuManager.menuFadeStatusBar = false
         
-        self.title = ENUser.getMainUser()?.fullname
         self.setNavigationBarButtons()
-        
         
         let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         UIApplication.shared.registerUserNotificationSettings(notificationSettings)
         
-        do {
-            let realm = try Realm()
-            if let user = realm.objects(ENUser.self).first , user.id != 0 {
-                Logger.debug(user.token)
-                Logger.debug(user.phoneNumber)
-                Logger.debug(user.id)
-                SmoochHelper.sharedInstance.startWithParameters(user)
-                let controller = Smooch.newConversationViewController()
-                controller?.view.frame = self.containerView.bounds
-                self.containerView.addSubview((controller?.view)!)
-                self.addChildViewController(controller!)
-                controller?.didMove(toParentViewController: self)
-                
-                self.smoochController = controller
-                
-                
-                for view in (controller?.view.subviews)! {
-                    if let navbar = view as? UINavigationBar {
-                        navbar.isHidden = true
-                    }
+        if let user = ENUser.getMainUser(), user.id != 0 {
+            self.title = user.fullname
+            
+            Logger.debug(user.token)
+            Logger.debug(user.phoneNumber)
+            Logger.debug(user.id)
+            SmoochHelper.sharedInstance.updateUserInfo(user: user)
+            
+            let controller = Smooch.newConversationViewController()
+            controller?.view.frame = self.containerView.bounds
+            self.containerView.addSubview((controller?.view)!)
+            self.addChildViewController(controller!)
+            controller?.didMove(toParentViewController: self)
+            self.smoochController = controller
+            
+            for view in (controller?.view.subviews)! {
+                if let navbar = view as? UINavigationBar {
+                    navbar.isHidden = true
                 }
             }
-        } catch let error {
-            Logger.error("\(error)")
         }
         HealthKitManager.sharedInstance.sendHealthKitData()
     }
@@ -115,6 +109,7 @@ class ConversationScreen: UIViewController {
                     try realm.write({
                         realm.add(receivedUser, update: true)
                     })
+                    SmoochHelper.sharedInstance.updateUserInfo(user: receivedUser)
                 }
                 catch let error {
                     Logger.error(error)

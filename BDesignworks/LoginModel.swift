@@ -35,7 +35,7 @@ class LoginModel {
                 
                 switch response.result {
                 case .success(let value):
-                    guard let user = value.user else {return}
+                    guard let user = value.user else {self?.presenter?.loginFailed(); return}
                     receivedData = user
                     
                     do {
@@ -44,11 +44,11 @@ class LoginModel {
                             realm.add(user, update: true)
                             realm.delete(realm.objects(AuthInfo.self))
                         })
-                        
+                        self?.presenter?.loginSuccessed(user: user)
                     } catch let error {
                         Logger.error("\(error)")
+                        self?.presenter?.loginFailed()
                     }
-                    self?.presenter?.loginSuccessed()
                 case .failure(let error):
                     self?.presenter?.loginFailed()
                     Logger.error("\(error)")

@@ -17,7 +17,7 @@ protocol IRegistrationViewPresenter: class {
 
 protocol IRegistrationModelPresenter: class {
     func loadingStarted()
-    func loadingSuccessed()
+    func loadingSuccessed(user: ENUser)
     func requestFailed(_ error: RTError?)
     func updateValidationErrors()
     func phoneCodeReceived()
@@ -35,8 +35,11 @@ extension RegistrationPresenter: IRegistrationModelPresenter {
         self.view?.setLoadingState(.loading)
     }
     
-    func loadingSuccessed() {
-        self.view?.setLoadingState(.done)
+    func loadingSuccessed(user: ENUser) {
+        SmoochHelper.sharedInstance.startWithParameters(user)
+        FSDispatch_after_short(2.0) { [weak self] in
+            self?.view?.setLoadingState(.done)
+        }
     }
     
     func requestFailed(_ error: RTError?) {
