@@ -12,7 +12,7 @@
         <array key="OpenSansRegularItalic.ttf">
             <string>OpenSans</string>
         </array>
-        <array key="WorkSans-SemiBold.otf">
+        <array key="WorkSans-SemiBold.ttf">
             <string>WorkSans-SemiBold</string>
         </array>
     </customFonts>
@@ -230,7 +230,7 @@
         <scene sceneID="2jY-ZP-s4q">
             <objects>
                 <navigationController id="Pdz-Fu-uzn" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="M4w-8W-OF3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M4w-8W-OF3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -333,7 +333,7 @@
         <scene sceneID="EVt-zh-efg">
             <objects>
                 <navigationController storyboardIdentifier="ConversationScreen" id="F86-dg-wFh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tew-rN-fi6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tew-rN-fi6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -389,7 +389,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="rd8-Fq-ioC" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CBJ-Bo-2Oc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CBJ-Bo-2Oc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

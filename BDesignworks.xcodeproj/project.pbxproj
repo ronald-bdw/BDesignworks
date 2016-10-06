@@ -102,6 +102,8 @@
 		DCF96E721D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF96E711D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift */; };
 		E705D56B1D8AB25E00A05EC5 /* SidebarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705D56A1D8AB25E00A05EC5 /* SidebarModel.swift */; };
 		E705D56D1D8AB31A00A05EC5 /* SidebarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705D56C1D8AB31A00A05EC5 /* SidebarPresenter.swift */; };
+		E718F10D1DA6ABE600CB9C23 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E718F10B1DA6ABD500CB9C23 /* WorkSans-Regular.ttf */; };
+		E718F10E1DA6ABF100CB9C23 /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E718F10C1DA6ABDA00CB9C23 /* WorkSans-SemiBold.ttf */; };
 		E72552541DA3B7A8005C1B58 /* TourAppAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72552531DA3B7A8005C1B58 /* TourAppAvatarView.swift */; };
 		E72552561DA3B7B9005C1B58 /* TourAppAvatarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72552551DA3B7B9005C1B58 /* TourAppAvatarPresenter.swift */; };
 		E72552581DA3B7C5005C1B58 /* TourAppAvatarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72552571DA3B7C5005C1B58 /* TourAppAvatarModel.swift */; };
@@ -304,7 +306,6 @@
 		DC37F8541D79C42F00E0DBE5 /* OpenSansBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansBold.ttf; sourceTree = "<group>"; };
 		DC37F8571D79D40800E0DBE5 /* TrialPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageView.swift; sourceTree = "<group>"; };
 		DC91E0401D8C4082003A4941 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		DC91E0431D8C4301003A4941 /* WorkSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.otf"; sourceTree = "<group>"; };
 		DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersPresentation.swift; sourceTree = "<group>"; };
 		DC9C6C631D6C98B10034DC5A /* ValidationErrorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValidationErrorCell.xib; sourceTree = "<group>"; };
 		DC9C6C661D6C995B0034DC5A /* ValidationErrorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationErrorCell.swift; sourceTree = "<group>"; };
@@ -320,6 +321,8 @@
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		E705D56A1D8AB25E00A05EC5 /* SidebarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarModel.swift; sourceTree = "<group>"; };
 		E705D56C1D8AB31A00A05EC5 /* SidebarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarPresenter.swift; sourceTree = "<group>"; };
+		E718F10B1DA6ABD500CB9C23 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
+		E718F10C1DA6ABDA00CB9C23 /* WorkSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		E72552531DA3B7A8005C1B58 /* TourAppAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppAvatarView.swift; sourceTree = "<group>"; };
 		E72552551DA3B7B9005C1B58 /* TourAppAvatarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppAvatarPresenter.swift; sourceTree = "<group>"; };
 		E72552571DA3B7C5005C1B58 /* TourAppAvatarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppAvatarModel.swift; sourceTree = "<group>"; };
@@ -335,7 +338,6 @@
 		E7AF27361DA2855D00596191 /* TourAppUserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppUserInfoModel.swift; sourceTree = "<group>"; };
 		E7AF27381DA2857000596191 /* TourAppUserInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppUserInfoPresenter.swift; sourceTree = "<group>"; };
 		E7C1F2681D88011C007F9D7A /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		E7C1F26A1D880AAC007F9D7A /* WorkSans-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-SemiBold.otf"; sourceTree = "<group>"; };
 		E7C1F26C1D881C37007F9D7A /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E7DA957F1D8018FA0079EB79 /* RTSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTSteps.swift; sourceTree = "<group>"; };
 		E7DA95811D8024A50079EB79 /* Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
@@ -736,8 +738,8 @@
 				DC2281251D6B470600D5A0DA /* OpenSansRegularItalic.ttf */,
 				DC2281261D6B470600D5A0DA /* OpenSansSemiBold.ttf */,
 				DC2281271D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf */,
-				DC91E0431D8C4301003A4941 /* WorkSans-Regular.otf */,
-				E7C1F26A1D880AAC007F9D7A /* WorkSans-SemiBold.otf */,
+				E718F10B1DA6ABD500CB9C23 /* WorkSans-Regular.ttf */,
+				E718F10C1DA6ABDA00CB9C23 /* WorkSans-SemiBold.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -1100,6 +1102,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E718F10E1DA6ABF100CB9C23 /* WorkSans-SemiBold.ttf in Resources */,
+				E718F10D1DA6ABE600CB9C23 /* WorkSans-Regular.ttf in Resources */,
 				DCF96E661D9BBBE3005AFE42 /* TourApp.storyboard in Resources */,
 				DC9C6C641D6C98B10034DC5A /* ValidationErrorCell.xib in Resources */,
 				DC22812C1D6B470600D5A0DA /* OpenSansLight.ttf in Resources */,

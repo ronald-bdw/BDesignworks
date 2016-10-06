@@ -53,7 +53,6 @@ class ConversationScreen: UIViewController {
         SideMenuManager.menuFadeStatusBar = false
         
         self.setNavigationBarButtons()
-        self.definesPresentationContext = true
         
         let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         UIApplication.shared.registerUserNotificationSettings(notificationSettings)
