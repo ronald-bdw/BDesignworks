@@ -55,6 +55,10 @@ class ConversationScreen: UIViewController {
         self.title = "Messages"
         self.setNavigationBarButtons()
         
+        
+        let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+        
         do {
             let realm = try Realm()
             if let user = realm.objects(ENUser.self).first , user.id != 0 {

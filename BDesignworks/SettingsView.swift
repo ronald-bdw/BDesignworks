@@ -13,12 +13,37 @@ class SettingsView: UITableViewController {
     let rowHeight: CGFloat = 90
     
     @IBOutlet weak var profilePhoto: UIImageView!
+    @IBOutlet weak var notificationsSwitch: UISwitch!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.notificationsSwitch.addTarget(self, action: #selector(self.notificationsSwitchStateChanged(sender:)), for: .valueChanged)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateNotificationsSwitch), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.updateNotificationsSwitch()
+        
         guard let user = ENUser.getMainUser(),
             let url = URL(string: user.avatarThumbUrl) else {return}
         self.profilePhoto.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "Profile/Avatar"))
+        
+    }
+    
+    func updateNotificationsSwitch() {
+        if UIApplication.shared.isRegisteredForRemoteNotifications {
+            self.notificationsSwitch.setOn(true, animated: true)
+        }
+        else {
+            self.notificationsSwitch.setOn(false, animated: true)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,6 +58,11 @@ class SettingsView: UITableViewController {
         default:
             super.prepare(for: segue, sender: sender)
         }
+    }
+    
+    func notificationsSwitchStateChanged(sender: AnyObject) {
+        let url = URL(string: UIApplicationOpenSettingsURLString)!
+        UIApplication.shared.openURL(url)
     }
 }
 

@@ -109,8 +109,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
-        guard let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController,
-            let _ = navigationController.topViewController as? TourAppUserInfoView else {return}
+//        guard let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController,
+//            let _ = navigationController.topViewController as? TourAppUserInfoView else {return}
         UIApplication.shared.registerForRemoteNotifications()
         HealthKitManager.sharedInstance.authorize()
     }
