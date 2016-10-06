@@ -76,7 +76,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <segue destination="8Is-qm-avh" kind="show" id="26w-DK-3mV"/>
+                                            <segue destination="8Is-qm-avh" kind="presentation" id="v6p-I9-rQk"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Yv4-9H-UZi" customClass="SidebarCell" customModule="PearUp" customModuleProvider="target">
@@ -108,7 +108,7 @@
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="1SD-9E-kGU" kind="show" id="vwx-U1-Q6J"/>
+                                            <segue destination="1SD-9E-kGU" kind="presentation" id="gFj-eq-XcO"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="o35-oF-BgG" customClass="SidebarCell" customModule="PearUp" customModuleProvider="target">
@@ -188,7 +188,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <segue destination="HBz-Do-DRG" kind="show" id="Rrq-hf-fD8"/>
+                                            <segue destination="Pdz-Fu-uzn" kind="presentation" id="Agy-D4-MIh"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -226,10 +226,26 @@
             </objects>
             <point key="canvasLocation" x="6410" y="-109"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2jY-ZP-s4q">
+            <objects>
+                <navigationController id="Pdz-Fu-uzn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="M4w-8W-OF3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HBz-Do-DRG" kind="relationship" relationship="rootViewController" id="zgJ-Dh-phA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RLO-Zd-q7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6191" y="414"/>
+        </scene>
         <!--About us-->
         <scene sceneID="Yuo-i3-jb7">
             <objects>
-                <viewController id="HBz-Do-DRG" sceneMemberID="viewController">
+                <viewController id="HBz-Do-DRG" customClass="AboutUsView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hIO-XI-vc4"/>
                         <viewControllerLayoutGuide type="bottom" id="a1z-8Q-THu"/>
@@ -301,11 +317,17 @@
                             <constraint firstItem="a1z-8Q-THu" firstAttribute="top" secondItem="q4V-gw-ShF" secondAttribute="bottom" id="xxj-vo-Gxw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="About us" id="cBB-mX-YYe"/>
+                    <navigationItem key="navigationItem" title="About us" id="cBB-mX-YYe">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="bO9-rH-nZD">
+                            <connections>
+                                <action selector="backPressedWithSender:" destination="HBz-Do-DRG" id="CbF-hE-9Da"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjJ-Av-ymO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6237.6000000000004" y="363.86806596701655"/>
+            <point key="canvasLocation" x="6953" y="413"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EVt-zh-efg">
@@ -412,5 +434,6 @@
         <image name="Profile/Avatar" width="1967" height="1958"/>
         <image name="SettingsIcon" width="144" height="144"/>
         <image name="ShareIcon" width="134" height="144"/>
+        <image name="back" width="14" height="25"/>
     </resources>
 </document>

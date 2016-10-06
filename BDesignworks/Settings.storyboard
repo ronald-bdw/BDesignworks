@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9GJ-SZ-QtN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="avn-Sk-SW1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -18,6 +18,22 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="m07-Pn-BQB">
+            <objects>
+                <navigationController id="avn-Sk-SW1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mml-Yd-6qf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9GJ-SZ-QtN" kind="relationship" relationship="rootViewController" id="GB6-ea-tbe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3TA-99-oxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5508" y="-141"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="wuI-QP-LfR">
             <objects>
@@ -241,6 +257,11 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Settings" id="nWW-Ud-PuF">
                         <barButtonItem key="backBarButtonItem" title=" " id="8PA-jR-xL3"/>
+                        <barButtonItem key="leftBarButtonItem" image="back" id="b13-WK-a9R">
+                            <connections>
+                                <action selector="backPressedWithSender:" destination="9GJ-SZ-QtN" id="zDb-cj-twp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -467,5 +488,6 @@
         <image name="Settings/sync" width="144" height="144"/>
         <image name="Sync/FitBit" width="144" height="148"/>
         <image name="Sync/HealthKit" width="237" height="209"/>
+        <image name="back" width="14" height="25"/>
     </resources>
 </document>

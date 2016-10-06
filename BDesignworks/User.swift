@@ -84,7 +84,12 @@ class ENUser: Object, IUser {
     static func createTestUser() {
         do {
             let realm = try Realm()
-            guard realm.objects(ENUser.self).count == 0 else {return}
+            guard realm.objects(ENUser.self).count == 0 else {
+                if let user = realm.objects(ENUser.self).first {
+                    SmoochHelper.sharedInstance.startWithParameters(user)
+                }
+                return
+            }
             let user = ENUser()
             user.id = 1//14
             user.firstName = "Ellina"

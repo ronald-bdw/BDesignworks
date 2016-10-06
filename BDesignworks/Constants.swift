@@ -61,6 +61,7 @@ enum Storyboard {
     case trialPage
     case welcome
     case tourApp
+    case profile
     
     var name: String {
         switch self {
@@ -69,6 +70,7 @@ enum Storyboard {
         case .trialPage : return "TrialPage"
         case .welcome   : return "WelcomeScreen"
         case .tourApp   : return "TourApp"
+        case .profile   : return "Profile"
         }
     }
     
