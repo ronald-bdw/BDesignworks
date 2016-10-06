@@ -244,6 +244,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="notificationsSwitch" destination="4uH-yn-gQQ" id="0a9-wZ-dnU"/>
                         <outlet property="profilePhoto" destination="laB-h1-DBh" id="F3s-ah-tWS"/>
                     </connections>
                 </tableViewController>
