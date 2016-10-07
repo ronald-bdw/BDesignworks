@@ -13,7 +13,7 @@
         <array key="OpenSansSemiBold.ttf">
             <string>OpenSans-Semibold</string>
         </array>
-        <array key="WorkSans-Regular.otf">
+        <array key="WorkSans-Regular.ttf">
             <string>WorkSans-Regular</string>
         </array>
     </customFonts>
@@ -22,7 +22,7 @@
         <scene sceneID="m07-Pn-BQB">
             <objects>
                 <navigationController id="avn-Sk-SW1" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mml-Yd-6qf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mml-Yd-6qf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -39,17 +39,17 @@
             <objects>
                 <tableViewController title="Settings" id="9GJ-SZ-QtN" customClass="SettingsView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6DL-5w-UbC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="aCe-hf-TzI">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="lHa-TF-xbl">
-                                        <rect key="frame" x="0.0" y="64" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="64" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lHa-TF-xbl" id="91b-rR-lSs">
-                                            <frame key="frameInset" width="375" height="90"/>
+                                            <frame key="frameInset" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="laB-h1-DBh">
@@ -101,10 +101,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Mmg-xi-77e">
-                                        <rect key="frame" x="0.0" y="154" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="154" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mmg-xi-77e" id="6cl-34-bzO">
-                                            <frame key="frameInset" width="375" height="90"/>
+                                            <frame key="frameInset" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings/notifications" translatesAutoresizingMaskIntoConstraints="NO" id="LTK-67-bms">
@@ -127,6 +127,9 @@
                                                 </view>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4uH-yn-gQQ">
                                                     <color key="onTintColor" red="0.16078431372549018" green="0.32549019607843138" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <segue destination="D7R-Lq-8VN" kind="presentation" identifier="Notifications" id="QLe-WP-uEu"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -143,10 +146,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="YgS-Rh-VXg">
-                                        <rect key="frame" x="0.0" y="244" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="244" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YgS-Rh-VXg" id="a6u-bb-5fd">
-                                            <frame key="frameInset" width="375" height="90"/>
+                                            <frame key="frameInset" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings/sync" translatesAutoresizingMaskIntoConstraints="NO" id="O7e-zT-EoT">
@@ -191,18 +194,18 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="BGz-Ez-VjA">
-                                        <rect key="frame" x="0.0" y="334" width="375" height="300"/>
+                                        <rect key="frame" x="0.0" y="334" width="320" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BGz-Ez-VjA" id="9i8-LQ-gag">
-                                            <frame key="frameInset" width="375" height="300"/>
+                                            <frame key="frameInset" width="320" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="BlX-5c-ylG">
-                                        <rect key="frame" x="0.0" y="634" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="634" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BlX-5c-ylG" id="TTN-Ui-0wY">
-                                            <frame key="frameInset" width="375" height="90"/>
+                                            <frame key="frameInset" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings/Logout" translatesAutoresizingMaskIntoConstraints="NO" id="qgE-8u-1ec">
@@ -354,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUc-eu-9o9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6521" y="498"/>
+            <point key="canvasLocation" x="6263" y="484"/>
         </scene>
         <!--Profile-->
         <scene sceneID="MOv-Bz-HKv">
@@ -369,17 +372,17 @@
             <objects>
                 <tableViewController title="Data Sync" id="kU7-nB-7m7" customClass="DataSyncView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="tin-0C-ksY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="4ER-Vh-dnk">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="keL-9V-IY3">
-                                        <rect key="frame" x="0.0" y="64" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="64" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="keL-9V-IY3" id="c4I-8o-la7">
-                                            <frame key="frameInset" width="375" height="90"/>
+                                            <frame key="frameInset" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sync/HealthKit" translatesAutoresizingMaskIntoConstraints="NO" id="cOE-es-b0S">
@@ -418,10 +421,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="idm-TC-pAW">
-                                        <rect key="frame" x="0.0" y="154" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="154" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="idm-TC-pAW" id="sTO-z4-n5I">
-                                            <frame key="frameInset" width="375" height="90"/>
+                                            <frame key="frameInset" width="320" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sync/FitBit" translatesAutoresizingMaskIntoConstraints="NO" id="Gwj-IK-l5L">
@@ -479,11 +482,141 @@
             </objects>
             <point key="canvasLocation" x="7441" y="-141"/>
         </scene>
+        <!--Notifications View-->
+        <scene sceneID="0XF-Qk-nlB">
+            <objects>
+                <viewController id="D7R-Lq-8VN" customClass="NotificationsView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r5g-xS-dXo"/>
+                        <viewControllerLayoutGuide type="bottom" id="AJI-IZ-tdj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A9A-zi-3En">
+                        <rect key="frame" x="0.0" y="0.0" width="315" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change your settings to get notified when your coach sends you message." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12Z-76-LR4">
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDS-wb-xF2" customClass="RoundButton" customModule="IBDesignableKit">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="fUV-hg-uVk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="18"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                        <real key="value" value="28"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fs_borderColor">
+                                        <color key="value" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelAction:" destination="D7R-Lq-8VN" eventType="touchUpInside" id="v8y-uQ-7oH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaK-OA-TYv" customClass="RoundButton" customModule="IBDesignableKit">
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3Yd-B2-84X"/>
+                                    <constraint firstAttribute="width" constant="150" id="Zc9-fb-SNf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="18"/>
+                                <state key="normal" title="Open Settings">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                        <real key="value" value="28"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="fs_shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="settingsAction:" destination="D7R-Lq-8VN" eventType="touchUpInside" id="Aki-aH-20w"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Go to Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nll-ze-4K1">
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Tap Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aww-RH-5G2">
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings/Settings" translatesAutoresizingMaskIntoConstraints="NO" id="Iaf-R6-RPb">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Iaf-R6-RPb" secondAttribute="height" multiplier="1:1" id="7iY-pF-Dlc"/>
+                                    <constraint firstAttribute="width" constant="30" id="ZL2-Bd-XRq"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings/notifications" translatesAutoresizingMaskIntoConstraints="NO" id="zcA-Zc-A4x">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="cPS-2O-86v"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings/Switch" translatesAutoresizingMaskIntoConstraints="NO" id="1mI-YI-MNf">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="MYD-We-oVu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Set &quot;Allow Notifications&quot; to On." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nF-0t-SN9">
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1mI-YI-MNf" firstAttribute="top" secondItem="zcA-Zc-A4x" secondAttribute="bottom" constant="16" id="0dI-ed-HTA"/>
+                            <constraint firstItem="nll-ze-4K1" firstAttribute="centerY" secondItem="Iaf-R6-RPb" secondAttribute="centerY" id="1lc-YH-3ow"/>
+                            <constraint firstItem="zcA-Zc-A4x" firstAttribute="leading" secondItem="Iaf-R6-RPb" secondAttribute="leading" id="2b0-4G-okW"/>
+                            <constraint firstItem="4nF-0t-SN9" firstAttribute="leading" secondItem="aww-RH-5G2" secondAttribute="leading" id="4vA-tB-KG1"/>
+                            <constraint firstItem="qDS-wb-xF2" firstAttribute="height" secondItem="aaK-OA-TYv" secondAttribute="height" id="5Lv-kj-HtJ"/>
+                            <constraint firstItem="1mI-YI-MNf" firstAttribute="leading" secondItem="zcA-Zc-A4x" secondAttribute="leading" id="B2o-Vs-voW"/>
+                            <constraint firstItem="aww-RH-5G2" firstAttribute="centerY" secondItem="zcA-Zc-A4x" secondAttribute="centerY" id="E47-dQ-YsV"/>
+                            <constraint firstItem="12Z-76-LR4" firstAttribute="centerX" secondItem="A9A-zi-3En" secondAttribute="centerX" id="GaO-w2-CZZ"/>
+                            <constraint firstItem="Iaf-R6-RPb" firstAttribute="leading" secondItem="A9A-zi-3En" secondAttribute="leading" constant="18" id="JeW-iy-eSV"/>
+                            <constraint firstItem="12Z-76-LR4" firstAttribute="top" secondItem="r5g-xS-dXo" secondAttribute="bottom" constant="15" id="LPB-M9-Dpb"/>
+                            <constraint firstItem="zcA-Zc-A4x" firstAttribute="top" secondItem="Iaf-R6-RPb" secondAttribute="bottom" constant="16" id="NvW-59-Ar7"/>
+                            <constraint firstItem="4nF-0t-SN9" firstAttribute="centerY" secondItem="1mI-YI-MNf" secondAttribute="centerY" id="Oyx-1V-qb3"/>
+                            <constraint firstItem="zcA-Zc-A4x" firstAttribute="width" secondItem="zcA-Zc-A4x" secondAttribute="height" multiplier="1:1" id="QFs-eW-ajL"/>
+                            <constraint firstItem="12Z-76-LR4" firstAttribute="leading" secondItem="A9A-zi-3En" secondAttribute="leading" constant="17" id="SK9-nf-WpX"/>
+                            <constraint firstAttribute="trailing" secondItem="12Z-76-LR4" secondAttribute="trailing" constant="17" id="Xkb-uG-xnc"/>
+                            <constraint firstItem="aaK-OA-TYv" firstAttribute="top" secondItem="4nF-0t-SN9" secondAttribute="bottom" constant="40" id="YLo-Oc-219"/>
+                            <constraint firstItem="qDS-wb-xF2" firstAttribute="top" secondItem="aaK-OA-TYv" secondAttribute="bottom" constant="16" id="m0Q-0E-iZE"/>
+                            <constraint firstItem="qDS-wb-xF2" firstAttribute="centerX" secondItem="A9A-zi-3En" secondAttribute="centerX" id="oBx-SA-kG8"/>
+                            <constraint firstItem="1mI-YI-MNf" firstAttribute="width" secondItem="1mI-YI-MNf" secondAttribute="height" multiplier="1:1" id="qEq-fw-OUi"/>
+                            <constraint firstItem="nll-ze-4K1" firstAttribute="leading" secondItem="Iaf-R6-RPb" secondAttribute="trailing" constant="8" id="vqo-56-fU8"/>
+                            <constraint firstItem="Iaf-R6-RPb" firstAttribute="top" secondItem="12Z-76-LR4" secondAttribute="bottom" constant="16" id="wdu-sC-rrw"/>
+                            <constraint firstItem="aww-RH-5G2" firstAttribute="leading" secondItem="nll-ze-4K1" secondAttribute="leading" id="y9k-g4-1Lh"/>
+                            <constraint firstItem="aaK-OA-TYv" firstAttribute="centerX" secondItem="A9A-zi-3En" secondAttribute="centerX" id="zEY-C8-tkc"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="315" height="400"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rDi-Wc-eEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6955.3125" y="548.75"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Profile/Avatar" width="1967" height="1958"/>
         <image name="Settings/Accessory" width="14" height="25"/>
         <image name="Settings/Logout" width="31" height="26"/>
+        <image name="Settings/Settings" width="90" height="90"/>
+        <image name="Settings/Switch" width="90" height="56"/>
         <image name="Settings/notifications" width="144" height="144"/>
         <image name="Settings/sync" width="144" height="144"/>
         <image name="Sync/FitBit" width="144" height="148"/>
