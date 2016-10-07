@@ -57,6 +57,8 @@ class ConversationScreen: UIViewController {
         let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         UIApplication.shared.registerUserNotificationSettings(notificationSettings)
         
+        HealthKitManager.sharedInstance.sendHealthKitData()
+        
         if let user = ENUser.getMainUser(), user.id != 0 {
             self.title = user.fullname
             
@@ -65,20 +67,19 @@ class ConversationScreen: UIViewController {
             Logger.debug(user.id)
             SmoochHelper.sharedInstance.updateUserInfo(user: user)
             
-            let controller = Smooch.newConversationViewController()
-            controller?.view.frame = self.containerView.bounds
-            self.containerView.addSubview((controller?.view)!)
-            self.addChildViewController(controller!)
-            controller?.didMove(toParentViewController: self)
+            guard let controller = Smooch.newConversationViewController() else {return}
+            controller.view.frame = self.containerView.bounds
+            self.containerView.addSubview((controller.view))
+            self.addChildViewController(controller)
+            controller.didMove(toParentViewController: self)
             self.smoochController = controller
             
-            for view in (controller?.view.subviews)! {
+            for view in controller.view.subviews {
                 if let navbar = view as? UINavigationBar {
                     navbar.isHidden = true
                 }
             }
         }
-        HealthKitManager.sharedInstance.sendHealthKitData()
     }
     
     fileprivate func setNavigationBarButtons() {
