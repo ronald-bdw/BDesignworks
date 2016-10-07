@@ -53,6 +53,9 @@ class ConversationScreen: UIViewController {
         SideMenuManager.menuFadeStatusBar = false
         
         self.setNavigationBarButtons()
+        self.updateTitle()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateTitle), name: NSNotification.Name(rawValue: FSNotificationKey.User.userChanged), object: nil)
         
         let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         UIApplication.shared.registerUserNotificationSettings(notificationSettings)
@@ -60,8 +63,6 @@ class ConversationScreen: UIViewController {
         HealthKitManager.sharedInstance.sendHealthKitData()
         
         if let user = ENUser.getMainUser(), user.id != 0 {
-            self.title = user.fullname
-            
             Logger.debug(user.token)
             Logger.debug(user.phoneNumber)
             Logger.debug(user.id)
@@ -80,6 +81,10 @@ class ConversationScreen: UIViewController {
                 }
             }
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     fileprivate func setNavigationBarButtons() {
@@ -111,6 +116,7 @@ class ConversationScreen: UIViewController {
                         realm.add(receivedUser, update: true)
                     })
                     SmoochHelper.sharedInstance.updateUserInfo(user: receivedUser)
+                    self.updateTitle()
                 }
                 catch let error {
                     Logger.error(error)
@@ -119,6 +125,10 @@ class ConversationScreen: UIViewController {
                 Logger.error(error)
             }
         }
+    }
+    
+    func updateTitle() {
+        self.title = ENUser.getMainUser()?.fullname
     }
     
     override func viewWillAppear(_ animated: Bool) {

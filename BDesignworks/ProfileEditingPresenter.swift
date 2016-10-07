@@ -51,6 +51,7 @@ extension ProfileEditingPresenter: IProfileEditingPresenterModel {
     func loadingFinished(isUserInfoUpdated: Bool) {
         self.view?.setLoadingState(.done)
         if isUserInfoUpdated {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: FSNotificationKey.User.userChanged), object: nil)
             self.view?.userInfoUpdated()
         }
     }

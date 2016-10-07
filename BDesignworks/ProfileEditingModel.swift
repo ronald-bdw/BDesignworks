@@ -32,13 +32,13 @@ extension ProfileEditingModel: IProfileEditingModel {
         let _ = Router.User.editUser(user: user).request().responseObject { (response: DataResponse<RTUserResponse>) in
             switch response.result {
             case .success(let value):
-                self.presenter?.loadingFinished(isUserInfoUpdated: true)
                 guard let user = value.user else {return}
                 do {
                     let realm = try Realm()
                     try realm.write({
                         realm.add(user, update: true)
                     })
+                    self.presenter?.loadingFinished(isUserInfoUpdated: true)
                 }
                 catch let error {
                     Logger.error(error)
