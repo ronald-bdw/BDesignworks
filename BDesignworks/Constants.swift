@@ -34,6 +34,9 @@ enum FSNotificationKey {
         static let HealthKit = "HealthKit"
     }
     
+    enum User {
+        static let userChanged = "UserChanged"
+    }
     enum Example {
         fileprivate static let Prefix = "Example"
         
