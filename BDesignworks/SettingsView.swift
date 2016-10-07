@@ -18,8 +18,6 @@ class SettingsView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.notificationsSwitch.addTarget(self, action: #selector(self.notificationsSwitchStateChanged(sender:)), for: .valueChanged)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateNotificationsSwitch), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
     }
     
@@ -55,14 +53,14 @@ class SettingsView: UITableViewController {
         case SegueIdentifiers.Logout:
             segue.destination.transitioningDelegate = self
             segue.destination.modalPresentationStyle = .custom
+        case SegueIdentifiers.Notifications:
+            segue.destination.transitioningDelegate = self
+            segue.destination.modalPresentationStyle = .custom
+            
+            (segue.destination as? NotificationsView)?.delegate = self
         default:
             super.prepare(for: segue, sender: sender)
         }
-    }
-    
-    func notificationsSwitchStateChanged(sender: AnyObject) {
-        let url = URL(string: UIApplicationOpenSettingsURLString)!
-        UIApplication.shared.openURL(url)
     }
     
     @IBAction func backPressed(sender: AnyObject) {
@@ -86,9 +84,16 @@ extension SettingsView {
     }
 }
 
+extension SettingsView: NotificationsViewDelegate {
+    func viewWillDismiss() {
+        self.updateNotificationsSwitch()
+    }
+}
+
 extension SettingsView {
     enum SegueIdentifiers {
         static let Logout = "Logout"
+        static let Notifications = "Notifications"
     }
 }
 
@@ -97,6 +102,8 @@ extension SettingsView: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController,
                                 presenting: UIViewController?,
                                 source: UIViewController) -> UIPresentationController? {
-        return ModalPresentationController(presentedViewController: presented, presenting: presenting, height: 321)
+        let screenHeight: CGFloat = presented is LogoutView ? 321 :
+                                    presented is NotificationsView ? 400 : 0
+        return ModalPresentationController(presentedViewController: presented, presenting: presenting, height: screenHeight)
     }
 }

@@ -102,6 +102,7 @@
 		DCF96E721D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF96E711D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift */; };
 		E705D56B1D8AB25E00A05EC5 /* SidebarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705D56A1D8AB25E00A05EC5 /* SidebarModel.swift */; };
 		E705D56D1D8AB31A00A05EC5 /* SidebarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705D56C1D8AB31A00A05EC5 /* SidebarPresenter.swift */; };
+		E70E0FD61DA7F126009AF3F4 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70E0FD51DA7F126009AF3F4 /* NotificationsView.swift */; };
 		E718F10D1DA6ABE600CB9C23 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E718F10B1DA6ABD500CB9C23 /* WorkSans-Regular.ttf */; };
 		E718F10E1DA6ABF100CB9C23 /* WorkSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E718F10C1DA6ABDA00CB9C23 /* WorkSans-SemiBold.ttf */; };
 		E72552541DA3B7A8005C1B58 /* TourAppAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72552531DA3B7A8005C1B58 /* TourAppAvatarView.swift */; };
@@ -321,6 +322,7 @@
 		E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		E705D56A1D8AB25E00A05EC5 /* SidebarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarModel.swift; sourceTree = "<group>"; };
 		E705D56C1D8AB31A00A05EC5 /* SidebarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarPresenter.swift; sourceTree = "<group>"; };
+		E70E0FD51DA7F126009AF3F4 /* NotificationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		E718F10B1DA6ABD500CB9C23 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
 		E718F10C1DA6ABDA00CB9C23 /* WorkSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		E72552531DA3B7A8005C1B58 /* TourAppAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppAvatarView.swift; sourceTree = "<group>"; };
@@ -780,6 +782,8 @@
 			isa = PBXGroup;
 			children = (
 				2F16FE2F1D54E13700EFFDD7 /* SettingsView.swift */,
+				E70E0FD51DA7F126009AF3F4 /* NotificationsView.swift */,
+				DCF96E611D992547005AFE42 /* LogoutView.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -882,7 +886,6 @@
 			children = (
 				DCF96E5F1D991A87005AFE42 /* Main */,
 				DCF96E601D991A8F005AFE42 /* DataSync */,
-				DCF96E611D992547005AFE42 /* LogoutView.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1507,6 +1510,7 @@
 				DCD86E591D6DAA8C0072AFA1 /* Alerts.swift in Sources */,
 				A436BE131D6B6098004B8E8B /* HeaderView.swift in Sources */,
 				2F81CB701D51EBB900D9E93B /* AutocompleteView.swift in Sources */,
+				E70E0FD61DA7F126009AF3F4 /* NotificationsView.swift in Sources */,
 				2F954B5B1D5384DD004D4FF1 /* ToggleButton.swift in Sources */,
 				DC2281041D6B466300D5A0DA /* RegistrationTableViewCell.swift in Sources */,
 				2F16FE301D54E13700EFFDD7 /* SettingsView.swift in Sources */,
