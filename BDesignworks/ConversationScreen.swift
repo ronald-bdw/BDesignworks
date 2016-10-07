@@ -52,40 +52,34 @@ class ConversationScreen: UIViewController {
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         SideMenuManager.menuFadeStatusBar = false
         
-        self.title = "Messages"
         self.setNavigationBarButtons()
-        
         
         let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         UIApplication.shared.registerUserNotificationSettings(notificationSettings)
         
-        do {
-            let realm = try Realm()
-            if let user = realm.objects(ENUser.self).first , user.id != 0 {
-                Logger.debug(user.token)
-                Logger.debug(user.phoneNumber)
-                Logger.debug(user.id)
-                SmoochHelper.sharedInstance.startWithParameters("\(user.id)")
-                SmoochHelper.sharedInstance.updateUserInfo(user.firstName, lastName: user.lastName, email: user.email)
-                let controller = Smooch.newConversationViewController()
-                controller?.view.frame = self.containerView.bounds
-                self.containerView.addSubview((controller?.view)!)
-                self.addChildViewController(controller!)
-                controller?.didMove(toParentViewController: self)
-                
-                self.smoochController = controller
-                
-                
-                for view in (controller?.view.subviews)! {
-                    if let navbar = view as? UINavigationBar {
-                        navbar.isHidden = true
-                    }
+        HealthKitManager.sharedInstance.sendHealthKitData()
+        
+        if let user = ENUser.getMainUser(), user.id != 0 {
+            self.title = user.fullname
+            
+            Logger.debug(user.token)
+            Logger.debug(user.phoneNumber)
+            Logger.debug(user.id)
+            SmoochHelper.sharedInstance.updateUserInfo(user: user)
+            
+            guard let controller = Smooch.newConversationViewController() else {return}
+            controller.view.frame = self.containerView.bounds
+            self.containerView.addSubview((controller.view))
+            self.addChildViewController(controller)
+            controller.didMove(toParentViewController: self)
+            self.smoochController = controller
+            
+            for view in controller.view.subviews {
+                if let navbar = view as? UINavigationBar {
+                    navbar.isHidden = true
                 }
             }
-        } catch let error {
-            Logger.error("\(error)")
         }
-        HealthKitManager.sharedInstance.sendHealthKitData()
     }
     
     fileprivate func setNavigationBarButtons() {
@@ -110,11 +104,13 @@ class ConversationScreen: UIViewController {
             switch response.result {
             case .success(let value):
                 guard let receivedUser = value.user else {return}
+                self.title = receivedUser.fullname
                 do {
                     let realm = try Realm()
                     try realm.write({
                         realm.add(receivedUser, update: true)
                     })
+                    SmoochHelper.sharedInstance.updateUserInfo(user: receivedUser)
                 }
                 catch let error {
                     Logger.error(error)

@@ -45,7 +45,7 @@ class RegistrationModel {
                         realm.delete(realm.objects(AuthInfo.self))
                         realm.add(lUser)
                     })
-                    self?.presenter?.loadingSuccessed()
+                    self?.presenter?.loadingSuccessed(user: lUser)
                 } catch let error {
                     Logger.error("\(error)")
                     self?.presenter?.requestFailed(error as? RTError);

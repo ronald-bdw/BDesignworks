@@ -14,7 +14,7 @@ protocol ILoginViewPresenter: class {
 
 protocol ILoginModelPresenter: class {
     func loginStarted()
-    func loginSuccessed()
+    func loginSuccessed(user: ENUser)
     func loginFailed()
 }
 
@@ -31,8 +31,11 @@ extension LoginPresenter: ILoginModelPresenter {
         self.view?.setLoadingState(.loading)
     }
     
-    func loginSuccessed() {
-        self.view?.setLoadingState(.done)
+    func loginSuccessed(user: ENUser) {
+        SmoochHelper.sharedInstance.startWithParameters(user)
+        FSDispatch_after_short(2.0) { [weak self] in
+            self?.view?.setLoadingState(.done)
+        }
     }
     
     func loginFailed() {

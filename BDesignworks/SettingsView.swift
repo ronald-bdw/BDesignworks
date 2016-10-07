@@ -64,6 +64,10 @@ class SettingsView: UITableViewController {
         let url = URL(string: UIApplicationOpenSettingsURLString)!
         UIApplication.shared.openURL(url)
     }
+    
+    @IBAction func backPressed(sender: AnyObject) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension SettingsView {

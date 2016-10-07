@@ -34,6 +34,10 @@ class ProfileView: UITableViewController {
         super.viewWillAppear(animated)
         self.presenter?.viewLoaded()
     }
+    
+    @IBAction func backPressed(sender: AnyObject) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension ProfileView: IProfileView {

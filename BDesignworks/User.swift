@@ -84,16 +84,25 @@ class ENUser: Object, IUser {
     static func createTestUser() {
         do {
             let realm = try Realm()
-            guard realm.objects(ENUser.self).count == 0 else {return}
+            guard realm.objects(ENUser.self).count == 0 else {
+                if let user = realm.objects(ENUser.self).first {
+                    SmoochHelper.sharedInstance.startWithParameters(user)
+                }
+                return
+            }
             let user = ENUser()
             user.id = 1//14
             user.firstName = "Ellina"
             user.lastName = "K"
             user.email = "ekd@t.t"
             user.phoneNumber = "+79377709988" // +79377709988
-            user.token = "xtwRC_f5FBnVdX_SBfEU" //nxZsbQc3e_jVSbMDDsFS
+            user.token = "9yZUuA2eFw3V6xJaMsXH" //nxZsbQc3e_jVSbMDDsFS
             try realm.write({
                 realm.add(user)
+            })
+            SmoochHelper.sharedInstance.startWithParameters(user)
+            FSDispatch_after_short(2.0, block: {
+                Logger.debug()
             })
         }
         catch let error {

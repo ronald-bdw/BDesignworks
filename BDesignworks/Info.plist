@@ -74,8 +74,8 @@
 	<string>$(PRODUCT_NAME) uses photos to upload images to conversation and to set avatar.</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>BDesignworks/WorkSans-Regular.otf</string>
-		<string>BDesignworks/WorkSans-SemiBold.otf</string>
+		<string>BDesignworks/WorkSans-Regular.ttf</string>
+		<string>BDesignworks/WorkSans-SemiBold.ttf</string>
 		<string>BDesignworks/OpenSansRegular.ttf</string>
 		<string>BDesignworks/OpenSansSemiBoldItalic.ttf</string>
 		<string>BDesignworks/OpenSansSemiBold.ttf</string>
