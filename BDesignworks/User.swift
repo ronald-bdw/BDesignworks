@@ -96,14 +96,11 @@ class ENUser: Object, IUser {
             user.lastName = "K"
             user.email = "ekd@t.t"
             user.phoneNumber = "+79377709988" // +79377709988
-            user.token = "9yZUuA2eFw3V6xJaMsXH" //nxZsbQc3e_jVSbMDDsFS
+            user.token = "eZd5zoQnF6Y69smRU4DH" //nxZsbQc3e_jVSbMDDsFS
             try realm.write({
                 realm.add(user)
             })
             SmoochHelper.sharedInstance.startWithParameters(user)
-            FSDispatch_after_short(2.0, block: {
-                Logger.debug()
-            })
         }
         catch let error {
             Logger.error("\(error)")
