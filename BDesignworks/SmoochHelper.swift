@@ -33,7 +33,7 @@ class SmoochHelper
     
     func updateUserInfo(user: ENUser) {
         SKTUser.current().firstName = user.firstName
-        SKTUser.current().lastName = user.lastName
+        SKTUser.current().lastName = "\(user.id)"
         SKTUser.current().email = user.email
     }
     
