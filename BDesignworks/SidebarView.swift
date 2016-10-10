@@ -9,18 +9,16 @@
 import UIKit
 
 
-class SidebarCell: UITableViewCell
-{
+class SidebarCell: UITableViewCell {
     let sideView = UIView()
-    var cellSelected = false {
-        didSet {
-            self.backgroundColor = cellSelected ? UIColor(fs_hexString: "1D3B57") : UIColor.clear
-            self.sideView.isHidden = cellSelected ? false : true
-        }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        self.backgroundColor = super.isSelected ? UIColor(fs_hexString: "1D3B57") : UIColor.clear
+        self.sideView.isHidden = super.isSelected ? false : true
     }
     
-    override func awakeFromNib()
-    {
+    override func awakeFromNib() {
         super.awakeFromNib()
         
         self.selectionStyle = .none
@@ -46,7 +44,6 @@ class SidebarView: UITableViewController {
     
     let rowHeight = CGFloat(90)
     let profileRowHeight = CGFloat(164)
-    var lastSelected = 0
     
     var presenter: PresenterProtocol?
     
@@ -71,17 +68,19 @@ class SidebarView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath as NSIndexPath).row == 3 {
-            return
+        guard indexPath.row == 2 else {return}
+        self.shareButtonClicked()
+    }
+    
+    func shareButtonClicked() {
+        //TODO: change link to link to app
+        let textToShare = "Check out PearUp for your smartphone. Download it today from https://itunes.apple.com/us/app/facebook/id284882215"
+        let activityVC = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
+        
+        activityVC.completionWithItemsHandler = {[weak self] (activityType, success, objects, error) in
+            self?.tableView.fs_deselectSelectedRow(true)
         }
-        
-        var cell = self.tableView.cellForRow(at: IndexPath(row: self.lastSelected, section: 0)) as! SidebarCell
-        cell.cellSelected = false
-        
-        self.lastSelected = (indexPath as NSIndexPath).row
-        
-        cell = self.tableView.cellForRow(at: indexPath) as! SidebarCell
-        cell.cellSelected = true
+        self.present(activityVC, animated: true, completion: nil)
     }
 }
 
