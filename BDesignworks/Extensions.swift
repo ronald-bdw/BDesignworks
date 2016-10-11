@@ -37,6 +37,18 @@ extension UIAlertController {
     }
 }
 
+extension UIViewController {
+    func getLastController() -> UIViewController? {
+        var presentedController: UIViewController? = self
+        var nextController = presentedController?.presentedViewController
+        while nextController != nil  {
+            presentedController = nextController
+            nextController = presentedController?.presentedViewController
+        }
+        return presentedController
+    }
+}
+
 public extension Sequence {
     
     func categorise<U : Hashable>(_ keyFunc: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
