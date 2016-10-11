@@ -9,7 +9,7 @@
         <array key="OpenSansLight.ttf">
             <string>OpenSans-Light</string>
         </array>
-        <array key="OpenSansRegularItalic.ttf">
+        <array key="OpenSansRegular.ttf">
             <string>OpenSans</string>
         </array>
         <array key="OpenSansSemiBold.ttf">
@@ -234,7 +234,7 @@
         <!--Edit Profile-->
         <scene sceneID="UcP-Nm-A2t">
             <objects>
-                <tableViewController id="nvq-iA-CvE" customClass="ProfileEditingView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ProfileEditingView" id="nvq-iA-CvE" customClass="ProfileEditingView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hcv-LG-VxN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
