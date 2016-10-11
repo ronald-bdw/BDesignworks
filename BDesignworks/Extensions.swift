@@ -38,14 +38,14 @@ extension UIAlertController {
 }
 
 extension UIViewController {
-    func getLastController() -> UIViewController {
+    func getLastController() -> UIViewController? {
         var presentedController: UIViewController? = self
         var nextController = presentedController?.presentedViewController
         while nextController != nil  {
             presentedController = nextController
             nextController = presentedController?.presentedViewController
         }
-        return presentedController!
+        return presentedController
     }
 }
 

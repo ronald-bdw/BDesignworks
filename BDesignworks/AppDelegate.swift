@@ -119,10 +119,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Logger.debug(userInfo)
         guard let aps = userInfo["aps"] as? [AnyHashable : Any],
             let title = aps["alert"] as? String else {return}
-        guard let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController,
-            navigationController.getLastController() as? ConversationScreen == nil else {return}
+        if UIApplication.shared.windows.first?.rootViewController?.getLastController() as? ConversationScreen == nil  {
+            NotificationView.presentOnTop(with: title)
+        }
         
-        NotificationView.presentOnTop(with: title)
     }
 }
 
