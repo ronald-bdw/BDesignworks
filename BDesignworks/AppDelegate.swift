@@ -114,6 +114,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.registerForRemoteNotifications()
         HealthKitManager.sharedInstance.authorize()
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        Logger.debug(userInfo)
+        guard let aps = userInfo["aps"] as? [AnyHashable : Any],
+            let title = aps["alert"] as? String else {return}
+        guard let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController,
+            navigationController.getLastController() as? ConversationScreen == nil else {return}
+        
+        NotificationView.presentOnTop(with: title)
+    }
 }
 
 extension AppDelegate {
