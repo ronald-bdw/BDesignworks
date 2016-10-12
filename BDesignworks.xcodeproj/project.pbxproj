@@ -117,6 +117,8 @@
 		E72916581D88365E00A6D70A /* ProfileEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916571D88365E00A6D70A /* ProfileEditingView.swift */; };
 		E729165A1D883A7A00A6D70A /* ProfileEditingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916591D883A7A00A6D70A /* ProfileEditingModel.swift */; };
 		E729165C1D88459A00A6D70A /* ProfileEditingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729165B1D88459A00A6D70A /* ProfileEditingPresenter.swift */; };
+		E745526B1DAE442E00979C6A /* InAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745526A1DAE442E00979C6A /* InAppManager.swift */; };
+		E745526D1DAE4CC600979C6A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E745526C1DAE4CC600979C6A /* StoreKit.framework */; };
 		E7566D9F1A1F85CB00DE3010 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Login.storyboard */; };
 		E75B5A7E1DACDF8E00B51E04 /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75B5A7D1DACDF8E00B51E04 /* NotificationView.xib */; };
 		E765DBAC1D93D2A800D94FF9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E765DBAB1D93D2A800D94FF9 /* Settings.storyboard */; };
@@ -346,6 +348,8 @@
 		E72916571D88365E00A6D70A /* ProfileEditingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingView.swift; sourceTree = "<group>"; };
 		E72916591D883A7A00A6D70A /* ProfileEditingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingModel.swift; sourceTree = "<group>"; };
 		E729165B1D88459A00A6D70A /* ProfileEditingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingPresenter.swift; sourceTree = "<group>"; };
+		E745526A1DAE442E00979C6A /* InAppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppManager.swift; sourceTree = "<group>"; };
+		E745526C1DAE4CC600979C6A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		E75B5A7D1DACDF8E00B51E04 /* NotificationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
 		E765DBAB1D93D2A800D94FF9 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -388,6 +392,7 @@
 			files = (
 				2F07298F1D64C85300A71B3C /* HealthKit.framework in Frameworks */,
 				4FF397DC1D6A5AEC004EAE2E /* IBDesignableKit.framework in Frameworks */,
+				E745526D1DAE4CC600979C6A /* StoreKit.framework in Frameworks */,
 				213B89BF19F01A1E005D3749 /* CoreGraphics.framework in Frameworks */,
 				F7018C5C4E9D83799A15BC04 /* Pods_Abstract_BDesignworks.framework in Frameworks */,
 			);
@@ -425,6 +430,7 @@
 				DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */,
 				7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */,
 				7CD3B5EC1DC2501A0089D93A /* FitbitManager.swift */,
+				E745526A1DAE442E00979C6A /* InAppManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -618,6 +624,7 @@
 			isa = PBXGroup;
 			children = (
 				7C5D3F6A1DBE52370021CBB9 /* UserNotifications.framework */,
+				E745526C1DAE4CC600979C6A /* StoreKit.framework */,
 				2F07298E1D64C85300A71B3C /* HealthKit.framework */,
 				213B89C019F01A40005D3749 /* SpriteKit.framework */,
 				213B89BE19F01A1E005D3749 /* CoreGraphics.framework */,
@@ -1085,6 +1092,9 @@
 								enabled = 1;
 							};
 							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 							com.apple.Push = {
@@ -1576,6 +1586,7 @@
 				DC2280FB1D6B464500D5A0DA /* RegistrationView.swift in Sources */,
 				2F7295F21D6323CC00FD7B21 /* CheckboxTableView.swift in Sources */,
 				DC2281141D6B46AB00D5A0DA /* Router.swift in Sources */,
+				E745526B1DAE442E00979C6A /* InAppManager.swift in Sources */,
 				E72552581DA3B7C5005C1B58 /* TourAppAvatarModel.swift in Sources */,
 				2F734A261D5397F60073CE23 /* PaymentScreen.swift in Sources */,
 				E72552561DA3B7B9005C1B58 /* TourAppAvatarPresenter.swift in Sources */,
