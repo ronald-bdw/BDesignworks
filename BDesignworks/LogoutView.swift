@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SideMenu
 
 class LogoutView: UIViewController {
     
@@ -25,6 +26,11 @@ class LogoutView: UIViewController {
     
     @IBAction func logoutAction(_ sender: AnyObject) {
         ENUser.logout()
-        ShowInitialViewController()
+        self.dismiss(animated: true, completion: nil)
+        
+        FSDispatch_after_short(0.5) {
+            let controller = Storyboard.login.storyboard.instantiateViewController(withIdentifier: "WelcomeController")
+            UIApplication.shared.delegate?.window??.rootViewController = controller
+        }
     }
 }
