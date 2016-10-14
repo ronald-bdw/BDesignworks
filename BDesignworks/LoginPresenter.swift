@@ -32,9 +32,21 @@ extension LoginPresenter: ILoginModelPresenter {
     }
     
     func loginSuccessed(user: ENUser) {
-        SmoochHelper.sharedInstance.startWithParameters(user)
-        FSDispatch_after_short(2.0) { [weak self] in
-            self?.view?.setLoadingState(.done)
+        if let loggedInUsers = UserDefaults.standard.array(forKey: FSUserDefaultsKey.LoggedInUsers) as? Array<String>,
+            loggedInUsers.contains(user.phoneNumber) {
+            SmoochHelper.sharedInstance.startWithParameters(user)
+            FSDispatch_after_short(2.0) { [weak self] in
+                self?.view?.setLoadingState(.done)
+                self?.view?.presentConversation()
+            }
+        }
+        else {
+            var loggedInUsers = UserDefaults.standard.array(forKey: FSUserDefaultsKey.LoggedInUsers) as? Array<String> ?? Array<String> ()
+            loggedInUsers.append(user.phoneNumber)
+            UserDefaults.standard.set(loggedInUsers, forKey: FSUserDefaultsKey.LoggedInUsers)
+            UserDefaults.standard.synchronize()
+            self.view?.setLoadingState(.done)
+            self.view?.presentTourApp()
         }
     }
     
