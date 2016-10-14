@@ -9,6 +9,7 @@
 import Foundation
 
 protocol ITourAppUserInfoPresenterView {
+    func viewAppeared()
     func fieldsUpdated(cellType: TourAppUserInfoCellType, content: String)
     func getUser() -> TourAppUser?
     func showNextView()
@@ -29,6 +30,11 @@ class TourAppUserInfoPresenter {
 }
 
 extension TourAppUserInfoPresenter: ITourAppUserInfoPresenterView {
+    func viewAppeared() {
+        guard let user = ENUser.getMainUser() else {return}
+        SmoochHelper.sharedInstance.startWithParameters(user)
+    }
+    
     func showNextView() {
         self.model?.sendUserIfNeeded()
     }

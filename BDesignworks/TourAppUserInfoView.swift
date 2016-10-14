@@ -36,6 +36,8 @@ class TourAppUserInfoView: UIViewController {
         center.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         center.addObserver(self, selector: #selector(self.healthKitRegistered(_:)), name: NSNotification.Name(rawValue: FSNotificationKey.FitnessDataIntegration.HealthKit) , object: nil)
+        
+        self.presenter?.viewAppeared()
     }
     
     @IBAction func nextPressed(_ sender: AnyObject) {
