@@ -73,7 +73,6 @@ class SidebarView: UITableViewController {
     }
     
     func shareButtonClicked() {
-        //TODO: change link to link to app
         let textToShare = "Check out PearUp for your smartphone. Download it today from https://itunes.apple.com/us/app/pearup/id1164491229"
         let activityVC = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
         
