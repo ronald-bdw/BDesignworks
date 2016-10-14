@@ -22,6 +22,16 @@ class AuthInfo: Object {
         guard let _ = map.JSON["id"] as? Int else {return nil}
         self.init()
     }
+    
+    static func getMainAuthInfo() -> AuthInfo? {
+        do {
+            let realm = try Realm()
+            return realm.objects(AuthInfo.self).first
+        }
+        catch {
+            return nil
+        }
+    }
 }
 
 

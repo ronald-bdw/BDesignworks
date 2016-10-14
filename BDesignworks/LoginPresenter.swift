@@ -10,12 +10,14 @@ import Foundation
 
 protocol ILoginViewPresenter: class {
     func login()
+    func resendPhoneCodeTapped()
 }
 
 protocol ILoginModelPresenter: class {
-    func loginStarted()
+    func loadingStarted()
     func loginSuccessed(user: ENUser)
-    func loginFailed()
+    func loadingFailed(error: Swift.Error?)
+    func phoneCodeSent()
 }
 
 class LoginPresenter {
@@ -27,7 +29,7 @@ class LoginPresenter {
 
 extension LoginPresenter: ILoginModelPresenter {
     
-    func loginStarted() {
+    func loadingStarted() {
         self.view?.setLoadingState(.loading)
     }
     
@@ -50,14 +52,28 @@ extension LoginPresenter: ILoginModelPresenter {
         }
     }
     
-    func loginFailed() {
+    func loadingFailed(error: Swift.Error?) {
         self.view?.setLoadingState(.failed)
+        guard let lError = error as? RTError else {self.view?.showErrorView(); return}
+        if case .backend(let backendError) = lError {
+            self.view?.showErrorView(backendError.humanDescription.title, content: backendError.humanDescription.text, errorType: backendError)
+            return
+        }
+        self.view?.showErrorView()
+    }
+    
+    func phoneCodeSent() {
+        self.view?.showPhoneCodeSentView()
     }
 }
 
 extension LoginPresenter: ILoginViewPresenter {
     func login() {
         self.model?.login("1234")
+    }
+    
+    func resendPhoneCodeTapped() {
+        self.model?.resendSmsCode()
     }
 }
 
