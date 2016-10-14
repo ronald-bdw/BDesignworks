@@ -18,6 +18,11 @@ protocol ITourAppUserInfoView: class {
 }
 
 class TourAppUserInfoView: UIViewController {
+    
+    enum SegueIdentifier: String {
+        case toSecondStep = "toSecondStep"
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: PresenterProtocol?
@@ -152,8 +157,7 @@ extension TourAppUserInfoView: ITourAppUserInfoView {
             SVProgressHUD.show()
         case .done:
             SVProgressHUD.dismiss()
-            let viewController = Storyboard.tourApp.storyboard.instantiateViewController(withIdentifier: TourAppAvatarView.identifier)
-            self.navigationController?.pushViewController(viewController, animated: true)
+            self.performSegue(withIdentifier: SegueIdentifier.toSecondStep.rawValue, sender: self)
         case .failed:
             SVProgressHUD.dismiss()
             ShowErrorAlert()
