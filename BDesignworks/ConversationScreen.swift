@@ -66,7 +66,7 @@ class ConversationScreen: UIViewController {
             Logger.debug(user.token)
             Logger.debug(user.phoneNumber)
             Logger.debug(user.id)
-            SmoochHelper.sharedInstance.updateUserInfo(user: user)
+            SmoochHelper.sharedInstance.startWithParameters(user)
             
             guard let controller = Smooch.newConversationViewController() else {return}
             controller.view.frame = self.containerView.bounds
@@ -115,7 +115,7 @@ class ConversationScreen: UIViewController {
                     try realm.write({
                         realm.add(receivedUser, update: true)
                     })
-                    SmoochHelper.sharedInstance.updateUserInfo(user: receivedUser)
+                    SmoochHelper.sharedInstance.startWithParameters(receivedUser)
                     self.updateTitle()
                 }
                 catch let error {

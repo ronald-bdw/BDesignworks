@@ -12,6 +12,11 @@ typealias LoginMVP = MVPContainer<LoginView, LoginPresenter, LoginModel>
 
 protocol ILoginView: class {
     func setLoadingState (_ state: LoadingState)
+    func presentTourApp()
+    func presentConversation()
+    func showErrorView(_ title: String, content: String, errorType: BackendError)
+    func showErrorView()
+    func showPhoneCodeSentView()
 }
 
 class LoginView: UIViewController {
@@ -32,10 +37,37 @@ extension LoginView: ILoginView {
         case .loading:
             Logger.debug("loading")
         case .done:
-            ShowConversationViewController()
+            Logger.debug("done")
         case .failed:
             Logger.debug("failed")
         }
+    }
+    
+    func presentTourApp() {
+        ShowTourAppViewController()
+    }
+    
+    func presentConversation() {
+        ShowConversationViewController()
+    }
+    
+    func showErrorView(_ title: String, content: String, errorType: BackendError) {
+        if errorType == .smsCodeExpired {
+            ShowAlertWithHandler(title, message: content) { [weak self] (action) in
+                self?.presenter?.resendPhoneCodeTapped()
+            }
+        }
+        else {
+            ShowErrorAlert(title, message: content)
+        }
+    }
+    
+    func showErrorView() {
+        ShowErrorAlert()
+    }
+    
+    func showPhoneCodeSentView() {
+        ShowOKAlert("Success!", message: "Please, wait for sms with link to app.")
     }
 }
 

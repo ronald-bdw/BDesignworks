@@ -36,10 +36,7 @@ extension RegistrationPresenter: IRegistrationModelPresenter {
     }
     
     func loadingSuccessed(user: ENUser) {
-        SmoochHelper.sharedInstance.startWithParameters(user)
-        FSDispatch_after_short(2.0) { [weak self] in
-            self?.view?.setLoadingState(.done)
-        }
+        self.view?.setLoadingState(.done)
     }
     
     func requestFailed(_ error: RTError?) {

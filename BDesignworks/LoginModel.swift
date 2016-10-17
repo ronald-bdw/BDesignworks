@@ -10,6 +10,7 @@ import Foundation
 
 protocol ILoginModel {
     func login(_ smsCode: String)
+    func resendSmsCode()
 }
 
 class LoginModel {
@@ -20,7 +21,7 @@ class LoginModel {
     required init() {}
     
     fileprivate func startLogin(_ smsCode: String) {
-        self.presenter?.loginStarted()
+        self.presenter?.loadingStarted()
         do {
             let realm = try Realm()
             //TODO: add error when there is no auth data
@@ -35,7 +36,7 @@ class LoginModel {
                 
                 switch response.result {
                 case .success(let value):
-                    guard let user = value.user else {self?.presenter?.loginFailed(); return}
+                    guard let user = value.user else {self?.presenter?.loadingFailed(error: nil); return}
                     receivedData = user
                     
                     do {
@@ -47,10 +48,10 @@ class LoginModel {
                         self?.presenter?.loginSuccessed(user: user)
                     } catch let error {
                         Logger.error("\(error)")
-                        self?.presenter?.loginFailed()
+                        self?.presenter?.loadingFailed(error: error)
                     }
                 case .failure(let error):
-                    self?.presenter?.loginFailed()
+                    self?.presenter?.loadingFailed(error: error)
                     Logger.error("\(error)")
                 }
             }
@@ -66,6 +67,36 @@ class LoginModel {
 extension LoginModel: ILoginModel {
     func login(_ smsCode: String) {
         self.startLogin(smsCode)
+    }
+    
+    func resendSmsCode() {
+        guard let authInfo = AuthInfo.getMainAuthInfo() else {return}
+        self.presenter?.loadingStarted()
+        
+        let _ = Router.User.getAuthPhoneCode(phone: authInfo.phone).request().responseObject { [weak self] (response: DataResponse<RTAuthInfoResponse>) in
+            
+            switch response.result {
+            case .success(let value):
+                guard let lAuthInfo = value.authInfo else {self?.presenter?.loadingFailed(error: nil); return}
+                
+                do {
+                    let realm = try Realm()
+                    try realm.write({
+                        realm.delete(realm.objects(AuthInfo.self))
+                        realm.delete(realm.objects(ENUser.self))
+                        realm.add(lAuthInfo)
+                    })
+                    self?.presenter?.phoneCodeSent()
+                    
+                } catch let error {
+                    Logger.error("\(error)")
+                    self?.presenter?.loadingFailed(error: error)
+                }
+            case .failure(let error):
+                Logger.error("\(error)")
+                self?.presenter?.loadingFailed(error: error)
+            }
+        }
     }
 }
 

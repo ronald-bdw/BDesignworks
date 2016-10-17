@@ -18,6 +18,11 @@ protocol ITourAppUserInfoView: class {
 }
 
 class TourAppUserInfoView: UIViewController {
+    
+    enum SegueIdentifier: String {
+        case toSecondStep = "toSecondStep"
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: PresenterProtocol?
@@ -36,6 +41,8 @@ class TourAppUserInfoView: UIViewController {
         center.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         center.addObserver(self, selector: #selector(self.healthKitRegistered(_:)), name: NSNotification.Name(rawValue: FSNotificationKey.FitnessDataIntegration.HealthKit) , object: nil)
+        
+        self.presenter?.viewAppeared()
     }
     
     @IBAction func nextPressed(_ sender: AnyObject) {
@@ -150,8 +157,7 @@ extension TourAppUserInfoView: ITourAppUserInfoView {
             SVProgressHUD.show()
         case .done:
             SVProgressHUD.dismiss()
-            let viewController = Storyboard.tourApp.storyboard.instantiateViewController(withIdentifier: TourAppAvatarView.identifier)
-            self.navigationController?.pushViewController(viewController, animated: true)
+            self.performSegue(withIdentifier: SegueIdentifier.toSecondStep.rawValue, sender: self)
         case .failed:
             SVProgressHUD.dismiss()
             ShowErrorAlert()
