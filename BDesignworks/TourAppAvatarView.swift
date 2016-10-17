@@ -28,6 +28,7 @@ class TourAppAvatarView: UIViewController {
         super.viewDidLoad()
         
         let _ = TourAppAvatarMVP(controller: self)
+        self.presenter?.viewLoaded()
     }
     
     @IBAction func photoPressed(_ sender: AnyObject) {
