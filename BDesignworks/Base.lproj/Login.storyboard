@@ -12,10 +12,10 @@
         <array key="OpenSansLight.ttf">
             <string>OpenSans-Light</string>
         </array>
-        <array key="OpenSansRegularItalic.ttf">
+        <array key="OpenSansRegular.ttf">
             <string>OpenSans</string>
         </array>
-        <array key="WorkSans-Regular.otf">
+        <array key="WorkSans-Regular.ttf">
             <string>WorkSans-Regular</string>
         </array>
     </customFonts>
@@ -426,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZM-Vs-HRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2033" y="320"/>
+            <point key="canvasLocation" x="2338" y="322"/>
         </scene>
         <!--Custom Navigation Controller-->
         <scene sceneID="nUd-NQ-3Bv">
@@ -730,6 +730,6 @@
         <image name="Logo" width="170" height="228"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bZz-Ds-D8R"/>
+        <segue reference="PU7-gE-PF0"/>
     </inferredMetricsTieBreakers>
 </document>

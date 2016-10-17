@@ -43,6 +43,9 @@
                             <constraint firstItem="L25-aC-qE9" firstAttribute="top" secondItem="Re7-6D-pR2" secondAttribute="bottom" id="z37-FT-CmC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="providerLogo" destination="GJL-zX-n8S" id="6pe-Y0-TDv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zat-kW-HjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

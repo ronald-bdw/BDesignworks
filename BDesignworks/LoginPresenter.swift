@@ -11,6 +11,7 @@ import Foundation
 protocol ILoginViewPresenter: class {
     func login()
     func resendPhoneCodeTapped()
+    func checkIfProviderExist() -> Bool
 }
 
 protocol ILoginModelPresenter: class {
@@ -69,6 +70,10 @@ extension LoginPresenter: ILoginViewPresenter {
     
     func resendPhoneCodeTapped() {
         self.model?.resendSmsCode()
+    }
+    
+    func checkIfProviderExist() -> Bool {
+       return UserDefaults.standard.bool(forKey:FSUserDefaultsKey.IsProviderChosen)
     }
 }
 

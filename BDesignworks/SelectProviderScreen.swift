@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FSHelpers_Swift
 
 enum ProviderOption: String {
     case SelectOne   = "Select one"
@@ -83,8 +82,12 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         case SegueIdentifiers.ShowTrial:
             segue.destination.transitioningDelegate = self
             segue.destination.modalPresentationStyle = .custom
+            UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.IsProviderChosen)
+            UserDefaults.standard.synchronize()
         default:
             super.prepare(for: segue, sender: sender)
+            UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.IsProviderChosen)
+            UserDefaults.standard.synchronize()
         }
     }
     
@@ -125,6 +128,7 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .default
     }
+    
 }
 
 extension SelectProviderScreen: UIViewControllerTransitioningDelegate {

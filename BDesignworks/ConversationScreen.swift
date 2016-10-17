@@ -99,12 +99,12 @@ class ConversationScreen: UIViewController {
     }
     
     fileprivate func setProviderIconIfExist(user: ENUser){
-        if user.provider != ""{
+        guard user.provider != "" else {return}
             let leftBarButtonImageView = UIImageView(image: Image.Logo.HbfLogoWhite)
             let resizedLeftImageViewWidth = navigationBarImageHeight * leftBarButtonImageView.fs_width / leftBarButtonImageView.fs_height
             leftBarButtonImageView.frame = CGRect(x: 0, y: 0, width: resizedLeftImageViewWidth, height: navigationBarImageHeight)
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonImageView)
-        }
+        
     }
     
     func loadMainUser() {

@@ -22,12 +22,18 @@ protocol ILoginView: class {
 class LoginView: UIViewController {
     var presenter: PresenterProtocol?
     
+    @IBOutlet weak var providerLogo: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let _ = LoginMVP(controller: self)
         
+
+        
         self.presenter?.login()
+        guard let isProviderExist = self.presenter?.checkIfProviderExist() else {return}
+        self.providerLogo.isHidden = !isProviderExist
     }
 }
 
