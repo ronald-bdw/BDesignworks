@@ -18,6 +18,7 @@ class ENUser: Object, IUser {
     dynamic var lastStepsHealthKitUpdateDate: Date?
     dynamic var avatarUrl: String = ""
     dynamic var avatarThumbUrl: String = ""
+    dynamic var provider: String = ""
     
     var token: String? {
         get {
@@ -136,6 +137,7 @@ extension ENUser: Mappable {
         self.lastStepsHealthKitUpdateDate = Date.getDateFromISO8601(lastUpdateDate)
         self.avatarUrl <- map["avatar.original"]
         self.avatarThumbUrl <- map["avatar.thumb"]
+        self.provider <- map["provider.name"]
     }
 }
 

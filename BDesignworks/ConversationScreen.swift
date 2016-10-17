@@ -33,6 +33,7 @@ enum StatusCellStatus
 
 class ConversationScreen: UIViewController {
     var messages = [Message]()
+    let navigationBarImageHeight: CGFloat = 23
     
     @IBOutlet weak var containerView: UIView!
    
@@ -89,19 +90,21 @@ class ConversationScreen: UIViewController {
     
     fileprivate func setNavigationBarButtons() {
         self.navigationItem.hidesBackButton = true
-        
-        let leftBarButtonImageView = UIImageView(image: Image.Logo.HbfLogoWhite)
-        let imageHeight: CGFloat = 23
-        let resizedLeftImageViewWidth = imageHeight * leftBarButtonImageView.fs_width / leftBarButtonImageView.fs_height
-        leftBarButtonImageView.frame = CGRect(x: 0, y: 0, width: resizedLeftImageViewWidth, height: imageHeight)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonImageView)
-        
         let rightBarImage = Image.Icon.Menu
-        let buttonWidth = imageHeight * rightBarImage.size.width / rightBarImage.size.height
-        let rightBarButton = UIButton(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: imageHeight))
+        let buttonWidth = navigationBarImageHeight * rightBarImage.size.width / rightBarImage.size.height
+        let rightBarButton = UIButton(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: navigationBarImageHeight))
         rightBarButton.setImage(rightBarImage, for: UIControlState())
         rightBarButton.addTarget(self, action: #selector(self.showSideMenu), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
+    }
+    
+    fileprivate func setProviderIconIfExist(user: ENUser){
+        if user.provider != ""{
+            let leftBarButtonImageView = UIImageView(image: Image.Logo.HbfLogoWhite)
+            let resizedLeftImageViewWidth = navigationBarImageHeight * leftBarButtonImageView.fs_width / leftBarButtonImageView.fs_height
+            leftBarButtonImageView.frame = CGRect(x: 0, y: 0, width: resizedLeftImageViewWidth, height: navigationBarImageHeight)
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonImageView)
+        }
     }
     
     func loadMainUser() {
@@ -110,6 +113,8 @@ class ConversationScreen: UIViewController {
             case .success(let value):
                 guard let receivedUser = value.user else {return}
                 self.title = receivedUser.fullname
+                self.setProviderIconIfExist(user: receivedUser)
+                
                 do {
                     let realm = try Realm()
                     try realm.write({
