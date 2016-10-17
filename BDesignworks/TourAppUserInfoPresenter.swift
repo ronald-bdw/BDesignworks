@@ -33,6 +33,11 @@ extension TourAppUserInfoPresenter: ITourAppUserInfoPresenterView {
     func viewAppeared() {
         guard let user = ENUser.getMainUser() else {return}
         SmoochHelper.sharedInstance.startWithParameters(user)
+        
+        var loggedInUsers = UserDefaults.standard.array(forKey: FSUserDefaultsKey.LoggedInUsers) as? Array<String> ?? Array<String> ()
+        loggedInUsers.append(user.phoneNumber)
+        UserDefaults.standard.set(loggedInUsers, forKey: FSUserDefaultsKey.LoggedInUsers)
+        UserDefaults.standard.synchronize()
     }
     
     func showNextView() {
