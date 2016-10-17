@@ -185,14 +185,7 @@ extension RegistrationView: IRegistrationView {
     
     func showErrorView(_ title: String, content: String, errorType: BackendError) {
         SVProgressHUD.dismiss()
-        if errorType == .smsCodeNotExist {
-            ShowAlertWithHandler(title, message: content) { [weak self] (action) in
-                self?.presenter?.resendPhoneCodeTapped(self?.user)
-            }
-        }
-        else {
-            ShowErrorAlert(title, message: content)
-        }
+        ShowErrorAlert(title, message: content)
     }
     
     func showPhoneCodeReceivedView() {
