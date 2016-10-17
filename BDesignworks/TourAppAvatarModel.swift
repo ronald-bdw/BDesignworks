@@ -9,6 +9,7 @@
 import Foundation
 
 protocol ITourAppAvatarModel {
+    func getUser() -> ENUser?
     func sendAvatar(image: UIImage)
 }
 
@@ -19,6 +20,10 @@ class TourAppAvatarModel {
 }
 
 extension TourAppAvatarModel: ITourAppAvatarModel {
+    func getUser() -> ENUser? {
+        return ENUser.getMainUser()
+    }
+    
     func sendAvatar(image: UIImage) {
         guard let user = ENUser.getMainUser() else {self.presenter?.loadingFailed(RTError(backend: BackendError.notAuthorized)); return}
         self.presenter?.loadingStarted()

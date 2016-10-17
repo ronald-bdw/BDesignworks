@@ -9,6 +9,7 @@
 import Foundation
 
 protocol ITourAppAvatarPresenterView {
+    func viewLoaded()
     func imageReceived(image: UIImage)
 }
 
@@ -27,6 +28,12 @@ class TourAppAvatarPresenter {
 }
 
 extension TourAppAvatarPresenter: ITourAppAvatarPresenterView {
+    func viewLoaded() {
+        guard let user = self.model?.getUser(),
+            let avatarUrl = URL(string: user.avatarThumbUrl) else {return}
+        self.view?.updateView(avatarURL: avatarUrl)
+    }
+    
     func imageReceived(image: UIImage) {
         self.model?.sendAvatar(image: image)
     }
