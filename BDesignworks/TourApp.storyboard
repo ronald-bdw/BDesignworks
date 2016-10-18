@@ -255,7 +255,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="skipPressed:" destination="XDl-FY-iJh" eventType="touchUpInside" id="R2G-yT-A4c"/>
                                     <action selector="skipPressed:" destination="gu8-dU-7og" eventType="touchUpInside" id="aeZ-iX-aUM"/>
                                 </connections>
                             </button>
@@ -290,11 +289,106 @@
                     </navigationItem>
                     <connections>
                         <outlet property="avatarView" destination="n8L-iH-OgM" id="xXk-sy-UsG"/>
+                        <segue destination="VeJ-0Q-ZcM" kind="show" identifier="toThirdStep" id="Nr3-G2-6ot"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A87-2P-5n0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="544.79999999999995" y="-66.11694152923539"/>
+        </scene>
+        <!--Step 3 of 3-->
+        <scene sceneID="KpY-vB-hMR">
+            <objects>
+                <viewController id="VeJ-0Q-ZcM" customClass="TourAppPurchasesView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LdK-17-W7V"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZMo-qH-viB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eWE-Hg-PE3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESTORE YOUR SUBSCRIPTION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYX-JS-ERl">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="XX2-kz-IbQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
+                                <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBC-6T-HVW">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Iut-BA-wOK"/>
+                                    <constraint firstAttribute="width" constant="150" id="WHA-aV-uaz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="17"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fs_borderColor">
+                                        <color key="value" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextPressedWithSender:" destination="VeJ-0Q-ZcM" eventType="touchUpInside" id="YyC-0h-R7W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEw-HC-NXO">
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="IEp-9g-BWc"/>
+                                    <constraint firstAttribute="width" constant="150" id="ggl-vz-65Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="18"/>
+                                <state key="normal" title="Restore">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fs_borderColor">
+                                        <color key="value" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fs_borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="restorePressedWithSender:" destination="VeJ-0Q-ZcM" eventType="touchUpInside" id="tuu-Ed-Joj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lYX-JS-ERl" firstAttribute="centerX" secondItem="eWE-Hg-PE3" secondAttribute="centerX" id="2X4-xf-BgL"/>
+                            <constraint firstItem="ZMo-qH-viB" firstAttribute="top" secondItem="QBC-6T-HVW" secondAttribute="bottom" constant="23" id="UhL-Do-E25"/>
+                            <constraint firstItem="lYX-JS-ERl" firstAttribute="top" secondItem="LdK-17-W7V" secondAttribute="bottom" constant="19" id="VIl-Al-Bfl"/>
+                            <constraint firstItem="QBC-6T-HVW" firstAttribute="centerX" secondItem="eWE-Hg-PE3" secondAttribute="centerX" id="eqg-hz-I5d"/>
+                            <constraint firstItem="QBC-6T-HVW" firstAttribute="top" secondItem="wEw-HC-NXO" secondAttribute="bottom" constant="20" id="hHu-iI-S6g"/>
+                            <constraint firstItem="wEw-HC-NXO" firstAttribute="centerX" secondItem="eWE-Hg-PE3" secondAttribute="centerX" id="uSl-Xz-oUh"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Step 3 of 3" id="tvp-2o-CqK">
+                        <barButtonItem key="backBarButtonItem" title=" " id="lxb-do-BT9"/>
+                        <barButtonItem key="rightBarButtonItem" image="forward" id="iTB-NL-iSg">
+                            <connections>
+                                <action selector="nextPressedWithSender:" destination="VeJ-0Q-ZcM" id="Ebh-Bb-cBF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lYf-62-2qw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1365" y="-67"/>
         </scene>
     </scenes>
     <resources>

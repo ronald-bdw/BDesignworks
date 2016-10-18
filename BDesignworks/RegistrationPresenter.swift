@@ -33,11 +33,11 @@ class RegistrationPresenter {
 }
 
 extension RegistrationPresenter: InAppManagerDelegate {
-    func purchaseStarted() {
+    func inAppLoadingStarted() {
         self.view?.setLoadingState(.loading)
     }
     
-    func purchaseSucceded(productType: ProductType) {
+    func inAppLoadingSucceded(productType: ProductType) {
         do {
             let realm = try Realm()
             if let authInfo = realm.objects(AuthInfo.self).first {
@@ -53,7 +53,7 @@ extension RegistrationPresenter: InAppManagerDelegate {
         }
     }
     
-    func purchaseFailed(error: Swift.Error?) {
+    func inAppLoadingFailed(error: Swift.Error?) {
         self.view?.setLoadingState(.failed)
     }
 }
