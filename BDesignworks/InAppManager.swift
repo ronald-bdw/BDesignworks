@@ -17,7 +17,7 @@ enum ProductType: String {
 
 protocol InAppManagerDelegate: class {
     func purchaseSucceded(productType: ProductType)
-    func purchaseFailed()
+    func purchaseFailed(error: Swift.Error?)
 }
 
 class InAppManager: NSObject {
@@ -29,6 +29,8 @@ class InAppManager: NSObject {
     
     func startMonitoring() {
         SKPaymentQueue.default().add(self)
+        self.loadProducts()
+        self.validateReceipt()
     }
     
     func stopMonitoring() {
@@ -36,7 +38,8 @@ class InAppManager: NSObject {
     }
     
     func loadProducts() {
-        let productIdentifiers = Set<String>()
+        var productIdentifiers = Set<String>()
+        productIdentifiers.insert(ProductType.Montly.rawValue)
         let request = SKProductsRequest(productIdentifiers: productIdentifiers)
         request.delegate = self
         request.start()
@@ -48,8 +51,19 @@ class InAppManager: NSObject {
         SKPaymentQueue.default().add(payment)
     }
     
+    func restoreSubscription() {
+        //find receipt, validate
+        //if no receipt found address apple server in tour app, validate
+        
+        //if we unsubscribed do we still get valid receipts?
+        
+    }
+    
     func validateReceipt() -> Bool {
-       return true
+        guard let receiptUrl = Bundle.main.appStoreReceiptURL else {return false}
+        guard let receipt = try? Data(contentsOf: receiptUrl) else {return false}
+        Logger.debug(String(data: receipt, encoding: .utf8))
+        return true
     }
 }
 
@@ -61,13 +75,20 @@ extension InAppManager: SKPaymentTransactionObserver {
             case .purchasing:
                 Logger.debug("purchasing")
             case .purchased:
+                Logger.debug("purchased")
+                //verify
                 self.delegate?.purchaseSucceded(productType: productType)
             case .failed:
-                self.delegate?.purchaseFailed()
+                Logger.debug("failed: \(transaction.error)")
+                self.delegate?.purchaseFailed(error: transaction.error)
             case .restored:
+                //called when restored from itunes
                 Logger.debug("restored")
+                //verify
+                self.delegate?.purchaseSucceded(productType: productType)
             case .deferred:
                 Logger.debug("deffered")
+                self.delegate?.purchaseSucceded(productType: productType)
             }
         }
     }
@@ -76,7 +97,7 @@ extension InAppManager: SKPaymentTransactionObserver {
 extension InAppManager: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         //TODO: add some inapp delegate function
-        guard response.products.count > 0 else {Logger.debug(response); return}
+        guard response.products.count > 0 else {Logger.debug("fuck fuck fuck: \(response.invalidProductIdentifiers)"); return}
         self.products = response.products
         Logger.debug(response.products)
     }

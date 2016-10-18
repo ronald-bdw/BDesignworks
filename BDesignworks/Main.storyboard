@@ -439,8 +439,17 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat is disabled due to subscription missing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMb-uX-soE">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Y-8L-rhD">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <connections>
+                                    <segue destination="jyk-gp-62R" kind="embed" id="55r-bc-Krc"/>
+                                </connections>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -449,6 +458,9 @@
                             <constraint firstItem="Z9Y-8L-rhD" firstAttribute="leading" secondItem="1IT-jf-sba" secondAttribute="leading" id="4jj-ee-Gbn"/>
                             <constraint firstItem="Z9Y-8L-rhD" firstAttribute="top" secondItem="Vtn-Bi-2KU" secondAttribute="bottom" id="Ase-PS-YRd"/>
                             <constraint firstAttribute="trailing" secondItem="Z9Y-8L-rhD" secondAttribute="trailing" id="HIW-QT-1Uu"/>
+                            <constraint firstAttribute="trailing" secondItem="eMb-uX-soE" secondAttribute="trailing" constant="16" id="SGX-Bo-D1h"/>
+                            <constraint firstItem="eMb-uX-soE" firstAttribute="leading" secondItem="1IT-jf-sba" secondAttribute="leading" constant="16" id="h9H-t4-KLn"/>
+                            <constraint firstItem="eMb-uX-soE" firstAttribute="centerY" secondItem="1IT-jf-sba" secondAttribute="centerY" id="jzn-n3-ViW"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -461,7 +473,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcF-mq-Bas" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5514" y="1447"/>
+            <point key="canvasLocation" x="3854" y="-108"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="aru-lt-kmI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="rd8-Fq-ioC" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CBJ-Bo-2Oc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="9i3-0Q-h7S">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="I5z-f9-QjE" kind="relationship" relationship="rootViewController" id="xXE-Mf-BJU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jjh-m0-Xxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4641" y="-108"/>
         </scene>
     </scenes>
     <resources>
