@@ -133,6 +133,7 @@
 		E7C8A6751DABEAC900A64827 /* NotifcationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8A6741DABEAC900A64827 /* NotifcationView.swift */; };
 		E7DA95801D8018FA0079EB79 /* RTSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA957F1D8018FA0079EB79 /* RTSteps.swift */; };
 		E7DA95821D8024A50079EB79 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA95811D8024A50079EB79 /* Steps.swift */; };
+		E7E0F46C1DB6685000FB7468 /* TourAppPurchasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0F46B1DB6685000FB7468 /* TourAppPurchasesView.swift */; };
 		F7018C5C4E9D83799A15BC04 /* Pods_Abstract_BDesignworks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507CDFD2D8FBD39ED71F9EDC /* Pods_Abstract_BDesignworks.framework */; };
 /* End PBXBuildFile section */
 
@@ -364,6 +365,7 @@
 		E7C8A6741DABEAC900A64827 /* NotifcationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifcationView.swift; sourceTree = "<group>"; };
 		E7DA957F1D8018FA0079EB79 /* RTSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTSteps.swift; sourceTree = "<group>"; };
 		E7DA95811D8024A50079EB79 /* Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
+		E7E0F46B1DB6685000FB7468 /* TourAppPurchasesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppPurchasesView.swift; sourceTree = "<group>"; };
 		EC5B966D6C1FE954CB0BC550 /* Pods_Abstract_BDesignworksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE03134474C0070BF8DA767B /* Pods-Abstract-BDesignworks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.release.xcconfig"; sourceTree = "<group>"; };
 		FC6E3D360349BB799F9BA741 /* Pods-Abstract-BDesignworksTests.test staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.test staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.test staging.xcconfig"; sourceTree = "<group>"; };
@@ -832,6 +834,7 @@
 			children = (
 				DCF96E701D9BCD81005AFE42 /* TourAppUserInfo */,
 				E72552521DA3B794005C1B58 /* TourAppAvatar */,
+				E7E0F46A1DB6683500FB7468 /* TourAppPurchases */,
 			);
 			name = TourApp;
 			sourceTree = "<group>";
@@ -948,6 +951,14 @@
 				E72916541D8828C600A6D70A /* ProfilePresenter.swift */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		E7E0F46A1DB6683500FB7468 /* TourAppPurchases */ = {
+			isa = PBXGroup;
+			children = (
+				E7E0F46B1DB6685000FB7468 /* TourAppPurchasesView.swift */,
+			);
+			name = TourAppPurchases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1530,6 +1541,8 @@
 				214F4FF61BFDC35C0084BE32 /* Protocols.swift in Sources */,
 				2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */,
 				E729165C1D88459A00A6D70A /* ProfileEditingPresenter.swift in Sources */,
+				E7E0F46C1DB6685000FB7468 /* TourAppPurchasesView.swift in Sources */,
+				DC37F8581D79D40800E0DBE5 /* TrialPageView.swift in Sources */,
 				DC2280FA1D6B464500D5A0DA /* RegistrationPresenter.swift in Sources */,
 				2F7179511D53497A00231639 /* TrialPageScreen.swift in Sources */,
 				2F0729911D64C86B00A71B3C /* HealthKitManager.swift in Sources */,
