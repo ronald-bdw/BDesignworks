@@ -27,7 +27,35 @@ class RegistrationPresenter {
     weak var view: ViewProtocol?
     var model: ModelProtocol?
     
-    required init() {}
+    required init() {
+        InAppManager.shared.delegate = self
+    }
+}
+
+extension RegistrationPresenter: InAppManagerDelegate {
+    func purchaseStarted() {
+        self.view?.setLoadingState(.loading)
+    }
+    
+    func purchaseSucceded(productType: ProductType) {
+        do {
+            let realm = try Realm()
+            if let authInfo = realm.objects(AuthInfo.self).first {
+                self.model?.register(authData: authInfo)
+            }
+            else {
+                self.model?.receivePhoneCode()
+            }
+        }
+        catch let error {
+            Logger.error(error)
+            self.view?.setLoadingState(.failed)
+        }
+    }
+    
+    func purchaseFailed(error: Swift.Error?) {
+        self.view?.setLoadingState(.failed)
+    }
 }
 
 extension RegistrationPresenter: IRegistrationModelPresenter {
@@ -77,6 +105,10 @@ extension RegistrationPresenter: IRegistrationViewPresenter {
     
     func resendPhoneCodeTapped() {
         self.model?.receivePhoneCode()
+    }
+    
+    func userFieldModified(type: RegistrationCellType, content: String) {
+        self.model?.updateUser(type: type, content: content)
     }
 }
 
