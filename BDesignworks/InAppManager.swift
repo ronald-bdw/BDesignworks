@@ -16,6 +16,7 @@ enum ProductType: String {
 }
 
 protocol InAppManagerDelegate: class {
+    func purchaseStarted()
     func purchaseSucceded(productType: ProductType)
     func purchaseFailed(error: Swift.Error?)
 }
@@ -77,6 +78,7 @@ extension InAppManager: SKPaymentTransactionObserver {
             switch transaction.transactionState {
             case .purchasing:
                 Logger.debug("purchasing")
+                self.delegate?.purchaseStarted()
             case .purchased:
                 Logger.debug("purchased")
                 //verify
