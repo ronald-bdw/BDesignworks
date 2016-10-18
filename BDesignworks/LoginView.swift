@@ -17,6 +17,8 @@ protocol ILoginView: class {
     func showErrorView(_ title: String, content: String, errorType: BackendError)
     func showErrorView()
     func showPhoneCodeSentView()
+    func showProviderLogo()
+    func hideProviderLogo()
 }
 
 class LoginView: UIViewController {
@@ -30,10 +32,7 @@ class LoginView: UIViewController {
         let _ = LoginMVP(controller: self)
         
 
-        
-        self.presenter?.login()
-        guard let isProviderExist = self.presenter?.checkIfProviderExist() else {return}
-        self.providerLogo.isHidden = !isProviderExist
+          self.presenter?.viewLoaded()
     }
 }
 
@@ -55,6 +54,13 @@ extension LoginView: ILoginView {
     
     func presentConversation() {
         ShowConversationViewController()
+    }
+    func showProviderLogo() {
+        self.providerLogo.isHidden = false
+    }
+    
+    func hideProviderLogo() {
+        self.providerLogo.isHidden = true
     }
     
     func showErrorView(_ title: String, content: String, errorType: BackendError) {

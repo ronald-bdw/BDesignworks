@@ -9,9 +9,8 @@
 import Foundation
 
 protocol ILoginViewPresenter: class {
-    func login()
     func resendPhoneCodeTapped()
-    func checkIfProviderExist() -> Bool
+    func viewLoaded()
 }
 
 protocol ILoginModelPresenter: class {
@@ -64,17 +63,20 @@ extension LoginPresenter: ILoginModelPresenter {
 }
 
 extension LoginPresenter: ILoginViewPresenter {
-    func login() {
-        self.model?.login("1234")
+    func viewLoaded() {
+       self.model?.login("1234")
+       
+        if UserDefaults.standard.bool(forKey:FSUserDefaultsKey.IsProviderChosen) == true {
+            self.view?.showProviderLogo()
+        }else{
+            self.view?.hideProviderLogo()
+        }
     }
-    
     func resendPhoneCodeTapped() {
         self.model?.resendSmsCode()
+        
     }
     
-    func checkIfProviderExist() -> Bool {
-       return UserDefaults.standard.bool(forKey:FSUserDefaultsKey.IsProviderChosen)
-    }
 }
 
 extension LoginPresenter: MVPPresenter {
