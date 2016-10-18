@@ -17,17 +17,21 @@ protocol ILoginView: class {
     func showErrorView(_ title: String, content: String, errorType: BackendError)
     func showErrorView()
     func showPhoneCodeSentView()
+    func changeProviderLogoState(logoExist: Bool)
 }
 
 class LoginView: UIViewController {
     var presenter: PresenterProtocol?
+    
+    @IBOutlet weak var providerLogo: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let _ = LoginMVP(controller: self)
         
-        self.presenter?.login()
+
+          self.presenter?.viewLoaded()
     }
 }
 
@@ -49,6 +53,10 @@ extension LoginView: ILoginView {
     
     func presentConversation() {
         ShowConversationViewController()
+    }
+    
+    func changeProviderLogoState(logoExist: Bool) {
+        self.providerLogo.isHidden = !logoExist
     }
     
     func showErrorView(_ title: String, content: String, errorType: BackendError) {

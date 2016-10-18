@@ -9,8 +9,8 @@
 import Foundation
 
 protocol ILoginViewPresenter: class {
-    func login()
     func resendPhoneCodeTapped()
+    func viewLoaded()
 }
 
 protocol ILoginModelPresenter: class {
@@ -63,13 +63,15 @@ extension LoginPresenter: ILoginModelPresenter {
 }
 
 extension LoginPresenter: ILoginViewPresenter {
-    func login() {
-        self.model?.login("1234")
+    func viewLoaded() {
+       self.model?.login("1234")
+       self.view?.changeProviderLogoState(logoExist: UserDefaults.standard.bool(forKey:FSUserDefaultsKey.IsProviderChosen))
     }
-    
     func resendPhoneCodeTapped() {
         self.model?.resendSmsCode()
+        
     }
+    
 }
 
 extension LoginPresenter: MVPPresenter {
