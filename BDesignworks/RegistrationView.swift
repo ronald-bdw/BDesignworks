@@ -42,7 +42,7 @@ class RegistrationView: UIViewController {
     
     @IBAction func submitPressed(_ sender: AnyObject){
         self.shouldShowErrors = true
-        self.presenter?.submitTapped()
+        ShowInAppAlert()
     }
     
     @IBAction func backPressed(_ sender: AnyObject) {

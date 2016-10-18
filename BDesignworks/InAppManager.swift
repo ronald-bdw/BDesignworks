@@ -29,6 +29,8 @@ class InAppManager: NSObject {
     
     func startMonitoring() {
         SKPaymentQueue.default().add(self)
+        
+        
         self.loadProducts()
         self.validateReceipt()
     }
@@ -55,7 +57,8 @@ class InAppManager: NSObject {
         //find receipt, validate
         //if no receipt found address apple server in tour app, validate
         
-        //if we unsubscribed do we still get valid receipts?
+        //if we unsubscribed do we still get valid receipts? - No, receipt updates automatically only if user subscribed; look at expiration date
+        //subscribed -> unsubscribed -> sunscribed - will i get receipt?
         
     }
     
