@@ -65,12 +65,7 @@ extension LoginPresenter: ILoginModelPresenter {
 extension LoginPresenter: ILoginViewPresenter {
     func viewLoaded() {
        self.model?.login("1234")
-       
-        if UserDefaults.standard.bool(forKey:FSUserDefaultsKey.IsProviderChosen) == true {
-            self.view?.showProviderLogo()
-        }else{
-            self.view?.hideProviderLogo()
-        }
+       self.view?.changeProviderLogoState(logoExist: UserDefaults.standard.bool(forKey:FSUserDefaultsKey.IsProviderChosen))
     }
     func resendPhoneCodeTapped() {
         self.model?.resendSmsCode()

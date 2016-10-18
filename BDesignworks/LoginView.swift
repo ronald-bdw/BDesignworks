@@ -17,8 +17,7 @@ protocol ILoginView: class {
     func showErrorView(_ title: String, content: String, errorType: BackendError)
     func showErrorView()
     func showPhoneCodeSentView()
-    func showProviderLogo()
-    func hideProviderLogo()
+    func changeProviderLogoState(logoExist: Bool)
 }
 
 class LoginView: UIViewController {
@@ -55,12 +54,9 @@ extension LoginView: ILoginView {
     func presentConversation() {
         ShowConversationViewController()
     }
-    func showProviderLogo() {
-        self.providerLogo.isHidden = false
-    }
     
-    func hideProviderLogo() {
-        self.providerLogo.isHidden = true
+    func changeProviderLogoState(logoExist: Bool) {
+        self.providerLogo.isHidden = !logoExist
     }
     
     func showErrorView(_ title: String, content: String, errorType: BackendError) {
