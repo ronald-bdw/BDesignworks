@@ -16,9 +16,10 @@ enum ProductType: String {
 }
 
 protocol InAppManagerDelegate: class {
-    func purchaseStarted()
-    func purchaseSucceded(productType: ProductType)
-    func purchaseFailed(error: Swift.Error?)
+    func inAppLoadingStarted()
+    func inAppLoadingSucceded(productType: ProductType)
+    func inAppLoadingFailed(error: Swift.Error?)
+    
 }
 
 class InAppManager: NSObject {
@@ -30,10 +31,6 @@ class InAppManager: NSObject {
     
     func startMonitoring() {
         SKPaymentQueue.default().add(self)
-        
-        
-        self.loadProducts()
-        self.validateReceipt()
     }
     
     func stopMonitoring() {
@@ -61,6 +58,8 @@ class InAppManager: NSObject {
         //if we unsubscribed do we still get valid receipts? - No, receipt updates automatically only if user subscribed; look at expiration date
         //subscribed -> unsubscribed -> sunscribed - will i get receipt?
         
+        SKPaymentQueue.default().restoreCompletedTransactions()
+        self.delegate?.inAppLoadingStarted()
     }
     
     func validateReceipt() -> Bool {
@@ -78,24 +77,32 @@ extension InAppManager: SKPaymentTransactionObserver {
             switch transaction.transactionState {
             case .purchasing:
                 Logger.debug("purchasing")
-                self.delegate?.purchaseStarted()
+                self.delegate?.inAppLoadingStarted()
             case .purchased:
                 Logger.debug("purchased")
                 //verify
-                self.delegate?.purchaseSucceded(productType: productType)
+                self.delegate?.inAppLoadingSucceded(productType: productType)
             case .failed:
                 Logger.debug("failed: \(transaction.error)")
-                self.delegate?.purchaseFailed(error: transaction.error)
+                self.delegate?.inAppLoadingFailed(error: transaction.error)
             case .restored:
                 //called when restored from itunes
                 Logger.debug("restored")
                 //verify
-                self.delegate?.purchaseSucceded(productType: productType)
+                self.delegate?.inAppLoadingSucceded(productType: productType)
             case .deferred:
                 Logger.debug("deffered")
-                self.delegate?.purchaseSucceded(productType: productType)
+                self.delegate?.inAppLoadingSucceded(productType: productType)
             }
         }
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Swift.Error) {
+        self.delegate?.inAppLoadingFailed(error: error)
+    }
+    
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        //TODO: add receipt reading for last date
     }
 }
 
