@@ -77,7 +77,6 @@ struct RegistrationUser {
         case .firstName : self.firstName.content = content
         case .lastName  : self.lastName.content = content
         case .email     : self.email.content = content
-        case .phone     : self.phone.content = content
         }
     }
     
