@@ -15,6 +15,11 @@ enum ProductType: String {
     case Yearly = "com.bdesignworks.pearup.yearly"
 }
 
+enum InAppErrors: Swift.Error {
+    case noSubscriptionPurchased
+    case noProductsAvailable
+}
+
 protocol InAppManagerDelegate: class {
     func inAppLoadingStarted()
     func inAppLoadingSucceded(productType: ProductType)
@@ -28,6 +33,22 @@ class InAppManager: NSObject {
     weak var delegate: InAppManagerDelegate?
     
     var products: [SKProduct] = []
+    
+    var isSubscriptionAvailable: Bool {
+        //TODO: check for receipt fields
+        
+        //if we unsubscribed do we still get valid receipts? - No, receipt updates automatically only if user subscribed; look at expiration date
+        //subscribed -> unsubscribed -> sunscribed - will i get receipt?
+        
+        guard let receiptUrl = Bundle.main.appStoreReceiptURL,
+            let receiptData = try? Data(contentsOf: receiptUrl),
+            let receiptJson = try? JSONSerialization.jsonObject(with: receiptData, options: []) as? [String: AnyObject],
+            let latestInfo = receiptJson?["receiptJson"] as? [String: AnyObject],
+            let expiresDate = latestInfo["expires_date_pst"] as? Double
+        else {return false}
+        
+        return Date().timeIntervalSince1970 < expiresDate
+    }
     
     func startMonitoring() {
         SKPaymentQueue.default().add(self)
@@ -52,20 +73,13 @@ class InAppManager: NSObject {
     }
     
     func restoreSubscription() {
-        //find receipt, validate
-        //if no receipt found address apple server in tour app, validate
-        
-        //if we unsubscribed do we still get valid receipts? - No, receipt updates automatically only if user subscribed; look at expiration date
-        //subscribed -> unsubscribed -> sunscribed - will i get receipt?
-        
         SKPaymentQueue.default().restoreCompletedTransactions()
         self.delegate?.inAppLoadingStarted()
     }
     
     func validateReceipt() -> Bool {
-        guard let receiptUrl = Bundle.main.appStoreReceiptURL else {return false}
-        guard let receipt = try? Data(contentsOf: receiptUrl) else {return false}
-        Logger.debug(String(data: receipt, encoding: .utf8))
+        //TODO: add receipt validation with apple server (https://sandbox.itunes.apple.com/verifyReceipt)
+        //http://www.brianjcoleman.com/tutorial-receipt-validation-in-swift/ - receipt validation example
         return true
     }
 }
@@ -102,14 +116,30 @@ extension InAppManager: SKPaymentTransactionObserver {
     }
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        //TODO: add receipt reading for last date
+        if self.isSubscriptionAvailable {
+            guard let receiptUrl = Bundle.main.appStoreReceiptURL,
+                let receiptData = try? Data(contentsOf: receiptUrl),
+                let receiptJson = try? JSONSerialization.jsonObject(with: receiptData, options: []) as? [String: AnyObject],
+                let latestInfo = receiptJson?["receiptJson"] as? [String: AnyObject],
+                let productId = latestInfo["product_id"] as? String,
+                let productType = ProductType(rawValue: productId)
+                else {self.delegate?.inAppLoadingFailed(error: nil); return}
+            self.delegate?.inAppLoadingSucceded(productType: productType)
+        }
+        else {
+            self.delegate?.inAppLoadingFailed(error: InAppErrors.noSubscriptionPurchased)
+        }
     }
 }
 
 extension InAppManager: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         //TODO: add some inapp delegate function
-        guard response.products.count > 0 else {Logger.debug("fuck fuck fuck: \(response.invalidProductIdentifiers)"); return}
+        guard response.products.count > 0 else {
+            Logger.debug("fuck fuck fuck: \(response.invalidProductIdentifiers)")
+            self.delegate?.inAppLoadingFailed(error: InAppErrors.noProductsAvailable)
+            return
+        }
         self.products = response.products
         Logger.debug(response.products)
     }

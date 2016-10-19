@@ -38,17 +38,10 @@ extension RegistrationPresenter: InAppManagerDelegate {
     }
     
     func inAppLoadingSucceded(productType: ProductType) {
-        do {
-            let realm = try Realm()
-            if let authInfo = realm.objects(AuthInfo.self).first {
-                self.model?.register(authData: authInfo)
-            }
-            else {
-                self.model?.receivePhoneCode()
-            }
+        if let smsCode = UserDefaults.standard.string(forKey: FSUserDefaultsKey.SmsCode) {
+            self.model?.register(smsCode: smsCode)
         }
-        catch let error {
-            Logger.error(error)
+        else {
             self.view?.setLoadingState(.failed)
         }
     }
@@ -108,7 +101,7 @@ extension RegistrationPresenter: IRegistrationViewPresenter {
     }
     
     func userFieldModified(type: RegistrationCellType, content: String) {
-        self.model?.updateUser(type: type, content: content)
+        self.model?.updateRegistrationUser(type: type, text: content)
     }
 }
 
