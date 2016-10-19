@@ -69,7 +69,7 @@ class ConversationScreen: UIViewController {
         
         HealthKitManager.sharedInstance.sendHealthKitData()
         
-        if let user = ENUser.getMainUser(), user.id != 0 {
+        if let user = ENUser.getMainUser(), user.id != 0 && InAppManager.shared.isSubscriptionAvailable {
             Logger.debug(user.token)
             Logger.debug(user.phoneNumber)
             Logger.debug(user.id)
