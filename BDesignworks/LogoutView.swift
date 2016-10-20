@@ -27,6 +27,7 @@ class LogoutView: UIViewController {
     @IBAction func logoutAction(_ sender: AnyObject) {
         ENUser.logout()
         UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.IsProviderChosen)
+        Smooch.logout()
         
         self.dismiss(animated: true, completion: nil)
         

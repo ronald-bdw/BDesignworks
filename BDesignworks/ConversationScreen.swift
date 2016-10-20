@@ -67,6 +67,7 @@ class ConversationScreen: UIViewController {
             Logger.debug(user.token)
             Logger.debug(user.phoneNumber)
             Logger.debug(user.id)
+            Logger.debug("Provider:\(user.provider)")
             SmoochHelper.sharedInstance.startWithParameters(user)
             
             guard let controller = Smooch.newConversationViewController() else {return}
