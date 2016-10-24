@@ -60,17 +60,13 @@ extension RegistrationPresenter: IRegistrationModelPresenter {
 extension RegistrationPresenter: IRegistrationViewPresenter {
     func submitTapped(_ user: RegistrationUser?) {
         guard let lUser = user else {self.view?.setLoadingState(.failed); return}
-        do {
-            let realm = try Realm()
-            if let authInfo = realm.objects(AuthInfo.self).first {
-                self.model?.register(lUser, authData: authInfo)
-            }
-            else {
-                self.model?.receivePhoneCode(lUser)
-            }
+        
+        if let smsCode = UserDefaults.standard.string(forKey: FSUserDefaultsKey.SmsCode),
+            let realm = try? Realm(),
+            let authInfo = realm.objects(AuthInfo.self).first {
+            self.model?.register(lUser, authData: authInfo, smsCode: smsCode)
         }
-        catch let error {
-            Logger.error(error)
+        else {
             self.view?.setLoadingState(.failed)
         }
     }
@@ -85,7 +81,6 @@ extension RegistrationPresenter: IRegistrationViewPresenter {
     }
     
     func viewDidLoad() {
-        self.model?.registerIfNeeded()
     }
 }
 

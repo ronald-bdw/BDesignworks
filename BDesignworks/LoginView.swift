@@ -60,7 +60,8 @@ extension LoginView: ILoginView {
     }
     
     func showErrorView(_ title: String, content: String, errorType: BackendError) {
-        if errorType == .smsCodeExpired {
+        if errorType == .smsCodeExpired ||
+            errorType == .smsCodeInvalid {
             ShowAlertWithHandler(title, message: content) { [weak self] (action) in
                 self?.presenter?.resendPhoneCodeTapped()
             }
