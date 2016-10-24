@@ -73,6 +73,7 @@ enum BackendError {
     case phoneTaken
     case emainTaken
     case smsCodeNotExist
+    case smsCodeInvalid
     
     var error: RTError {return RTError(backend: self)}
 }

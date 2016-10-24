@@ -122,6 +122,7 @@
 		E7AF27391DA2857000596191 /* TourAppUserInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF27381DA2857000596191 /* TourAppUserInfoPresenter.swift */; };
 		E7C1F2691D88011C007F9D7A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C1F2681D88011C007F9D7A /* Profile.storyboard */; };
 		E7C1F26D1D881C37007F9D7A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C1F26C1D881C37007F9D7A /* ProfileView.swift */; };
+		E7C2F2661DBE35630018961A /* BackendError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2F2651DBE35630018961A /* BackendError.swift */; };
 		E7C8A6751DABEAC900A64827 /* NotifcationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8A6741DABEAC900A64827 /* NotifcationView.swift */; };
 		E7DA95801D8018FA0079EB79 /* RTSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA957F1D8018FA0079EB79 /* RTSteps.swift */; };
 		E7DA95821D8024A50079EB79 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA95811D8024A50079EB79 /* Steps.swift */; };
@@ -344,6 +345,7 @@
 		E7AF27381DA2857000596191 /* TourAppUserInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppUserInfoPresenter.swift; sourceTree = "<group>"; };
 		E7C1F2681D88011C007F9D7A /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E7C1F26C1D881C37007F9D7A /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		E7C2F2651DBE35630018961A /* BackendError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendError.swift; sourceTree = "<group>"; };
 		E7C8A6741DABEAC900A64827 /* NotifcationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifcationView.swift; sourceTree = "<group>"; };
 		E7DA957F1D8018FA0079EB79 /* RTSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTSteps.swift; sourceTree = "<group>"; };
 		E7DA95811D8024A50079EB79 /* Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
@@ -716,6 +718,7 @@
 				DC22810D1D6B46AB00D5A0DA /* RTErrors.swift */,
 				DC22810E1D6B46AB00D5A0DA /* RTErrorsDescription.swift */,
 				DCD86E5A1D6DEAFA0072AFA1 /* ValidationError.swift */,
+				E7C2F2651DBE35630018961A /* BackendError.swift */,
 			);
 			name = Errors;
 			sourceTree = "<group>";
@@ -1494,6 +1497,7 @@
 				2FAA4FB81D5C809700DCFF46 /* SidebarView.swift in Sources */,
 				DC2280F91D6B464500D5A0DA /* RegistrationModel.swift in Sources */,
 				DC2281121D6B46AB00D5A0DA /* AlamofireHelpers.swift in Sources */,
+				E7C2F2661DBE35630018961A /* BackendError.swift in Sources */,
 				DCF96E721D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift in Sources */,
 				214F4FF61BFDC35C0084BE32 /* Protocols.swift in Sources */,
 				2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */,

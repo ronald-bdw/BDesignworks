@@ -9,7 +9,7 @@
 import Foundation
 
 protocol IRegistrationModel {
-    func register(_ user: RegistrationUser, authData: AuthInfo)
+    func register(_ user: RegistrationUser, authData: AuthInfo, smsCode: String)
     func receivePhoneCode(_ user: RegistrationUser)
     func getRegistrationUser() -> RegistrationUser
     func registerIfNeeded()
@@ -22,11 +22,11 @@ class RegistrationModel {
     
     required init() {}
     
-    fileprivate func startRegister(_ user: RegistrationUser, authData: AuthInfo) {
+    fileprivate func startRegister(_ user: RegistrationUser, authData: AuthInfo, smsCode: String) {
         self.presenter?.updateValidationErrors()
         guard self.validateUser(user) else {return}
         self.presenter?.loadingStarted()
-        let _ = Router.User.register(firstName: user.firstName.content, lastname: user.lastName.content, email: user.email.content, phone: user.phone.content, authPhoneCode: authData.id, smsCode: "1234").request().responseObject { [weak self] (response: DataResponse<RTUserResponse>) in
+        let _ = Router.User.register(firstName: user.firstName.content, lastname: user.lastName.content, email: user.email.content, phone: user.phone.content, authPhoneCode: authData.id, smsCode: smsCode).request().responseObject { [weak self] (response: DataResponse<RTUserResponse>) in
             var user: ENUser?
             
             defer {
@@ -44,6 +44,9 @@ class RegistrationModel {
                         realm.delete(realm.objects(ENUser.self))
                         realm.delete(realm.objects(AuthInfo.self))
                         realm.add(lUser)
+                        
+                        UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.SmsCode)
+                        UserDefaults.standard.synchronize()
                     })
                     self?.presenter?.loadingSuccessed(user: lUser)
                 } catch let error {
@@ -102,19 +105,19 @@ class RegistrationModel {
 }
 
 extension RegistrationModel: IRegistrationModel {
-    func register(_ user: RegistrationUser, authData: AuthInfo) {
-        self.startRegister(user, authData: authData)
+    func register(_ user: RegistrationUser, authData: AuthInfo, smsCode: String) {
+        self.startRegister(user, authData: authData, smsCode: smsCode)
     }
     
     func registerIfNeeded() {
-        do {
-            let realm = try Realm()
-            guard let user = realm.objects(ENUser.self).first,
-                let authData = realm.objects(AuthInfo.self).first else {return}
-            self.startRegister(user.getRegistrationUser(), authData: authData)
-        } catch let error {
-            Logger.error("\(error)")
-        }
+//        do {
+//            let realm = try Realm()
+//            guard let user = realm.objects(ENUser.self).first,
+//                let authData = realm.objects(AuthInfo.self).first else {return}
+//            self.startRegister(user.getRegistrationUser(), authData: authData)
+//        } catch let error {
+//            Logger.error("\(error)")
+//        }
     }
     
     func getRegistrationUser() -> RegistrationUser {
