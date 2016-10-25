@@ -47,7 +47,7 @@ extension ProfileView: IProfileView {
         self.emailLabel.text = user.email
         self.phoneLabel.text = user.phoneNumber
         
-        guard let url = URL(string: user.avatarUrl) else {return}
+        guard let url = URL(string: user.avatarThumbUrl) else {return}
         self.avatarImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "Profile/Avatar"))
     }
 }

@@ -45,13 +45,12 @@ extension TourAppAvatarPresenter: ITourAppAvatarPresenterModel {
     }
     
     func loadingFinished(user: ENUser) {
-        guard let url = URL(string: user.avatarUrl) else {
+        guard let _ = URL(string: user.avatarThumbUrl) else {
             self.view?.setLoadingState(.failed)
             self.view?.showErrorView()
             return
         }
         self.view?.setLoadingState(.done)
-        self.view?.updateView(avatarURL: url)
     }
     
     func loadingFailed(_ error: RTError) {
