@@ -73,11 +73,7 @@ class SettingsView: UITableViewController {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     @IBAction func notificationSwitcherTrigered(_ sender: AnyObject) {
-        if self.notificationsSwitch.isOn{
-            self.performSegue(withIdentifier: SegueIdentifiers.Notifications, sender: self)
-        }else{
-            self.performSegue(withIdentifier: SegueIdentifiers.Notifications, sender: self)
-        }
+        self.performSegue(withIdentifier: SegueIdentifiers.Notifications, sender: self)
     }
 }
 

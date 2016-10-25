@@ -26,9 +26,9 @@ class ZendeskNotificationManager {
         let _ = Router.User.enableNotificationOnZendesk.request().responseObject { (response: DataResponse<RTZendeskNotificationResponse>) in
             switch response.result {
             case .success:
-                FSDLog("Notifications on zedesk enabled")
+                Logger.debug("Notifications on zedesk enabled")
             case .failure(let error):
-                FSDLog("Error: \(error)")
+                Logger.error("Error: \(error)")
             }
         }
     }
@@ -37,9 +37,9 @@ class ZendeskNotificationManager {
         let _ = Router.User.disableNotificationOnZendesk.request().responseObject { (response: DataResponse<RTZendeskNotificationResponse>) in
             switch response.result {
             case .success:
-                FSDLog("Notifications on zedesk disabled")
+                Logger.debug("Notifications on zedesk disabled")
             case .failure(let error):
-                FSDLog("Error: \(error)")
+                Logger.error("Error: \(error)")
             }
         }
     }
