@@ -28,6 +28,7 @@ extension BackendError: HumanErrorType {
         case .phoneTaken        : return "Phone number is already taken"
         case .emainTaken        : return "Emain is taken"
         case .smsCodeNotExist   : return "Sms code not saved in database"
+        case .smsCodeInvalid    : return "Sms code not valid"
         }
     }
     
@@ -39,6 +40,7 @@ extension BackendError: HumanErrorType {
         case .phoneTaken        : return ErrorHumanDescription(title: "Sorry", text: "Phone number is already taken")
         case .emainTaken        : return ErrorHumanDescription(title: "Sorry", text: "Email is taken")
         case .smsCodeNotExist   : return ErrorHumanDescription(title: "Success", text: "Please, enter the link in sended sms.")
+        case .smsCodeInvalid    : return ErrorHumanDescription(title: "Sms code not valid", text: "Resend sms code?")
         }
     }
 }

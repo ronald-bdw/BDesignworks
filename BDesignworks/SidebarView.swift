@@ -88,7 +88,7 @@ extension SidebarView: ISidebarView {
         self.nameLabel.text = user.fullname
         self.emailLabel.text = user.email
         
-        guard let url = URL(string: user.avatarUrl) else {return}
+        guard let url = URL(string: user.avatarThumbUrl) else {return}
         self.avatarImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "Profile/Avatar"))
     }
 }

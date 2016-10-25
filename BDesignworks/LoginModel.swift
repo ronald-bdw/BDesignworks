@@ -44,6 +44,9 @@ class LoginModel {
                             realm.delete(realm.objects(ENUser.self))
                             realm.add(user, update: true)
                             realm.delete(realm.objects(AuthInfo.self))
+                            
+                            UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.SmsCode)
+                            UserDefaults.standard.synchronize()
                         })
                         self?.presenter?.loginSuccessed(user: user)
                     } catch let error {

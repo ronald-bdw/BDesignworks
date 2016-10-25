@@ -64,14 +64,15 @@ extension LoginPresenter: ILoginModelPresenter {
 
 extension LoginPresenter: ILoginViewPresenter {
     func viewLoaded() {
-       self.model?.login("1234")
-       self.view?.changeProviderLogoState(logoExist: UserDefaults.standard.bool(forKey:FSUserDefaultsKey.IsProviderChosen))
-    }
-    func resendPhoneCodeTapped() {
-        self.model?.resendSmsCode()
-        
+        self.view?.changeProviderLogoState(logoExist: UserDefaults.standard.bool(forKey:FSUserDefaultsKey.IsProviderChosen))
+        if let smsCode = UserDefaults.standard.string(forKey: FSUserDefaultsKey.SmsCode) {
+            self.model?.login(smsCode)
+        }
     }
     
+    func resendPhoneCodeTapped() {
+        self.model?.resendSmsCode()
+    }
 }
 
 extension LoginPresenter: MVPPresenter {

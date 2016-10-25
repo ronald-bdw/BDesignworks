@@ -19,26 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setupProject()
         
 //        ENUser.createTestUser()
-        do {
-            let realm = try Realm()
-            if let authInfo = realm.objects(AuthInfo.self).first {
-                if authInfo.isRegistered {
-                    ShowWelcomeViewController()
-                }
-                else {
-                    ShowRegistrationViewController()
-                }
-            }
-            else if let _ = realm.objects(ENUser.self).first {
-                ShowConversationViewController()
-                ZendeskNotificationManager.sharedInstance.trigerNotificationOnZendesk()
-            }
-            else {
-                ShowInitialViewController()
-            }
-        } catch let error {
+        
+        let realm = try? Realm()
+        if let _ = realm?.objects(ENUser.self).first,
+            realm?.objects(AuthInfo.self).count == 0 {
+            ShowConversationViewController()
+            ZendeskNotificationManager.sharedInstance.trigerNotificationOnZendesk()
+        }
+        else {
             ShowInitialViewController()
-            Logger.error("\(error)")
         }
         
         return true
@@ -75,19 +64,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         //pearup://pearup.com?code=####
-        guard let query = url.query,
-            let dividerIndex = query.range(of: "=")?.upperBound else {return true}
-        let code = query.substring(from: dividerIndex)
+        //pearup://pearup.com?authcode=%{phone_code}" smscode
         
-        let _ = Router.Steps.sendFitbitCode(code: code).request().responseObject { (response: DataResponse<RTStepsSendResponse>) in
-            switch response.result {
-            case .success(_):
-                Logger.debug("successfully sent fitbit code")
-                UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.FitbitRegistered)
-                UserDefaults.standard.synchronize()
-            case .failure(let error):
-                Logger.error(error)
-                ShowErrorAlert()
+        guard let query = url.query else {return true}
+        var code = ""
+        if let smsCodeDividerIndex = query.range(of: "authcode=")?.upperBound {
+            code = query.substring(from: smsCodeDividerIndex)
+            UserDefaults.standard.set(code, forKey: FSUserDefaultsKey.SmsCode)
+            UserDefaults.standard.synchronize()
+            
+            if let realm = try? Realm(),
+                let authInfo = realm.objects(AuthInfo.self).first {
+                if authInfo.isRegistered {
+                    ShowWelcomeViewController()
+                }
+                else {
+                    ShowRegistrationViewController()
+                }
+            }
+        }
+        else if let fitBitDividerIndex = query.range(of: "code=")?.upperBound {
+            code = query.substring(from: fitBitDividerIndex)
+            
+            let _ = Router.Steps.sendFitbitCode(code: code).request().responseObject { (response: DataResponse<RTStepsSendResponse>) in
+                switch response.result {
+                case .success(_):
+                    Logger.debug("successfully sent fitbit code")
+                    UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.FitbitRegistered)
+                    UserDefaults.standard.synchronize()
+                case .failure(let error):
+                    Logger.error(error)
+                    ShowErrorAlert()
+                }
             }
         }
         return true
