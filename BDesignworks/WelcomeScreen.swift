@@ -46,21 +46,9 @@ final class WelcomeScreen: UIViewController {
         self.view.layoutIfNeeded()
         self.navigationController?.navigationBar.isHidden = true
         self.navigationItem.hidesBackButton = true
-//        self.containerHeightConstraint.constant = self.getDefaultContainerHeight()
-//        self.logoTopConstraint.constant = (UIScreen.main.bounds.size.height - Constants.defaultLogoHeight)/2 - Constants.defaultVerticalCenterOffset
-//        self.containerBottomConstraint.constant = -self.containerView.fs_height
         self.containerView.alpha = 0.0
         self.view.layoutIfNeeded()
     }
-    
-//    fileprivate func getDefaultContainerHeight() -> CGFloat {
-//        guard let screenType = FSScreenType() else { return 200 }
-//        return screenType.defaultContainerHeight
-//    }
-//    
-//    fileprivate func getDefaultLogoTopOffset() -> CGFloat {
-//        return UIScreen.main.bounds.size.height == 480 ? 50 : UIScreen.main.bounds.size.height*Constants.defaultLogoTopConstraintRatio  //Checking for iPhone 4/4s
-//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -68,11 +56,7 @@ final class WelcomeScreen: UIViewController {
         UIView.animate(withDuration: 0.8, delay: 0.4, options: UIViewAnimationOptions(), animations: {
             [weak self] in
             guard let sself = self else { return }
-//            sself.logoTopConstraint.constant          = sself.getDefaultLogoTopOffset()
-//            sself.conversationTopConstraint.constant += UIScreen.main.bounds.size.height/2
-//            sself.containerBottomConstraint.constant  = 0
-//            sself.conversationLabel.alpha             = 0.0
-            sself.containerView.alpha                 = 1.0
+            sself.containerView.alpha = 1.0
             sself.view.layoutIfNeeded()
         }, completion: nil)
     }
