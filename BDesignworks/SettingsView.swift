@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SettingsView: UITableViewController {
     
@@ -19,6 +20,7 @@ class SettingsView: UITableViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateNotificationsSwitch), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        self.notificationsSwitch.addTarget(self, action: #selector(self.updateNotificationsSwitch), for: UIControlEvents.valueChanged)
     }
     
     deinit {
@@ -35,12 +37,14 @@ class SettingsView: UITableViewController {
         
     }
     
-    func updateNotificationsSwitch() {
+    func updateNotificationsSwitch(){
         if UIApplication.shared.isRegisteredForRemoteNotifications {
             self.notificationsSwitch.setOn(true, animated: true)
+            ZendeskNotificationManager.sharedInstance.enableNotificationOnZendesk()
         }
         else {
             self.notificationsSwitch.setOn(false, animated: true)
+            ZendeskNotificationManager.sharedInstance.disableNotificationOnZendesk()
         }
     }
     
@@ -53,6 +57,7 @@ class SettingsView: UITableViewController {
         case SegueIdentifiers.Logout:
             segue.destination.transitioningDelegate = self
             segue.destination.modalPresentationStyle = .custom
+            
         case SegueIdentifiers.Notifications:
             segue.destination.transitioningDelegate = self
             segue.destination.modalPresentationStyle = .custom
@@ -62,9 +67,13 @@ class SettingsView: UITableViewController {
             super.prepare(for: segue, sender: sender)
         }
     }
-    
+   
+    //MARK: - Buttons action
     @IBAction func backPressed(sender: AnyObject) {
         self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func notificationSwitcherTrigered(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: SegueIdentifiers.Notifications, sender: self)
     }
 }
 
@@ -103,7 +112,7 @@ extension SettingsView: UIViewControllerTransitioningDelegate {
                                 presenting: UIViewController?,
                                 source: UIViewController) -> UIPresentationController? {
         let screenHeight: CGFloat = presented is LogoutView ? 321 :
-                                    presented is NotificationsView ? 400 : 0
+            presented is NotificationsView ? 400 : 0
         return ModalPresentationController(presentedViewController: presented, presenting: presenting, height: screenHeight)
     }
 }

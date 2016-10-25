@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="OpenSansRegular.ttf">
+        <array key="OpenSansRegularItalic.ttf">
             <string>OpenSans</string>
         </array>
         <array key="OpenSansSemiBold.ttf">
@@ -128,7 +128,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4uH-yn-gQQ">
                                                     <color key="onTintColor" red="0.16078431372549018" green="0.32549019607843138" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
-                                                        <segue destination="D7R-Lq-8VN" kind="presentation" identifier="Notifications" id="QLe-WP-uEu"/>
+                                                        <action selector="notificationSwitcherTrigered:" destination="9GJ-SZ-QtN" eventType="valueChanged" id="urE-Ud-5lf"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -270,6 +270,7 @@
                     <connections>
                         <outlet property="notificationsSwitch" destination="4uH-yn-gQQ" id="0a9-wZ-dnU"/>
                         <outlet property="profilePhoto" destination="laB-h1-DBh" id="F3s-ah-tWS"/>
+                        <segue destination="D7R-Lq-8VN" kind="presentation" identifier="Notifications" id="a4h-MY-oe1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Hd-Lu-NhY" userLabel="First Responder" sceneMemberID="firstResponder"/>

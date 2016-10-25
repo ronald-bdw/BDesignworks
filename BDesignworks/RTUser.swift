@@ -17,6 +17,8 @@ extension Router {
         case getUser
         case editUser(user: UserEdited)
         case sendAvatar(id: Int, image: UIImage)
+        case enableNotificationOnZendesk
+        case disableNotificationOnZendesk
     }
 }
 
@@ -24,22 +26,25 @@ extension Router.User: RouterProtocol {
 
     var settings: RTRequestSettings {
         switch self {
-        case .getAuthPhoneCode(_)   :return RTRequestSettings(method: .post, encoding: URLEncoding.default)
-        case .getUser               :return RTRequestSettings(method: .get)
+        case .getAuthPhoneCode(_)           :return RTRequestSettings(method: .post, encoding: URLEncoding.default)
+        case .getUser                       :return RTRequestSettings(method: .get)
         case .editUser(_),
-             .sendAvatar(_,_)       :return RTRequestSettings(method: .put)
-        default                     :return RTRequestSettings(method: .post)
+             .sendAvatar(_,_)               :return RTRequestSettings(method: .put)
+        case .disableNotificationOnZendesk  :return RTRequestSettings(method: .delete)
+        default                             :return RTRequestSettings(method: .post)
         }
     }
     
     var path: String {
         switch self {
-        case .getAuthPhoneCode(_)   : return "/auth_phone_codes"
-        case .register              : return "/users"
-        case .signIn                : return "/users/sign_in"
-        case .getUser               : return "/users/account"
-        case .editUser(let user)    : return "/users/\(user.id)"
-        case .sendAvatar(let id,_)  : return "/users/\(id)"
+        case .getAuthPhoneCode(_)         : return "/auth_phone_codes"
+        case .register                    : return "/users"
+        case .signIn                      : return "/users/sign_in"
+        case .getUser                     : return "/users/account"
+        case .editUser(let user)          : return "/users/\(user.id)"
+        case .sendAvatar(let id,_)        : return "/users/\(id)"
+        case .enableNotificationOnZendesk : return "/notifications"
+        case .disableNotificationOnZendesk: return "/notifications/message_push"
         }
     }
     
@@ -63,6 +68,9 @@ extension Router.User: RouterProtocol {
             params.updateIfNotDefault(user.lastName, forKey: "last_name", defaultValue: "")
             params.updateIfNotDefault(user.email, forKey: "email", defaultValue: "")
             return params as [String : AnyObject]?
+        case .enableNotificationOnZendesk:
+            
+            return ["notification":["kind":"message_push"] as AnyObject]
         default:
             return nil
         }
@@ -80,6 +88,14 @@ extension Router.User: RouterProtocol {
 
 }
 
+class RTZendeskNotificationResponse: Mappable{
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    func mapping(map: Map) {
+        
+    }
+}
 class RTUserResponse: Mappable {
     var user: ENUser?
     var error: ValidationError?
@@ -92,7 +108,6 @@ class RTUserResponse: Mappable {
         self.user <- map["user"]
     }
 }
-
 class RTAuthInfoResponse: Mappable {
     var authInfo: AuthInfo?
     

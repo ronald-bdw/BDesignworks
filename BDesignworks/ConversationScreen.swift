@@ -8,7 +8,7 @@
 
 import UIKit
 import SideMenu
-
+import UserNotifications
 
 enum StatusCellStatus
 {
@@ -58,8 +58,18 @@ class ConversationScreen: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateTitle), name: NSNotification.Name(rawValue: FSNotificationKey.User.userChanged), object: nil)
         
-        let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+                // Do something here
+                if granted {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }else{
+            let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+        }
+        
         
         HealthKitManager.sharedInstance.sendHealthKitData()
         

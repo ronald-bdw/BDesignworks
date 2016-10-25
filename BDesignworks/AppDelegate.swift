@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let _ = realm?.objects(ENUser.self).first,
             realm?.objects(AuthInfo.self).count == 0 {
             ShowConversationViewController()
+            ZendeskNotificationManager.sharedInstance.trigerNotificationOnZendesk()
         }
         else {
             ShowInitialViewController()
@@ -52,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication)
     {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        ZendeskNotificationManager.sharedInstance.trigerNotificationOnZendesk()
     }
 
     func applicationWillTerminate(_ application: UIApplication)
