@@ -105,8 +105,7 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
             let selectedButtonState = ProviderOption(rawValue: labelText) else {return}
         
         switch selectedButtonState {
-        case .HBF: self.performSegue(withIdentifier: SegueIdentifiers.ShowVerify, sender: nil)
-        case .NoProvider: self.performSegue(withIdentifier: SegueIdentifiers.ShowTrial, sender: nil)
+        case .HBF, .NoProvider: self.performSegue(withIdentifier: SegueIdentifiers.ShowVerify, sender: nil)
         default: return
         }
     }
