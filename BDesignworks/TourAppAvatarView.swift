@@ -88,7 +88,6 @@ extension TourAppAvatarView: UIImagePickerControllerDelegate, UINavigationContro
 
 extension TourAppAvatarView: ITourAppAvatarView {
     func updateView(avatarURL: URL) {
-        
         self.avatarView.sd_setImage(with: avatarURL) { (image, error, cacheType, url) in
             SVProgressHUD.dismiss()
             if let _ = error {ShowErrorAlert(); return}
@@ -100,7 +99,7 @@ extension TourAppAvatarView: ITourAppAvatarView {
         case .loading:
             SVProgressHUD.show()
         case .done:
-            return
+            ShowConversationViewController()
         case .failed:
             SVProgressHUD.dismiss()
         }
