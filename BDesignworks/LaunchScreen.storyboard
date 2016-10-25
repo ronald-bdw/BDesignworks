@@ -1,58 +1,54 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cgT-gg-8MU">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="dx7-FM-sCK">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="cgT-gg-8MU" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="Ymc-bX-HTf"/>
+                        <viewControllerLayoutGuide type="bottom" id="RTB-ky-SOc"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="G5v-1a-hYw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="5xl-se-LbH">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Pd2-1R-Pq6">
-                                <rect key="frame" x="215" y="176" width="170" height="228"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="hmS-m2-my7"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your get active coach with you every step of the way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92Q-ch-yB4">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="5u1-Ak-5lv"/>
-                                    <constraint firstAttribute="height" constant="228" id="V54-Kj-MXw"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your get active coach with you every step of the way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKO-ah-0m3">
-                                <rect key="frame" x="185" y="429" width="230" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="YGN-rk-VcN"/>
+                                    <constraint firstAttribute="width" constant="230" id="82K-Pd-aJu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.16078431372549018" green="0.32549019607843138" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="KTA-Rt-0fv">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="228" id="568-N8-pQ8"/>
+                                    <constraint firstAttribute="width" constant="170" id="maS-k3-4sk"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="5xl-se-LbH" secondAttribute="bottom" id="Iao-BN-xVf"/>
-                            <constraint firstItem="MKO-ah-0m3" firstAttribute="top" secondItem="Pd2-1R-Pq6" secondAttribute="bottom" constant="25" id="Scx-4B-1V3"/>
-                            <constraint firstAttribute="trailing" secondItem="5xl-se-LbH" secondAttribute="trailing" id="WrQ-IZ-FP2"/>
-                            <constraint firstItem="Pd2-1R-Pq6" firstAttribute="centerX" secondItem="5xl-se-LbH" secondAttribute="centerX" id="faF-Kr-LfS"/>
-                            <constraint firstItem="Pd2-1R-Pq6" firstAttribute="centerY" secondItem="5xl-se-LbH" secondAttribute="centerY" constant="-10" id="lgt-zl-dch"/>
-                            <constraint firstItem="5xl-se-LbH" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="pGq-jK-TUP"/>
-                            <constraint firstItem="5xl-se-LbH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="rbb-1y-KAc"/>
-                            <constraint firstItem="MKO-ah-0m3" firstAttribute="centerX" secondItem="5xl-se-LbH" secondAttribute="centerX" id="yk5-9w-0DD"/>
+                            <constraint firstAttribute="trailing" secondItem="hmS-m2-my7" secondAttribute="trailing" id="41x-rt-Wfk"/>
+                            <constraint firstItem="KTA-Rt-0fv" firstAttribute="centerX" secondItem="hmS-m2-my7" secondAttribute="centerX" id="IQ2-es-SYM"/>
+                            <constraint firstItem="hmS-m2-my7" firstAttribute="leading" secondItem="G5v-1a-hYw" secondAttribute="leading" id="MOa-5D-gUk"/>
+                            <constraint firstItem="RTB-ky-SOc" firstAttribute="top" secondItem="92Q-ch-yB4" secondAttribute="bottom" constant="225" id="R6F-OJ-gvt"/>
+                            <constraint firstItem="92Q-ch-yB4" firstAttribute="top" secondItem="KTA-Rt-0fv" secondAttribute="bottom" constant="25" id="b28-gh-cs7"/>
+                            <constraint firstItem="92Q-ch-yB4" firstAttribute="centerX" secondItem="hmS-m2-my7" secondAttribute="centerX" id="qj4-3O-cAb"/>
+                            <constraint firstItem="hmS-m2-my7" firstAttribute="top" secondItem="Ymc-bX-HTf" secondAttribute="bottom" constant="-20" id="weB-at-h7g"/>
+                            <constraint firstItem="RTB-ky-SOc" firstAttribute="top" secondItem="hmS-m2-my7" secondAttribute="bottom" id="x0f-w9-ozl"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j7k-JC-98S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374"/>
+            <point key="canvasLocation" x="-152" y="1108"/>
         </scene>
     </scenes>
     <resources>

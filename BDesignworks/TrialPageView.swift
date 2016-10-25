@@ -22,12 +22,8 @@ class TrialPageView: UIViewController {
         }
     }
     
-    @IBAction func backPressed(_ sender: AnyObject) {
-        ShowInitialViewController()
-    }
-    
     @IBAction func startTrialAction(_ sender: AnyObject) {
-        ShowRegistrationViewController()
+//        ShowRegistrationViewController()
     }
     
 }

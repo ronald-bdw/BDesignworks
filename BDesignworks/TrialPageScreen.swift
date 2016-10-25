@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol TrialModalViewDelegate: class {
+    func learnMoreSelected()
+    func startTrialSelected()
+}
+
 final class TrialPageScreen: UIViewController {
+    
+    weak var delegate: TrialModalViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +28,12 @@ final class TrialPageScreen: UIViewController {
     }
     
     @IBAction func learnMoreAction(_ sender: AnyObject) {
-        ShowTrialPageViewController()
+        self.dismiss(animated: true, completion: nil)
+        self.delegate?.learnMoreSelected()
     }
     
     @IBAction func startTrialAction(_ sender: AnyObject) {
-        ShowRegistrationViewController()
+        self.dismiss(animated: true, completion: nil)
+        self.delegate?.startTrialSelected()
     }
 }
