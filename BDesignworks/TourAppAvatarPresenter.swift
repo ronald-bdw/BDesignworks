@@ -45,7 +45,7 @@ extension TourAppAvatarPresenter: ITourAppAvatarPresenterModel {
     }
     
     func loadingFinished(user: ENUser) {
-        guard let _ = URL(string: user.avatarUrl) else {
+        guard let _ = URL(string: user.avatarThumbUrl) else {
             self.view?.setLoadingState(.failed)
             self.view?.showErrorView()
             return
