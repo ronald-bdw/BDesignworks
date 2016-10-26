@@ -1,18 +1,19 @@
 //
-//  TrialPageView.swift
+//  TrialPageController.swift
 //  BDesignworks
 //
-//  Created by Ellina Kuznecova on 02.09.16.
+//  Created by Ildar Zalyalov on 26.10.16.
 //  Copyright © 2016 Flatstack. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class TrialPageView: UIViewController {
+class TrialPageController: UIViewController {
+
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var selectionViews: [TrialPageSelectionView]!
     
-    func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationViewController = segue.destination
         for view in destinationViewController.view.subviews {
             if let scrollView = view as? UIScrollView {
@@ -23,12 +24,12 @@ class TrialPageView: UIViewController {
     }
     
     @IBAction func startTrialAction(_ sender: AnyObject) {
-//        ShowRegistrationViewController()
+        //ShowRegistrationViewController()
     }
-    
+
 }
 
-extension TrialPageView: UIScrollViewDelegate {
+extension TrialPageController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = Int(scrollView.contentOffset.x / self.containerView.fs_width)
         
