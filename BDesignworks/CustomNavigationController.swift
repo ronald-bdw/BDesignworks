@@ -52,8 +52,7 @@ final class CustomNavigationController: UINavigationController {
     
     fileprivate func updateUI(withViewController vc: UIViewController) {
         switch vc {
-        case is WelcomeScreen,
-             is SelectProviderScreen:
+        case is WelcomeScreen:
             self.statusBarStyle = .default
             self.setNavigationBarHidden(true, animated: true)
         default:

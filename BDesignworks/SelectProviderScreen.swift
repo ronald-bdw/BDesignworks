@@ -82,12 +82,8 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         case SegueIdentifiers.ShowTrial:
             segue.destination.transitioningDelegate = self
             segue.destination.modalPresentationStyle = .custom
-            UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.IsProviderChosen)
-            UserDefaults.standard.synchronize()
         default:
             super.prepare(for: segue, sender: sender)
-            UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.IsProviderChosen)
-            UserDefaults.standard.synchronize()
         }
     }
     
@@ -105,8 +101,14 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
             let selectedButtonState = ProviderOption(rawValue: labelText) else {return}
         
         switch selectedButtonState {
-        case .HBF: self.performSegue(withIdentifier: SegueIdentifiers.ShowVerify, sender: nil)
-        case .NoProvider: self.performSegue(withIdentifier: SegueIdentifiers.ShowTrial, sender: nil)
+        case .HBF:
+            UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.IsProviderChosen)
+            UserDefaults.standard.synchronize()
+            self.performSegue(withIdentifier: SegueIdentifiers.ShowVerify, sender: nil)
+        case .NoProvider:
+            UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.IsProviderChosen)
+            UserDefaults.standard.synchronize()
+            self.performSegue(withIdentifier: SegueIdentifiers.ShowVerify, sender: nil)
         default: return
         }
     }

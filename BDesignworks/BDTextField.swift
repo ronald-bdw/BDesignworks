@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 open class BDTextField: UITextField {
     
     @IBInspectable var insetX: CGFloat = 0

@@ -12,7 +12,7 @@ class TrialPageView: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var selectionViews: [TrialPageSelectionView]!
     
-    func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationViewController = segue.destination
         for view in destinationViewController.view.subviews {
             if let scrollView = view as? UIScrollView {
@@ -22,12 +22,8 @@ class TrialPageView: UIViewController {
         }
     }
     
-    @IBAction func backPressed(_ sender: AnyObject) {
-        ShowInitialViewController()
-    }
-    
     @IBAction func startTrialAction(_ sender: AnyObject) {
-        ShowRegistrationViewController()
+        //ShowRegistrationViewController()
     }
     
 }
