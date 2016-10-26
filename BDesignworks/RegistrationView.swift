@@ -29,6 +29,8 @@ class RegistrationView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        InAppManager.shared.loadProducts()
+        
         let _ = RegistrationMVP(view: self)
         self.tableView.reloadData()
 
