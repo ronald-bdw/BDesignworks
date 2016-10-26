@@ -69,8 +69,11 @@ extension DataRequest {
                 if object.isPhoneValid == false {
                     return .failure(RTError(backend: .invalidPhone))
                 }
-                if object.isSmsCodeValid == false {
+                if object.isSmsCodeExpired {
                     return .failure(RTError(backend: .smsCodeExpired))
+                }
+                if object.isSmsCodeInvalid {
+                    return .failure(RTError(backend: .smsCodeInvalid))
                 }
                 if object.isEmailNotTaken == false {
                     return .failure(RTError(backend: .emainTaken))
