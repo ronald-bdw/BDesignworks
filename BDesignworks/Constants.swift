@@ -10,6 +10,7 @@ import UIKit
 import FSHelpers_Swift
 
 var Logger: XCGLogger {return XCGLogger.default}
+var BDRealm: Realm? {return try? Realm()}
 
 /*--------------Keychain keys-------------*/
 enum FSKeychainKey {

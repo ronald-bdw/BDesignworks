@@ -24,8 +24,10 @@ private extension FSScreenType {
 final class WelcomeScreen: UIViewController {
     
     struct SegueIdentifiers {
-        static let Trial           = "showTrialScreen"
-        static let SelectProvider  = "showProviderSelection"
+        static let TrialModal       = "showTrialModalView"
+        static let SelectProvider   = "showProviderSelection"
+        static let Verification     = "showVerification"
+        static let TrialPage        = "showTrialPage"
     }
 
     struct Constants {
@@ -35,11 +37,8 @@ final class WelcomeScreen: UIViewController {
     }
     
     //MARK: - IBOutlets
-    @IBOutlet weak var conversationLabel: UILabel!
     @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var conversationTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
@@ -47,20 +46,8 @@ final class WelcomeScreen: UIViewController {
         self.view.layoutIfNeeded()
         self.navigationController?.navigationBar.isHidden = true
         self.navigationItem.hidesBackButton = true
-        self.containerHeightConstraint.constant = self.getDefaultContainerHeight()
-        self.logoTopConstraint.constant = (UIScreen.main.bounds.size.height - Constants.defaultLogoHeight)/2 - Constants.defaultVerticalCenterOffset
-        self.containerBottomConstraint.constant = -self.containerView.fs_height
         self.containerView.alpha = 0.0
         self.view.layoutIfNeeded()
-    }
-    
-    fileprivate func getDefaultContainerHeight() -> CGFloat {
-        guard let screenType = FSScreenType() else { return 200 }
-        return screenType.defaultContainerHeight
-    }
-    
-    fileprivate func getDefaultLogoTopOffset() -> CGFloat {
-        return UIScreen.main.bounds.size.height == 480 ? 50 : UIScreen.main.bounds.size.height*Constants.defaultLogoTopConstraintRatio  //Checking for iPhone 4/4s
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,11 +56,7 @@ final class WelcomeScreen: UIViewController {
         UIView.animate(withDuration: 0.8, delay: 0.4, options: UIViewAnimationOptions(), animations: {
             [weak self] in
             guard let sself = self else { return }
-            sself.logoTopConstraint.constant          = sself.getDefaultLogoTopOffset()
-            sself.conversationTopConstraint.constant += UIScreen.main.bounds.size.height/2
-            sself.containerBottomConstraint.constant  = 0
-            sself.conversationLabel.alpha             = 0.0
-            sself.containerView.alpha                 = 1.0
+            sself.containerView.alpha = 1.0
             sself.view.layoutIfNeeded()
         }, completion: nil)
     }
@@ -84,9 +67,10 @@ final class WelcomeScreen: UIViewController {
             return
         }
         switch lIdentifier {
-        case SegueIdentifiers.Trial:
+        case SegueIdentifiers.TrialModal:
             segue.destination.transitioningDelegate = self
             segue.destination.modalPresentationStyle = .custom
+            (segue.destination as? TrialPageScreen)?.delegate = self
         default:
             super.prepare(for: segue, sender: sender)
         }
@@ -97,7 +81,17 @@ final class WelcomeScreen: UIViewController {
     }
     
     @IBAction func noAction(_ sender: AnyObject) {
-        self.performSegue(withIdentifier: SegueIdentifiers.Trial, sender: nil)
+        self.performSegue(withIdentifier: SegueIdentifiers.TrialModal, sender: nil)
+    }
+}
+
+extension WelcomeScreen: TrialModalViewDelegate {
+    func learnMoreSelected() {
+        self.performSegue(withIdentifier: SegueIdentifiers.TrialPage, sender: nil)
+    }
+    
+    func startTrialSelected() {
+        self.performSegue(withIdentifier: SegueIdentifiers.Verification, sender: nil)
     }
 }
 

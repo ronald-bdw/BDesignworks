@@ -65,3 +65,9 @@ func ShowTourAppViewController(_ animated: Bool = true) {
     PresentViewController(navigationController, animated: animated)
 }
 
+func ShowVerificationViewController(_ animated: Bool = true) {
+    let navigationController = Storyboard.login.storyboard.instantiateViewController(withIdentifier: "VerificationNavigationController")
+    
+    PresentViewController(navigationController, animated: animated)
+}
+

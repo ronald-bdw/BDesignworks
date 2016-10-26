@@ -1,58 +1,56 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZHg-WV-SUR">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="UAY-gN-vc6">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="ZHg-WV-SUR" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="jrJ-uL-IYh"/>
+                        <viewControllerLayoutGuide type="bottom" id="BZZ-eX-noE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="W1M-eZ-yVp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="5xl-se-LbH">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Pd2-1R-Pq6">
-                                <rect key="frame" x="215" y="176" width="170" height="228"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="bio-yW-UJE"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your get active coach with you every step of the way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRN-IW-0O2">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="5u1-Ak-5lv"/>
-                                    <constraint firstAttribute="height" constant="228" id="V54-Kj-MXw"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your get active coach with you every step of the way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKO-ah-0m3">
-                                <rect key="frame" x="185" y="429" width="230" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="YGN-rk-VcN"/>
+                                    <constraint firstAttribute="width" constant="230" id="fJc-U2-BU1"/>
+                                    <constraint firstAttribute="height" constant="40" id="zGI-DE-DQz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.16078431372549018" green="0.32549019607843138" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="xjh-EF-b2t">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="6BE-Eb-efb"/>
+                                    <constraint firstAttribute="height" constant="228" id="Asm-Go-jfP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="5xl-se-LbH" secondAttribute="bottom" id="Iao-BN-xVf"/>
-                            <constraint firstItem="MKO-ah-0m3" firstAttribute="top" secondItem="Pd2-1R-Pq6" secondAttribute="bottom" constant="25" id="Scx-4B-1V3"/>
-                            <constraint firstAttribute="trailing" secondItem="5xl-se-LbH" secondAttribute="trailing" id="WrQ-IZ-FP2"/>
-                            <constraint firstItem="Pd2-1R-Pq6" firstAttribute="centerX" secondItem="5xl-se-LbH" secondAttribute="centerX" id="faF-Kr-LfS"/>
-                            <constraint firstItem="Pd2-1R-Pq6" firstAttribute="centerY" secondItem="5xl-se-LbH" secondAttribute="centerY" constant="-10" id="lgt-zl-dch"/>
-                            <constraint firstItem="5xl-se-LbH" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="pGq-jK-TUP"/>
-                            <constraint firstItem="5xl-se-LbH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="rbb-1y-KAc"/>
-                            <constraint firstItem="MKO-ah-0m3" firstAttribute="centerX" secondItem="5xl-se-LbH" secondAttribute="centerX" id="yk5-9w-0DD"/>
+                            <constraint firstItem="bio-yW-UJE" firstAttribute="leading" secondItem="W1M-eZ-yVp" secondAttribute="leading" id="4lI-X7-wVu"/>
+                            <constraint firstItem="sRN-IW-0O2" firstAttribute="top" secondItem="xjh-EF-b2t" secondAttribute="bottom" constant="25" id="FgM-55-vDM"/>
+                            <constraint firstItem="xjh-EF-b2t" firstAttribute="top" relation="greaterThanOrEqual" secondItem="W1M-eZ-yVp" secondAttribute="top" constant="16" id="O2t-f0-Dgc"/>
+                            <constraint firstItem="bio-yW-UJE" firstAttribute="top" secondItem="jrJ-uL-IYh" secondAttribute="bottom" constant="-20" id="j50-w7-zYD"/>
+                            <constraint firstItem="sRN-IW-0O2" firstAttribute="centerX" secondItem="bio-yW-UJE" secondAttribute="centerX" id="jg5-Rk-99u"/>
+                            <constraint firstItem="BZZ-eX-noE" firstAttribute="top" secondItem="bio-yW-UJE" secondAttribute="bottom" id="mW9-Oa-DI3"/>
+                            <constraint firstItem="xjh-EF-b2t" firstAttribute="centerX" secondItem="bio-yW-UJE" secondAttribute="centerX" id="mg5-qe-plI"/>
+                            <constraint firstItem="BZZ-eX-noE" firstAttribute="top" secondItem="xjh-EF-b2t" secondAttribute="bottom" priority="999" constant="280" id="oej-MC-oB5"/>
+                            <constraint firstAttribute="trailing" secondItem="bio-yW-UJE" secondAttribute="trailing" id="tAQ-yM-pPC"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O1U-6R-F1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374"/>
+            <point key="canvasLocation" x="-152" y="1108"/>
         </scene>
     </scenes>
     <resources>

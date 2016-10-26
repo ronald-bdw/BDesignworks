@@ -24,14 +24,12 @@ class RegistrationView: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var user: RegistrationUser?
     var shouldShowErrors = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let _ = RegistrationMVP(view: self)
-        self.user = self.presenter?.getRegistrationUser()
         self.tableView.reloadData()
 
         self.tableView.register(UINib(nibName: RegistrationTableViewCell.fs_className, bundle: nil), forCellReuseIdentifier: RegistrationTableViewCell.fs_className)
@@ -40,13 +38,11 @@ class RegistrationView: UIViewController {
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
-        self.presenter?.viewDidLoad()
     }
     
     @IBAction func submitPressed(_ sender: AnyObject){
         self.shouldShowErrors = true
-        self.presenter?.submitTapped(self.user)
+        self.presenter?.submitTapped()
     }
     
     @IBAction func backPressed(_ sender: AnyObject) {
@@ -74,19 +70,19 @@ class RegistrationView: UIViewController {
 extension RegistrationView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 8
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard indexPath.row != 8 else {
+        guard indexPath.row != 6 else {
             return self.tableView.dequeueReusableCell(withIdentifier: "emptyCell")!
         }
-        guard indexPath.row != 9 else {
+        guard indexPath.row != 7 else {
             return self.tableView.dequeueReusableCell(withIdentifier: "registrationFooter")!
         }
         if let cellType = RegistrationCellType(rawValue: indexPath.row) {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: RegistrationTableViewCell.fs_className) as! RegistrationTableViewCell
-            cell.prepareCell(cellType, user: self.user)
+            cell.prepareCell(cellType, user: self.presenter?.getRegistrationUser())
             
             cell.contentTextField.tag = cellType.rawValue
             cell.contentTextField.delegate = self
@@ -105,7 +101,7 @@ extension RegistrationView: UITableViewDataSource {
 
 extension RegistrationView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard indexPath.row != 8 else {
+        guard indexPath.row != 6 else {
             let cellsHeight = Array(0..<indexPath.row)
                 .map({IndexPath(row:$0, section: 0)})
                 .map({self.tableView(tableView, heightForRowAt: $0)})
@@ -114,7 +110,7 @@ extension RegistrationView: UITableViewDelegate {
             let emptySpaceHeight = self.tableView.fs_height - cellsHeight
             return emptySpaceHeight > 0 ? emptySpaceHeight : 0
         }
-        guard indexPath.row != 9 else {
+        guard indexPath.row != 7 else {
             return 100
         }
         switch (indexPath as NSIndexPath).row % 2 {
@@ -122,7 +118,7 @@ extension RegistrationView: UITableViewDelegate {
             return 78
         default:
             return self.shouldShowErrors ?
-            (self.user?.isFieldValid(indexPath.row) ?? false) ? 0 : 60 :
+            (self.presenter?.getRegistrationUser()?.isFieldValid(indexPath.row) ?? false) ? 0 : 60 :
             0
         }
     }
@@ -151,17 +147,10 @@ extension RegistrationView: UITextFieldDelegate {
         guard let cellType = RegistrationCellType(rawValue: textField.tag) else {fatalError("cannot init registration cell with tag: \(textField.tag)")}
         
         let nsString = (textField.text ?? "") as NSString
-        let newString = nsString.replacingCharacters(in: range,
-                                                                    with: string)
-        switch cellType {
-        case .firstName: self.user?.firstName.content = newString
-        case .lastName: self.user?.lastName.content = newString
-        case .email: self.user?.email.content = newString
-        case .phone: self.user?.phone.content = newString
-        }
+        let newString = nsString.replacingCharacters(in: range, with: string)
+        self.presenter?.registrationFieldUpdated(type: cellType, text: newString)
         
-        guard cellType == .phone && string == "" && textField.text == "+" else {return true}
-        return false
+        return true
     }
 }
 
@@ -184,10 +173,11 @@ extension RegistrationView: IRegistrationView {
     }
     
     func showErrorView(_ title: String, content: String, errorType: BackendError) {
+        SVProgressHUD.dismiss()
         if errorType == .smsCodeExpired ||
             errorType == .smsCodeInvalid {
             ShowAlertWithHandler(title, message: content) { [weak self] (action) in
-                self?.presenter?.resendPhoneCodeTapped(self?.user)
+                self?.presenter?.resendPhoneCodeTapped()
             }
         }
         else {

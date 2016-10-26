@@ -54,10 +54,10 @@ final class CustomNavigationController: UINavigationController {
         switch vc {
         case is WelcomeScreen,
              is SelectProviderScreen:
-            self.statusBarStyle = .default
+            UIApplication.shared.statusBarStyle = .default
             self.setNavigationBarHidden(true, animated: true)
         default:
-            self.statusBarStyle = .lightContent
+            UIApplication.shared.statusBarStyle = .lightContent
             self.setNavigationBarHidden(false, animated: true)
         }
     }

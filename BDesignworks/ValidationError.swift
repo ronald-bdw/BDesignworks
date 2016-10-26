@@ -12,7 +12,8 @@ import ObjectMapper
 class ValidationError {
     var error: Int?
     var isPhoneValid: Bool = true
-    var isSmsCodeValid: Bool = true
+    var isSmsCodeInvalid: Bool = false
+    var isSmsCodeExpired: Bool = false
     var isEmailNotTaken: Bool = true
     
     required convenience init?(map: ObjectMapper.Map) {
@@ -25,7 +26,15 @@ extension ValidationError: Mappable {
         self.error <- map["status"]
         
         guard let validations = map.JSON["validations"] as? [String: AnyObject] else {return}
-        self.isSmsCodeValid = validations["sms_code"] == nil
+        let smsCodeErrors: Array<String> = (validations["sms_code"] as? Array<String>) ?? []
+        for smsCodeError in smsCodeErrors {
+            if smsCodeError.contains("is invalid") {
+                self.isSmsCodeInvalid = true
+            }
+            else if smsCodeError.contains("is expired") {
+                self.isSmsCodeExpired = true
+            }
+        }
         self.isPhoneValid = validations["phone_number"] == nil && !"\(validations["message"])".contains("is not a valid phone number")
         self.isEmailNotTaken = validations["email"] == nil
     }
