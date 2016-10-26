@@ -14,6 +14,8 @@ class ZendeskNotificationManager {
     
     
     func trigerNotificationOnZendesk(){
+        guard let _ = BDRealm?.objects(ENUser.self).first,
+            BDRealm?.objects(AuthInfo.self).count == 0 else {return}
         if UIApplication.shared.isRegisteredForRemoteNotifications {
             self.enableNotificationOnZendesk()
         }else{
