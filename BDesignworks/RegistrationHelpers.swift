@@ -13,14 +13,12 @@ enum RegistrationCellType: Int {
     case firstName = 0
     case lastName = 2
     case email = 4
-    case phone = 6
     
     var title: String {
         switch self {
         case .firstName : return "First Name"
         case .lastName  : return "Last Name"
         case .email     : return "Email"
-        case .phone     : return "Phone"
         }
     }
     
@@ -28,7 +26,6 @@ enum RegistrationCellType: Int {
         switch self {
         case .firstName, .lastName : return "Shouldn't be clear"
         case .email     : return "Email not valid"
-        case .phone     : return "Should have 11 symbols"
         }
     }
     
@@ -37,7 +34,6 @@ enum RegistrationCellType: Int {
         case .firstName : return user.firstName
         case .lastName  : return user.lastName
         case .email     : return user.email
-        case .phone     : return user.phone
         }
     }
 }
@@ -46,13 +42,11 @@ struct RegistrationUser {
     var firstName: RegistrationUserField
     var lastName: RegistrationUserField
     var email: RegistrationUserField
-    var phone: RegistrationUserField
     
     init() {
         self.firstName = RegistrationUserField(type: .firstName)
         self.lastName = RegistrationUserField(type: .lastName)
         self.email = RegistrationUserField(type: .email)
-        self.phone = RegistrationUserField(type: .phone)
     }
     
     func isFieldValid(_ errorRow: Int) -> Bool {
@@ -67,12 +61,19 @@ struct RegistrationUser {
         case .firstName : return self.firstName
         case .lastName  : return self.lastName
         case .email     : return self.email
-        case .phone     : return self.phone
+        }
+    }
+    
+    mutating func updateField(type: RegistrationCellType, text: String) {
+        switch type {
+        case .firstName : self.firstName.content = text
+        case .lastName  : self.lastName.content = text
+        case .email     : self.email.content = text
         }
     }
     
     func allFields() -> [RegistrationUserField] {
-        return [self.firstName, self.lastName, self.email, self.phone]
+        return [self.firstName, self.lastName, self.email]
     }
 }
 
@@ -84,12 +85,11 @@ struct RegistrationUserField {
         switch self.type {
         case .firstName, .lastName: return content.fs_length > 0
         case .email: return content.fs_emailValidate()
-        case .phone: return content.fs_length > 11
         }
     }
     
     init(type: RegistrationCellType) {
         self.type = type
-        self.content = (self.type == .phone ? "+" : "")
+        self.content = ""
     }
 }

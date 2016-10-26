@@ -70,11 +70,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var code = ""
         if let smsCodeDividerIndex = query.range(of: "authcode=")?.upperBound {
             code = query.substring(from: smsCodeDividerIndex)
-            UserDefaults.standard.set(code, forKey: FSUserDefaultsKey.SmsCode)
-            UserDefaults.standard.synchronize()
-            
             if let realm = try? Realm(),
                 let authInfo = realm.objects(AuthInfo.self).first {
+                
+                UserDefaults.standard.set(code, forKey: FSUserDefaultsKey.SmsCode)
+                UserDefaults.standard.synchronize()
+                
                 if authInfo.isRegistered {
                     ShowWelcomeViewController()
                 }

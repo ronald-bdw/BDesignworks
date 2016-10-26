@@ -19,12 +19,11 @@ class RegistrationTableViewCell: UITableViewCell {
         
         switch type {
         case .email : self.contentTextField.keyboardType = .emailAddress
-        case .phone : self.contentTextField.keyboardType = .phonePad
         default     : self.contentTextField.keyboardType = .default
         }
         
         switch type {
-        case .phone : self.contentTextField.returnKeyType = .done
+        case .email : self.contentTextField.returnKeyType = .done
         default     : self.contentTextField.returnKeyType = .next
         }
         

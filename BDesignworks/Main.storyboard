@@ -9,7 +9,7 @@
         <array key="OpenSansBold.ttf">
             <string>OpenSans-Bold</string>
         </array>
-        <array key="OpenSansRegularItalic.ttf">
+        <array key="OpenSansRegular.ttf">
             <string>OpenSans</string>
         </array>
         <array key="WorkSans-SemiBold.ttf">
@@ -377,7 +377,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="Z9Y-8L-rhD" id="Ngy-0L-lbF"/>
-                        <segue destination="rd8-Fq-ioC" kind="presentation" identifier="toSideMenu" id="CAA-P2-4Jm"/>
+                        <segue destination="rd8-Fq-ioC" kind="show" identifier="toSideMenu" id="CAA-P2-4Jm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcF-mq-Bas" userLabel="First Responder" sceneMemberID="firstResponder"/>

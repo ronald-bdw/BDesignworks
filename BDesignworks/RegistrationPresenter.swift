@@ -9,10 +9,10 @@
 import Foundation
 
 protocol IRegistrationViewPresenter: class {
-    func submitTapped(_ user: RegistrationUser?)
+    func submitTapped()
     func getRegistrationUser() -> RegistrationUser?
-    func resendPhoneCodeTapped(_ user: RegistrationUser?)
-    func viewDidLoad()
+    func registrationFieldUpdated(type: RegistrationCellType, text: String)
+    func resendPhoneCodeTapped()
 }
 
 protocol IRegistrationModelPresenter: class {
@@ -58,13 +58,9 @@ extension RegistrationPresenter: IRegistrationModelPresenter {
 }
 
 extension RegistrationPresenter: IRegistrationViewPresenter {
-    func submitTapped(_ user: RegistrationUser?) {
-        guard let lUser = user else {self.view?.setLoadingState(.failed); return}
-        
-        if let smsCode = UserDefaults.standard.string(forKey: FSUserDefaultsKey.SmsCode),
-            let realm = try? Realm(),
-            let authInfo = realm.objects(AuthInfo.self).first {
-            self.model?.register(lUser, authData: authInfo, smsCode: smsCode)
+    func submitTapped() {
+        if let smsCode = UserDefaults.standard.string(forKey: FSUserDefaultsKey.SmsCode) {
+            self.model?.register(smsCode: smsCode)
         }
         else {
             self.view?.setLoadingState(.failed)
@@ -75,12 +71,12 @@ extension RegistrationPresenter: IRegistrationViewPresenter {
         return self.model?.getRegistrationUser()
     }
     
-    func resendPhoneCodeTapped(_ user: RegistrationUser?) {
-        guard let lUser = user else {self.view?.setLoadingState(.failed); return}
-        self.model?.receivePhoneCode(lUser)
+    func registrationFieldUpdated(type: RegistrationCellType, text: String) {
+        self.model?.updateRegistrationUser(type: type, text: text)
     }
     
-    func viewDidLoad() {
+    func resendPhoneCodeTapped() {
+        self.model?.receivePhoneCode()
     }
 }
 

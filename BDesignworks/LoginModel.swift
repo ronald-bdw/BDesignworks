@@ -15,52 +15,48 @@ protocol ILoginModel {
 
 class LoginModel {
     var user: ENUser?
+    var authData: AuthInfo?
     
     weak var presenter: PresenterProtocol?
     
-    required init() {}
+    required init() {
+        self.authData = BDRealm?.objects(AuthInfo.self).first
+    }
     
     fileprivate func startLogin(_ smsCode: String) {
         self.presenter?.loadingStarted()
-        do {
-            let realm = try Realm()
-            //TODO: add error when there is no auth data
-            guard let authData = realm.objects(AuthInfo.self).first else {return}
+        guard let lAuthInfo = self.authData else {self.presenter?.loadingFailed(error: nil); return}
+        let _ = Router.User.signIn(phone: lAuthInfo.phone, authPhoneCode: lAuthInfo.id, smsCode: smsCode).request().responseObject { [weak self] (response: DataResponse<RTUserResponse>) in
+            var receivedData: ENUser?
             
-            let _ = Router.User.signIn(phone: authData.phone, authPhoneCode: authData.id, smsCode: smsCode).request().responseObject { [weak self] (response: DataResponse<RTUserResponse>) in
-                var receivedData: ENUser?
-                
-                defer {
-                    self?.user = receivedData
-                }
-                
-                switch response.result {
-                case .success(let value):
-                    guard let user = value.user else {self?.presenter?.loadingFailed(error: nil); return}
-                    receivedData = user
-                    
-                    do {
-                        try realm.write({
-                            realm.delete(realm.objects(ENUser.self))
-                            realm.add(user, update: true)
-                            realm.delete(realm.objects(AuthInfo.self))
-                            
-                            UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.SmsCode)
-                            UserDefaults.standard.synchronize()
-                        })
-                        self?.presenter?.loginSuccessed(user: user)
-                    } catch let error {
-                        Logger.error("\(error)")
-                        self?.presenter?.loadingFailed(error: error)
-                    }
-                case .failure(let error):
-                    self?.presenter?.loadingFailed(error: error)
-                    Logger.error("\(error)")
-                }
+            defer {
+                self?.user = receivedData
             }
             
-        } catch let error {
-            Logger.error("\(error)")
+            switch response.result {
+            case .success(let value):
+                guard let user = value.user else {self?.presenter?.loadingFailed(error: nil); return}
+                receivedData = user
+                
+                do {
+                    guard let realm = BDRealm else {self?.presenter?.loadingFailed(error: nil); return}
+                    try realm.write({
+                        realm.delete(realm.objects(ENUser.self))
+                        realm.add(user, update: true)
+                        realm.delete(realm.objects(AuthInfo.self))
+                        
+                        UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.SmsCode)
+                        UserDefaults.standard.synchronize()
+                    })
+                    self?.presenter?.loginSuccessed(user: user)
+                } catch let error {
+                    Logger.error("\(error)")
+                    self?.presenter?.loadingFailed(error: error)
+                }
+            case .failure(let error):
+                self?.presenter?.loadingFailed(error: error)
+                Logger.error("\(error)")
+            }
         }
 
     }
@@ -73,7 +69,7 @@ extension LoginModel: ILoginModel {
     }
     
     func resendSmsCode() {
-        guard let authInfo = AuthInfo.getMainAuthInfo() else {return}
+        guard let authInfo = self.authData else {return}
         self.presenter?.loadingStarted()
         
         let _ = Router.User.getAuthPhoneCode(phone: authInfo.phone).request().responseObject { [weak self] (response: DataResponse<RTAuthInfoResponse>) in
@@ -81,6 +77,7 @@ extension LoginModel: ILoginModel {
             switch response.result {
             case .success(let value):
                 guard let lAuthInfo = value.authInfo else {self?.presenter?.loadingFailed(error: nil); return}
+                lAuthInfo.phone = authInfo.phone
                 
                 do {
                     let realm = try Realm()
