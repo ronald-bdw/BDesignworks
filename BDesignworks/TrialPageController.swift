@@ -1,14 +1,15 @@
 //
-//  TrialPageView.swift
+//  TrialPageController.swift
 //  BDesignworks
 //
-//  Created by Ellina Kuznecova on 02.09.16.
+//  Created by Ildar Zalyalov on 26.10.16.
 //  Copyright © 2016 Flatstack. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class TrialPageView: UIViewController {
+class TrialPageController: UIViewController {
+
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var selectionViews: [TrialPageSelectionView]!
     
@@ -25,10 +26,10 @@ class TrialPageView: UIViewController {
     @IBAction func startTrialAction(_ sender: AnyObject) {
         //ShowRegistrationViewController()
     }
-    
+
 }
 
-extension TrialPageView: UIScrollViewDelegate {
+extension TrialPageController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = Int(scrollView.contentOffset.x / self.containerView.fs_width)
         
