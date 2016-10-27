@@ -34,7 +34,7 @@ class VerificationModel {
             
             switch response.result {
             case .success(let value):
-                guard let lAuthInfo = value.authInfo else {self?.presenter?.errorOccured(); return}
+                guard let lAuthInfo = value.authInfo else {self?.presenter?.errorOccured(error: nil); return}
                 lAuthInfo.phone = phone
                 
                 receivedData = lAuthInfo
@@ -50,11 +50,11 @@ class VerificationModel {
                     
                 } catch let error {
                     Logger.error("\(error)")
-                    self?.presenter?.errorOccured()
+                    self?.presenter?.errorOccured(error: nil)
                 }
             case .failure(let error):
                 Logger.error("\(error)")
-                self?.presenter?.errorOccured()
+                self?.presenter?.errorOccured(error: error as? RTError)
             }
         }
     }

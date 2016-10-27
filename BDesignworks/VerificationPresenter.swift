@@ -18,7 +18,7 @@ protocol IVerificationModelPresenter: class {
     func phoneValid()
     func codeValid()
     func phoneCodeReceived()
-    func errorOccured()
+    func errorOccured(error: RTError?)
     func loadingStarted()
 }
 
@@ -66,7 +66,12 @@ extension VerificationPresenter: IVerificationModelPresenter {
         self.view?.setLoadingState(.done)
     }
     
-    func errorOccured() {
+    func errorOccured(error: RTError?) {
+        guard let lError = error else {self.view?.setLoadingState(.failed); return}
+        if case .backend(let backendError) = lError {
+            self.view?.showErrorView(backendError.humanDescription.title, content: backendError.humanDescription.text, errorType: backendError)
+            return
+        }
         self.view?.setLoadingState(.failed)
     }
 }
