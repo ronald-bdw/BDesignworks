@@ -27,7 +27,6 @@ class LogoutView: UIViewController {
     @IBAction func logoutAction(_ sender: AnyObject) {
         ENUser.logout()
         UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.IsProviderChosen)
-        UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.FitbitTokenId)
         Smooch.setPushToken(Data())
         Smooch.logout()
         FitbitManager.sharedInstance.removeFitBitTokenFromServer()
