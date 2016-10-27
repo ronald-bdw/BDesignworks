@@ -87,10 +87,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else if let fitBitDividerIndex = query.range(of: "code=")?.upperBound {
             code = query.substring(from: fitBitDividerIndex)
             
-            let _ = Router.Steps.sendFitbitCode(code: code).request().responseObject { (response: DataResponse<RTStepsSendResponse>) in
+            let _ = Router.Steps.sendFitbitCode(code: code).request().responseObject { (response: DataResponse<RTFitbitResponse>) in
                 switch response.result {
-                case .success(_):
+                case .success(let object):
                     Logger.debug("successfully sent fitbit code")
+                    Logger.debug(object.fitbitInfo)
                     UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.FitbitRegistered)
                     UserDefaults.standard.synchronize()
                 case .failure(let error):

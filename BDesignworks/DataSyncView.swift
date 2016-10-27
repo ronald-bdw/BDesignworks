@@ -27,6 +27,19 @@ class DataSyncView: UITableViewController {
         self.fitbitSwitch.addTarget(self, action: #selector(self.fitbitSwitchStateChanged(sender:)), for: .valueChanged)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateFitBitSwitchState), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+        
+//        let _ = Router.Steps.deleteFitBitToken(tokenId: "243").request().responseObject { (response: DataResponse<RTStepsSendResponse>) in
+//            switch response.result {
+//            case .success(let response):
+//                Logger.debug("successfully remove fitbit code")
+//                Logger.debug(response.toJSON())
+//                UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.FitbitRegistered)
+//                UserDefaults.standard.synchronize()
+//            case .failure(let error):
+//                Logger.error(error)
+//                ShowErrorAlert()
+//            }
+//        }
     }
     
     deinit {

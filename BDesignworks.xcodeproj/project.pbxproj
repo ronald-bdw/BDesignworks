@@ -49,6 +49,7 @@
 		7C7A00701DBF92C400378040 /* ZendeskNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */; };
 		7CD3B5E21DC0F3ED0089D93A /* TrialPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3B5E11DC0F3ED0089D93A /* TrialPageController.swift */; };
 		7CD3B5E91DC0F9A80089D93A /* TrialPageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3B5E81DC0F9A80089D93A /* TrialPageContainer.swift */; };
+		7CD3B5EB1DC221FE0089D93A /* FitbitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3B5EA1DC221FE0089D93A /* FitbitInfo.swift */; };
 		94B60C35434459D757776208 /* Pods_Abstract_BDesignworksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F27C15549256EFEAD01C3A1 /* Pods_Abstract_BDesignworksTests.framework */; };
 		9D7F789640F47EC30E2908F7 /* Pods_Abstract_BDesignworksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5B966D6C1FE954CB0BC550 /* Pods_Abstract_BDesignworksUITests.framework */; };
 		A436BE131D6B6098004B8E8B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A436BE121D6B6098004B8E8B /* HeaderView.swift */; };
@@ -267,6 +268,7 @@
 		7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZendeskNotificationManager.swift; sourceTree = "<group>"; };
 		7CD3B5E11DC0F3ED0089D93A /* TrialPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageController.swift; sourceTree = "<group>"; };
 		7CD3B5E81DC0F9A80089D93A /* TrialPageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageContainer.swift; sourceTree = "<group>"; };
+		7CD3B5EA1DC221FE0089D93A /* FitbitInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitbitInfo.swift; sourceTree = "<group>"; };
 		7EDBE43BF809E4BF3F085A1F /* Pods-Abstract-BDesignworksTests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.release staging.xcconfig"; sourceTree = "<group>"; };
 		98101F9FE1B08B9670240835 /* Pods-Abstract-BDesignworks.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		9E9AF561EE2CD0A3A7DDD0CF /* Pods-Abstract-BDesignworks.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.debug staging.xcconfig"; sourceTree = "<group>"; };
@@ -736,6 +738,7 @@
 				DC22810B1D6B46AB00D5A0DA /* AuthInfo.swift */,
 				DC2281111D6B46AB00D5A0DA /* User.swift */,
 				E7DA95811D8024A50079EB79 /* Steps.swift */,
+				7CD3B5EA1DC221FE0089D93A /* FitbitInfo.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -1504,6 +1507,7 @@
 				A489C48A1D6C8F54002AAA75 /* AreaCodeCell.swift in Sources */,
 				2FAA4FB81D5C809700DCFF46 /* SidebarView.swift in Sources */,
 				DC2280F91D6B464500D5A0DA /* RegistrationModel.swift in Sources */,
+				7CD3B5EB1DC221FE0089D93A /* FitbitInfo.swift in Sources */,
 				DC2281121D6B46AB00D5A0DA /* AlamofireHelpers.swift in Sources */,
 				E7C2F2661DBE35630018961A /* BackendError.swift in Sources */,
 				DCF96E721D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift in Sources */,

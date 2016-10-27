@@ -30,7 +30,7 @@ class ZendeskNotificationManager {
             case .success:
                 Logger.debug("Notifications on zedesk enabled")
             case .failure(let error):
-                Logger.error("Error: \(error)")
+                Logger.error("Error:")
             }
         }
     }
@@ -41,7 +41,7 @@ class ZendeskNotificationManager {
             case .success:
                 Logger.debug("Notifications on zedesk disabled")
             case .failure(let error):
-                Logger.error("Error: \(error)")
+                Logger.error("Error: ")
             }
         }
     }

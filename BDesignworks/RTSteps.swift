@@ -13,7 +13,7 @@ extension Router {
     enum Steps {
         case send(steps: [ENSteps], source: Source)
         case sendFitbitCode(code: String)
-        
+        case deleteFitBitToken(tokenId: String)
         enum Source: String {
             case HealthKit    = "healthkit"
             case Fitbit       = "fitbit"
@@ -25,13 +25,17 @@ extension Router.Steps: RouterProtocol {
 
     
     var settings: RTRequestSettings {
-        return RTRequestSettings(method: .post)
+        switch self {
+        case .deleteFitBitToken(_): return RTRequestSettings(method: .delete)
+        default: return RTRequestSettings(method: .post)
+        }
     }
     
     var path: String {
         switch self {
-        case .send(_)           : return "/activities"
-        case .sendFitbitCode(_) : return "/fitness_tokens"
+        case .send(_)            : return "/activities"
+        case .sendFitbitCode(_)  : return "/fitness_tokens"
+        case .deleteFitBitToken(let tokenId): return "/fitness_tokens/\(tokenId)"
         }
     }
     
@@ -50,7 +54,20 @@ extension Router.Steps: RouterProtocol {
             return ["activities": jsonArray as AnyObject]
         case .sendFitbitCode(let code):
             return ["source": Source.Fitbit.rawValue as AnyObject, "authorization_code": code as AnyObject]
+        
+        default: return nil
+            
         }
+    }
+}
+class RTFitbitResponse: Mappable{
+    var fitbitInfo: FitbitInfo?
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        self.fitbitInfo <- map
     }
 }
 
