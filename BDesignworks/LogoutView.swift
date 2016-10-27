@@ -29,7 +29,7 @@ class LogoutView: UIViewController {
         UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.IsProviderChosen)
         Smooch.setPushToken(Data())
         Smooch.logout()
-        
+        FitbitManager.sharedInstance.removeFitBitTokenFromServer()
         self.dismiss(animated: true, completion: nil)
         
         FSDispatch_after_short(0.5) {

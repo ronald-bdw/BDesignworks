@@ -19,20 +19,32 @@ class DataSyncView: UITableViewController {
         }
         
         self.fitbitSwitch.addTarget(self, action: #selector(self.fitbitSwitchStateChanged(sender:)), for: .valueChanged)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateFitBitSwitchState), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateFitBitSwitchState), name: NSNotification.Name(rawValue: FSNotificationKey.FitnessDataIntegration.FitbitResponse), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     func fitbitSwitchStateChanged(sender: AnyObject) {
         if self.fitbitSwitch.isOn {
-            
             let urlString = "https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=227ZMJ&scope=activity"
             
             guard let url = URL(string: urlString) else {return}
             
             UIApplication.shared.openURL(url)
+        }else {
+            FitbitManager.sharedInstance.removeFitBitTokenFromServer()
         }
-        else {
-            UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.FitbitRegistered)
-            UserDefaults.standard.synchronize()
+    }
+    
+    func updateFitBitSwitchState(){
+        if (UserDefaults.standard.object(forKey: FSUserDefaultsKey.FitbitTokenId) != nil) {
+            self.fitbitSwitch.setOn(true, animated: false)
+        }else{
+            self.fitbitSwitch.setOn(false, animated: false)
         }
     }
     
