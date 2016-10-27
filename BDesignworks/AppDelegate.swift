@@ -96,7 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.FitbitRegistered)
                     UserDefaults.standard.synchronize()
 
-                    NotificationCenter.default.post(name:NSNotification.Name(rawValue: "FitbitResponse"), object: nil)
+                    NotificationCenter.default.post(name:NSNotification.Name(rawValue: FSNotificationKey.FitnessDataIntegration.FitbitResponse), object: nil)
                 case .failure(let error):
                     Logger.error(error)
                     ShowErrorAlert()

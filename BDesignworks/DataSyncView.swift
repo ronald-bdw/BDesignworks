@@ -27,7 +27,7 @@ class DataSyncView: UITableViewController {
         self.fitbitSwitch.addTarget(self, action: #selector(self.fitbitSwitchStateChanged(sender:)), for: .valueChanged)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateFitBitSwitchState), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.updateFitBitSwitchState), name: NSNotification.Name(rawValue: "FitbitResponse"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateFitBitSwitchState), name: NSNotification.Name(rawValue: FSNotificationKey.FitnessDataIntegration.FitbitResponse), object: nil)
     }
     
     deinit {

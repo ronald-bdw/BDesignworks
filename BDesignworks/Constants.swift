@@ -37,6 +37,7 @@ enum FSNotificationKey {
     
     enum FitnessDataIntegration {
         static let HealthKit = "HealthKit"
+        static let FitbitResponse = "FitbitResponse"
     }
     
     enum User {
