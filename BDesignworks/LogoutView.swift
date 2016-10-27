@@ -34,6 +34,7 @@ class LogoutView: UIViewController {
         
         FSDispatch_after_short(0.5) {
             let controller = Storyboard.login.storyboard.instantiateViewController(withIdentifier: "WelcomeController")
+            SideMenuManager.menuRightNavigationController = nil
             UIApplication.shared.delegate?.window??.rootViewController = controller
         }
     }
