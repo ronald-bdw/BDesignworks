@@ -73,12 +73,12 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzX-Tk-R8u">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzX-Tk-R8u">
                                                     <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                     <color key="textColor" red="0.90196078430000004" green="0.75294117650000003" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdE-SO-Ogy">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdE-SO-Ogy">
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -92,7 +92,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="SBM-HY-8u1" secondAttribute="bottom" id="Ns7-eS-XMT"/>
                                                 <constraint firstItem="SBM-HY-8u1" firstAttribute="top" secondItem="i5U-xd-Ty8" secondAttribute="top" id="Rhn-Di-Izh"/>
                                                 <constraint firstAttribute="trailing" secondItem="SBM-HY-8u1" secondAttribute="trailing" id="S65-wl-mRN"/>
-                                                <constraint firstItem="ZCB-fM-cqh" firstAttribute="top" secondItem="i5U-xd-Ty8" secondAttribute="topMargin" constant="24" id="di0-O8-S3N"/>
+                                                <constraint firstItem="ZCB-fM-cqh" firstAttribute="top" secondItem="i5U-xd-Ty8" secondAttribute="topMargin" constant="14" id="di0-O8-S3N"/>
                                                 <constraint firstItem="wdE-SO-Ogy" firstAttribute="top" secondItem="nzX-Tk-R8u" secondAttribute="bottom" constant="8" id="eHU-ZG-KVh"/>
                                                 <constraint firstItem="ZCB-fM-cqh" firstAttribute="centerX" secondItem="i5U-xd-Ty8" secondAttribute="centerX" id="he8-Ef-xeH"/>
                                                 <constraint firstItem="wdE-SO-Ogy" firstAttribute="centerX" secondItem="nzX-Tk-R8u" secondAttribute="centerX" id="mXV-EU-xGQ"/>
@@ -300,7 +300,7 @@
                                                 <constraint firstItem="4D1-Ka-b0v" firstAttribute="top" secondItem="aou-AI-xk0" secondAttribute="bottom" constant="8" id="ZCQ-E3-L1Q"/>
                                                 <constraint firstItem="aou-AI-xk0" firstAttribute="top" secondItem="cCh-AB-BXM" secondAttribute="bottom" constant="12" id="ajI-lR-pj2"/>
                                                 <constraint firstItem="4D1-Ka-b0v" firstAttribute="top" secondItem="aou-AI-xk0" secondAttribute="bottom" constant="2" id="eOp-nD-GJc"/>
-                                                <constraint firstItem="cCh-AB-BXM" firstAttribute="top" secondItem="Mkj-9c-idS" secondAttribute="topMargin" constant="24" id="gtA-al-5Dv"/>
+                                                <constraint firstItem="cCh-AB-BXM" firstAttribute="top" secondItem="Mkj-9c-idS" secondAttribute="topMargin" constant="14" id="gtA-al-5Dv"/>
                                                 <constraint firstAttribute="trailing" secondItem="aYf-da-3th" secondAttribute="trailing" id="iag-8m-yIC"/>
                                                 <constraint firstItem="aYf-da-3th" firstAttribute="top" secondItem="Mkj-9c-idS" secondAttribute="top" id="obl-RE-Ot2"/>
                                                 <constraint firstItem="cCh-AB-BXM" firstAttribute="centerX" secondItem="Mkj-9c-idS" secondAttribute="centerX" id="ptS-aU-rkl"/>
