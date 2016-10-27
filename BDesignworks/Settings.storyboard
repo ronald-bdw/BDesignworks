@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="OpenSansRegularItalic.ttf">
+        <array key="OpenSansRegular.ttf">
             <string>OpenSans</string>
         </array>
         <array key="OpenSansSemiBold.ttf">
@@ -22,7 +22,7 @@
         <scene sceneID="m07-Pn-BQB">
             <objects>
                 <navigationController id="avn-Sk-SW1" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mml-Yd-6qf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mml-Yd-6qf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -496,7 +496,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change your settings to get notified when your coach sends you message." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12Z-76-LR4">
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -504,7 +504,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="fUV-hg-uVk"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                 <state key="normal" title="Close">
                                     <color key="titleColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -526,10 +526,10 @@
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaK-OA-TYv" customClass="RoundButton" customModule="IBDesignableKit">
                                 <color key="backgroundColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="3Yd-B2-84X"/>
-                                    <constraint firstAttribute="width" constant="150" id="Zc9-fb-SNf"/>
+                                    <constraint firstAttribute="height" constant="55" id="3Yd-B2-84X"/>
+                                    <constraint firstAttribute="width" constant="200" id="Zc9-fb-SNf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                 <state key="normal" title="Open Settings">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -546,33 +546,33 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Go to Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nll-ze-4K1">
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Tap Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aww-RH-5G2">
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings/Settings" translatesAutoresizingMaskIntoConstraints="NO" id="Iaf-R6-RPb">
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Iaf-R6-RPb" secondAttribute="height" multiplier="1:1" id="7iY-pF-Dlc"/>
-                                    <constraint firstAttribute="width" constant="30" id="ZL2-Bd-XRq"/>
+                                    <constraint firstAttribute="width" constant="25" id="ZL2-Bd-XRq"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings/notifications" translatesAutoresizingMaskIntoConstraints="NO" id="zcA-Zc-A4x">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="cPS-2O-86v"/>
+                                    <constraint firstAttribute="width" constant="25" id="cPS-2O-86v"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings/Switch" translatesAutoresizingMaskIntoConstraints="NO" id="1mI-YI-MNf">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="MYD-We-oVu"/>
+                                    <constraint firstAttribute="width" constant="25" id="MYD-We-oVu"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Set &quot;Allow Notifications&quot; to On." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nF-0t-SN9">
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -587,14 +587,14 @@
                             <constraint firstItem="1mI-YI-MNf" firstAttribute="leading" secondItem="zcA-Zc-A4x" secondAttribute="leading" id="B2o-Vs-voW"/>
                             <constraint firstItem="aww-RH-5G2" firstAttribute="centerY" secondItem="zcA-Zc-A4x" secondAttribute="centerY" id="E47-dQ-YsV"/>
                             <constraint firstItem="12Z-76-LR4" firstAttribute="centerX" secondItem="A9A-zi-3En" secondAttribute="centerX" id="GaO-w2-CZZ"/>
-                            <constraint firstItem="Iaf-R6-RPb" firstAttribute="leading" secondItem="A9A-zi-3En" secondAttribute="leading" constant="18" id="JeW-iy-eSV"/>
-                            <constraint firstItem="12Z-76-LR4" firstAttribute="top" secondItem="r5g-xS-dXo" secondAttribute="bottom" constant="15" id="LPB-M9-Dpb"/>
+                            <constraint firstItem="Iaf-R6-RPb" firstAttribute="leading" secondItem="A9A-zi-3En" secondAttribute="leading" constant="30" id="JeW-iy-eSV"/>
+                            <constraint firstItem="12Z-76-LR4" firstAttribute="top" secondItem="r5g-xS-dXo" secondAttribute="bottom" constant="30" id="LPB-M9-Dpb"/>
                             <constraint firstItem="zcA-Zc-A4x" firstAttribute="top" secondItem="Iaf-R6-RPb" secondAttribute="bottom" constant="16" id="NvW-59-Ar7"/>
                             <constraint firstItem="4nF-0t-SN9" firstAttribute="centerY" secondItem="1mI-YI-MNf" secondAttribute="centerY" id="Oyx-1V-qb3"/>
                             <constraint firstItem="zcA-Zc-A4x" firstAttribute="width" secondItem="zcA-Zc-A4x" secondAttribute="height" multiplier="1:1" id="QFs-eW-ajL"/>
-                            <constraint firstItem="12Z-76-LR4" firstAttribute="leading" secondItem="A9A-zi-3En" secondAttribute="leading" constant="17" id="SK9-nf-WpX"/>
-                            <constraint firstAttribute="trailing" secondItem="12Z-76-LR4" secondAttribute="trailing" constant="17" id="Xkb-uG-xnc"/>
-                            <constraint firstItem="aaK-OA-TYv" firstAttribute="top" secondItem="4nF-0t-SN9" secondAttribute="bottom" constant="40" id="YLo-Oc-219"/>
+                            <constraint firstItem="12Z-76-LR4" firstAttribute="leading" secondItem="A9A-zi-3En" secondAttribute="leading" constant="25" id="SK9-nf-WpX"/>
+                            <constraint firstAttribute="trailing" secondItem="12Z-76-LR4" secondAttribute="trailing" constant="25" id="Xkb-uG-xnc"/>
+                            <constraint firstItem="aaK-OA-TYv" firstAttribute="top" secondItem="4nF-0t-SN9" secondAttribute="bottom" constant="35" id="YLo-Oc-219"/>
                             <constraint firstItem="qDS-wb-xF2" firstAttribute="top" secondItem="aaK-OA-TYv" secondAttribute="bottom" constant="16" id="m0Q-0E-iZE"/>
                             <constraint firstItem="qDS-wb-xF2" firstAttribute="centerX" secondItem="A9A-zi-3En" secondAttribute="centerX" id="oBx-SA-kG8"/>
                             <constraint firstItem="1mI-YI-MNf" firstAttribute="width" secondItem="1mI-YI-MNf" secondAttribute="height" multiplier="1:1" id="qEq-fw-OUi"/>
