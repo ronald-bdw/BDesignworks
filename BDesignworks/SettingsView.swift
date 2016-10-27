@@ -40,11 +40,9 @@ class SettingsView: UITableViewController {
     func updateNotificationsSwitch(){
         if UIApplication.shared.isRegisteredForRemoteNotifications {
             self.notificationsSwitch.setOn(true, animated: true)
-            ZendeskNotificationManager.sharedInstance.enableNotificationOnZendesk()
         }
         else {
             self.notificationsSwitch.setOn(false, animated: true)
-            ZendeskNotificationManager.sharedInstance.disableNotificationOnZendesk()
         }
     }
     

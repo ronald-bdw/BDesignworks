@@ -112,6 +112,7 @@ protocol IVerificationView: class {
     func showCodeInvalidView()
     func dismissCodeInvalidView()
     func setLoadingState(_ state: LoadingState)
+    func showErrorView(_ title: String, content: String, errorType: BackendError)
 }
 
 final class VerificationView: UIViewController {
@@ -375,6 +376,11 @@ extension VerificationView: IVerificationView {
             guard let sself = self else { return }
             sself.isCodeErrorShown = false
         }) 
+    }
+    
+    func showErrorView(_ title: String, content: String, errorType: BackendError) {
+        SVProgressHUD.dismiss()
+        ShowErrorAlert(title, message: content)
     }
     
 }

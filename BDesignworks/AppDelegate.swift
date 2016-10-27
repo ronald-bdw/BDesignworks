@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let _ = realm?.objects(ENUser.self).first,
             realm?.objects(AuthInfo.self).count == 0 {
             ShowConversationViewController()
-            ZendeskNotificationManager.sharedInstance.trigerNotificationOnZendesk()
         }
         else {
             ShowInitialViewController()
