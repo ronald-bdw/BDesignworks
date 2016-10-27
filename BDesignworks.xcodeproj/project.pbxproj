@@ -119,6 +119,7 @@
 		E75B5A7E1DACDF8E00B51E04 /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75B5A7D1DACDF8E00B51E04 /* NotificationView.xib */; };
 		E765DBAC1D93D2A800D94FF9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E765DBAB1D93D2A800D94FF9 /* Settings.storyboard */; };
 		E774EF8B1D899629007A8BC4 /* ProfileEditingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774EF8A1D899629007A8BC4 /* ProfileEditingHelpers.swift */; };
+		E78CBF621DC2221B0079F1C9 /* HealthAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78CBF611DC2221B0079F1C9 /* HealthAppView.swift */; };
 		E79D88F81D7F256200EBA8FA /* TrialPageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */; };
 		E7AF27371DA2855D00596191 /* TourAppUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF27361DA2855D00596191 /* TourAppUserInfoModel.swift */; };
 		E7AF27391DA2857000596191 /* TourAppUserInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF27381DA2857000596191 /* TourAppUserInfoPresenter.swift */; };
@@ -345,6 +346,7 @@
 		E75B5A7D1DACDF8E00B51E04 /* NotificationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
 		E765DBAB1D93D2A800D94FF9 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		E774EF8A1D899629007A8BC4 /* ProfileEditingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingHelpers.swift; sourceTree = "<group>"; };
+		E78CBF611DC2221B0079F1C9 /* HealthAppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAppView.swift; sourceTree = "<group>"; };
 		E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageSelectionView.swift; sourceTree = "<group>"; };
 		E7AF27361DA2855D00596191 /* TourAppUserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppUserInfoModel.swift; sourceTree = "<group>"; };
 		E7AF27381DA2857000596191 /* TourAppUserInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppUserInfoPresenter.swift; sourceTree = "<group>"; };
@@ -807,6 +809,7 @@
 			isa = PBXGroup;
 			children = (
 				DCF96E631D992B1C005AFE42 /* DataSyncView.swift */,
+				E78CBF611DC2221B0079F1C9 /* HealthAppView.swift */,
 			);
 			name = DataSync;
 			sourceTree = "<group>";
@@ -1527,6 +1530,7 @@
 				DC2280FF1D6B465400D5A0DA /* LoginModel.swift in Sources */,
 				E7DA95801D8018FA0079EB79 /* RTSteps.swift in Sources */,
 				DC9C6C691D6CA9280034DC5A /* RegistrationHelpers.swift in Sources */,
+				E78CBF621DC2221B0079F1C9 /* HealthAppView.swift in Sources */,
 				7CD3B5E21DC0F3ED0089D93A /* TrialPageController.swift in Sources */,
 				DC0ACC631D76E1C4006BB342 /* VerificationErrorView.swift in Sources */,
 				2F71794F1D5343F800231639 /* WelcomeScreen.swift in Sources */,
