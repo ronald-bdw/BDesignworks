@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SideMenu
 
 func PresentViewController(_ controller: UIViewController, animated: Bool = true) {
     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
@@ -27,7 +28,9 @@ func PresentViewController(_ controller: UIViewController, animated: Bool = true
 }
 
 func ShowInitialViewController(_ animated: Bool = true) {
-    
+    if let sideMenuController = UIApplication.shared.delegate?.window??.rootViewController?.presentedViewController as? SideMenu.UISideMenuNavigationController {
+        sideMenuController.dismiss(animated: false, completion: nil)
+    }
     let navigationController = Storyboard.login.storyboard.instantiateViewController(withIdentifier: "WelcomeController")
     
     PresentViewController(navigationController, animated: animated)
