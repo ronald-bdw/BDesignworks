@@ -61,13 +61,14 @@ extension Router.Steps: RouterProtocol {
     }
 }
 class RTFitbitResponse: Mappable{
-    var fitbitInfo: FitbitInfo?
+    var fitbitInfo: FitbitInfo = FitbitInfo()
     required convenience init?(map: Map) {
         self.init()
     }
     
     func mapping(map: Map) {
-        self.fitbitInfo <- map
+//        self.fitbitInfo
+        Mapper().map(JSON: map.JSON, toObject: self.fitbitInfo)
     }
 }
 

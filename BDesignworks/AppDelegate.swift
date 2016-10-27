@@ -92,8 +92,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 case .success(let object):
                     Logger.debug("successfully sent fitbit code")
                     Logger.debug(object.fitbitInfo)
+                    UserDefaults.standard.set(object.fitbitInfo.id, forKey: FSUserDefaultsKey.FitbitTokenId)
                     UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.FitbitRegistered)
                     UserDefaults.standard.synchronize()
+
+                    NotificationCenter.default.post(name:NSNotification.Name(rawValue: "FitbitResponse"), object: nil)
                 case .failure(let error):
                     Logger.error(error)
                     ShowErrorAlert()
