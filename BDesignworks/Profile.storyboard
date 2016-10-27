@@ -24,7 +24,7 @@
         <scene sceneID="3B2-Se-gCN">
             <objects>
                 <navigationController id="zSQ-yG-si8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0l9-Wu-z8n">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0l9-Wu-z8n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -55,7 +55,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Background" translatesAutoresizingMaskIntoConstraints="NO" id="SBM-HY-8u1"/>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ZCB-fM-cqh">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ZCB-fM-cqh">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="8lb-Wm-LN5"/>
                                                         <constraint firstAttribute="height" constant="100" id="lWz-t1-Esb"/>
@@ -252,7 +252,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Background" translatesAutoresizingMaskIntoConstraints="NO" id="aYf-da-3th">
                                                     <color key="backgroundColor" red="0.1843137255" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="cCh-AB-BXM">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="cCh-AB-BXM">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="PR4-t4-5k4"/>
                                                         <constraint firstAttribute="width" constant="100" id="V7S-vB-PYj"/>
