@@ -9,31 +9,16 @@
 import Foundation
 
 class DataSyncView: UITableViewController {
-    @IBOutlet weak var healthKitSwitch: UISwitch!
     @IBOutlet weak var fitbitSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if HealthKitManager.sharedInstance.isAuthorized {
-            self.healthKitSwitch.setOn(true, animated: true)
-        }
-        
         if UserDefaults.standard.bool(forKey: FSUserDefaultsKey.FitbitRegistered) {
             self.fitbitSwitch.setOn(true, animated: true)
         }
         
-        self.healthKitSwitch.addTarget(self, action: #selector(self.healthKitSwitchStateChanged(sender:)), for: .valueChanged)
         self.fitbitSwitch.addTarget(self, action: #selector(self.fitbitSwitchStateChanged(sender:)), for: .valueChanged)
-    }
-    
-    func healthKitSwitchStateChanged(sender: AnyObject) {
-        if self.healthKitSwitch.isOn {
-            HealthKitManager.sharedInstance.authorize()
-        }
-        else {
-            HealthKitManager.sharedInstance.stopSendingData()
-        }
     }
     
     func fitbitSwitchStateChanged(sender: AnyObject) {
@@ -49,5 +34,40 @@ class DataSyncView: UITableViewController {
             UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.FitbitRegistered)
             UserDefaults.standard.synchronize()
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let lIdentifier = segue.identifier else {
+            super.prepare(for: segue, sender: sender)
+            return
+        }
+        switch lIdentifier {
+        case SegueIdentifiers.HealthKit:
+            segue.destination.transitioningDelegate = self
+            segue.destination.modalPresentationStyle = .custom
+        default:
+            super.prepare(for: segue, sender: sender)
+        }
+    }
+}
+
+extension DataSyncView {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.fs_deselectSelectedRow(true)
+    }
+}
+
+extension DataSyncView {
+    enum SegueIdentifiers {
+        static let HealthKit = "HealthKit"
+    }
+}
+
+extension DataSyncView: UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController,
+                                presenting: UIViewController?,
+                                source: UIViewController) -> UIPresentationController? {
+        return ModalPresentationController(presentedViewController: presented, presenting: presenting, height: 400)
     }
 }
