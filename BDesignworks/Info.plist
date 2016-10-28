@@ -34,7 +34,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>28</string>
+	<string>31</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -69,6 +69,8 @@
 	<key>NSCameraUsageDescription</key>
 	<string>$(PRODUCT_NAME) uses photos to upload images to conversation and to set avatar.</string>
 	<key>NSHealthShareUsageDescription</key>
+	<string>To understand your active level better, please ensure to sync your device with our app.</string>
+	<key>NSHealthUpdateUsageDescription</key>
 	<string>To understand your active level better, please ensure to sync your device with our app.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) uses photos to upload images to conversation and to set avatar.</string>
