@@ -210,8 +210,8 @@ extension AppDelegate {
     
     func setupSDWebImage() {
         let imageCache:SDImageCache = SDImageCache.shared()
-        imageCache.maxCacheSize     = 1024*1024*50 // 100mb on disk
-        imageCache.maxMemoryCost    = 1024*1024*10  // 10mb in memory
+        imageCache.maxCacheSize     = UInt(1024*1024*50) // 100mb on disk
+        imageCache.maxMemoryCost    = UInt(1024*1024*10)  // 10mb in memory
         
         let imageDownloader:SDWebImageDownloader = SDWebImageDownloader.shared()
         imageDownloader.downloadTimeout          = 60.0
