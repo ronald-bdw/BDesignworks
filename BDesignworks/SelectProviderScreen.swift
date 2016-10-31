@@ -22,7 +22,8 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     
     struct SegueIdentifiers {
         static let ShowVerify = "VerificationSegue"
-        static let ShowTrial = "TrialSegue"
+        static let ShowTrialModal = "TrialSegue"
+        static let ShowTrialViews = "showTrialPage"
     }
     
     @IBOutlet weak var providerSelectionButton: RollUpButton!
@@ -79,9 +80,10 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
             return
         }
         switch lIdentifier {
-        case SegueIdentifiers.ShowTrial:
+        case SegueIdentifiers.ShowTrialModal:
             segue.destination.transitioningDelegate = self
             segue.destination.modalPresentationStyle = .custom
+            (segue.destination as? TrialPageScreen)?.delegate = self
         default:
             super.prepare(for: segue, sender: sender)
         }
@@ -108,7 +110,7 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         case .NoProvider:
             UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.IsProviderChosen)
             UserDefaults.standard.synchronize()
-            self.performSegue(withIdentifier: SegueIdentifiers.ShowVerify, sender: nil)
+            self.performSegue(withIdentifier: SegueIdentifiers.ShowTrialModal, sender: nil)
         default: return
         }
     }
@@ -131,6 +133,16 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         return .default
     }
     
+}
+
+extension SelectProviderScreen: TrialModalViewDelegate {
+    func learnMoreSelected() {
+        self.performSegue(withIdentifier: SegueIdentifiers.ShowTrialViews, sender: nil)
+    }
+    
+    func startTrialSelected() {
+        self.performSegue(withIdentifier: SegueIdentifiers.ShowVerify, sender: nil)
+    }
 }
 
 extension SelectProviderScreen: UIViewControllerTransitioningDelegate {

@@ -29,7 +29,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cap-Dn-Qp5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="StV-eM-zTl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Beh-0N-qr5"/>
@@ -113,6 +113,8 @@
                         <outlet property="nextButton" destination="LSf-b0-zdR" id="ZBT-Fi-2Hl"/>
                         <outlet property="providerSelectionButton" destination="dB4-Ty-tCF" id="0CV-Qc-Fpe"/>
                         <segue destination="jLg-Mh-FPe" kind="show" identifier="VerificationSegue" id="8ca-PQ-ytg"/>
+                        <segue destination="nZU-o6-lK5" kind="presentation" identifier="TrialSegue" id="9Qt-G8-bdI"/>
+                        <segue destination="SlZ-ze-Mok" kind="show" identifier="showTrialPage" id="221-qK-ZWb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwE-4P-50B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -134,7 +136,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tFw-rv-pB8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gaU-3B-qiD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sbq-ch-fMs">
@@ -233,7 +235,7 @@
                         <viewControllerLayoutGuide type="bottom" id="zfK-PR-oK5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hdi-42-L35" customClass="UIScrollView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ZU9-hx-loE">
@@ -357,7 +359,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Nmm-u7-EyS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Iwv-Rq-dlt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2hG-Vc-w2o">
@@ -432,7 +434,7 @@
         <scene sceneID="nUd-NQ-3Bv">
             <objects>
                 <navigationController storyboardIdentifier="WelcomeController" id="rys-JC-bgs" customClass="CustomNavigationController" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a3u-v3-yAf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a3u-v3-yAf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -461,7 +463,7 @@
                         <viewControllerLayoutGuide type="bottom" id="O9D-JZ-AJn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lTS-9V-b90">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="QZk-Zf-vTI"/>
@@ -667,7 +669,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cB5-y2-7Q6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="631" y="1056"/>
+            <point key="canvasLocation" x="873" y="1326"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fMl-Hi-q7n">
@@ -678,7 +680,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vaL-bS-3IT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cGW-W3-Igc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="9sq-x7-HeC"/>
@@ -722,6 +724,8 @@
         <image name="Logo" width="170" height="228"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zb5-s4-hK2"/>
+        <segue reference="9Qt-G8-bdI"/>
+        <segue reference="8ca-PQ-ytg"/>
+        <segue reference="221-qK-ZWb"/>
     </inferredMetricsTieBreakers>
 </document>
