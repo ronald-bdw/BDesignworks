@@ -66,7 +66,7 @@ extension VerificationModel: IVerificationModel {
     }
     
     func validatePhone(_ phone: String) -> Bool {
-        if phone.fs_length != 10 {
+        if phone.fs_length < 5 || phone.fs_length > 15{
             self.presenter?.phoneNotValid()
             return false
         }
