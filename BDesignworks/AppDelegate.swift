@@ -16,18 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         self.setupProject()
-        
+
 //        ENUser.createTestUser()
-        
+
         let realm = try? Realm()
         if let _ = realm?.objects(ENUser.self).first,
             realm?.objects(AuthInfo.self).count == 0 {
             ShowConversationViewController()
+//            ZendeskNotificationManager.sharedInstance.trigerNotificationOnZendesk()
         }
         else {
             ShowInitialViewController()
         }
-        
+
         return true
     }
 
@@ -51,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication)
     {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        ZendeskNotificationManager.sharedInstance.trigerNotificationOnZendesk()
+//        ZendeskNotificationManager.sharedInstance.trigerNotificationOnZendesk()
     }
 
     func applicationWillTerminate(_ application: UIApplication)
@@ -60,21 +61,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         InAppManager.shared.stopMonitoring()
     }
-    
+
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         //pearup://pearup.com?code=####
         //pearup://pearup.com?authcode=%{phone_code}" smscode
-        
+
         guard let query = url.query else {return true}
         var code = ""
         if let smsCodeDividerIndex = query.range(of: "authcode=")?.upperBound {
             code = query.substring(from: smsCodeDividerIndex)
             if let realm = try? Realm(),
                 let authInfo = realm.objects(AuthInfo.self).first {
-                
+
                 UserDefaults.standard.set(code, forKey: FSUserDefaultsKey.SmsCode)
                 UserDefaults.standard.synchronize()
-                
+
                 if authInfo.isRegistered {
                     ShowWelcomeViewController()
                 }
@@ -85,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else if let fitBitDividerIndex = query.range(of: "code=")?.upperBound {
             code = query.substring(from: fitBitDividerIndex)
-            
+
             let _ = Router.Steps.sendFitbitCode(code: code).request().responseObject { (response: DataResponse<RTFitbitResponse>) in
                 switch response.result {
                 case .success(let object):
@@ -104,11 +105,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-    
+
     //MARK: - Remote Notifications
-    
+
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        
+
         let tokenChars = (deviceToken as NSData).bytes.bindMemory(to: CChar.self, capacity: deviceToken.count)
         var tokenString = ""
         UIFont.systemFont(ofSize: 1, weight: 1)
@@ -123,53 +124,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UserDefaults.standard.set(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
 //        UserDefaults.standard.synchronize()
     }
-    
+
     func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
 //        guard let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController,
 //            let _ = navigationController.topViewController as? TourAppUserInfoView else {return}
         UIApplication.shared.registerForRemoteNotifications()
         HealthKitManager.sharedInstance.authorize()
     }
-    
+
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         //To get smooch remote notifications in app go to SmoochHelper
     }
 }
 
 extension AppDelegate {
-    
+
     func setupProject() {
-        
+
         self.printProjectSettings()
-        
+
         self.setupProjectForTests()
-        
+
         self.setupLogger()
-        
+
         self.setupSDWebImage()
-        
+
         self.setupSVProgressHUD()
-        
+
         //setup Crashlytics
         Fabric.with([Crashlytics.self])
-        
+
         DispatchQueue.global().async {  let _ = countryCodes }
-        
+
         InAppManager.shared.startMonitoring()
-        
+
         self.setupAppearance()
         
     }
-    
+
     func setupAppearance() {
-        
+
         let navigationBar = UINavigationBar.appearance()
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         navigationBar.barTintColor = AppColors.MainColor
         navigationBar.tintColor = UIColor.white
         navigationBar.isTranslucent = false
     }
-    
+
     func setupProjectForTests() {
         #if TEST
             switch TestingMode() {
@@ -177,13 +178,13 @@ extension AppDelegate {
                 print("Unit Tests")
                 self.window?.rootViewController = UIViewController()
                 return
-                
+
             case .UI:
                 print("UI Tests")
             }
         #endif
     }
-    
+
     func printProjectSettings() {
         #if DEBUG
             // print documents directory and device ID
@@ -192,30 +193,30 @@ extension AppDelegate {
             print("\n*******************************************\nBUNDLE ID:\n\((Bundle.main.bundleIdentifier)!)\n*******************************************\n")
         #endif
     }
-    
+
     func setupLogger() {
         Logger.setup(level: .debug, showLogIdentifier: false, showFunctionName: false, showThreadName: true, showLevel: false, showFileNames: true, showLineNumbers: true, showDate: true, writeToFile: nil, fileLevel: .none)
-        
+
         Logger.dateFormatter?.dateFormat = "HH:mm:ss.SSS"
-        
+
         print()
     }
-    
+
 //    func setupMagicalRecord() {
 //        MagicalRecord.setShouldDeleteStoreOnModelMismatch(true)
 //        MagicalRecord.setupAutoMigratingCoreDataStack()
 //        MagicalRecord.setLoggingLevel(MagicalRecordLoggingLevel.Off)
 //    }
-    
+
     func setupSDWebImage() {
         let imageCache:SDImageCache = SDImageCache.shared()
         imageCache.maxCacheSize     = UInt(1024*1024*50) // 100mb on disk
         imageCache.maxMemoryCost    = UInt(1024*1024*10)  // 10mb in memory
-        
+
         let imageDownloader:SDWebImageDownloader = SDWebImageDownloader.shared()
         imageDownloader.downloadTimeout          = 60.0
     }
-    
+
     func setupSVProgressHUD() {
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.gradient)
     }

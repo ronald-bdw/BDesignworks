@@ -46,7 +46,7 @@ class InAppManager: NSObject {
             let latestInfo = receiptJson?["receiptJson"] as? [String: AnyObject],
             let expiresDate = latestInfo["expires_date_pst"] as? Double
         else {return false}
-        
+    
         return Date().timeIntervalSince1970 < expiresDate
     }
     
