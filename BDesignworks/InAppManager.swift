@@ -12,7 +12,7 @@ import StoreKit
 enum ProductType: String {
     case Trial  = "com.bdesignworks.pearup.trial"
     case Montly = "com.bdesignworks.pearup.monthly"
-    case Yearly = "com.bdesignworks.pearup.yearly"
+    case Yearly = "com.bdesignworks.pearup.Yearly"
 }
 
 enum InAppErrors: Swift.Error {
@@ -82,6 +82,8 @@ class InAppManager: NSObject {
         //http://www.brianjcoleman.com/tutorial-receipt-validation-in-swift/ - receipt validation example
         return true
     }
+    
+    
 }
 
 extension InAppManager: SKPaymentTransactionObserver {
@@ -95,13 +97,14 @@ extension InAppManager: SKPaymentTransactionObserver {
             case .purchased:
                 Logger.debug("purchased")
                 //verify
+                complete(transaction: transaction)
                 self.delegate?.inAppLoadingSucceded(productType: productType)
             case .failed:
-                Logger.debug("failed: \(transaction.error)")
+                fail(transaction: transaction)
                 self.delegate?.inAppLoadingFailed(error: transaction.error)
             case .restored:
                 //called when restored from itunes
-                Logger.debug("restored")
+                restore(transaction: transaction)
                 //verify
                 self.delegate?.inAppLoadingSucceded(productType: productType)
             case .deferred:
@@ -130,17 +133,56 @@ extension InAppManager: SKPaymentTransactionObserver {
             self.delegate?.inAppLoadingFailed(error: InAppErrors.noSubscriptionPurchased)
         }
     }
+    
+    //MARK: - IAP state methods
+    private func complete(transaction: SKPaymentTransaction) {
+        Logger.debug("complete...")
+        deliverPurchaseNotificationFor(identifier: transaction.payment.productIdentifier)
+        SKPaymentQueue.default().finishTransaction(transaction)
+    }
+    
+    private func restore(transaction: SKPaymentTransaction) {
+        guard let productIdentifier = transaction.original?.payment.productIdentifier else { return }
+        
+        Logger.debug("restore... \(productIdentifier)")
+        deliverPurchaseNotificationFor(identifier: productIdentifier)
+        SKPaymentQueue.default().finishTransaction(transaction)
+    }
+    
+    private func fail(transaction: SKPaymentTransaction) {
+        Logger.debug("Purchase fail...")
+        if let transactionError = transaction.error as? NSError {
+            if transactionError.code != SKError.paymentCancelled.rawValue {
+                Logger.error("Transaction Error: \(transaction.error?.localizedDescription)")
+            }
+        }
+        
+        SKPaymentQueue.default().finishTransaction(transaction)
+    }
+    
+    private func deliverPurchaseNotificationFor(identifier: String?) {
+        guard let identifier = identifier else { return }
+        
+//        purchasedProductIdentifiers.insert(identifier)
+        UserDefaults.standard.set(true, forKey: identifier)
+        UserDefaults.standard.synchronize()
+        //        NotificationCenter.default.post(name: NSNotification.Name(rawValue: IAPHelper.IAPHelperPurchaseNotification), object: identifier)
+    }
+    
 }
 
+//MARK: - SKProducatsRequestDelegate
 extension InAppManager: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         //TODO: add some inapp delegate function
-        guard response.products.count > 0 else {
-            Logger.debug("fuck fuck fuck: \(response.invalidProductIdentifiers)")
-            self.delegate?.inAppLoadingFailed(error: InAppErrors.noProductsAvailable)
-            return
-        }
+        guard response.products.count > 0 else {return}
         self.products = response.products
         Logger.debug(response.products)
+    }
+    
+    internal func request(_ request: SKRequest, didFailWithError error: Swift.Error) {
+        Logger.error("Failed to load list of products.")
+        request.cancel()
+        self.delegate?.inAppLoadingFailed(error: InAppErrors.noProductsAvailable)
     }
 }
