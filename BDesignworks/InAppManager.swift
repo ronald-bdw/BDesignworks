@@ -61,6 +61,8 @@ class InAppManager: NSObject {
     func loadProducts() {
         var productIdentifiers = Set<String>()
         productIdentifiers.insert(ProductType.Montly.rawValue)
+        productIdentifiers.insert(ProductType.Yearly.rawValue)
+        productIdentifiers.insert(ProductType.Trial.rawValue)
         let request = SKProductsRequest(productIdentifiers: productIdentifiers)
         request.delegate = self
         request.start()
@@ -137,7 +139,6 @@ extension InAppManager: SKPaymentTransactionObserver {
     //MARK: - IAP state methods
     private func complete(transaction: SKPaymentTransaction) {
         Logger.debug("complete...")
-        deliverPurchaseNotificationFor(identifier: transaction.payment.productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
     }
     
@@ -145,7 +146,7 @@ extension InAppManager: SKPaymentTransactionObserver {
         guard let productIdentifier = transaction.original?.payment.productIdentifier else { return }
         
         Logger.debug("restore... \(productIdentifier)")
-        deliverPurchaseNotificationFor(identifier: productIdentifier)
+        SKPaymentQueue.default().restoreCompletedTransactions()
         SKPaymentQueue.default().finishTransaction(transaction)
     }
     
@@ -158,15 +159,6 @@ extension InAppManager: SKPaymentTransactionObserver {
         }
         
         SKPaymentQueue.default().finishTransaction(transaction)
-    }
-    
-    private func deliverPurchaseNotificationFor(identifier: String?) {
-        guard let identifier = identifier else { return }
-        
-//        purchasedProductIdentifiers.insert(identifier)
-        UserDefaults.standard.set(true, forKey: identifier)
-        UserDefaults.standard.synchronize()
-        //        NotificationCenter.default.post(name: NSNotification.Name(rawValue: IAPHelper.IAPHelperPurchaseNotification), object: identifier)
     }
     
 }
