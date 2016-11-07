@@ -45,7 +45,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="oue-tC-Lb9">
-                                                            <rect key="frame" x="152" y="29" width="70" height="70"/>
+                                                            <rect key="frame" x="152" y="29.5" width="70" height="70"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="H5R-HM-ujI"/>
@@ -65,7 +65,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e41-Vb-vjE">
-                                                            <rect key="frame" x="142" y="107" width="90" height="22"/>
+                                                            <rect key="frame" x="146.5" y="107.5" width="81.5" height="21"/>
                                                             <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                             <color key="textColor" red="0.92156862750000001" green="0.78823529410000004" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -454,15 +454,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat is disabled due to subscription missing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMb-uX-soE">
+                                <rect key="frame" x="16" y="291.5" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehi-qe-Vpw">
+                                <rect key="frame" x="161" y="350" width="53" height="30"/>
+                                <state key="normal" title="Restore"/>
+                                <connections>
+                                    <action selector="restorePressed:" destination="oaQ-BK-TCI" eventType="touchUpInside" id="L1r-qj-C0N"/>
+                                </connections>
+                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Y-8L-rhD">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <connections>
-                                    <segue destination="jyk-gp-62R" kind="embed" id="55r-bc-Krc"/>
-                                </connections>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </containerView>
                         </subviews>
@@ -475,6 +480,8 @@
                             <constraint firstAttribute="trailing" secondItem="eMb-uX-soE" secondAttribute="trailing" constant="16" id="SGX-Bo-D1h"/>
                             <constraint firstItem="eMb-uX-soE" firstAttribute="leading" secondItem="1IT-jf-sba" secondAttribute="leading" constant="16" id="h9H-t4-KLn"/>
                             <constraint firstItem="eMb-uX-soE" firstAttribute="centerY" secondItem="1IT-jf-sba" secondAttribute="centerY" id="jzn-n3-ViW"/>
+                            <constraint firstItem="ehi-qe-Vpw" firstAttribute="centerX" secondItem="1IT-jf-sba" secondAttribute="centerX" id="rbf-tk-Q1F"/>
+                            <constraint firstItem="ehi-qe-Vpw" firstAttribute="top" secondItem="eMb-uX-soE" secondAttribute="bottom" constant="38" id="zyH-Ub-iAJ"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -520,4 +527,7 @@
         <image name="ShareIcon" width="134" height="144"/>
         <image name="back" width="14" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="xXE-Mf-BJU"/>
+    </inferredMetricsTieBreakers>
 </document>

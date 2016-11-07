@@ -84,6 +84,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="PGU-dW-cgv" secondAttribute="trailing" constant="47" id="rpO-Pq-xQX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="submitButton" destination="PGU-dW-cgv" id="X0p-dN-dDh"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="emptyCell" id="A5Y-bs-LY3">
                                         <rect key="frame" x="0.0" y="106" width="600" height="78"/>
