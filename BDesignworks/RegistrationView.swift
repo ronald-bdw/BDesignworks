@@ -14,8 +14,10 @@ protocol IRegistrationView: class {
     func setLoadingState (_ state: LoadingState)
     func updateValidationErrors()
     
-    func showErrorView(_ title: String, content: String, errorType: BackendError)
+    func showErrorView(_ title: String, content: String, errorType: BackendError?)
     func showPhoneCodeReceivedView()
+    func presentNextScreen()
+    func presentInappAlert()
 }
 
 
@@ -23,6 +25,7 @@ class RegistrationView: UIViewController {
     var presenter: PresenterProtocol?
     
     @IBOutlet weak var tableView: UITableView!
+    weak var submitButton: UIButton?
     
     var shouldShowErrors = false
     
@@ -44,7 +47,7 @@ class RegistrationView: UIViewController {
     
     @IBAction func submitPressed(_ sender: AnyObject){
         self.shouldShowErrors = true
-        ShowInAppAlert()
+        self.presenter?.submitTapped()
     }
     
     @IBAction func backPressed(_ sender: AnyObject) {
@@ -80,7 +83,9 @@ extension RegistrationView: UITableViewDataSource {
             return self.tableView.dequeueReusableCell(withIdentifier: "emptyCell")!
         }
         guard indexPath.row != 7 else {
-            return self.tableView.dequeueReusableCell(withIdentifier: "registrationFooter")!
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: "registrationFooter") as! RegistrationFooter
+            self.submitButton = cell.submitButton
+            return cell
         }
         if let cellType = RegistrationCellType(rawValue: indexPath.row) {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: RegistrationTableViewCell.fs_className) as! RegistrationTableViewCell
@@ -167,14 +172,14 @@ extension RegistrationView: IRegistrationView {
             SVProgressHUD.show()
         case .done:
             SVProgressHUD.dismiss()
-            ShowTourAppViewController()
+            self.submitButton?.setTitle("Submit", for: .normal)
         case .failed:
             SVProgressHUD.dismiss()
             ShowErrorAlert()
         }
     }
     
-    func showErrorView(_ title: String, content: String, errorType: BackendError) {
+    func showErrorView(_ title: String, content: String, errorType: BackendError?) {
         SVProgressHUD.dismiss()
         if errorType == .smsCodeExpired ||
             errorType == .smsCodeInvalid {
@@ -190,6 +195,14 @@ extension RegistrationView: IRegistrationView {
     func showPhoneCodeReceivedView() {
         SVProgressHUD.dismiss()
         ShowOKAlert("Success!", message: "Please wait for sms with code.")
+    }
+    
+    func presentNextScreen() {
+        ShowTourAppViewController()
+    }
+    
+    func presentInappAlert() {
+        ShowInAppAlert()
     }
 }
 

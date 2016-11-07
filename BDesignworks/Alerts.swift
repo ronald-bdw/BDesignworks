@@ -88,19 +88,11 @@ func ShowInAppAlert() {
     let alertController = UIAlertController(title: "Choose your plan", message: nil, preferredStyle: .actionSheet)
     alertController.view.tintColor = UIColor(fs_hexString: "29537C")
     
-    let trialButton = UIAlertAction(title: "Free 14-day trial", style: .default) { (alertAction: UIAlertAction) -> Void in
-        InAppManager.shared.purchaseProduct(productType: .Trial)
-    }
-    let yearlyButton = UIAlertAction(title: "Billed yearly - $159.99/year (save 11%)", style: .default) { (alertAction: UIAlertAction) -> Void in
-        InAppManager.shared.purchaseProduct(productType: .Yearly)
-    }
-    let montlyButton = UIAlertAction(title: "Billed monthly - $14.99/month", style: .default) { (alertAction: UIAlertAction) -> Void in
+    let montlyButton = UIAlertAction(title: "Billed monthly - $14.99/month. Trial period available.", style: .default) { (alertAction: UIAlertAction) -> Void in
         InAppManager.shared.purchaseProduct(productType: .Montly)
     }
     let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
 
-    alertController.addAction(trialButton)
-    alertController.addAction(yearlyButton)
     alertController.addAction(montlyButton)
     alertController.addAction(cancelButton)
     
