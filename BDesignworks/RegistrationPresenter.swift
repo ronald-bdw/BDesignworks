@@ -48,6 +48,9 @@ extension RegistrationPresenter: InAppManagerDelegate {
     
     func inAppLoadingFailed(error: Swift.Error?) {
         self.view?.setLoadingState(.failed)
+        if let error = error {
+            self.view?.showErrorView("Sorry", content: error.localizedDescription, errorType: nil)
+        }
     }
 }
 
@@ -58,6 +61,7 @@ extension RegistrationPresenter: IRegistrationModelPresenter {
     
     func loadingSuccessed(user: ENUser) {
         self.view?.setLoadingState(.done)
+        self.view?.presentNextScreen()
     }
     
     func requestFailed(_ error: RTError?) {
@@ -80,11 +84,16 @@ extension RegistrationPresenter: IRegistrationModelPresenter {
 
 extension RegistrationPresenter: IRegistrationViewPresenter {
     func submitTapped() {
-        if let smsCode = UserDefaults.standard.string(forKey: FSUserDefaultsKey.SmsCode) {
-            self.model?.register(smsCode: smsCode)
+        if InAppManager.shared.isSubscriptionAvailable {
+            if let smsCode = UserDefaults.standard.string(forKey: FSUserDefaultsKey.SmsCode) {
+                self.model?.register(smsCode: smsCode)
+            }
+            else {
+                self.view?.setLoadingState(.failed)
+            }
         }
         else {
-            self.view?.setLoadingState(.failed)
+            self.view?.presentInappAlert()
         }
     }
     
