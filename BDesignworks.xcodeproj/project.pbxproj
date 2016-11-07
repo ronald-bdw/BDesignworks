@@ -50,7 +50,6 @@
 		7CD3B5E21DC0F3ED0089D93A /* TrialPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3B5E11DC0F3ED0089D93A /* TrialPageController.swift */; };
 		7CD3B5E91DC0F9A80089D93A /* TrialPageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3B5E81DC0F9A80089D93A /* TrialPageContainer.swift */; };
 		7CD3B5EB1DC221FE0089D93A /* FitbitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3B5EA1DC221FE0089D93A /* FitbitInfo.swift */; };
-		7CD3B5ED1DC2501A0089D93A /* FitbitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3B5EC1DC2501A0089D93A /* FitbitManager.swift */; };
 		94B60C35434459D757776208 /* Pods_Abstract_BDesignworksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F27C15549256EFEAD01C3A1 /* Pods_Abstract_BDesignworksTests.framework */; };
 		9D7F789640F47EC30E2908F7 /* Pods_Abstract_BDesignworksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5B966D6C1FE954CB0BC550 /* Pods_Abstract_BDesignworksUITests.framework */; };
 		A436BE131D6B6098004B8E8B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A436BE121D6B6098004B8E8B /* HeaderView.swift */; };
@@ -91,6 +90,7 @@
 		DC2281311D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC2281271D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf */; };
 		DC3311871D6C5484002A21F2 /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */; };
 		DC37F8551D79C42F00E0DBE5 /* OpenSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC37F8541D79C42F00E0DBE5 /* OpenSansBold.ttf */; };
+		DC5635AC1DD0837900E4840B /* FitbitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5635AB1DD0837900E4840B /* FitbitManager.swift */; };
 		DC91E0411D8C4082003A4941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC91E0401D8C4082003A4941 /* Main.storyboard */; };
 		DC9631F11D6EF12100B1C43E /* ViewControllersPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */; };
 		DC9C6C641D6C98B10034DC5A /* ValidationErrorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9C6C631D6C98B10034DC5A /* ValidationErrorCell.xib */; };
@@ -131,6 +131,7 @@
 		E7C1F26D1D881C37007F9D7A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C1F26C1D881C37007F9D7A /* ProfileView.swift */; };
 		E7C2F2661DBE35630018961A /* BackendError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2F2651DBE35630018961A /* BackendError.swift */; };
 		E7C8A6751DABEAC900A64827 /* NotifcationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8A6741DABEAC900A64827 /* NotifcationView.swift */; };
+		E7D575E91DD206820018C54E /* RegistrationFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D575E81DD206820018C54E /* RegistrationFooter.swift */; };
 		E7DA95801D8018FA0079EB79 /* RTSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA957F1D8018FA0079EB79 /* RTSteps.swift */; };
 		E7DA95821D8024A50079EB79 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA95811D8024A50079EB79 /* Steps.swift */; };
 		E7E0F46C1DB6685000FB7468 /* TourAppPurchasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E0F46B1DB6685000FB7468 /* TourAppPurchasesView.swift */; };
@@ -274,7 +275,6 @@
 		7CD3B5E11DC0F3ED0089D93A /* TrialPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageController.swift; sourceTree = "<group>"; };
 		7CD3B5E81DC0F9A80089D93A /* TrialPageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageContainer.swift; sourceTree = "<group>"; };
 		7CD3B5EA1DC221FE0089D93A /* FitbitInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitbitInfo.swift; sourceTree = "<group>"; };
-		7CD3B5EC1DC2501A0089D93A /* FitbitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitbitManager.swift; sourceTree = "<group>"; };
 		7EDBE43BF809E4BF3F085A1F /* Pods-Abstract-BDesignworksTests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.release staging.xcconfig"; sourceTree = "<group>"; };
 		98101F9FE1B08B9670240835 /* Pods-Abstract-BDesignworks.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		9E9AF561EE2CD0A3A7DDD0CF /* Pods-Abstract-BDesignworks.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.debug staging.xcconfig"; sourceTree = "<group>"; };
@@ -322,6 +322,7 @@
 		DC2281271D6B470600D5A0DA /* OpenSansSemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansSemiBoldItalic.ttf; sourceTree = "<group>"; };
 		DC3311861D6C5484002A21F2 /* WelcomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelcomeScreen.storyboard; sourceTree = "<group>"; };
 		DC37F8541D79C42F00E0DBE5 /* OpenSansBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenSansBold.ttf; sourceTree = "<group>"; };
+		DC5635AB1DD0837900E4840B /* FitbitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitbitManager.swift; sourceTree = "<group>"; };
 		DC91E0401D8C4082003A4941 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersPresentation.swift; sourceTree = "<group>"; };
 		DC9C6C631D6C98B10034DC5A /* ValidationErrorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValidationErrorCell.xib; sourceTree = "<group>"; };
@@ -363,6 +364,7 @@
 		E7C1F26C1D881C37007F9D7A /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E7C2F2651DBE35630018961A /* BackendError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendError.swift; sourceTree = "<group>"; };
 		E7C8A6741DABEAC900A64827 /* NotifcationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifcationView.swift; sourceTree = "<group>"; };
+		E7D575E81DD206820018C54E /* RegistrationFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFooter.swift; sourceTree = "<group>"; };
 		E7DA957F1D8018FA0079EB79 /* RTSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTSteps.swift; sourceTree = "<group>"; };
 		E7DA95811D8024A50079EB79 /* Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
 		E7E0F46B1DB6685000FB7468 /* TourAppPurchasesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppPurchasesView.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 		196D6E161BAB0736000B7997 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DC5635AB1DD0837900E4840B /* FitbitManager.swift */,
 				DC2281081D6B469600D5A0DA /* MVPProtocol.swift */,
 				214F4FF31BFDC2D90084BE32 /* Helpers.swift */,
 				214F4FF11BFDC2CF0084BE32 /* Extensions.swift */,
@@ -719,6 +722,7 @@
 			children = (
 				DC9C6C651D6C98B60034DC5A /* ValidationErrorCell */,
 				DC2281061D6B466800D5A0DA /* RegistrationTableViewCell */,
+				E7D575E81DD206820018C54E /* RegistrationFooter.swift */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -1542,7 +1546,6 @@
 				2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */,
 				E729165C1D88459A00A6D70A /* ProfileEditingPresenter.swift in Sources */,
 				E7E0F46C1DB6685000FB7468 /* TourAppPurchasesView.swift in Sources */,
-				DC37F8581D79D40800E0DBE5 /* TrialPageView.swift in Sources */,
 				DC2280FA1D6B464500D5A0DA /* RegistrationPresenter.swift in Sources */,
 				2F7179511D53497A00231639 /* TrialPageScreen.swift in Sources */,
 				2F0729911D64C86B00A71B3C /* HealthKitManager.swift in Sources */,
@@ -1571,6 +1574,7 @@
 				DCD86E591D6DAA8C0072AFA1 /* Alerts.swift in Sources */,
 				A436BE131D6B6098004B8E8B /* HeaderView.swift in Sources */,
 				2F81CB701D51EBB900D9E93B /* AutocompleteView.swift in Sources */,
+				E7D575E91DD206820018C54E /* RegistrationFooter.swift in Sources */,
 				E7C8A6751DABEAC900A64827 /* NotifcationView.swift in Sources */,
 				E70E0FD61DA7F126009AF3F4 /* NotificationsView.swift in Sources */,
 				2F954B5B1D5384DD004D4FF1 /* ToggleButton.swift in Sources */,
@@ -1593,13 +1597,13 @@
 				21DB304919DD2D6D003A418D /* Constants.swift in Sources */,
 				DC2281091D6B469600D5A0DA /* MVPProtocol.swift in Sources */,
 				2F94CFF71D533998003A1B77 /* VerificationView.swift in Sources */,
+				DC5635AC1DD0837900E4840B /* FitbitManager.swift in Sources */,
 				E774EF8B1D899629007A8BC4 /* ProfileEditingHelpers.swift in Sources */,
 				4F5080F01D68D6CF00979890 /* BaseView.swift in Sources */,
 				DC2281171D6B46AB00D5A0DA /* RTUser.swift in Sources */,
 				4F638FFC1D6A6435006EE693 /* RollUpButton.swift in Sources */,
 				DC2281001D6B465400D5A0DA /* LoginPresenter.swift in Sources */,
 				214F4FF21BFDC2CF0084BE32 /* Extensions.swift in Sources */,
-				7CD3B5ED1DC2501A0089D93A /* FitbitManager.swift in Sources */,
 				E72552541DA3B7A8005C1B58 /* TourAppAvatarView.swift in Sources */,
 				E729165A1D883A7A00A6D70A /* ProfileEditingModel.swift in Sources */,
 				E705D56B1D8AB25E00A05EC5 /* SidebarModel.swift in Sources */,

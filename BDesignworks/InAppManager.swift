@@ -10,14 +10,21 @@ import Foundation
 import StoreKit
 
 enum ProductType: String {
-    case Trial  = "com.bdesignworks.pearup.trial"
     case Montly = "com.bdesignworks.pearup.monthly"
-    case Yearly = "com.bdesignworks.pearup.Yearly"
 }
 
 enum InAppErrors: Swift.Error {
     case noSubscriptionPurchased
     case noProductsAvailable
+    
+    var localizedDescription: String {
+        switch self {
+        case .noSubscriptionPurchased:
+            return "No subscription purchased"
+        case .noProductsAvailable:
+            return "No products available"
+        }
+    }
 }
 
 protocol InAppManagerDelegate: class {
@@ -34,24 +41,11 @@ class InAppManager: NSObject {
     
     var products: [SKProduct] = []
     
-    var isSubscriptionAvailable: Bool {
-        //TODO: check for receipt fields
-        
-        //if we unsubscribed do we still get valid receipts? - No, receipt updates automatically only if user subscribed; look at expiration date
-        //subscribed -> unsubscribed -> sunscribed - will i get receipt?
-        
-        guard let receiptUrl = Bundle.main.appStoreReceiptURL,
-            let receiptData = try? Data(contentsOf: receiptUrl),
-            let receiptJson = try? JSONSerialization.jsonObject(with: receiptData, options: []) as? [String: AnyObject],
-            let latestInfo = receiptJson?["receiptJson"] as? [String: AnyObject],
-            let expiresDate = latestInfo["expires_date_pst"] as? Double
-        else {return false}
-    
-        return Date().timeIntervalSince1970 < expiresDate
-    }
+    var isSubscriptionAvailable: Bool = true
     
     func startMonitoring() {
         SKPaymentQueue.default().add(self)
+        self.updateSubscriptionStatus()
     }
     
     func stopMonitoring() {
@@ -61,15 +55,16 @@ class InAppManager: NSObject {
     func loadProducts() {
         var productIdentifiers = Set<String>()
         productIdentifiers.insert(ProductType.Montly.rawValue)
-        productIdentifiers.insert(ProductType.Yearly.rawValue)
-        productIdentifiers.insert(ProductType.Trial.rawValue)
         let request = SKProductsRequest(productIdentifiers: productIdentifiers)
         request.delegate = self
         request.start()
     }
     
     func purchaseProduct(productType: ProductType) {
-        guard let product = self.products.filter({$0.productIdentifier == productType.rawValue}).first else {return}
+        guard let product = self.products.filter({$0.productIdentifier == productType.rawValue}).first else {
+            self.delegate?.inAppLoadingFailed(error: InAppErrors.noProductsAvailable)
+            return
+        }
         let payment = SKMutablePayment(product: product)
         SKPaymentQueue.default().add(payment)
     }
@@ -79,13 +74,33 @@ class InAppManager: NSObject {
         self.delegate?.inAppLoadingStarted()
     }
     
-    func validateReceipt() -> Bool {
-        //TODO: add receipt validation with apple server (https://sandbox.itunes.apple.com/verifyReceipt)
-        //http://www.brianjcoleman.com/tutorial-receipt-validation-in-swift/ - receipt validation example
-        return true
+    func checkSubscriptionAvailability(_ completionHandler: @escaping (Bool) -> Void) {
+        
+        //if we unsubscribed do we still get valid receipts? - No, receipt updates automatically only if user subscribed; look at expiration date
+        //subscribed -> unsubscribed -> sunscribed - will i get receipt?
+        guard let receiptUrl = Bundle.main.appStoreReceiptURL,
+            let receipt = try? Data(contentsOf: receiptUrl).base64EncodedString() as AnyObject else {
+                completionHandler(false)
+                return
+        }
+        
+        let _ = Router.User.sendReceipt(receipt: receipt).request(baseUrl: "https://sandbox.itunes.apple.com").responseObject { (response: DataResponse<RTSubscriptionResponse>) in
+            switch response.result {
+            case .success(let value):
+                guard let expirationDate = value.expirationDateMs else {completionHandler(false); return}
+                completionHandler(Date().timeIntervalSince1970 < expirationDate)
+            case .failure(let error):
+                completionHandler(false)
+                Logger.error(error)
+            }
+        }
     }
     
-    
+    func updateSubscriptionStatus() {
+        self.checkSubscriptionAvailability({ [weak self] (isSubscribed) in
+            self?.isSubscriptionAvailable = isSubscribed
+        })
+    }
 }
 
 extension InAppManager: SKPaymentTransactionObserver {
@@ -98,16 +113,23 @@ extension InAppManager: SKPaymentTransactionObserver {
                 self.delegate?.inAppLoadingStarted()
             case .purchased:
                 Logger.debug("purchased")
-                //verify
-                complete(transaction: transaction)
+                SKPaymentQueue.default().finishTransaction(transaction)
+                self.updateSubscriptionStatus()
+                self.isSubscriptionAvailable = true
                 self.delegate?.inAppLoadingSucceded(productType: productType)
             case .failed:
-                fail(transaction: transaction)
-                self.delegate?.inAppLoadingFailed(error: transaction.error)
+                Logger.debug("Failed with \(transaction.error)")
+                if let transactionError = transaction.error as? NSError,
+                    transactionError.code != SKError.paymentCancelled.rawValue {
+                    self.delegate?.inAppLoadingFailed(error: transaction.error)
+                } else {
+                    self.delegate?.inAppLoadingFailed(error: InAppErrors.noSubscriptionPurchased)
+                }
+                SKPaymentQueue.default().finishTransaction(transaction)
             case .restored:
-                //called when restored from itunes
-                restore(transaction: transaction)
-                //verify
+                SKPaymentQueue.default().finishTransaction(transaction)
+                self.updateSubscriptionStatus()
+                self.isSubscriptionAvailable = true
                 self.delegate?.inAppLoadingSucceded(productType: productType)
             case .deferred:
                 Logger.debug("deffered")
@@ -120,47 +142,6 @@ extension InAppManager: SKPaymentTransactionObserver {
         self.delegate?.inAppLoadingFailed(error: error)
     }
     
-    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        if self.isSubscriptionAvailable {
-            guard let receiptUrl = Bundle.main.appStoreReceiptURL,
-                let receiptData = try? Data(contentsOf: receiptUrl),
-                let receiptJson = try? JSONSerialization.jsonObject(with: receiptData, options: []) as? [String: AnyObject],
-                let latestInfo = receiptJson?["receiptJson"] as? [String: AnyObject],
-                let productId = latestInfo["product_id"] as? String,
-                let productType = ProductType(rawValue: productId)
-                else {self.delegate?.inAppLoadingFailed(error: nil); return}
-            self.delegate?.inAppLoadingSucceded(productType: productType)
-        }
-        else {
-            self.delegate?.inAppLoadingFailed(error: InAppErrors.noSubscriptionPurchased)
-        }
-    }
-    
-    //MARK: - IAP state methods
-    private func complete(transaction: SKPaymentTransaction) {
-        Logger.debug("complete...")
-        SKPaymentQueue.default().finishTransaction(transaction)
-    }
-    
-    private func restore(transaction: SKPaymentTransaction) {
-        guard let productIdentifier = transaction.original?.payment.productIdentifier else { return }
-        
-        Logger.debug("restore... \(productIdentifier)")
-        SKPaymentQueue.default().restoreCompletedTransactions()
-        SKPaymentQueue.default().finishTransaction(transaction)
-    }
-    
-    private func fail(transaction: SKPaymentTransaction) {
-        Logger.debug("Purchase fail...")
-        if let transactionError = transaction.error as? NSError {
-            if transactionError.code != SKError.paymentCancelled.rawValue {
-                Logger.error("Transaction Error: \(transaction.error?.localizedDescription)")
-            }
-        }
-        
-        SKPaymentQueue.default().finishTransaction(transaction)
-    }
-    
 }
 
 //MARK: - SKProducatsRequestDelegate
@@ -170,11 +151,5 @@ extension InAppManager: SKProductsRequestDelegate {
         guard response.products.count > 0 else {return}
         self.products = response.products
         Logger.debug(response.products)
-    }
-    
-    internal func request(_ request: SKRequest, didFailWithError error: Swift.Error) {
-        Logger.error("Failed to load list of products.")
-        request.cancel()
-        self.delegate?.inAppLoadingFailed(error: InAppErrors.noProductsAvailable)
     }
 }

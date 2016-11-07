@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setupProject()
 
 //        ENUser.createTestUser()
-
         let realm = try? Realm()
         if let _ = realm?.objects(ENUser.self).first,
             realm?.objects(AuthInfo.self).count == 0 {
