@@ -24,10 +24,11 @@ private extension FSScreenType {
 final class WelcomeScreen: UIViewController {
     
     struct SegueIdentifiers {
-        static let TrialModal       = "showTrialModalView"
-        static let SelectProvider   = "showProviderSelection"
-        static let Verification     = "showVerification"
-        static let TrialPage        = "showTrialPage"
+        static let TrialModal               = "showTrialModalView"
+        static let SelectProvider           = "showProviderSelection"
+        static let Verification             = "showVerification"
+        static let TrialPage                = "showTrialPage"
+        static let VerificationWithAccount  = "showVerificationWithAccount"
     }
 
     struct Constants {
@@ -71,6 +72,12 @@ final class WelcomeScreen: UIViewController {
             segue.destination.transitioningDelegate = self
             segue.destination.modalPresentationStyle = .custom
             (segue.destination as? TrialPageScreen)?.delegate = self
+        case SegueIdentifiers.VerificationWithAccount:
+            (segue.destination as? VerificationView)?.shouldCheckForRegistration = true
+            (segue.destination as? VerificationView)?.shouldCheckForProvider = false
+        case SegueIdentifiers.Verification:
+            (segue.destination as? VerificationView)?.shouldCheckForRegistration = false
+            (segue.destination as? VerificationView)?.shouldCheckForProvider = false
         default:
             super.prepare(for: segue, sender: sender)
         }
@@ -82,6 +89,10 @@ final class WelcomeScreen: UIViewController {
     
     @IBAction func noAction(_ sender: AnyObject) {
         self.performSegue(withIdentifier: SegueIdentifiers.TrialModal, sender: nil)
+    }
+    
+    @IBAction func accountExistTapped(_sender: AnyObject) {
+        self.performSegue(withIdentifier: SegueIdentifiers.VerificationWithAccount, sender: nil)
     }
 }
 

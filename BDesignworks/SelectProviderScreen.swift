@@ -84,6 +84,9 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
             segue.destination.transitioningDelegate = self
             segue.destination.modalPresentationStyle = .custom
             (segue.destination as? TrialPageScreen)?.delegate = self
+        case SegueIdentifiers.ShowVerify:
+            (segue.destination as? VerificationView)?.shouldCheckForRegistration = false
+            (segue.destination as? VerificationView)?.shouldCheckForProvider = true
         default:
             super.prepare(for: segue, sender: sender)
         }

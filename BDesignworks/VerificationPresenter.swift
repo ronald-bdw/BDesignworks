@@ -20,6 +20,10 @@ protocol IVerificationModelPresenter: class {
     func phoneCodeReceived()
     func errorOccured(error: RTError?)
     func loadingStarted()
+    var shouldCheckProvider: Bool {get}
+    var shouldCheckRegistration: Bool {get}
+    func userHasNoProvider()
+    func userNotRegistered()
 }
 
 class VerificationPresenter {
@@ -36,12 +40,30 @@ extension VerificationPresenter: IVerificationViewPresenter {
         
         guard self.model?.validateCode(lCode) == true &&
             self.model?.validatePhone(lPhone) == true else {return}
-        
-        self.model?.submitPhone(lCode + lPhone)
+        guard let lView = self.view else {return}
+        if lView.shouldCheckProvider || lView.shouldCheckRegistration {
+            self.model?.checkUserStatus(phone: lCode + lPhone)
+        }
+        else {
+            self.model?.submitPhone(lCode + lPhone)
+        }
     }
 }
 
 extension VerificationPresenter: IVerificationModelPresenter {
+    internal var shouldCheckProvider: Bool {
+        get {
+            return self.view?.shouldCheckProvider ?? false
+        }
+    }
+    
+    internal var shouldCheckRegistration: Bool {
+        get {
+            return self.view?.shouldCheckRegistration ?? false
+        }
+    }
+
+
     func phoneNotValid() {
         self.view?.showPhoneInvalidView()
     }
@@ -73,6 +95,14 @@ extension VerificationPresenter: IVerificationModelPresenter {
             return
         }
         self.view?.setLoadingState(.failed)
+    }
+    
+    func userHasNoProvider() {
+        self.view?.showNoProviderAlert()
+    }
+    
+    func userNotRegistered() {
+        self.view?.showNotRegisteredAlert()
     }
 }
 
