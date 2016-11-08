@@ -522,25 +522,43 @@
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eyh-hi-2Ak">
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Click here if you have an account with PearUp">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="15" name="OpenSans"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        <integer key="NSUnderline" value="1"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="accountExistTappedWith_sender:" destination="c4d-eD-W8X" eventType="touchUpInside" id="sfd-cc-1Bh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="0hv-e5-Pt3" secondAttribute="bottom" priority="750" constant="27" id="4aR-Xm-HyL"/>
+                                    <constraint firstAttribute="bottom" secondItem="0hv-e5-Pt3" secondAttribute="bottom" constant="70" id="4aR-Xm-HyL"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0hv-e5-Pt3" secondAttribute="trailing" constant="16" id="8gl-wt-m9k"/>
                                     <constraint firstItem="Rd7-Dk-h0J" firstAttribute="centerX" secondItem="aFb-vO-jqj" secondAttribute="centerX" id="FRB-x7-3fB"/>
                                     <constraint firstItem="0hv-e5-Pt3" firstAttribute="leading" secondItem="hA7-DQ-aj2" secondAttribute="trailing" constant="20" id="Fb0-ms-K2I"/>
+                                    <constraint firstItem="Eyh-hi-2Ak" firstAttribute="centerX" secondItem="aFb-vO-jqj" secondAttribute="centerX" id="HwG-Jz-X8K"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hA7-DQ-aj2" secondAttribute="bottom" constant="10" id="IcV-0q-4YO"/>
                                     <constraint firstItem="hA7-DQ-aj2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QX0-re-Tzi" secondAttribute="bottom" constant="10" id="NGp-ps-s7K"/>
                                     <constraint firstItem="Rd7-Dk-h0J" firstAttribute="top" secondItem="aFb-vO-jqj" secondAttribute="top" constant="11" id="Rnh-zs-uJm"/>
                                     <constraint firstItem="0hv-e5-Pt3" firstAttribute="centerY" secondItem="hA7-DQ-aj2" secondAttribute="centerY" id="Ygu-K5-VVl"/>
                                     <constraint firstItem="QX0-re-Tzi" firstAttribute="leading" secondItem="aFb-vO-jqj" secondAttribute="leading" constant="10" id="a2L-L6-cmG"/>
-                                    <constraint firstAttribute="height" constant="220" id="aDr-0V-W10"/>
+                                    <constraint firstAttribute="height" constant="250" id="aDr-0V-W10"/>
                                     <constraint firstAttribute="bottom" secondItem="hA7-DQ-aj2" secondAttribute="bottom" priority="750" constant="27" id="b7R-z8-PyA"/>
                                     <constraint firstItem="hA7-DQ-aj2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aFb-vO-jqj" secondAttribute="leading" constant="16" id="cGk-8c-F6v"/>
                                     <constraint firstItem="0hv-e5-Pt3" firstAttribute="width" secondItem="hA7-DQ-aj2" secondAttribute="width" id="d9f-hn-4mK"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0hv-e5-Pt3" secondAttribute="bottom" constant="10" id="e1e-sw-ZSY"/>
                                     <constraint firstItem="QX0-re-Tzi" firstAttribute="top" secondItem="Rd7-Dk-h0J" secondAttribute="bottom" constant="19" id="fo9-P5-3iu"/>
                                     <constraint firstItem="hA7-DQ-aj2" firstAttribute="leading" secondItem="aFb-vO-jqj" secondAttribute="leading" priority="750" constant="23" id="jQW-6g-Vve"/>
+                                    <constraint firstAttribute="bottom" secondItem="Eyh-hi-2Ak" secondAttribute="bottom" constant="16" id="tnj-hu-AmN"/>
                                     <constraint firstAttribute="trailing" secondItem="0hv-e5-Pt3" secondAttribute="trailing" priority="750" constant="23" id="wHa-Ft-OhQ"/>
                                     <constraint firstAttribute="trailing" secondItem="QX0-re-Tzi" secondAttribute="trailing" constant="10" id="wb0-Rk-67F"/>
                                 </constraints>
@@ -579,6 +597,7 @@
                         <segue destination="nZU-o6-lK5" kind="presentation" identifier="showTrialModalView" modalPresentationStyle="fullScreen" id="bZz-Ds-D8R"/>
                         <segue destination="jLg-Mh-FPe" kind="show" identifier="showVerification" id="zb5-s4-hK2"/>
                         <segue destination="SlZ-ze-Mok" kind="show" identifier="showTrialPage" id="1Wq-CH-wIk"/>
+                        <segue destination="jLg-Mh-FPe" kind="show" identifier="showVerificationWithAccount" id="wck-tJ-25x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4z1-3F-cEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -704,7 +723,7 @@
                         <constraints>
                             <constraint firstItem="Pg6-bd-54X" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cGW-W3-Igc" secondAttribute="top" constant="16" id="6Rd-62-hWR"/>
                             <constraint firstItem="P6F-iB-b4c" firstAttribute="centerX" secondItem="9sq-x7-HeC" secondAttribute="centerX" id="I3C-cC-LYr"/>
-                            <constraint firstItem="vaL-bS-3IT" firstAttribute="top" secondItem="Pg6-bd-54X" secondAttribute="bottom" priority="999" constant="280" id="Im3-qb-K6X"/>
+                            <constraint firstItem="vaL-bS-3IT" firstAttribute="top" secondItem="Pg6-bd-54X" secondAttribute="bottom" priority="999" constant="250" id="Im3-qb-K6X"/>
                             <constraint firstItem="9sq-x7-HeC" firstAttribute="top" secondItem="S04-Y9-Gcf" secondAttribute="bottom" constant="-20" id="JLN-fM-9ck"/>
                             <constraint firstItem="vaL-bS-3IT" firstAttribute="top" secondItem="9sq-x7-HeC" secondAttribute="bottom" id="Mwh-xY-OC7"/>
                             <constraint firstItem="Pg6-bd-54X" firstAttribute="centerX" secondItem="9sq-x7-HeC" secondAttribute="centerX" id="Sbg-bA-jKG"/>
@@ -724,8 +743,8 @@
         <image name="Logo" width="170" height="228"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9Qt-G8-bdI"/>
-        <segue reference="8ca-PQ-ytg"/>
-        <segue reference="221-qK-ZWb"/>
+        <segue reference="wck-tJ-25x"/>
+        <segue reference="1Wq-CH-wIk"/>
+        <segue reference="bZz-Ds-D8R"/>
     </inferredMetricsTieBreakers>
 </document>

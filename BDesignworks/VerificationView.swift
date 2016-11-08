@@ -113,6 +113,10 @@ protocol IVerificationView: class {
     func dismissCodeInvalidView()
     func setLoadingState(_ state: LoadingState)
     func showErrorView(_ title: String, content: String, errorType: BackendError)
+    var shouldCheckProvider: Bool {get}
+    var shouldCheckRegistration: Bool {get}
+    func showNoProviderAlert()
+    func showNotRegisteredAlert()
 }
 
 final class VerificationView: UIViewController {
@@ -128,6 +132,9 @@ final class VerificationView: UIViewController {
         static let errorViewTopOffset    : CGFloat = 10.0
         static let errorViewBottomOffset : CGFloat = 25.0
     }
+    
+    var shouldCheckForProvider: Bool = false
+    var shouldCheckForRegistration: Bool = false
     
     let rollButtonTitle = "Area Code"
     
@@ -321,6 +328,18 @@ final class VerificationView: UIViewController {
 }
 
 extension VerificationView: IVerificationView {
+    internal var shouldCheckProvider: Bool {
+        get {
+            return self.shouldCheckForProvider
+        }
+    }
+
+    internal var shouldCheckRegistration: Bool {
+        get {
+            return self.shouldCheckForRegistration
+        }
+    }
+
     func showPhoneInvalidView() {
         self.showErrorView()
     }
@@ -383,6 +402,15 @@ extension VerificationView: IVerificationView {
         ShowErrorAlert(title, message: content)
     }
     
+    func showNoProviderAlert() {
+        SVProgressHUD.dismiss()
+        ShowNoProviderAlert()
+    }
+    
+    func showNotRegisteredAlert() {
+        SVProgressHUD.dismiss()
+        ShowNotRegisteredAlert()
+    }
 }
 
 extension VerificationView: MVPView {

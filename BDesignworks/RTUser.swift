@@ -19,6 +19,7 @@ extension Router {
         case sendAvatar(id: Int, image: UIImage)
         case enableNotificationOnZendesk
         case disableNotificationOnZendesk
+        case checkUserStatus(phone: String)
     }
 }
 
@@ -45,6 +46,7 @@ extension Router.User: RouterProtocol {
         case .sendAvatar(let id,_)        : return "/users/\(id)"
         case .enableNotificationOnZendesk : return "/notifications"
         case .disableNotificationOnZendesk: return "/notifications/message_push"
+        case .checkUserStatus           : return "/registration_status"
         }
     }
     
@@ -71,6 +73,8 @@ extension Router.User: RouterProtocol {
         case .enableNotificationOnZendesk:
             
             return ["notification":["kind":"message_push"] as AnyObject]
+        case .checkUserStatus(let phone):
+            return ["phone_number": phone as AnyObject]
         default:
             return nil
         }
@@ -117,5 +121,19 @@ class RTAuthInfoResponse: Mappable {
     
     func mapping(map: Map) {
         self.authInfo <- map["auth_phone_code"]
+    }
+}
+
+class RTUserStatusResponse: Mappable {
+    var isRegistered: Bool = false
+    var hasProvider: Bool = false
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        self.isRegistered <- map["phone_registered"]
+        self.hasProvider = map.JSON["provider"] as? String != nil
     }
 }

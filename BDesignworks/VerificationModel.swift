@@ -12,6 +12,7 @@ protocol IVerificationModel {
     func submitPhone(_ phone: String)
     func validatePhone(_ phone: String) -> Bool
     func validateCode(_ code: String) -> Bool
+    func checkUserStatus(phone: String)
 }
 
 class VerificationModel {
@@ -55,6 +56,29 @@ class VerificationModel {
             case .failure(let error):
                 Logger.error("\(error)")
                 self?.presenter?.errorOccured(error: error as? RTError)
+            }
+        }
+    }
+    
+    func checkUserStatus(phone: String) {
+        self.presenter?.loadingStarted()
+        
+        let _ = Router.User.checkUserStatus(phone: phone).request().responseObject { [weak self] (response: DataResponse<RTUserStatusResponse>) in
+            switch response.result {
+            case .success(let value):
+                guard let lPresenter = self?.presenter else {self?.presenter?.errorOccured(error: nil); return}
+                if lPresenter.shouldCheckRegistration && value.isRegistered == false {
+                    self?.presenter?.userNotRegistered()
+                } else if lPresenter.shouldCheckProvider && value.hasProvider == false {
+                    self?.presenter?.userHasNoProvider()
+                }
+                else {
+                    self?.receivePhoneCode(phone)
+                }
+            case .failure(let error):
+                Logger.error("\(error)")
+                self?.presenter?.errorOccured(error: error as? RTError)
+                
             }
         }
     }
