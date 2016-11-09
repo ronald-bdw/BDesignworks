@@ -434,7 +434,7 @@
         <scene sceneID="nUd-NQ-3Bv">
             <objects>
                 <navigationController storyboardIdentifier="WelcomeController" id="rys-JC-bgs" customClass="CustomNavigationController" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a3u-v3-yAf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a3u-v3-yAf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -723,7 +723,7 @@
                         <constraints>
                             <constraint firstItem="Pg6-bd-54X" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cGW-W3-Igc" secondAttribute="top" constant="16" id="6Rd-62-hWR"/>
                             <constraint firstItem="P6F-iB-b4c" firstAttribute="centerX" secondItem="9sq-x7-HeC" secondAttribute="centerX" id="I3C-cC-LYr"/>
-                            <constraint firstItem="vaL-bS-3IT" firstAttribute="top" secondItem="Pg6-bd-54X" secondAttribute="bottom" priority="999" constant="250" id="Im3-qb-K6X"/>
+                            <constraint firstItem="vaL-bS-3IT" firstAttribute="top" secondItem="Pg6-bd-54X" secondAttribute="bottom" priority="999" constant="310" id="Im3-qb-K6X"/>
                             <constraint firstItem="9sq-x7-HeC" firstAttribute="top" secondItem="S04-Y9-Gcf" secondAttribute="bottom" constant="-20" id="JLN-fM-9ck"/>
                             <constraint firstItem="vaL-bS-3IT" firstAttribute="top" secondItem="9sq-x7-HeC" secondAttribute="bottom" id="Mwh-xY-OC7"/>
                             <constraint firstItem="Pg6-bd-54X" firstAttribute="centerX" secondItem="9sq-x7-HeC" secondAttribute="centerX" id="Sbg-bA-jKG"/>
