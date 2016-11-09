@@ -47,6 +47,33 @@ extension UIViewController {
         }
         return presentedController
     }
+    
+    func moveToMainControllerTransitioned() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+            let window = appDelegate.window
+            else {return}
+        let desiredViewController = Storyboard.main.storyboard.instantiateViewController(withIdentifier: "SWRevealViewController")
+        
+        let view1 = self.view!
+        let view2 = desiredViewController.view!
+        
+        view2.frame = window.bounds
+        window.addSubview(view2)
+        
+        let transition = CATransition()
+        transition.startProgress = 0
+        transition.endProgress = 1
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromLeft
+        transition.duration = 0.2
+        
+        view1.layer.add(transition, forKey: "transition")
+        view2.layer.add(transition, forKey: "transition")
+        
+        FSDispatch_after_short(0.2) {
+            window.rootViewController = desiredViewController
+        }
+    }
 }
 
 public extension Sequence {

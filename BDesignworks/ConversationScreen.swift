@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SideMenu
 import UserNotifications
 
 enum StatusCellStatus
@@ -47,11 +46,6 @@ class ConversationScreen: UIViewController {
         super.viewDidLoad()
         
         self.loadMainUser()
-        
-        SideMenuManager.menuPresentMode = .viewSlideOut
-        SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
-        SideMenuManager.menuFadeStatusBar = false
         
         UIApplication.shared.statusBarStyle = .lightContent
         
@@ -107,7 +101,8 @@ class ConversationScreen: UIViewController {
         let buttonWidth = navigationBarImageHeight * rightBarImage.size.width / rightBarImage.size.height
         let rightBarButton = UIButton(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: navigationBarImageHeight))
         rightBarButton.setImage(rightBarImage, for: UIControlState())
-        rightBarButton.addTarget(self, action: #selector(self.showSideMenu), for: .touchUpInside)
+        rightBarButton.addTarget(self.revealViewController(), action: #selector(self.revealViewController().rightRevealToggle(_:)), for: .touchUpInside)
+        self.navigationController?.navigationBar.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
     }
     
@@ -152,9 +147,5 @@ class ConversationScreen: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-    
-    func showSideMenu(){
-        self.performSegue(withIdentifier: "toSideMenu", sender: nil)
     }
 }

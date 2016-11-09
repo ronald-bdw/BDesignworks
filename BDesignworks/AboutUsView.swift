@@ -11,6 +11,6 @@ import UIKit
 class AboutUsView: UIViewController {
     
     @IBAction func backPressed(sender: AnyObject) {
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        self.moveToMainControllerTransitioned()
     }
 }

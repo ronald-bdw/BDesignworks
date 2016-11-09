@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SideMenu
 
 class NotificationView: BaseView {
     
@@ -45,10 +44,10 @@ class NotificationView: BaseView {
         var presentedController = UIApplication.shared.windows.first?.rootViewController
         
         var nextController = presentedController?.presentedViewController
-        while !(nextController is UISideMenuNavigationController) && nextController != nil  {
-            presentedController = nextController
-            nextController = presentedController?.presentedViewController
-        }
+//        while !(nextController is UISideMenuNavigationController) && nextController != nil  {
+//            presentedController = nextController
+//            nextController = presentedController?.presentedViewController
+//        }
         presentedController?.presentedViewController?.dismiss(animated: true, completion: nil)
         
         self.removeFromSuperviewAnimated()

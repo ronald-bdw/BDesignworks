@@ -36,7 +36,7 @@ class ProfileView: UITableViewController {
     }
     
     @IBAction func backPressed(sender: AnyObject) {
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        self.moveToMainControllerTransitioned()
     }
 }
 

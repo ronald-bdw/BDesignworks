@@ -68,7 +68,7 @@ class SettingsView: UITableViewController {
    
     //MARK: - Buttons action
     @IBAction func backPressed(sender: AnyObject) {
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        self.moveToMainControllerTransitioned()
     }
     @IBAction func notificationSwitcherTrigered(_ sender: AnyObject) {
         self.performSegue(withIdentifier: SegueIdentifiers.Notifications, sender: self)

@@ -23,6 +23,7 @@
 @import SAMKeychain;
 @import SVProgressHUD;
 @import SDWebImage;
+@import SWRevealViewController;
 
 
 #import <Smooch/Smooch.h>
