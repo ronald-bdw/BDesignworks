@@ -36,12 +36,16 @@ class VerificationPresenter {
 extension VerificationPresenter: IVerificationViewPresenter {
     func submitTapped(_ code: String?, phone: String?) {
         guard let lCode = code else {return}
-        guard let lPhone = phone else {return}
+        guard var lPhone = phone else {return}
         
         guard self.model?.validateCode(lCode) == true &&
             self.model?.validatePhone(lPhone) == true else {return}
         guard let lView = self.view else {return}
+        if lCode == "+61" && lPhone.substring(to: lPhone.index(after: lPhone.startIndex)) == "0" {
+            lPhone = lPhone.substring(from: lPhone.index(after: lPhone.startIndex))
+        }
         if lView.shouldCheckProvider || lView.shouldCheckRegistration {
+            
             self.model?.checkUserStatus(phone: lCode + lPhone)
         }
         else {
