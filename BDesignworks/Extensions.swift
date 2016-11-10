@@ -65,12 +65,12 @@ extension UIViewController {
         transition.endProgress = 1
         transition.type = kCATransitionPush
         transition.subtype = kCATransitionFromLeft
-        transition.duration = 0.2
+        transition.duration = 0.25
         
         view1.layer.add(transition, forKey: "transition")
         view2.layer.add(transition, forKey: "transition")
         
-        FSDispatch_after_short(0.2) {
+        FSDispatch_after_short(0.25) {
             window.rootViewController = desiredViewController
         }
     }

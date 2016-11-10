@@ -42,6 +42,8 @@ class SidebarView: UITableViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    @IBOutlet var leadingTableViewCellsConstraints: [NSLayoutConstraint]!
+    
     let rowHeight = CGFloat(90)
     let profileRowHeight = CGFloat(164)
     
@@ -53,6 +55,12 @@ class SidebarView: UITableViewController {
         let _ = SidebarMVP(controller: self)
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "right-menu-bg"))
         self.presenter?.viewLoaded()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let leftViewOffset = self.parent?.view.subviews.last?.fs_x else {return}
+        self.leadingTableViewCellsConstraints.forEach({$0.constant = self.view.fs_width + leftViewOffset})
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
