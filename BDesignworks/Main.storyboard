@@ -42,7 +42,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="oue-tC-Lb9">
-                                                            <rect key="frame" x="152" y="29" width="70" height="70"/>
+                                                            <rect key="frame" x="152" y="29.5" width="70" height="70"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="H5R-HM-ujI"/>
@@ -62,13 +62,13 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e41-Vb-vjE">
-                                                            <rect key="frame" x="142" y="107" width="90" height="22"/>
+                                                            <rect key="frame" x="146.5" y="107.5" width="81.5" height="21"/>
                                                             <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                             <color key="textColor" red="0.92156862750000001" green="0.78823529410000004" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email@email.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNh-2J-ObK">
-                                                            <rect key="frame" x="129" y="129" width="116" height="20"/>
+                                                            <rect key="frame" x="132.5" y="128.5" width="109" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -114,7 +114,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRe-XW-yqs">
-                                                            <rect key="frame" x="84" y="36.5" width="56" height="21"/>
+                                                            <rect key="frame" x="84" y="38.5" width="56" height="17.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -160,7 +160,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BH9-Wm-Q1f">
-                                                            <rect key="frame" x="84" y="36.5" width="41" height="21"/>
+                                                            <rect key="frame" x="84" y="38.5" width="39" height="17.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -211,7 +211,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk6-JG-Bdx">
-                                                            <rect key="frame" x="84" y="36.5" width="65" height="21"/>
+                                                            <rect key="frame" x="84" y="38.5" width="63" height="17.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -439,8 +439,22 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat is disabled due to subscription missing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMb-uX-soE">
+                                <rect key="frame" x="16" y="291.5" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehi-qe-Vpw">
+                                <rect key="frame" x="161" y="350" width="53" height="30"/>
+                                <state key="normal" title="Restore"/>
+                                <connections>
+                                    <action selector="restorePressed:" destination="oaQ-BK-TCI" eventType="touchUpInside" id="L1r-qj-C0N"/>
+                                </connections>
+                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9Y-8L-rhD">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -449,6 +463,11 @@
                             <constraint firstItem="Z9Y-8L-rhD" firstAttribute="leading" secondItem="1IT-jf-sba" secondAttribute="leading" id="4jj-ee-Gbn"/>
                             <constraint firstItem="Z9Y-8L-rhD" firstAttribute="top" secondItem="Vtn-Bi-2KU" secondAttribute="bottom" id="Ase-PS-YRd"/>
                             <constraint firstAttribute="trailing" secondItem="Z9Y-8L-rhD" secondAttribute="trailing" id="HIW-QT-1Uu"/>
+                            <constraint firstAttribute="trailing" secondItem="eMb-uX-soE" secondAttribute="trailing" constant="16" id="SGX-Bo-D1h"/>
+                            <constraint firstItem="eMb-uX-soE" firstAttribute="leading" secondItem="1IT-jf-sba" secondAttribute="leading" constant="16" id="h9H-t4-KLn"/>
+                            <constraint firstItem="eMb-uX-soE" firstAttribute="centerY" secondItem="1IT-jf-sba" secondAttribute="centerY" id="jzn-n3-ViW"/>
+                            <constraint firstItem="ehi-qe-Vpw" firstAttribute="centerX" secondItem="1IT-jf-sba" secondAttribute="centerX" id="rbf-tk-Q1F"/>
+                            <constraint firstItem="ehi-qe-Vpw" firstAttribute="top" secondItem="eMb-uX-soE" secondAttribute="bottom" constant="38" id="zyH-Ub-iAJ"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -461,7 +480,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcF-mq-Bas" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5514" y="1447"/>
+            <point key="canvasLocation" x="3854" y="-108"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="aru-lt-kmI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="rd8-Fq-ioC" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CBJ-Bo-2Oc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="9i3-0Q-h7S">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="I5z-f9-QjE" kind="relationship" relationship="rootViewController" id="xXE-Mf-BJU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jjh-m0-Xxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4641" y="-108"/>
         </scene>
     </scenes>
     <resources>
@@ -474,4 +515,7 @@
         <image name="ShareIcon" width="134" height="144"/>
         <image name="back" width="14" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="xXE-Mf-BJU"/>
+    </inferredMetricsTieBreakers>
 </document>

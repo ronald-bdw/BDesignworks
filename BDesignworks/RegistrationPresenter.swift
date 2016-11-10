@@ -27,7 +27,31 @@ class RegistrationPresenter {
     weak var view: ViewProtocol?
     var model: ModelProtocol?
     
-    required init() {}
+    required init() {
+        InAppManager.shared.delegate = self
+    }
+}
+
+extension RegistrationPresenter: InAppManagerDelegate {
+    func inAppLoadingStarted() {
+        self.view?.setLoadingState(.loading)
+    }
+    
+    func inAppLoadingSucceded(productType: ProductType) {
+        if let smsCode = UserDefaults.standard.string(forKey: FSUserDefaultsKey.SmsCode) {
+            self.model?.register(smsCode: smsCode)
+        }
+        else {
+            self.view?.setLoadingState(.failed)
+        }
+    }
+    
+    func inAppLoadingFailed(error: Swift.Error?) {
+        self.view?.setLoadingState(.failed)
+        if let error = error {
+            self.view?.showErrorView("Sorry", content: error.localizedDescription, errorType: nil)
+        }
+    }
 }
 
 extension RegistrationPresenter: IRegistrationModelPresenter {
@@ -37,6 +61,7 @@ extension RegistrationPresenter: IRegistrationModelPresenter {
     
     func loadingSuccessed(user: ENUser) {
         self.view?.setLoadingState(.done)
+        self.view?.presentNextScreen()
     }
     
     func requestFailed(_ error: RTError?) {
@@ -59,11 +84,16 @@ extension RegistrationPresenter: IRegistrationModelPresenter {
 
 extension RegistrationPresenter: IRegistrationViewPresenter {
     func submitTapped() {
-        if let smsCode = UserDefaults.standard.string(forKey: FSUserDefaultsKey.SmsCode) {
-            self.model?.register(smsCode: smsCode)
+        if InAppManager.shared.isSubscriptionAvailable {
+            if let smsCode = UserDefaults.standard.string(forKey: FSUserDefaultsKey.SmsCode) {
+                self.model?.register(smsCode: smsCode)
+            }
+            else {
+                self.view?.setLoadingState(.failed)
+            }
         }
         else {
-            self.view?.setLoadingState(.failed)
+            self.view?.presentInappAlert()
         }
     }
     
@@ -77,6 +107,10 @@ extension RegistrationPresenter: IRegistrationViewPresenter {
     
     func resendPhoneCodeTapped() {
         self.model?.receivePhoneCode()
+    }
+    
+    func userFieldModified(type: RegistrationCellType, content: String) {
+        self.model?.updateRegistrationUser(type: type, text: content)
     }
 }
 

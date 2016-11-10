@@ -50,7 +50,7 @@
                                     <constraint firstAttribute="height" constant="397" id="G7U-Ze-dCC"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="registrationFooter" id="LV4-xq-7QY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="registrationFooter" id="LV4-xq-7QY" customClass="RegistrationFooter" customModule="PearUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LV4-xq-7QY" id="VSQ-8c-OB6">
@@ -62,7 +62,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="pL5-bO-bOV"/>
                                                     </constraints>
-                                                    <state key="normal" title="Submit">
+                                                    <state key="normal" title="Choose your plan">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -82,6 +82,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="PGU-dW-cgv" secondAttribute="trailing" constant="47" id="rpO-Pq-xQX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="submitButton" destination="PGU-dW-cgv" id="X0p-dN-dDh"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="emptyCell" id="A5Y-bs-LY3">
                                         <rect key="frame" x="0.0" y="106" width="375" height="78"/>
