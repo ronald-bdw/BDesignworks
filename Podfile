@@ -21,7 +21,7 @@ abstract_target 'Abstract' do
     pod 'SDWebImage'
     pod 'SVProgressHUD'
     pod 'Smooch'
-    pod 'SideMenu'
+    pod 'SWRevealViewController'
     #pod 'Reachability'
     #pod 'SVProgressHUD'
     #pod 'MKStoreKit'

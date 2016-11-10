@@ -86,7 +86,11 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
             (segue.destination as? TrialPageScreen)?.delegate = self
         case SegueIdentifiers.ShowVerify:
             (segue.destination as? VerificationView)?.shouldCheckForRegistration = false
-            (segue.destination as? VerificationView)?.shouldCheckForProvider = true
+            if UserDefaults.standard.bool(forKey: FSUserDefaultsKey.IsProviderChosen) {
+                (segue.destination as? VerificationView)?.shouldCheckForProvider = true
+            } else {
+                (segue.destination as? VerificationView)?.shouldCheckForProvider = false
+            }
         default:
             super.prepare(for: segue, sender: sender)
         }

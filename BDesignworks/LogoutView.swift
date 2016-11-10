@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SideMenu
 
 class LogoutView: UIViewController {
     
