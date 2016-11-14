@@ -52,7 +52,7 @@ extension Router.User: RouterProtocol {
     
     var parameters: [String : AnyObject]? {
         switch self {
-        case .getAuthPhoneCode(let phone):  return ["phone_number": phone as AnyObject]
+        case .getAuthPhoneCode(let phone):  return ["phone_number": phone as AnyObject, "device_type": "ios" as AnyObject]
         case .register(let firstName, let lastname, let email, let phone, let authPhoneCode, let smsCode):
             return ["first_name" : firstName as AnyObject,
                     "last_name" : lastname as AnyObject,
