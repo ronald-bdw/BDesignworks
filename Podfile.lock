@@ -4,6 +4,7 @@ PODS:
     - Fabric (~> 1.6.3)
   - Fabric (1.6.8)
   - FSHelpers+Swift (2.2)
+  - Nocilla (0.11.0)
   - ObjectMapper (2.0.0)
   - Realm (1.1.0):
     - Realm/Headers (= 1.1.0)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - FSHelpers+Swift (from `https://github.com/fs/FSHelper.git`, branch `master`)
+  - Nocilla
   - ObjectMapper
   - Realm
   - RealmSwift
@@ -57,6 +59,7 @@ SPEC CHECKSUMS:
   Crashlytics: 4391d8df0b125345e9f209c5db6e7f40a6a8435d
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   FSHelpers+Swift: df9494a1d09ac433dcb3a88dcec6546a7a09c17b
+  Nocilla: 7af7a386071150cc8aa5da4da97d060f049dd61c
   ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
   Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
   RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
@@ -67,6 +70,6 @@ SPEC CHECKSUMS:
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 70659fb490b7a7c83a48014d9c0b3d07793c8329
+PODFILE CHECKSUM: baac6e8ab640522b501589b6b476a0514846e639
 
 COCOAPODS: 1.1.1

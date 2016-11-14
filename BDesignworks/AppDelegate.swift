@@ -149,8 +149,11 @@ extension AppDelegate {
         
         self.setupSVProgressHUD()
         
-        //setup Crashlytics
-        Fabric.with([Crashlytics.self])
+        #if TEST
+        #else
+            //setup Crashlytics
+            Fabric.with([Crashlytics.self])
+        #endif
         
         DispatchQueue.global().async {  let _ = countryCodes }
         
