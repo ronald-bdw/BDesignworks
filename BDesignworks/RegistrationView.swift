@@ -18,6 +18,7 @@ protocol IRegistrationView: class {
     func showPhoneCodeReceivedView()
     func presentNextScreen()
     func presentInappAlert()
+    func changeButtonState(subscribed: Bool)
 }
 
 
@@ -43,6 +44,11 @@ class RegistrationView: UIViewController {
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.presenter?.viewLoaded()
     }
     
     @IBAction func submitPressed(_ sender: AnyObject){
@@ -164,6 +170,7 @@ extension RegistrationView: UITextFieldDelegate {
 extension RegistrationView: IRegistrationView {
     func updateValidationErrors() {
         self.tableView.reloadData()
+        SVProgressHUD.dismiss()
     }
     
     func setLoadingState(_ state: LoadingState) {
@@ -172,7 +179,6 @@ extension RegistrationView: IRegistrationView {
             SVProgressHUD.show()
         case .done:
             SVProgressHUD.dismiss()
-            self.submitButton?.setTitle("Submit", for: .normal)
         case .failed:
             SVProgressHUD.dismiss()
             ShowErrorAlert()
@@ -203,6 +209,15 @@ extension RegistrationView: IRegistrationView {
     
     func presentInappAlert() {
         ShowInAppAlert()
+    }
+    
+    func changeButtonState(subscribed: Bool) {
+        if subscribed {
+            self.submitButton?.setTitle("Submit", for: .normal)
+        } else {
+            self.submitButton?.setTitle("Choose your plan", for: .normal)
+        }
+        self.tableView.reloadData()
     }
 }
 

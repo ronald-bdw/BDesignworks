@@ -9,6 +9,7 @@
 import Foundation
 
 protocol IRegistrationViewPresenter: class {
+    func viewLoaded()
     func submitTapped()
     func getRegistrationUser() -> RegistrationUser?
     func registrationFieldUpdated(type: RegistrationCellType, text: String)
@@ -52,6 +53,10 @@ extension RegistrationPresenter: InAppManagerDelegate {
             self.view?.showErrorView("Sorry", content: error.localizedDescription, errorType: nil)
         }
     }
+    
+    func subscriptionStatusUpdated(value: Bool) {
+        self.view?.changeButtonState(subscribed: value)
+    }
 }
 
 extension RegistrationPresenter: IRegistrationModelPresenter {
@@ -83,6 +88,10 @@ extension RegistrationPresenter: IRegistrationModelPresenter {
 }
 
 extension RegistrationPresenter: IRegistrationViewPresenter {
+    func viewLoaded() {
+        self.view?.changeButtonState(subscribed: InAppManager.shared.isSubscriptionAvailable)
+    }
+    
     func submitTapped() {
         if InAppManager.shared.isSubscriptionAvailable {
             if let smsCode = UserDefaults.standard.string(forKey: FSUserDefaultsKey.SmsCode) {

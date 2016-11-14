@@ -177,4 +177,8 @@ extension ConversationScreen: InAppManagerDelegate {
         guard let error = error else {return}
         ShowErrorAlert(message: error.localizedDescription)
     }
+    
+    func subscriptionStatusUpdated(value: Bool) {
+        
+    }
 }

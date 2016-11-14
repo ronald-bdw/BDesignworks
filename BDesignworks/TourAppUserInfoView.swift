@@ -12,7 +12,6 @@ import UserNotifications
 typealias TourAppUserInfoMVP = MVPContainer<TourAppUserInfoView, TourAppUserInfoPresenter, TourAppUserInfoModel>
 
 protocol ITourAppUserInfoView: class {
-    func updateView(title: String)
     func setLoadingState (_ state: LoadingState)
     func updateValidationErrors()
     
@@ -159,9 +158,6 @@ extension TourAppUserInfoView: UITextFieldDelegate {
 }
 
 extension TourAppUserInfoView: ITourAppUserInfoView {
-    func updateView(title: String) {
-        self.title = title
-    }
     
     func updateValidationErrors() {
         self.tableView.reloadData()
