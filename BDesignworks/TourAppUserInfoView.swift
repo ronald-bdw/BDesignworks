@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 typealias TourAppUserInfoMVP = MVPContainer<TourAppUserInfoView, TourAppUserInfoPresenter, TourAppUserInfoModel>
 
@@ -46,8 +47,18 @@ class TourAppUserInfoView: UIViewController {
     }
     
     @IBAction func nextPressed(_ sender: AnyObject) {
-        let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-        UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+                if granted {
+                    UIApplication.shared.registerForRemoteNotifications()
+                    HealthKitManager.sharedInstance.authorize()
+                }
+            }
+        }else{
+            let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(notificationSettings)
+        }
+        
     }
     
     func healthKitRegistered(_ notification: Notification) {

@@ -8,8 +8,7 @@
 
 import Foundation
 
-class SmoochHelper
-{
+class SmoochHelper {
     static let sharedInstance = SmoochHelper()
     let smoochToken = "eiw2afikzfabehcj65ilhnp7q"
     
@@ -18,9 +17,10 @@ class SmoochHelper
     
     func startWithParameters(_ user: ENUser) {
         let settings = SKTSettings(appToken: smoochToken)
-        settings?.userId = "\(user.id)"
+        settings.userId = "\(user.id)"
+        settings.enableAppDelegateSwizzling = false
         
-        settings?.conversationAccentColor = UIColor(fs_hexString: "74A025")
+        settings.conversationAccentColor = UIColor(fs_hexString: "74A025")!
         Smooch.initWith(settings)
         self.login("\(user.id)")
         
@@ -32,12 +32,12 @@ class SmoochHelper
     }
     
     func updateUserInfo(user: ENUser) {
-        SKTUser.current().firstName = user.firstName
-        SKTUser.current().lastName = "\(user.id)"
-        SKTUser.current().email = user.email
+        SKTUser.current()?.firstName = user.firstName
+        SKTUser.current()?.lastName = "\(user.id)"
+        SKTUser.current()?.email = user.email
     }
     
     func updateSignUpDate() {
-        SKTUser.current().signedUpAt = Date()
+        SKTUser.current()?.signedUpAt = Date()
     }
 }

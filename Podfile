@@ -20,7 +20,7 @@ abstract_target 'Abstract' do
     pod 'ObjectMapper'
     pod 'SDWebImage'
     pod 'SVProgressHUD'
-    pod 'Smooch'
+    pod 'Smooch', '= 5.1.0'
     pod 'SWRevealViewController'
     #pod 'Reachability'
     #pod 'SVProgressHUD'
