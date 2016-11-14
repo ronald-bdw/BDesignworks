@@ -376,12 +376,7 @@
 		E7D575E81DD206820018C54E /* RegistrationFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationFooter.swift; sourceTree = "<group>"; };
 		E7DA957F1D8018FA0079EB79 /* RTSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTSteps.swift; sourceTree = "<group>"; };
 		E7DA95811D8024A50079EB79 /* Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
-<<<<<<< 3e2d87f4d48ba4b1f6b1b7dadffdfff9dfc18546
 		E7FC398F1DEC40550068BAAE /* LoginHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHelpers.swift; sourceTree = "<group>"; };
-||||||| merged common ancestors
-=======
-		E7E0F46B1DB6685000FB7468 /* TourAppPurchasesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppPurchasesView.swift; sourceTree = "<group>"; };
->>>>>>> added restoring purchase
 		EC5B966D6C1FE954CB0BC550 /* Pods_Abstract_BDesignworksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abstract_BDesignworksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE03134474C0070BF8DA767B /* Pods-Abstract-BDesignworks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.release.xcconfig"; sourceTree = "<group>"; };
 		FC6E3D360349BB799F9BA741 /* Pods-Abstract-BDesignworksTests.test staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.test staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.test staging.xcconfig"; sourceTree = "<group>"; };
@@ -446,7 +441,6 @@
 				DCD86E581D6DAA8C0072AFA1 /* Alerts.swift */,
 				DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */,
 				7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */,
-				7CD3B5EC1DC2501A0089D93A /* FitbitManager.swift */,
 				E745526A1DAE442E00979C6A /* InAppManager.swift */,
 			);
 			name = Helpers;
@@ -855,7 +849,6 @@
 			children = (
 				DCF96E701D9BCD81005AFE42 /* TourAppUserInfo */,
 				E72552521DA3B794005C1B58 /* TourAppAvatar */,
-				E7E0F46A1DB6683500FB7468 /* TourAppPurchases */,
 			);
 			name = TourApp;
 			sourceTree = "<group>";
@@ -992,14 +985,6 @@
 				E72916541D8828C600A6D70A /* ProfilePresenter.swift */,
 			);
 			name = Profile;
-			sourceTree = "<group>";
-		};
-		E7E0F46A1DB6683500FB7468 /* TourAppPurchases */ = {
-			isa = PBXGroup;
-			children = (
-				E7E0F46B1DB6685000FB7468 /* TourAppPurchasesView.swift */,
-			);
-			name = TourAppPurchases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1604,7 +1589,6 @@
 				214F4FF61BFDC35C0084BE32 /* Protocols.swift in Sources */,
 				2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */,
 				E729165C1D88459A00A6D70A /* ProfileEditingPresenter.swift in Sources */,
-				E7E0F46C1DB6685000FB7468 /* TourAppPurchasesView.swift in Sources */,
 				DC2280FA1D6B464500D5A0DA /* RegistrationPresenter.swift in Sources */,
 				2F7179511D53497A00231639 /* TrialPageScreen.swift in Sources */,
 				2F0729911D64C86B00A71B3C /* HealthKitManager.swift in Sources */,

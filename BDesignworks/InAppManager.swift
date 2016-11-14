@@ -31,7 +31,7 @@ protocol InAppManagerDelegate: class {
     func inAppLoadingStarted()
     func inAppLoadingSucceded(productType: ProductType)
     func inAppLoadingFailed(error: Swift.Error?)
-    
+    func subscriptionStatusUpdated(value: Bool)
 }
 
 class InAppManager: NSObject {
@@ -41,7 +41,11 @@ class InAppManager: NSObject {
     
     var products: [SKProduct] = []
     
-    var isSubscriptionAvailable: Bool = true
+    var isSubscriptionAvailable: Bool = true {
+        didSet(value) {
+            self.delegate?.subscriptionStatusUpdated(value: value)
+        }
+    }
     
     func startMonitoring() {
         SKPaymentQueue.default().add(self)

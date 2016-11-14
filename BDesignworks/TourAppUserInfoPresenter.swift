@@ -38,13 +38,6 @@ extension TourAppUserInfoPresenter: ITourAppUserInfoPresenterView {
         loggedInUsers.append(user.phoneNumber)
         UserDefaults.standard.set(loggedInUsers, forKey: FSUserDefaultsKey.LoggedInUsers)
         UserDefaults.standard.synchronize()
-        
-        if user.provider == "" {
-            self.view?.updateView(title: "Step 1 of 3")
-        }
-        else {
-            self.view?.updateView(title: "Step 1 of 2")
-        }
     }
     
     func showNextView() {
