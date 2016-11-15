@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -117,6 +116,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tokenString += String(format: formatString, arguments: [tokenChars[i]])
         }
         Logger.debug(tokenString)
+        guard let _ = ENUser.getMainUser() else {return}
+        Smooch.setPushToken(deviceToken)
 //        UserDefaults.standard.set(deviceToken, forKey: FSUserDefaultsKey.DeviceToken.Data)
 //        UserDefaults.standard.set(tokenString, forKey: FSUserDefaultsKey.DeviceToken.String)
 //        UserDefaults.standard.synchronize()
@@ -133,7 +134,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Logger.debug(userInfo)
         guard let aps = userInfo["aps"] as? [AnyHashable : Any],
             let title = aps["alert"] as? String else {return}
-        if UIApplication.shared.windows.first?.rootViewController?.getLastController() as? ConversationScreen == nil  {
+        guard let window = UIApplication.shared.windows.first else {return}
+        if window.rootViewController is SWRevealViewController &&
+            window.rootViewController?.getLastController() as? ConversationScreen == nil  {
             NotificationView.presentOnTop(with: title)
         }
         
@@ -160,6 +163,7 @@ extension AppDelegate {
         DispatchQueue.global().async {  let _ = countryCodes }
         
         self.setupAppearance()
+        
     }
     
     func setupAppearance() {

@@ -108,6 +108,7 @@ class ENUser: Object, IUser {
     }
     
     static func logout() {
+        FitbitManager.sharedInstance.removeFitBitTokenFromServer()
         guard let user = ENUser.getMainUser() else {return}
         user.token = nil
         do {
@@ -115,7 +116,10 @@ class ENUser: Object, IUser {
             try realm.write {
                 realm.delete(realm.objects(ENUser.self))
             }
+            Smooch.setPushToken(Data())
+            Smooch.logout()
             HealthKitManager.sharedInstance.stopSendingData()
+            UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.IsProviderChosen)
         }
         catch let error {
             Logger.error(error)
