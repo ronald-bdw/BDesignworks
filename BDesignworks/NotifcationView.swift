@@ -41,14 +41,10 @@ class NotificationView: BaseView {
     }
     
     func tapped() {
-        var presentedController = UIApplication.shared.windows.first?.rootViewController
+        guard let rootViewController = UIApplication.shared.windows.first?.rootViewController,
+            let navigationController = rootViewController.childViewControllers.last as? UINavigationController else {return}
         
-        var nextController = presentedController?.presentedViewController
-//        while !(nextController is UISideMenuNavigationController) && nextController != nil  {
-//            presentedController = nextController
-//            nextController = presentedController?.presentedViewController
-//        }
-        presentedController?.presentedViewController?.dismiss(animated: true, completion: nil)
+        navigationController.moveToMainControllerTransitioned()
         
         self.removeFromSuperviewAnimated()
     }

@@ -131,15 +131,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        Logger.debug(userInfo)
-        guard let aps = userInfo["aps"] as? [AnyHashable : Any],
-            let title = aps["alert"] as? String else {return}
-        guard let window = UIApplication.shared.windows.first else {return}
-        if window.rootViewController is SWRevealViewController &&
-            window.rootViewController?.getLastController() as? ConversationScreen == nil  {
-            NotificationView.presentOnTop(with: title)
-        }
-        
+        //To get smooch remote notifications in app go to SmoochHelper
     }
 }
 
