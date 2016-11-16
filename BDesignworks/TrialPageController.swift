@@ -12,6 +12,7 @@ class TrialPageController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var selectionViews: [TrialPageSelectionView]!
+    weak var scrollView: UIScrollView?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationViewController = segue.destination
@@ -23,14 +24,19 @@ class TrialPageController: UIViewController {
         }
     }
     
-    @IBAction func startTrialAction(_ sender: AnyObject) {
-        //ShowRegistrationViewController()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        guard let scrollView = self.scrollView else {return}
+        let offsetPoint = CGPoint(x: 0, y: scrollView.contentOffset.y)
+        self.scrollView?.setContentOffset(offsetPoint, animated: false)
     }
 
 }
 
 extension TrialPageController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.scrollView = scrollView
+        
         let page = Int(scrollView.contentOffset.x / self.containerView.fs_width)
         
         self.selectionViews.forEach({$0.selected = false})
