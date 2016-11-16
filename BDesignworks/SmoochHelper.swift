@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SmoochHelper {
+class SmoochHelper: NSObject {
     static let sharedInstance = SmoochHelper()
     let smoochToken = "eiw2afikzfabehcj65ilhnp7q"
     
@@ -18,13 +18,15 @@ class SmoochHelper {
     func startWithParameters(_ user: ENUser) {
         let settings = SKTSettings(appToken: smoochToken)
         settings.userId = "\(user.id)"
-        settings.enableAppDelegateSwizzling = false
+        
         
         settings.conversationAccentColor = UIColor(fs_hexString: "74A025")!
         Smooch.initWith(settings)
         self.login("\(user.id)")
         
         self.updateUserInfo(user: user)
+        
+        Smooch.conversation()?.delegate = self
     }
     
     func login(_ userID: String) {
@@ -39,5 +41,26 @@ class SmoochHelper {
     
     func updateSignUpDate() {
         SKTUser.current()?.signedUpAt = Date()
+    }
+}
+
+extension SmoochHelper: SKTConversationDelegate {
+    func conversation(_ conversation: SKTConversation, shouldShowInAppNotificationFor message: SKTMessage) -> Bool {
+        return false
+    }
+    
+    func conversation(_ conversation: SKTConversation, didReceiveMessages messages: [Any]) {
+        guard let message = messages.last as? SKTMessage,
+                let text = message.text,
+                message.isFromCurrentUser == false else {return}
+        guard let window = UIApplication.shared.windows.first else {return}
+        if window.rootViewController is SWRevealViewController &&
+            window.rootViewController?.childViewControllers.first?.childViewControllers.first as? ConversationScreen == nil  {
+            NotificationView.presentOnTop(with: text)
+        }
+    }
+    
+    func conversation(_ conversation: SKTConversation, shouldShowFor action: SKTAction) -> Bool {
+        return false
     }
 }
