@@ -21,6 +21,7 @@ extension Router {
         case disableNotificationOnZendesk
         case checkUserStatus(phone: String)
         case sendReceipt(receipt: AnyObject)
+        case sendInAppPurchaseStatus(plan: String, expirationDate: Date, isActive: Bool)
     }
 }
 
@@ -39,16 +40,17 @@ extension Router.User: RouterProtocol {
 
     var path: String {
         switch self {
-        case .getAuthPhoneCode(_)         : return "/auth_phone_codes"
-        case .register                    : return "/users"
-        case .signIn                      : return "/users/sign_in"
-        case .getUser                     : return "/users/account"
-        case .editUser(let user)          : return "/users/\(user.id)"
-        case .sendAvatar(let id,_)        : return "/users/\(id)"
-        case .enableNotificationOnZendesk : return "/notifications"
-        case .disableNotificationOnZendesk: return "/notifications/message_push"
-        case .checkUserStatus           : return "/registration_status"
-        case .sendReceipt(_)              : return "/verifyReceipt"
+        case .getAuthPhoneCode              : return "/auth_phone_codes"
+        case .register                      : return "/users"
+        case .signIn                        : return "/users/sign_in"
+        case .getUser                       : return "/users/account"
+        case .editUser(let user)            : return "/users/\(user.id)"
+        case .sendAvatar(let id,_)          : return "/users/\(id)"
+        case .enableNotificationOnZendesk   : return "/notifications"
+        case .disableNotificationOnZendesk  : return "/notifications/message_push"
+        case .checkUserStatus              : return "/registration_status"
+        case .sendReceipt                  : return "/verifyReceipt"
+        case .sendInAppPurchaseStatus       : return "/subscriptions"
         }
     }
 
@@ -79,6 +81,12 @@ extension Router.User: RouterProtocol {
             return ["phone_number": phone as AnyObject]
         case .sendReceipt(let receipt):
                 return ["receipt-data": receipt, "password": "aa611c0d16eb42b7941b24ad380f557a" as AnyObject]
+        case .sendInAppPurchaseStatus(let plan, let expirationDate, let isActive):
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "Y-MM-dd HH:mm:ss zzz"
+            return ["plan_name": plan as AnyObject,
+                    "expires_at": dateFormatter.string(from: expirationDate) as AnyObject,
+                    "active": isActive as AnyObject]
         default:
             return nil
         }
