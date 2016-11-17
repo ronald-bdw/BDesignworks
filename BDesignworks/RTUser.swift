@@ -105,7 +105,7 @@ extension Router.User: RouterProtocol {
 
 }
 
-class RTZendeskNotificationResponse: Mappable{
+class RTEmptyResponse: Mappable{
     required convenience init?(map: Map) {
         self.init()
     }
