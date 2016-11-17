@@ -123,7 +123,7 @@ class InAppManager: NSObject {
             let lIsTrialPurchased = self.isTrialPurchased,
             let lExpiration = self.expirationDate else {return}
         let plan = lIsTrialPurchased ? "trial" : ProductType.Montly.description
-        let _ = Router.User.sendInAppPurchaseStatus(plan: plan, expirationDate: lExpiration, isActive: self.isSubscriptionAvailable).request().responseObject { (response: DataResponse<RTZendeskNotificationResponse>) in
+        let _ = Router.User.sendInAppPurchaseStatus(plan: plan, expirationDate: lExpiration, isActive: self.isSubscriptionAvailable).request().responseObject { (response: DataResponse<RTEmptyResponse>) in
             switch response.result {
             case .success:
                 Logger.debug("Success sent inapp status")
