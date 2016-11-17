@@ -11,6 +11,12 @@ import StoreKit
 
 enum ProductType: String {
     case Montly = "com.bdesignworks.pearup.monthly"
+    
+    var description: String {
+        switch self {
+        case .Montly: return "monthly"
+        }
+    }
 }
 
 enum InAppErrors: Swift.Error {
@@ -41,9 +47,13 @@ class InAppManager: NSObject {
     
     var products: [SKProduct] = []
     
+    var isTrialPurchased: Bool?
+    var expirationDate: Date?
+    
     var isSubscriptionAvailable: Bool = true {
         didSet(value) {
             self.delegate?.subscriptionStatusUpdated(value: value)
+            self.sendStatus()
         }
     }
     
@@ -92,6 +102,8 @@ class InAppManager: NSObject {
             switch response.result {
             case .success(let value):
                 guard let expirationDate = value.expirationDateMs else {completionHandler(false); return}
+                self.expirationDate = Date(timeIntervalSince1970: expirationDate)
+                self.isTrialPurchased = value.isTrial
                 completionHandler(Date().timeIntervalSince1970 < expirationDate)
             case .failure(let error):
                 completionHandler(false)
@@ -104,6 +116,21 @@ class InAppManager: NSObject {
         self.checkSubscriptionAvailability({ [weak self] (isSubscribed) in
             self?.isSubscriptionAvailable = isSubscribed
         })
+    }
+    
+    private func sendStatus() {
+        guard ENUser.getMainUser()?.provider == "",
+            let lIsTrialPurchased = self.isTrialPurchased,
+            let lExpiration = self.expirationDate else {return}
+        let plan = lIsTrialPurchased ? "trial" : ProductType.Montly.description
+        let _ = Router.User.sendInAppPurchaseStatus(plan: plan, expirationDate: lExpiration, isActive: self.isSubscriptionAvailable).request().responseObject { (response: DataResponse<RTZendeskNotificationResponse>) in
+            switch response.result {
+            case .success:
+                Logger.debug("Success sent inapp status")
+            case .failure(let error):
+                Logger.error(error)
+            }
+        }
     }
 }
 
