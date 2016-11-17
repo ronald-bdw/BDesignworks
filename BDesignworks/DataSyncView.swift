@@ -30,7 +30,12 @@ class DataSyncView: UITableViewController {
     
     func fitbitSwitchStateChanged(sender: AnyObject) {
         if self.fitbitSwitch.isOn {
-            let urlString = "https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=227ZMJ&scope=activity"
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "Y_MM_dd_HH_mm_ss"
+            let date = dateFormatter.string(from: Date())
+            
+            let urlString = "https://www.fitbit.com/oauth2/authorize?response_type=code&client_id=227ZMJ&scope=activity&timestamp=\(date)"
             
             guard let url = URL(string: urlString) else {return}
             
