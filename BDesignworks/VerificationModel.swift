@@ -23,7 +23,7 @@ class VerificationModel {
     
     required init() {}
     
-    fileprivate func receivePhoneCode(_ phone: String) {
+    func receivePhoneCode(_ phone: String) {
         self.presenter?.loadingStarted()
         
         let _ = Router.User.getAuthPhoneCode(phone: phone).request().responseObject { [weak self] (response: DataResponse<RTAuthInfoResponse>) in

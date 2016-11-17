@@ -34,6 +34,7 @@ abstract_target 'Abstract' do
     end
     
     target 'BDesignworksTests' do
+        pod 'Nocilla'
     end
     
     target 'BDesignworksUITests' do

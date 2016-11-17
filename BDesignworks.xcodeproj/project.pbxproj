@@ -123,6 +123,8 @@
 		E774EF8B1D899629007A8BC4 /* ProfileEditingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774EF8A1D899629007A8BC4 /* ProfileEditingHelpers.swift */; };
 		E78CBF621DC2221B0079F1C9 /* HealthAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78CBF611DC2221B0079F1C9 /* HealthAppView.swift */; };
 		E79D88F81D7F256200EBA8FA /* TrialPageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */; };
+		E7ABE1561DD9E79A00DA951E /* VerificationModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ABE1541DD9E72200DA951E /* VerificationModelTest.swift */; };
+		E7ABE15A1DD9EA4500DA951E /* VerificationMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ABE1581DD9EA4100DA951E /* VerificationMocks.swift */; };
 		E7AF27371DA2855D00596191 /* TourAppUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF27361DA2855D00596191 /* TourAppUserInfoModel.swift */; };
 		E7AF27391DA2857000596191 /* TourAppUserInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF27381DA2857000596191 /* TourAppUserInfoPresenter.swift */; };
 		E7C1F2691D88011C007F9D7A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C1F2681D88011C007F9D7A /* Profile.storyboard */; };
@@ -352,6 +354,9 @@
 		E774EF8A1D899629007A8BC4 /* ProfileEditingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingHelpers.swift; sourceTree = "<group>"; };
 		E78CBF611DC2221B0079F1C9 /* HealthAppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAppView.swift; sourceTree = "<group>"; };
 		E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageSelectionView.swift; sourceTree = "<group>"; };
+		E7ABE1531DD9E3D300DA951E /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
+		E7ABE1541DD9E72200DA951E /* VerificationModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationModelTest.swift; sourceTree = "<group>"; };
+		E7ABE1581DD9EA4100DA951E /* VerificationMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationMocks.swift; sourceTree = "<group>"; };
 		E7AF27361DA2855D00596191 /* TourAppUserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppUserInfoModel.swift; sourceTree = "<group>"; };
 		E7AF27381DA2857000596191 /* TourAppUserInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourAppUserInfoPresenter.swift; sourceTree = "<group>"; };
 		E7C1F2681D88011C007F9D7A /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -459,8 +464,10 @@
 		212D018C1BB1986B00B34340 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				E7ABE1571DD9EA2200DA951E /* VerificationTest */,
 				212D018D1BB1986B00B34340 /* Swift_BaseTests.swift */,
 				212D018F1BB1986B00B34340 /* Info.plist */,
+				E7ABE1531DD9E3D300DA951E /* BridgeHeader.h */,
 			);
 			name = UnitTests;
 			path = BDesignworksTests;
@@ -933,6 +940,15 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		E7ABE1571DD9EA2200DA951E /* VerificationTest */ = {
+			isa = PBXGroup;
+			children = (
+				E7ABE1541DD9E72200DA951E /* VerificationModelTest.swift */,
+				E7ABE1581DD9EA4100DA951E /* VerificationMocks.swift */,
+			);
+			name = VerificationTest;
+			sourceTree = "<group>";
+		};
 		E7C1F26B1D881B6D007F9D7A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1073,6 +1089,7 @@
 					};
 					212D018A1BB1986B00B34340 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = K8WJN89HXG;
 						LastSwiftMigration = 0800;
 						TestTargetID = 21DB300E19DD2289003A418D;
 					};
@@ -1407,6 +1424,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B06F73F91C2E81596CB17AF4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B127C28676A94C891E32B5C8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1512,6 +1544,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7ABE1561DD9E79A00DA951E /* VerificationModelTest.swift in Sources */,
+				E7ABE15A1DD9EA4500DA951E /* VerificationMocks.swift in Sources */,
 				212D018E1BB1986B00B34340 /* Swift_BaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2087,6 +2121,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2098,7 +2133,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.BDesignworksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
 			};
 			name = Debug;
 		};
@@ -2110,13 +2147,16 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BDesignworksTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.BDesignworksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
 			};
 			name = "AppStore Debug";
 		};
@@ -2127,6 +2167,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2138,7 +2179,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.BDesignworksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
 			};
 			name = "Debug Staging";
 		};
@@ -2150,13 +2193,16 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BDesignworksTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.BDesignworksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
 			};
 			name = Release;
 		};
@@ -2168,6 +2214,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = BDesignworksTests/Info.plist;
@@ -2176,8 +2223,10 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.BDesignworksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
 			};
 			name = Test;
 		};
@@ -2189,13 +2238,16 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BDesignworksTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.BDesignworksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
 			};
 			name = AppStore;
 		};
@@ -2207,13 +2259,16 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BDesignworksTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.BDesignworksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
 			};
 			name = "Release Staging";
 		};
@@ -2225,6 +2280,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K8WJN89HXG;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = BDesignworksTests/Info.plist;
@@ -2233,8 +2289,10 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatstack.BDesignworksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
 			};
 			name = "Test Staging";
 		};
