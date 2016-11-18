@@ -102,7 +102,8 @@ class ConversationScreen: UIViewController {
         let rightBarButton = UIButton(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: navigationBarImageHeight))
         rightBarButton.setImage(rightBarImage, for: UIControlState())
         rightBarButton.addTarget(self.revealViewController(), action: #selector(self.revealViewController().rightRevealToggle(_:)), for: .touchUpInside)
-        self.navigationController?.navigationBar.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.revealViewController().panGestureRecognizer().delegate = self
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
     }
     
@@ -147,5 +148,14 @@ class ConversationScreen: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+}
+
+extension ConversationScreen: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer.location(in: self.view).x < self.view.fs_width*4/5 {
+            return false
+        }
+        return true
     }
 }
