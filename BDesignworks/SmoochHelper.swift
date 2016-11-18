@@ -63,4 +63,8 @@ extension SmoochHelper: SKTConversationDelegate {
     func conversation(_ conversation: SKTConversation, shouldShowFor action: SKTAction) -> Bool {
         return false
     }
+    
+    func conversation(_ conversation: SKTConversation, unreadCountDidChange unreadCount: UInt) {
+        UIApplication.shared.applicationIconBadgeNumber = Int(unreadCount)
+    }
 }
