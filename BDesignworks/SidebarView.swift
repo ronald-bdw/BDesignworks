@@ -47,6 +47,8 @@ class SidebarView: UITableViewController {
     let rowHeight = CGFloat(90)
     let profileRowHeight = CGFloat(164)
     
+    var leftViewOffset = CGFloat(-260)
+    
     var presenter: PresenterProtocol?
     
     override func viewDidLoad() {
@@ -59,8 +61,7 @@ class SidebarView: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        guard let leftViewOffset = self.parent?.view.subviews.last?.fs_x else {return}
-        self.leadingTableViewCellsConstraints.forEach({$0.constant = self.view.fs_width + leftViewOffset})
+        self.leadingTableViewCellsConstraints.forEach({$0.constant = self.view.fs_width + self.leftViewOffset})
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
