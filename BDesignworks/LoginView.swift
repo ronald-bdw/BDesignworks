@@ -30,8 +30,11 @@ class LoginView: UIViewController {
         
         let _ = LoginMVP(controller: self)
         
+        UIApplication.shared.statusBarStyle = .default
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
-          self.presenter?.viewLoaded()
+        self.presenter?.viewLoaded()
     }
 }
 
@@ -42,6 +45,7 @@ extension LoginView: ILoginView {
             Logger.debug("loading")
         case .done:
             Logger.debug("done")
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         case .failed:
             Logger.debug("failed")
         }

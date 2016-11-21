@@ -116,6 +116,7 @@ class ENUser: Object, IUser {
             try realm.write {
                 realm.delete(realm.objects(ENUser.self))
             }
+            UIApplication.shared.applicationIconBadgeNumber = 0
             Smooch.setPushToken(Data())
             Smooch.logout()
             HealthKitManager.sharedInstance.stopSendingData()
