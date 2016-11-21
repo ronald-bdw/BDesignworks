@@ -10,13 +10,17 @@ import UIKit
 
 protocol AutocompleteViewDelegate: class {
     func autocompleteViewRowSelected(_ row: Int, item: String)
+    func donePressed()
 }
 
 final class AutocompleteView: UIView {
     
     struct Constants {
         static let defaultCellHeight         : CGFloat = 60
-        static let pickerViewHeight          : CGFloat = Constants.defaultCellHeight * 3
+        static let pickerViewHeight          : CGFloat = Constants.defaultCellHeight * 3 + Constants.doneViewHeight
+        static let doneViewHeight            : CGFloat = 40
+        static let doneButtonHeight          : CGFloat = 20
+        static let doneButtonWidth           : CGFloat = 60
         static let defaultAnimationDuration  : TimeInterval = 0.2
         static let pickerTextLeftOffset      : CGFloat = 32
     }
@@ -32,6 +36,8 @@ final class AutocompleteView: UIView {
     weak var delegate: AutocompleteViewDelegate?
     
     fileprivate let pickerView = UIPickerView()
+    private let doneView = UIView()
+    private let doneButton = UIButton()
     
     //MARK: Lifecycle
     override init(frame: CGRect) {
@@ -62,12 +68,22 @@ final class AutocompleteView: UIView {
         
         self.isHidden = true
         
+        self.doneView.frame = CGRect(x: 0, y: 0, width: self.fs_width, height: Constants.doneViewHeight)
+        self.doneView.backgroundColor = FSRGBA(250, 250, 250, 0.98)
+        
+        self.doneButton.setTitle("Done", for: .normal)
+        self.doneButton.setTitleColor(FSRGBA(41, 83, 124, 1), for: .normal)
+        self.doneButton.addTarget(self, action: #selector(self.donePressed), for: .touchUpInside)
+        self.doneView.addSubview(doneButton)
+        self.addSubview(self.doneView)
+        
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
         self.pickerView.backgroundColor = FSRGBA(250, 250, 250, 0.98)
         self.pickerView.fs_borderColor = FSRGBA(200, 200, 200, 1)
         self.pickerView.fs_borderWidth = 1
-        self.pickerView.frame = CGRect(x: 0, y: 0, width: self.fs_width, height: Constants.pickerViewHeight)
+        self.pickerView.frame = CGRect(x: 0, y: Constants.doneViewHeight, width: self.fs_width, height: Constants.pickerViewHeight - Constants.doneViewHeight)
+        
         self.addSubview(self.pickerView)
     }
     
@@ -75,8 +91,18 @@ final class AutocompleteView: UIView {
         super.layoutSubviews()
         
         self.fs_height = Constants.pickerViewHeight
-        self.pickerView.frame = CGRect(x: 0, y: 0, width: self.fs_width, height:  Constants.pickerViewHeight)
+        self.doneView.frame = CGRect(x: 0, y: 0, width: self.fs_width, height: Constants.doneViewHeight)
+        self.pickerView.frame = CGRect(x: 0, y: Constants.doneViewHeight, width: self.fs_width, height:  Constants.pickerViewHeight - Constants.doneViewHeight)
+        
+        let doneButtonX = self.fs_width - Constants.doneButtonWidth - 10
+        let doneButtonY = (self.doneView.fs_height - Constants.doneButtonHeight)/2
+        
+        self.doneButton.frame = CGRect(x: doneButtonX, y: doneButtonY, width: Constants.doneButtonWidth, height: Constants.doneButtonHeight)
         self.pickerView.reloadAllComponents()
+    }
+    
+    func donePressed() {
+        self.delegate?.donePressed()
     }
 }
 

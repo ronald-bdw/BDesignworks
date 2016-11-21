@@ -136,6 +136,10 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         self.providerSelectionButton.chooseLabel.text = item
     }
     
+    func donePressed() {
+        self.providerSelectionButton.didChangeState(self)
+    }
+    
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .default
     }
