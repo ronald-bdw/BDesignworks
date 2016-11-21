@@ -49,6 +49,7 @@ final class WelcomeScreen: UIViewController {
         self.navigationItem.hidesBackButton = true
         self.containerView.alpha = 0.0
         self.view.layoutIfNeeded()
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
