@@ -74,7 +74,7 @@ func ShowNoProviderAlert() {
 }
 
 func ShowNotRegisteredAlert() {
-    let alertController = UIAlertController(title: "Verification is unsuccessful", message: "You not registered. Please, register first.", preferredStyle: UIAlertControllerStyle.alert)
+    let alertController = UIAlertController(title: "Verification is unsuccessful", message: "You are not registerd with Pair Up. Please sign up first.", preferredStyle: UIAlertControllerStyle.alert)
     
     let alertButton = UIAlertAction(title: "OK", style: .default) { (alertAction: UIAlertAction) -> Void in
         ShowInitialViewController()

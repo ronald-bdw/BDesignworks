@@ -354,7 +354,7 @@ extension VerificationView: IVerificationView {
             SVProgressHUD.show()
         case .done:
             SVProgressHUD.dismiss()
-            ShowOKAlert("Success!", message: "Please, wait for sms with link to app.")
+            ShowOKAlert("Success!", message: "Please wait for your SMS confirmation to complete the verification process.")
         case .failed:
             SVProgressHUD.dismiss()
             ShowErrorAlert()
