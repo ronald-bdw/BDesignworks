@@ -96,10 +96,6 @@ enum Image {
     enum Icon {
         static var Menu = UIImage(named: "menuIcon")!
     }
-    
-    enum Logo {
-        static var HbfLogoWhite = UIImage(named: "hbf-logo-white")!
-    }
 }
 
 enum Fonts {

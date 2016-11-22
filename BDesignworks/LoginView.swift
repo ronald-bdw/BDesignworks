@@ -17,7 +17,6 @@ protocol ILoginView: class {
     func showErrorView(_ title: String, content: String, errorType: BackendError)
     func showErrorView()
     func showPhoneCodeSentView()
-    func changeProviderLogoState(logoExist: Bool)
 }
 
 class LoginView: UIViewController {
@@ -59,9 +58,10 @@ extension LoginView: ILoginView {
         ShowConversationViewController()
     }
     
-    func changeProviderLogoState(logoExist: Bool) {
-        self.providerLogo.isHidden = !logoExist
-    }
+// commented due to logo marketing reasons
+//    func changeProviderLogoState(logoExist: Bool) {
+//        self.providerLogo.isHidden = !logoExist
+//    }
     
     func showErrorView(_ title: String, content: String, errorType: BackendError) {
         if errorType == .smsCodeExpired ||

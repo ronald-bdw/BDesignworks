@@ -45,7 +45,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="oue-tC-Lb9">
-                                                            <rect key="frame" x="152" y="29.5" width="70" height="70"/>
+                                                            <rect key="frame" x="152" y="29" width="70" height="70"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="H5R-HM-ujI"/>
@@ -65,13 +65,13 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e41-Vb-vjE">
-                                                            <rect key="frame" x="142.5" y="107.5" width="89.5" height="21"/>
+                                                            <rect key="frame" x="142" y="107" width="90" height="22"/>
                                                             <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                             <color key="textColor" red="0.92156862750000001" green="0.78823529410000004" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email@email.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNh-2J-ObK">
-                                                            <rect key="frame" x="129" y="128.5" width="116" height="19"/>
+                                                            <rect key="frame" x="129" y="129" width="116" height="19"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRe-XW-yqs">
-                                                            <rect key="frame" x="84" y="37" width="56" height="20.5"/>
+                                                            <rect key="frame" x="84" y="37" width="56" height="21"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -163,7 +163,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BH9-Wm-Q1f">
-                                                            <rect key="frame" x="84" y="37" width="40.5" height="20.5"/>
+                                                            <rect key="frame" x="84" y="37" width="41" height="21"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -214,7 +214,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk6-JG-Bdx">
-                                                            <rect key="frame" x="84" y="37" width="64.5" height="20.5"/>
+                                                            <rect key="frame" x="84" y="37" width="65" height="21"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -285,7 +285,7 @@
         <scene sceneID="2jY-ZP-s4q">
             <objects>
                 <navigationController id="Pdz-Fu-uzn" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="M4w-8W-OF3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M4w-8W-OF3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -313,33 +313,33 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE PAIR UP TEAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBo-9B-qct">
-                                        <rect key="frame" x="88" y="16" width="200.5" height="30"/>
+                                        <rect key="frame" x="89.5" y="16" width="198" height="26"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
                                         <color key="textColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-gp-Tjd">
-                                        <rect key="frame" x="30" y="58" width="315" height="107.5"/>
+                                        <rect key="frame" x="30" y="54" width="315" height="93.5"/>
                                         <string key="text">Our professional team of healthy habit coaches are based in Perth, Western Australia. We have helped over 23,000 Australians get more active over the past few years.</string>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="About/1" translatesAutoresizingMaskIntoConstraints="NO" id="uuf-Eg-h0R">
-                                        <rect key="frame" x="15" y="184.5" width="345" height="250"/>
+                                        <rect key="frame" x="15" y="166.5" width="345" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="KcJ-Fa-ESH"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px5-6f-hdq">
-                                        <rect key="frame" x="30" y="449.5" width="315" height="86"/>
+                                        <rect key="frame" x="30" y="431.5" width="315" height="75"/>
                                         <string key="text">Pair Up cares about your privacy. To learn more, please visit our website to review our Privacy Policy and our End-User Licencing Agreement.</string>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gu-kg-PHu" customClass="RoundButton" customModule="IBDesignableKit">
-                                        <rect key="frame" x="52" y="551.5" width="270" height="60"/>
+                                        <rect key="frame" x="52" y="522.5" width="270" height="60"/>
                                         <color key="backgroundColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="V1O-8c-lwu"/>
@@ -407,7 +407,7 @@
         <scene sceneID="EVt-zh-efg">
             <objects>
                 <navigationController storyboardIdentifier="ConversationScreen" id="F86-dg-wFh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tew-rN-fi6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tew-rN-fi6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

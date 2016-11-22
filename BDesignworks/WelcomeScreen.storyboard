@@ -12,7 +12,7 @@
         <!--Login View-->
         <scene sceneID="1gG-Ss-B6q">
             <objects>
-                <viewController id="pmn-Dh-aJ5" customClass="LoginView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pmn-Dh-aJ5" customClass="LoginView" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1fs-KX-Sxv"/>
                         <viewControllerLayoutGuide type="bottom" id="L25-aC-qE9"/>
@@ -30,13 +30,6 @@
                                     <constraint firstAttribute="width" secondItem="qNZ-wO-9Hm" secondAttribute="height" multiplier="1:1" id="HaZ-pa-Tj8"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hbf-logo" translatesAutoresizingMaskIntoConstraints="NO" id="GJL-zX-n8S">
-                                <rect key="frame" x="102.5" y="392" width="170" height="63"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="SSy-wy-fWE"/>
-                                    <constraint firstAttribute="height" constant="63" id="oyp-F9-izN"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -44,17 +37,12 @@
                             <constraint firstItem="qNZ-wO-9Hm" firstAttribute="centerX" secondItem="Re7-6D-pR2" secondAttribute="centerX" id="9sd-NH-bqj"/>
                             <constraint firstItem="qNZ-wO-9Hm" firstAttribute="top" secondItem="1fs-KX-Sxv" secondAttribute="bottom" constant="77" id="F2M-fR-NfJ"/>
                             <constraint firstAttribute="trailing" secondItem="qNZ-wO-9Hm" secondAttribute="trailing" constant="70" id="GlI-Yb-2D5"/>
-                            <constraint firstItem="GJL-zX-n8S" firstAttribute="centerX" secondItem="Re7-6D-pR2" secondAttribute="centerX" id="L17-vj-Tne"/>
                             <constraint firstAttribute="trailing" secondItem="Re7-6D-pR2" secondAttribute="trailing" id="SR3-Zr-Ivc"/>
                             <constraint firstItem="Re7-6D-pR2" firstAttribute="top" secondItem="1fs-KX-Sxv" secondAttribute="bottom" constant="-20" id="Vfv-Oz-B1l"/>
                             <constraint firstItem="qNZ-wO-9Hm" firstAttribute="leading" secondItem="568-1j-GNU" secondAttribute="leading" constant="70" id="cCr-CM-qUc"/>
-                            <constraint firstItem="GJL-zX-n8S" firstAttribute="top" secondItem="qNZ-wO-9Hm" secondAttribute="bottom" constant="60" id="wN4-i1-KkL"/>
                             <constraint firstItem="L25-aC-qE9" firstAttribute="top" secondItem="Re7-6D-pR2" secondAttribute="bottom" id="z37-FT-CmC"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="providerLogo" destination="GJL-zX-n8S" id="6pe-Y0-TDv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zat-kW-HjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,6 +52,5 @@
     <resources>
         <image name="GradientBackground" width="187" height="333"/>
         <image name="Logo" width="896" height="898"/>
-        <image name="hbf-logo" width="170" height="62"/>
     </resources>
 </document>

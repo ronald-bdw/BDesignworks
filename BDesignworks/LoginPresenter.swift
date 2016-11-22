@@ -64,7 +64,9 @@ extension LoginPresenter: ILoginModelPresenter {
 
 extension LoginPresenter: ILoginViewPresenter {
     func viewLoaded() {
-        self.view?.changeProviderLogoState(logoExist: UserDefaults.standard.bool(forKey:FSUserDefaultsKey.IsProviderChosen))
+        
+// commented due to logo marketing reasons
+//        self.view?.changeProviderLogoState(logoExist: UserDefaults.standard.bool(forKey:FSUserDefaultsKey.IsProviderChosen))
         if let smsCode = UserDefaults.standard.string(forKey: FSUserDefaultsKey.SmsCode) {
             self.model?.login(smsCode)
         }

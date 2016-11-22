@@ -107,14 +107,15 @@ class ConversationScreen: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
     }
     
-    fileprivate func setProviderIconIfExist(user: ENUser){
-        guard user.provider != "" else {return}
-            let leftBarButtonImageView = UIImageView(image: Image.Logo.HbfLogoWhite)
-            let resizedLeftImageViewWidth = navigationBarImageHeight * leftBarButtonImageView.fs_width / leftBarButtonImageView.fs_height
-            leftBarButtonImageView.frame = CGRect(x: 0, y: 0, width: resizedLeftImageViewWidth, height: navigationBarImageHeight)
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonImageView)
-        
-    }
+    // commented due to logo marketing reasons
+//    fileprivate func setProviderIconIfExist(user: ENUser){
+//        guard user.provider != "" else {return}
+//            let leftBarButtonImageView = UIImageView(image: Image.Logo.HbfLogoWhite)
+//            let resizedLeftImageViewWidth = navigationBarImageHeight * leftBarButtonImageView.fs_width / leftBarButtonImageView.fs_height
+//            leftBarButtonImageView.frame = CGRect(x: 0, y: 0, width: resizedLeftImageViewWidth, height: navigationBarImageHeight)
+//            self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonImageView)
+//        
+//    }
     
     func loadMainUser() {
         let _ = Router.User.getUser.request().responseObject { (response: DataResponse<RTUserResponse>) in
@@ -122,7 +123,7 @@ class ConversationScreen: UIViewController {
             case .success(let value):
                 guard let receivedUser = value.user else {return}
                 self.title = receivedUser.fullname
-                self.setProviderIconIfExist(user: receivedUser)
+//                self.setProviderIconIfExist(user: receivedUser)
                 
                 do {
                     let realm = try Realm()
