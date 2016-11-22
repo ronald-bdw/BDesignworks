@@ -424,12 +424,8 @@
 				214F4FF31BFDC2D90084BE32 /* Helpers.swift */,
 				214F4FF11BFDC2CF0084BE32 /* Extensions.swift */,
 				214F4FF51BFDC35C0084BE32 /* Protocols.swift */,
-				2F0729901D64C86B00A71B3C /* HealthKitManager.swift */,
-				2FDE13681D61B938008702FE /* SmoochHelper.swift */,
 				DCD86E581D6DAA8C0072AFA1 /* Alerts.swift */,
 				DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */,
-				7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */,
-				7CD3B5EC1DC2501A0089D93A /* FitbitManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -526,6 +522,7 @@
 				DC22811A1D6B46B700D5A0DA /* API */,
 				DC22811C1D6B46D000D5A0DA /* Database */,
 				196D6E161BAB0736000B7997 /* Helpers */,
+				E763EC581DE31E3A00A60956 /* Servises */,
 				19C66A341C1DC54800C44FE3 /* Classes */,
 				E731DC711A1CB30C00E12CBA /* Views */,
 				E736C5A41A252B1500B8986E /* Controllers */,
@@ -929,6 +926,17 @@
 				E75B5A7D1DACDF8E00B51E04 /* NotificationView.xib */,
 			);
 			name = NotificationView;
+			sourceTree = "<group>";
+		};
+		E763EC581DE31E3A00A60956 /* Servises */ = {
+			isa = PBXGroup;
+			children = (
+				2FDE13681D61B938008702FE /* SmoochHelper.swift */,
+				2F0729901D64C86B00A71B3C /* HealthKitManager.swift */,
+				7CD3B5EC1DC2501A0089D93A /* FitbitManager.swift */,
+				7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */,
+			);
+			name = Servises;
 			sourceTree = "<group>";
 		};
 		E774EF891D8995DD007A8BC4 /* Profile */ = {
@@ -1422,21 +1430,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B06F73F91C2E81596CB17AF4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B127C28676A94C891E32B5C8 /* [CP] Embed Pods Frameworks */ = {
