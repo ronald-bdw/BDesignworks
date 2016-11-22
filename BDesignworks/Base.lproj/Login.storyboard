@@ -492,7 +492,7 @@
                                 <rect key="frame" x="0.0" y="318" width="320" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="WELCOME TO PAIR UP!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rd7-Dk-h0J">
-                                        <rect key="frame" x="38" y="11" width="244" height="30"/>
+                                        <rect key="frame" x="38.5" y="11" width="243.5" height="30"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
                                         <color key="textColor" red="0.15294117647058825" green="0.25882352941176467" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -596,6 +596,16 @@
                                     <constraint firstAttribute="width" secondItem="3LD-yd-1Hp" secondAttribute="height" multiplier="1:1" id="gFh-cs-SIe"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your healthy habit coach with you every step of the way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxq-vj-g9k">
+                                <rect key="frame" x="45" y="283" width="230" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="B9j-Zw-y7I"/>
+                                    <constraint firstAttribute="width" constant="230" id="GuJ-z3-RuR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -610,6 +620,8 @@
                             <constraint firstItem="QZk-Zf-vTI" firstAttribute="bottom" secondItem="aFb-vO-jqj" secondAttribute="bottom" id="kuK-Ab-Jue"/>
                             <constraint firstItem="aFb-vO-jqj" firstAttribute="top" secondItem="3LD-yd-1Hp" secondAttribute="bottom" constant="60" id="oeu-bc-4zW"/>
                             <constraint firstAttribute="trailing" secondItem="QZk-Zf-vTI" secondAttribute="trailing" id="pHf-xI-8Dg"/>
+                            <constraint firstItem="Sxq-vj-g9k" firstAttribute="top" secondItem="3LD-yd-1Hp" secondAttribute="bottom" constant="25" id="rbo-sJ-Ihf"/>
+                            <constraint firstItem="Sxq-vj-g9k" firstAttribute="centerX" secondItem="QZk-Zf-vTI" secondAttribute="centerX" id="xJl-WA-PYZ"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -620,7 +632,10 @@
                     <connections>
                         <outlet property="containerBottomConstraint" destination="kuK-Ab-Jue" id="EjL-Ob-V6N"/>
                         <outlet property="containerHeightConstraint" destination="aDr-0V-W10" id="ogY-t1-qEe"/>
+                        <outlet property="containerTopConstraint" destination="oeu-bc-4zW" id="dGl-pg-6OJ"/>
                         <outlet property="containerView" destination="aFb-vO-jqj" id="dbG-Et-LIS"/>
+                        <outlet property="logoView" destination="3LD-yd-1Hp" id="mwI-qt-Qu0"/>
+                        <outlet property="previousScreenTextTopConstraint" destination="rbo-sJ-Ihf" id="0Us-Rd-KTQ"/>
                         <segue destination="xJO-aM-hqn" kind="show" identifier="showProviderSelection" id="sXl-LR-OaL"/>
                         <segue destination="nZU-o6-lK5" kind="presentation" identifier="showTrialModalView" modalPresentationStyle="fullScreen" id="bZz-Ds-D8R"/>
                         <segue destination="jLg-Mh-FPe" kind="show" identifier="showVerification" id="zb5-s4-hK2"/>
@@ -778,8 +793,8 @@
         <image name="Logo" width="896" height="898"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9Qt-G8-bdI"/>
-        <segue reference="8ca-PQ-ytg"/>
-        <segue reference="221-qK-ZWb"/>
+        <segue reference="bZz-Ds-D8R"/>
+        <segue reference="zb5-s4-hK2"/>
+        <segue reference="1Wq-CH-wIk"/>
     </inferredMetricsTieBreakers>
 </document>
