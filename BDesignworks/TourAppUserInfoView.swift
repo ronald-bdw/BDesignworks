@@ -43,6 +43,8 @@ class TourAppUserInfoView: UIViewController {
         
         center.addObserver(self, selector: #selector(self.healthKitRegistered(_:)), name: NSNotification.Name(rawValue: FSNotificationKey.FitnessDataIntegration.HealthKit) , object: nil)
         
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         self.presenter?.viewAppeared()
     }
     
