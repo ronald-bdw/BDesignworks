@@ -12,14 +12,6 @@ import IBDesignableKit
 
 private extension FSScreenType {
     
-    var logoHeight: CGFloat {
-        switch self {
-        case ._3_5  : return 180
-        case ._4    : return 210
-        default     : return 228 //
-        }
-    }
-    
     var logoTopOffset: CGFloat {
         switch self {
         case ._3_5  : return 16
@@ -126,7 +118,8 @@ final class VerificationView: UIViewController {
     }
     
     struct Constants {
-        static let logoRatio             : CGFloat = 85.0/114.0
+        static let logoRatio             : CGFloat = 1
+        static let horizontalOffset      : CGFloat = 70
         static let submitButtonRatio     : CGFloat = 137.0/55.0
         static let errorViewHeight       : CGFloat = 60.0
         static let errorViewTopOffset    : CGFloat = 10.0
@@ -215,14 +208,13 @@ final class VerificationView: UIViewController {
         var contentHeight: CGFloat = 0.0
         
         //Logo image frame setting
-        let logoHeight: CGFloat = screenType.logoHeight
         let logoTopOffset: CGFloat = screenType.logoTopOffset
-        
-        self.logoImageView.frame = CGRect(x: floor((screenWidth-logoHeight*Constants.logoRatio)/2),
+        let logoWidth: CGFloat = screenWidth - 2 * Constants.horizontalOffset
+        self.logoImageView.frame = CGRect(x: Constants.horizontalOffset,
                                           y: logoTopOffset,
-                                          width: floor(logoHeight*Constants.logoRatio),
-                                          height: logoHeight)
-        contentHeight += (logoTopOffset + logoHeight)
+                                          width: logoWidth,
+                                          height: logoWidth)
+        contentHeight += (logoTopOffset + logoWidth)
         
         //Welcome label frame setting
         let welcomeWidth: CGFloat = screenType.welcomeLabelWidth

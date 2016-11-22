@@ -1,60 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ra4-3q-Ufy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OLi-ZP-stN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="kcn-CS-i0o">
+        <scene sceneID="dkb-DT-tTT">
             <objects>
-                <viewController id="ra4-3q-Ufy" sceneMemberID="viewController">
+                <viewController id="OLi-ZP-stN" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="h6A-1G-EgJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="dJt-Pa-fqv"/>
+                        <viewControllerLayoutGuide type="top" id="bQv-Uj-Qj9"/>
+                        <viewControllerLayoutGuide type="bottom" id="GRB-c1-3B7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TFx-mv-29C">
+                    <view key="view" contentMode="scaleToFill" id="8fj-xj-UBs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="9tw-p2-800"/>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your get active coach with you every step of the way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFv-si-kyk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="s63-vu-aBk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your get active coach with you every step of the way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1C9-CM-jFB">
+                                <rect key="frame" x="73" y="426" width="230" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="WdE-PH-Odl"/>
-                                    <constraint firstAttribute="width" constant="230" id="aG1-ZR-d4J"/>
+                                    <constraint firstAttribute="height" constant="40" id="U7m-fb-hcH"/>
+                                    <constraint firstAttribute="width" constant="230" id="Yz3-2F-M9e"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="hv3-hV-iX4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="llk-l4-Xfc">
+                                <rect key="frame" x="70" y="166" width="235" height="235"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="dOH-JN-JXf"/>
-                                    <constraint firstAttribute="height" constant="228" id="yaM-xS-UvE"/>
+                                    <constraint firstAttribute="width" secondItem="llk-l4-Xfc" secondAttribute="height" id="pTe-iq-Puk"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hv3-hV-iX4" firstAttribute="centerX" secondItem="9tw-p2-800" secondAttribute="centerX" id="DK6-tH-K3l"/>
-                            <constraint firstItem="9tw-p2-800" firstAttribute="leading" secondItem="TFx-mv-29C" secondAttribute="leading" id="Ndc-WQ-LQn"/>
-                            <constraint firstItem="hv3-hV-iX4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TFx-mv-29C" secondAttribute="top" constant="16" id="RfS-jy-7gM"/>
-                            <constraint firstItem="dJt-Pa-fqv" firstAttribute="top" secondItem="9tw-p2-800" secondAttribute="bottom" id="VkX-Jy-4Sz"/>
-                            <constraint firstItem="9tw-p2-800" firstAttribute="top" secondItem="h6A-1G-EgJ" secondAttribute="bottom" constant="-20" id="h9Y-dg-azw"/>
-                            <constraint firstItem="dJt-Pa-fqv" firstAttribute="top" secondItem="hv3-hV-iX4" secondAttribute="bottom" priority="999" constant="310" id="pKm-Uw-QdX"/>
-                            <constraint firstItem="rFv-si-kyk" firstAttribute="top" secondItem="hv3-hV-iX4" secondAttribute="bottom" constant="25" id="sum-vo-R71"/>
-                            <constraint firstItem="rFv-si-kyk" firstAttribute="centerX" secondItem="9tw-p2-800" secondAttribute="centerX" id="ydw-sy-4A1"/>
-                            <constraint firstAttribute="trailing" secondItem="9tw-p2-800" secondAttribute="trailing" id="zLF-FR-cCU"/>
+                            <constraint firstItem="llk-l4-Xfc" firstAttribute="centerY" secondItem="s63-vu-aBk" secondAttribute="centerY" constant="-50" id="1xT-ch-ufn"/>
+                            <constraint firstItem="GRB-c1-3B7" firstAttribute="top" secondItem="s63-vu-aBk" secondAttribute="bottom" id="3fB-hh-N4U"/>
+                            <constraint firstItem="1C9-CM-jFB" firstAttribute="centerX" secondItem="s63-vu-aBk" secondAttribute="centerX" id="9tt-7x-Rv1"/>
+                            <constraint firstAttribute="trailing" secondItem="llk-l4-Xfc" secondAttribute="trailing" constant="70" id="OoV-RS-eKJ"/>
+                            <constraint firstItem="1C9-CM-jFB" firstAttribute="top" secondItem="llk-l4-Xfc" secondAttribute="bottom" constant="25" id="Wrf-1m-xdF"/>
+                            <constraint firstItem="s63-vu-aBk" firstAttribute="top" secondItem="bQv-Uj-Qj9" secondAttribute="bottom" constant="-20" id="feZ-or-hpK"/>
+                            <constraint firstItem="llk-l4-Xfc" firstAttribute="leading" secondItem="8fj-xj-UBs" secondAttribute="leading" constant="70" id="fld-UI-bZj"/>
+                            <constraint firstAttribute="trailing" secondItem="s63-vu-aBk" secondAttribute="trailing" id="jVB-9a-jxE"/>
+                            <constraint firstItem="llk-l4-Xfc" firstAttribute="centerX" secondItem="s63-vu-aBk" secondAttribute="centerX" id="pzs-N5-mlV"/>
+                            <constraint firstItem="s63-vu-aBk" firstAttribute="leading" secondItem="8fj-xj-UBs" secondAttribute="leading" id="xG5-60-8Tt"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1gH-Ra-BDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gTg-4Y-epC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-152" y="1108"/>
         </scene>
     </scenes>
     <resources>
-        <image name="GradientBackground" width="375" height="667"/>
-        <image name="Logo" width="170" height="228"/>
+        <image name="GradientBackground" width="187" height="333"/>
+        <image name="Logo" width="896" height="898"/>
     </resources>
 </document>
