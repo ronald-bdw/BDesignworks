@@ -44,17 +44,18 @@ extension LoginView: ILoginView {
             Logger.debug("loading")
         case .done:
             Logger.debug("done")
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         case .failed:
             Logger.debug("failed")
         }
     }
     
     func presentTourApp() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         ShowTourAppViewController()
     }
     
     func presentConversation() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         ShowConversationViewController()
     }
     
