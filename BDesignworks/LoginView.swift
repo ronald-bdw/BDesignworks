@@ -17,7 +17,6 @@ protocol ILoginView: class {
     func showErrorView(_ title: String, content: String, errorType: BackendError)
     func showErrorView()
     func showPhoneCodeSentView()
-    func changeProviderLogoState(logoExist: Bool)
 }
 
 class LoginView: UIViewController {
@@ -45,23 +44,25 @@ extension LoginView: ILoginView {
             Logger.debug("loading")
         case .done:
             Logger.debug("done")
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         case .failed:
             Logger.debug("failed")
         }
     }
     
     func presentTourApp() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         ShowTourAppViewController()
     }
     
     func presentConversation() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         ShowConversationViewController()
     }
     
-    func changeProviderLogoState(logoExist: Bool) {
-        self.providerLogo.isHidden = !logoExist
-    }
+// commented due to logo marketing reasons
+//    func changeProviderLogoState(logoExist: Bool) {
+//        self.providerLogo.isHidden = !logoExist
+//    }
     
     func showErrorView(_ title: String, content: String, errorType: BackendError) {
         if errorType == .smsCodeExpired ||
@@ -80,7 +81,7 @@ extension LoginView: ILoginView {
     }
     
     func showPhoneCodeSentView() {
-        ShowOKAlert("Success!", message: "Please, wait for sms with link to app.")
+        ShowOKAlert("Success!", message: "Please wait for your SMS confirmation to complete the verification process.")
     }
 }
 

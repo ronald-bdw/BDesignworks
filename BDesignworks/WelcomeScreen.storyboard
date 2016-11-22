@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pmn-Dh-aJ5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pmn-Dh-aJ5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Login View-->
         <scene sceneID="1gG-Ss-B6q">
             <objects>
-                <viewController id="pmn-Dh-aJ5" customClass="LoginView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pmn-Dh-aJ5" customClass="LoginView" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1fs-KX-Sxv"/>
                         <viewControllerLayoutGuide type="bottom" id="L25-aC-qE9"/>
@@ -17,17 +21,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Re7-6D-pR2"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="qNZ-wO-9Hm">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="CkG-cG-5Qf"/>
-                                    <constraint firstAttribute="height" constant="227" id="Pi9-BI-NGo"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Re7-6D-pR2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hbf-logo" translatesAutoresizingMaskIntoConstraints="NO" id="GJL-zX-n8S">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="qNZ-wO-9Hm">
+                                <rect key="frame" x="70" y="97" width="235" height="235"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="SSy-wy-fWE"/>
-                                    <constraint firstAttribute="height" constant="63" id="oyp-F9-izN"/>
+                                    <constraint firstAttribute="width" secondItem="qNZ-wO-9Hm" secondAttribute="height" multiplier="1:1" id="HaZ-pa-Tj8"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -36,16 +36,13 @@
                             <constraint firstItem="Re7-6D-pR2" firstAttribute="leading" secondItem="568-1j-GNU" secondAttribute="leading" id="0Mf-Uf-vQ4"/>
                             <constraint firstItem="qNZ-wO-9Hm" firstAttribute="centerX" secondItem="Re7-6D-pR2" secondAttribute="centerX" id="9sd-NH-bqj"/>
                             <constraint firstItem="qNZ-wO-9Hm" firstAttribute="top" secondItem="1fs-KX-Sxv" secondAttribute="bottom" constant="77" id="F2M-fR-NfJ"/>
-                            <constraint firstItem="GJL-zX-n8S" firstAttribute="centerX" secondItem="Re7-6D-pR2" secondAttribute="centerX" id="L17-vj-Tne"/>
+                            <constraint firstAttribute="trailing" secondItem="qNZ-wO-9Hm" secondAttribute="trailing" constant="70" id="GlI-Yb-2D5"/>
                             <constraint firstAttribute="trailing" secondItem="Re7-6D-pR2" secondAttribute="trailing" id="SR3-Zr-Ivc"/>
                             <constraint firstItem="Re7-6D-pR2" firstAttribute="top" secondItem="1fs-KX-Sxv" secondAttribute="bottom" constant="-20" id="Vfv-Oz-B1l"/>
-                            <constraint firstItem="GJL-zX-n8S" firstAttribute="top" secondItem="qNZ-wO-9Hm" secondAttribute="bottom" constant="60" id="wN4-i1-KkL"/>
+                            <constraint firstItem="qNZ-wO-9Hm" firstAttribute="leading" secondItem="568-1j-GNU" secondAttribute="leading" constant="70" id="cCr-CM-qUc"/>
                             <constraint firstItem="L25-aC-qE9" firstAttribute="top" secondItem="Re7-6D-pR2" secondAttribute="bottom" id="z37-FT-CmC"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="providerLogo" destination="GJL-zX-n8S" id="6pe-Y0-TDv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zat-kW-HjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,8 +50,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GradientBackground" width="375" height="667"/>
-        <image name="Logo" width="170" height="228"/>
-        <image name="hbf-logo" width="170" height="62"/>
+        <image name="GradientBackground" width="187" height="333"/>
+        <image name="Logo" width="896" height="898"/>
     </resources>
 </document>

@@ -130,6 +130,7 @@
 		E7C1F2691D88011C007F9D7A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C1F2681D88011C007F9D7A /* Profile.storyboard */; };
 		E7C1F26D1D881C37007F9D7A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C1F26C1D881C37007F9D7A /* ProfileView.swift */; };
 		E7C2F2661DBE35630018961A /* BackendError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2F2651DBE35630018961A /* BackendError.swift */; };
+		E7C3D0DE1DE48311009E5124 /* SmoochLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7C3D0DD1DE48311009E5124 /* SmoochLocalizable.strings */; };
 		E7C8A6751DABEAC900A64827 /* NotifcationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8A6741DABEAC900A64827 /* NotifcationView.swift */; };
 		E7DA95801D8018FA0079EB79 /* RTSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA957F1D8018FA0079EB79 /* RTSteps.swift */; };
 		E7DA95821D8024A50079EB79 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA95811D8024A50079EB79 /* Steps.swift */; };
@@ -221,7 +222,7 @@
 		218C64C21BA07E1F00EEEDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		218C64C31BA07E4300EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		21C9F2DF19E833300084D18D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		21DB300F19DD2289003A418D /* PearUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PearUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21DB300F19DD2289003A418D /* Pair Up.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pair Up.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DB301319DD2289003A418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21DB301419DD2289003A418D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21DB301E19DD2289003A418D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -362,6 +363,7 @@
 		E7C1F2681D88011C007F9D7A /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		E7C1F26C1D881C37007F9D7A /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E7C2F2651DBE35630018961A /* BackendError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendError.swift; sourceTree = "<group>"; };
+		E7C3D0DD1DE48311009E5124 /* SmoochLocalizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = SmoochLocalizable.strings; path = ../SmoochLocalizable.strings; sourceTree = "<group>"; };
 		E7C8A6741DABEAC900A64827 /* NotifcationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifcationView.swift; sourceTree = "<group>"; };
 		E7DA957F1D8018FA0079EB79 /* RTSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTSteps.swift; sourceTree = "<group>"; };
 		E7DA95811D8024A50079EB79 /* Steps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
@@ -424,12 +426,8 @@
 				214F4FF31BFDC2D90084BE32 /* Helpers.swift */,
 				214F4FF11BFDC2CF0084BE32 /* Extensions.swift */,
 				214F4FF51BFDC35C0084BE32 /* Protocols.swift */,
-				2F0729901D64C86B00A71B3C /* HealthKitManager.swift */,
-				2FDE13681D61B938008702FE /* SmoochHelper.swift */,
 				DCD86E581D6DAA8C0072AFA1 /* Alerts.swift */,
 				DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */,
-				7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */,
-				7CD3B5EC1DC2501A0089D93A /* FitbitManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -486,6 +484,7 @@
 		218C64BC1BA07DDE00EEEDF1 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				E7C3D0DD1DE48311009E5124 /* SmoochLocalizable.strings */,
 				218C64BD1BA07DDE00EEEDF1 /* Localizable.strings */,
 			);
 			path = Localization;
@@ -507,7 +506,7 @@
 		21DB301019DD2289003A418D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				21DB300F19DD2289003A418D /* PearUp.app */,
+				21DB300F19DD2289003A418D /* Pair Up.app */,
 				212D018B1BB1986B00B34340 /* BDesignworksTests.xctest */,
 				1710DE5C1C453AF700912C5B /* BDesignworksUITests.xctest */,
 				4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */,
@@ -526,6 +525,7 @@
 				DC22811A1D6B46B700D5A0DA /* API */,
 				DC22811C1D6B46D000D5A0DA /* Database */,
 				196D6E161BAB0736000B7997 /* Helpers */,
+				E763EC581DE31E3A00A60956 /* Servises */,
 				19C66A341C1DC54800C44FE3 /* Classes */,
 				E731DC711A1CB30C00E12CBA /* Views */,
 				E736C5A41A252B1500B8986E /* Controllers */,
@@ -931,6 +931,17 @@
 			name = NotificationView;
 			sourceTree = "<group>";
 		};
+		E763EC581DE31E3A00A60956 /* Servises */ = {
+			isa = PBXGroup;
+			children = (
+				2FDE13681D61B938008702FE /* SmoochHelper.swift */,
+				2F0729901D64C86B00A71B3C /* HealthKitManager.swift */,
+				7CD3B5EC1DC2501A0089D93A /* FitbitManager.swift */,
+				7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */,
+			);
+			name = Servises;
+			sourceTree = "<group>";
+		};
 		E774EF891D8995DD007A8BC4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1049,7 +1060,7 @@
 			);
 			name = BDesignworks;
 			productName = BDesignworks;
-			productReference = 21DB300F19DD2289003A418D /* PearUp.app */;
+			productReference = 21DB300F19DD2289003A418D /* Pair Up.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4FF397D41D6A5AEC004EAE2E /* IBDesignableKit */ = {
@@ -1185,6 +1196,7 @@
 				DC2281181D6B46AB00D5A0DA /* TrialPage.storyboard in Resources */,
 				21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */,
 				DC2281051D6B466300D5A0DA /* RegistrationTableViewCell.xib in Resources */,
+				E7C3D0DE1DE48311009E5124 /* SmoochLocalizable.strings in Resources */,
 				21DB301F19DD2289003A418D /* Images.xcassets in Resources */,
 				DC2281291D6B470600D5A0DA /* OpenSansExtraBold.ttf in Resources */,
 				DC22812E1D6B470600D5A0DA /* OpenSansRegular.ttf in Resources */,
@@ -1422,21 +1434,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B06F73F91C2E81596CB17AF4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B127C28676A94C891E32B5C8 /* [CP] Embed Pods Frameworks */ = {
@@ -1901,7 +1898,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_DISPLAY_NAME = PearUp;
+				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
@@ -1927,7 +1924,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
-				PRODUCT_NAME = PearUp;
+				PRODUCT_NAME = "Pair Up";
 				PROVISIONING_PROFILE = "1d3c5040-9b3f-4515-9131-c3923f867839";
 				PROVISIONING_PROFILE_SPECIFIER = "PearUp dev";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -1988,7 +1985,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
-				BUNDLE_DISPLAY_NAME = "PearUp Staging";
+				BUNDLE_DISPLAY_NAME = "Pair Up Staging";
 				BUNDLE_ID = com.flatstack.pearup.staging;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
@@ -2014,7 +2011,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
-				PRODUCT_NAME = PearUp;
+				PRODUCT_NAME = "Pair Up";
 				PROVISIONING_PROFILE = "1d3c5040-9b3f-4515-9131-c3923f867839";
 				PROVISIONING_PROFILE_SPECIFIER = "PearUp dev";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -2079,7 +2076,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_DISPLAY_NAME = PearUp;
+				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
@@ -2104,7 +2101,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
-				PRODUCT_NAME = PearUp;
+				PRODUCT_NAME = "Pair Up";
 				PROVISIONING_PROFILE = "c9f5631f-bce9-44b7-b5de-3d4291b874b5";
 				PROVISIONING_PROFILE_SPECIFIER = "PearUp AdHoc";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -2394,7 +2391,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_DISPLAY_NAME = PearUp;
+				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
@@ -2419,7 +2416,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
-				PRODUCT_NAME = PearUp;
+				PRODUCT_NAME = "Pair Up";
 				PROVISIONING_PROFILE = "1d3c5040-9b3f-4515-9131-c3923f867839";
 				PROVISIONING_PROFILE_SPECIFIER = "PearUp dev";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -2435,7 +2432,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_DISPLAY_NAME = PearUp;
+				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
@@ -2458,7 +2455,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
-				PRODUCT_NAME = PearUp;
+				PRODUCT_NAME = "Pair Up";
 				PROVISIONING_PROFILE = "c9f5631f-bce9-44b7-b5de-3d4291b874b5";
 				PROVISIONING_PROFILE_SPECIFIER = "PearUp AdHoc";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -2522,7 +2519,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
-				BUNDLE_DISPLAY_NAME = "PearUp Staging";
+				BUNDLE_DISPLAY_NAME = "Pair Up Staging";
 				BUNDLE_ID = com.flatstack.pearup.staging;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
@@ -2547,7 +2544,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
-				PRODUCT_NAME = PearUp;
+				PRODUCT_NAME = "Pair Up";
 				PROVISIONING_PROFILE = "1d3c5040-9b3f-4515-9131-c3923f867839";
 				PROVISIONING_PROFILE_SPECIFIER = "PearUp dev";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -2608,7 +2605,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
-				BUNDLE_DISPLAY_NAME = "PearUp Staging";
+				BUNDLE_DISPLAY_NAME = "Pair Up Staging";
 				BUNDLE_ID = com.flatstack.pearup.staging;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
@@ -2631,7 +2628,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
-				PRODUCT_NAME = PearUp;
+				PRODUCT_NAME = "Pair Up";
 				PROVISIONING_PROFILE = "c9f5631f-bce9-44b7-b5de-3d4291b874b5";
 				PROVISIONING_PROFILE_SPECIFIER = "PearUp AdHoc";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
@@ -2912,7 +2909,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_DISPLAY_NAME = PearUp;
+				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
 				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
@@ -2935,7 +2932,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
-				PRODUCT_NAME = PearUp;
+				PRODUCT_NAME = "Pair Up";
 				PROVISIONING_PROFILE = "c9f5631f-bce9-44b7-b5de-3d4291b874b5";
 				PROVISIONING_PROFILE_SPECIFIER = "PearUp AdHoc";
 				SWIFT_INSTALL_OBJC_HEADER = YES;

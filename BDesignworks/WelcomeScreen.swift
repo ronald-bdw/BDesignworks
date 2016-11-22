@@ -32,33 +32,45 @@ final class WelcomeScreen: UIViewController {
     }
 
     struct Constants {
-        static let defaultLogoHeight: CGFloat             = 228 // Height of logo on splash screen
+        static let defaultLogoHorizontalOffset: CGFloat   = 70
         static let defaultVerticalCenterOffset: CGFloat   = 10  // Vertical offset of logo on splash screen
         static let defaultLogoTopConstraintRatio: CGFloat = 0.2 // Show how less logo's top offset relative to screen size
     }
     
     //MARK: - IBOutlets
-    @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var containerHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerView                    : UIView!
+    @IBOutlet weak var logoView                         : UIImageView!
+    @IBOutlet weak var previousScreenTextTopConstraint  : NSLayoutConstraint!
+    @IBOutlet weak var containerBottomConstraint        : NSLayoutConstraint!
+    @IBOutlet weak var containerHeightConstraint        : NSLayoutConstraint!
+    @IBOutlet weak var containerTopConstraint           : NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layoutIfNeeded()
         self.navigationController?.navigationBar.isHidden = true
         self.navigationItem.hidesBackButton = true
-        self.containerView.alpha = 0.0
         self.view.layoutIfNeeded()
         UIApplication.shared.applicationIconBadgeNumber = 0
+        
+        self.containerView.alpha = 0.0
+        
+        let screenWidth = UIScreen.main.bounds.width
+        let logoHeight = screenWidth - 2 * Constants.defaultLogoHorizontalOffset
+        
+        self.containerBottomConstraint.constant = UIScreen.main.bounds.height/2 + 50 -
+            self.containerHeightConstraint.constant - self.containerTopConstraint.constant - logoHeight/2
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        UIView.animate(withDuration: 0.8, delay: 0.4, options: UIViewAnimationOptions(), animations: {
+        UIView.animate(withDuration: 1, delay: 0.5, options: [], animations: {
             [weak self] in
             guard let sself = self else { return }
             sself.containerView.alpha = 1.0
+            sself.containerBottomConstraint.constant = 0
+            sself.previousScreenTextTopConstraint.constant += sself.view.fs_height
             sself.view.layoutIfNeeded()
         }, completion: nil)
     }

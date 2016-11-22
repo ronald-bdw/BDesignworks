@@ -13,4 +13,12 @@ class AboutUsView: UIViewController {
     @IBAction func backPressed(sender: AnyObject) {
         self.moveToMainControllerTransitioned()
     }
+    
+    @IBAction func linkPressed(sender: AnyObject) {
+        let urlString = "http://pairup.im"
+        
+        guard let url = URL(string: urlString) else {return}
+        
+        UIApplication.shared.openURL(url)
+    }
 }

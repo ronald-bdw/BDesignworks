@@ -43,6 +43,8 @@ class TourAppUserInfoView: UIViewController {
         
         center.addObserver(self, selector: #selector(self.healthKitRegistered(_:)), name: NSNotification.Name(rawValue: FSNotificationKey.FitnessDataIntegration.HealthKit) , object: nil)
         
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         self.presenter?.viewAppeared()
     }
     
@@ -115,7 +117,7 @@ extension TourAppUserInfoView: UITableViewDataSource {
 
 extension TourAppUserInfoView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard indexPath.row != 0 else {return 250}
+        guard indexPath.row != 0 else {return 260}
         guard indexPath.row != 7 else {return 100}
         switch (indexPath as NSIndexPath).row % 2 {
         case 0:
