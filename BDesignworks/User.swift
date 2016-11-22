@@ -117,7 +117,7 @@ class ENUser: Object, IUser {
                 realm.delete(realm.objects(ENUser.self))
             }
             UIApplication.shared.applicationIconBadgeNumber = 0
-            Smooch.setPushToken(Data())
+//            Smooch.setPushToken(Data())
             Smooch.logout()
             HealthKitManager.sharedInstance.stopSendingData()
             UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.IsProviderChosen)
