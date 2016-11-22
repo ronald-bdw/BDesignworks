@@ -12,8 +12,11 @@
         <array key="OpenSansBold.ttf">
             <string>OpenSans-Bold</string>
         </array>
-        <array key="OpenSansRegular.ttf">
+        <array key="OpenSansRegularItalic.ttf">
             <string>OpenSans</string>
+        </array>
+        <array key="WorkSans-Regular.ttf">
+            <string>WorkSans-Regular</string>
         </array>
         <array key="WorkSans-SemiBold.ttf">
             <string>WorkSans-SemiBold</string>
@@ -23,7 +26,7 @@
         <!--Sidebar View-->
         <scene sceneID="i8l-hk-gPB">
             <objects>
-                <tableViewController id="I5z-f9-QjE" customClass="SidebarView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="I5z-f9-QjE" customClass="SidebarView" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7DN-pf-FcK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +34,7 @@
                         <sections>
                             <tableViewSection id="vvx-CE-v2V">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="164" id="RNi-Dd-Q9n" customClass="SidebarCell" customModule="PearUp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="164" id="RNi-Dd-Q9n" customClass="SidebarCell" customModule="Pair_Up" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RNi-Dd-Q9n" id="84z-1L-fpO">
@@ -42,7 +45,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="oue-tC-Lb9">
-                                                            <rect key="frame" x="152" y="29" width="70" height="70"/>
+                                                            <rect key="frame" x="152" y="29.5" width="70" height="70"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="H5R-HM-ujI"/>
@@ -62,13 +65,13 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e41-Vb-vjE">
-                                                            <rect key="frame" x="142" y="107" width="90" height="22"/>
+                                                            <rect key="frame" x="142.5" y="107.5" width="89.5" height="21"/>
                                                             <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                             <color key="textColor" red="0.92156862750000001" green="0.78823529410000004" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email@email.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNh-2J-ObK">
-                                                            <rect key="frame" x="129" y="129" width="116" height="20"/>
+                                                            <rect key="frame" x="129" y="128.5" width="116" height="19"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -97,7 +100,7 @@
                                             <segue destination="8Is-qm-avh" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="v6p-I9-rQk"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Yv4-9H-UZi" customClass="SidebarCell" customModule="PearUp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Yv4-9H-UZi" customClass="SidebarCell" customModule="Pair_Up" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="164" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yv4-9H-UZi" id="WCF-ff-mAt">
@@ -114,7 +117,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRe-XW-yqs">
-                                                            <rect key="frame" x="84" y="36.5" width="56" height="21"/>
+                                                            <rect key="frame" x="84" y="37" width="56" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -143,7 +146,7 @@
                                             <segue destination="1SD-9E-kGU" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="gFj-eq-XcO"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="o35-oF-BgG" customClass="SidebarCell" customModule="PearUp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="o35-oF-BgG" customClass="SidebarCell" customModule="Pair_Up" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="254" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o35-oF-BgG" id="h6S-L9-Gru">
@@ -160,7 +163,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BH9-Wm-Q1f">
-                                                            <rect key="frame" x="84" y="36.5" width="41" height="21"/>
+                                                            <rect key="frame" x="84" y="37" width="40.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -194,7 +197,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Y21-BW-5fj" customClass="SidebarCell" customModule="PearUp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Y21-BW-5fj" customClass="SidebarCell" customModule="Pair_Up" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="456" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y21-BW-5fj" id="tVr-0F-0BX">
@@ -211,7 +214,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk6-JG-Bdx">
-                                                            <rect key="frame" x="84" y="36.5" width="65" height="21"/>
+                                                            <rect key="frame" x="84" y="37" width="64.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -297,7 +300,7 @@
         <!--About us-->
         <scene sceneID="Yuo-i3-jb7">
             <objects>
-                <viewController id="HBz-Do-DRG" customClass="AboutUsView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HBz-Do-DRG" customClass="AboutUsView" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hIO-XI-vc4"/>
                         <viewControllerLayoutGuide type="bottom" id="a1z-8Q-THu"/>
@@ -309,60 +312,71 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4V-gw-ShF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PEAR UP APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBo-9B-qct">
-                                        <rect key="frame" x="117" y="27" width="141" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE PAIR UP TEAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBo-9B-qct">
+                                        <rect key="frame" x="88" y="16" width="200.5" height="30"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
                                         <color key="textColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-gp-Tjd">
-                                        <rect key="frame" x="15" y="69" width="345" height="65.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-gp-Tjd">
+                                        <rect key="frame" x="30" y="58" width="315" height="107.5"/>
+                                        <string key="text">Our professional team of healthy habit coaches are based in Perth, Western Australia. We have helped over 23,000 Australians get more active over the past few years.</string>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="About/1" translatesAutoresizingMaskIntoConstraints="NO" id="uuf-Eg-h0R">
-                                        <rect key="frame" x="15" y="153.5" width="345" height="250"/>
+                                        <rect key="frame" x="15" y="184.5" width="345" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="KcJ-Fa-ESH"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="About/2" translatesAutoresizingMaskIntoConstraints="NO" id="0iI-P6-lVT">
-                                        <rect key="frame" x="15" y="502" width="170" height="170"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="170" id="7re-Cd-jUn"/>
-                                            <constraint firstAttribute="height" constant="170" id="ezS-CM-kga"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="About/3" translatesAutoresizingMaskIntoConstraints="NO" id="kzC-om-aBP">
-                                        <rect key="frame" x="193" y="502" width="167" height="170"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hashtag tofu mlkshk wolf green juice. Offal hella lomo, letterpress four dollar toast listicle XOXO single-origin coffee." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px5-6f-hdq">
-                                        <rect key="frame" x="15" y="418.5" width="345" height="65.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px5-6f-hdq">
+                                        <rect key="frame" x="30" y="449.5" width="315" height="86"/>
+                                        <string key="text">Pair Up cares about your privacy. To learn more, please visit our website to review our Privacy Policy and our End-User Licencing Agreement.</string>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gu-kg-PHu" customClass="RoundButton" customModule="IBDesignableKit">
+                                        <rect key="frame" x="52" y="551.5" width="270" height="60"/>
+                                        <color key="backgroundColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="V1O-8c-lwu"/>
+                                            <constraint firstAttribute="width" constant="270" id="lXg-Rr-RhJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="18"/>
+                                        <state key="normal" title="www.pairup.im">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
+                                                <real key="value" value="28"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="fs_shadowOffset">
+                                                <size key="value" width="0.0" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="linkPressedWithSender:" destination="HBz-Do-DRG" eventType="touchUpInside" id="G6y-pC-sdh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="FBo-9B-qct" firstAttribute="top" secondItem="q4V-gw-ShF" secondAttribute="top" constant="27" id="10Q-7W-g5M"/>
-                                    <constraint firstItem="rfb-gp-Tjd" firstAttribute="leading" secondItem="q4V-gw-ShF" secondAttribute="leading" constant="15" id="2RM-ku-afL"/>
+                                    <constraint firstItem="FBo-9B-qct" firstAttribute="top" secondItem="q4V-gw-ShF" secondAttribute="top" constant="16" id="10Q-7W-g5M"/>
+                                    <constraint firstItem="rfb-gp-Tjd" firstAttribute="leading" secondItem="q4V-gw-ShF" secondAttribute="leading" constant="30" id="2RM-ku-afL"/>
                                     <constraint firstItem="uuf-Eg-h0R" firstAttribute="leading" secondItem="q4V-gw-ShF" secondAttribute="leading" constant="15" id="2cT-2M-c7Q"/>
-                                    <constraint firstAttribute="trailing" secondItem="rfb-gp-Tjd" secondAttribute="trailing" constant="15" id="3SI-6X-zOC"/>
-                                    <constraint firstAttribute="bottom" secondItem="0iI-P6-lVT" secondAttribute="bottom" constant="20" id="6Cy-6E-fx1"/>
+                                    <constraint firstAttribute="trailing" secondItem="rfb-gp-Tjd" secondAttribute="trailing" constant="30" id="3SI-6X-zOC"/>
                                     <constraint firstItem="uuf-Eg-h0R" firstAttribute="top" secondItem="rfb-gp-Tjd" secondAttribute="bottom" constant="19" id="7P2-rM-fhF"/>
-                                    <constraint firstItem="0iI-P6-lVT" firstAttribute="leading" secondItem="q4V-gw-ShF" secondAttribute="leading" constant="15" id="ATL-vj-p5h"/>
-                                    <constraint firstItem="0iI-P6-lVT" firstAttribute="top" secondItem="px5-6f-hdq" secondAttribute="bottom" constant="18" id="C0S-OO-VmG"/>
-                                    <constraint firstItem="kzC-om-aBP" firstAttribute="top" secondItem="0iI-P6-lVT" secondAttribute="top" id="ESH-uW-u2J"/>
+                                    <constraint firstItem="6gu-kg-PHu" firstAttribute="centerX" secondItem="q4V-gw-ShF" secondAttribute="centerX" id="DKg-Xq-R8V"/>
                                     <constraint firstItem="px5-6f-hdq" firstAttribute="top" secondItem="uuf-Eg-h0R" secondAttribute="bottom" constant="15" id="FP3-OI-RiO"/>
+                                    <constraint firstItem="6gu-kg-PHu" firstAttribute="top" secondItem="px5-6f-hdq" secondAttribute="bottom" constant="16" id="Qy8-Ge-l87"/>
                                     <constraint firstItem="rfb-gp-Tjd" firstAttribute="top" secondItem="FBo-9B-qct" secondAttribute="bottom" constant="12" id="VZS-WQ-Qe4"/>
+                                    <constraint firstAttribute="bottom" secondItem="6gu-kg-PHu" secondAttribute="bottom" constant="16" id="Vcw-7t-mwU"/>
                                     <constraint firstItem="FBo-9B-qct" firstAttribute="centerX" secondItem="q4V-gw-ShF" secondAttribute="centerX" id="h7g-Ka-SKx"/>
-                                    <constraint firstItem="kzC-om-aBP" firstAttribute="bottom" secondItem="0iI-P6-lVT" secondAttribute="bottom" id="iJf-Xs-wCk"/>
-                                    <constraint firstAttribute="trailing" secondItem="px5-6f-hdq" secondAttribute="trailing" constant="15" id="iPy-LV-bSY"/>
-                                    <constraint firstAttribute="trailing" secondItem="kzC-om-aBP" secondAttribute="trailing" constant="15" id="mUr-Kq-4Rz"/>
+                                    <constraint firstAttribute="trailing" secondItem="px5-6f-hdq" secondAttribute="trailing" constant="30" id="iPy-LV-bSY"/>
                                     <constraint firstAttribute="trailing" secondItem="uuf-Eg-h0R" secondAttribute="trailing" constant="15" id="ood-oW-bAr"/>
-                                    <constraint firstItem="kzC-om-aBP" firstAttribute="leading" secondItem="0iI-P6-lVT" secondAttribute="trailing" constant="8" id="pPv-XP-mV1"/>
-                                    <constraint firstItem="px5-6f-hdq" firstAttribute="leading" secondItem="q4V-gw-ShF" secondAttribute="leading" constant="15" id="yn0-La-74G"/>
+                                    <constraint firstItem="px5-6f-hdq" firstAttribute="leading" secondItem="q4V-gw-ShF" secondAttribute="leading" constant="30" id="yn0-La-74G"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -430,7 +444,7 @@
         <!--Conversation Screen-->
         <scene sceneID="ZKY-lK-BIJ">
             <objects>
-                <viewController id="oaQ-BK-TCI" customClass="ConversationScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oaQ-BK-TCI" customClass="ConversationScreen" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vtn-Bi-2KU"/>
                         <viewControllerLayoutGuide type="bottom" id="QRs-CP-a5p"/>
@@ -466,9 +480,7 @@
     </scenes>
     <resources>
         <image name="About/1" width="345" height="248"/>
-        <image name="About/2" width="169" height="103"/>
-        <image name="About/3" width="169" height="103"/>
-        <image name="AppLogo" width="144" height="144"/>
+        <image name="AppLogo" width="72" height="72"/>
         <image name="Profile/Avatar" width="1967" height="1958"/>
         <image name="SettingsIcon" width="144" height="144"/>
         <image name="ShareIcon" width="134" height="144"/>
