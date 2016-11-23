@@ -70,7 +70,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hez-UQ-tDp">
-                                                    <rect key="frame" x="80" y="35.5" width="245" height="20.5"/>
+                                                    <rect key="frame" x="80" y="36" width="245" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="15"/>
                                                     <color key="textColor" red="0.1843137255" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -724,7 +724,7 @@
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Change switch state of PearUp app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3m-BH-bMC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Change switch state of Pair Up app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3m-BH-bMC">
                                 <rect key="frame" x="16" y="269" width="283" height="19.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
@@ -762,7 +762,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Profile/Avatar" width="1967" height="1958"/>
+        <image name="Profile/Avatar" width="375" height="375"/>
         <image name="Settings/Accessory" width="14" height="25"/>
         <image name="Settings/Logout" width="31" height="26"/>
         <image name="Settings/Settings" width="90" height="90"/>
