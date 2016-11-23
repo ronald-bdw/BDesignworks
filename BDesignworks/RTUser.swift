@@ -83,7 +83,8 @@ extension Router.User: RouterProtocol {
     var multipartParameters: [String: Data]? {
         switch self {
         case .sendAvatar(_, let image):
-            guard let data = UIImageJPEGRepresentation(image, 1.0) else {return nil}
+            let compressionRate = UIScreen.main.scale * 100 * 100 / (image.size.height * image.size.width)
+            guard let data = UIImageJPEGRepresentation(image, compressionRate) else {return nil}
             return ["user[avatar]": data]
         default:
             return nil
