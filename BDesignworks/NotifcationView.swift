@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 class NotificationView: BaseView {
     
@@ -24,6 +25,11 @@ class NotificationView: BaseView {
         let gestureRecogniser = UITapGestureRecognizer()
         gestureRecogniser.addTarget(view, action: #selector(view.tapped))
         view.addGestureRecognizer(gestureRecogniser)
+        
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        let systemSoundID: SystemSoundID = 1000
+        AudioServicesPlaySystemSound(systemSoundID)
+        
         UIView.animate(withDuration: 0.3) {
             view.alpha = 1
         }
