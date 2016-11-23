@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="OpenSansRegularItalic.ttf">
+        <array key="OpenSansRegular.ttf">
             <string>OpenSans</string>
         </array>
         <array key="OpenSansSemiBold.ttf">
@@ -40,7 +40,7 @@
         <!--Settings-->
         <scene sceneID="wuI-QP-LfR">
             <objects>
-                <tableViewController title="Settings" id="9GJ-SZ-QtN" customClass="SettingsView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="9GJ-SZ-QtN" customClass="SettingsView" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6DL-5w-UbC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hez-UQ-tDp">
-                                                    <rect key="frame" x="80" y="35" width="245" height="21"/>
+                                                    <rect key="frame" x="80" y="35.5" width="245" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="15"/>
                                                     <color key="textColor" red="0.1843137255" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -123,7 +123,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMB-df-X3B">
-                                                    <rect key="frame" x="80" y="35" width="136" height="21"/>
+                                                    <rect key="frame" x="80" y="35.5" width="136" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="15"/>
                                                     <color key="textColor" red="0.1843137255" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -172,7 +172,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Sync" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xe0-if-QIC">
-                                                    <rect key="frame" x="80" y="35" width="72" height="21"/>
+                                                    <rect key="frame" x="80" y="35.5" width="71.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="15"/>
                                                     <color key="textColor" red="0.1843137255" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -231,19 +231,20 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLH-OG-ZtN">
-                                                    <rect key="frame" x="74" y="35" width="57" height="21"/>
+                                                    <rect key="frame" x="74" y="35.5" width="57" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3T-8R-2AM">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3T-8R-2AM">
                                                     <rect key="frame" x="0.0" y="88" width="375" height="2"/>
-                                                    <color key="backgroundColor" red="0.1843137255" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.16078431372549018" green="0.32549019607843138" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="2" id="FTE-kG-YPs"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.16078431372549018" green="0.32549019607843138" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="qgE-8u-1ec" firstAttribute="height" secondItem="TTN-Ui-0wY" secondAttribute="height" multiplier="0.7" id="395-Ld-CQB"/>
                                                 <constraint firstItem="d3T-8R-2AM" firstAttribute="leading" secondItem="TTN-Ui-0wY" secondAttribute="leading" id="80b-y3-k5b"/>
@@ -298,7 +299,7 @@
         <!--Logout View-->
         <scene sceneID="y2d-gq-cuQ">
             <objects>
-                <viewController id="pKh-DZ-gew" customClass="LogoutView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pKh-DZ-gew" customClass="LogoutView" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ha5-zo-1vI"/>
                         <viewControllerLayoutGuide type="bottom" id="kGZ-Pk-hDd"/>
@@ -392,7 +393,7 @@
         <!--Data Sync-->
         <scene sceneID="gaz-CZ-JBF">
             <objects>
-                <tableViewController title="Data Sync" id="kU7-nB-7m7" customClass="DataSyncView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Data Sync" id="kU7-nB-7m7" customClass="DataSyncView" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="tin-0C-ksY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -416,7 +417,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVo-l8-ieT">
-                                                    <rect key="frame" x="80" y="35" width="80" height="21"/>
+                                                    <rect key="frame" x="80" y="35.5" width="79.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="15"/>
                                                     <color key="textColor" red="0.1843137255" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -476,7 +477,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fitbit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-I2-vtR">
-                                                    <rect key="frame" x="80" y="35" width="38" height="21"/>
+                                                    <rect key="frame" x="80" y="35.5" width="37.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans Semibold" pointSize="15"/>
                                                     <color key="textColor" red="0.1843137255" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -528,7 +529,7 @@
         <!--Notifications View-->
         <scene sceneID="0XF-Qk-nlB">
             <objects>
-                <viewController id="D7R-Lq-8VN" customClass="NotificationsView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="D7R-Lq-8VN" customClass="NotificationsView" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r5g-xS-dXo"/>
                         <viewControllerLayoutGuide type="bottom" id="AJI-IZ-tdj"/>
@@ -544,7 +545,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDS-wb-xF2" customClass="RoundButton" customModule="IBDesignableKit">
-                                <rect key="frame" x="82.5" y="334" width="150" height="55"/>
+                                <rect key="frame" x="82.5" y="334.5" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="fUV-hg-uVk"/>
                                 </constraints>
@@ -568,7 +569,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaK-OA-TYv" customClass="RoundButton" customModule="IBDesignableKit">
-                                <rect key="frame" x="57.5" y="263" width="200" height="55"/>
+                                <rect key="frame" x="57.5" y="263.5" width="200" height="55"/>
                                 <color key="backgroundColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="3Yd-B2-84X"/>
@@ -591,13 +592,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Go to Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nll-ze-4K1">
-                                <rect key="frame" x="63" y="127" width="107" height="19"/>
+                                <rect key="frame" x="63" y="127" width="107" height="19.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Tap Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aww-RH-5G2">
-                                <rect key="frame" x="63" y="168" width="124.5" height="19"/>
+                                <rect key="frame" x="63" y="168" width="124.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -622,7 +623,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Set &quot;Allow Notifications&quot; to On." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nF-0t-SN9">
-                                <rect key="frame" x="63" y="209" width="215" height="19"/>
+                                <rect key="frame" x="63" y="209" width="215" height="19.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -665,7 +666,7 @@
         <!--Health App View-->
         <scene sceneID="LY4-oV-Umb">
             <objects>
-                <viewController id="Os5-L9-OTg" customClass="HealthAppView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Os5-L9-OTg" customClass="HealthAppView" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PRg-Jl-6J8"/>
                         <viewControllerLayoutGuide type="bottom" id="7Z3-L5-tVt"/>
@@ -681,7 +682,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNI-jX-GFe" customClass="RoundButton" customModule="IBDesignableKit">
-                                <rect key="frame" x="82.5" y="332" width="150" height="55"/>
+                                <rect key="frame" x="82.5" y="333.5" width="150" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="PTk-B0-QG0"/>
                                     <constraint firstAttribute="width" constant="150" id="tbS-PW-drX"/>
@@ -706,25 +707,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Go to Health app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wm-Kx-Frp">
-                                <rect key="frame" x="16" y="131.5" width="283" height="19"/>
+                                <rect key="frame" x="16" y="131.5" width="283" height="19.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Select Health Data from bottom menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-Wn-53T">
-                                <rect key="frame" x="16" y="170.5" width="283" height="19"/>
+                                <rect key="frame" x="16" y="171" width="283" height="19.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Select Activity -&gt; Steps -&gt; Data Sources &amp; Access." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIa-4k-9Pt">
-                                <rect key="frame" x="16" y="209.5" width="283" height="38.5"/>
+                                <rect key="frame" x="16" y="210.5" width="283" height="38.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Change switch state of PearUp app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3m-BH-bMC">
-                                <rect key="frame" x="16" y="268" width="283" height="19"/>
+                                <rect key="frame" x="16" y="269" width="283" height="19.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
