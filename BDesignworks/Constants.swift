@@ -101,9 +101,13 @@ enum Image {
 enum Fonts {
     enum OpenSans {
         case bold
+        case regular
         
         var fontName: String {
-            return "OpenSans-Bold"
+            switch self {
+            case .regular   : return "OpenSans"
+            case .bold      : return "OpenSans-Bold"
+            }
         }
         
         func getFontOfSize(_ size: CGFloat) -> UIFont {

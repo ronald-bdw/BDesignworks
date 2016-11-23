@@ -12,7 +12,7 @@
         <array key="OpenSansBold.ttf">
             <string>OpenSans-Bold</string>
         </array>
-        <array key="OpenSansRegularItalic.ttf">
+        <array key="OpenSansRegular.ttf">
             <string>OpenSans</string>
         </array>
         <array key="WorkSans-Regular.ttf">
@@ -313,33 +313,33 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE PAIR UP TEAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBo-9B-qct">
-                                        <rect key="frame" x="88.5" y="16" width="198" height="26"/>
+                                        <rect key="frame" x="87.5" y="32" width="200.5" height="30"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
-                                        <color key="textColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.11764705882352941" green="0.19215686274509802" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-gp-Tjd">
-                                        <rect key="frame" x="30" y="54" width="315" height="93.5"/>
+                                        <rect key="frame" x="30" y="74" width="315" height="109"/>
                                         <string key="text">Our professional team of healthy habit coaches are based in Perth, Western Australia. We have helped over 23,000 Australians get more active over the past few years.</string>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="About/1" translatesAutoresizingMaskIntoConstraints="NO" id="uuf-Eg-h0R">
-                                        <rect key="frame" x="15" y="166.5" width="345" height="250"/>
+                                        <rect key="frame" x="15" y="202" width="345" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="KcJ-Fa-ESH"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px5-6f-hdq">
-                                        <rect key="frame" x="30" y="431.5" width="315" height="75"/>
+                                        <rect key="frame" x="30" y="467" width="315" height="87.5"/>
                                         <string key="text">Pair Up cares about your privacy. To learn more, please visit our website to review our Privacy Policy and our End-User Licencing Agreement.</string>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gu-kg-PHu" customClass="RoundButton" customModule="IBDesignableKit">
-                                        <rect key="frame" x="52" y="522.5" width="270" height="60"/>
+                                        <rect key="frame" x="52" y="570.5" width="270" height="60"/>
                                         <color key="backgroundColor" red="0.16078431369999999" green="0.32549019610000002" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="V1O-8c-lwu"/>
@@ -363,7 +363,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="FBo-9B-qct" firstAttribute="top" secondItem="q4V-gw-ShF" secondAttribute="top" constant="16" id="10Q-7W-g5M"/>
+                                    <constraint firstItem="FBo-9B-qct" firstAttribute="top" secondItem="q4V-gw-ShF" secondAttribute="top" constant="32" id="10Q-7W-g5M"/>
                                     <constraint firstItem="rfb-gp-Tjd" firstAttribute="leading" secondItem="q4V-gw-ShF" secondAttribute="leading" constant="30" id="2RM-ku-afL"/>
                                     <constraint firstItem="uuf-Eg-h0R" firstAttribute="leading" secondItem="q4V-gw-ShF" secondAttribute="leading" constant="15" id="2cT-2M-c7Q"/>
                                     <constraint firstAttribute="trailing" secondItem="rfb-gp-Tjd" secondAttribute="trailing" constant="30" id="3SI-6X-zOC"/>
@@ -372,7 +372,7 @@
                                     <constraint firstItem="px5-6f-hdq" firstAttribute="top" secondItem="uuf-Eg-h0R" secondAttribute="bottom" constant="15" id="FP3-OI-RiO"/>
                                     <constraint firstItem="6gu-kg-PHu" firstAttribute="top" secondItem="px5-6f-hdq" secondAttribute="bottom" constant="16" id="Qy8-Ge-l87"/>
                                     <constraint firstItem="rfb-gp-Tjd" firstAttribute="top" secondItem="FBo-9B-qct" secondAttribute="bottom" constant="12" id="VZS-WQ-Qe4"/>
-                                    <constraint firstAttribute="bottom" secondItem="6gu-kg-PHu" secondAttribute="bottom" constant="16" id="Vcw-7t-mwU"/>
+                                    <constraint firstAttribute="bottom" secondItem="6gu-kg-PHu" secondAttribute="bottom" constant="32" id="Vcw-7t-mwU"/>
                                     <constraint firstItem="FBo-9B-qct" firstAttribute="centerX" secondItem="q4V-gw-ShF" secondAttribute="centerX" id="h7g-Ka-SKx"/>
                                     <constraint firstAttribute="trailing" secondItem="px5-6f-hdq" secondAttribute="trailing" constant="30" id="iPy-LV-bSY"/>
                                     <constraint firstAttribute="trailing" secondItem="uuf-Eg-h0R" secondAttribute="trailing" constant="15" id="ood-oW-bAr"/>

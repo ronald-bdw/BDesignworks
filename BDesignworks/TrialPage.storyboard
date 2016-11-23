@@ -23,7 +23,7 @@
         <scene sceneID="zlH-tn-tJg">
             <objects>
                 <navigationController storyboardIdentifier="RegistrationNavigationView" id="Day-Hn-suc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qT2-97-jIk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qT2-97-jIk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -143,7 +143,7 @@
         <scene sceneID="eqo-zq-BFO">
             <objects>
                 <navigationController id="Ezl-za-NkC" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ex6-MB-67M">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ex6-MB-67M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -337,16 +337,16 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fs_masksToBounds" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pair Up uses simple in-app chat conversations with a friendly human coach to help you lead a more active lifestyle." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="KOR-Yq-KEC">
-                                                                <rect key="frame" x="18" y="234" width="211" height="87.5"/>
-                                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="w6r-Ei-WsT">
-                                                                <rect key="frame" x="0.0" y="194" width="246" height="30"/>
+                                                                <rect key="frame" x="0.0" y="198" width="246" height="30"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
                                                                 <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pair Up uses simple in-app chat conversations with a friendly human coach to help you lead a more active lifestyle." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="KOR-Yq-KEC">
+                                                                <rect key="frame" x="18" y="238" width="211" height="87.5"/>
+                                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -360,7 +360,7 @@
                                                             <constraint firstItem="acy-f2-5A7" firstAttribute="top" secondItem="vd1-94-FG2" secondAttribute="top" id="sRQ-zv-nn5"/>
                                                             <constraint firstItem="KOR-Yq-KEC" firstAttribute="leading" secondItem="vd1-94-FG2" secondAttribute="leading" constant="18" id="svb-it-tMi"/>
                                                             <constraint firstItem="KOR-Yq-KEC" firstAttribute="centerX" secondItem="vd1-94-FG2" secondAttribute="centerX" id="ubT-ct-tSo"/>
-                                                            <constraint firstItem="w6r-Ei-WsT" firstAttribute="top" secondItem="acy-f2-5A7" secondAttribute="bottom" constant="14" id="wZU-cJ-VIw"/>
+                                                            <constraint firstItem="w6r-Ei-WsT" firstAttribute="top" secondItem="acy-f2-5A7" secondAttribute="bottom" constant="18" id="wZU-cJ-VIw"/>
                                                             <constraint firstAttribute="trailing" secondItem="acy-f2-5A7" secondAttribute="trailing" id="zsB-5M-xQn"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
@@ -401,13 +401,13 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POWER OF HABITS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mip-da-BHc">
-                                                                <rect key="frame" x="24" y="190" width="199.5" height="30"/>
+                                                                <rect key="frame" x="24" y="198" width="199.5" height="30"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
                                                                 <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Pair Up coach will help you turn small steps into get-active habits that last - for a healthier, happier you!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NQ-dn-jB8">
-                                                                <rect key="frame" x="18" y="234" width="210" height="87.5"/>
+                                                                <rect key="frame" x="18" y="238" width="210" height="87.5"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -415,7 +415,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstItem="Mip-da-BHc" firstAttribute="top" secondItem="1mH-pH-SYd" secondAttribute="bottom" constant="10" id="0jT-dL-HRe"/>
+                                                            <constraint firstItem="Mip-da-BHc" firstAttribute="top" secondItem="1mH-pH-SYd" secondAttribute="bottom" constant="18" id="0jT-dL-HRe"/>
                                                             <constraint firstItem="1mH-pH-SYd" firstAttribute="leading" secondItem="FQI-r6-rAV" secondAttribute="leading" id="Ki8-4I-BYf"/>
                                                             <constraint firstAttribute="trailing" secondItem="9NQ-dn-jB8" secondAttribute="trailing" constant="18" id="OP8-4h-NJ0"/>
                                                             <constraint firstItem="9NQ-dn-jB8" firstAttribute="leading" secondItem="FQI-r6-rAV" secondAttribute="leading" constant="18" id="Tlo-tg-ORk"/>
@@ -423,7 +423,7 @@
                                                             <constraint firstItem="1mH-pH-SYd" firstAttribute="top" secondItem="Mip-da-BHc" secondAttribute="bottom" constant="17" id="aNV-Yh-Q2q"/>
                                                             <constraint firstAttribute="trailing" secondItem="1mH-pH-SYd" secondAttribute="trailing" id="ffL-lT-RgH"/>
                                                             <constraint firstItem="1mH-pH-SYd" firstAttribute="top" secondItem="FQI-r6-rAV" secondAttribute="top" id="gKs-Tp-TeX"/>
-                                                            <constraint firstItem="9NQ-dn-jB8" firstAttribute="top" secondItem="Mip-da-BHc" secondAttribute="bottom" constant="14" id="mz7-eU-jRe"/>
+                                                            <constraint firstItem="9NQ-dn-jB8" firstAttribute="top" secondItem="Mip-da-BHc" secondAttribute="bottom" constant="10" id="mz7-eU-jRe"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="fs_cornerRadius">
@@ -468,13 +468,13 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DATA INSIGHTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BY-kX-bZ2">
-                                                                <rect key="frame" x="41" y="190" width="164" height="30"/>
+                                                                <rect key="frame" x="41" y="198" width="164" height="30"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
                                                                 <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCG-IE-ZwI">
-                                                                <rect key="frame" x="18" y="234" width="210" height="109"/>
+                                                                <rect key="frame" x="18" y="238" width="210" height="109"/>
                                                                 <string key="text">Pair Up syncs with your phone and most activity trackers, providing your coach with key insights to help you lock-in new habits.</string>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -484,12 +484,12 @@
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="jtS-DX-zU6" firstAttribute="top" secondItem="YcP-xs-IdS" secondAttribute="top" id="4ep-fH-vmV"/>
-                                                            <constraint firstItem="7BY-kX-bZ2" firstAttribute="top" secondItem="jtS-DX-zU6" secondAttribute="bottom" constant="10" id="Ndg-Tt-2v6"/>
+                                                            <constraint firstItem="7BY-kX-bZ2" firstAttribute="top" secondItem="jtS-DX-zU6" secondAttribute="bottom" constant="18" id="Ndg-Tt-2v6"/>
                                                             <constraint firstItem="7BY-kX-bZ2" firstAttribute="centerX" secondItem="YcP-xs-IdS" secondAttribute="centerX" id="Pc6-mO-GVv"/>
                                                             <constraint firstAttribute="trailing" secondItem="tCG-IE-ZwI" secondAttribute="trailing" constant="18" id="WwK-iV-EBc"/>
                                                             <constraint firstItem="tCG-IE-ZwI" firstAttribute="leading" secondItem="YcP-xs-IdS" secondAttribute="leading" constant="18" id="bdV-XA-uZw"/>
                                                             <constraint firstAttribute="trailing" secondItem="jtS-DX-zU6" secondAttribute="trailing" id="emD-bc-yE4"/>
-                                                            <constraint firstItem="tCG-IE-ZwI" firstAttribute="top" secondItem="7BY-kX-bZ2" secondAttribute="bottom" constant="14" id="izt-AV-3mO"/>
+                                                            <constraint firstItem="tCG-IE-ZwI" firstAttribute="top" secondItem="7BY-kX-bZ2" secondAttribute="bottom" constant="10" id="izt-AV-3mO"/>
                                                             <constraint firstItem="jtS-DX-zU6" firstAttribute="leading" secondItem="YcP-xs-IdS" secondAttribute="leading" id="r87-OA-exg"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
@@ -530,13 +530,13 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FREE 30 DAY TRIAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysd-lV-Fha">
-                                                                <rect key="frame" x="23.5" y="190" width="200" height="30"/>
+                                                                <rect key="frame" x="23.5" y="198" width="200" height="30"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
                                                                 <color key="textColor" red="0.1176470588" green="0.19215686269999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try Pair Up free for 30 days. The choice is yours to continue a subscription that is far cheaper than traditional coaching." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL1-Wz-xQ7">
-                                                                <rect key="frame" x="18" y="234" width="210" height="109"/>
+                                                                <rect key="frame" x="18" y="238" width="210" height="109"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -548,8 +548,8 @@
                                                             <constraint firstItem="AoQ-gw-l3k" firstAttribute="leading" secondItem="KrZ-pc-b7I" secondAttribute="leading" id="9l8-Lu-dxo"/>
                                                             <constraint firstAttribute="trailing" secondItem="PL1-Wz-xQ7" secondAttribute="trailing" constant="18" id="A5s-OX-btq"/>
                                                             <constraint firstItem="PL1-Wz-xQ7" firstAttribute="leading" secondItem="KrZ-pc-b7I" secondAttribute="leading" constant="18" id="TVT-6v-NOH"/>
-                                                            <constraint firstItem="Ysd-lV-Fha" firstAttribute="top" secondItem="AoQ-gw-l3k" secondAttribute="bottom" constant="10" id="cXJ-mf-Qp5"/>
-                                                            <constraint firstItem="PL1-Wz-xQ7" firstAttribute="top" secondItem="Ysd-lV-Fha" secondAttribute="bottom" constant="14" id="iAs-bj-nxN"/>
+                                                            <constraint firstItem="Ysd-lV-Fha" firstAttribute="top" secondItem="AoQ-gw-l3k" secondAttribute="bottom" constant="18" id="cXJ-mf-Qp5"/>
+                                                            <constraint firstItem="PL1-Wz-xQ7" firstAttribute="top" secondItem="Ysd-lV-Fha" secondAttribute="bottom" constant="10" id="iAs-bj-nxN"/>
                                                             <constraint firstItem="Ysd-lV-Fha" firstAttribute="centerX" secondItem="KrZ-pc-b7I" secondAttribute="centerX" id="qMl-U4-V9B"/>
                                                             <constraint firstItem="AoQ-gw-l3k" firstAttribute="top" secondItem="KrZ-pc-b7I" secondAttribute="top" id="zQD-7H-uKu"/>
                                                         </constraints>
