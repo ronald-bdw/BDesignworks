@@ -76,6 +76,7 @@ final class ModalPresentationController: UIPresentationController {
         coordinator?.animate(alongsideTransition: {[weak self] (context: UIViewControllerTransitionCoordinatorContext) in
             guard let sself = self else { return }
             sself.dimmingView.backgroundColor = UIColor.clear
+            sself.presentedView?.backgroundColor = UIColor.clear
             lPresentedView.frame = sself.frameOfPresentedViewInContainerView.offsetBy(dx: 0,
                                                 dy: -lContainerView.fs_height + (lContainerView.fs_height-lPresentedView.fs_height)/2)
         }, completion: {[weak self] (context: UIViewControllerTransitionCoordinatorContext) in
