@@ -13,14 +13,14 @@ class ENUser: Object, IUser {
     dynamic var id: Int = 0
     dynamic var zendeskId: String = ""
     dynamic var firstName: String = ""
-    dynamic var lastName: String = "" 
+    dynamic var lastName: String = ""
     dynamic var email: String = ""
     dynamic var phoneNumber: String = ""
     dynamic var lastStepsHealthKitUpdateDate: Date?
     dynamic var avatarUrl: String = ""
     dynamic var avatarThumbUrl: String = ""
     dynamic var provider: String = ""
-    
+
     var token: String? {
         get {
             guard let ssToken = SAMKeychain.password(forService: FSKeychainKey.APIToken, account: FSKeychainKey.AccountName) else {return self._token}
@@ -37,24 +37,24 @@ class ENUser: Object, IUser {
         }
     }
     var _token: String?
-    
+
     var fullname: String {
         return firstName + " " + lastName
     }
-    
+
     override static func primaryKey() -> String? {
         return "id"
     }
-    
+
     override static func ignoredProperties() -> [String] {
         return ["token", "_token", "fullname"]
     }
-    
+
     required convenience init?(map: ObjectMapper.Map) {
         guard let _ = map.JSON["id"] as? Int else {return nil}
         self.init()
     }
-    
+
     func getRegistrationUser() -> RegistrationUser {
         var user = RegistrationUser()
         user.firstName.content = self.firstName
@@ -62,7 +62,7 @@ class ENUser: Object, IUser {
         user.email.content = self.email
         return user
     }
-    
+
     func getTourAppUser() -> TourAppUser {
         var user = TourAppUser()
         user.firstName.content = self.firstName
@@ -70,7 +70,7 @@ class ENUser: Object, IUser {
         user.email.content = self.email
         return user
     }
-    
+
     static func getMainUser() -> ENUser? {
         do {
             let realm = try Realm()
@@ -81,7 +81,7 @@ class ENUser: Object, IUser {
             return nil
         }
     }
-    
+
     static func createTestUser() {
         do {
             let realm = try Realm()
@@ -108,7 +108,7 @@ class ENUser: Object, IUser {
             Logger.error("\(error)")
         }
     }
-    
+
     static func logout() {
         FitbitManager.sharedInstance.removeFitBitTokenFromServer()
         guard let user = ENUser.getMainUser() else {return}
