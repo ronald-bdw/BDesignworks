@@ -32,7 +32,11 @@ class LoginView: UIViewController {
         UIApplication.shared.statusBarStyle = .default
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.presenter?.viewLoaded()
     }
 }

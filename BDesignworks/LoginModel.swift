@@ -17,6 +17,12 @@ class LoginModel {
     var user: ENUser?
     var authData: AuthInfo?
     
+    var task: DataRequest? {
+        willSet {
+            self.task?.cancel()
+        }
+    }
+    
     weak var presenter: PresenterProtocol?
     
     required init() {
@@ -25,8 +31,10 @@ class LoginModel {
     
     fileprivate func startLogin(_ smsCode: String) {
         self.presenter?.loadingStarted()
-        guard let lAuthInfo = self.authData else {self.presenter?.loadingFailed(error: nil); return}
-        let _ = Router.User.signIn(phone: lAuthInfo.phone, authPhoneCode: lAuthInfo.id, smsCode: smsCode).request().responseObject { [weak self] (response: DataResponse<RTUserResponse>) in
+        guard let lAuthInfo = self.authData else {
+            Crashlytics.sharedInstance().recordError(LoginErrors.authDataNotFound.error)
+            self.presenter?.loadingFailed(error: nil); return}
+        self.task = Router.User.signIn(phone: lAuthInfo.phone, authPhoneCode: lAuthInfo.id, smsCode: smsCode).request().responseObject { [weak self] (response: DataResponse<RTUserResponse>) in
             var receivedData: ENUser?
             
             defer {
@@ -35,11 +43,15 @@ class LoginModel {
             
             switch response.result {
             case .success(let value):
-                guard let user = value.user else {self?.presenter?.loadingFailed(error: nil); return}
+                guard let user = value.user else {
+                    Crashlytics.sharedInstance().recordError(LoginErrors.userNotMapped.error)
+                    self?.presenter?.loadingFailed(error: nil); return}
                 receivedData = user
                 
                 do {
-                    guard let realm = BDRealm else {self?.presenter?.loadingFailed(error: nil); return}
+                    guard let realm = BDRealm else {
+                        Crashlytics.sharedInstance().recordError(LoginErrors.cannotInitDB.error)
+                        self?.presenter?.loadingFailed(error: nil); return}
                     try realm.write({
                         realm.delete(realm.objects(ENUser.self))
                         realm.add(user, update: true)
@@ -51,9 +63,11 @@ class LoginModel {
                     self?.presenter?.loginSuccessed(user: user)
                 } catch let error {
                     Logger.error("\(error)")
+                    Crashlytics.sharedInstance().recordError(error)
                     self?.presenter?.loadingFailed(error: error)
                 }
             case .failure(let error):
+                Crashlytics.sharedInstance().recordError(error)
                 self?.presenter?.loadingFailed(error: error)
                 Logger.error("\(error)")
             }
