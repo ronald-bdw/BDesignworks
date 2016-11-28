@@ -45,6 +45,9 @@ extension DataRequest {
     
     class func handleErrors<T: Mappable>(_ response: HTTPURLResponse?, error: Swift.Error, data: Data?) -> Result<T> {
         do {
+            if let nsError = error as? NSError, nsError.code == -999 {
+                return .failure(RTError(request: RequestError.canceled))
+            }
             guard let lData = data, let json = try JSONSerialization.jsonObject(with: lData as Data, options: []) as? [String : AnyObject] else {
                 return .failure(RTError(serialize: .wrongType))
             }

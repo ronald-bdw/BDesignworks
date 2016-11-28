@@ -50,11 +50,15 @@ extension LoginPresenter: ILoginModelPresenter {
     func loadingFailed(error: Swift.Error?) {
         self.view?.setLoadingState(.failed)
         guard let lError = error as? RTError else {self.view?.showErrorView(); return}
-        if case .backend(let backendError) = lError {
+        switch lError {
+        case .backend(let backendError):
             self.view?.showErrorView(backendError.humanDescription.title, content: backendError.humanDescription.text, errorType: backendError)
             return
+        case .request: // when cancelled
+            return
+        default:
+            self.view?.showErrorView()
         }
-        self.view?.showErrorView()
     }
     
     func phoneCodeSent() {

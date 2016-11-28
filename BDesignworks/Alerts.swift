@@ -45,7 +45,7 @@ func ShowErrorAlert(_ title: String? = "Sorry", message: String? = "Something we
     }
     alertController.addAction(alertButton)
     
-    alertController.presentIfNoAlertsPresented()
+    alertController.presentOnModal()
 }
 
 func ShowUnauthorizedAlert() {

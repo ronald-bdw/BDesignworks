@@ -79,6 +79,7 @@ enum BackendError {
 }
 
 enum RequestError {
+    case canceled
     case unknown(error: Swift.Error?)
     
     var error: RTError {return RTError(request: self)}
