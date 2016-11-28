@@ -35,6 +35,8 @@ class RegistrationView: UIViewController {
         
         InAppManager.shared.loadProducts()
         
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         let _ = RegistrationMVP(view: self)
         self.tableView.reloadData()
 

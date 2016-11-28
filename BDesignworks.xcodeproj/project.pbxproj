@@ -117,7 +117,6 @@
 		E72916581D88365E00A6D70A /* ProfileEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916571D88365E00A6D70A /* ProfileEditingView.swift */; };
 		E729165A1D883A7A00A6D70A /* ProfileEditingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916591D883A7A00A6D70A /* ProfileEditingModel.swift */; };
 		E729165C1D88459A00A6D70A /* ProfileEditingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729165B1D88459A00A6D70A /* ProfileEditingPresenter.swift */; };
-		E74CC8051DEC76EE0064FE70 /* BDesignworks.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = E74CC8041DEC76EE0064FE70 /* BDesignworks.entitlements */; };
 		E745526B1DAE442E00979C6A /* InAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745526A1DAE442E00979C6A /* InAppManager.swift */; };
 		E745526D1DAE4CC600979C6A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E745526C1DAE4CC600979C6A /* StoreKit.framework */; };
 		E7566D9F1A1F85CB00DE3010 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Login.storyboard */; };
@@ -237,7 +236,6 @@
 		21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21E617E41CE61BBF005D67E0 /* generate_entities.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_entities.sh; sourceTree = SOURCE_ROOT; };
 		24CD8CBBB8A679E300A592E5 /* Pods-Abstract-BDesignworks.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.test.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.test.xcconfig"; sourceTree = "<group>"; };
-		2F07298D1D64C85200A71B3C /* BDesignworks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BDesignworks.entitlements; sourceTree = "<group>"; };
 		2F07298E1D64C85300A71B3C /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		2F0729901D64C86B00A71B3C /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		2F16FE2B1D54CEDB00EFFDD7 /* ConversationScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationScreen.swift; sourceTree = "<group>"; };
@@ -354,7 +352,7 @@
 		E72916571D88365E00A6D70A /* ProfileEditingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingView.swift; sourceTree = "<group>"; };
 		E72916591D883A7A00A6D70A /* ProfileEditingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingModel.swift; sourceTree = "<group>"; };
 		E729165B1D88459A00A6D70A /* ProfileEditingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingPresenter.swift; sourceTree = "<group>"; };
-		E74CC8041DEC76EE0064FE70 /* BDesignworks.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BDesignworks.entitlements; sourceTree = "<group>"; };
+		E73718251DED913200B9D5E1 /* BDesignworks.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BDesignworks.entitlements; sourceTree = "<group>"; };
 		E745526A1DAE442E00979C6A /* InAppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppManager.swift; sourceTree = "<group>"; };
 		E745526C1DAE4CC600979C6A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -440,7 +438,6 @@
 				214F4FF51BFDC35C0084BE32 /* Protocols.swift */,
 				DCD86E581D6DAA8C0072AFA1 /* Alerts.swift */,
 				DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */,
-				7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */,
 				E745526A1DAE442E00979C6A /* InAppManager.swift */,
 			);
 			name = Helpers;
@@ -531,7 +528,7 @@
 		21DB301119DD2289003A418D /* BDesignworks */ = {
 			isa = PBXGroup;
 			children = (
-				E74CC8041DEC76EE0064FE70 /* BDesignworks.entitlements */,
+				E73718251DED913200B9D5E1 /* BDesignworks.entitlements */,
 				21DB304819DD2D6D003A418D /* Constants.swift */,
 				21DB301419DD2289003A418D /* AppDelegate.swift */,
 				21DB301E19DD2289003A418D /* Images.xcassets */,
@@ -953,7 +950,6 @@
 			children = (
 				2FDE13681D61B938008702FE /* SmoochHelper.swift */,
 				2F0729901D64C86B00A71B3C /* HealthKitManager.swift */,
-				7CD3B5EC1DC2501A0089D93A /* FitbitManager.swift */,
 				7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */,
 			);
 			name = Servises;
@@ -1217,7 +1213,6 @@
 				21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */,
 				DC2281051D6B466300D5A0DA /* RegistrationTableViewCell.xib in Resources */,
 				E7C3D0DE1DE48311009E5124 /* SmoochLocalizable.strings in Resources */,
-				E74CC8051DEC76EE0064FE70 /* BDesignworks.entitlements in Resources */,
 				21DB301F19DD2289003A418D /* Images.xcassets in Resources */,
 				DC2281291D6B470600D5A0DA /* OpenSansExtraBold.ttf in Resources */,
 				DC22812E1D6B470600D5A0DA /* OpenSansRegular.ttf in Resources */,
@@ -1924,7 +1919,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
-				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-dev.entitlements";
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2011,7 +2006,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "Pair Up Staging";
 				BUNDLE_ID = com.flatstack.pearup.staging;
-				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-dev.entitlements";
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2102,7 +2097,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
-				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-prod.entitlements";
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2417,7 +2412,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
-				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-dev.entitlements";
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2458,7 +2453,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
-				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-prod.entitlements";
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2545,7 +2540,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "Pair Up Staging";
 				BUNDLE_ID = com.flatstack.pearup.staging;
-				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-dev.entitlements";
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2631,7 +2626,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "Pair Up Staging";
 				BUNDLE_ID = com.flatstack.pearup.staging;
-				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-prod.entitlements";
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2935,7 +2930,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
-				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-prod.entitlements";
+				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
