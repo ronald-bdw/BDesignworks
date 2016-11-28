@@ -134,6 +134,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         //To get smooch remote notifications in app go to SmoochHelper
     }
+    
+    internal func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Swift.Error) {
+        
+    }
 }
 
 extension AppDelegate {

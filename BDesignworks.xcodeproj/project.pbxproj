@@ -234,6 +234,7 @@
 		21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21E617E41CE61BBF005D67E0 /* generate_entities.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_entities.sh; sourceTree = SOURCE_ROOT; };
 		24CD8CBBB8A679E300A592E5 /* Pods-Abstract-BDesignworks.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.test.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.test.xcconfig"; sourceTree = "<group>"; };
+		2F07298D1D64C85200A71B3C /* BDesignworks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BDesignworks.entitlements; sourceTree = "<group>"; };
 		2F07298E1D64C85300A71B3C /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		2F0729901D64C86B00A71B3C /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		2F16FE2B1D54CEDB00EFFDD7 /* ConversationScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationScreen.swift; sourceTree = "<group>"; };
@@ -1906,7 +1907,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
-				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-dev.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -1993,7 +1994,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "Pair Up Staging";
 				BUNDLE_ID = com.flatstack.pearup.staging;
-				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-dev.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2084,7 +2085,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
-				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-prod.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2399,7 +2400,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
-				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-dev.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2440,7 +2441,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
-				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-prod.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2527,7 +2528,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "Pair Up Staging";
 				BUNDLE_ID = com.flatstack.pearup.staging;
-				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-dev.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Soh (LHE89LKA9J)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2613,7 +2614,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Staging";
 				BUNDLE_DISPLAY_NAME = "Pair Up Staging";
 				BUNDLE_ID = com.flatstack.pearup.staging;
-				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-prod.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2917,7 +2918,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_DISPLAY_NAME = "Pair Up";
 				BUNDLE_ID = com.flatstack.pearup;
-				CODE_SIGN_ENTITLEMENTS = BDesignworks/BDesignworks.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "BDesignworks/BDesignworks-prod.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Behaviour Design Works Pty Ltd (K8WJN89HXG)";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
