@@ -62,8 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        //pearup://pearup.com?code=####
-        //pearup://pearup.com?authcode=%{phone_code}" smscode
+        //pairup://pairup.im?code=####
+        //pairup://pairup.im?authcode=%{phone_code}" smscode
         
         guard let query = url.query else {return true}
         var code = ""
