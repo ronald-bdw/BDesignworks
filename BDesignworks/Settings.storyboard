@@ -25,7 +25,7 @@
         <scene sceneID="m07-Pn-BQB">
             <objects>
                 <navigationController id="avn-Sk-SW1" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mml-Yd-6qf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mml-Yd-6qf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -706,26 +706,26 @@
                                     <action selector="closeAction:" destination="Os5-L9-OTg" eventType="touchUpInside" id="61C-EE-Euk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Go to Health app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wm-Kx-Frp">
-                                <rect key="frame" x="16" y="131.5" width="283" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Go to Health app" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wm-Kx-Frp">
+                                <rect key="frame" x="35" y="131.5" width="264" height="19.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Select Health Data from bottom menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-Wn-53T">
-                                <rect key="frame" x="16" y="171" width="283" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Select Health Data from bottom menu" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-Wn-53T">
+                                <rect key="frame" x="35" y="171" width="264" height="19.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Select Activity -&gt; Steps -&gt; Data Sources &amp; Access." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIa-4k-9Pt">
-                                <rect key="frame" x="16" y="210.5" width="283" height="38.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Select Activity -&gt; Steps -&gt; Data Sources &amp; Access." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIa-4k-9Pt">
+                                <rect key="frame" x="35" y="210.5" width="264" height="38.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Change switch state of Pair Up app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3m-BH-bMC">
-                                <rect key="frame" x="16" y="269" width="283" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Change switch state of Pair Up app." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3m-BH-bMC">
+                                <rect key="frame" x="35" y="269" width="264" height="19.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -745,7 +745,7 @@
                             <constraint firstAttribute="trailing" secondItem="SIa-4k-9Pt" secondAttribute="trailing" constant="16" id="YCV-S5-xbf"/>
                             <constraint firstItem="ebf-Wn-53T" firstAttribute="top" secondItem="8wm-Kx-Frp" secondAttribute="bottom" constant="20" id="dgZ-c8-u4F"/>
                             <constraint firstAttribute="trailing" secondItem="ebf-Wn-53T" secondAttribute="trailing" constant="16" id="fnE-sB-Nvn"/>
-                            <constraint firstItem="8wm-Kx-Frp" firstAttribute="leading" secondItem="Dab-Ty-BC3" secondAttribute="leading" constant="16" id="h29-rL-xvw"/>
+                            <constraint firstItem="8wm-Kx-Frp" firstAttribute="leading" secondItem="Dab-Ty-BC3" secondAttribute="leading" constant="35" id="h29-rL-xvw"/>
                             <constraint firstItem="SIa-4k-9Pt" firstAttribute="top" secondItem="ebf-Wn-53T" secondAttribute="bottom" constant="20" id="jGZ-L3-6hn"/>
                             <constraint firstAttribute="trailing" secondItem="nxv-hb-CeC" secondAttribute="trailing" constant="25" id="mUF-Pe-mxx"/>
                             <constraint firstItem="ZNI-jX-GFe" firstAttribute="centerX" secondItem="Dab-Ty-BC3" secondAttribute="centerX" id="qye-4l-JrJ"/>
