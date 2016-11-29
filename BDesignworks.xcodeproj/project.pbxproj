@@ -117,6 +117,7 @@
 		E72916581D88365E00A6D70A /* ProfileEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916571D88365E00A6D70A /* ProfileEditingView.swift */; };
 		E729165A1D883A7A00A6D70A /* ProfileEditingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916591D883A7A00A6D70A /* ProfileEditingModel.swift */; };
 		E729165C1D88459A00A6D70A /* ProfileEditingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729165B1D88459A00A6D70A /* ProfileEditingPresenter.swift */; };
+		E74CC8051DEC76EE0064FE70 /* BDesignworks.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = E74CC8041DEC76EE0064FE70 /* BDesignworks.entitlements */; };
 		E7566D9F1A1F85CB00DE3010 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Login.storyboard */; };
 		E75B5A7E1DACDF8E00B51E04 /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75B5A7D1DACDF8E00B51E04 /* NotificationView.xib */; };
 		E765DBAC1D93D2A800D94FF9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E765DBAB1D93D2A800D94FF9 /* Settings.storyboard */; };
@@ -233,7 +234,6 @@
 		21E617E21CE60676005D67E0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21E617E41CE61BBF005D67E0 /* generate_entities.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generate_entities.sh; sourceTree = SOURCE_ROOT; };
 		24CD8CBBB8A679E300A592E5 /* Pods-Abstract-BDesignworks.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.test.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.test.xcconfig"; sourceTree = "<group>"; };
-		2F07298D1D64C85200A71B3C /* BDesignworks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BDesignworks.entitlements; sourceTree = "<group>"; };
 		2F07298E1D64C85300A71B3C /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		2F0729901D64C86B00A71B3C /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		2F16FE2B1D54CEDB00EFFDD7 /* ConversationScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationScreen.swift; sourceTree = "<group>"; };
@@ -350,6 +350,7 @@
 		E72916571D88365E00A6D70A /* ProfileEditingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingView.swift; sourceTree = "<group>"; };
 		E72916591D883A7A00A6D70A /* ProfileEditingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingModel.swift; sourceTree = "<group>"; };
 		E729165B1D88459A00A6D70A /* ProfileEditingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingPresenter.swift; sourceTree = "<group>"; };
+		E74CC8041DEC76EE0064FE70 /* BDesignworks.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BDesignworks.entitlements; sourceTree = "<group>"; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		E75B5A7D1DACDF8E00B51E04 /* NotificationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
 		E765DBAB1D93D2A800D94FF9 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -519,7 +520,7 @@
 		21DB301119DD2289003A418D /* BDesignworks */ = {
 			isa = PBXGroup;
 			children = (
-				2F07298D1D64C85200A71B3C /* BDesignworks.entitlements */,
+				E74CC8041DEC76EE0064FE70 /* BDesignworks.entitlements */,
 				21DB304819DD2D6D003A418D /* Constants.swift */,
 				21DB301419DD2289003A418D /* AppDelegate.swift */,
 				21DB301E19DD2289003A418D /* Images.xcassets */,
@@ -1200,6 +1201,7 @@
 				21E617E31CE60676005D67E0 /* LaunchScreen.storyboard in Resources */,
 				DC2281051D6B466300D5A0DA /* RegistrationTableViewCell.xib in Resources */,
 				E7C3D0DE1DE48311009E5124 /* SmoochLocalizable.strings in Resources */,
+				E74CC8051DEC76EE0064FE70 /* BDesignworks.entitlements in Resources */,
 				21DB301F19DD2289003A418D /* Images.xcassets in Resources */,
 				DC2281291D6B470600D5A0DA /* OpenSansExtraBold.ttf in Resources */,
 				DC22812E1D6B470600D5A0DA /* OpenSansRegular.ttf in Resources */,
