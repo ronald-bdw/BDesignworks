@@ -64,8 +64,8 @@ extension RouterProtocol {
 
 extension RouterProtocol {
     
-    func request () -> DataRequest {
-        let path = "\(Router.BaseURL)\(self.path)"
+    func request (baseUrl: String = Router.BaseURL) -> DataRequest {
+        let path = "\(baseUrl)\(self.path)"
         
         let headers = Router.extendHeaders
         

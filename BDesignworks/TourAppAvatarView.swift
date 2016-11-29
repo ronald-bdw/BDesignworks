@@ -11,14 +11,21 @@ import Foundation
 typealias TourAppAvatarMVP = MVPContainer<TourAppAvatarView, TourAppAvatarPresenter, TourAppAvatarModel>
 
 protocol ITourAppAvatarView: class {
+    func updateView(title: String)
     func updateView(avatarURL: URL)
     func setLoadingState(_ state: LoadingState)
     func showBackendErrorView(_ description: ErrorHumanDescription)
     func showErrorView()
+    func showPurchasesView()
+    func showConversationView()
 }
 
 class TourAppAvatarView: UIViewController {
     static let identifier = "TourAppAvatarView"
+    
+    enum SegueIdentifier: String {
+        case toSecondStep = "toThirdStep"
+    }
     
     @IBOutlet weak var avatarView: UIImageView!
     
@@ -87,6 +94,10 @@ extension TourAppAvatarView: UIImagePickerControllerDelegate, UINavigationContro
 }
 
 extension TourAppAvatarView: ITourAppAvatarView {
+    func updateView(title: String) {
+        self.title = title
+    }
+    
     func updateView(avatarURL: URL) {
         self.avatarView.sd_setImage(with: avatarURL) { (image, error, cacheType, url) in
             SVProgressHUD.dismiss()
@@ -111,6 +122,14 @@ extension TourAppAvatarView: ITourAppAvatarView {
     
     func showErrorView() {
         ShowErrorAlert()
+    }
+    
+    func showPurchasesView() {
+        self.performSegue(withIdentifier: SegueIdentifier.toSecondStep.rawValue, sender: self)
+    }
+    
+    func showConversationView() {
+        ShowConversationViewController()
     }
 }
 

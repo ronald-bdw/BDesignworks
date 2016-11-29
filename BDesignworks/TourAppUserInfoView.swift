@@ -158,6 +158,7 @@ extension TourAppUserInfoView: UITextFieldDelegate {
 }
 
 extension TourAppUserInfoView: ITourAppUserInfoView {
+    
     func updateValidationErrors() {
         self.tableView.reloadData()
     }

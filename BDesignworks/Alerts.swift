@@ -85,3 +85,20 @@ func ShowNotRegisteredAlert() {
     
     alertController.presentIfNoAlertsPresented()
 }
+
+func ShowInAppAlert() {
+    let alertController = UIAlertController(title: "Choose your plan", message: nil, preferredStyle: .actionSheet)
+    alertController.view.tintColor = UIColor(fs_hexString: "29537C")
+    
+    for type in ProductType.all {
+        let action = UIAlertAction(title: type.description, style: .default, handler: { (alertAction) in
+            InAppManager.shared.purchaseProduct(productType: type)
+        })
+        alertController.addAction(action)
+    }
+    
+    let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
+    alertController.addAction(cancelButton)
+    
+    alertController.presentOnModal()
+}
