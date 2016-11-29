@@ -40,6 +40,7 @@ class SettingsView: UITableViewController {
     func updateNotificationsSwitch(){
         if UIApplication.shared.isRegisteredForRemoteNotifications {
             self.notificationsSwitch.setOn(true, animated: true)
+            UIApplication.shared.registerForRemoteNotifications()
         }
         else {
             self.notificationsSwitch.setOn(false, animated: true)

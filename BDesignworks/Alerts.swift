@@ -59,7 +59,9 @@ func ShowUnauthorizedAlert() {
     }
     alertController.addAction(alertButton)
     
-    alertController.presentIfNoAlertsPresented()
+    DispatchQueue.main.async {
+        alertController.presentIfNoAlertsPresented()
+    }
 }
 
 func ShowNoProviderAlert() {
