@@ -10,11 +10,35 @@ import Foundation
 import StoreKit
 
 enum ProductType: String {
-    case Montly = "com.bdesignworks.pearup.monthly"
+    case starter = "com.bdesignworks.habitStarter"
+    case stabilizer = "com.bdesignworks.habitStabliser"
+    case master = "com.bdesignworks.habitMaster"
+    
+    static var all: [ProductType] {
+        return [.starter, .stabilizer, .master]
+    }
+    
+    var serverDescription: String {
+        switch self {
+        case .starter       : return "habit_starter"
+        case .stabilizer    : return "habit_stabliser"
+        case .master        : return "habit_master"
+        }
+    }
+    
+    var name: String {
+        switch self {
+        case .starter       : return "Habit Starter"
+        case .stabilizer    : return "Habit Stabilizer"
+        case .master        : return "Habit Master"
+        }
+    }
     
     var description: String {
         switch self {
-        case .Montly: return "monthly"
+        case .starter       : return "Habit Starter - $89.99/month. Trial available."
+        case .stabilizer    : return "Habit Stabiliser - $199.99/month. Trial available."
+        case .master        : return "Habit Master - $299.99/month. Trial available."
         }
     }
 }
@@ -49,6 +73,7 @@ class InAppManager: NSObject {
     
     var isTrialPurchased: Bool?
     var expirationDate: Date?
+    var purchasedProduct: ProductType?
     
     var isSubscriptionAvailable: Bool = true {
         didSet(value) {
@@ -68,7 +93,9 @@ class InAppManager: NSObject {
     
     func loadProducts() {
         var productIdentifiers = Set<String>()
-        productIdentifiers.insert(ProductType.Montly.rawValue)
+        productIdentifiers.insert(ProductType.starter.rawValue)
+        productIdentifiers.insert(ProductType.stabilizer.rawValue)
+        productIdentifiers.insert(ProductType.master.rawValue)
         let request = SKProductsRequest(productIdentifiers: productIdentifiers)
         request.delegate = self
         request.start()
@@ -101,9 +128,11 @@ class InAppManager: NSObject {
         let _ = Router.User.sendReceipt(receipt: receipt).request(baseUrl: "https://sandbox.itunes.apple.com").responseObject { (response: DataResponse<RTSubscriptionResponse>) in
             switch response.result {
             case .success(let value):
-                guard let expirationDate = value.expirationDateMs else {completionHandler(false); return}
+                guard let expirationDate = value.expirationDateMs,
+                    let productId = value.productId else {completionHandler(false); return}
                 self.expirationDate = Date(timeIntervalSince1970: expirationDate)
                 self.isTrialPurchased = value.isTrial
+                self.purchasedProduct = ProductType(rawValue: productId)
                 completionHandler(Date().timeIntervalSince1970 < expirationDate)
             case .failure(let error):
                 completionHandler(false)
@@ -121,8 +150,9 @@ class InAppManager: NSObject {
     private func sendStatus() {
         guard ENUser.getMainUser()?.provider == "",
             let lIsTrialPurchased = self.isTrialPurchased,
-            let lExpiration = self.expirationDate else {return}
-        let plan = lIsTrialPurchased ? "trial" : ProductType.Montly.description
+            let lExpiration = self.expirationDate,
+            let lPurchasedProduct = self.purchasedProduct else {return}
+        let plan = lIsTrialPurchased ? "trial" : lPurchasedProduct.serverDescription
         let _ = Router.User.sendInAppPurchaseStatus(plan: plan, expirationDate: lExpiration, isActive: self.isSubscriptionAvailable).request().responseObject { (response: DataResponse<RTEmptyResponse>) in
             switch response.result {
             case .success:
@@ -181,6 +211,6 @@ extension InAppManager: SKProductsRequestDelegate {
         //TODO: add some inapp delegate function
         guard response.products.count > 0 else {return}
         self.products = response.products
-        Logger.debug(response.products)
+        Logger.debug(response.products.map({$0.description}))
     }
 }
