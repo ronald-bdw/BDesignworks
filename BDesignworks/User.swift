@@ -11,6 +11,7 @@ import ObjectMapper
 
 class ENUser: Object, IUser {
     dynamic var id: Int = 0
+    dynamic var zendeskId: String = ""
     dynamic var firstName: String = ""
     dynamic var lastName: String = "" 
     dynamic var email: String = ""
@@ -92,6 +93,7 @@ class ENUser: Object, IUser {
             }
             let user = ENUser()
             user.id = 1//14
+            user.zendeskId = ""
             user.firstName = "Ellina"
             user.lastName = "K"
             user.email = "ekd@t.t"
@@ -131,6 +133,7 @@ class ENUser: Object, IUser {
 extension ENUser: Mappable {
     func mapping(map: ObjectMapper.Map) {
         self.id     <- map["id"]
+        self.zendeskId <- map["zendesk_id"]
         self.firstName <- map["first_name"]
         self.lastName <- map["last_name"]
         self.email   <- map["email"]

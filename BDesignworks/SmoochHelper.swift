@@ -17,12 +17,10 @@ class SmoochHelper: NSObject {
     
     func startWithParameters(_ user: ENUser) {
         let settings = SKTSettings(appToken: smoochToken)
-        settings.userId = "\(user.id)"
-        
-        
+        settings.userId = user.zendeskId
         settings.conversationAccentColor = UIColor(fs_hexString: "74A025")!
         Smooch.initWith(settings)
-        self.login("\(user.id)")
+        self.login(user.zendeskId)
         
         self.updateUserInfo(user: user)
         
