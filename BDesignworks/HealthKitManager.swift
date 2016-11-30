@@ -39,7 +39,6 @@ class HealthKitManager
     
     func authorize() {
         let dataTypesToRead = NSSet(objects: self.stepsCount)
-//                let itemsToWrite = Set(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)!)
         self.healthStore?.requestAuthorization(toShare: nil, read: dataTypesToRead as? Set<HKObjectType>, completion: { [weak self] (success, error) in
             if success {
                 UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.HealthKitRegistered)
@@ -73,20 +72,6 @@ class HealthKitManager
         self.healthStore?.enableBackgroundDelivery(for: self.stepsCount, frequency: .hourly, withCompletion: { [weak self] (success, error) in
             guard error == nil else { Logger.error(error); return}
             self?.queryStepsInBackground()
-        })
-    }
-    
-    ///Use only in debug mode. Before using add corresponding write access
-    func saveSteps() {
-        let stepsQuantity = HKQuantity(unit: HKUnit.count(), doubleValue: 1000)
-        let distance = HKQuantitySample(type: self.stepsCount, quantity: stepsQuantity, start: Date().dateByAddingHours(-5), end: Date())
-        
-        self.healthStore?.save(distance, withCompletion: { (success, error) -> Void in
-            if (error == nil) {
-                Logger.debug("successfully written")
-            } else {
-                Logger.debug("Error writing steps: \(error)")
-            }
         })
     }
     

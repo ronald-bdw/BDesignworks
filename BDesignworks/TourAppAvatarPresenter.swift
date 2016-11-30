@@ -11,6 +11,7 @@ import Foundation
 protocol ITourAppAvatarPresenterView {
     func viewLoaded()
     func imageReceived(image: UIImage)
+    func submitPressed()
 }
 
 protocol ITourAppAvatarPresenterModel: class {
@@ -32,10 +33,28 @@ extension TourAppAvatarPresenter: ITourAppAvatarPresenterView {
         guard let user = self.model?.getUser(),
             let avatarUrl = URL(string: user.avatarThumbUrl) else {return}
         self.view?.updateView(avatarURL: avatarUrl)
+        
+        if user.provider == "" {
+            self.view?.updateView(title: "Step 2 of 3")
+        }
+        else {
+            self.view?.updateView(title: "Step 2 of 2")
+        }
     }
     
     func imageReceived(image: UIImage) {
         self.model?.sendAvatar(image: image)
+    }
+    
+    func submitPressed() {
+        guard let user = self.model?.getUser() else {return}
+        
+        if user.provider == "" {
+            self.view?.showPurchasesView()
+        }
+        else {
+            self.view?.showConversationView()
+        }
     }
 }
 

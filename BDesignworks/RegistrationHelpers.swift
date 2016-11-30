@@ -72,6 +72,14 @@ struct RegistrationUser {
         }
     }
     
+    mutating func setStructField(_ type: RegistrationCellType, content: String) {
+        switch type {
+        case .firstName : self.firstName.content = content
+        case .lastName  : self.lastName.content = content
+        case .email     : self.email.content = content
+        }
+    }
+    
     func allFields() -> [RegistrationUserField] {
         return [self.firstName, self.lastName, self.email]
     }

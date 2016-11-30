@@ -25,7 +25,7 @@ class ZendeskNotificationManager {
     
     //MARK: - API Requests
     func enableNotificationOnZendesk(){
-        let _ = Router.User.enableNotificationOnZendesk.request().responseObject { (response: DataResponse<RTZendeskNotificationResponse>) in
+        let _ = Router.User.enableNotificationOnZendesk.request().responseObject { (response: DataResponse<RTEmptyResponse>) in
             switch response.result {
             case .success:
                 Logger.debug("Notifications on zedesk enabled")
@@ -36,7 +36,7 @@ class ZendeskNotificationManager {
     }
     
     func disableNotificationOnZendesk(){
-        let _ = Router.User.disableNotificationOnZendesk.request().responseObject { (response: DataResponse<RTZendeskNotificationResponse>) in
+        let _ = Router.User.disableNotificationOnZendesk.request().responseObject { (response: DataResponse<RTEmptyResponse>) in
             switch response.result {
             case .success:
                 Logger.debug("Notifications on zedesk disabled")
