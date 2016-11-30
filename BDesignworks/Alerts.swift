@@ -64,6 +64,21 @@ func ShowUnauthorizedAlert() {
     }
 }
 
+func ShowDeletedAlert() {
+    let alertController = UIAlertController(title: "Error", message: "Your account have been deleted. Please sign up with Pair Up to use the app.", preferredStyle: UIAlertControllerStyle.alert)
+    
+    let alertButton = UIAlertAction(title: "OK", style: .default) { (alertAction: UIAlertAction) -> Void in
+        ENUser.logout()
+        ShowInitialViewController()
+        alertController.dismiss(animated: true, completion: nil)
+    }
+    alertController.addAction(alertButton)
+    
+    DispatchQueue.main.async {
+        alertController.presentIfNoAlertsPresented()
+    }
+}
+
 func ShowNoProviderAlert() {
     let alertController = UIAlertController(title: "Verification is unsuccessful", message: "You don't have a provider.", preferredStyle: UIAlertControllerStyle.alert)
     

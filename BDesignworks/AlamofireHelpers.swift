@@ -62,7 +62,13 @@ extension DataRequest {
                     return .failure(RTError(backend: .smsCodeInvalid))
                 }
                 if object.isTokenInvalid {
-                    ShowUnauthorizedAlert()
+                    DataRequest.checkIsUserRegistered(completionHandler: { (isRegistered) in
+                        if isRegistered {
+                            ShowUnauthorizedAlert()
+                        } else {
+                            ShowDeletedAlert()
+                        }
+                    })
                     return .failure(RTError(backend: .notAuthorized))
                 }
             }
@@ -88,5 +94,17 @@ extension DataRequest {
             Logger.error("\(error)")
         }
         return .failure(RTError(request: .unknown(error: error)))
+    }
+    
+    class func checkIsUserRegistered(completionHandler: @escaping (Bool) -> Void) {
+        guard let user = ENUser.getMainUser() else {completionHandler(false); return}
+        let _ = Router.User.checkUserStatus(phone: user.phoneNumber).request().responseObject { (response: DataResponse<RTUserStatusResponse>) in
+            switch response.result {
+            case .success(let value):
+                completionHandler(value.isRegistered)
+            case .failure:
+                completionHandler(false)
+            }
+        }
     }
 }
