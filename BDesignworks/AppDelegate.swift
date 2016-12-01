@@ -152,7 +152,9 @@ extension AppDelegate {
         self.setupSDWebImage()
 
         self.setupSVProgressHUD()
-
+        
+        Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
+        
         #if TEST
         #else
             //setup Crashlytics
