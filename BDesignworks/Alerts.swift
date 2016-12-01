@@ -18,10 +18,15 @@ func ShowAlert (_ message: String, delay: Double, onViewController viewControlle
 }
 
 /// Add Alert with UIAlertAction button, actionButton REQUIRED!
-func ShowAlertWithHandler (_ title: String? = nil, message: String?, handler: ((UIAlertAction) -> Void)?){
+func ShowAlertWithHandler (_ title: String? = nil, message: String?, useCancelButton: Bool = false, cancelButtonHandler: (((UIAlertAction) -> Void)?) = nil, handler: ((UIAlertAction) -> Void)?){
     let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
     let alertButton = UIAlertAction(title: "OK", style: .default, handler: handler)
     alertController.addAction(alertButton)
+    
+    if useCancelButton {
+        let cancelButton = UIAlertAction(title: "Cancel", style: .destructive, handler: cancelButtonHandler)
+        alertController.addAction(cancelButton)
+    }
     
     alertController.presentOnModal()
 }
