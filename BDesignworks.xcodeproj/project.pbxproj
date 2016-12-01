@@ -431,14 +431,12 @@
 		196D6E161BAB0736000B7997 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DC5635AB1DD0837900E4840B /* FitbitManager.swift */,
 				DC2281081D6B469600D5A0DA /* MVPProtocol.swift */,
 				214F4FF31BFDC2D90084BE32 /* Helpers.swift */,
 				214F4FF11BFDC2CF0084BE32 /* Extensions.swift */,
 				214F4FF51BFDC35C0084BE32 /* Protocols.swift */,
 				DCD86E581D6DAA8C0072AFA1 /* Alerts.swift */,
 				DC9631F01D6EF12100B1C43E /* ViewControllersPresentation.swift */,
-				E745526A1DAE442E00979C6A /* InAppManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -951,6 +949,8 @@
 				2FDE13681D61B938008702FE /* SmoochHelper.swift */,
 				2F0729901D64C86B00A71B3C /* HealthKitManager.swift */,
 				7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */,
+				E745526A1DAE442E00979C6A /* InAppManager.swift */,
+				DC5635AB1DD0837900E4840B /* FitbitManager.swift */,
 			);
 			name = Servises;
 			sourceTree = "<group>";
