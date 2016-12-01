@@ -111,11 +111,15 @@ final class WelcomeScreen: UIViewController {
 
 extension WelcomeScreen: TrialModalViewDelegate {
     func learnMoreSelected() {
-        self.performSegue(withIdentifier: SegueIdentifiers.TrialPage, sender: nil)
+        FSDispatch_after_short(0.3, block: {[weak self] in
+            self?.performSegue(withIdentifier: SegueIdentifiers.TrialPage, sender: nil)
+        })
     }
     
     func startTrialSelected() {
-        self.performSegue(withIdentifier: SegueIdentifiers.Verification, sender: nil)
+        FSDispatch_after_short(0.3, block: {[weak self] in
+            self?.performSegue(withIdentifier: SegueIdentifiers.Verification, sender: nil)
+        })
     }
 }
 
