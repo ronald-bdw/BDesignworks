@@ -77,6 +77,20 @@ class ConversationScreen: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        guard let controller = self.smoochController,
+            let tableView = controller.view.subviews.filter({$0 is UITableView}).first,
+        let headerView = tableView.subviews.filter({$0.subviews.filter({$0 is UILabel}).count == 1}).first,
+            let smoochLabel = headerView.subviews.first as? UILabel else {return}
+        let label = UILabel(frame: headerView.frame)
+        label.textAlignment = .center
+        label.textColor = smoochLabel.textColor
+        label.font = smoochLabel.font
+        label.numberOfLines = 10
+        label.text = "\nWelcome to the Pair Up main page. This is where you will connect with your Pair Up coach.\n\nTap the upper right  menu to edit settings and learn more about Pair Up. Explore the About Us section to find our Privacy Policy and Licencing Agreement."
+        tableView.addSubview(label)
+    }
 
     fileprivate func setNavigationBarButtons() {
         self.navigationItem.hidesBackButton = true
