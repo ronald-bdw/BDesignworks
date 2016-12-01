@@ -97,7 +97,7 @@ extension DataRequest {
     }
     
     class func checkIsUserRegistered(completionHandler: @escaping (Bool) -> Void) {
-        guard let user = ENUser.getMainUser() else {completionHandler(false); return}
+        guard let user = ENUser.getMainUser() else {return}
         let _ = Router.User.checkUserStatus(phone: user.phoneNumber).request().responseObject { (response: DataResponse<RTUserStatusResponse>) in
             switch response.result {
             case .success(let value):
