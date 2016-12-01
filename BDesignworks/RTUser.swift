@@ -152,7 +152,7 @@ class RTUserStatusResponse: Mappable {
 }
 
 class RTSubscriptionResponse: Mappable {
-    var expirationDateMs: Double?
+    var expirationDate: Date?
     var isTrial: Bool?
     var productId: String?
 
@@ -162,7 +162,15 @@ class RTSubscriptionResponse: Mappable {
 
     func mapping(map: Map) {
         guard let latestReceiptInfo = (map.JSON["latest_receipt_info"] as? [[String: AnyObject]])?.first else {return}
-        self.expirationDateMs = (latestReceiptInfo["original_purchase_date_ms"] as? String)?.fs_toDouble()
+        
+        if let expirationDateStringWithTimeZone = latestReceiptInfo["expires_date"] as? String,
+            let range = expirationDateStringWithTimeZone.range(of: "Etc/GMT") {
+            let expirationDateString = expirationDateStringWithTimeZone.substring(to: range.lowerBound)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyy-MM-dd HH:mm:ss"
+            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+            self.expirationDate = dateFormatter.date(from: expirationDateString)
+        }
         self.isTrial = Bool(latestReceiptInfo["is_trial_period"] as? String ?? "false")
         self.productId = latestReceiptInfo["product_id"] as? String
     }

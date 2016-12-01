@@ -128,12 +128,12 @@ class InAppManager: NSObject {
         let _ = Router.User.sendReceipt(receipt: receipt).request(baseUrl: "https://sandbox.itunes.apple.com").responseObject { (response: DataResponse<RTSubscriptionResponse>) in
             switch response.result {
             case .success(let value):
-                guard let expirationDate = value.expirationDateMs,
+                guard let expirationDate = value.expirationDate,
                     let productId = value.productId else {completionHandler(false); return}
-                self.expirationDate = Date(timeIntervalSince1970: expirationDate)
+                self.expirationDate = expirationDate
                 self.isTrialPurchased = value.isTrial
                 self.purchasedProduct = ProductType(rawValue: productId)
-                completionHandler(Date().timeIntervalSince1970 < expirationDate)
+                completionHandler(Date().timeIntervalSince1970 < expirationDate.timeIntervalSince1970)
             case .failure(let error):
                 completionHandler(false)
                 Logger.error(error)
@@ -147,7 +147,7 @@ class InAppManager: NSObject {
         })
     }
     
-    private func sendStatus() {
+    func sendStatus() {
         guard ENUser.getMainUser()?.provider == "",
             let lIsTrialPurchased = self.isTrialPurchased,
             let lExpiration = self.expirationDate,
