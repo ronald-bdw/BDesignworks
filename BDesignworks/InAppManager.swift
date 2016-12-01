@@ -36,9 +36,9 @@ enum ProductType: String {
     
     var description: String {
         switch self {
-        case .starter       : return "Habit Starter - $89.99/month. Trial available."
-        case .stabilizer    : return "Habit Stabiliser - $199.99/month. Trial available."
-        case .master        : return "Habit Master - $299.99/month. Trial available."
+        case .starter       : return "Habit Starter (2 months) - $89.99."
+        case .stabilizer    : return "Habit Stabiliser (6 months) - $199.99."
+        case .master        : return "Habit Master (12 months) - $299.99."
         }
     }
 }

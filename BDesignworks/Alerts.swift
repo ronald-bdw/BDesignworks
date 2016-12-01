@@ -102,7 +102,7 @@ func ShowNotRegisteredAlert() {
 }
 
 func ShowInAppAlert() {
-    let alertController = UIAlertController(title: "Choose your plan", message: nil, preferredStyle: .actionSheet)
+    let alertController = UIAlertController(title: "Choose your plan", message: "1 month trial period available for all plans.", preferredStyle: .actionSheet)
     alertController.view.tintColor = UIColor(fs_hexString: "29537C")
     
     for type in ProductType.all {
