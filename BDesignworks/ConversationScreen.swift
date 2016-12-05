@@ -83,7 +83,11 @@ class ConversationScreen: UIViewController {
             let tableView = controller.view.subviews.filter({$0 is UITableView}).first,
         let headerView = tableView.subviews.filter({$0.subviews.filter({$0 is UILabel}).count == 1}).first,
             let smoochLabel = headerView.subviews.first as? UILabel else {return}
-        let label = UILabel(frame: headerView.frame)
+        let horizontalLabelOffset: CGFloat = 8
+        let originalLabelFrame = headerView.frame
+        let newLabelOrigin = CGPoint(x: originalLabelFrame.origin.x + horizontalLabelOffset, y: originalLabelFrame.origin.y)
+        let newLabelSize = CGSize(width: originalLabelFrame.size.width - horizontalLabelOffset*2, height: originalLabelFrame.size.height)
+        let label = UILabel(frame: CGRect(origin: newLabelOrigin, size: newLabelSize))
         label.textAlignment = .center
         label.textColor = smoochLabel.textColor
         label.font = smoochLabel.font
