@@ -72,11 +72,14 @@ final class ModalPresentationController: UIPresentationController {
         guard let lPresentedView = self.presentedView else { FSDLog("Presented view can't be nil"); return }
         guard let lContainerView = self.containerView   else { FSDLog("Container view can't be nil"); return }
         
+        UIView.animate(withDuration: self.duration-0.05, animations: {[weak self] in
+            self?.presentedView?.alpha = 0.0
+        })
+        
         let coordinator = self.presentedViewController.transitionCoordinator
         coordinator?.animate(alongsideTransition: {[weak self] (context: UIViewControllerTransitionCoordinatorContext) in
             guard let sself = self else { return }
             sself.dimmingView.backgroundColor = UIColor.clear
-            sself.presentedView?.backgroundColor = UIColor.clear
             lPresentedView.frame = sself.frameOfPresentedViewInContainerView.offsetBy(dx: 0,
                                                 dy: -lContainerView.fs_height + (lContainerView.fs_height-lPresentedView.fs_height)/2)
         }, completion: {[weak self] (context: UIViewControllerTransitionCoordinatorContext) in
