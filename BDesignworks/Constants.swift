@@ -30,6 +30,7 @@ enum FSUserDefaultsKey {
     static let LoggedInUsers        = "LoggedInUsers"
     static let IsProviderChosen     = "IsProviderChosen"
     static let SmsCode              = "Smscode"
+    static let subscriptionAvailability = "SubscriptionAvailability"
 }
 
 /*----------Notifications---------*/
