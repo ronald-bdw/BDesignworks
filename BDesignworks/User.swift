@@ -144,8 +144,7 @@ extension ENUser: Mappable {
         self.provider <- map["provider.name"]
         var lastUpdateDate: String = ""
         lastUpdateDate <- map["last_healthkit_activity.finished_at"]
-        guard let LlastStepsHealthKitUpdateDate = Date.getDateFromISO8601(lastUpdateDate) else {return}
-        self.lastStepsHealthKitUpdateDate = LlastStepsHealthKitUpdateDate
+        self.lastStepsHealthKitUpdateDate = Date.getDateFromISO8601(lastUpdateDate)
     }
 }
 
