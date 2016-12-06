@@ -75,7 +75,10 @@ class InAppManager: NSObject {
     var expirationDate: Date?
     var purchasedProduct: ProductType?
     
-    var isSubscriptionAvailable: Bool = true {
+    var isSubscriptionAvailable: Bool =
+        UserDefaults.standard.object(forKey: FSUserDefaultsKey.subscriptionAvailability) != nil ?
+            UserDefaults.standard.bool(forKey: FSUserDefaultsKey.subscriptionAvailability) : true
+    {
         didSet(value) {
             self.delegate?.subscriptionStatusUpdated(value: value)
             self.sendStatus()
@@ -143,6 +146,8 @@ class InAppManager: NSObject {
     
     func updateSubscriptionStatus() {
         self.checkSubscriptionAvailability({ [weak self] (isSubscribed) in
+            UserDefaults.standard.set(isSubscribed, forKey: FSUserDefaultsKey.subscriptionAvailability)
+            UserDefaults.standard.synchronize()
             self?.isSubscriptionAvailable = isSubscribed
         })
     }
