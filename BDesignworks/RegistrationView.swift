@@ -13,7 +13,7 @@ typealias RegistrationMVP = MVPContainer<RegistrationView, RegistrationPresenter
 protocol IRegistrationView: class {
     func setLoadingState (_ state: LoadingState)
     func updateValidationErrors()
-    
+    func showErrorView()
     func showErrorView(_ title: String, content: String, errorType: BackendError?)
     func showPhoneCodeReceivedView()
     func presentNextScreen()
@@ -183,12 +183,14 @@ extension RegistrationView: IRegistrationView {
             SVProgressHUD.dismiss()
         case .failed:
             SVProgressHUD.dismiss()
-            ShowErrorAlert()
         }
     }
     
+    func showErrorView() {
+        ShowErrorAlert()
+    }
+    
     func showErrorView(_ title: String, content: String, errorType: BackendError?) {
-        SVProgressHUD.dismiss()
         if errorType == .smsCodeExpired ||
             errorType == .smsCodeInvalid {
             ShowAlertWithHandler(title, message: content) { [weak self] (action) in

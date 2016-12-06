@@ -44,13 +44,17 @@ extension RegistrationPresenter: InAppManagerDelegate {
         }
         else {
             self.view?.setLoadingState(.failed)
+            self.view?.showErrorView()
         }
     }
     
     func inAppLoadingFailed(error: Swift.Error?) {
         self.view?.setLoadingState(.failed)
-        if let error = error {
+        if let error = error as? InAppErrors {
+            guard error != .noSubscriptionPurchased else {return}
             self.view?.showErrorView("Sorry", content: error.localizedDescription, errorType: nil)
+        } else {
+            self.view?.showErrorView()
         }
     }
     
@@ -70,12 +74,13 @@ extension RegistrationPresenter: IRegistrationModelPresenter {
     }
     
     func requestFailed(_ error: RTError?) {
-        guard let lError = error else {self.view?.setLoadingState(.failed); return}
+        self.view?.setLoadingState(.failed)
+        guard let lError = error else {self.view?.showErrorView(); return}
         if case .backend(let backendError) = lError {
             self.view?.showErrorView(backendError.humanDescription.title, content: backendError.humanDescription.text, errorType: backendError)
             return
         }
-        self.view?.setLoadingState(.failed)
+        self.view?.showErrorView()
     }
     
     func updateValidationErrors() {
@@ -99,6 +104,7 @@ extension RegistrationPresenter: IRegistrationViewPresenter {
             }
             else {
                 self.view?.setLoadingState(.failed)
+                self.view?.showErrorView()
             }
         }
         else {
