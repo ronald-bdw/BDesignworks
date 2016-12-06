@@ -138,6 +138,10 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     
     func donePressed() {
         self.providerSelectionButton.didChangeState(self)
+        FSDispatch_after_short(0.3, block: { [weak self] in
+            guard let sself = self else {return}
+            sself.nextButtonPressed(sself)
+        })
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
