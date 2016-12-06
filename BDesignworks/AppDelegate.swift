@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             realm?.objects(AuthInfo.self).count == 0 {
             ShowConversationViewController()
             UIApplication.shared.registerForRemoteNotifications()
+            HealthKitManager.sharedInstance.sendHealthKitData()
         }
         else {
             ShowInitialViewController()

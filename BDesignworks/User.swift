@@ -139,12 +139,13 @@ extension ENUser: Mappable {
         self.email   <- map["email"]
         self.phoneNumber <- map["phone_number"]
         self.token <- map["authentication_token"]
-        var lastUpdateDate: String = ""
-        lastUpdateDate <- map["last_healthkit_activity.started_at"]
-        self.lastStepsHealthKitUpdateDate = Date.getDateFromISO8601(lastUpdateDate)
         self.avatarUrl <- map["avatar.original"]
         self.avatarThumbUrl <- map["avatar.thumb"]
         self.provider <- map["provider.name"]
+        var lastUpdateDate: String = ""
+        lastUpdateDate <- map["last_healthkit_activity.finished_at"]
+        guard let LlastStepsHealthKitUpdateDate = Date.getDateFromISO8601(lastUpdateDate) else {return}
+        self.lastStepsHealthKitUpdateDate = LlastStepsHealthKitUpdateDate
     }
 }
 

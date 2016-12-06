@@ -66,8 +66,6 @@ class ConversationScreen: UIViewController {
             UIApplication.shared.registerUserNotificationSettings(notificationSettings)
         }
 
-
-        HealthKitManager.sharedInstance.sendHealthKitData()
         self.containerView.isHidden = true
 
         self.showChat()
