@@ -73,7 +73,6 @@ final class AutocompleteView: UIView {
         
         self.isHidden = true
         
-        self.doneView.frame = CGRect(x: 0, y: 0, width: self.fs_width, height: Constants.doneViewHeight)
         self.doneView.backgroundColor = UIColor(fs_hexString: "2E527C")
         
         let doneButtonTitle = NSAttributedString(string: "Done", attributes: [NSFontAttributeName: Fonts.OpenSans.regular.getFontOfSize(18), NSForegroundColorAttributeName: UIColor.white])
@@ -97,12 +96,8 @@ final class AutocompleteView: UIView {
         
         self.fs_height = Constants.pickerViewHeight
         self.doneView.frame = CGRect(x: 0, y: 0, width: self.fs_width, height: Constants.doneViewHeight)
+        self.doneButton.frame = self.doneView.frame
         self.pickerView.frame = CGRect(x: 0, y: Constants.doneViewHeight, width: self.fs_width, height:  Constants.pickerViewHeight - Constants.doneViewHeight)
-        
-        let doneButtonX = (self.fs_width - Constants.doneButtonWidth)/2
-        let doneButtonY = (self.doneView.fs_height - Constants.doneButtonHeight)/2
-        
-        self.doneButton.frame = CGRect(x: doneButtonX, y: doneButtonY, width: Constants.doneButtonWidth, height: Constants.doneButtonHeight)
         self.pickerView.reloadAllComponents()
     }
     
