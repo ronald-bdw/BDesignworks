@@ -106,9 +106,10 @@ protocol IVerificationView: class {
     func setLoadingState(_ state: LoadingState)
     func showErrorView(_ title: String, content: String, errorType: BackendError)
     var shouldCheckProvider: Bool {get}
-    var shouldCheckRegistration: Bool {get}
+    var valueForRegistrationShouldEqual: Bool {get}
     func showNoProviderAlert()
     func showNotRegisteredAlert()
+    func showAlreadyRegisteredAlert(withProvider: Bool)
 }
 
 final class VerificationView: UIViewController {
@@ -127,7 +128,7 @@ final class VerificationView: UIViewController {
     }
     
     var shouldCheckForProvider: Bool = false
-    var shouldCheckForRegistration: Bool = false
+    var valueForRegistrationShouldBeEqual: Bool = false
     
     let rollButtonTitle = "Area Code"
     
@@ -326,9 +327,9 @@ extension VerificationView: IVerificationView {
         }
     }
 
-    internal var shouldCheckRegistration: Bool {
+    internal var valueForRegistrationShouldEqual: Bool {
         get {
-            return self.shouldCheckForRegistration
+            return self.valueForRegistrationShouldBeEqual
         }
     }
 
@@ -402,6 +403,11 @@ extension VerificationView: IVerificationView {
     func showNotRegisteredAlert() {
         SVProgressHUD.dismiss()
         ShowNotRegisteredAlert()
+    }
+    
+    func showAlreadyRegisteredAlert(withProvider: Bool) {
+        SVProgressHUD.dismiss()
+        ShowAlreadyRegisteredAlert(withProvider: withProvider)
     }
 }
 

@@ -86,10 +86,10 @@ final class WelcomeScreen: UIViewController {
             segue.destination.modalPresentationStyle = .custom
             (segue.destination as? TrialPageScreen)?.delegate = self
         case SegueIdentifiers.VerificationWithAccount:
-            (segue.destination as? VerificationView)?.shouldCheckForRegistration = true
+            (segue.destination as? VerificationView)?.valueForRegistrationShouldBeEqual = true
             (segue.destination as? VerificationView)?.shouldCheckForProvider = true
         case SegueIdentifiers.Verification:
-            (segue.destination as? VerificationView)?.shouldCheckForRegistration = false
+            (segue.destination as? VerificationView)?.valueForRegistrationShouldBeEqual = false
             (segue.destination as? VerificationView)?.shouldCheckForProvider = false
         default:
             super.prepare(for: segue, sender: sender)

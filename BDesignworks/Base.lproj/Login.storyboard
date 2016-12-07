@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0gr-46-6TJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0gr-46-6TJ">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,7 +27,7 @@
         <!--Select provider-->
         <scene sceneID="szx-e5-UI9">
             <objects>
-                <viewController storyboardIdentifier="SelectProviderScreen" title="Select provider" id="xJO-aM-hqn" customClass="SelectProviderScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectProviderScreen" title="Select provider" id="xJO-aM-hqn" customClass="SelectProviderScreen" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fvF-Te-7tz"/>
                         <viewControllerLayoutGuide type="bottom" id="cap-Dn-Qp5"/>
@@ -74,7 +74,7 @@
                                     <action selector="nextButtonPressed:" destination="xJO-aM-hqn" eventType="touchUpInside" id="NFt-Jn-Ske"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-Ty-tCF" customClass="RollUpButton" customModule="PearUp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-Ty-tCF" customClass="RollUpButton" customModule="Pair_Up" customModuleProvider="target">
                                 <rect key="frame" x="24" y="254" width="272" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -142,7 +142,7 @@
         <!--Verify Screen-->
         <scene sceneID="1KV-0O-uXX">
             <objects>
-                <viewController id="M06-aI-0x9" customClass="VerifyScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M06-aI-0x9" customClass="VerifyScreen" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8L3-Uf-06y"/>
                         <viewControllerLayoutGuide type="bottom" id="tFw-rv-pB8"/>
@@ -246,7 +246,7 @@
         <!--Verification-->
         <scene sceneID="fyd-HN-XtR">
             <objects>
-                <viewController storyboardIdentifier="VerificationView" id="jLg-Mh-FPe" customClass="VerificationView" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VerificationView" id="jLg-Mh-FPe" customClass="VerificationView" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TMU-VZ-S7V"/>
                         <viewControllerLayoutGuide type="bottom" id="zfK-PR-oK5"/>
@@ -299,12 +299,12 @@
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OPC-X5-XR7" customClass="RollUpButton" customModule="PearUp" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OPC-X5-XR7" customClass="RollUpButton" customModule="Pair_Up" customModuleProvider="target">
                                         <rect key="frame" x="20" y="428" width="560" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5j-Jz-egE" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5j-Jz-egE" customClass="VerificationErrorView" customModule="Pair_Up" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="510" width="600" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </view>
@@ -328,7 +328,7 @@
                                             <action selector="submitAction:" destination="jLg-Mh-FPe" eventType="touchUpInside" id="nKv-Ru-RvV"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1E-yO-MXp" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1E-yO-MXp" customClass="VerificationErrorView" customModule="Pair_Up" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="421" width="600" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -336,7 +336,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XYs-0Y-Lsf" customClass="VerificationErrorView" customModule="PearUp" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XYs-0Y-Lsf" customClass="VerificationErrorView" customModule="Pair_Up" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="J1U-VZ-NBD"/>
@@ -369,7 +369,7 @@
         <!--Area Code-->
         <scene sceneID="sx8-qI-ZdV">
             <objects>
-                <viewController id="ePH-Gm-Byg" customClass="AreaCodeScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ePH-Gm-Byg" customClass="AreaCodeScreen" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JuO-De-aef"/>
                         <viewControllerLayoutGuide type="bottom" id="Nmm-u7-EyS"/>
@@ -382,7 +382,7 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AreaCodeCell" id="pH5-nd-NSa" customClass="AreaCodeCell" customModule="PearUp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AreaCodeCell" id="pH5-nd-NSa" customClass="AreaCodeCell" customModule="Pair_Up" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pH5-nd-NSa" id="2oj-cQ-AoQ">
@@ -452,8 +452,8 @@
         <!--Custom Navigation Controller-->
         <scene sceneID="nUd-NQ-3Bv">
             <objects>
-                <navigationController storyboardIdentifier="WelcomeController" id="rys-JC-bgs" customClass="CustomNavigationController" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a3u-v3-yAf">
+                <navigationController storyboardIdentifier="WelcomeController" id="rys-JC-bgs" customClass="CustomNavigationController" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a3u-v3-yAf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -476,7 +476,7 @@
         <!--Welcome Screen-->
         <scene sceneID="hRC-fr-Gc0">
             <objects>
-                <viewController id="c4d-eD-W8X" customClass="WelcomeScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c4d-eD-W8X" customClass="WelcomeScreen" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="76m-up-ZwT"/>
                         <viewControllerLayoutGuide type="bottom" id="O9D-JZ-AJn"/>
@@ -543,7 +543,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you receive a personal sign-up invitation?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="QX0-re-Tzi">
-                                        <rect key="frame" x="10" y="60" width="300" height="44"/>
+                                        <rect key="frame" x="10" y="60" width="300" height="43"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -650,7 +650,7 @@
         <!--Trial Page Screen-->
         <scene sceneID="0Jt-8k-qGJ">
             <objects>
-                <viewController id="nZU-o6-lK5" customClass="TrialPageScreen" customModule="PearUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nZU-o6-lK5" customClass="TrialPageScreen" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zqr-Y3-gkx"/>
                         <viewControllerLayoutGuide type="bottom" id="gSx-6c-IKI"/>
@@ -660,7 +660,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kog-XU-tyt" customClass="RoundButton" customModule="IBDesignableKit">
-                                <rect key="frame" x="65" y="166" width="185" height="60"/>
+                                <rect key="frame" x="65" y="165" width="185" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="185" id="Rvk-ea-FWA"/>
                                 </constraints>
@@ -685,13 +685,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4i9-bg-wVS" customClass="RoundButton" customModule="IBDesignableKit">
-                                <rect key="frame" x="18" y="90" width="279" height="60"/>
+                                <rect key="frame" x="18" y="89" width="279" height="60"/>
                                 <color key="backgroundColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="hIq-Zf-WPk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="18"/>
-                                <state key="normal" title="Start free 30 day trial now">
+                                <state key="normal" title="Start a free 30 day trial now">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -708,7 +708,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No worries. Pair Up is open to everyone! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62e-A4-Kez">
-                                <rect key="frame" x="18" y="30" width="279" height="44"/>
+                                <rect key="frame" x="18" y="30" width="279" height="43"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
