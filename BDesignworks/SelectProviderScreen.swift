@@ -20,10 +20,16 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         static let defaultLogoTopConstraintRatio: CGFloat = 0.2 // Show how less logo's top offset relative to screen size
     }
     
-    struct SegueIdentifiers {
+    struct Segue {
         static let ShowVerify = "VerificationSegue"
         static let ShowTrialModal = "TrialSegue"
         static let ShowTrialViews = "showTrialPage"
+        
+        var valueForRegistrationShouldBeEqual: Bool
+        
+        init(valueForRegistrationShouldBeEqual: Bool) {
+            self.valueForRegistrationShouldBeEqual = valueForRegistrationShouldBeEqual
+        }
     }
     
     @IBOutlet weak var providerSelectionButton: RollUpButton!
@@ -80,12 +86,13 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
             return
         }
         switch lIdentifier {
-        case SegueIdentifiers.ShowTrialModal:
+        case Segue.ShowTrialModal:
             segue.destination.transitioningDelegate = self
             segue.destination.modalPresentationStyle = .custom
             (segue.destination as? TrialPageScreen)?.delegate = self
-        case SegueIdentifiers.ShowVerify:
-            (segue.destination as? VerificationView)?.shouldCheckForRegistration = false
+        case Segue.ShowVerify:
+            guard let segueData = sender as? Segue else {return}
+            (segue.destination as? VerificationView)?.valueForRegistrationShouldBeEqual = segueData.valueForRegistrationShouldBeEqual
             if UserDefaults.standard.bool(forKey: FSUserDefaultsKey.IsProviderChosen) {
                 (segue.destination as? VerificationView)?.shouldCheckForProvider = true
             } else {
@@ -113,11 +120,11 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         case .HBF:
             UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.IsProviderChosen)
             UserDefaults.standard.synchronize()
-            self.performSegue(withIdentifier: SegueIdentifiers.ShowVerify, sender: nil)
+            self.performSegue(withIdentifier: Segue.ShowVerify, sender: Segue(valueForRegistrationShouldBeEqual: true))
         case .NoProvider:
             UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.IsProviderChosen)
             UserDefaults.standard.synchronize()
-            self.performSegue(withIdentifier: SegueIdentifiers.ShowTrialModal, sender: nil)
+            self.performSegue(withIdentifier: Segue.ShowTrialModal, sender: nil)
         default: return
         }
     }
@@ -148,11 +155,11 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
 
 extension SelectProviderScreen: TrialModalViewDelegate {
     func learnMoreSelected() {
-        self.performSegue(withIdentifier: SegueIdentifiers.ShowTrialViews, sender: nil)
+        self.performSegue(withIdentifier: Segue.ShowTrialViews, sender: nil)
     }
     
     func startTrialSelected() {
-        self.performSegue(withIdentifier: SegueIdentifiers.ShowVerify, sender: nil)
+        self.performSegue(withIdentifier: Segue.ShowVerify, sender: Segue(valueForRegistrationShouldBeEqual: false))
     }
 }
 

@@ -67,19 +67,17 @@ class VerificationModel {
             switch response.result {
             case .success(let value):
                 guard let lPresenter = self?.presenter else {self?.presenter?.errorOccured(error: nil); return}
-                if lPresenter.shouldCheckRegistration {
-                    if value.isRegistered {
-                        UserDefaults.standard.set(value.hasProvider, forKey: FSUserDefaultsKey.IsProviderChosen)
-                        UserDefaults.standard.synchronize()
-                        self?.receivePhoneCode(phone)
-                    } else {
-                        self?.presenter?.userNotRegistered()
-                    }
-                } else if lPresenter.shouldCheckProvider && value.hasProvider == false {
+                if lPresenter.shouldCheckProvider && value.hasProvider == false {
                     self?.presenter?.userHasNoProvider()
                 }
-                else {
+                if value.isRegistered == lPresenter.valueForRegistrationShouldEqual {
+                    UserDefaults.standard.set(value.hasProvider, forKey: FSUserDefaultsKey.IsProviderChosen)
+                    UserDefaults.standard.synchronize()
                     self?.receivePhoneCode(phone)
+                } else if value.isRegistered {
+                    self?.presenter?.userAlreadyRegistered(withProvider: value.hasProvider)
+                } else {
+                    self?.presenter?.userNotRegistered()
                 }
             case .failure(let error):
                 Logger.error("\(error)")

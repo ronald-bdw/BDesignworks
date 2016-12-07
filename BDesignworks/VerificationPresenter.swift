@@ -21,9 +21,10 @@ protocol IVerificationModelPresenter: class {
     func errorOccured(error: RTError?)
     func loadingStarted()
     var shouldCheckProvider: Bool {get}
-    var shouldCheckRegistration: Bool {get}
+    var valueForRegistrationShouldEqual: Bool {get}
     func userHasNoProvider()
     func userNotRegistered()
+    func userAlreadyRegistered(withProvider: Bool)
 }
 
 class VerificationPresenter {
@@ -40,17 +41,12 @@ extension VerificationPresenter: IVerificationViewPresenter {
         
         guard self.model?.validateCode(lCode) == true &&
             self.model?.validatePhone(lPhone) == true else {return}
-        guard let lView = self.view else {return}
+        
         if lCode == "+61" && lPhone.substring(to: lPhone.index(after: lPhone.startIndex)) == "0" {
             lPhone = lPhone.substring(from: lPhone.index(after: lPhone.startIndex))
         }
-        if lView.shouldCheckProvider || lView.shouldCheckRegistration {
-            
-            self.model?.checkUserStatus(phone: lCode + lPhone)
-        }
-        else {
-            self.model?.submitPhone(lCode + lPhone)
-        }
+        
+        self.model?.checkUserStatus(phone: lCode + lPhone)
     }
 }
 
@@ -61,9 +57,9 @@ extension VerificationPresenter: IVerificationModelPresenter {
         }
     }
     
-    internal var shouldCheckRegistration: Bool {
+    internal var valueForRegistrationShouldEqual: Bool {
         get {
-            return self.view?.shouldCheckRegistration ?? false
+            return self.view?.valueForRegistrationShouldEqual ?? false
         }
     }
 
@@ -107,6 +103,10 @@ extension VerificationPresenter: IVerificationModelPresenter {
     
     func userNotRegistered() {
         self.view?.showNotRegisteredAlert()
+    }
+    
+    func userAlreadyRegistered(withProvider: Bool) {
+        self.view?.showAlreadyRegisteredAlert(withProvider: withProvider)
     }
 }
 
