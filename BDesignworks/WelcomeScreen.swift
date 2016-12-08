@@ -47,6 +47,8 @@ final class WelcomeScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.accessibilityLabel = "Welcome screen"
         self.view.layoutIfNeeded()
         self.navigationController?.navigationBar.isHidden = true
         self.navigationItem.hidesBackButton = true

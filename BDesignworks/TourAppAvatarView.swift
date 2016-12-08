@@ -34,6 +34,8 @@ class TourAppAvatarView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.accessibilityLabel = "Tour app avatar screen"
+        
         let _ = TourAppAvatarMVP(controller: self)
         self.presenter?.viewLoaded()
     }

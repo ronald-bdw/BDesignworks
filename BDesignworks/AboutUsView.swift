@@ -10,6 +10,12 @@ import UIKit
 
 class AboutUsView: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.accessibilityLabel = "About us screen"
+    }
+    
     @IBAction func backPressed(sender: AnyObject) {
         self.moveToMainControllerTransitioned()
     }

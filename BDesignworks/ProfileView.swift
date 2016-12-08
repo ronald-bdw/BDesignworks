@@ -26,6 +26,8 @@ class ProfileView: UITableViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        self.accessibilityLabel = "Profile screen"
+        
         let _ = ProfileMVP(controller: self)
         self.presenter?.viewLoaded()
     }

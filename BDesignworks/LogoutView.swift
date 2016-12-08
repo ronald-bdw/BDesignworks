@@ -12,6 +12,8 @@ class LogoutView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.accessibilityLabel = "Logout screen"
     }
     
     override func viewWillAppear(_ animated: Bool) {

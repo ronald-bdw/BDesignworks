@@ -18,6 +18,8 @@ class NotificationsView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.accessibilityLabel = "Notifications modal screen"
     }
     
     override func viewWillAppear(_ animated: Bool) {

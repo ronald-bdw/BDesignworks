@@ -93,6 +93,8 @@ func ShowNoProviderAlert() {
     alertController.addAction(alertButton)
     
     alertController.presentIfNoAlertsPresented()
+    
+    AnalyticsManager.shared.detectWrongFlow(type: .noProvider)
 }
 
 func ShowNotRegisteredAlert() {
@@ -104,6 +106,8 @@ func ShowNotRegisteredAlert() {
     alertController.addAction(alertButton)
     
     alertController.presentIfNoAlertsPresented()
+    
+    AnalyticsManager.shared.detectWrongFlow(type: .notRegistered)
 }
 
 func ShowAlreadyRegisteredAlert(withProvider: Bool = false) {
@@ -117,6 +121,8 @@ func ShowAlreadyRegisteredAlert(withProvider: Bool = false) {
     alertController.addAction(alertButton)
     
     alertController.presentIfNoAlertsPresented()
+    
+    AnalyticsManager.shared.detectWrongFlow(type: .alreadyRegistered)
 }
 
 func ShowInAppAlert() {

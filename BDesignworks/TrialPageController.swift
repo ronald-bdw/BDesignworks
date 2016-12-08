@@ -14,6 +14,12 @@ class TrialPageController: UIViewController {
     @IBOutlet var selectionViews: [TrialPageSelectionView]!
     weak var scrollView: UIScrollView?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.accessibilityLabel = "Trial Screens"
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationViewController = segue.destination
         for view in destinationViewController.view.subviews {

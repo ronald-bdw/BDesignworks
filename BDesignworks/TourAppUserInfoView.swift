@@ -31,6 +31,8 @@ class TourAppUserInfoView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.accessibilityLabel = "Tour app user info screen"
+        
         let _ = TourAppUserInfoMVP(controller: self)
         
         self.tableView.register(UINib(nibName: RegistrationTableViewCell.fs_className, bundle: nil), forCellReuseIdentifier: RegistrationTableViewCell.fs_className)

@@ -33,6 +33,8 @@ class RegistrationView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.accessibilityLabel = "Registration screen"
+        
         InAppManager.shared.loadProducts()
         
         UIApplication.shared.statusBarStyle = .lightContent

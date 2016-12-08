@@ -84,6 +84,8 @@ class ProfileEditingView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.accessibilityLabel = "Profile Edit screen"
+        
         let _ = ProfileEditingMVP(controller: self)
         
         self.setValidationViews()

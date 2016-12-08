@@ -14,6 +14,7 @@ abstract_target 'Abstract' do
     # Analytics
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'Heap'
     
     # Libraries
     pod 'Alamofire'

@@ -12,6 +12,7 @@
 // Analytics
 @import Fabric;
 @import Crashlytics;
+#import <Heap/Heap.h>
 
 @import FSHelpers_Swift;
 

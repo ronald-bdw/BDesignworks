@@ -160,11 +160,14 @@ extension AppDelegate {
         #else
             //setup Crashlytics
             Fabric.with([Crashlytics.self])
+            self.setupHeapAnalytics()
         #endif
 
         DispatchQueue.global().async {  let _ = countryCodes }
 
         InAppManager.shared.startMonitoring()
+        
+        AnalyticsManager.shared
 
         self.setupAppearance()
 
@@ -227,6 +230,15 @@ extension AppDelegate {
 
     func setupSVProgressHUD() {
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.gradient)
+    }
+    
+    func setupHeapAnalytics() {
+        #if DEBUG
+            Heap.setAppId("561454636")
+            Heap.enableVisualizer()
+        #else
+            Heap.setAppId("4186798559")
+        #endif
     }
 }
 

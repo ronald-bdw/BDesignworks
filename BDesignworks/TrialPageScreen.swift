@@ -19,6 +19,8 @@ final class TrialPageScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.accessibilityLabel = "Pre trial modal screen"
         self.title = "Welcome"
     }
     

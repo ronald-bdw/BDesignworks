@@ -14,6 +14,8 @@ class DataSyncView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.accessibilityLabel = "Data sync screen"
+        
         if UserDefaults.standard.bool(forKey: FSUserDefaultsKey.FitbitRegistered) {
             self.fitbitSwitch.setOn(true, animated: true)
         }
