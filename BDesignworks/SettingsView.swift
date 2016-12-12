@@ -19,7 +19,7 @@ class SettingsView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Settings screen"
+        AnalyticsManager.shared.trackScreen(named: "Settings screen", viewController: self)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateNotificationsSwitch), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         self.notificationsSwitch.addTarget(self, action: #selector(self.updateNotificationsSwitch), for: UIControlEvents.valueChanged)

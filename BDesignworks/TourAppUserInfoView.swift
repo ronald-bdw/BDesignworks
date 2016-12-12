@@ -31,7 +31,7 @@ class TourAppUserInfoView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Tour app user info screen"
+        AnalyticsManager.shared.trackScreen(named: "Tour app user info screen", viewController: self)
         
         let _ = TourAppUserInfoMVP(controller: self)
         

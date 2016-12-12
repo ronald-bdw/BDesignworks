@@ -13,6 +13,7 @@
 @import Fabric;
 @import Crashlytics;
 #import <Heap/Heap.h>
+@import Flurry_iOS_SDK;
 
 @import FSHelpers_Swift;
 

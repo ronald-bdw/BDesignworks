@@ -17,7 +17,7 @@ class TrialPageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Trial Screens"
+        AnalyticsManager.shared.trackScreen(named: "Trial Screens", viewController: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

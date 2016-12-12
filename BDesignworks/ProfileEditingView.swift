@@ -84,7 +84,7 @@ class ProfileEditingView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Profile Edit screen"
+        AnalyticsManager.shared.trackScreen(named: "Profile Edit screen", viewController: self)
         
         let _ = ProfileEditingMVP(controller: self)
         

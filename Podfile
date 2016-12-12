@@ -15,6 +15,7 @@ abstract_target 'Abstract' do
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'Heap'
+    pod 'Flurry-iOS-SDK/FlurrySDK'
     
     # Libraries
     pod 'Alamofire'

@@ -33,7 +33,7 @@ class RegistrationView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Registration screen"
+        AnalyticsManager.shared.trackScreen(named: "Registration screen", viewController: self)
         
         InAppManager.shared.loadProducts()
         

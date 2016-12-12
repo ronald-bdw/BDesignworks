@@ -34,7 +34,7 @@ class TourAppAvatarView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Tour app avatar screen"
+        AnalyticsManager.shared.trackScreen(named: "Tour app avatar screen", viewController: self)
         
         let _ = TourAppAvatarMVP(controller: self)
         self.presenter?.viewLoaded()
