@@ -89,7 +89,7 @@ final class WelcomeScreen: UIViewController {
             (segue.destination as? TrialPageScreen)?.delegate = self
         case SegueIdentifiers.VerificationWithAccount:
             (segue.destination as? VerificationView)?.valueForRegistrationShouldBeEqual = true
-            (segue.destination as? VerificationView)?.shouldCheckForProvider = true
+            (segue.destination as? VerificationView)?.shouldCheckForProvider = false
         case SegueIdentifiers.Verification:
             (segue.destination as? VerificationView)?.valueForRegistrationShouldBeEqual = false
             (segue.destination as? VerificationView)?.shouldCheckForProvider = false
