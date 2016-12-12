@@ -54,6 +54,8 @@ class SidebarView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.accessibilityLabel = "Sidebar screen"
+        
         let _ = SidebarMVP(controller: self)
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "right-menu-bg"))
         self.presenter?.viewLoaded()

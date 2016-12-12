@@ -44,6 +44,8 @@ class ConversationScreen: UIViewController {
 
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        self.accessibilityLabel = "Conversation screen"
 
         self.loadMainUser()
 

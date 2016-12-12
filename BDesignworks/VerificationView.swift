@@ -186,6 +186,8 @@ final class VerificationView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.accessibilityLabel = "Verification screen"
+        
         let _ = VerificationMVP(controller: self)
         self.view.layoutIfNeeded()
         

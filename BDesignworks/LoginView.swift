@@ -27,6 +27,8 @@ class LoginView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.accessibilityLabel = "Login screen"
+        
         let _ = LoginMVP(controller: self)
         
         UIApplication.shared.statusBarStyle = .default
