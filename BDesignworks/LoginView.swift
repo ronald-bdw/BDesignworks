@@ -27,7 +27,7 @@ class LoginView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Login screen"
+        AnalyticsManager.shared.trackScreen(named: "Login screen", viewController: self)
         
         let _ = LoginMVP(controller: self)
         

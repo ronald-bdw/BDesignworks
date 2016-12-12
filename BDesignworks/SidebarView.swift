@@ -54,7 +54,7 @@ class SidebarView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Sidebar screen"
+        AnalyticsManager.shared.trackScreen(named: "Sidebar screen", viewController: self)
         
         let _ = SidebarMVP(controller: self)
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "right-menu-bg"))

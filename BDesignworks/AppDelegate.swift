@@ -161,13 +161,14 @@ extension AppDelegate {
             //setup Crashlytics
             Fabric.with([Crashlytics.self])
             self.setupHeapAnalytics()
+            self.setupFlurryAnalytics()
         #endif
 
         DispatchQueue.global().async {  let _ = countryCodes }
 
         InAppManager.shared.startMonitoring()
         
-        AnalyticsManager.shared
+        let _ = AnalyticsManager.shared
 
         self.setupAppearance()
 
@@ -239,6 +240,10 @@ extension AppDelegate {
         #else
             Heap.setAppId("4186798559")
         #endif
+    }
+    
+    func setupFlurryAnalytics() {
+        Flurry.startSession("R5N7DYZWTD57WKKBM333")
     }
 }
 

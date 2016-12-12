@@ -13,7 +13,7 @@ class LogoutView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Logout screen"
+        AnalyticsManager.shared.trackScreen(named: "Logout screen", viewController: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

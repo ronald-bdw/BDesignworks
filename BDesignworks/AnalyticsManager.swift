@@ -29,16 +29,24 @@ class AnalyticsManager {
         NotificationCenter.default.addObserver(self, selector: #selector(self.detectMessageSending), name: NSNotification.Name.SKTMessageUploadCompleted, object: nil)
     }
     
+    func trackScreen(named name: String, viewController: UIViewController) {
+        viewController.accessibilityLabel = name
+        Flurry.logEvent(name)
+    }
+    
     @objc func detectMessageSending() {
         let messageSentDate = Date()
         guard let messages = Smooch.conversation()?.messages, messages.count > 1 else {return}
         guard let preLastMessage = (messages[messages.endIndex - 2] as? SKTMessage),
             preLastMessage.isFromCurrentUser == false,
             let coachMessageDate = preLastMessage.date else {return}
-        Heap.track("Message sent", withProperties: ["Response time": Int(messageSentDate.timeIntervalSince(coachMessageDate)/60)])
+        let messageResponseTime = Int(messageSentDate.timeIntervalSince(coachMessageDate)/60)
+        Heap.track("Message sent", withProperties: ["Response time": messageResponseTime])
+        Flurry.logEvent("Message sent", withParameters: ["Response time": messageResponseTime])
     }
     
     func detectWrongFlow(type: LoginWrongFlowType) {
         Heap.track("Wrong flow", withProperties: ["Wrong flow type": type.description])
+        Flurry.logEvent("Wrong flow", withParameters: ["Wrong flow type": type.description])
     }
 }

@@ -48,7 +48,8 @@ final class WelcomeScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Welcome screen"
+        AnalyticsManager.shared.trackScreen(named: "Welcome screen", viewController: self)
+        
         self.view.layoutIfNeeded()
         self.navigationController?.navigationBar.isHidden = true
         self.navigationItem.hidesBackButton = true

@@ -26,7 +26,7 @@ class ProfileView: UITableViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Profile screen"
+        AnalyticsManager.shared.trackScreen(named: "Profile screen", viewController: self)
         
         let _ = ProfileMVP(controller: self)
         self.presenter?.viewLoaded()

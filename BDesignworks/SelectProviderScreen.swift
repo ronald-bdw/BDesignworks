@@ -49,7 +49,7 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Select provider screen"
+        AnalyticsManager.shared.trackScreen(named: "Select provider screen", viewController: self)
         self.logoTopConstraint.constant = self.getDefaultLogoTopOffset()
         self.providerSelectionButton.delegate = self
         self.providerSelectionButton.chooseLabel.text = self.autocompleteView.items.first?.rawValue

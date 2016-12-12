@@ -19,7 +19,7 @@ class NotificationsView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Notifications modal screen"
+        AnalyticsManager.shared.trackScreen(named: "Notifications modal screen", viewController: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

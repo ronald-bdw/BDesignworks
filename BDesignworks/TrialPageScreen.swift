@@ -20,7 +20,8 @@ final class TrialPageScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Pre trial modal screen"
+        AnalyticsManager.shared.trackScreen(named: "Pre trial modal screen", viewController: self)
+        
         self.title = "Welcome"
     }
     

@@ -32,7 +32,7 @@ final class AreaCodeScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.accessibilityLabel = "Area code screen"
+        AnalyticsManager.shared.trackScreen(named: "Area code screen", viewController: self)
         self.sectionTitles = countryCodes.map { $0.0 }.sorted()
         self.tableView.sectionIndexColor = UIColor(fs_hexString: "29537C")
         self.tableView.register(UINib(nibName: HeaderView.className, bundle: nil), forHeaderFooterViewReuseIdentifier: CellIdentifier.headerIdentifier)

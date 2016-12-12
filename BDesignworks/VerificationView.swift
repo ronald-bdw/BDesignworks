@@ -186,7 +186,7 @@ final class VerificationView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Verification screen"
+        AnalyticsManager.shared.trackScreen(named: "Verification screen", viewController: self)
         
         let _ = VerificationMVP(controller: self)
         self.view.layoutIfNeeded()
