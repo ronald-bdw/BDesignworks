@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pmn-Dh-aJ5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pmn-Dh-aJ5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="qNZ-wO-9Hm">
-                                <rect key="frame" x="70" y="97" width="235" height="235"/>
+                                <rect key="frame" x="70" y="176" width="235" height="235"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qNZ-wO-9Hm" secondAttribute="height" multiplier="1:1" id="HaZ-pa-Tj8"/>
                                 </constraints>
@@ -35,8 +35,8 @@
                         <constraints>
                             <constraint firstItem="Re7-6D-pR2" firstAttribute="leading" secondItem="568-1j-GNU" secondAttribute="leading" id="0Mf-Uf-vQ4"/>
                             <constraint firstItem="qNZ-wO-9Hm" firstAttribute="centerX" secondItem="Re7-6D-pR2" secondAttribute="centerX" id="9sd-NH-bqj"/>
-                            <constraint firstItem="qNZ-wO-9Hm" firstAttribute="top" secondItem="1fs-KX-Sxv" secondAttribute="bottom" constant="77" id="F2M-fR-NfJ"/>
                             <constraint firstAttribute="trailing" secondItem="qNZ-wO-9Hm" secondAttribute="trailing" constant="70" id="GlI-Yb-2D5"/>
+                            <constraint firstItem="qNZ-wO-9Hm" firstAttribute="centerY" secondItem="Re7-6D-pR2" secondAttribute="centerY" constant="-40" id="MQY-hd-hAf"/>
                             <constraint firstAttribute="trailing" secondItem="Re7-6D-pR2" secondAttribute="trailing" id="SR3-Zr-Ivc"/>
                             <constraint firstItem="Re7-6D-pR2" firstAttribute="top" secondItem="1fs-KX-Sxv" secondAttribute="bottom" constant="-20" id="Vfv-Oz-B1l"/>
                             <constraint firstItem="qNZ-wO-9Hm" firstAttribute="leading" secondItem="568-1j-GNU" secondAttribute="leading" constant="70" id="cCr-CM-qUc"/>

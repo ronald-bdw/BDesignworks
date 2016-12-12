@@ -16,7 +16,7 @@
         <array key="OpenSansLight.ttf">
             <string>OpenSans-Light</string>
         </array>
-        <array key="OpenSansRegularItalic.ttf">
+        <array key="OpenSansRegular.ttf">
             <string>OpenSans</string>
         </array>
         <array key="WorkSans-Regular.ttf">
@@ -453,7 +453,7 @@
         <scene sceneID="nUd-NQ-3Bv">
             <objects>
                 <navigationController storyboardIdentifier="WelcomeController" id="rys-JC-bgs" customClass="CustomNavigationController" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a3u-v3-yAf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a3u-v3-yAf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -542,8 +542,10 @@
                                             <action selector="yesAction:" destination="c4d-eD-W8X" eventType="touchUpInside" id="dKd-eX-rQ8"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you receive a personal sign-up invitation?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="QX0-re-Tzi">
-                                        <rect key="frame" x="10" y="60" width="300" height="43"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="QX0-re-Tzi">
+                                        <rect key="frame" x="10" y="60" width="300" height="44"/>
+                                        <string key="text">Did you receive a 
+personal sign-up invitation?</string>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -660,7 +662,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kog-XU-tyt" customClass="RoundButton" customModule="IBDesignableKit">
-                                <rect key="frame" x="65" y="165" width="185" height="60"/>
+                                <rect key="frame" x="65" y="166" width="185" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="185" id="Rvk-ea-FWA"/>
                                 </constraints>
@@ -685,7 +687,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4i9-bg-wVS" customClass="RoundButton" customModule="IBDesignableKit">
-                                <rect key="frame" x="18" y="89" width="279" height="60"/>
+                                <rect key="frame" x="18" y="90" width="279" height="60"/>
                                 <color key="backgroundColor" red="0.12549019610000001" green="0.25490196079999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="hIq-Zf-WPk"/>
@@ -708,7 +710,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No worries. Pair Up is open to everyone! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62e-A4-Kez">
-                                <rect key="frame" x="18" y="30" width="279" height="43"/>
+                                <rect key="frame" x="18" y="30" width="279" height="44"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

@@ -92,7 +92,7 @@ class ConversationScreen: UIViewController {
         label.textColor = smoochLabel.textColor
         label.font = smoochLabel.font
         label.numberOfLines = 10
-        label.text = "\nWelcome to the Pair Up main page. This is where you will connect with your Pair Up coach.\n\nTap the upper right  menu to edit settings and learn more about Pair Up. Explore the About Us section to find our Privacy Policy and Licencing Agreement."
+        label.text = "\nWelcome to the Pair Up main page. This is where you will connect with your Pair Up coach.\n\nTap the upper right  menu to edit settings and learn more about Pair Up. Explore the About Us section to find our\nPrivacy Policy and Licensing Agreement."
         tableView.addSubview(label)
     }
 

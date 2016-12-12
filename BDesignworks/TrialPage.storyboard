@@ -14,7 +14,7 @@
         <array key="OpenSansBold.ttf">
             <string>OpenSans-Bold</string>
         </array>
-        <array key="OpenSansRegularItalic.ttf">
+        <array key="OpenSansRegular.ttf">
             <string>OpenSans</string>
         </array>
     </customFonts>
@@ -264,13 +264,13 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YNd-s3-xOp" firstAttribute="top" secondItem="Sre-sy-YzM" secondAttribute="bottom" id="7li-hZ-Z3d"/>
                             <constraint firstItem="Sre-sy-YzM" firstAttribute="top" secondItem="I2Z-Yl-HXF" secondAttribute="bottom" id="DA2-VH-6jT"/>
                             <constraint firstItem="7dq-fi-Dm8" firstAttribute="trailing" secondItem="Sre-sy-YzM" secondAttribute="trailing" id="FHV-Nz-RNb"/>
                             <constraint firstItem="3d7-qi-OQf" firstAttribute="top" secondItem="7dq-fi-Dm8" secondAttribute="bottom" constant="30" id="FKi-04-kLa"/>
                             <constraint firstItem="7dq-fi-Dm8" firstAttribute="centerX" secondItem="Sre-sy-YzM" secondAttribute="centerX" id="HnJ-0v-Wpj"/>
+                            <constraint firstItem="YNd-s3-xOp" firstAttribute="top" secondItem="Sre-sy-YzM" secondAttribute="bottom" id="IwE-S2-lLc"/>
                             <constraint firstItem="xgc-5L-862" firstAttribute="top" secondItem="I2Z-Yl-HXF" secondAttribute="bottom" constant="43" id="JhH-Az-5CH"/>
                             <constraint firstAttribute="trailing" secondItem="7dq-fi-Dm8" secondAttribute="trailing" constant="47" id="Lsg-0B-4W8"/>
                             <constraint firstAttribute="bottomMargin" secondItem="3d7-qi-OQf" secondAttribute="bottom" constant="24" id="Mgb-El-viq"/>
@@ -347,7 +347,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pair Up uses simple in-app chat conversations with a friendly human coach to help you lead a more active lifestyle." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="KOR-Yq-KEC">
-                                                                <rect key="frame" x="18" y="278" width="266" height="86"/>
+                                                                <rect key="frame" x="18" y="278" width="266" height="87.5"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -410,7 +410,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Pair Up coach will help you turn small steps into get-active habits that last - for a healthier, happier you!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NQ-dn-jB8">
-                                                                <rect key="frame" x="18" y="278" width="265" height="86"/>
+                                                                <rect key="frame" x="18" y="278" width="265" height="87.5"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -477,7 +477,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCG-IE-ZwI">
-                                                                <rect key="frame" x="18" y="278" width="265" height="86"/>
+                                                                <rect key="frame" x="18" y="278" width="265" height="87.5"/>
                                                                 <string key="text">Pair Up syncs with your phone and most activity trackers, providing your coach with key insights to help you lock-in new habits.</string>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -539,7 +539,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try Pair Up free for 30 days. The choice is yours to continue a subscription that is far cheaper than traditional coaching." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL1-Wz-xQ7">
-                                                                <rect key="frame" x="18" y="278" width="265" height="86"/>
+                                                                <rect key="frame" x="18" y="278" width="265" height="87.5"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
