@@ -390,13 +390,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAH-nk-3vt">
-                                                    <rect key="frame" x="538" y="12" width="35" height="21"/>
+                                                    <rect key="frame" x="538.5" y="12.5" width="34.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans Light" pointSize="15"/>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Australia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uw5-dw-6UC">
-                                                    <rect key="frame" x="27" y="12" width="501" height="21"/>
+                                                    <rect key="frame" x="27" y="12.5" width="501.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans Light" pointSize="15"/>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -453,7 +453,7 @@
         <scene sceneID="nUd-NQ-3Bv">
             <objects>
                 <navigationController storyboardIdentifier="WelcomeController" id="rys-JC-bgs" customClass="CustomNavigationController" customModule="Pair_Up" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a3u-v3-yAf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a3u-v3-yAf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -492,7 +492,7 @@
                                 <rect key="frame" x="0.0" y="318" width="320" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="WELCOME TO PAIR UP!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rd7-Dk-h0J">
-                                        <rect key="frame" x="38.5" y="11" width="243.5" height="30"/>
+                                        <rect key="frame" x="38.5" y="6" width="243.5" height="30"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
                                         <color key="textColor" red="0.15294117647058825" green="0.25882352941176467" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -542,16 +542,14 @@
                                             <action selector="yesAction:" destination="c4d-eD-W8X" eventType="touchUpInside" id="dKd-eX-rQ8"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="QX0-re-Tzi">
-                                        <rect key="frame" x="10" y="60" width="300" height="44"/>
-                                        <string key="text">Did you receive a 
-personal sign-up invitation?</string>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you receive a personal  sign-up invitation?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="QX0-re-Tzi">
+                                        <rect key="frame" x="10" y="55" width="300" height="44"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eyh-hi-2Ak">
-                                        <rect key="frame" x="7.5" y="202" width="305" height="32"/>
+                                        <rect key="frame" x="7.5" y="201.5" width="305" height="32.5"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Login if you already have a Pair Up account.">
@@ -578,7 +576,7 @@ personal sign-up invitation?</string>
                                     <constraint firstItem="Eyh-hi-2Ak" firstAttribute="centerX" secondItem="aFb-vO-jqj" secondAttribute="centerX" id="HwG-Jz-X8K"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hA7-DQ-aj2" secondAttribute="bottom" constant="10" id="IcV-0q-4YO"/>
                                     <constraint firstItem="hA7-DQ-aj2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QX0-re-Tzi" secondAttribute="bottom" constant="10" id="NGp-ps-s7K"/>
-                                    <constraint firstItem="Rd7-Dk-h0J" firstAttribute="top" secondItem="aFb-vO-jqj" secondAttribute="top" constant="11" id="Rnh-zs-uJm"/>
+                                    <constraint firstItem="Rd7-Dk-h0J" firstAttribute="top" secondItem="aFb-vO-jqj" secondAttribute="top" constant="6" id="Rnh-zs-uJm"/>
                                     <constraint firstItem="0hv-e5-Pt3" firstAttribute="centerY" secondItem="hA7-DQ-aj2" secondAttribute="centerY" id="Ygu-K5-VVl"/>
                                     <constraint firstItem="QX0-re-Tzi" firstAttribute="leading" secondItem="aFb-vO-jqj" secondAttribute="leading" constant="10" id="a2L-L6-cmG"/>
                                     <constraint firstAttribute="height" constant="250" id="aDr-0V-W10"/>
@@ -792,7 +790,7 @@ personal sign-up invitation?</string>
     </scenes>
     <resources>
         <image name="GradientBackground" width="187" height="333"/>
-        <image name="Logo" width="896" height="898"/>
+        <image name="Logo" width="416" height="417"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bZz-Ds-D8R"/>
