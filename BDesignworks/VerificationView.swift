@@ -462,7 +462,7 @@ extension VerificationView {
         scrollView.contentInset             = contentInsets
         scrollView.scrollIndicatorInsets    = contentInsets
         
-        scrollView.contentOffset = CGPoint(x: 0, y: scrollView.contentSize.height - keyboardFrame.height*2 + 44)
+        scrollView.contentOffset = CGPoint(x: 0, y: keyboardFrame.height)
     }
     
     func fs_keyboardScrollSupportKeyboardWillHide (_ notif: Notification) {
