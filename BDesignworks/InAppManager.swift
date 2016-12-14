@@ -128,7 +128,7 @@ class InAppManager: NSObject {
                 return
         }
         
-        let _ = Router.User.sendReceipt(receipt: receipt).request(baseUrl: "https://sandbox.itunes.apple.com").responseObject { (response: DataResponse<RTSubscriptionResponse>) in
+        let _ = Router.User.sendReceipt(receipt: receipt).request(baseUrl: "https://buy.itunes.apple.com").responseObject { (response: DataResponse<RTSubscriptionResponse>) in
             switch response.result {
             case .success(let value):
                 guard let expirationDate = value.expirationDate,
