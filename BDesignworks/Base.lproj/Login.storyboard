@@ -45,8 +45,8 @@
                                     <constraint firstAttribute="width" secondItem="IlK-AI-DJw" secondAttribute="height" multiplier="1:1" id="CHq-uL-fWg"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your provider from the list:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi6-wE-5hF">
-                                <rect key="frame" x="17" y="217" width="287" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select your provider:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi6-wE-5hF">
+                                <rect key="frame" x="58" y="217" width="205" height="22"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -793,8 +793,8 @@
         <image name="Logo" width="416" height="417"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bZz-Ds-D8R"/>
-        <segue reference="zb5-s4-hK2"/>
-        <segue reference="1Wq-CH-wIk"/>
+        <segue reference="8ca-PQ-ytg"/>
+        <segue reference="9Qt-G8-bdI"/>
+        <segue reference="221-qK-ZWb"/>
     </inferredMetricsTieBreakers>
 </document>

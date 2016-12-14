@@ -18,6 +18,8 @@ class NotificationView: BaseView {
         let view = NotificationView(frame: CGRect(x: 8, y: 20, width: window.fs_width - 16, height: 60))
         view.textLabel.text = title
         view.alpha = 0
+        guard window.rootViewController is SWRevealViewController &&
+            window.rootViewController?.childViewControllers.first?.childViewControllers.first as? ConversationScreen == nil else {return}
         window.addSubview(view)
         window.bringSubview(toFront: view)
         view.subviews.first?.translatesAutoresizingMaskIntoConstraints = true

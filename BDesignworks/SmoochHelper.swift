@@ -35,6 +35,7 @@ class SmoochHelper: NSObject {
         SKTUser.current()?.firstName = user.firstName
         SKTUser.current()?.lastName = "\(user.id)"
         SKTUser.current()?.email = user.email
+        SKTUser.current()?.addProperties(["isNotDefaultUser": true])
     }
     
     func updateSignUpDate() {
@@ -55,6 +56,8 @@ extension SmoochHelper: SKTConversationDelegate {
         if window.rootViewController is SWRevealViewController &&
             window.rootViewController?.childViewControllers.first?.childViewControllers.first as? ConversationScreen == nil  {
             NotificationView.presentOnTop(with: text)
+        } else {
+            UIApplication.shared.applicationIconBadgeNumber = 0
         }
     }
     
