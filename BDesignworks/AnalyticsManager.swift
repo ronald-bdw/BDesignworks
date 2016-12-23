@@ -20,6 +20,10 @@ enum LoginWrongFlowType {
         case .alreadyRegistered: return "User already registered"
         }
     }
+    
+    var flurryDescription: String {
+        return "iOS - " + self.description
+    }
 }
 
 class AnalyticsManager {
@@ -42,11 +46,11 @@ class AnalyticsManager {
             let coachMessageDate = preLastMessage.date else {return}
         let messageResponseTime = Int(messageSentDate.timeIntervalSince(coachMessageDate)/60)
         Heap.track("Message sent", withProperties: ["Response time": messageResponseTime])
-        Flurry.logEvent("Message sent", withParameters: ["Response time": messageResponseTime])
+        Flurry.logEvent("iOS - Message sent", withParameters: ["iOS - Response time": messageResponseTime])
     }
     
     func detectWrongFlow(type: LoginWrongFlowType) {
         Heap.track("Wrong flow", withProperties: ["Wrong flow type": type.description])
-        Flurry.logEvent("Wrong flow", withParameters: ["Wrong flow type": type.description])
+        Flurry.logEvent("iOS - Wrong flow", withParameters: ["iOS - Wrong flow type": type.flurryDescription])
     }
 }
