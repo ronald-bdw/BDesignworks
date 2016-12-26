@@ -54,7 +54,6 @@ final class WelcomeScreen: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         self.navigationItem.hidesBackButton = true
         self.view.layoutIfNeeded()
-        UIApplication.shared.applicationIconBadgeNumber = 0
         
         self.containerView.alpha = 0.0
         
