@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import PearUp
+@testable import Pair_Up
 
 enum VerificationResult: Equatable {
     case phoneNotValid
@@ -19,6 +19,8 @@ enum VerificationResult: Equatable {
     case loadingStarted
     case userHasNoProvider
     case userNotRegistered
+    case userAlreadyRegisteredWithProvider
+    case userAlreadyRegisteredWithoutProvider
     
     var description: String {
         switch self {
@@ -31,6 +33,8 @@ enum VerificationResult: Equatable {
         case .loadingStarted: return "loadingStarted"
         case .userHasNoProvider: return "userHasNoProvider"
         case .userNotRegistered: return "userNotRegistered"
+        case .userAlreadyRegisteredWithProvider: return "userAlreadyRegisteredWithProvider"
+        case .userAlreadyRegisteredWithoutProvider: return "userAlreadyRegisteredWithoutProvider"
         }
     }
 }
@@ -108,7 +112,7 @@ extension VerificationPresenterMock: IVerificationModelPresenter {
         return self.checkForProviderTest
     }
     
-    var shouldCheckRegistration: Bool  {
+    var valueForRegistrationShouldEqual: Bool  {
         return self.checkForRegistrationTest
     }
     
@@ -118,6 +122,13 @@ extension VerificationPresenterMock: IVerificationModelPresenter {
     
     func userNotRegistered() {
         self.callsOrder.append(VerificationResult.userNotRegistered)
+    }
+    
+    func userAlreadyRegistered(withProvider: Bool){
+        self.callsOrder.append(withProvider ?
+                VerificationResult.userAlreadyRegisteredWithProvider :
+                VerificationResult.userAlreadyRegisteredWithoutProvider
+        )
     }
 }
 
@@ -163,7 +174,7 @@ extension VerificationViewMock: IVerificationView {
         return true
     }
     
-    var shouldCheckRegistration: Bool {
+    var valueForRegistrationShouldEqual: Bool {
         return true
     }
     
@@ -174,4 +185,6 @@ extension VerificationViewMock: IVerificationView {
     func showNotRegisteredAlert() {
         
     }
+    
+    func showAlreadyRegisteredAlert(withProvider: Bool){}
 }

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import PearUp
+@testable import Pair_Up
 
 class Swift_BaseTests: XCTestCase {
     

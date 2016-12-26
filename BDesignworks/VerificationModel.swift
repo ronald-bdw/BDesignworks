@@ -69,6 +69,7 @@ class VerificationModel {
                 guard let lPresenter = self?.presenter else {self?.presenter?.errorOccured(error: nil); return}
                 if lPresenter.shouldCheckProvider && value.hasProvider == false {
                     self?.presenter?.userHasNoProvider()
+                    return
                 }
                 if value.isRegistered == lPresenter.valueForRegistrationShouldEqual {
                     UserDefaults.standard.set(value.hasProvider, forKey: FSUserDefaultsKey.IsProviderChosen)

@@ -4,6 +4,7 @@ use_frameworks!
 
 abstract_target 'Abstract' do
     
+    # Database
     pod 'Realm'
     pod 'RealmSwift'
     
@@ -24,9 +25,6 @@ abstract_target 'Abstract' do
     pod 'SVProgressHUD'
     pod 'Smooch', '= 5.1.0'
     pod 'SWRevealViewController'
-    #pod 'Reachability'
-    #pod 'SVProgressHUD'
-    #pod 'MKStoreKit'
     
     #secure
     pod 'SAMKeychain'
