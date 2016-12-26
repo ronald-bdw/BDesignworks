@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else {
             ShowInitialViewController()
         }
-
+        
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
         return true
     }
 
