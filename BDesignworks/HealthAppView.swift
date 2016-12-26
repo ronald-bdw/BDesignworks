@@ -13,7 +13,7 @@ class HealthAppView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Health app modal screen"
+        AnalyticsManager.shared.trackScreen(named: "Health app modal screen", viewController: self)
     }
     
     @IBAction func closeAction(_ sender: AnyObject) {

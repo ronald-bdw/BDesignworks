@@ -13,7 +13,7 @@ class AboutUsView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.accessibilityLabel = "About us screen"
+        AnalyticsManager.shared.trackScreen(named: "About us screen", viewController: self)
     }
     
     @IBAction func backPressed(sender: AnyObject) {

@@ -45,7 +45,7 @@ class ConversationScreen: UIViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        self.accessibilityLabel = "Conversation screen"
+        AnalyticsManager.shared.trackScreen(named: "Conversation screen", viewController: self)
 
         self.loadMainUser()
 
