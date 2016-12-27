@@ -1064,8 +1064,8 @@
 				21DB300D19DD2289003A418D /* Resources */,
 				21B3D19F19E6E2B700EF0D52 /* ShellScript */,
 				B127C28676A94C891E32B5C8 /* [CP] Embed Pods Frameworks */,
-				8D624D20A7FE3B08118BE268 /* [CP] Copy Pods Resources */,
 				4FF397E71D6A5AED004EAE2E /* Embed Frameworks */,
+				8D624D20A7FE3B08118BE268 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 				21DB304B19DD32D9003A418D /* PBXBuildRule */,
@@ -2139,7 +2139,7 @@
 			baseConfigurationReference = 9FE58E7B2053F4AFF188DF61 /* Pods-Abstract-BDesignworksTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = K8WJN89HXG;
 				ENABLE_TESTABILITY = YES;
@@ -2155,7 +2155,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 			};
 			name = Debug;
 		};
@@ -2164,7 +2164,7 @@
 			baseConfigurationReference = E52012F8C989ECF5309835D0 /* Pods-Abstract-BDesignworksTests.appstore debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2176,7 +2176,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 			};
 			name = "AppStore Debug";
 		};
@@ -2185,7 +2185,7 @@
 			baseConfigurationReference = 777CEADF0A3987259CB4C60D /* Pods-Abstract-BDesignworksTests.debug staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = K8WJN89HXG;
 				ENABLE_TESTABILITY = YES;
@@ -2201,7 +2201,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 			};
 			name = "Debug Staging";
 		};
@@ -2210,7 +2210,7 @@
 			baseConfigurationReference = B4B0F73B11F25FEB89C85F54 /* Pods-Abstract-BDesignworksTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2222,7 +2222,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 			};
 			name = Release;
 		};
@@ -2231,7 +2231,7 @@
 			baseConfigurationReference = 6E2293E2DC3390EAB27468D6 /* Pods-Abstract-BDesignworksTests.test.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2246,7 +2246,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 			};
 			name = Test;
 		};
@@ -2255,7 +2255,7 @@
 			baseConfigurationReference = 51A0D6856BD58979B29B2269 /* Pods-Abstract-BDesignworksTests.appstore.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2267,7 +2267,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 			};
 			name = AppStore;
 		};
@@ -2276,7 +2276,7 @@
 			baseConfigurationReference = 7EDBE43BF809E4BF3F085A1F /* Pods-Abstract-BDesignworksTests.release staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2288,7 +2288,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 			};
 			name = "Release Staging";
 		};
@@ -2297,7 +2297,7 @@
 			baseConfigurationReference = FC6E3D360349BB799F9BA741 /* Pods-Abstract-BDesignworksTests.test staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = K8WJN89HXG;
@@ -2312,7 +2312,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = BDesignworksTests/BridgeHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PearUp.app/PearUp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pair Up.app/Pair Up";
 			};
 			name = "Test Staging";
 		};
