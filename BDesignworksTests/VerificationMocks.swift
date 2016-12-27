@@ -68,7 +68,7 @@ class VerificationPresenterMock: MVPPresenter {
     required init () {}
     
     var checkForProviderTest: Bool = false
-    var checkForRegistrationTest: Bool = false
+    var valueForRegistrationShouldEqualTest: Bool = false
     var shouldContainParticularError: Bool = false
     
     var callsOrder: [VerificationResult] = []
@@ -113,7 +113,7 @@ extension VerificationPresenterMock: IVerificationModelPresenter {
     }
     
     var valueForRegistrationShouldEqual: Bool  {
-        return self.checkForRegistrationTest
+        return self.valueForRegistrationShouldEqualTest
     }
     
     func userHasNoProvider() {
