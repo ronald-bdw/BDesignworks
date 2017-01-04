@@ -67,8 +67,11 @@ extension SmoochHelper: SKTConversationDelegate {
     
     func conversation(_ conversation: SKTConversation, unreadCountDidChange unreadCount: UInt) {
         guard let window = UIApplication.shared.windows.first else {return}
-        UIApplication.shared.applicationIconBadgeNumber = window.rootViewController is SWRevealViewController ?
-            Int(unreadCount) :
-            0
+        if window.rootViewController is SWRevealViewController &&
+            window.rootViewController?.childViewControllers.first?.childViewControllers.first as? ConversationScreen == nil  {
+            UIApplication.shared.applicationIconBadgeNumber = Int(unreadCount)
+        } else {
+            UIApplication.shared.applicationIconBadgeNumber = 0
+        }
     }
 }
