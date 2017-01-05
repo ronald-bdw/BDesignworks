@@ -156,11 +156,11 @@ extension AppDelegate {
 
         self.setupSVProgressHUD()
         
-        Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
+        #if !(APPSTORE)
+            Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
+        #endif
         
-        #if TEST
-        #else
-            //setup Crashlytics
+        #if !(TEST)
             Fabric.with([Crashlytics.self])
             self.setupHeapAnalytics()
             self.setupFlurryAnalytics()
@@ -173,7 +173,6 @@ extension AppDelegate {
         let _ = AnalyticsManager.shared
 
         self.setupAppearance()
-
     }
 
     func setupAppearance() {
@@ -248,4 +247,3 @@ extension AppDelegate {
         Flurry.startSession("R5N7DYZWTD57WKKBM333")
     }
 }
-
