@@ -9,9 +9,12 @@
 import UIKit
 
 enum ProviderOption: String {
-    case SelectOne   = "Select one"
-    case HBF         = "HBF"
-    case NoProvider  = "I do not have a provider"
+    case selectOne   = "Select one"
+    case hbf         = "HBF"
+    case bdw         = "BDW"
+    case noProvider  = "I do not have a provider"
+    
+    static var all: [ProviderOption] = [.selectOne, .hbf, .bdw, .noProvider]
 }
 
 final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, AutocompleteViewDelegate {
@@ -40,7 +43,7 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     
     fileprivate lazy var autocompleteView: AutocompleteView = {
         let autocompleteView = AutocompleteView()
-        autocompleteView.items = [.SelectOne, .HBF, .NoProvider]
+        autocompleteView.items = ProviderOption.all
         autocompleteView.delegate = self
         self.view.addSubview(autocompleteView)
         return autocompleteView
@@ -119,11 +122,11 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
             let selectedButtonState = ProviderOption(rawValue: labelText) else {return}
         
         switch selectedButtonState {
-        case .HBF:
+        case .hbf, .bdw:
             UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.IsProviderChosen)
             UserDefaults.standard.synchronize()
             self.performSegue(withIdentifier: Segue.ShowVerify, sender: Segue(valueForRegistrationShouldBeEqual: true))
-        case .NoProvider:
+        case .noProvider:
             UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.IsProviderChosen)
             UserDefaults.standard.synchronize()
             self.performSegue(withIdentifier: Segue.ShowTrialModal, sender: nil)
