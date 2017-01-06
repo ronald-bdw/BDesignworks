@@ -173,6 +173,8 @@ extension AppDelegate {
         let _ = AnalyticsManager.shared
 
         self.setupAppearance()
+        
+        self.loadProviders()
     }
 
     func setupAppearance() {
@@ -245,5 +247,21 @@ extension AppDelegate {
     
     func setupFlurryAnalytics() {
         Flurry.startSession("R5N7DYZWTD57WKKBM333")
+    }
+    
+    func loadProviders() {
+        let _ = Router.Provider.getProviders.request().responseObject { (response: DataResponse<RTProvidersResponse>) in
+            switch response.result {
+            case .success(let value):
+                try? BDRealm?.write {
+                    BDRealm?.add(value.providers, update: true)
+                }
+            case .failure(let error):
+                Logger.debug(error)
+            }
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: FSNotificationKey.Provider.providersChanged), object: nil)
+            
+        }
     }
 }

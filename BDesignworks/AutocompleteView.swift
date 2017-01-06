@@ -27,7 +27,7 @@ final class AutocompleteView: UIView {
     
     override class var layerClass : AnyClass { return CAShapeLayer.self }
     
-    var items: [ProviderOption] = [] {
+    var items: [String] = [] {
         didSet {
             self.layoutSubviews()
         }
@@ -51,9 +51,9 @@ final class AutocompleteView: UIView {
     }
     
     func present() {
-        if self.pickerView.selectedRow(inComponent: 0) == 0 {
+        if self.pickerView.selectedRow(inComponent: 0) == 0, self.items.count > 1 {
             self.pickerView.selectRow(1, inComponent: 0, animated: false)
-            self.delegate?.autocompleteViewRowSelected(1, item: self.items[1].rawValue)
+            self.delegate?.autocompleteViewRowSelected(1, item: self.items[1])
             self.pickerView.reloadComponent(0)
         }
         UIView.animate(withDuration: Constants.defaultAnimationDuration, animations: { [weak self] in
@@ -122,7 +122,7 @@ extension AutocompleteView: UIPickerViewDelegate {
         let label = UILabel(frame: CGRect(x: Constants.pickerTextLeftOffset, y: 0, width: self.fs_width - Constants.pickerTextLeftOffset, height: Constants.defaultCellHeight))
         label.font = Fonts.OpenSans.bold.getFontOfSize(18)
         label.textColor = pickerView.selectedRow(inComponent: component) == row ? FSRGBA(41, 83, 124, 1) : UIColor.lightGray
-        label.text = self.items[row].rawValue
+        label.text = self.items[row]
         return label
     }
     
@@ -132,6 +132,6 @@ extension AutocompleteView: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerView.reloadAllComponents()
-        self.delegate?.autocompleteViewRowSelected(row, item: self.items[row].rawValue)
+        self.delegate?.autocompleteViewRowSelected(row, item: self.items[row])
     }
 }

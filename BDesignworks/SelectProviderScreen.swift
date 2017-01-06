@@ -8,15 +8,6 @@
 
 import UIKit
 
-enum ProviderOption: String {
-    case selectOne   = "Select one"
-    case hbf         = "HBF"
-    case bdw         = "BDW"
-    case noProvider  = "I do not have a provider"
-    
-    static var all: [ProviderOption] = [.selectOne, .hbf, .bdw, .noProvider]
-}
-
 final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, AutocompleteViewDelegate {
     
     struct Constants {
@@ -41,9 +32,17 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     @IBOutlet weak var inactiveViewTapGestureRecognizer: UIGestureRecognizer!
     @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
     
+    let noProviderText: String = "I do not have a provider"
+    let selectProviderText: String = "Select one"
+    
     fileprivate lazy var autocompleteView: AutocompleteView = {
         let autocompleteView = AutocompleteView()
-        autocompleteView.items = ProviderOption.all
+        if let realm = BDRealm {
+            var providers = [self.selectProviderText]
+            providers.append(contentsOf: Array(realm.objects(ENProvider.self).map({$0.name})))
+            providers.append(self.noProviderText)
+            autocompleteView.items = providers
+        }
         autocompleteView.delegate = self
         self.view.addSubview(autocompleteView)
         return autocompleteView
@@ -55,7 +54,15 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         AnalyticsManager.shared.trackScreen(named: "Select provider screen", viewController: self)
         self.logoTopConstraint.constant = self.getDefaultLogoTopOffset()
         self.providerSelectionButton.delegate = self
-        self.providerSelectionButton.chooseLabel.text = self.autocompleteView.items.first?.rawValue
+        self.providerSelectionButton.chooseLabel.text = self.autocompleteView.items.first
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.providersChanged), name: NSNotification.Name(rawValue: FSNotificationKey.Provider.providersChanged), object: nil)
+        guard self.autocompleteView.items.count == 2 else {return}
+        SVProgressHUD.show()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewWillLayoutSubviews() {
@@ -83,6 +90,16 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
             sself.providerSelectionButton.alpha = 1
             sself.nextButton.alpha = 1
         }) 
+    }
+    
+    func providersChanged() {
+        SVProgressHUD.dismiss()
+        guard let realm = BDRealm else {return}
+        
+        var providers = [self.selectProviderText]
+        providers.append(contentsOf: Array(realm.objects(ENProvider.self).map({$0.name})))
+        providers.append(self.noProviderText)
+        self.autocompleteView.items = providers
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -119,18 +136,16 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     //MARK: Actions
     @IBAction func nextButtonPressed(_ sender: AnyObject) {
         guard let labelText = self.providerSelectionButton.chooseLabel.text,
-            let selectedButtonState = ProviderOption(rawValue: labelText) else {return}
+            labelText != self.selectProviderText else {return}
         
-        switch selectedButtonState {
-        case .hbf, .bdw:
-            UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.IsProviderChosen)
-            UserDefaults.standard.synchronize()
-            self.performSegue(withIdentifier: Segue.ShowVerify, sender: Segue(valueForRegistrationShouldBeEqual: true))
-        case .noProvider:
+        if labelText == self.noProviderText {
             UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.IsProviderChosen)
             UserDefaults.standard.synchronize()
             self.performSegue(withIdentifier: Segue.ShowTrialModal, sender: nil)
-        default: return
+        } else {
+            UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.IsProviderChosen)
+            UserDefaults.standard.synchronize()
+            self.performSegue(withIdentifier: Segue.ShowVerify, sender: Segue(valueForRegistrationShouldBeEqual: true))
         }
     }
     

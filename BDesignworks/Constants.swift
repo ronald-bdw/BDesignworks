@@ -44,10 +44,9 @@ enum FSNotificationKey {
     enum User {
         static let userChanged = "UserChanged"
     }
-    enum Example {
-        fileprivate static let Prefix = "Example"
-        
-        static let Key = GenerateKey(Prefix, key: "Key")
+    
+    enum Provider {
+        static let providersChanged = "ProvidersChanged"
     }
 }
 
