@@ -34,20 +34,19 @@ enum FSUserDefaultsKey {
 }
 
 /*----------Notifications---------*/
-enum FSNotificationKey {
+enum FSNotification {
     
     enum FitnessDataIntegration {
-        static let HealthKit = "HealthKit"
-        static let FitbitResponse = "FitbitResponse"
+        static let HealthKit = NSNotification.Name(rawValue: "HealthKit")
+        static let FitbitResponse = NSNotification.Name(rawValue: "FitbitResponse")
     }
     
     enum User {
-        static let userChanged = "UserChanged"
+        static let userChanged = NSNotification.Name(rawValue: "UserChanged")
     }
-    enum Example {
-        fileprivate static let Prefix = "Example"
-        
-        static let Key = GenerateKey(Prefix, key: "Key")
+    
+    enum Provider {
+        static let providersChanged = NSNotification.Name(rawValue: "ProvidersChanged")
     }
 }
 

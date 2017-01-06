@@ -43,7 +43,7 @@ class TourAppUserInfoView: UIViewController {
         center.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         
-        center.addObserver(self, selector: #selector(self.healthKitRegistered(_:)), name: NSNotification.Name(rawValue: FSNotificationKey.FitnessDataIntegration.HealthKit) , object: nil)
+        center.addObserver(self, selector: #selector(self.healthKitRegistered(_:)), name: FSNotification.FitnessDataIntegration.HealthKit, object: nil)
         
         UIApplication.shared.statusBarStyle = .lightContent
         

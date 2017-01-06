@@ -97,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.FitbitRegistered)
                     UserDefaults.standard.synchronize()
 
-                    NotificationCenter.default.post(name:NSNotification.Name(rawValue: FSNotificationKey.FitnessDataIntegration.FitbitResponse), object: nil)
+                    NotificationCenter.default.post(name:FSNotification.FitnessDataIntegration.FitbitResponse, object: nil)
                 case .failure(let error):
                     Logger.error(error)
                     ShowErrorAlert()
@@ -156,11 +156,11 @@ extension AppDelegate {
 
         self.setupSVProgressHUD()
         
-        Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
+        #if !(APPSTORE)
+            Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
+        #endif
         
-        #if TEST
-        #else
-            //setup Crashlytics
+        #if !(TEST)
             Fabric.with([Crashlytics.self])
             self.setupHeapAnalytics()
             self.setupFlurryAnalytics()
@@ -173,7 +173,8 @@ extension AppDelegate {
         let _ = AnalyticsManager.shared
 
         self.setupAppearance()
-
+        
+        self.loadProviders()
     }
 
     func setupAppearance() {
@@ -247,5 +248,20 @@ extension AppDelegate {
     func setupFlurryAnalytics() {
         Flurry.startSession("R5N7DYZWTD57WKKBM333")
     }
+    
+    func loadProviders() {
+        let _ = Router.Provider.getProviders.request().responseObject { (response: DataResponse<RTProvidersResponse>) in
+            switch response.result {
+            case .success(let value):
+                try? BDRealm?.write {
+                    BDRealm?.add(value.providers, update: true)
+                }
+            case .failure(let error):
+                Logger.debug(error)
+            }
+            
+            NotificationCenter.default.post(name: FSNotification.Provider.providersChanged, object: nil)
+            
+        }
+    }
 }
-

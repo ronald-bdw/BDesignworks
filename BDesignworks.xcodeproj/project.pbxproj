@@ -123,6 +123,8 @@
 		E7566D9F1A1F85CB00DE3010 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Login.storyboard */; };
 		E75B5A7E1DACDF8E00B51E04 /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75B5A7D1DACDF8E00B51E04 /* NotificationView.xib */; };
 		E765DBAC1D93D2A800D94FF9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E765DBAB1D93D2A800D94FF9 /* Settings.storyboard */; };
+		E76BAB391E1E9E5900CED0A6 /* RTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BAB381E1E9E5900CED0A6 /* RTProvider.swift */; };
+		E76BAB3B1E1E9ED900CED0A6 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76BAB3A1E1E9ED900CED0A6 /* Provider.swift */; };
 		E774EF8B1D899629007A8BC4 /* ProfileEditingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E774EF8A1D899629007A8BC4 /* ProfileEditingHelpers.swift */; };
 		E78CBF621DC2221B0079F1C9 /* HealthAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78CBF611DC2221B0079F1C9 /* HealthAppView.swift */; };
 		E79D88F81D7F256200EBA8FA /* TrialPageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */; };
@@ -360,6 +362,8 @@
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		E75B5A7D1DACDF8E00B51E04 /* NotificationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
 		E765DBAB1D93D2A800D94FF9 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		E76BAB381E1E9E5900CED0A6 /* RTProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTProvider.swift; sourceTree = "<group>"; };
+		E76BAB3A1E1E9ED900CED0A6 /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		E774EF8A1D899629007A8BC4 /* ProfileEditingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingHelpers.swift; sourceTree = "<group>"; };
 		E78CBF611DC2221B0079F1C9 /* HealthAppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthAppView.swift; sourceTree = "<group>"; };
 		E79D88F71D7F256200EBA8FA /* TrialPageSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageSelectionView.swift; sourceTree = "<group>"; };
@@ -742,6 +746,7 @@
 				DC22810C1D6B46AB00D5A0DA /* Router.swift */,
 				DC22810F1D6B46AB00D5A0DA /* RTUser.swift */,
 				E7DA957F1D8018FA0079EB79 /* RTSteps.swift */,
+				E76BAB381E1E9E5900CED0A6 /* RTProvider.swift */,
 				DC22811B1D6B46BD00D5A0DA /* Errors */,
 			);
 			name = API;
@@ -765,6 +770,7 @@
 				DC2281111D6B46AB00D5A0DA /* User.swift */,
 				E7DA95811D8024A50079EB79 /* Steps.swift */,
 				7CD3B5EA1DC221FE0089D93A /* FitbitInfo.swift */,
+				E76BAB3A1E1E9ED900CED0A6 /* Provider.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -1586,6 +1592,7 @@
 				DCF96E721D9BEAF0005AFE42 /* TourAppUserInfoHelpers.swift in Sources */,
 				214F4FF61BFDC35C0084BE32 /* Protocols.swift in Sources */,
 				2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */,
+				E76BAB391E1E9E5900CED0A6 /* RTProvider.swift in Sources */,
 				E729165C1D88459A00A6D70A /* ProfileEditingPresenter.swift in Sources */,
 				DC2280FA1D6B464500D5A0DA /* RegistrationPresenter.swift in Sources */,
 				2F7179511D53497A00231639 /* TrialPageScreen.swift in Sources */,
@@ -1653,6 +1660,7 @@
 				E72916551D8828C600A6D70A /* ProfilePresenter.swift in Sources */,
 				DC9631F11D6EF12100B1C43E /* ViewControllersPresentation.swift in Sources */,
 				7C7A00701DBF92C400378040 /* ZendeskNotificationManager.swift in Sources */,
+				E76BAB3B1E1E9ED900CED0A6 /* Provider.swift in Sources */,
 				DCF96E621D992547005AFE42 /* LogoutView.swift in Sources */,
 				E7AF27371DA2855D00596191 /* TourAppUserInfoModel.swift in Sources */,
 				DC2281131D6B46AB00D5A0DA /* AuthInfo.swift in Sources */,
@@ -2122,7 +2130,7 @@
 					"-framework",
 					"\"QuartzCore\"",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
+				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG -DAPPSTORE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
 				PRODUCT_NAME = "Pair Up";
 				PROVISIONING_PROFILE = "d2871815-00df-4e0f-93c6-2418c6446ebc";
@@ -2953,7 +2961,7 @@
 					"-framework",
 					"\"QuartzCore\"",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -DAPPSTORE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bdesignworks.pearup;
 				PRODUCT_NAME = "Pair Up";
 				PROVISIONING_PROFILE = "6c52dee9-80d9-4e43-9248-3fd38127474d";
