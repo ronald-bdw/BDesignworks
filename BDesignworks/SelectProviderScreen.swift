@@ -56,7 +56,7 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         self.providerSelectionButton.delegate = self
         self.providerSelectionButton.chooseLabel.text = self.autocompleteView.items.first
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.providersChanged), name: NSNotification.Name(rawValue: FSNotificationKey.Provider.providersChanged), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.providersChanged), name: FSNotification.Provider.providersChanged, object: nil)
         guard self.autocompleteView.items.count == 2 else {return}
         SVProgressHUD.show()
     }

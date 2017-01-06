@@ -97,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.FitbitRegistered)
                     UserDefaults.standard.synchronize()
 
-                    NotificationCenter.default.post(name:NSNotification.Name(rawValue: FSNotificationKey.FitnessDataIntegration.FitbitResponse), object: nil)
+                    NotificationCenter.default.post(name:FSNotification.FitnessDataIntegration.FitbitResponse, object: nil)
                 case .failure(let error):
                     Logger.error(error)
                     ShowErrorAlert()
@@ -260,7 +260,7 @@ extension AppDelegate {
                 Logger.debug(error)
             }
             
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: FSNotificationKey.Provider.providersChanged), object: nil)
+            NotificationCenter.default.post(name: FSNotification.Provider.providersChanged, object: nil)
             
         }
     }

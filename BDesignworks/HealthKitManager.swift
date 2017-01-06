@@ -48,7 +48,7 @@ class HealthKitManager
             if success {
                 UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.HealthKitRegistered)
                 UserDefaults.standard.synchronize()
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: FSNotificationKey.FitnessDataIntegration.HealthKit) , object: nil)
+                NotificationCenter.default.post(name: FSNotification.FitnessDataIntegration.HealthKit, object: nil)
                 self?.sendHealthKitData()
             } else {
                 Logger.error("\(error)")

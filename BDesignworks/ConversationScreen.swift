@@ -54,7 +54,7 @@ class ConversationScreen: UIViewController {
         self.setNavigationBarButtons()
         self.updateTitle()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(self.updateTitle), name: NSNotification.Name(rawValue: FSNotificationKey.User.userChanged), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateTitle), name: FSNotification.User.userChanged, object: nil)
 
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
