@@ -123,6 +123,10 @@ class ENUser: Object, IUser {
 //            Smooch.setPushToken(Data())
             HealthKitManager.sharedInstance.stopSendingData()
             UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.IsProviderChosen)
+            UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.FitbitRegistered)
+            UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.FitbitTokenId)
+            UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.subscriptionAvailability)
+            UserDefaults.standard.synchronize()
         }
         catch let error {
             Logger.error(error)
