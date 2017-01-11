@@ -225,9 +225,7 @@
 		214F4FF51BFDC35C0084BE32 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		21513BBD19EBCBFA00EE6273 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2158286B1A91E2F200833BE6 /* mogend.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = mogend.sh; path = Scripts/mogend.sh; sourceTree = "<group>"; };
-		218C64BB1BA07D3800EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Login.strings; sourceTree = "<group>"; };
 		218C64C21BA07E1F00EEEDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		218C64C31BA07E4300EEEDF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		21C9F2DF19E833300084D18D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		21DB300F19DD2289003A418D /* Pair Up.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pair Up.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21DB301319DD2289003A418D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1158,7 +1156,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
-				ru,
 				en,
 			);
 			mainGroup = 21DB300619DD2289003A418D;
@@ -1701,7 +1698,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				218C64C21BA07E1F00EEEDF1 /* Base */,
-				218C64C31BA07E4300EEEDF1 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1710,7 +1706,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				E7566DA01A1F85CB00DE3010 /* Base */,
-				218C64BB1BA07D3800EEEDF1 /* ru */,
 			);
 			name = Login.storyboard;
 			sourceTree = "<group>";
