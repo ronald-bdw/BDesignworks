@@ -253,8 +253,10 @@ extension AppDelegate {
         let _ = Router.Provider.getProviders.request().responseObject { (response: DataResponse<RTProvidersResponse>) in
             switch response.result {
             case .success(let value):
-                try? BDRealm?.write {
-                    BDRealm?.add(value.providers, update: true)
+                guard let realm = BDRealm else {break}
+                try? realm.write {
+                    realm.delete(realm.objects(ENProvider.self))
+                    realm.add(value.providers, update: true)
                 }
             case .failure(let error):
                 Logger.debug(error)
