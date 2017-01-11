@@ -39,7 +39,7 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         let autocompleteView = AutocompleteView()
         if let realm = BDRealm {
             var providers = [self.selectProviderText]
-            providers.append(contentsOf: Array(realm.objects(ENProvider.self).map({$0.name})))
+            providers.append(contentsOf: Array(realm.objects(ENProvider.self).sorted(byProperty: "id", ascending: true).map({$0.name})))
             providers.append(self.noProviderText)
             autocompleteView.items = providers
         }
@@ -97,7 +97,7 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         guard let realm = BDRealm else {return}
         
         var providers = [self.selectProviderText]
-        providers.append(contentsOf: Array(realm.objects(ENProvider.self).map({$0.name})))
+        providers.append(contentsOf: Array(realm.objects(ENProvider.self).sorted(byProperty: "id", ascending: true).map({$0.name})))
         providers.append(self.noProviderText)
         self.autocompleteView.items = providers
     }
