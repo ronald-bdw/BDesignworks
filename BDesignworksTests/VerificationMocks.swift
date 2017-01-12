@@ -69,8 +69,6 @@ class VerificationPresenterMock: MVPPresenter {
     
     required init () {}
     
-    var checkForProviderTest: Bool = false
-    var valueForRegistrationShouldEqualTest: Bool = false
     var shouldContainParticularError: Bool = false
     
     var callsOrder: [VerificationResult] = []
@@ -108,14 +106,6 @@ extension VerificationPresenterMock: IVerificationModelPresenter {
     
     func loadingStarted() {
         self.callsOrder.append(VerificationResult.loadingStarted)
-    }
-    
-    var shouldCheckProvider: Bool  {
-        return self.checkForProviderTest
-    }
-    
-    var valueForRegistrationShouldEqual: Bool  {
-        return self.valueForRegistrationShouldEqualTest
     }
     
     func userHasNoProvider() {
@@ -174,14 +164,6 @@ extension VerificationViewMock: IVerificationView {
     
     func showErrorView(_ title: String, content: String, errorType: BackendError) {
         
-    }
-    
-    var shouldCheckProvider: Bool {
-        return true
-    }
-    
-    var valueForRegistrationShouldEqual: Bool {
-        return true
     }
     
     func showNoProviderAlert() {

@@ -105,8 +105,6 @@ protocol IVerificationView: class {
     func dismissCodeInvalidView()
     func setLoadingState(_ state: LoadingState)
     func showErrorView(_ title: String, content: String, errorType: BackendError)
-    var shouldCheckProvider: Bool {get}
-    var valueForRegistrationShouldEqual: Bool {get}
     func showNoProviderAlert()
     func showWrongProviderAlert()
     func showNotRegisteredAlert()
@@ -127,9 +125,6 @@ final class VerificationView: UIViewController {
         static let errorViewTopOffset    : CGFloat = 10.0
         static let errorViewBottomOffset : CGFloat = 25.0
     }
-    
-    var shouldCheckForProvider: Bool = false
-    var valueForRegistrationShouldBeEqual: Bool = false
     
     let rollButtonTitle = "Area Code"
     
@@ -324,17 +319,6 @@ final class VerificationView: UIViewController {
 }
 
 extension VerificationView: IVerificationView {
-    internal var shouldCheckProvider: Bool {
-        get {
-            return self.shouldCheckForProvider
-        }
-    }
-
-    internal var valueForRegistrationShouldEqual: Bool {
-        get {
-            return self.valueForRegistrationShouldBeEqual
-        }
-    }
 
     func showPhoneInvalidView() {
         self.showErrorView()
