@@ -38,8 +38,13 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
     fileprivate lazy var autocompleteView: AutocompleteView = {
         let autocompleteView = AutocompleteView()
         if let realm = BDRealm {
-            var providers = [self.selectProviderText]
-            providers.append(contentsOf: Array(realm.objects(ENProvider.self).sorted(byProperty: "id", ascending: true).map({$0.name})))
+            var providers: [String] = [self.selectProviderText]
+            var receivedProviders: [String] = Array(realm.objects(ENProvider.self).sorted(byProperty: "name", ascending: true).map({$0.name}))
+            if let hbfIndex = receivedProviders.index(of: "HBF") {
+                providers.append("HBF")
+                receivedProviders.remove(at: hbfIndex)
+            }
+            providers.append(contentsOf: receivedProviders)
             providers.append(self.noProviderText)
             autocompleteView.items = providers
         }
