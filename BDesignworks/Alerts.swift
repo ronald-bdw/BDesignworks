@@ -108,7 +108,7 @@ func ShowWrongProviderAlert() {
     
     alertController.presentIfNoAlertsPresented()
     
-//    AnalyticsManager.shared.detectWrongFlow(type: .noProvider)
+    AnalyticsManager.shared.detectWrongFlow(type: .wrongProvider)
 }
 
 func ShowNotRegisteredAlert() {
