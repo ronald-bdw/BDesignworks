@@ -122,7 +122,7 @@ class ENUser: Object, IUser {
             Smooch.logout()
 //            Smooch.setPushToken(Data())
             HealthKitManager.sharedInstance.stopSendingData()
-            UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.IsProviderChosen)
+            UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.ChosenProvider)
             UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.FitbitRegistered)
             UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.FitbitTokenId)
             UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.subscriptionAvailability)

@@ -18,6 +18,7 @@ enum VerificationResult: Equatable {
     case errorOccured(error: RTError?)
     case loadingStarted
     case userHasNoProvider
+    case wrongProviderSelected
     case userNotRegistered
     case userAlreadyRegisteredWithProvider
     case userAlreadyRegisteredWithoutProvider
@@ -32,6 +33,7 @@ enum VerificationResult: Equatable {
         case .errorOccured(let error): return error?.description ?? "errorOccured"
         case .loadingStarted: return "loadingStarted"
         case .userHasNoProvider: return "userHasNoProvider"
+        case .wrongProviderSelected: return "wrongProviderSelected"
         case .userNotRegistered: return "userNotRegistered"
         case .userAlreadyRegisteredWithProvider: return "userAlreadyRegisteredWithProvider"
         case .userAlreadyRegisteredWithoutProvider: return "userAlreadyRegisteredWithoutProvider"
@@ -120,6 +122,10 @@ extension VerificationPresenterMock: IVerificationModelPresenter {
         self.callsOrder.append(VerificationResult.userHasNoProvider)
     }
     
+    func wrongProviderSelected() {
+        self.callsOrder.append(VerificationResult.wrongProviderSelected)
+    }
+    
     func userNotRegistered() {
         self.callsOrder.append(VerificationResult.userNotRegistered)
     }
@@ -179,6 +185,10 @@ extension VerificationViewMock: IVerificationView {
     }
     
     func showNoProviderAlert() {
+        
+    }
+    
+    func showWrongProviderAlert() {
         
     }
     

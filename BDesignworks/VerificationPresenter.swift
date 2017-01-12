@@ -23,6 +23,7 @@ protocol IVerificationModelPresenter: class {
     var shouldCheckProvider: Bool {get}
     var valueForRegistrationShouldEqual: Bool {get}
     func userHasNoProvider()
+    func wrongProviderSelected()
     func userNotRegistered()
     func userAlreadyRegistered(withProvider: Bool)
 }
@@ -99,6 +100,10 @@ extension VerificationPresenter: IVerificationModelPresenter {
     
     func userHasNoProvider() {
         self.view?.showNoProviderAlert()
+    }
+    
+    func wrongProviderSelected() {
+        self.view?.showWrongProviderAlert()
     }
     
     func userNotRegistered() {

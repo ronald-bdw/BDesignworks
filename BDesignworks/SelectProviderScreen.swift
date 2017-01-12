@@ -115,7 +115,7 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
         case Segue.ShowVerify:
             guard let segueData = sender as? Segue else {return}
             (segue.destination as? VerificationView)?.valueForRegistrationShouldBeEqual = segueData.valueForRegistrationShouldBeEqual
-            if UserDefaults.standard.bool(forKey: FSUserDefaultsKey.IsProviderChosen) {
+            if UserDefaults.standard.string(forKey: FSUserDefaultsKey.ChosenProvider) != "" {
                 (segue.destination as? VerificationView)?.shouldCheckForProvider = true
             } else {
                 (segue.destination as? VerificationView)?.shouldCheckForProvider = false
@@ -139,11 +139,11 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
             labelText != self.selectProviderText else {return}
         
         if labelText == self.noProviderText {
-            UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.IsProviderChosen)
+            UserDefaults.standard.set("", forKey: FSUserDefaultsKey.ChosenProvider)
             UserDefaults.standard.synchronize()
             self.performSegue(withIdentifier: Segue.ShowTrialModal, sender: nil)
         } else {
-            UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.IsProviderChosen)
+            UserDefaults.standard.set(labelText, forKey: FSUserDefaultsKey.ChosenProvider)
             UserDefaults.standard.synchronize()
             self.performSegue(withIdentifier: Segue.ShowVerify, sender: Segue(valueForRegistrationShouldBeEqual: true))
         }

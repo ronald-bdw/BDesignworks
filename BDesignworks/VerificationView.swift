@@ -108,6 +108,7 @@ protocol IVerificationView: class {
     var shouldCheckProvider: Bool {get}
     var valueForRegistrationShouldEqual: Bool {get}
     func showNoProviderAlert()
+    func showWrongProviderAlert()
     func showNotRegisteredAlert()
     func showAlreadyRegisteredAlert(withProvider: Bool)
 }
@@ -400,6 +401,11 @@ extension VerificationView: IVerificationView {
     func showNoProviderAlert() {
         SVProgressHUD.dismiss()
         ShowNoProviderAlert()
+    }
+    
+    func showWrongProviderAlert() {
+        SVProgressHUD.dismiss()
+        ShowWrongProviderAlert()
     }
     
     func showNotRegisteredAlert() {
