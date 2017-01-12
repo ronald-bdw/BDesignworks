@@ -58,6 +58,9 @@ class LoginModel {
                         realm.delete(realm.objects(AuthInfo.self))
                         
                         UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.SmsCode)
+                        UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.ChosenProvider)
+                        UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.RegistrationValue)
+                        UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.ShouldCheckProvider)
                         UserDefaults.standard.synchronize()
                     })
                     self?.presenter?.loginSuccessed(user: user)

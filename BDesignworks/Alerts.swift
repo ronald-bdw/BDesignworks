@@ -97,6 +97,20 @@ func ShowNoProviderAlert() {
     AnalyticsManager.shared.detectWrongFlow(type: .noProvider)
 }
 
+
+func ShowWrongProviderAlert() {
+    let alertController = UIAlertController(title: "Verification is unsuccessful", message: "You selected wrong provider.", preferredStyle: UIAlertControllerStyle.alert)
+    
+    let alertButton = UIAlertAction(title: "OK", style: .default) { (alertAction: UIAlertAction) -> Void in
+        ShowInitialViewController()
+    }
+    alertController.addAction(alertButton)
+    
+    alertController.presentIfNoAlertsPresented()
+    
+    AnalyticsManager.shared.detectWrongFlow(type: .wrongProvider)
+}
+
 func ShowNotRegisteredAlert() {
     let alertController = UIAlertController(title: "Verification is unsuccessful", message: "You are not registered with Pair Up. Please sign up first.", preferredStyle: UIAlertControllerStyle.alert)
     

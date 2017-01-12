@@ -21,6 +21,7 @@ class VerificationModelTest: XCTestCase {
     var userNotRegisteredJson: String!
     var userWithProviderJson: String!
     var userWithNoProviderJson: String!
+    let providerName = "HBF"
     
     override func setUp() {
         super.setUp()
@@ -33,7 +34,7 @@ class VerificationModelTest: XCTestCase {
         self.userNotRegisteredJson = String(data: userNotRegisteredJsonData, encoding: .utf8)
         
         
-        let userWithProviderDict: [String: AnyObject?] = ["phone_registered": true as AnyObject, "provider": "hbf" as AnyObject]
+        let userWithProviderDict: [String: AnyObject?] = ["phone_registered": true as AnyObject, "provider": self.providerName as AnyObject]
         let userWithProviderJsonData = try! JSONSerialization.data(withJSONObject: userWithProviderDict, options: .prettyPrinted)
         self.userWithProviderJson = String(data: userWithProviderJsonData, encoding: .utf8)
         
@@ -48,6 +49,10 @@ class VerificationModelTest: XCTestCase {
         super.tearDown()
         LSNocilla.sharedInstance().stop()
         LSNocilla.sharedInstance().clearStubs()
+        UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.ChosenProvider)
+        UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.RegistrationValue)
+        UserDefaults.standard.removeObject(forKey: FSUserDefaultsKey.ShouldCheckProvider)
+        UserDefaults.standard.synchronize()
     }
     
     func prepareStubs(registrationStatusMock: String) {
@@ -68,8 +73,9 @@ class VerificationModelTest: XCTestCase {
     
     func testNotRegisteredUserRegistrationCase() {
         
-        self.container.presenter.checkForProviderTest = false
-        self.container.presenter.valueForRegistrationShouldEqualTest = false
+        UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.RegistrationValue)
+        UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.ShouldCheckProvider)
+        UserDefaults.standard.synchronize()
         
         self.prepareStubs(registrationStatusMock: self.userNotRegisteredJson)
         
@@ -78,8 +84,9 @@ class VerificationModelTest: XCTestCase {
     
     func testNotRegisteredUserAlreadyRegisteredCase() {
         
-        self.container.presenter.checkForProviderTest = false
-        self.container.presenter.valueForRegistrationShouldEqualTest = true
+        UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.RegistrationValue)
+        UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.ShouldCheckProvider)
+        UserDefaults.standard.synchronize()
         
         self.prepareStubs(registrationStatusMock: self.userNotRegisteredJson)
         
@@ -88,8 +95,9 @@ class VerificationModelTest: XCTestCase {
     
     func testNotRegisteredUserHasProviderCase() {
         
-        self.container.presenter.checkForProviderTest = true
-        self.container.presenter.valueForRegistrationShouldEqualTest = true
+        UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.RegistrationValue)
+        UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.ShouldCheckProvider)
+        UserDefaults.standard.synchronize()
         
         self.prepareStubs(registrationStatusMock: self.userNotRegisteredJson)
         
@@ -98,8 +106,9 @@ class VerificationModelTest: XCTestCase {
     
     func testUserWithNoProviderRegistrationCase() {
         
-        self.container.presenter.checkForProviderTest = false
-        self.container.presenter.valueForRegistrationShouldEqualTest = false
+        UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.RegistrationValue)
+        UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.ShouldCheckProvider)
+        UserDefaults.standard.synchronize()
         
         self.prepareStubs(registrationStatusMock: self.userWithNoProviderJson)
         
@@ -108,8 +117,9 @@ class VerificationModelTest: XCTestCase {
     
     func testUserWithNoProviderAlreadyRegisteredCase() {
         
-        self.container.presenter.checkForProviderTest = false
-        self.container.presenter.valueForRegistrationShouldEqualTest = true
+        UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.RegistrationValue)
+        UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.ShouldCheckProvider)
+        UserDefaults.standard.synchronize()
         
         self.prepareStubs(registrationStatusMock: self.userWithNoProviderJson)
         
@@ -118,8 +128,9 @@ class VerificationModelTest: XCTestCase {
     
     func testUserWithNoProviderHasProviderCase() {
         
-        self.container.presenter.checkForProviderTest = true
-        self.container.presenter.valueForRegistrationShouldEqualTest = true
+        UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.RegistrationValue)
+        UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.ShouldCheckProvider)
+        UserDefaults.standard.synchronize()
         
         self.prepareStubs(registrationStatusMock: self.userWithNoProviderJson)
         
@@ -128,8 +139,9 @@ class VerificationModelTest: XCTestCase {
     
     func testUserWithProviderRegistrationCase() {
         
-        self.container.presenter.checkForProviderTest = false
-        self.container.presenter.valueForRegistrationShouldEqualTest = false
+        UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.RegistrationValue)
+        UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.ShouldCheckProvider)
+        UserDefaults.standard.synchronize()
         
         self.prepareStubs(registrationStatusMock: self.userWithProviderJson)
         
@@ -138,22 +150,37 @@ class VerificationModelTest: XCTestCase {
     
     func testUserWithProviderAlreadyRegisteredCase() {
         
-        self.container.presenter.checkForProviderTest = false
-        self.container.presenter.valueForRegistrationShouldEqualTest = true
+        UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.RegistrationValue)
+        UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.ShouldCheckProvider)
+        UserDefaults.standard.synchronize()
         
         self.prepareStubs(registrationStatusMock: self.userWithProviderJson)
         
         XCTAssertEqual([.loadingStarted, .loadingStarted, .errorOccured(error: nil)], self.container.presenter.callsOrder)
     }
     
-    func testUserWithProviderHasProviderCase() {
+    func testUserWithProviderHasRightProviderCase() {
         
-        self.container.presenter.checkForProviderTest = true
-        self.container.presenter.valueForRegistrationShouldEqualTest = true
+        UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.RegistrationValue)
+        UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.ShouldCheckProvider)
+        UserDefaults.standard.set(self.providerName, forKey: FSUserDefaultsKey.ChosenProvider)
+        UserDefaults.standard.synchronize()
         
         self.prepareStubs(registrationStatusMock: self.userWithProviderJson)
         
         XCTAssertEqual([.loadingStarted, .loadingStarted, .errorOccured(error: nil)], self.container.presenter.callsOrder)
+    }
+    
+    func testUserWithProviderHasWrongProviderCase() {
+        
+        UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.RegistrationValue)
+        UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.ShouldCheckProvider)
+        UserDefaults.standard.set(self.providerName + "qqq", forKey: FSUserDefaultsKey.ChosenProvider)
+        UserDefaults.standard.synchronize()
+        
+        self.prepareStubs(registrationStatusMock: self.userWithProviderJson)
+        
+        XCTAssertEqual([.loadingStarted, .wrongProviderSelected], self.container.presenter.callsOrder)
     }
     
     func testReceivingPhoneCodeWithValidPhone() {

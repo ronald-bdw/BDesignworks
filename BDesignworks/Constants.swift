@@ -28,7 +28,9 @@ enum FSUserDefaultsKey {
     static let FitbitRegistered     = "FitbitRegistered"
     static let FitbitTokenId        = "FitbitTokenId"
     static let LoggedInUsers        = "LoggedInUsers"
-    static let IsProviderChosen     = "IsProviderChosen"
+    static let ChosenProvider       = "ChosenProvider"
+    static let RegistrationValue    = "RegistrationValue"
+    static let ShouldCheckProvider  = "ShouldCheckProvider"
     static let SmsCode              = "Smscode"
     static let subscriptionAvailability = "SubscriptionAvailability"
 }

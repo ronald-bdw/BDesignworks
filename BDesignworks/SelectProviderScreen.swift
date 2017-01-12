@@ -112,14 +112,6 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
             segue.destination.transitioningDelegate = self
             segue.destination.modalPresentationStyle = .custom
             (segue.destination as? TrialPageScreen)?.delegate = self
-        case Segue.ShowVerify:
-            guard let segueData = sender as? Segue else {return}
-            (segue.destination as? VerificationView)?.valueForRegistrationShouldBeEqual = segueData.valueForRegistrationShouldBeEqual
-            if UserDefaults.standard.bool(forKey: FSUserDefaultsKey.IsProviderChosen) {
-                (segue.destination as? VerificationView)?.shouldCheckForProvider = true
-            } else {
-                (segue.destination as? VerificationView)?.shouldCheckForProvider = false
-            }
         default:
             super.prepare(for: segue, sender: sender)
         }
@@ -139,11 +131,15 @@ final class SelectProviderScreen: UIViewController, RollUpButtonDelegate, Autoco
             labelText != self.selectProviderText else {return}
         
         if labelText == self.noProviderText {
-            UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.IsProviderChosen)
+            UserDefaults.standard.set("", forKey: FSUserDefaultsKey.ChosenProvider)
+            UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.ShouldCheckProvider)
+            UserDefaults.standard.set(false, forKey: FSUserDefaultsKey.RegistrationValue)
             UserDefaults.standard.synchronize()
             self.performSegue(withIdentifier: Segue.ShowTrialModal, sender: nil)
         } else {
-            UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.IsProviderChosen)
+            UserDefaults.standard.set(labelText, forKey: FSUserDefaultsKey.ChosenProvider)
+            UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.ShouldCheckProvider)
+            UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.RegistrationValue)
             UserDefaults.standard.synchronize()
             self.performSegue(withIdentifier: Segue.ShowVerify, sender: Segue(valueForRegistrationShouldBeEqual: true))
         }

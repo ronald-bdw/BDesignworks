@@ -18,6 +18,7 @@ enum VerificationResult: Equatable {
     case errorOccured(error: RTError?)
     case loadingStarted
     case userHasNoProvider
+    case wrongProviderSelected
     case userNotRegistered
     case userAlreadyRegisteredWithProvider
     case userAlreadyRegisteredWithoutProvider
@@ -32,6 +33,7 @@ enum VerificationResult: Equatable {
         case .errorOccured(let error): return error?.description ?? "errorOccured"
         case .loadingStarted: return "loadingStarted"
         case .userHasNoProvider: return "userHasNoProvider"
+        case .wrongProviderSelected: return "wrongProviderSelected"
         case .userNotRegistered: return "userNotRegistered"
         case .userAlreadyRegisteredWithProvider: return "userAlreadyRegisteredWithProvider"
         case .userAlreadyRegisteredWithoutProvider: return "userAlreadyRegisteredWithoutProvider"
@@ -67,8 +69,6 @@ class VerificationPresenterMock: MVPPresenter {
     
     required init () {}
     
-    var checkForProviderTest: Bool = false
-    var valueForRegistrationShouldEqualTest: Bool = false
     var shouldContainParticularError: Bool = false
     
     var callsOrder: [VerificationResult] = []
@@ -108,16 +108,12 @@ extension VerificationPresenterMock: IVerificationModelPresenter {
         self.callsOrder.append(VerificationResult.loadingStarted)
     }
     
-    var shouldCheckProvider: Bool  {
-        return self.checkForProviderTest
-    }
-    
-    var valueForRegistrationShouldEqual: Bool  {
-        return self.valueForRegistrationShouldEqualTest
-    }
-    
     func userHasNoProvider() {
         self.callsOrder.append(VerificationResult.userHasNoProvider)
+    }
+    
+    func wrongProviderSelected() {
+        self.callsOrder.append(VerificationResult.wrongProviderSelected)
     }
     
     func userNotRegistered() {
@@ -170,15 +166,11 @@ extension VerificationViewMock: IVerificationView {
         
     }
     
-    var shouldCheckProvider: Bool {
-        return true
-    }
-    
-    var valueForRegistrationShouldEqual: Bool {
-        return true
-    }
-    
     func showNoProviderAlert() {
+        
+    }
+    
+    func showWrongProviderAlert() {
         
     }
     

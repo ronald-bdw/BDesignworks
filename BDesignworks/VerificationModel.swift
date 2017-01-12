@@ -66,17 +66,23 @@ class VerificationModel {
         let _ = Router.User.checkUserStatus(phone: phone).request().responseObject { [weak self] (response: DataResponse<RTUserStatusResponse>) in
             switch response.result {
             case .success(let value):
-                guard let lPresenter = self?.presenter else {self?.presenter?.errorOccured(error: nil); return}
-                if lPresenter.shouldCheckProvider && value.hasProvider == false {
-                    self?.presenter?.userHasNoProvider()
-                    return
+                let shouldCheckProvider = UserDefaults.standard.bool(forKey: FSUserDefaultsKey.ShouldCheckProvider)
+                let registrationValue = UserDefaults.standard.bool(forKey: FSUserDefaultsKey.RegistrationValue)
+                let chosenProvider = UserDefaults.standard.string(forKey: FSUserDefaultsKey.ChosenProvider)
+                if shouldCheckProvider {
+                    if value.provider == "" {
+                        self?.presenter?.userHasNoProvider()
+                        return
+                    }
+                    else if value.provider != chosenProvider {
+                        self?.presenter?.wrongProviderSelected()
+                        return
+                    }
                 }
-                if value.isRegistered == lPresenter.valueForRegistrationShouldEqual {
-                    UserDefaults.standard.set(value.hasProvider, forKey: FSUserDefaultsKey.IsProviderChosen)
-                    UserDefaults.standard.synchronize()
+                if registrationValue == value.isRegistered {
                     self?.receivePhoneCode(phone)
                 } else if value.isRegistered {
-                    self?.presenter?.userAlreadyRegistered(withProvider: value.hasProvider)
+                    self?.presenter?.userAlreadyRegistered(withProvider: value.provider != "")
                 } else {
                     self?.presenter?.userNotRegistered()
                 }

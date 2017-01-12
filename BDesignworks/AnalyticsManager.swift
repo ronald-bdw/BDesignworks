@@ -12,12 +12,14 @@ enum LoginWrongFlowType {
     case noProvider
     case notRegistered
     case alreadyRegistered
+    case wrongProvider
     
     var description: String {
         switch self {
         case .noProvider: return "User has no provider"
         case .notRegistered: return "User not registered"
         case .alreadyRegistered: return "User already registered"
+        case .wrongProvider: return "Wrong provider selected"
         }
     }
 }
