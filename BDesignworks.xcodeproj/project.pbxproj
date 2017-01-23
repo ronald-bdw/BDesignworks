@@ -118,6 +118,7 @@
 		E72916581D88365E00A6D70A /* ProfileEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916571D88365E00A6D70A /* ProfileEditingView.swift */; };
 		E729165A1D883A7A00A6D70A /* ProfileEditingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72916591D883A7A00A6D70A /* ProfileEditingModel.swift */; };
 		E729165C1D88459A00A6D70A /* ProfileEditingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729165B1D88459A00A6D70A /* ProfileEditingPresenter.swift */; };
+		E7382D691E36359B00AB9FC9 /* RealmMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7382D681E36359B00AB9FC9 /* RealmMigration.swift */; };
 		E745526B1DAE442E00979C6A /* InAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745526A1DAE442E00979C6A /* InAppManager.swift */; };
 		E745526D1DAE4CC600979C6A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E745526C1DAE4CC600979C6A /* StoreKit.framework */; };
 		E7566D9F1A1F85CB00DE3010 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7566DA11A1F85CB00DE3010 /* Login.storyboard */; };
@@ -355,6 +356,7 @@
 		E72916591D883A7A00A6D70A /* ProfileEditingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingModel.swift; sourceTree = "<group>"; };
 		E729165B1D88459A00A6D70A /* ProfileEditingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditingPresenter.swift; sourceTree = "<group>"; };
 		E73718251DED913200B9D5E1 /* BDesignworks.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BDesignworks.entitlements; sourceTree = "<group>"; };
+		E7382D681E36359B00AB9FC9 /* RealmMigration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMigration.swift; sourceTree = "<group>"; };
 		E745526A1DAE442E00979C6A /* InAppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppManager.swift; sourceTree = "<group>"; };
 		E745526C1DAE4CC600979C6A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E7566DA01A1F85CB00DE3010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -764,6 +766,7 @@
 		DC22811C1D6B46D000D5A0DA /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				E7382D671E36358800AB9FC9 /* Migration */,
 				DC22810B1D6B46AB00D5A0DA /* AuthInfo.swift */,
 				DC2281111D6B46AB00D5A0DA /* User.swift */,
 				E7DA95811D8024A50079EB79 /* Steps.swift */,
@@ -929,6 +932,14 @@
 				A4DCC4C61D661221005F7E05 /* ModalPresentationController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E7382D671E36358800AB9FC9 /* Migration */ = {
+			isa = PBXGroup;
+			children = (
+				E7382D681E36359B00AB9FC9 /* RealmMigration.swift */,
+			);
+			name = Migration;
 			sourceTree = "<group>";
 		};
 		E73ED9C91D94148A00837164 /* Settings */ = {
@@ -1580,6 +1591,7 @@
 				21E157E21BB3EDF40041FCE4 /* FSTestHelpers.swift in Sources */,
 				DC2281191D6B46AB00D5A0DA /* User.swift in Sources */,
 				A489C48A1D6C8F54002AAA75 /* AreaCodeCell.swift in Sources */,
+				E7382D691E36359B00AB9FC9 /* RealmMigration.swift in Sources */,
 				2FAA4FB81D5C809700DCFF46 /* SidebarView.swift in Sources */,
 				DC2280F91D6B464500D5A0DA /* RegistrationModel.swift in Sources */,
 				7CD3B5EB1DC221FE0089D93A /* FitbitInfo.swift in Sources */,
