@@ -28,7 +28,6 @@
 		2F71794F1D5343F800231639 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71794E1D5343F800231639 /* WelcomeScreen.swift */; };
 		2F7179511D53497A00231639 /* TrialPageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7179501D53497A00231639 /* TrialPageScreen.swift */; };
 		2F7295F21D6323CC00FD7B21 /* CheckboxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7295F11D6323CC00FD7B21 /* CheckboxTableView.swift */; };
-		2F734A261D5397F60073CE23 /* PaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F734A251D5397F60073CE23 /* PaymentScreen.swift */; };
 		2F81CB701D51EBB900D9E93B /* AutocompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81CB6F1D51EBB900D9E93B /* AutocompleteView.swift */; };
 		2F94CFF71D533998003A1B77 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94CFF61D533998003A1B77 /* VerificationView.swift */; };
 		2F954B5B1D5384DD004D4FF1 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F954B5A1D5384DD004D4FF1 /* ToggleButton.swift */; };
@@ -37,7 +36,6 @@
 		2FC02C4E1D51E6020038BD88 /* SelectProviderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC02C4D1D51E6020038BD88 /* SelectProviderScreen.swift */; };
 		2FDE13671D61A44D008702FE /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE13661D61A44D008702FE /* RoundImage.swift */; };
 		2FDE13691D61B938008702FE /* SmoochHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDE13681D61B938008702FE /* SmoochHelper.swift */; };
-		2FFEA0601D551D0E00ADA63B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFEA05F1D551D0E00ADA63B /* Message.swift */; };
 		4F5080F01D68D6CF00979890 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5080EF1D68D6CF00979890 /* BaseView.swift */; };
 		4F638FF71D6A6174006EE693 /* BDTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF397B41D6A4B49004EAE2E /* BDTextField.swift */; };
 		4F638FFC1D6A6435006EE693 /* RollUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81CB711D51ED4D00D9E93B /* RollUpButton.swift */; };
@@ -247,7 +245,6 @@
 		2F71794E1D5343F800231639 /* WelcomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		2F7179501D53497A00231639 /* TrialPageScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageScreen.swift; sourceTree = "<group>"; };
 		2F7295F11D6323CC00FD7B21 /* CheckboxTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxTableView.swift; sourceTree = "<group>"; };
-		2F734A251D5397F60073CE23 /* PaymentScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentScreen.swift; sourceTree = "<group>"; };
 		2F81CB6F1D51EBB900D9E93B /* AutocompleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutocompleteView.swift; sourceTree = "<group>"; };
 		2F81CB711D51ED4D00D9E93B /* RollUpButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollUpButton.swift; sourceTree = "<group>"; };
 		2F94CFF61D533998003A1B77 /* VerificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
@@ -257,7 +254,6 @@
 		2FC02C4D1D51E6020038BD88 /* SelectProviderScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectProviderScreen.swift; sourceTree = "<group>"; };
 		2FDE13661D61A44D008702FE /* RoundImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		2FDE13681D61B938008702FE /* SmoochHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoochHelper.swift; sourceTree = "<group>"; };
-		2FFEA05F1D551D0E00ADA63B /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		34CEE7B0A1468777DB0D6EF8 /* Pods-Abstract-BDesignworksUITests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.test.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.test.xcconfig"; sourceTree = "<group>"; };
 		38B1BC0F25415CD477A6B5B8 /* Pods-Abstract-BDesignworksUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.release staging.xcconfig"; sourceTree = "<group>"; };
 		3A5FE293BB9438C1AE339D7F /* Pods-Abstract-BDesignworks.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworks.release staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworks/Pods-Abstract-BDesignworks.release staging.xcconfig"; sourceTree = "<group>"; };
@@ -447,14 +443,6 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
-		19C66A341C1DC54800C44FE3 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				2FFEA05F1D551D0E00ADA63B /* Message.swift */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
 		19D856BF1AB5ECF50014C459 /* Travis CI */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,7 +529,6 @@
 				DC22811C1D6B46D000D5A0DA /* Database */,
 				196D6E161BAB0736000B7997 /* Helpers */,
 				E763EC581DE31E3A00A60956 /* Servises */,
-				19C66A341C1DC54800C44FE3 /* Classes */,
 				E731DC711A1CB30C00E12CBA /* Views */,
 				E736C5A41A252B1500B8986E /* Controllers */,
 				21DB301219DD2289003A418D /* Supporting Files */,
@@ -573,7 +560,6 @@
 				2FC02C4D1D51E6020038BD88 /* SelectProviderScreen.swift */,
 				2F71794E1D5343F800231639 /* WelcomeScreen.swift */,
 				2F7179501D53497A00231639 /* TrialPageScreen.swift */,
-				2F734A251D5397F60073CE23 /* PaymentScreen.swift */,
 			);
 			name = Welcome;
 			sourceTree = "<group>";
@@ -1121,7 +1107,7 @@
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0730;
 				LastTestingUpgradeCheck = 0700;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Flatstack;
 				TargetAttributes = {
 					1710DE5B1C453AF700912C5B = {
@@ -1647,9 +1633,7 @@
 				DC2281141D6B46AB00D5A0DA /* Router.swift in Sources */,
 				E745526B1DAE442E00979C6A /* InAppManager.swift in Sources */,
 				E72552581DA3B7C5005C1B58 /* TourAppAvatarModel.swift in Sources */,
-				2F734A261D5397F60073CE23 /* PaymentScreen.swift in Sources */,
 				E72552561DA3B7B9005C1B58 /* TourAppAvatarPresenter.swift in Sources */,
-				2FFEA0601D551D0E00ADA63B /* Message.swift in Sources */,
 				DC9C6C671D6C995B0034DC5A /* ValidationErrorCell.swift in Sources */,
 				E72916531D8820B600A6D70A /* ProfileModel.swift in Sources */,
 				21DB304919DD2D6D003A418D /* Constants.swift in Sources */,
@@ -2681,7 +2665,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -2711,7 +2695,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2738,7 +2722,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -2768,7 +2752,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2795,7 +2779,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2822,7 +2806,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2849,7 +2833,7 @@
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

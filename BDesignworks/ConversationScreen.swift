@@ -9,29 +9,7 @@
 import UIKit
 import UserNotifications
 
-enum StatusCellStatus
-{
-    case pullToRefresh
-    case noMoreHistory
-    case noMessages
-
-    var message: String {
-        switch self
-        {
-        case .pullToRefresh:
-            return "Pull to download mesage history"
-
-        case .noMoreHistory:
-            return "No more messages in history"
-
-        case .noMessages:
-            return "Your message history is empty"
-        }
-    }
-}
-
 class ConversationScreen: UIViewController {
-    var messages = [Message]()
     let navigationBarImageHeight: CGFloat = 23
 
     @IBOutlet weak var containerView: UIView!
