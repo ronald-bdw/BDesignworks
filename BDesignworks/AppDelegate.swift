@@ -156,9 +156,7 @@ extension AppDelegate {
 
         self.setupSVProgressHUD()
         
-        #if !(APPSTORE)
-            Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
-        #endif
+        ConfigureRealmMigrations()
         
         #if !(TEST)
             Fabric.with([Crashlytics.self])
