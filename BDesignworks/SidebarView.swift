@@ -84,7 +84,7 @@ class SidebarView: UITableViewController {
     }
     
     func shareButtonClicked() {
-        let textToShare = "Check out PearUp for your smartphone. Download it today from https://itunes.apple.com/us/app/pearup/id1164491229"
+        let textToShare = "Check out Pair Up for your smartphone. Download it today from https://itunes.apple.com/us/app/pair-up/id1164491229"
         let activityVC = UIActivityViewController(activityItems: [textToShare], applicationActivities: nil)
         
         activityVC.completionWithItemsHandler = {[weak self] (activityType, success, objects, error) in
