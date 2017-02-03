@@ -12,6 +12,9 @@ import FSHelpers_Swift
 var Logger: XCGLogger {return XCGLogger.default}
 var BDRealm: Realm? {return try? Realm()}
 
+var SupportAddress = "support@pairup.im"
+var SupportMailSubject = "iOS app issues"
+
 /*--------------Keychain keys-------------*/
 enum FSKeychainKey {
     
