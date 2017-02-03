@@ -44,7 +44,7 @@
 		4FF397D81D6A5AEC004EAE2E /* IBDesignableKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FF397D71D6A5AEC004EAE2E /* IBDesignableKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FF397DC1D6A5AEC004EAE2E /* IBDesignableKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */; };
 		4FF397DD1D6A5AEC004EAE2E /* IBDesignableKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF397D51D6A5AEC004EAE2E /* IBDesignableKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7C7A00701DBF92C400378040 /* ZendeskNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */; };
+		7C7A00701DBF92C400378040 /* ZendeskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7A006F1DBF92C400378040 /* ZendeskManager.swift */; };
 		7CD3B5E21DC0F3ED0089D93A /* TrialPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3B5E11DC0F3ED0089D93A /* TrialPageController.swift */; };
 		7CD3B5E91DC0F9A80089D93A /* TrialPageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3B5E81DC0F9A80089D93A /* TrialPageContainer.swift */; };
 		7CD3B5EB1DC221FE0089D93A /* FitbitInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3B5EA1DC221FE0089D93A /* FitbitInfo.swift */; };
@@ -271,7 +271,7 @@
 		6FF19AC0520F67714729E8C3 /* Pods-Abstract-BDesignworksUITests.test staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.test staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.test staging.xcconfig"; sourceTree = "<group>"; };
 		777CEADF0A3987259CB4C60D /* Pods-Abstract-BDesignworksTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.debug staging.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.debug staging.xcconfig"; sourceTree = "<group>"; };
 		7C5D3F6A1DBE52370021CBB9 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZendeskNotificationManager.swift; sourceTree = "<group>"; };
+		7C7A006F1DBF92C400378040 /* ZendeskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZendeskManager.swift; sourceTree = "<group>"; };
 		7CD3B5E11DC0F3ED0089D93A /* TrialPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageController.swift; sourceTree = "<group>"; };
 		7CD3B5E81DC0F9A80089D93A /* TrialPageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrialPageContainer.swift; sourceTree = "<group>"; };
 		7CD3B5EA1DC221FE0089D93A /* FitbitInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitbitInfo.swift; sourceTree = "<group>"; };
@@ -951,7 +951,7 @@
 			children = (
 				2FDE13681D61B938008702FE /* SmoochHelper.swift */,
 				2F0729901D64C86B00A71B3C /* HealthKitManager.swift */,
-				7C7A006F1DBF92C400378040 /* ZendeskNotificationManager.swift */,
+				7C7A006F1DBF92C400378040 /* ZendeskManager.swift */,
 				E745526A1DAE442E00979C6A /* InAppManager.swift */,
 				DC5635AB1DD0837900E4840B /* FitbitManager.swift */,
 				DCF64F921DFE979200098558 /* AnalyticsManager.swift */,
@@ -1652,7 +1652,7 @@
 				E705D56D1D8AB31A00A05EC5 /* SidebarPresenter.swift in Sources */,
 				E72916551D8828C600A6D70A /* ProfilePresenter.swift in Sources */,
 				DC9631F11D6EF12100B1C43E /* ViewControllersPresentation.swift in Sources */,
-				7C7A00701DBF92C400378040 /* ZendeskNotificationManager.swift in Sources */,
+				7C7A00701DBF92C400378040 /* ZendeskManager.swift in Sources */,
 				E76BAB3B1E1E9ED900CED0A6 /* Provider.swift in Sources */,
 				DCF96E621D992547005AFE42 /* LogoutView.swift in Sources */,
 				E7AF27371DA2855D00596191 /* TourAppUserInfoModel.swift in Sources */,

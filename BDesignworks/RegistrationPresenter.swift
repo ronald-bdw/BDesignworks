@@ -69,6 +69,8 @@ extension RegistrationPresenter: IRegistrationModelPresenter {
     }
     
     func loadingSuccessed(user: ENUser) {
+        ZendeskManager.sharedInstance.trigerTimezoneOnZendesk()
+        
         self.view?.setLoadingState(.done)
         self.view?.presentNextScreen()
     }

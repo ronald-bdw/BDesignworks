@@ -22,6 +22,7 @@ extension Router {
         case checkUserStatus(phone: String)
         case sendReceipt(receipt: AnyObject)
         case sendInAppPurchaseStatus(plan: String, expirationDate: Date, isActive: Bool)
+        case sendTimezone(userId: Int)
     }
 }
 
@@ -29,11 +30,12 @@ extension Router.User: RouterProtocol {
 
     var settings: RTRequestSettings {
         switch self {
-        case .getAuthPhoneCode(_)           :return RTRequestSettings(method: .post, encoding: URLEncoding.default)
+        case .getAuthPhoneCode              :return RTRequestSettings(method: .post, encoding: URLEncoding.default)
         case .getUser                       :return RTRequestSettings(method: .get)
-        case .editUser(_),
-             .sendAvatar(_,_)               :return RTRequestSettings(method: .put)
+        case .editUser,
+             .sendAvatar                    :return RTRequestSettings(method: .put)
         case .disableNotificationOnZendesk  :return RTRequestSettings(method: .delete)
+        case .sendTimezone                  :return RTRequestSettings(method: .put)
         default                             :return RTRequestSettings(method: .post)
         }
     }
@@ -48,9 +50,10 @@ extension Router.User: RouterProtocol {
         case .sendAvatar(let id,_)          : return "/users/\(id)"
         case .enableNotificationOnZendesk   : return "/notifications"
         case .disableNotificationOnZendesk  : return "/notifications/message_push"
-        case .checkUserStatus              : return "/registration_status"
-        case .sendReceipt                  : return "/verifyReceipt"
+        case .checkUserStatus               : return "/registration_status"
+        case .sendReceipt                   : return "/verifyReceipt"
         case .sendInAppPurchaseStatus       : return "/subscriptions"
+        case .sendTimezone(let userId)        : return "/users/\(userId)/time_zone"
         }
     }
 
@@ -87,6 +90,8 @@ extension Router.User: RouterProtocol {
             return ["plan_name": plan as AnyObject,
                     "expires_at": dateFormatter.string(from: expirationDate) as AnyObject,
                     "active": isActive as AnyObject]
+        case .sendTimezone:
+            return ["time_zone": TimeZone.autoupdatingCurrent.identifier as AnyObject]
         default:
             return nil
         }
