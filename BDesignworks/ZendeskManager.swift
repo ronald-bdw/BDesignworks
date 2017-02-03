@@ -1,5 +1,5 @@
 //
-//  ZendeskNotificationManager.swift
+//  ZendeskManager.swift
 //  BDesignworks
 //
 //  Created by Ildar Zalyalov on 25.10.16.
@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class ZendeskNotificationManager {
-    static let sharedInstance = ZendeskNotificationManager()
+class ZendeskManager {
+    static let sharedInstance = ZendeskManager()
     
     
     func trigerNotificationOnZendesk(){
@@ -23,25 +23,38 @@ class ZendeskNotificationManager {
         }
     }
     
+    func trigerTimezoneOnZendesk() {
+        guard let user = ENUser.getMainUser() else {return}
+        
+        let _ = Router.User.sendTimezone(userId: user.id).request().responseObject { (response: DataResponse<RTEmptyResponse>) in
+            switch response.result {
+            case .success:
+                Logger.debug("TimeZone sent")
+            case .failure(let error):
+                Logger.error("Error:\(error)")
+            }
+        }
+    }
+    
     //MARK: - API Requests
-    func enableNotificationOnZendesk(){
+    private func enableNotificationOnZendesk(){
         let _ = Router.User.enableNotificationOnZendesk.request().responseObject { (response: DataResponse<RTEmptyResponse>) in
             switch response.result {
             case .success:
                 Logger.debug("Notifications on zedesk enabled")
             case .failure(let error):
-                Logger.error("Error:")
+                Logger.error("Error:\(error)")
             }
         }
     }
     
-    func disableNotificationOnZendesk(){
+    private func disableNotificationOnZendesk(){
         let _ = Router.User.disableNotificationOnZendesk.request().responseObject { (response: DataResponse<RTEmptyResponse>) in
             switch response.result {
             case .success:
                 Logger.debug("Notifications on zedesk disabled")
             case .failure(let error):
-                Logger.error("Error: ")
+                Logger.error("Error:\(error)")
             }
         }
     }

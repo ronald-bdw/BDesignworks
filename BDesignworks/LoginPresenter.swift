@@ -38,6 +38,7 @@ extension LoginPresenter: ILoginModelPresenter {
         if let loggedInUsers = UserDefaults.standard.array(forKey: FSUserDefaultsKey.LoggedInUsers) as? Array<String>,
             loggedInUsers.contains(user.phoneNumber) {
             SmoochHelper.sharedInstance.startWithParameters(user)
+            ZendeskManager.sharedInstance.trigerTimezoneOnZendesk()
             FSDispatch_after_short(2.0) { [weak self] in
                 self?.view?.presentConversation()
             }
