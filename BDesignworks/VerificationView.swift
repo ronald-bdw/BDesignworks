@@ -9,6 +9,7 @@
 import UIKit
 import FSHelpers_Swift
 import IBDesignableKit
+import MessageUI
 
 private extension FSScreenType {
     
@@ -384,22 +385,34 @@ extension VerificationView: IVerificationView {
     
     func showNoProviderAlert() {
         SVProgressHUD.dismiss()
-        ShowNoProviderAlert()
+        ShowNoProviderAlert(delegate: self)
     }
     
     func showWrongProviderAlert() {
         SVProgressHUD.dismiss()
-        ShowWrongProviderAlert()
+        ShowWrongProviderAlert(delegate: self)
     }
     
     func showNotRegisteredAlert() {
         SVProgressHUD.dismiss()
-        ShowNotRegisteredAlert()
+        ShowNotRegisteredAlert(delegate: self)
     }
     
     func showAlreadyRegisteredAlert(withProvider: Bool) {
         SVProgressHUD.dismiss()
-        ShowAlreadyRegisteredAlert(withProvider: withProvider)
+        ShowAlreadyRegisteredAlert(delegate: self, withProvider: withProvider)
+    }
+}
+
+extension VerificationView: IMailAppDelegate {
+    func showComposedController(_ controller: MFMailComposeViewController) {
+        self.navigationController?.present(controller, animated: true, completion: nil)
+        controller.mailComposeDelegate = self
+    }
+}
+extension VerificationView: MFMailComposeViewControllerDelegate {
+    internal func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Swift.Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 

@@ -8,6 +8,28 @@
 
 import Foundation
 
+func GetTechnicalInfo() -> String {
+    
+    let device = UIDevice.current
+    
+    var info = ""
+    
+    let AppVersion = Bundle.main.infoDictionary?.fs_objectForKey("CFBundleShortVersionString", orDefault: "0") as! String
+    let BuildNumber = Bundle.main.infoDictionary?.fs_objectForKey("CFBundleVersion", orDefault: "0") as! String
+    
+    info += "App version:   \(AppVersion) (\(BuildNumber))"
+    info += "\nDevice:      \(device.model)"
+    info += "\nSoftware:    \(device.systemName) \(device.systemVersion)"
+    
+    if let vendorID = device.identifierForVendor {
+        info += "\nVendor ID:   \(vendorID.uuidString)"
+    }
+    
+    let message = "\n\n\n\nWe need this information to understand the problem better\n\(info)"
+    
+    return message
+}
+
 enum LoadingState {
     case loading
     case done
