@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import MessageUI
+
+protocol IMailAppDelegate {
+    func showComposedController(_ controller: MFMailComposeViewController)
+}

@@ -7,6 +7,24 @@
 //
 
 import Foundation
+import MessageUI
+
+//MARK: Helpers
+
+fileprivate func getContactUsAction(delegate: IMailAppDelegate) -> UIAlertAction {
+    let contactUsAction = UIAlertAction(title: "Contact Pair Up team", style: .default) { (action) in
+        let composeVC = MFMailComposeViewController()
+        
+        composeVC.setToRecipients([SupportAddress])
+        composeVC.setSubject(SupportMailSubject)
+        composeVC.setMessageBody(GetTechnicalInfo(), isHTML: false)
+        
+        delegate.showComposedController(composeVC)
+    }
+    return contactUsAction
+}
+
+//MARK: Alerts
 
 func ShowAlert (_ message: String, delay: Double, onViewController viewController: UIViewController?) {
     let alertView = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.alert)
@@ -84,13 +102,17 @@ func ShowDeletedAlert() {
     }
 }
 
-func ShowNoProviderAlert() {
-    let alertController = UIAlertController(title: "Verification is unsuccessful", message: "You don't have a provider.", preferredStyle: UIAlertControllerStyle.alert)
+func ShowNoProviderAlert(delegate: IMailAppDelegate) {
+    let alertController = UIAlertController(title: "Verification is unsuccessful", message: "You don't have a provider. Please try again or contact us at support@pairup.im", preferredStyle: UIAlertControllerStyle.alert)
     
-    let alertButton = UIAlertAction(title: "OK", style: .default) { (alertAction: UIAlertAction) -> Void in
+    let tryAgainAction = UIAlertAction(title: "Try again", style: .default) { (alertAction: UIAlertAction) -> Void in
         ShowInitialViewController()
     }
-    alertController.addAction(alertButton)
+    alertController.addAction(tryAgainAction)
+    
+    let contactUsAction = getContactUsAction(delegate: delegate)
+    
+    alertController.addAction(contactUsAction)
     
     alertController.presentIfNoAlertsPresented()
     
@@ -98,41 +120,53 @@ func ShowNoProviderAlert() {
 }
 
 
-func ShowWrongProviderAlert() {
-    let alertController = UIAlertController(title: "Verification is unsuccessful", message: "You selected wrong provider.", preferredStyle: UIAlertControllerStyle.alert)
+func ShowWrongProviderAlert(delegate: IMailAppDelegate) {
+    let alertController = UIAlertController(title: "Verification is unsuccessful", message: "You selected wrong provider. Please try again or contact us at support@pairup.im", preferredStyle: UIAlertControllerStyle.alert)
     
-    let alertButton = UIAlertAction(title: "OK", style: .default) { (alertAction: UIAlertAction) -> Void in
+    let tryAgainAction = UIAlertAction(title: "Try again", style: .default) { (alertAction: UIAlertAction) -> Void in
         ShowInitialViewController()
     }
-    alertController.addAction(alertButton)
+    alertController.addAction(tryAgainAction)
+    
+    let contactUsAction = getContactUsAction(delegate: delegate)
+    
+    alertController.addAction(contactUsAction)
     
     alertController.presentIfNoAlertsPresented()
     
     AnalyticsManager.shared.detectWrongFlow(type: .wrongProvider)
 }
 
-func ShowNotRegisteredAlert() {
-    let alertController = UIAlertController(title: "Verification is unsuccessful", message: "You are not registered with Pair Up. Please sign up first.", preferredStyle: UIAlertControllerStyle.alert)
+func ShowNotRegisteredAlert(delegate: IMailAppDelegate) {
+    let alertController = UIAlertController(title: "Verification is unsuccessful", message: "You are not registered with Pair Up. Please sign up first or contact us at support@pairup.im", preferredStyle: UIAlertControllerStyle.alert)
     
-    let alertButton = UIAlertAction(title: "OK", style: .default) { (alertAction: UIAlertAction) -> Void in
+    let tryAgainAction = UIAlertAction(title: "Try again", style: .default) { (alertAction: UIAlertAction) -> Void in
         ShowInitialViewController()
     }
-    alertController.addAction(alertButton)
+    alertController.addAction(tryAgainAction)
+    
+    let contactUsAction = getContactUsAction(delegate: delegate)
+    
+    alertController.addAction(contactUsAction)
     
     alertController.presentIfNoAlertsPresented()
     
     AnalyticsManager.shared.detectWrongFlow(type: .notRegistered)
 }
 
-func ShowAlreadyRegisteredAlert(withProvider: Bool = false) {
+func ShowAlreadyRegisteredAlert(delegate: IMailAppDelegate, withProvider: Bool = false) {
     let alertController = UIAlertController(title: "Verification is unsuccessful",
-                                            message: "You are already registered with Pair Up" + (withProvider ? " and have a provider." : "."),
+                                            message: "You are already registered with Pair Up" + (withProvider ? " and have a provider." : ".") + " Please try again or contact us at support@pairup.im",
                                             preferredStyle: UIAlertControllerStyle.alert)
     
-    let alertButton = UIAlertAction(title: "OK", style: .default) { (alertAction: UIAlertAction) -> Void in
+    let tryAgainAction = UIAlertAction(title: "Try again", style: .default) { (alertAction: UIAlertAction) -> Void in
         ShowInitialViewController()
     }
-    alertController.addAction(alertButton)
+    alertController.addAction(tryAgainAction)
+    
+    let contactUsAction = getContactUsAction(delegate: delegate)
+    
+    alertController.addAction(contactUsAction)
     
     alertController.presentIfNoAlertsPresented()
     
