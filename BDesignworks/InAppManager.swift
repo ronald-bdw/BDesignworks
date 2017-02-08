@@ -138,7 +138,7 @@ class InAppManager: NSObject {
                 self.purchasedProduct = ProductType(rawValue: productId)
                 completionHandler(Date().timeIntervalSince1970 < expirationDate.timeIntervalSince1970)
             case .failure(let error):
-                completionHandler(false)
+                completionHandler(self.isSubscriptionAvailable)
                 Logger.error(error)
             }
         }
