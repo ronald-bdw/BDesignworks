@@ -68,6 +68,14 @@ class RegistrationView: UIViewController {
         self.view.endEditing(true)
     }
     
+    @IBAction func showPrivacyPolicy(_ sender: AnyObject) {
+        UIApplication.shared.openURL(URL(string: "http://www.pairup.im/privacy/")!)
+    }
+    
+    @IBAction func showTermsOfUse(_ sender: AnyObject) {
+        UIApplication.shared.openURL(URL(string: "http://www.pairup.im/terms-apple/")!)
+    }
+    
     func keyboardWillShow(_ notification: Notification) {
         guard let userInfo: NSDictionary = (notification as NSNotification).userInfo as NSDictionary?,
             let keyboardSize = (userInfo.object(forKey: UIKeyboardFrameBeginUserInfoKey) as? NSValue)?.cgRectValue.size else {return}
@@ -122,13 +130,13 @@ extension RegistrationView: UITableViewDelegate {
             let cellsHeight = Array(0..<indexPath.row)
                 .map({IndexPath(row:$0, section: 0)})
                 .map({self.tableView(tableView, heightForRowAt: $0)})
-                .reduce(0, {$0 + $1}) + 100
+                .reduce(0, {$0 + $1}) + 120
             
             let emptySpaceHeight = self.tableView.fs_height - cellsHeight
             return emptySpaceHeight > 0 ? emptySpaceHeight : 0
         }
         guard indexPath.row != 7 else {
-            return 100
+            return 120
         }
         switch (indexPath as NSIndexPath).row % 2 {
         case 0:
