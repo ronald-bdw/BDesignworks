@@ -36,6 +36,7 @@ enum Router {
         var headers: [String : String] = [:]
         
         headers.updateValue("no-cache", forKey: "Cache-Control")
+        headers.updateValue("ios", forKey: "User-Agent")
         
         if let user = ENUser.getMainUser(), let token = user.token {
             headers = ["X-User-Token": token, "X-User-Phone-Number": user.phoneNumber]
