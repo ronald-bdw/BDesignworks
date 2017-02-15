@@ -157,7 +157,9 @@ class InAppManager: NSObject {
             let lIsTrialPurchased = self.isTrialPurchased,
             let lExpiration = self.expirationDate,
             let lPurchasedProduct = self.purchasedProduct else {return}
-        let plan = lIsTrialPurchased ? "trial" : lPurchasedProduct.serverDescription
+        let plan = lIsTrialPurchased ?
+            lPurchasedProduct.serverDescription + "_trial" :
+            lPurchasedProduct.serverDescription
         let _ = Router.User.sendInAppPurchaseStatus(plan: plan, expirationDate: lExpiration, isActive: self.isSubscriptionAvailable).request().responseObject { (response: DataResponse<RTEmptyResponse>) in
             switch response.result {
             case .success:
