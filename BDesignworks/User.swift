@@ -156,9 +156,9 @@ extension ENUser: Mappable {
         self.lastStepsHealthKitUpdateDate = Date.getDateFromISO8601(lastUpdateDate)
         
         self.shouldShowFirstPopup <- map["first_popup_active"]
-        self.shouldShowSecondPopup = true//<- map["second_popup_active"]
+        self.shouldShowSecondPopup <- map["second_popup_active"]
         self.firstPopupText <- map["provider.first_popup_message"]
-        self.secondPopupText = SecondPopupTextReplacement//<- map["provider.second_popup_message"]
+        self.secondPopupText <- map["provider.second_popup_message"]
     }
 }
 
