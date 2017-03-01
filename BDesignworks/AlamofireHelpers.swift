@@ -16,7 +16,7 @@ extension DataRequest {
             guard error == nil else {
                 return DataRequest.handleErrors(response, error: error!, data: data)
             }
-            
+        
             let result = Request.serializeResponseJSON(options: .allowFragments, response: response, data: data, error: error)
             
             switch result {

@@ -57,6 +57,7 @@
 		A489C48A1D6C8F54002AAA75 /* AreaCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4819E4C1D6B405300178D30 /* AreaCodeCell.swift */; };
 		A489C48E1D6C9554002AAA75 /* VerificationErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489C48C1D6C9554002AAA75 /* VerificationErrorView.xib */; };
 		A4DCC4C71D661221005F7E05 /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCC4C61D661221005F7E05 /* ModalPresentationController.swift */; };
+		DC022E751E56FD2700AA46FB /* SubscriptionMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC022E741E56FD2700AA46FB /* SubscriptionMigrationService.swift */; };
 		DC0ACC631D76E1C4006BB342 /* VerificationErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0ACC621D76E1C4006BB342 /* VerificationErrorView.swift */; };
 		DC2280F41D6B463000D5A0DA /* VerificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2280F11D6B463000D5A0DA /* VerificationPresenter.swift */; };
 		DC2280F91D6B464500D5A0DA /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2280F61D6B464500D5A0DA /* RegistrationModel.swift */; };
@@ -291,6 +292,7 @@
 		B4B0F73B11F25FEB89C85F54 /* Pods-Abstract-BDesignworksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksTests/Pods-Abstract-BDesignworksTests.release.xcconfig"; sourceTree = "<group>"; };
 		B8D82C4F4021CFF6F5F5CC68 /* Pods-Abstract-BDesignworksUITests.appstore debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.appstore debug.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.appstore debug.xcconfig"; sourceTree = "<group>"; };
 		D36E011C9F5B75FAD1EAB225 /* Pods-Abstract-BDesignworksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abstract-BDesignworksUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Abstract-BDesignworksUITests/Pods-Abstract-BDesignworksUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DC022E741E56FD2700AA46FB /* SubscriptionMigrationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionMigrationService.swift; sourceTree = "<group>"; };
 		DC0ACC621D76E1C4006BB342 /* VerificationErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationErrorView.swift; sourceTree = "<group>"; };
 		DC2280F11D6B463000D5A0DA /* VerificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationPresenter.swift; sourceTree = "<group>"; };
 		DC2280F61D6B464500D5A0DA /* RegistrationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
@@ -955,6 +957,7 @@
 				E745526A1DAE442E00979C6A /* InAppManager.swift */,
 				DC5635AB1DD0837900E4840B /* FitbitManager.swift */,
 				DCF64F921DFE979200098558 /* AnalyticsManager.swift */,
+				DC022E741E56FD2700AA46FB /* SubscriptionMigrationService.swift */,
 			);
 			name = Servises;
 			sourceTree = "<group>";
@@ -1579,6 +1582,7 @@
 				A489C48A1D6C8F54002AAA75 /* AreaCodeCell.swift in Sources */,
 				E7382D691E36359B00AB9FC9 /* RealmMigration.swift in Sources */,
 				2FAA4FB81D5C809700DCFF46 /* SidebarView.swift in Sources */,
+				DC022E751E56FD2700AA46FB /* SubscriptionMigrationService.swift in Sources */,
 				DC2280F91D6B464500D5A0DA /* RegistrationModel.swift in Sources */,
 				7CD3B5EB1DC221FE0089D93A /* FitbitInfo.swift in Sources */,
 				E7FC39901DEC40550068BAAE /* LoginHelpers.swift in Sources */,

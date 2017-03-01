@@ -25,6 +25,8 @@ class SmoochHelper: NSObject {
         self.updateUserInfo(user: user)
         
         Smooch.conversation()?.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.messageUploaded), name: NSNotification.Name.SKTMessageUploadCompleted, object: nil)
     }
     
     func login(_ userID: String) {
@@ -40,6 +42,12 @@ class SmoochHelper: NSObject {
     
     func updateSignUpDate() {
         SKTUser.current()?.signedUpAt = Date()
+    }
+    
+    func messageUploaded() {
+        DispatchQueue.main.async {
+            SubscriptionMigrationService.shared.showSubscriptionEndedAlertIfNeeded()
+        }
     }
 }
 
@@ -74,4 +82,6 @@ extension SmoochHelper: SKTConversationDelegate {
             UIApplication.shared.applicationIconBadgeNumber = 0
         }
     }
+    
+    
 }
