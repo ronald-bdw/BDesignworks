@@ -46,6 +46,9 @@ class SubscriptionMigrationService {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alertAction) in
             ShowInAppAlert()
         }))
+        alert.addAction(UIAlertAction(title: "Restore subscription", style: .default, handler: { (action) in
+            InAppManager.shared.restoreSubscription()
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak alert] (alertAction) in
             alert?.dismiss(animated: true, completion: nil)
         }))

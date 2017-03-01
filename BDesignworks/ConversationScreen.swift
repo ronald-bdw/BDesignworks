@@ -175,6 +175,7 @@ extension ConversationScreen: InAppManagerDelegate {
     func inAppLoadingSucceded(productType: ProductType) {
         SVProgressHUD.dismiss()
         ShowOKAlert(message: "Subscription successfully purchased")
+        self.loadMainUser()
     }
 
     func inAppLoadingFailed(error: Swift.Error?) {
