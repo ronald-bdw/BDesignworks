@@ -145,6 +145,7 @@ class RTAuthInfoResponse: Mappable {
 class RTUserStatusResponse: Mappable {
     var isRegistered: Bool = false
     var provider: String = ""
+    var isSubscriber: Bool = false
 
     required convenience init?(map: Map) {
         self.init()
@@ -153,6 +154,7 @@ class RTUserStatusResponse: Mappable {
     func mapping(map: Map) {
         self.isRegistered <- map["phone_registered"]
         self.provider <- map["provider"]
+        self.isSubscriber <- map["subscriber"]
     }
 }
 
