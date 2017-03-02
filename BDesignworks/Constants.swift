@@ -12,8 +12,10 @@ import FSHelpers_Swift
 var Logger: XCGLogger {return XCGLogger.default}
 var BDRealm: Realm? {return try? Realm()}
 
-var SupportAddress = "support@pairup.im"
-var SupportMailSubject = "iOS app issues"
+let SupportAddress = "support@pairup.im"
+let SupportMailSubject = "iOS app issues"
+
+let SecondPopupTextReplacement  = "Your subscription has expired. To continue using Pair Up you have to purchase it."
 
 /*--------------Keychain keys-------------*/
 enum FSKeychainKey {
@@ -27,15 +29,16 @@ enum FSKeychainKey {
 /*--------------User Defaults keys-------------*/
 enum FSUserDefaultsKey {
     
-    static let HealthKitRegistered  = "HealthKitRegistered"
-    static let FitbitRegistered     = "FitbitRegistered"
-    static let FitbitTokenId        = "FitbitTokenId"
-    static let LoggedInUsers        = "LoggedInUsers"
-    static let ChosenProvider       = "ChosenProvider"
-    static let RegistrationValue    = "RegistrationValue"
-    static let ShouldCheckProvider  = "ShouldCheckProvider"
-    static let SmsCode              = "Smscode"
+    static let HealthKitRegistered      = "HealthKitRegistered"
+    static let FitbitRegistered         = "FitbitRegistered"
+    static let FitbitTokenId            = "FitbitTokenId"
+    static let LoggedInUsers            = "LoggedInUsers"
+    static let ChosenProvider           = "ChosenProvider"
+    static let RegistrationValue        = "RegistrationValue"
+    static let ShouldCheckProvider      = "ShouldCheckProvider"
+    static let SmsCode                  = "Smscode"
     static let subscriptionAvailability = "SubscriptionAvailability"
+    static let IsFirstPopupWasShown     = "IsFirstPopupWasShown"
 }
 
 /*----------Notifications---------*/

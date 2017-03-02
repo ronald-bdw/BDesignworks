@@ -33,6 +33,8 @@ class ConversationScreen: UIViewController {
         self.updateTitle()
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateTitle), name: FSNotification.User.userChanged, object: nil)
+        
+        InAppManager.shared.delegate = self
 
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
@@ -51,10 +53,17 @@ class ConversationScreen: UIViewController {
         self.showChat()
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        SubscriptionMigrationService.shared.showSubscriptionWillExpireAlertIfNeeded()
+    }
 
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         guard let controller = self.smoochController,
@@ -121,26 +130,24 @@ class ConversationScreen: UIViewController {
     }
 
     func showChat() {
-        if let user = ENUser.getMainUser(),
-            user.id != 0 && (InAppManager.shared.isSubscriptionAvailable || user.provider != "") {
-            Logger.debug(user.token)
-            Logger.debug(user.phoneNumber)
-            Logger.debug(user.id)
-            Logger.debug("Provider:\(user.provider)")
-            SmoochHelper.sharedInstance.startWithParameters(user)
-
-            guard let controller = Smooch.newConversationViewController() else {return}
-            controller.view.frame = self.containerView.bounds
-            self.containerView.addSubview((controller.view))
-            self.addChildViewController(controller)
-            controller.didMove(toParentViewController: self)
-            self.smoochController = controller
-            self.containerView.isHidden = false
-
-            for view in controller.view.subviews {
-                if let navbar = view as? UINavigationBar {
-                    navbar.isHidden = true
-                }
+        guard let user = ENUser.getMainUser(), user.id != 0 else {return}
+        Logger.debug(user.token)
+        Logger.debug(user.phoneNumber)
+        Logger.debug(user.id)
+        Logger.debug("Provider:\(user.provider)")
+        SmoochHelper.sharedInstance.startWithParameters(user)
+        
+        guard let controller = Smooch.newConversationViewController() else {return}
+        controller.view.frame = self.containerView.bounds
+        self.containerView.addSubview((controller.view))
+        self.addChildViewController(controller)
+        controller.didMove(toParentViewController: self)
+        self.smoochController = controller
+        self.containerView.isHidden = false
+        
+        for view in controller.view.subviews {
+            if let navbar = view as? UINavigationBar {
+                navbar.isHidden = true
             }
         }
     }
@@ -161,12 +168,14 @@ class ConversationScreen: UIViewController {
 
 extension ConversationScreen: InAppManagerDelegate {
     func inAppLoadingStarted() {
+        self.view.endEditing(true)
         SVProgressHUD.show()
     }
 
     func inAppLoadingSucceded(productType: ProductType) {
         SVProgressHUD.dismiss()
-        self.showChat()
+        ShowOKAlert(message: "Subscription successfully purchased")
+        self.loadMainUser()
     }
 
     func inAppLoadingFailed(error: Swift.Error?) {

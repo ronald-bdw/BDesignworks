@@ -168,6 +168,7 @@ extension AppDelegate {
         DispatchQueue.global().async {  let _ = countryCodes }
 
         InAppManager.shared.startMonitoring()
+        InAppManager.shared.loadProducts()
         
         let _ = AnalyticsManager.shared
 

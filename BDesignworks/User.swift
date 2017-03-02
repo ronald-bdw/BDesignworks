@@ -20,6 +20,11 @@ class ENUser: Object, IUser {
     dynamic var avatarUrl: String = ""
     dynamic var avatarThumbUrl: String = ""
     dynamic var provider: String = ""
+    
+    dynamic var shouldShowFirstPopup: Bool = false
+    dynamic var shouldShowSecondPopup: Bool = false
+    dynamic var firstPopupText: String = ""
+    dynamic var secondPopupText: String = ""
 
     var token: String? {
         get {
@@ -149,6 +154,11 @@ extension ENUser: Mappable {
         var lastUpdateDate: String = ""
         lastUpdateDate <- map["last_healthkit_activity.finished_at"]
         self.lastStepsHealthKitUpdateDate = Date.getDateFromISO8601(lastUpdateDate)
+        
+        self.shouldShowFirstPopup <- map["first_popup_active"]
+        self.shouldShowSecondPopup <- map["second_popup_active"]
+        self.firstPopupText <- map["provider.first_popup_message"]
+        self.secondPopupText <- map["provider.second_popup_message"]
     }
 }
 
