@@ -153,7 +153,7 @@ class InAppManager: NSObject {
     }
     
     func sendStatus() {
-        guard ENUser.getMainUser()?.provider == "",
+        guard ENUser.getMainUser()?.isSubscriber == true,
             let lIsTrialPurchased = self.isTrialPurchased,
             let lExpiration = self.expirationDate,
             let lPurchasedProduct = self.purchasedProduct else {return}

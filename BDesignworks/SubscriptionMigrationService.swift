@@ -37,8 +37,7 @@ class SubscriptionMigrationService {
     func showSubscriptionEndedAlertIfNeeded() {
         guard let user = ENUser.getMainUser(), user.id != 0,
             (InAppManager.shared.isSubscriptionAvailable == false
-                && ((user.provider != "" && user.shouldShowSecondPopup && user.secondPopupText != "")
-                    || user.provider == "")) else {return}
+                && (user.isSubscriber == false && user.shouldShowSecondPopup || user.isSubscriber == true)) else {return}
         
         let textToShow = user.secondPopupText != "" ? user.secondPopupText : SecondPopupTextReplacement
         

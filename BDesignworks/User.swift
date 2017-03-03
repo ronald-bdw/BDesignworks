@@ -20,6 +20,7 @@ class ENUser: Object, IUser {
     dynamic var avatarUrl: String = ""
     dynamic var avatarThumbUrl: String = ""
     dynamic var provider: String = ""
+    dynamic var isSubscriber: Bool = false
     
     dynamic var shouldShowFirstPopup: Bool = false
     dynamic var shouldShowSecondPopup: Bool = false
@@ -151,6 +152,7 @@ extension ENUser: Mappable {
         self.avatarUrl <- map["avatar.original"]
         self.avatarThumbUrl <- map["avatar.thumb"]
         self.provider <- map["provider.name"]
+        self.isSubscriber <- map["provider.subscriber"]
         var lastUpdateDate: String = ""
         lastUpdateDate <- map["last_healthkit_activity.finished_at"]
         self.lastStepsHealthKitUpdateDate = Date.getDateFromISO8601(lastUpdateDate)
