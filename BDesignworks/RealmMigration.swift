@@ -9,13 +9,9 @@
 import Foundation
 
 func ConfigureRealmMigrations() {
+    
     Realm.Configuration.defaultConfiguration = Realm.Configuration(
-        schemaVersion: 1,
+        schemaVersion: 3,
         migrationBlock: { migration, oldSchemaVersion in
-            if (oldSchemaVersion < 1) {
-                // Nothing to do!
-                // Realm will automatically detect new properties and removed properties
-                // And will update the schema on disk automatically
-            }
     })
 }

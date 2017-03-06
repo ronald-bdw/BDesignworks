@@ -34,7 +34,7 @@ extension TourAppAvatarPresenter: ITourAppAvatarPresenterView {
             let avatarUrl = URL(string: user.avatarThumbUrl) else {return}
         self.view?.updateView(avatarURL: avatarUrl)
         
-        if user.provider == "" {
+        if user.isSubscriber == true {
             self.view?.updateView(title: "Step 2 of 3")
         }
         else {
@@ -49,7 +49,7 @@ extension TourAppAvatarPresenter: ITourAppAvatarPresenterView {
     func submitPressed() {
         guard let user = self.model?.getUser() else {return}
         
-        if user.provider == "" {
+        if user.isSubscriber == true {
             self.view?.showPurchasesView()
         }
         else {

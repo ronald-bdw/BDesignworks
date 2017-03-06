@@ -180,8 +180,12 @@ extension ConversationScreen: InAppManagerDelegate {
 
     func inAppLoadingFailed(error: Swift.Error?) {
         SVProgressHUD.dismiss()
-        guard let error = error else {return}
-        ShowErrorAlert(message: error.localizedDescription)
+        if let error = error as? InAppErrors {
+            guard error != .noSubscriptionPurchased else {return}
+            ShowErrorAlert(message: error.localizedDescription)
+        } else {
+            ShowErrorAlert(message: error?.localizedDescription)
+        }
     }
     
     func subscriptionStatusUpdated(value: Bool) {

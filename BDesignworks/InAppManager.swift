@@ -128,7 +128,7 @@ class InAppManager: NSObject {
                 return
         }
         
-        let _ = Router.User.sendReceipt(receipt: receipt).request(baseUrl: "https://buy.itunes.apple.com").responseObject { (response: DataResponse<RTSubscriptionResponse>) in
+        let _ = Router.User.sendReceipt(receipt: receipt).request(baseUrl: "https://sandbox.itunes.apple.com").responseObject { (response: DataResponse<RTSubscriptionResponse>) in
             switch response.result {
             case .success(let value):
                 guard let expirationDate = value.expirationDate,
@@ -153,8 +153,7 @@ class InAppManager: NSObject {
     }
     
     func sendStatus() {
-        guard ENUser.getMainUser()?.provider == "",
-            let lIsTrialPurchased = self.isTrialPurchased,
+        guard let lIsTrialPurchased = self.isTrialPurchased,
             let lExpiration = self.expirationDate,
             let lPurchasedProduct = self.purchasedProduct else {return}
         let plan = lIsTrialPurchased ?

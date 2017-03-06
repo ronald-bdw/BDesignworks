@@ -70,7 +70,7 @@ class VerificationModel {
                 let registrationValue = UserDefaults.standard.bool(forKey: FSUserDefaultsKey.RegistrationValue)
                 let chosenProvider = UserDefaults.standard.string(forKey: FSUserDefaultsKey.ChosenProvider)
                 if shouldCheckProvider {
-                    if value.provider == "" {
+                    if value.isSubscriber == true {
                         self?.presenter?.userHasNoProvider()
                         return
                     }
@@ -82,7 +82,7 @@ class VerificationModel {
                 if registrationValue == value.isRegistered {
                     self?.receivePhoneCode(phone)
                 } else if value.isRegistered {
-                    self?.presenter?.userAlreadyRegistered(withProvider: value.provider != "")
+                    self?.presenter?.userAlreadyRegistered(withProvider: (value.provider != "" || value.isSubscriber == false))
                 } else {
                     self?.presenter?.userNotRegistered()
                 }

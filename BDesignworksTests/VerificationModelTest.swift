@@ -29,17 +29,17 @@ class VerificationModelTest: XCTestCase {
         
         self.container = MockContainer(view: VerificationViewMock(), makeAssemble: true)
         
-        let userNotRegisteredDict: [String: AnyObject?] = ["phone_registered": false as AnyObject, "provider": nil]
+        let userNotRegisteredDict: [String: AnyObject?] = ["phone_registered": false as AnyObject, "provider": nil, "subscriber": false as Optional<AnyObject>]
         let userNotRegisteredJsonData = try! JSONSerialization.data(withJSONObject: userNotRegisteredDict, options: .prettyPrinted)
         self.userNotRegisteredJson = String(data: userNotRegisteredJsonData, encoding: .utf8)
         
         
-        let userWithProviderDict: [String: AnyObject?] = ["phone_registered": true as AnyObject, "provider": self.providerName as AnyObject]
+        let userWithProviderDict: [String: AnyObject?] = ["phone_registered": true as AnyObject, "provider": self.providerName as AnyObject, "subscriber": false as Optional<AnyObject>]
         let userWithProviderJsonData = try! JSONSerialization.data(withJSONObject: userWithProviderDict, options: .prettyPrinted)
         self.userWithProviderJson = String(data: userWithProviderJsonData, encoding: .utf8)
         
         
-        let userWithNoProviderDict: [String: AnyObject?] = ["phone_registered": true as AnyObject, "provider": nil]
+        let userWithNoProviderDict: [String: AnyObject?] = ["phone_registered": true as AnyObject, "provider": nil, "subscriber": true as Optional<AnyObject>]
         let userWithNoProviderJsonData = try! JSONSerialization.data(withJSONObject: userWithNoProviderDict, options: .prettyPrinted)
         self.userWithNoProviderJson = String(data: userWithNoProviderJsonData, encoding: .utf8)
     }
