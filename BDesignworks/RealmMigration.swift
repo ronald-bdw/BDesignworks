@@ -11,7 +11,7 @@ import Foundation
 func ConfigureRealmMigrations() {
     
     Realm.Configuration.defaultConfiguration = Realm.Configuration(
-        schemaVersion: 2,
+        schemaVersion: 3,
         migrationBlock: { migration, oldSchemaVersion in
     })
 }
