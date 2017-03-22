@@ -56,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         ZendeskManager.sharedInstance.trigerNotificationOnZendesk()
         ZendeskManager.sharedInstance.trigerTimezoneOnZendesk()
+        self.setupAnalytics()
     }
 
     func applicationWillTerminate(_ application: UIApplication)
@@ -158,23 +159,26 @@ extension AppDelegate {
         self.setupSVProgressHUD()
         
         ConfigureRealmMigrations()
+
+        DispatchQueue.global().async {  let _ = countryCodes }
+
+        InAppManager.shared.startMonitoring()
+        InAppManager.shared.loadProducts()
+
+        self.setupAppearance()
+        
+        self.loadProviders()
+    }
+    
+    func setupAnalytics() {
         
         #if !(TEST)
             Fabric.with([Crashlytics.self])
             self.setupHeapAnalytics()
             self.setupFlurryAnalytics()
         #endif
-
-        DispatchQueue.global().async {  let _ = countryCodes }
-
-        InAppManager.shared.startMonitoring()
-        InAppManager.shared.loadProducts()
         
         let _ = AnalyticsManager.shared
-
-        self.setupAppearance()
-        
-        self.loadProviders()
     }
 
     func setupAppearance() {
