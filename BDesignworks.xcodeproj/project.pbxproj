@@ -1938,6 +1938,7 @@
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				INAPP_URL = "https://sandbox.itunes.apple.com";
 				INFOPLIST_FILE = BDesignworks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2025,6 +2026,7 @@
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				INAPP_URL = "https://sandbox.itunes.apple.com";
 				INFOPLIST_FILE = BDesignworks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2116,6 +2118,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				INAPP_URL = "https://buy.itunes.apple.com";
 				INFOPLIST_FILE = BDesignworks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2431,6 +2434,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				INAPP_URL = "https://sandbox.itunes.apple.com";
 				INFOPLIST_FILE = BDesignworks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2470,6 +2474,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				INAPP_URL = "https://sandbox.itunes.apple.com";
 				INFOPLIST_FILE = BDesignworks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2559,6 +2564,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				INAPP_URL = "https://sandbox.itunes.apple.com";
 				INFOPLIST_FILE = BDesignworks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2643,6 +2649,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				INAPP_URL = "https://sandbox.itunes.apple.com";
 				INFOPLIST_FILE = BDesignworks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2947,6 +2954,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				INAPP_URL = "https://buy.itunes.apple.com";
 				INFOPLIST_FILE = BDesignworks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
