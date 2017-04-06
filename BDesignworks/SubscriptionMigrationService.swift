@@ -12,26 +12,15 @@ class SubscriptionMigrationService {
     
     static let shared = SubscriptionMigrationService()
     
-    func showSubscriptionWillExpireAlertIfNeeded() {
-        guard let user = ENUser.getMainUser(), user.id != 0,
-            (user.provider != "" && InAppManager.shared.isSubscriptionAvailable == false
-                && user.shouldShowFirstPopup == true && user.firstPopupText != ""
-            && UserDefaults.standard.bool(forKey: FSUserDefaultsKey.IsFirstPopupWasShown) == false) else {return}
-        
-        let alert = UIAlertController(title: nil, message: user.firstPopupText, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alertAction) in
-            UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.IsFirstPopupWasShown)
-            UserDefaults.standard.synchronize()
-            
-            ShowInAppAlert()
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak alert] (alertAction) in
-            UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.IsFirstPopupWasShown)
-            UserDefaults.standard.synchronize()
-            
-            alert?.dismiss(animated: true, completion: nil)
-        }))
-        alert.presentIfNoAlertsPresented()
+    var shouldShowSubscriptionWillExpireAlertIfNeeded: Bool {
+        if let user = ENUser.getMainUser(), user.id != 0,
+            (InAppManager.shared.isSubscriptionAvailable == false
+                && user.shouldShowFirstPopup == true 
+                && UserDefaults.standard.bool(forKey: FSUserDefaultsKey.IsFirstPopupWasShown) == false) {
+            return true
+        } else {
+            return false
+        }
     }
     
     func showSubscriptionEndedAlertIfNeeded() {

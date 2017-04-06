@@ -16,8 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         self.setupProject()
-
-//        ENUser.createTestUser()
+        
         let realm = try? Realm()
         if let _ = realm?.objects(ENUser.self).first,
             realm?.objects(AuthInfo.self).count == 0 {
@@ -57,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ZendeskManager.sharedInstance.trigerNotificationOnZendesk()
         ZendeskManager.sharedInstance.trigerTimezoneOnZendesk()
         self.setupAnalytics()
+        self.updateUser()
     }
 
     func applicationWillTerminate(_ application: UIApplication)
@@ -268,6 +268,22 @@ extension AppDelegate {
             
             NotificationCenter.default.post(name: FSNotification.Provider.providersChanged, object: nil)
             
+        }
+    }
+    
+    func updateUser() {
+        guard let user = BDRealm?.objects(ENUser.self).first, user.token != nil else {return}
+        let _ = Router.User.getUser.request().responseObject { (response: DataResponse<RTUserResponse>) in
+            switch response.result {
+            case .success(let value):
+                guard let realm = BDRealm, let receivedUser = value.user else {break}
+                try? realm.write({
+                    realm.add(receivedUser, update: true)
+                })
+                NotificationCenter.default.post(name: FSNotification.User.userReceived, object: nil)
+            case .failure(let error):
+                Logger.debug(error)
+            }
         }
     }
 }

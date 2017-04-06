@@ -25,14 +25,13 @@ class ConversationScreen: UIViewController {
         
         AnalyticsManager.shared.trackScreen(named: "Conversation screen", viewController: self)
 
-        self.loadMainUser()
-
         UIApplication.shared.statusBarStyle = .lightContent
 
         self.setNavigationBarButtons()
         self.updateTitle()
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateTitle), name: FSNotification.User.userChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.userLoaded), name: FSNotification.User.userReceived, object: nil)
         
         InAppManager.shared.delegate = self
 
@@ -51,13 +50,11 @@ class ConversationScreen: UIViewController {
         self.containerView.isHidden = true
 
         self.showChat()
-
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        SubscriptionMigrationService.shared.showSubscriptionWillExpireAlertIfNeeded()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     deinit {
@@ -94,39 +91,35 @@ class ConversationScreen: UIViewController {
         self.revealViewController().panGestureRecognizer().delegate = self
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
     }
-
-    // commented due to logo marketing reasons
-//    fileprivate func setProviderIconIfExist(user: ENUser){
-//        guard user.provider != "" else {return}
-//            let leftBarButtonImageView = UIImageView(image: Image.Logo.HbfLogoWhite)
-//            let resizedLeftImageViewWidth = navigationBarImageHeight * leftBarButtonImageView.fs_width / leftBarButtonImageView.fs_height
-//            leftBarButtonImageView.frame = CGRect(x: 0, y: 0, width: resizedLeftImageViewWidth, height: navigationBarImageHeight)
-//            self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonImageView)
-//
-//    }
-    func loadMainUser() {
-        let _ = Router.User.getUser.request().responseObject { (response: DataResponse<RTUserResponse>) in
-            switch response.result {
-            case .success(let value):
-                guard let receivedUser = value.user else {return}
-                self.title = receivedUser.fullname
-//                self.setProviderIconIfExist(user: receivedUser)
-
-                do {
-                    let realm = try Realm()
-                    try realm.write({
-                        realm.add(receivedUser, update: true)
-                    })
-                    SmoochHelper.sharedInstance.startWithParameters(receivedUser)
-                    self.updateTitle()
-                }
-                catch let error {
-                    Logger.error(error)
-                }
-            case .failure(let error):
-                Logger.error(error)
-            }
+    
+    func userLoaded() {
+        guard let user = ENUser.getMainUser() else {return}
+        
+        SmoochHelper.sharedInstance.startWithParameters(user)
+        self.updateTitle()
+        
+        if SubscriptionMigrationService.shared.shouldShowSubscriptionWillExpireAlertIfNeeded {
+            self.showSubscriptionWillExpireAlert(forUser: user)
         }
+    }
+    
+    func showSubscriptionWillExpireAlert(forUser user: ENUser) {
+        
+        let alert = UIAlertController(title: nil, message: user.firstPopupText, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alertAction) in
+            UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.IsFirstPopupWasShown)
+            UserDefaults.standard.synchronize()
+            
+            ShowInAppAlert()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak alert] (alertAction) in
+            UserDefaults.standard.set(true, forKey: FSUserDefaultsKey.IsFirstPopupWasShown)
+            UserDefaults.standard.synchronize()
+            
+            alert?.dismiss(animated: true, completion: nil)
+        }))
+    
+        self.present(alert, animated: true, completion: nil)
     }
 
     func showChat() {
@@ -156,14 +149,10 @@ class ConversationScreen: UIViewController {
         self.title = ENUser.getMainUser()?.fullname
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-
     @IBAction func restorePressed(_ sender: AnyObject) {
         InAppManager.shared.restoreSubscription()
     }
+    
 }
 
 extension ConversationScreen: InAppManagerDelegate {
@@ -174,7 +163,6 @@ extension ConversationScreen: InAppManagerDelegate {
 
     func inAppLoadingSucceded(productType: ProductType) {
         SVProgressHUD.dismiss()
-        self.loadMainUser()
     }
 
     func inAppLoadingFailed(error: Swift.Error?) {
