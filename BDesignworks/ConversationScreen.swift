@@ -91,16 +91,6 @@ class ConversationScreen: UIViewController {
         self.revealViewController().panGestureRecognizer().delegate = self
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
     }
-
-    // commented due to logo marketing reasons
-//    fileprivate func setProviderIconIfExist(user: ENUser){
-//        guard user.provider != "" else {return}
-//            let leftBarButtonImageView = UIImageView(image: Image.Logo.HbfLogoWhite)
-//            let resizedLeftImageViewWidth = navigationBarImageHeight * leftBarButtonImageView.fs_width / leftBarButtonImageView.fs_height
-//            leftBarButtonImageView.frame = CGRect(x: 0, y: 0, width: resizedLeftImageViewWidth, height: navigationBarImageHeight)
-//            self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonImageView)
-//
-//    }
     
     func userLoaded() {
         guard let user = ENUser.getMainUser() else {return}

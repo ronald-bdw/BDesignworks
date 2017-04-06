@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         self.setupProject()
-//        ENUser.createTestUser()
+        
         let realm = try? Realm()
         if let _ = realm?.objects(ENUser.self).first,
             realm?.objects(AuthInfo.self).count == 0 {
