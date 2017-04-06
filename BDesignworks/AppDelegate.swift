@@ -272,6 +272,7 @@ extension AppDelegate {
     }
     
     func updateUser() {
+        guard let user = BDRealm?.objects(ENUser.self).first, user.token != nil else {return}
         let _ = Router.User.getUser.request().responseObject { (response: DataResponse<RTUserResponse>) in
             switch response.result {
             case .success(let value):

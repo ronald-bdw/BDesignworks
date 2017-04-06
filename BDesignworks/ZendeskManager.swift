@@ -24,7 +24,7 @@ class ZendeskManager {
     }
     
     func trigerTimezoneOnZendesk() {
-        guard let user = ENUser.getMainUser() else {return}
+        guard let user = ENUser.getMainUser(), user.token != nil else {return}
         
         let _ = Router.User.sendTimezone(userId: user.id).request().responseObject { (response: DataResponse<RTEmptyResponse>) in
             switch response.result {
