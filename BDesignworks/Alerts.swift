@@ -49,10 +49,11 @@ func ShowAlertWithHandler (_ title: String? = nil, message: String?, useCancelBu
     alertController.presentOnModal()
 }
 
-func ShowOKAlert (_ title: String? = nil, message: String?) {
+func ShowOKAlert (_ title: String? = nil, message: String?, completionBlock: (() -> Void)? = nil) {
     let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
     
     let alertButton = UIAlertAction(title: "OK", style: .default) { (alertAction: UIAlertAction) -> Void in
+        completionBlock?()
         alertController.dismiss(animated: true, completion: nil)
     }
     alertController.addAction(alertButton)

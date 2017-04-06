@@ -89,7 +89,9 @@ extension LoginView: ILoginView {
     }
     
     func showPhoneCodeSentView() {
-        ShowOKAlert("Success!", message: "Please wait for your SMS confirmation to complete the verification process.")
+        ShowOKAlert("Success!", message: "Please wait for your SMS confirmation to complete the verification process.") {
+            ShowInitialViewController()
+        }
     }
 }
 
