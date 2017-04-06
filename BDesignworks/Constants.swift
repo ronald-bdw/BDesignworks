@@ -51,6 +51,7 @@ enum FSNotification {
     
     enum User {
         static let userChanged = NSNotification.Name(rawValue: "UserChanged")
+        static let userReceived = NSNotification.Name(rawValue: "UserReceived")
     }
     
     enum Provider {
