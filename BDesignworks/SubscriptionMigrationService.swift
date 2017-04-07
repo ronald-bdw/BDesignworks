@@ -14,8 +14,8 @@ class SubscriptionMigrationService {
     
     var shouldShowSubscriptionWillExpireAlertIfNeeded: Bool {
         if let user = ENUser.getMainUser(), user.id != 0,
-            (InAppManager.shared.isSubscriptionAvailable == false
-                && user.shouldShowFirstPopup == true 
+            (user.provider != "" && InAppManager.shared.isSubscriptionAvailable == false
+                && user.shouldShowFirstPopup == true && user.firstPopupText != ""
                 && UserDefaults.standard.bool(forKey: FSUserDefaultsKey.IsFirstPopupWasShown) == false) {
             return true
         } else {
