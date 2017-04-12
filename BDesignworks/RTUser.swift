@@ -87,6 +87,7 @@ extension Router.User: RouterProtocol {
         case .sendInAppPurchaseStatus(let plan, let expirationDate, let isActive):
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "Y-MM-dd HH:mm:ss zzz"
+            dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
             return ["plan_name": plan as AnyObject,
                     "expires_at": dateFormatter.string(from: expirationDate) as AnyObject,
                     "active": isActive as AnyObject]

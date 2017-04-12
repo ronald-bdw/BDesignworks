@@ -175,7 +175,7 @@ func ShowAlreadyRegisteredAlert(delegate: IMailAppDelegate, withProvider: Bool =
 }
 
 func ShowInAppAlert() {
-    let alertController = UIAlertController(title: "Choose your auto-renewable subscription plan", message: "1 month trial period available for all plans.", preferredStyle: .actionSheet)
+    let alertController = UIAlertController(title: "Choose your auto-renewable subscription plan", message: "2 week trial period available for all plans.", preferredStyle: .actionSheet)
     alertController.view.tintColor = UIColor(fs_hexString: "29537C")
     
     for type in ProductType.all {
